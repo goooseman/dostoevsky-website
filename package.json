@@ -60,8 +60,6 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "textlint": "^11.6.3",
-    "textlint-rule-preset-ja-spacing": "^2.0.1",
-    "textlint-rule-preset-japanese": "^4.0.4",
     "typescript": "^3.9.3"
   },
   "keywords": [
