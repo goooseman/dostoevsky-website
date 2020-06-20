@@ -1,6 +1,6 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library, IconName } from '@fortawesome/fontawesome-svg-core'
-import React from 'react'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library, IconName } from "@fortawesome/fontawesome-svg-core";
+import React from "react";
 
 import {
   faApple,
@@ -14,8 +14,8 @@ import {
   faReact,
   faTwitter,
   faVuejs,
-} from '@fortawesome/free-brands-svg-icons'
-import './style.scss'
+} from "@fortawesome/free-brands-svg-icons";
+import "./style.scss";
 
 library.add(
   faApple,
@@ -29,17 +29,17 @@ library.add(
   faReact,
   faTwitter,
   faVuejs
-)
+);
 
 interface Props {
-  name: 'apple' | 'aws' | 'php' | 'node' | 'vuejs' | 'react' | 'js' | 'html5'
-  title: string
+  name: "apple" | "aws" | "php" | "node" | "vuejs" | "react" | "js" | "html5";
+  title: string;
 }
 
 const Icon: React.FC<Props> = ({ name, title }: Props) => (
   <div className="icon" title={title}>
-    <FontAwesomeIcon icon={['fab', name as IconName]} />
+    <FontAwesomeIcon icon={["fab", name as IconName]} />
   </div>
-)
+);
 
-export default Icon
+export default Icon;

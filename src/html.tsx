@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
 interface Props {
-  headComponents: React.ReactNode[]
-  body: string
-  postBodyComponents: React.ReactNode[]
+  headComponents: React.ReactNode[];
+  body: string;
+  postBodyComponents: React.ReactNode[];
 }
 
 const HTML: React.FC<Props> = ({
@@ -34,7 +34,7 @@ const HTML: React.FC<Props> = ({
         />
       </body>
     </html>
-  )
-}
+  );
+};
 
-export default HTML
+export default HTML;

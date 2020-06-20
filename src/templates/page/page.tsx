@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
-import { PostByPathQuery } from '../../../types/graphql-types'
+import { PostByPathQuery } from "../../../types/graphql-types";
 
-import './style.scss'
+import "./style.scss";
 
 interface Props {
-  data: PostByPathQuery
-  location: Location
+  data: PostByPathQuery;
+  location: Location;
 }
 
 const Page: React.FC<Props> = ({ data }: Props) => {
@@ -14,7 +14,7 @@ const Page: React.FC<Props> = ({ data }: Props) => {
     <div dangerouslySetInnerHTML={{ __html: data.post.html }} />
   ) : (
     <></>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

@@ -1,19 +1,19 @@
-import { graphql } from 'gatsby'
-import React from 'react'
+import { graphql } from "gatsby";
+import React from "react";
 
-import { IndexQueryQuery, PostByPathQuery } from '../../types/graphql-types'
-import Post from '../templates/post/post'
-import Meta from '../components/meta/meta'
-import Layout from '../components/layout/layout'
+import { IndexQueryQuery, PostByPathQuery } from "../../types/graphql-types";
+import Post from "../templates/post/post";
+import Meta from "../components/meta/meta";
+import Layout from "../components/layout/layout";
 
 interface Props {
-  data: IndexQueryQuery
-  location: Location
+  data: IndexQueryQuery;
+  location: Location;
 }
 
 const BlogIndex: React.FC<Props> = ({ data, location }: Props) => {
-  const posts = data.remark.posts
-  const meta = data.site?.meta
+  const posts = data.remark.posts;
+  const meta = data.site?.meta;
 
   return (
     <Layout location={location}>
@@ -28,10 +28,10 @@ const BlogIndex: React.FC<Props> = ({ data, location }: Props) => {
         />
       ))}
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogIndex
+export default BlogIndex;
 
 export const pageQuery = graphql`
   query IndexQuery {
@@ -71,4 +71,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

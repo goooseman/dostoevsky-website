@@ -1,51 +1,51 @@
-import { Link } from 'gatsby'
-import Img, { FluidObject } from 'gatsby-image'
-import React from 'react'
+import { Link } from "gatsby";
+import Img, { FluidObject } from "gatsby-image";
+import React from "react";
 
-import Adsense from '../../components/adsense/adsense'
-import Button from '../../components/button/button'
-import Badge from '../../components/badge/badge'
-import { PostByPathQuery } from '../../../types/graphql-types'
+import Adsense from "../../components/adsense/adsense";
+import Button from "../../components/button/button";
+import Badge from "../../components/badge/badge";
+import { PostByPathQuery } from "../../../types/graphql-types";
 
-import './style.scss'
+import "./style.scss";
 
 const getDescription = (content: string): string => {
   const body = content.replace(
     /<blockquote>/g,
     '<blockquote class="blockquote">'
-  )
-  if (body.match('<!--more-->')) {
-    const [description] = body.split('<!--more-->')
-    return description
+  );
+  if (body.match("<!--more-->")) {
+    const [description] = body.split("<!--more-->");
+    return description;
   }
-  return body
-}
+  return body;
+};
 
 interface Props {
-  data: PostByPathQuery
+  data: PostByPathQuery;
   options: {
-    isIndex: boolean
-    adsense?: string | null
-  }
+    isIndex: boolean;
+    adsense?: string | null;
+  };
 }
 
 const Post: React.FC<Props> = ({ data, options }: Props) => {
-  const frontmatter = data.post?.frontmatter
-  const path = frontmatter?.path || ''
-  const image = frontmatter?.image || null
-  const { isIndex, adsense } = options
-  const html = data.post?.html || ''
-  const isMore = isIndex && !!html.match('<!--more-->')
+  const frontmatter = data.post?.frontmatter;
+  const path = frontmatter?.path || "";
+  const image = frontmatter?.image || null;
+  const { isIndex, adsense } = options;
+  const html = data.post?.html || "";
+  const isMore = isIndex && !!html.match("<!--more-->");
 
   return (
     <div className="article" key={path}>
       <div className="container">
         <div className="info">
-          <Link style={{ boxShadow: 'none' }} to={path}>
+          <Link style={{ boxShadow: "none" }} to={path}>
             <h1>{frontmatter?.title}</h1>
             <time dateTime={frontmatter?.date}>{frontmatter?.date}</time>
           </Link>
-          <Badge label={frontmatter?.category || ''} primary={true} />
+          <Badge label={frontmatter?.category || ""} primary={true} />
           {(frontmatter?.tags || []).map((tag, index) => (
             <Badge label={tag as string} primary={false} key={index} />
           ))}
@@ -55,7 +55,7 @@ const Post: React.FC<Props> = ({ data, options }: Props) => {
           {image?.childImageSharp?.fluid && (
             <Img
               fluid={image.childImageSharp.fluid as FluidObject}
-              style={{ display: 'block', margin: '0 auto' }}
+              style={{ display: "block", margin: "0 auto" }}
             />
           )}
         </div>
@@ -69,7 +69,7 @@ const Post: React.FC<Props> = ({ data, options }: Props) => {
         {!isIndex && <Adsense clientId={adsense} slotId="" format="auto" />}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Post
+export default Post;

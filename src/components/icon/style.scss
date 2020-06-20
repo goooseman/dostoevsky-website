@@ -1,5 +1,5 @@
-@import 'scss/colors.scss';
-@import 'scss/fonts.scss';
+@import "scss/colors.scss";
+@import "scss/fonts.scss";
 
 .icon {
   max-width: 400px;
@@ -9,12 +9,12 @@
     font-size: $display4-size;
     margin-bottom: 20px;
 
-    &[data-emergence='visible'] {
+    &[data-emergence="visible"] {
       opacity: 1;
       animation: bounceIn 2s;
     }
 
-    &[data-emergence='hidden'] {
+    &[data-emergence="hidden"] {
       opacity: 0;
     }
   }

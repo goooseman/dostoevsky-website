@@ -1,10 +1,10 @@
-import { Link } from 'gatsby'
-import React from 'react'
-import './style.scss'
+import { Link } from "gatsby";
+import React from "react";
+import "./style.scss";
 
 interface Props {
-  author: string
-  title: string
+  author: string;
+  title: string;
 }
 
 const Footer: React.FC<Props> = ({ author, title }: Props) => (
@@ -20,6 +20,6 @@ const Footer: React.FC<Props> = ({ author, title }: Props) => (
       </p>
     </div>
   </div>
-)
+);
 
-export default Footer
+export default Footer;

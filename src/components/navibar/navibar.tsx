@@ -1,9 +1,9 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from "react";
+import { Link } from "gatsby";
 
 interface Props {
-  title: string
-  location: Location
+  title: string;
+  location: Location;
 }
 
 const Navibar: React.FC<Props> = ({ location, title }: Props) => {
@@ -17,7 +17,7 @@ const Navibar: React.FC<Props> = ({ location, title }: Props) => {
           <ul className="navbar-nav bd-navbar-nav flex-row">
             <li
               className={
-                location.pathname === '/' ? 'nav-item active' : 'nav-item'
+                location.pathname === "/" ? "nav-item active" : "nav-item"
               }
             >
               <Link to="/" className="nav-link">
@@ -26,9 +26,9 @@ const Navibar: React.FC<Props> = ({ location, title }: Props) => {
             </li>
             <li
               className={
-                location.pathname === '/profile/'
-                  ? 'nav-item active'
-                  : 'nav-item'
+                location.pathname === "/profile/"
+                  ? "nav-item active"
+                  : "nav-item"
               }
             >
               <Link to="/profile/" className="nav-link">
@@ -40,7 +40,7 @@ const Navibar: React.FC<Props> = ({ location, title }: Props) => {
         <div className="navbar-nav flex-row ml-md-auto d-none d-md-flex" />
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navibar
+export default Navibar;

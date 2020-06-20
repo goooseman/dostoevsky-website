@@ -1,9 +1,9 @@
 module.exports = {
   extends: [
-    'stylelint-config-standard',
-    'stylelint-config-css-modules',
-    'stylelint-config-idiomatic-order',
-    'stylelint-config-prettier',
+    "stylelint-config-standard",
+    "stylelint-config-css-modules",
+    "stylelint-config-idiomatic-order",
+    "stylelint-config-prettier",
   ],
-  ignoreFiles: ['!**/*.css'],
-}
+  ignoreFiles: ["!**/*.css"],
+};

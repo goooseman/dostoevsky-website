@@ -1,10 +1,10 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from "react";
+import { Link } from "gatsby";
 
 interface Props {
-  path: string
-  label: string
-  primary: boolean
+  path: string;
+  label: string;
+  primary: boolean;
 }
 
 const Button: React.FC<Props> = ({ path, label, primary }: Props) => {
@@ -12,13 +12,13 @@ const Button: React.FC<Props> = ({ path, label, primary }: Props) => {
     <Link className="readmore" to={path}>
       <span
         className={`btn btn-outline-primary btn-block ${
-          primary ? 'btn-outline-primary' : 'btn-outline-secondary'
+          primary ? "btn-outline-primary" : "btn-outline-secondary"
         }`}
       >
         {label}
       </span>
     </Link>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

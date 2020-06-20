@@ -1,19 +1,19 @@
-import { graphql } from 'gatsby'
-import Img, { FixedObject } from 'gatsby-image'
-import React from 'react'
+import { graphql } from "gatsby";
+import Img, { FixedObject } from "gatsby-image";
+import React from "react";
 
-import { ProfilePageQueryQuery } from '../../types/graphql-types'
-import { siteMetadata } from '../../gatsby-config'
-import Layout from '../components/layout/layout'
-import Meta from '../components/meta/meta'
+import { ProfilePageQueryQuery } from "../../types/graphql-types";
+import { siteMetadata } from "../../gatsby-config";
+import Layout from "../components/layout/layout";
+import Meta from "../components/meta/meta";
 
 interface Props {
-  data: ProfilePageQueryQuery
-  location: Location
+  data: ProfilePageQueryQuery;
+  location: Location;
 }
 
 const Profile: React.FC<Props> = ({ location, data }: Props) => {
-  const profile = data.profile?.childImageSharp?.fixed
+  const profile = data.profile?.childImageSharp?.fixed;
 
   return (
     <Layout location={location}>
@@ -37,10 +37,10 @@ const Profile: React.FC<Props> = ({ location, data }: Props) => {
         </section>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;
 
 export const query = graphql`
   query ProfilePageQuery {
@@ -52,4 +52,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

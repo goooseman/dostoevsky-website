@@ -1,24 +1,24 @@
-import { graphql } from 'gatsby'
-import React from 'react'
+import { graphql } from "gatsby";
+import React from "react";
 
-import Post from './post/post'
-import Meta from '../components/meta/meta'
-import Layout from '../components/layout/layout'
-import Page from './page/page'
-import { PostByPathQuery } from '../../types/graphql-types'
+import Post from "./post/post";
+import Meta from "../components/meta/meta";
+import Layout from "../components/layout/layout";
+import Page from "./page/page";
+import { PostByPathQuery } from "../../types/graphql-types";
 
 interface Props {
-  data: PostByPathQuery
-  location: Location
+  data: PostByPathQuery;
+  location: Location;
 }
 
 const Template: React.FC<Props> = ({ data, location }: Props) => {
-  const isPage = data.post?.frontmatter?.layout != 'page'
+  const isPage = data.post?.frontmatter?.layout != "page";
   return (
     <div>
       <Layout location={location}>
         <Meta
-          title={data.post?.frontmatter?.title || ''}
+          title={data.post?.frontmatter?.title || ""}
           site={data.site?.meta}
         />
         {isPage ? (
@@ -34,10 +34,10 @@ const Template: React.FC<Props> = ({ data, location }: Props) => {
         )}
       </Layout>
     </div>
-  )
-}
+  );
+};
 
-export default Template
+export default Template;
 
 export const pageQuery = graphql`
   query PostByPath($path: String!) {
@@ -72,4 +72,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

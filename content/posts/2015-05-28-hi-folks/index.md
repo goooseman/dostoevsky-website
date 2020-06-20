@@ -1,8 +1,8 @@
 ---
 title: Markdown 📝
-date: '2015-05-28T22:40:32.169Z'
+date: "2015-05-28T22:40:32.169Z"
 layout: post
-path: '/markdown/'
+path: "/markdown/"
 category: Typography
 tags:
   - Markdown
@@ -34,5 +34,5 @@ Unicode is supported 😄
 
 ```js
 // javascript
-console.log('Hello World!!')
+console.log("Hello World!!");
 ```
