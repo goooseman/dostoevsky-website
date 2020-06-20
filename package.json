@@ -73,23 +73,21 @@
     "dostoevsky"
   ],
   "license": "",
-  "lint-staged": {
-    "*.{ts,tsx,js,json,md}": [
-      "prettier --write"
-    ],
-    "*.md": [
-      "npm run lint:textfix"
-    ]
-  },
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.+(js|json|md)\" --ignore-path .gitignore",
-    "lint": "eslint --fix --ext .js,.jsx --ignore-path .gitignore .",
-    "lint:text": "textlint src/pages/**/index.md",
-    "lint:textfix": "textlint --fix src/pages/**/index.md",
+    "lint:check": "npm run lint:prettier:check . && npm run lint:tsc:check && npm run lint:eslint:check . && npm run lint:stylelint:check .",
+    "lint:write": "npm run lint:prettier:write . && npm run lint:eslint:write . && npm run lint:stylelint:write .",
+    "lint:prettier:check": "prettier --check --ignore-path .gitignore",
+    "lint:prettier:write": "prettier --write --ignore-path .gitignore",
+    "lint:tsc:check": "tsc --noEmit",
+    "lint:eslint:check": "eslint --ext .ts,.tsx --ignore-path .gitignore",
+    "lint:eslint:write": "eslint --ext .ts,.tsx --ignore-path .gitignore --fix",
+    "lint:stylelint:check": "stylelint --ignore-path .gitignore",
+    "lint:stylelint:write": "stylelint --fix --ignore-path .gitignore",
     "test": "prettier --write \"**/*.+(js|jsx|json|css|scss)\""
   }
 }
