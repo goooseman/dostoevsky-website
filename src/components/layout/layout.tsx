@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react'
+// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+// @ts-ignore
 import emergence from 'emergence.js'
 
 import Navibar from '../navibar/navibar'

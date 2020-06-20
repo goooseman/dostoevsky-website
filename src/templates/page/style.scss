@@ -5,7 +5,6 @@ section {
   padding: 50px 0;
   min-height: 300px;
 
-
   &.jumboimage {
     position: relative;
     text-align: left;
@@ -44,7 +43,6 @@ section {
   .section-heading {
     font-family: $font-family-monospace;
   }
-
 
   .slide-left {
     &[data-emergence='visible'] {
