@@ -72,6 +72,10 @@
   "keywords": [
     "dostoevsky"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/goooseman/dostoevsky-website.git"
+  },
   "license": "",
   "main": "n/a",
   "scripts": {
