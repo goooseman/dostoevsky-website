@@ -1,8 +1,7 @@
 import { graphql } from "gatsby";
 import React from "react";
 
-import { IndexQueryQuery, PostByPathQuery } from "../../types/graphql-types";
-import Post from "../templates/post/post";
+import { IndexQueryQuery } from "../../types/graphql-types";
 import Meta from "../components/meta/meta";
 import Layout from "../components/layout/layout";
 
@@ -12,21 +11,12 @@ interface Props {
 }
 
 const BlogIndex: React.FC<Props> = ({ data, location }: Props) => {
-  const posts = data.remark.posts;
   const meta = data.site?.meta;
-
+  const cases = data.allInternalCases?.edges;
   return (
     <Layout location={location}>
       <Meta site={meta} />
-      {posts.map((post, i) => (
-        <Post
-          data={post as PostByPathQuery}
-          options={{
-            isIndex: true,
-          }}
-          key={i}
-        />
-      ))}
+      {JSON.stringify(cases)}
     </Layout>
   );
 };
@@ -45,28 +35,12 @@ export const pageQuery = graphql`
         adsense
       }
     }
-    remark: allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      posts: edges {
-        post: node {
-          html
-          frontmatter {
-            layout
-            title
-            path
-            category
-            tags
-            description
-            date(formatString: "YYYY/MM/DD")
-            image {
-              childImageSharp {
-                fluid(maxWidth: 500) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
+    allInternalCases {
+      edges {
+        node {
+          part
+          exemptionAmnesty
+          exemptionFromImprisonment
         }
       }
     }

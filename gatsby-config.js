@@ -1,4 +1,13 @@
 /* eslint-disable @typescript-eslint/camelcase */
+
+const caseType = {
+  exemptionAmnesty: 0,
+  exemptionFromImprisonment: 0,
+  exemptionOther: 0,
+  part: "String",
+  year: 0,
+};
+
 module.exports = {
   siteMetadata: {
     title: "Gatstrap",
@@ -102,5 +111,53 @@ module.exports = {
     "gatsby-plugin-twitter",
     "gatsby-plugin-typescript",
     "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-source-apiserver",
+      options: {
+        // Type prefix of entities from server
+        typePrefix: "internal__",
+
+        // The url, this should be the endpoint you are attempting to pull data from
+        url: `https://ssapi.ovdinfo.org/api/data`,
+
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json",
+        },
+
+        // Request body
+        data: {
+          breakdown: ["year"],
+          filter: {
+            part: ["105ч.2"],
+            year: [2013, 2014],
+          },
+          param: [
+            "exemptionAmnesty",
+            "exemptionFromImprisonment",
+            "exemptionOther",
+          ],
+        },
+
+        // Name of the data to be downloaded.  Will show in graphQL or be saved to a file
+        // using this name. i.e. posts.json
+        name: `cases`,
+
+        schemaType: caseType,
+
+        // Request parameters
+        // Only available from version 2.1.0
+        params: {},
+
+        // enable disk caching
+        allowCache: false,
+        // if allowCache is true, then the cache will be purged after the
+        // specified amount of time
+        maxCacheDurationSeconds: 60 * 60 * 24,
+
+        verboseOutput: true,
+      },
+    },
   ],
 };
