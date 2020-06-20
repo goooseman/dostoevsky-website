@@ -22,6 +22,9 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': 'error',
+    'no-console': 'error',
+    '@typescript-eslint/ban-types': 'off',
+    '@typescript-eslint/no-empty-interface': 'off',
   },
   settings: {
     react: {
