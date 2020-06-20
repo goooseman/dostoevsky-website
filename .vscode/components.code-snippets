@@ -1,0 +1,45 @@
+{
+  "React Component": {
+    "prefix": "reactComponent",
+    "body": [
+      "import React, { PureComponent } from \"react\";",
+      "import classes from \"./${1:${TM_FILENAME_BASE}}.css\";",
+      "import cn from \"clsx\";",
+      "",
+      "interface ${1:${TM_FILENAME_BASE}}Props {",
+      "\t",
+      "}",
+      "",
+      "class ${1:${TM_FILENAME_BASE}} extends PureComponent<${1:${TM_FILENAME_BASE}}Props> {",
+      "",
+      "\trender(): React.ReactNode {",
+      "\t\treturn (",
+      "\t\t\t<div>",
+      "\t\t\t\t$0",
+      "\t\t\t</div>",
+      "\t\t)",
+      "\t}",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}};"
+    ],
+    "description": "Creates a React component class with ES7 module system and TypeScript interfaces"
+  },
+  "React Component Index": {
+    "prefix": "reactComponentIndex",
+    "body": ["import ${1} from \"./${1}\";", "export default ${1};"]
+  },
+  "React Component Storybook": {
+    "prefix": "reactComponentStorybook",
+    "body": [
+      "import React from \"react\";",
+      "import ${TM_FILENAME_BASE/.stories//} from \"./${TM_FILENAME_BASE/.stories//}\";",
+      "",
+      "export default { title: \"${TM_FILENAME_BASE/.stories//}\", component: ${TM_FILENAME_BASE/.stories//} };",
+      "",
+      "export const withSmth = (): React.ReactNode => (",
+      "\t$0",
+      ");"
+    ]
+  }
+}
