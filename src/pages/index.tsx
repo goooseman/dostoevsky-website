@@ -12,11 +12,19 @@ interface Props {
 
 const BlogIndex: React.FC<Props> = ({ data, location }: Props) => {
   const meta = data.site?.meta;
-  const cases = data.allInternalCases?.edges;
+  const cases = data.allApiServerCases?.edges;
   return (
     <Layout location={location}>
       <Meta site={meta} />
-      {JSON.stringify(cases)}
+      {cases.map((n) => (
+        <ul key={`${n.node.part}-${n.node.year}`}>
+          <li>
+            <a href="/">
+              {n.node.part} ({n.node.year})
+            </a>
+          </li>
+        </ul>
+      ))}
     </Layout>
   );
 };
@@ -35,12 +43,11 @@ export const pageQuery = graphql`
         adsense
       }
     }
-    allInternalCases {
+    allApiServerCases(filter: { id: { ne: "dummy" } }) {
       edges {
         node {
           part
-          exemptionAmnesty
-          exemptionFromImprisonment
+          year
         }
       }
     }

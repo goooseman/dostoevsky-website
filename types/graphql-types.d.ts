@@ -26,6 +26,380 @@ export type Scalars = {
 
 
 
+export type Api_Server__Cases = Node & {
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  acquittal?: Maybe<Scalars['Int']>;
+  addAcquittalOffences?: Maybe<Scalars['Int']>;
+  addAcquittalPersons?: Maybe<Scalars['Int']>;
+  addDismissalOffences?: Maybe<Scalars['Int']>;
+  addDismissalOtherOffences?: Maybe<Scalars['Int']>;
+  addDismissalOtherPersons?: Maybe<Scalars['Int']>;
+  addDismissalPersons?: Maybe<Scalars['Int']>;
+  addDisqualification?: Maybe<Scalars['Int']>;
+  addFine?: Maybe<Scalars['Int']>;
+  addFine100_300?: Maybe<Scalars['Int']>;
+  addFine1M?: Maybe<Scalars['Int']>;
+  addFine25_100?: Maybe<Scalars['Int']>;
+  addFine300_500?: Maybe<Scalars['Int']>;
+  addFine5?: Maybe<Scalars['Int']>;
+  addFine500_1M?: Maybe<Scalars['Int']>;
+  addFine5_25?: Maybe<Scalars['Int']>;
+  addFineSum?: Maybe<Scalars['Int']>;
+  addRestrain?: Maybe<Scalars['Int']>;
+  addTitlesWithdraw?: Maybe<Scalars['Int']>;
+  addTotalOffences?: Maybe<Scalars['Int']>;
+  addTotalPersons?: Maybe<Scalars['Int']>;
+  addUnfitToPleadOffences?: Maybe<Scalars['Int']>;
+  addUnfitToPleadPersons?: Maybe<Scalars['Int']>;
+  coerciveMeasures?: Maybe<Scalars['Int']>;
+  dismissalAbsenceOfEvent?: Maybe<Scalars['Int']>;
+  dismissalAmnesty?: Maybe<Scalars['Int']>;
+  dismissalCourtFine?: Maybe<Scalars['Int']>;
+  dismissalCourtFine100?: Maybe<Scalars['Int']>;
+  dismissalCourtFine25_100?: Maybe<Scalars['Int']>;
+  dismissalCourtFine5?: Maybe<Scalars['Int']>;
+  dismissalCourtFine5_25?: Maybe<Scalars['Int']>;
+  dismissalCourtFineSum?: Maybe<Scalars['Int']>;
+  dismissalOther?: Maybe<Scalars['Int']>;
+  dismissalReconciliation?: Maybe<Scalars['Int']>;
+  dismissalRepentance?: Maybe<Scalars['Int']>;
+  dismissalRepentance2?: Maybe<Scalars['Int']>;
+  exemptionAmnesty?: Maybe<Scalars['Int']>;
+  exemptionFromImprisonment?: Maybe<Scalars['Int']>;
+  exemptionOther?: Maybe<Scalars['Int']>;
+  name?: Maybe<Scalars['String']>;
+  noCrimeNecessity?: Maybe<Scalars['Int']>;
+  noCrimeOther?: Maybe<Scalars['Int']>;
+  noCrimeSelf_defence?: Maybe<Scalars['Int']>;
+  part?: Maybe<Scalars['String']>;
+  primaryArrest?: Maybe<Scalars['Int']>;
+  primaryCommunityService?: Maybe<Scalars['Int']>;
+  primaryCorrectionalLabour?: Maybe<Scalars['Int']>;
+  primaryDisqualification?: Maybe<Scalars['Int']>;
+  primaryFine?: Maybe<Scalars['Int']>;
+  primaryFine100_300?: Maybe<Scalars['Int']>;
+  primaryFine1M?: Maybe<Scalars['Int']>;
+  primaryFine25_100?: Maybe<Scalars['Int']>;
+  primaryFine300_500?: Maybe<Scalars['Int']>;
+  primaryFine5?: Maybe<Scalars['Int']>;
+  primaryFine500_1M?: Maybe<Scalars['Int']>;
+  primaryFine5_25?: Maybe<Scalars['Int']>;
+  primaryFineSum?: Maybe<Scalars['Int']>;
+  primaryForcedLabour?: Maybe<Scalars['Int']>;
+  primaryImprisonment?: Maybe<Scalars['Int']>;
+  primaryImprisonment1?: Maybe<Scalars['Int']>;
+  primaryImprisonment10_15?: Maybe<Scalars['Int']>;
+  primaryImprisonment15_20?: Maybe<Scalars['Int']>;
+  primaryImprisonment1_2?: Maybe<Scalars['Int']>;
+  primaryImprisonment2_3?: Maybe<Scalars['Int']>;
+  primaryImprisonment3_5?: Maybe<Scalars['Int']>;
+  primaryImprisonment5_8?: Maybe<Scalars['Int']>;
+  primaryImprisonment8_10?: Maybe<Scalars['Int']>;
+  primaryImprisonmentUnderLowerLimit?: Maybe<Scalars['Int']>;
+  primaryLifeSentence?: Maybe<Scalars['Int']>;
+  primaryMilitaryDisciplinaryUnit?: Maybe<Scalars['Int']>;
+  primaryOther?: Maybe<Scalars['Int']>;
+  primaryRestrain?: Maybe<Scalars['Int']>;
+  primaryRestrictionsInMilitaryService?: Maybe<Scalars['Int']>;
+  primarySuspended?: Maybe<Scalars['Int']>;
+  totalConvicted?: Maybe<Scalars['Int']>;
+  unfinishedOffence?: Maybe<Scalars['Int']>;
+  year?: Maybe<Scalars['String']>;
+};
+
+export type Api_Server__CasesConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<Api_Server__CasesEdge>;
+  nodes: Array<Api_Server__Cases>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<Api_Server__CasesGroupConnection>;
+};
+
+
+export type Api_Server__CasesConnectionDistinctArgs = {
+  field: Api_Server__CasesFieldsEnum;
+};
+
+
+export type Api_Server__CasesConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field: Api_Server__CasesFieldsEnum;
+};
+
+export type Api_Server__CasesEdge = {
+  next?: Maybe<Api_Server__Cases>;
+  node: Api_Server__Cases;
+  previous?: Maybe<Api_Server__Cases>;
+};
+
+export type Api_Server__CasesFieldsEnum = 
+  | 'id'
+  | 'parent___id'
+  | 'parent___parent___id'
+  | 'parent___parent___parent___id'
+  | 'parent___parent___parent___children'
+  | 'parent___parent___children'
+  | 'parent___parent___children___id'
+  | 'parent___parent___children___children'
+  | 'parent___parent___internal___content'
+  | 'parent___parent___internal___contentDigest'
+  | 'parent___parent___internal___description'
+  | 'parent___parent___internal___fieldOwners'
+  | 'parent___parent___internal___ignoreType'
+  | 'parent___parent___internal___mediaType'
+  | 'parent___parent___internal___owner'
+  | 'parent___parent___internal___type'
+  | 'parent___children'
+  | 'parent___children___id'
+  | 'parent___children___parent___id'
+  | 'parent___children___parent___children'
+  | 'parent___children___children'
+  | 'parent___children___children___id'
+  | 'parent___children___children___children'
+  | 'parent___children___internal___content'
+  | 'parent___children___internal___contentDigest'
+  | 'parent___children___internal___description'
+  | 'parent___children___internal___fieldOwners'
+  | 'parent___children___internal___ignoreType'
+  | 'parent___children___internal___mediaType'
+  | 'parent___children___internal___owner'
+  | 'parent___children___internal___type'
+  | 'parent___internal___content'
+  | 'parent___internal___contentDigest'
+  | 'parent___internal___description'
+  | 'parent___internal___fieldOwners'
+  | 'parent___internal___ignoreType'
+  | 'parent___internal___mediaType'
+  | 'parent___internal___owner'
+  | 'parent___internal___type'
+  | 'children'
+  | 'children___id'
+  | 'children___parent___id'
+  | 'children___parent___parent___id'
+  | 'children___parent___parent___children'
+  | 'children___parent___children'
+  | 'children___parent___children___id'
+  | 'children___parent___children___children'
+  | 'children___parent___internal___content'
+  | 'children___parent___internal___contentDigest'
+  | 'children___parent___internal___description'
+  | 'children___parent___internal___fieldOwners'
+  | 'children___parent___internal___ignoreType'
+  | 'children___parent___internal___mediaType'
+  | 'children___parent___internal___owner'
+  | 'children___parent___internal___type'
+  | 'children___children'
+  | 'children___children___id'
+  | 'children___children___parent___id'
+  | 'children___children___parent___children'
+  | 'children___children___children'
+  | 'children___children___children___id'
+  | 'children___children___children___children'
+  | 'children___children___internal___content'
+  | 'children___children___internal___contentDigest'
+  | 'children___children___internal___description'
+  | 'children___children___internal___fieldOwners'
+  | 'children___children___internal___ignoreType'
+  | 'children___children___internal___mediaType'
+  | 'children___children___internal___owner'
+  | 'children___children___internal___type'
+  | 'children___internal___content'
+  | 'children___internal___contentDigest'
+  | 'children___internal___description'
+  | 'children___internal___fieldOwners'
+  | 'children___internal___ignoreType'
+  | 'children___internal___mediaType'
+  | 'children___internal___owner'
+  | 'children___internal___type'
+  | 'internal___content'
+  | 'internal___contentDigest'
+  | 'internal___description'
+  | 'internal___fieldOwners'
+  | 'internal___ignoreType'
+  | 'internal___mediaType'
+  | 'internal___owner'
+  | 'internal___type'
+  | 'acquittal'
+  | 'addAcquittalOffences'
+  | 'addAcquittalPersons'
+  | 'addDismissalOffences'
+  | 'addDismissalOtherOffences'
+  | 'addDismissalOtherPersons'
+  | 'addDismissalPersons'
+  | 'addDisqualification'
+  | 'addFine'
+  | 'addFine100_300'
+  | 'addFine1M'
+  | 'addFine25_100'
+  | 'addFine300_500'
+  | 'addFine5'
+  | 'addFine500_1M'
+  | 'addFine5_25'
+  | 'addFineSum'
+  | 'addRestrain'
+  | 'addTitlesWithdraw'
+  | 'addTotalOffences'
+  | 'addTotalPersons'
+  | 'addUnfitToPleadOffences'
+  | 'addUnfitToPleadPersons'
+  | 'coerciveMeasures'
+  | 'dismissalAbsenceOfEvent'
+  | 'dismissalAmnesty'
+  | 'dismissalCourtFine'
+  | 'dismissalCourtFine100'
+  | 'dismissalCourtFine25_100'
+  | 'dismissalCourtFine5'
+  | 'dismissalCourtFine5_25'
+  | 'dismissalCourtFineSum'
+  | 'dismissalOther'
+  | 'dismissalReconciliation'
+  | 'dismissalRepentance'
+  | 'dismissalRepentance2'
+  | 'exemptionAmnesty'
+  | 'exemptionFromImprisonment'
+  | 'exemptionOther'
+  | 'name'
+  | 'noCrimeNecessity'
+  | 'noCrimeOther'
+  | 'noCrimeSelf_defence'
+  | 'part'
+  | 'primaryArrest'
+  | 'primaryCommunityService'
+  | 'primaryCorrectionalLabour'
+  | 'primaryDisqualification'
+  | 'primaryFine'
+  | 'primaryFine100_300'
+  | 'primaryFine1M'
+  | 'primaryFine25_100'
+  | 'primaryFine300_500'
+  | 'primaryFine5'
+  | 'primaryFine500_1M'
+  | 'primaryFine5_25'
+  | 'primaryFineSum'
+  | 'primaryForcedLabour'
+  | 'primaryImprisonment'
+  | 'primaryImprisonment1'
+  | 'primaryImprisonment10_15'
+  | 'primaryImprisonment15_20'
+  | 'primaryImprisonment1_2'
+  | 'primaryImprisonment2_3'
+  | 'primaryImprisonment3_5'
+  | 'primaryImprisonment5_8'
+  | 'primaryImprisonment8_10'
+  | 'primaryImprisonmentUnderLowerLimit'
+  | 'primaryLifeSentence'
+  | 'primaryMilitaryDisciplinaryUnit'
+  | 'primaryOther'
+  | 'primaryRestrain'
+  | 'primaryRestrictionsInMilitaryService'
+  | 'primarySuspended'
+  | 'totalConvicted'
+  | 'unfinishedOffence'
+  | 'year';
+
+export type Api_Server__CasesFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  acquittal?: Maybe<IntQueryOperatorInput>;
+  addAcquittalOffences?: Maybe<IntQueryOperatorInput>;
+  addAcquittalPersons?: Maybe<IntQueryOperatorInput>;
+  addDismissalOffences?: Maybe<IntQueryOperatorInput>;
+  addDismissalOtherOffences?: Maybe<IntQueryOperatorInput>;
+  addDismissalOtherPersons?: Maybe<IntQueryOperatorInput>;
+  addDismissalPersons?: Maybe<IntQueryOperatorInput>;
+  addDisqualification?: Maybe<IntQueryOperatorInput>;
+  addFine?: Maybe<IntQueryOperatorInput>;
+  addFine100_300?: Maybe<IntQueryOperatorInput>;
+  addFine1M?: Maybe<IntQueryOperatorInput>;
+  addFine25_100?: Maybe<IntQueryOperatorInput>;
+  addFine300_500?: Maybe<IntQueryOperatorInput>;
+  addFine5?: Maybe<IntQueryOperatorInput>;
+  addFine500_1M?: Maybe<IntQueryOperatorInput>;
+  addFine5_25?: Maybe<IntQueryOperatorInput>;
+  addFineSum?: Maybe<IntQueryOperatorInput>;
+  addRestrain?: Maybe<IntQueryOperatorInput>;
+  addTitlesWithdraw?: Maybe<IntQueryOperatorInput>;
+  addTotalOffences?: Maybe<IntQueryOperatorInput>;
+  addTotalPersons?: Maybe<IntQueryOperatorInput>;
+  addUnfitToPleadOffences?: Maybe<IntQueryOperatorInput>;
+  addUnfitToPleadPersons?: Maybe<IntQueryOperatorInput>;
+  coerciveMeasures?: Maybe<IntQueryOperatorInput>;
+  dismissalAbsenceOfEvent?: Maybe<IntQueryOperatorInput>;
+  dismissalAmnesty?: Maybe<IntQueryOperatorInput>;
+  dismissalCourtFine?: Maybe<IntQueryOperatorInput>;
+  dismissalCourtFine100?: Maybe<IntQueryOperatorInput>;
+  dismissalCourtFine25_100?: Maybe<IntQueryOperatorInput>;
+  dismissalCourtFine5?: Maybe<IntQueryOperatorInput>;
+  dismissalCourtFine5_25?: Maybe<IntQueryOperatorInput>;
+  dismissalCourtFineSum?: Maybe<IntQueryOperatorInput>;
+  dismissalOther?: Maybe<IntQueryOperatorInput>;
+  dismissalReconciliation?: Maybe<IntQueryOperatorInput>;
+  dismissalRepentance?: Maybe<IntQueryOperatorInput>;
+  dismissalRepentance2?: Maybe<IntQueryOperatorInput>;
+  exemptionAmnesty?: Maybe<IntQueryOperatorInput>;
+  exemptionFromImprisonment?: Maybe<IntQueryOperatorInput>;
+  exemptionOther?: Maybe<IntQueryOperatorInput>;
+  name?: Maybe<StringQueryOperatorInput>;
+  noCrimeNecessity?: Maybe<IntQueryOperatorInput>;
+  noCrimeOther?: Maybe<IntQueryOperatorInput>;
+  noCrimeSelf_defence?: Maybe<IntQueryOperatorInput>;
+  part?: Maybe<StringQueryOperatorInput>;
+  primaryArrest?: Maybe<IntQueryOperatorInput>;
+  primaryCommunityService?: Maybe<IntQueryOperatorInput>;
+  primaryCorrectionalLabour?: Maybe<IntQueryOperatorInput>;
+  primaryDisqualification?: Maybe<IntQueryOperatorInput>;
+  primaryFine?: Maybe<IntQueryOperatorInput>;
+  primaryFine100_300?: Maybe<IntQueryOperatorInput>;
+  primaryFine1M?: Maybe<IntQueryOperatorInput>;
+  primaryFine25_100?: Maybe<IntQueryOperatorInput>;
+  primaryFine300_500?: Maybe<IntQueryOperatorInput>;
+  primaryFine5?: Maybe<IntQueryOperatorInput>;
+  primaryFine500_1M?: Maybe<IntQueryOperatorInput>;
+  primaryFine5_25?: Maybe<IntQueryOperatorInput>;
+  primaryFineSum?: Maybe<IntQueryOperatorInput>;
+  primaryForcedLabour?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment1?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment10_15?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment15_20?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment1_2?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment2_3?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment3_5?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment5_8?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment8_10?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonmentUnderLowerLimit?: Maybe<IntQueryOperatorInput>;
+  primaryLifeSentence?: Maybe<IntQueryOperatorInput>;
+  primaryMilitaryDisciplinaryUnit?: Maybe<IntQueryOperatorInput>;
+  primaryOther?: Maybe<IntQueryOperatorInput>;
+  primaryRestrain?: Maybe<IntQueryOperatorInput>;
+  primaryRestrictionsInMilitaryService?: Maybe<IntQueryOperatorInput>;
+  primarySuspended?: Maybe<IntQueryOperatorInput>;
+  totalConvicted?: Maybe<IntQueryOperatorInput>;
+  unfinishedOffence?: Maybe<IntQueryOperatorInput>;
+  year?: Maybe<StringQueryOperatorInput>;
+};
+
+export type Api_Server__CasesGroupConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<Api_Server__CasesEdge>;
+  nodes: Array<Api_Server__Cases>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type Api_Server__CasesSortInput = {
+  fields?: Maybe<Array<Maybe<Api_Server__CasesFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
 export type BooleanQueryOperatorInput = {
   eq?: Maybe<Scalars['Boolean']>;
   ne?: Maybe<Scalars['Boolean']>;
@@ -1365,164 +1739,6 @@ export type Internal = {
   type: Scalars['String'];
 };
 
-export type Internal__Cases = Node & {
-  id: Scalars['ID'];
-  parent?: Maybe<Node>;
-  children: Array<Node>;
-  internal: Internal;
-  exemptionAmnesty?: Maybe<Scalars['Int']>;
-  exemptionFromImprisonment?: Maybe<Scalars['Int']>;
-  exemptionOther?: Maybe<Scalars['Int']>;
-  part?: Maybe<Scalars['String']>;
-  year?: Maybe<Scalars['Int']>;
-};
-
-export type Internal__CasesConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<Internal__CasesEdge>;
-  nodes: Array<Internal__Cases>;
-  pageInfo: PageInfo;
-  distinct: Array<Scalars['String']>;
-  group: Array<Internal__CasesGroupConnection>;
-};
-
-
-export type Internal__CasesConnectionDistinctArgs = {
-  field: Internal__CasesFieldsEnum;
-};
-
-
-export type Internal__CasesConnectionGroupArgs = {
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-  field: Internal__CasesFieldsEnum;
-};
-
-export type Internal__CasesEdge = {
-  next?: Maybe<Internal__Cases>;
-  node: Internal__Cases;
-  previous?: Maybe<Internal__Cases>;
-};
-
-export type Internal__CasesFieldsEnum = 
-  | 'id'
-  | 'parent___id'
-  | 'parent___parent___id'
-  | 'parent___parent___parent___id'
-  | 'parent___parent___parent___children'
-  | 'parent___parent___children'
-  | 'parent___parent___children___id'
-  | 'parent___parent___children___children'
-  | 'parent___parent___internal___content'
-  | 'parent___parent___internal___contentDigest'
-  | 'parent___parent___internal___description'
-  | 'parent___parent___internal___fieldOwners'
-  | 'parent___parent___internal___ignoreType'
-  | 'parent___parent___internal___mediaType'
-  | 'parent___parent___internal___owner'
-  | 'parent___parent___internal___type'
-  | 'parent___children'
-  | 'parent___children___id'
-  | 'parent___children___parent___id'
-  | 'parent___children___parent___children'
-  | 'parent___children___children'
-  | 'parent___children___children___id'
-  | 'parent___children___children___children'
-  | 'parent___children___internal___content'
-  | 'parent___children___internal___contentDigest'
-  | 'parent___children___internal___description'
-  | 'parent___children___internal___fieldOwners'
-  | 'parent___children___internal___ignoreType'
-  | 'parent___children___internal___mediaType'
-  | 'parent___children___internal___owner'
-  | 'parent___children___internal___type'
-  | 'parent___internal___content'
-  | 'parent___internal___contentDigest'
-  | 'parent___internal___description'
-  | 'parent___internal___fieldOwners'
-  | 'parent___internal___ignoreType'
-  | 'parent___internal___mediaType'
-  | 'parent___internal___owner'
-  | 'parent___internal___type'
-  | 'children'
-  | 'children___id'
-  | 'children___parent___id'
-  | 'children___parent___parent___id'
-  | 'children___parent___parent___children'
-  | 'children___parent___children'
-  | 'children___parent___children___id'
-  | 'children___parent___children___children'
-  | 'children___parent___internal___content'
-  | 'children___parent___internal___contentDigest'
-  | 'children___parent___internal___description'
-  | 'children___parent___internal___fieldOwners'
-  | 'children___parent___internal___ignoreType'
-  | 'children___parent___internal___mediaType'
-  | 'children___parent___internal___owner'
-  | 'children___parent___internal___type'
-  | 'children___children'
-  | 'children___children___id'
-  | 'children___children___parent___id'
-  | 'children___children___parent___children'
-  | 'children___children___children'
-  | 'children___children___children___id'
-  | 'children___children___children___children'
-  | 'children___children___internal___content'
-  | 'children___children___internal___contentDigest'
-  | 'children___children___internal___description'
-  | 'children___children___internal___fieldOwners'
-  | 'children___children___internal___ignoreType'
-  | 'children___children___internal___mediaType'
-  | 'children___children___internal___owner'
-  | 'children___children___internal___type'
-  | 'children___internal___content'
-  | 'children___internal___contentDigest'
-  | 'children___internal___description'
-  | 'children___internal___fieldOwners'
-  | 'children___internal___ignoreType'
-  | 'children___internal___mediaType'
-  | 'children___internal___owner'
-  | 'children___internal___type'
-  | 'internal___content'
-  | 'internal___contentDigest'
-  | 'internal___description'
-  | 'internal___fieldOwners'
-  | 'internal___ignoreType'
-  | 'internal___mediaType'
-  | 'internal___owner'
-  | 'internal___type'
-  | 'exemptionAmnesty'
-  | 'exemptionFromImprisonment'
-  | 'exemptionOther'
-  | 'part'
-  | 'year';
-
-export type Internal__CasesFilterInput = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  exemptionAmnesty?: Maybe<IntQueryOperatorInput>;
-  exemptionFromImprisonment?: Maybe<IntQueryOperatorInput>;
-  exemptionOther?: Maybe<IntQueryOperatorInput>;
-  part?: Maybe<StringQueryOperatorInput>;
-  year?: Maybe<IntQueryOperatorInput>;
-};
-
-export type Internal__CasesGroupConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<Internal__CasesEdge>;
-  nodes: Array<Internal__Cases>;
-  pageInfo: PageInfo;
-  field: Scalars['String'];
-  fieldValue?: Maybe<Scalars['String']>;
-};
-
-export type Internal__CasesSortInput = {
-  fields?: Maybe<Array<Maybe<Internal__CasesFieldsEnum>>>;
-  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
-};
-
 export type InternalFilterInput = {
   content?: Maybe<StringQueryOperatorInput>;
   contentDigest?: Maybe<StringQueryOperatorInput>;
@@ -1962,8 +2178,8 @@ export type Query = {
   allMarkdownRemark: MarkdownRemarkConnection;
   imageSharp?: Maybe<ImageSharp>;
   allImageSharp: ImageSharpConnection;
-  internalCases?: Maybe<Internal__Cases>;
-  allInternalCases: Internal__CasesConnection;
+  apiServerCases?: Maybe<Api_Server__Cases>;
+  allApiServerCases: Api_Server__CasesConnection;
   siteBuildMetadata?: Maybe<SiteBuildMetadata>;
   allSiteBuildMetadata: SiteBuildMetadataConnection;
   sitePlugin?: Maybe<SitePlugin>;
@@ -2168,22 +2384,94 @@ export type QueryAllImageSharpArgs = {
 };
 
 
-export type QueryInternalCasesArgs = {
+export type QueryApiServerCasesArgs = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
+  acquittal?: Maybe<IntQueryOperatorInput>;
+  addAcquittalOffences?: Maybe<IntQueryOperatorInput>;
+  addAcquittalPersons?: Maybe<IntQueryOperatorInput>;
+  addDismissalOffences?: Maybe<IntQueryOperatorInput>;
+  addDismissalOtherOffences?: Maybe<IntQueryOperatorInput>;
+  addDismissalOtherPersons?: Maybe<IntQueryOperatorInput>;
+  addDismissalPersons?: Maybe<IntQueryOperatorInput>;
+  addDisqualification?: Maybe<IntQueryOperatorInput>;
+  addFine?: Maybe<IntQueryOperatorInput>;
+  addFine100_300?: Maybe<IntQueryOperatorInput>;
+  addFine1M?: Maybe<IntQueryOperatorInput>;
+  addFine25_100?: Maybe<IntQueryOperatorInput>;
+  addFine300_500?: Maybe<IntQueryOperatorInput>;
+  addFine5?: Maybe<IntQueryOperatorInput>;
+  addFine500_1M?: Maybe<IntQueryOperatorInput>;
+  addFine5_25?: Maybe<IntQueryOperatorInput>;
+  addFineSum?: Maybe<IntQueryOperatorInput>;
+  addRestrain?: Maybe<IntQueryOperatorInput>;
+  addTitlesWithdraw?: Maybe<IntQueryOperatorInput>;
+  addTotalOffences?: Maybe<IntQueryOperatorInput>;
+  addTotalPersons?: Maybe<IntQueryOperatorInput>;
+  addUnfitToPleadOffences?: Maybe<IntQueryOperatorInput>;
+  addUnfitToPleadPersons?: Maybe<IntQueryOperatorInput>;
+  coerciveMeasures?: Maybe<IntQueryOperatorInput>;
+  dismissalAbsenceOfEvent?: Maybe<IntQueryOperatorInput>;
+  dismissalAmnesty?: Maybe<IntQueryOperatorInput>;
+  dismissalCourtFine?: Maybe<IntQueryOperatorInput>;
+  dismissalCourtFine100?: Maybe<IntQueryOperatorInput>;
+  dismissalCourtFine25_100?: Maybe<IntQueryOperatorInput>;
+  dismissalCourtFine5?: Maybe<IntQueryOperatorInput>;
+  dismissalCourtFine5_25?: Maybe<IntQueryOperatorInput>;
+  dismissalCourtFineSum?: Maybe<IntQueryOperatorInput>;
+  dismissalOther?: Maybe<IntQueryOperatorInput>;
+  dismissalReconciliation?: Maybe<IntQueryOperatorInput>;
+  dismissalRepentance?: Maybe<IntQueryOperatorInput>;
+  dismissalRepentance2?: Maybe<IntQueryOperatorInput>;
   exemptionAmnesty?: Maybe<IntQueryOperatorInput>;
   exemptionFromImprisonment?: Maybe<IntQueryOperatorInput>;
   exemptionOther?: Maybe<IntQueryOperatorInput>;
+  name?: Maybe<StringQueryOperatorInput>;
+  noCrimeNecessity?: Maybe<IntQueryOperatorInput>;
+  noCrimeOther?: Maybe<IntQueryOperatorInput>;
+  noCrimeSelf_defence?: Maybe<IntQueryOperatorInput>;
   part?: Maybe<StringQueryOperatorInput>;
-  year?: Maybe<IntQueryOperatorInput>;
+  primaryArrest?: Maybe<IntQueryOperatorInput>;
+  primaryCommunityService?: Maybe<IntQueryOperatorInput>;
+  primaryCorrectionalLabour?: Maybe<IntQueryOperatorInput>;
+  primaryDisqualification?: Maybe<IntQueryOperatorInput>;
+  primaryFine?: Maybe<IntQueryOperatorInput>;
+  primaryFine100_300?: Maybe<IntQueryOperatorInput>;
+  primaryFine1M?: Maybe<IntQueryOperatorInput>;
+  primaryFine25_100?: Maybe<IntQueryOperatorInput>;
+  primaryFine300_500?: Maybe<IntQueryOperatorInput>;
+  primaryFine5?: Maybe<IntQueryOperatorInput>;
+  primaryFine500_1M?: Maybe<IntQueryOperatorInput>;
+  primaryFine5_25?: Maybe<IntQueryOperatorInput>;
+  primaryFineSum?: Maybe<IntQueryOperatorInput>;
+  primaryForcedLabour?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment1?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment10_15?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment15_20?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment1_2?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment2_3?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment3_5?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment5_8?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment8_10?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonmentUnderLowerLimit?: Maybe<IntQueryOperatorInput>;
+  primaryLifeSentence?: Maybe<IntQueryOperatorInput>;
+  primaryMilitaryDisciplinaryUnit?: Maybe<IntQueryOperatorInput>;
+  primaryOther?: Maybe<IntQueryOperatorInput>;
+  primaryRestrain?: Maybe<IntQueryOperatorInput>;
+  primaryRestrictionsInMilitaryService?: Maybe<IntQueryOperatorInput>;
+  primarySuspended?: Maybe<IntQueryOperatorInput>;
+  totalConvicted?: Maybe<IntQueryOperatorInput>;
+  unfinishedOffence?: Maybe<IntQueryOperatorInput>;
+  year?: Maybe<StringQueryOperatorInput>;
 };
 
 
-export type QueryAllInternalCasesArgs = {
-  filter?: Maybe<Internal__CasesFilterInput>;
-  sort?: Maybe<Internal__CasesSortInput>;
+export type QueryAllApiServerCasesArgs = {
+  filter?: Maybe<Api_Server__CasesFilterInput>;
+  sort?: Maybe<Api_Server__CasesSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
@@ -2750,16 +3038,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___maxWidth'
   | 'pluginCreator___pluginOptions___linkImagesToOriginal'
   | 'pluginCreator___pluginOptions___wrapperStyle'
-  | 'pluginCreator___pluginOptions___pathPrefix'
-  | 'pluginCreator___pluginOptions___backgroundColor'
-  | 'pluginCreator___pluginOptions___showCaptions'
-  | 'pluginCreator___pluginOptions___markdownCaptions'
-  | 'pluginCreator___pluginOptions___withWebp'
-  | 'pluginCreator___pluginOptions___tracedSVG'
-  | 'pluginCreator___pluginOptions___loading'
-  | 'pluginCreator___pluginOptions___disableBgImageOnAlpha'
-  | 'pluginCreator___pluginOptions___disableBgImage'
-  | 'pluginCreator___pluginOptions___ignoreFileExtensions'
   | 'pluginCreator___pluginOptions___short_name'
   | 'pluginCreator___pluginOptions___description'
   | 'pluginCreator___pluginOptions___homepage_url'
@@ -2786,10 +3064,81 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___headers___Content_Type'
   | 'pluginCreator___pluginOptions___data___breakdown'
   | 'pluginCreator___pluginOptions___data___param'
+  | 'pluginCreator___pluginOptions___schemaType___acquittal'
+  | 'pluginCreator___pluginOptions___schemaType___addAcquittalOffences'
+  | 'pluginCreator___pluginOptions___schemaType___addAcquittalPersons'
+  | 'pluginCreator___pluginOptions___schemaType___addDismissalOffences'
+  | 'pluginCreator___pluginOptions___schemaType___addDismissalOtherOffences'
+  | 'pluginCreator___pluginOptions___schemaType___addDismissalOtherPersons'
+  | 'pluginCreator___pluginOptions___schemaType___addDismissalPersons'
+  | 'pluginCreator___pluginOptions___schemaType___addDisqualification'
+  | 'pluginCreator___pluginOptions___schemaType___addFine'
+  | 'pluginCreator___pluginOptions___schemaType___addFine100_300'
+  | 'pluginCreator___pluginOptions___schemaType___addFine1M'
+  | 'pluginCreator___pluginOptions___schemaType___addFine25_100'
+  | 'pluginCreator___pluginOptions___schemaType___addFine300_500'
+  | 'pluginCreator___pluginOptions___schemaType___addFine5'
+  | 'pluginCreator___pluginOptions___schemaType___addFine500_1M'
+  | 'pluginCreator___pluginOptions___schemaType___addFine5_25'
+  | 'pluginCreator___pluginOptions___schemaType___addFineSum'
+  | 'pluginCreator___pluginOptions___schemaType___addRestrain'
+  | 'pluginCreator___pluginOptions___schemaType___addTitlesWithdraw'
+  | 'pluginCreator___pluginOptions___schemaType___addTotalOffences'
+  | 'pluginCreator___pluginOptions___schemaType___addTotalPersons'
+  | 'pluginCreator___pluginOptions___schemaType___addUnfitToPleadOffences'
+  | 'pluginCreator___pluginOptions___schemaType___addUnfitToPleadPersons'
+  | 'pluginCreator___pluginOptions___schemaType___coerciveMeasures'
+  | 'pluginCreator___pluginOptions___schemaType___dismissalAbsenceOfEvent'
+  | 'pluginCreator___pluginOptions___schemaType___dismissalAmnesty'
+  | 'pluginCreator___pluginOptions___schemaType___dismissalCourtFine'
+  | 'pluginCreator___pluginOptions___schemaType___dismissalCourtFine100'
+  | 'pluginCreator___pluginOptions___schemaType___dismissalCourtFine25_100'
+  | 'pluginCreator___pluginOptions___schemaType___dismissalCourtFine5'
+  | 'pluginCreator___pluginOptions___schemaType___dismissalCourtFine5_25'
+  | 'pluginCreator___pluginOptions___schemaType___dismissalCourtFineSum'
+  | 'pluginCreator___pluginOptions___schemaType___dismissalOther'
+  | 'pluginCreator___pluginOptions___schemaType___dismissalReconciliation'
+  | 'pluginCreator___pluginOptions___schemaType___dismissalRepentance'
+  | 'pluginCreator___pluginOptions___schemaType___dismissalRepentance2'
   | 'pluginCreator___pluginOptions___schemaType___exemptionAmnesty'
   | 'pluginCreator___pluginOptions___schemaType___exemptionFromImprisonment'
   | 'pluginCreator___pluginOptions___schemaType___exemptionOther'
+  | 'pluginCreator___pluginOptions___schemaType___noCrimeNecessity'
+  | 'pluginCreator___pluginOptions___schemaType___noCrimeOther'
+  | 'pluginCreator___pluginOptions___schemaType___noCrimeSelf_defence'
   | 'pluginCreator___pluginOptions___schemaType___part'
+  | 'pluginCreator___pluginOptions___schemaType___primaryArrest'
+  | 'pluginCreator___pluginOptions___schemaType___primaryCommunityService'
+  | 'pluginCreator___pluginOptions___schemaType___primaryCorrectionalLabour'
+  | 'pluginCreator___pluginOptions___schemaType___primaryDisqualification'
+  | 'pluginCreator___pluginOptions___schemaType___primaryFine'
+  | 'pluginCreator___pluginOptions___schemaType___primaryFine100_300'
+  | 'pluginCreator___pluginOptions___schemaType___primaryFine1M'
+  | 'pluginCreator___pluginOptions___schemaType___primaryFine25_100'
+  | 'pluginCreator___pluginOptions___schemaType___primaryFine300_500'
+  | 'pluginCreator___pluginOptions___schemaType___primaryFine5'
+  | 'pluginCreator___pluginOptions___schemaType___primaryFine500_1M'
+  | 'pluginCreator___pluginOptions___schemaType___primaryFine5_25'
+  | 'pluginCreator___pluginOptions___schemaType___primaryFineSum'
+  | 'pluginCreator___pluginOptions___schemaType___primaryForcedLabour'
+  | 'pluginCreator___pluginOptions___schemaType___primaryImprisonment'
+  | 'pluginCreator___pluginOptions___schemaType___primaryImprisonment1'
+  | 'pluginCreator___pluginOptions___schemaType___primaryImprisonment10_15'
+  | 'pluginCreator___pluginOptions___schemaType___primaryImprisonment15_20'
+  | 'pluginCreator___pluginOptions___schemaType___primaryImprisonment1_2'
+  | 'pluginCreator___pluginOptions___schemaType___primaryImprisonment2_3'
+  | 'pluginCreator___pluginOptions___schemaType___primaryImprisonment3_5'
+  | 'pluginCreator___pluginOptions___schemaType___primaryImprisonment5_8'
+  | 'pluginCreator___pluginOptions___schemaType___primaryImprisonment8_10'
+  | 'pluginCreator___pluginOptions___schemaType___primaryImprisonmentUnderLowerLimit'
+  | 'pluginCreator___pluginOptions___schemaType___primaryLifeSentence'
+  | 'pluginCreator___pluginOptions___schemaType___primaryMilitaryDisciplinaryUnit'
+  | 'pluginCreator___pluginOptions___schemaType___primaryOther'
+  | 'pluginCreator___pluginOptions___schemaType___primaryRestrain'
+  | 'pluginCreator___pluginOptions___schemaType___primaryRestrictionsInMilitaryService'
+  | 'pluginCreator___pluginOptions___schemaType___primarySuspended'
+  | 'pluginCreator___pluginOptions___schemaType___totalConvicted'
+  | 'pluginCreator___pluginOptions___schemaType___unfinishedOffence'
   | 'pluginCreator___pluginOptions___schemaType___year'
   | 'pluginCreator___pluginOptions___allowCache'
   | 'pluginCreator___pluginOptions___maxCacheDurationSeconds'
@@ -2988,16 +3337,6 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___plugins___pluginOptions___maxWidth'
   | 'pluginOptions___plugins___pluginOptions___linkImagesToOriginal'
   | 'pluginOptions___plugins___pluginOptions___wrapperStyle'
-  | 'pluginOptions___plugins___pluginOptions___pathPrefix'
-  | 'pluginOptions___plugins___pluginOptions___backgroundColor'
-  | 'pluginOptions___plugins___pluginOptions___showCaptions'
-  | 'pluginOptions___plugins___pluginOptions___markdownCaptions'
-  | 'pluginOptions___plugins___pluginOptions___withWebp'
-  | 'pluginOptions___plugins___pluginOptions___tracedSVG'
-  | 'pluginOptions___plugins___pluginOptions___loading'
-  | 'pluginOptions___plugins___pluginOptions___disableBgImageOnAlpha'
-  | 'pluginOptions___plugins___pluginOptions___disableBgImage'
-  | 'pluginOptions___plugins___pluginOptions___ignoreFileExtensions'
   | 'pluginOptions___plugins___browserAPIs'
   | 'pluginOptions___plugins___pluginFilepath'
   | 'pluginOptions___path'
@@ -3005,16 +3344,6 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___maxWidth'
   | 'pluginOptions___linkImagesToOriginal'
   | 'pluginOptions___wrapperStyle'
-  | 'pluginOptions___pathPrefix'
-  | 'pluginOptions___backgroundColor'
-  | 'pluginOptions___showCaptions'
-  | 'pluginOptions___markdownCaptions'
-  | 'pluginOptions___withWebp'
-  | 'pluginOptions___tracedSVG'
-  | 'pluginOptions___loading'
-  | 'pluginOptions___disableBgImageOnAlpha'
-  | 'pluginOptions___disableBgImage'
-  | 'pluginOptions___ignoreFileExtensions'
   | 'pluginOptions___short_name'
   | 'pluginOptions___description'
   | 'pluginOptions___homepage_url'
@@ -3040,13 +3369,82 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___method'
   | 'pluginOptions___headers___Content_Type'
   | 'pluginOptions___data___breakdown'
-  | 'pluginOptions___data___filter___part'
-  | 'pluginOptions___data___filter___year'
   | 'pluginOptions___data___param'
+  | 'pluginOptions___schemaType___acquittal'
+  | 'pluginOptions___schemaType___addAcquittalOffences'
+  | 'pluginOptions___schemaType___addAcquittalPersons'
+  | 'pluginOptions___schemaType___addDismissalOffences'
+  | 'pluginOptions___schemaType___addDismissalOtherOffences'
+  | 'pluginOptions___schemaType___addDismissalOtherPersons'
+  | 'pluginOptions___schemaType___addDismissalPersons'
+  | 'pluginOptions___schemaType___addDisqualification'
+  | 'pluginOptions___schemaType___addFine'
+  | 'pluginOptions___schemaType___addFine100_300'
+  | 'pluginOptions___schemaType___addFine1M'
+  | 'pluginOptions___schemaType___addFine25_100'
+  | 'pluginOptions___schemaType___addFine300_500'
+  | 'pluginOptions___schemaType___addFine5'
+  | 'pluginOptions___schemaType___addFine500_1M'
+  | 'pluginOptions___schemaType___addFine5_25'
+  | 'pluginOptions___schemaType___addFineSum'
+  | 'pluginOptions___schemaType___addRestrain'
+  | 'pluginOptions___schemaType___addTitlesWithdraw'
+  | 'pluginOptions___schemaType___addTotalOffences'
+  | 'pluginOptions___schemaType___addTotalPersons'
+  | 'pluginOptions___schemaType___addUnfitToPleadOffences'
+  | 'pluginOptions___schemaType___addUnfitToPleadPersons'
+  | 'pluginOptions___schemaType___coerciveMeasures'
+  | 'pluginOptions___schemaType___dismissalAbsenceOfEvent'
+  | 'pluginOptions___schemaType___dismissalAmnesty'
+  | 'pluginOptions___schemaType___dismissalCourtFine'
+  | 'pluginOptions___schemaType___dismissalCourtFine100'
+  | 'pluginOptions___schemaType___dismissalCourtFine25_100'
+  | 'pluginOptions___schemaType___dismissalCourtFine5'
+  | 'pluginOptions___schemaType___dismissalCourtFine5_25'
+  | 'pluginOptions___schemaType___dismissalCourtFineSum'
+  | 'pluginOptions___schemaType___dismissalOther'
+  | 'pluginOptions___schemaType___dismissalReconciliation'
+  | 'pluginOptions___schemaType___dismissalRepentance'
+  | 'pluginOptions___schemaType___dismissalRepentance2'
   | 'pluginOptions___schemaType___exemptionAmnesty'
   | 'pluginOptions___schemaType___exemptionFromImprisonment'
   | 'pluginOptions___schemaType___exemptionOther'
+  | 'pluginOptions___schemaType___noCrimeNecessity'
+  | 'pluginOptions___schemaType___noCrimeOther'
+  | 'pluginOptions___schemaType___noCrimeSelf_defence'
   | 'pluginOptions___schemaType___part'
+  | 'pluginOptions___schemaType___primaryArrest'
+  | 'pluginOptions___schemaType___primaryCommunityService'
+  | 'pluginOptions___schemaType___primaryCorrectionalLabour'
+  | 'pluginOptions___schemaType___primaryDisqualification'
+  | 'pluginOptions___schemaType___primaryFine'
+  | 'pluginOptions___schemaType___primaryFine100_300'
+  | 'pluginOptions___schemaType___primaryFine1M'
+  | 'pluginOptions___schemaType___primaryFine25_100'
+  | 'pluginOptions___schemaType___primaryFine300_500'
+  | 'pluginOptions___schemaType___primaryFine5'
+  | 'pluginOptions___schemaType___primaryFine500_1M'
+  | 'pluginOptions___schemaType___primaryFine5_25'
+  | 'pluginOptions___schemaType___primaryFineSum'
+  | 'pluginOptions___schemaType___primaryForcedLabour'
+  | 'pluginOptions___schemaType___primaryImprisonment'
+  | 'pluginOptions___schemaType___primaryImprisonment1'
+  | 'pluginOptions___schemaType___primaryImprisonment10_15'
+  | 'pluginOptions___schemaType___primaryImprisonment15_20'
+  | 'pluginOptions___schemaType___primaryImprisonment1_2'
+  | 'pluginOptions___schemaType___primaryImprisonment2_3'
+  | 'pluginOptions___schemaType___primaryImprisonment3_5'
+  | 'pluginOptions___schemaType___primaryImprisonment5_8'
+  | 'pluginOptions___schemaType___primaryImprisonment8_10'
+  | 'pluginOptions___schemaType___primaryImprisonmentUnderLowerLimit'
+  | 'pluginOptions___schemaType___primaryLifeSentence'
+  | 'pluginOptions___schemaType___primaryMilitaryDisciplinaryUnit'
+  | 'pluginOptions___schemaType___primaryOther'
+  | 'pluginOptions___schemaType___primaryRestrain'
+  | 'pluginOptions___schemaType___primaryRestrictionsInMilitaryService'
+  | 'pluginOptions___schemaType___primarySuspended'
+  | 'pluginOptions___schemaType___totalConvicted'
+  | 'pluginOptions___schemaType___unfinishedOffence'
   | 'pluginOptions___schemaType___year'
   | 'pluginOptions___allowCache'
   | 'pluginOptions___maxCacheDurationSeconds'
@@ -3170,16 +3568,6 @@ export type SitePluginPluginOptions = {
   maxWidth?: Maybe<Scalars['Int']>;
   linkImagesToOriginal?: Maybe<Scalars['Boolean']>;
   wrapperStyle?: Maybe<Scalars['String']>;
-  pathPrefix?: Maybe<Scalars['String']>;
-  backgroundColor?: Maybe<Scalars['String']>;
-  showCaptions?: Maybe<Scalars['Boolean']>;
-  markdownCaptions?: Maybe<Scalars['Boolean']>;
-  withWebp?: Maybe<Scalars['Boolean']>;
-  tracedSVG?: Maybe<Scalars['Boolean']>;
-  loading?: Maybe<Scalars['String']>;
-  disableBgImageOnAlpha?: Maybe<Scalars['Boolean']>;
-  disableBgImage?: Maybe<Scalars['Boolean']>;
-  ignoreFileExtensions?: Maybe<Array<Maybe<Scalars['String']>>>;
   short_name?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   homepage_url?: Maybe<Scalars['String']>;
@@ -3211,18 +3599,12 @@ export type SitePluginPluginOptions = {
 
 export type SitePluginPluginOptionsData = {
   breakdown?: Maybe<Array<Maybe<Scalars['String']>>>;
-  filter?: Maybe<SitePluginPluginOptionsDataFilter>;
   param?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type SitePluginPluginOptionsDataFilter = {
-  part?: Maybe<Array<Maybe<Scalars['String']>>>;
-  year?: Maybe<Array<Maybe<Scalars['Int']>>>;
-};
-
 export type SitePluginPluginOptionsDataFilterInput = {
-  part?: Maybe<Array<Maybe<Scalars['String']>>>;
-  year?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  breakdown?: Maybe<StringQueryOperatorInput>;
+  param?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsFilterInput = {
@@ -3232,16 +3614,6 @@ export type SitePluginPluginOptionsFilterInput = {
   maxWidth?: Maybe<IntQueryOperatorInput>;
   linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>;
   wrapperStyle?: Maybe<StringQueryOperatorInput>;
-  pathPrefix?: Maybe<StringQueryOperatorInput>;
-  backgroundColor?: Maybe<StringQueryOperatorInput>;
-  showCaptions?: Maybe<BooleanQueryOperatorInput>;
-  markdownCaptions?: Maybe<BooleanQueryOperatorInput>;
-  withWebp?: Maybe<BooleanQueryOperatorInput>;
-  tracedSVG?: Maybe<BooleanQueryOperatorInput>;
-  loading?: Maybe<StringQueryOperatorInput>;
-  disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>;
-  disableBgImage?: Maybe<BooleanQueryOperatorInput>;
-  ignoreFileExtensions?: Maybe<StringQueryOperatorInput>;
   short_name?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
   homepage_url?: Maybe<StringQueryOperatorInput>;
@@ -3323,48 +3695,170 @@ export type SitePluginPluginOptionsPluginsPluginOptions = {
   maxWidth?: Maybe<Scalars['Int']>;
   linkImagesToOriginal?: Maybe<Scalars['Boolean']>;
   wrapperStyle?: Maybe<Scalars['String']>;
-  pathPrefix?: Maybe<Scalars['String']>;
-  backgroundColor?: Maybe<Scalars['String']>;
-  showCaptions?: Maybe<Scalars['Boolean']>;
-  markdownCaptions?: Maybe<Scalars['Boolean']>;
-  withWebp?: Maybe<Scalars['Boolean']>;
-  tracedSVG?: Maybe<Scalars['Boolean']>;
-  loading?: Maybe<Scalars['String']>;
-  disableBgImageOnAlpha?: Maybe<Scalars['Boolean']>;
-  disableBgImage?: Maybe<Scalars['Boolean']>;
-  ignoreFileExtensions?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
 export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
   maxWidth?: Maybe<IntQueryOperatorInput>;
   linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>;
   wrapperStyle?: Maybe<StringQueryOperatorInput>;
-  pathPrefix?: Maybe<StringQueryOperatorInput>;
-  backgroundColor?: Maybe<StringQueryOperatorInput>;
-  showCaptions?: Maybe<BooleanQueryOperatorInput>;
-  markdownCaptions?: Maybe<BooleanQueryOperatorInput>;
-  withWebp?: Maybe<BooleanQueryOperatorInput>;
-  tracedSVG?: Maybe<BooleanQueryOperatorInput>;
-  loading?: Maybe<StringQueryOperatorInput>;
-  disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>;
-  disableBgImage?: Maybe<BooleanQueryOperatorInput>;
-  ignoreFileExtensions?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsSchemaType = {
+  acquittal?: Maybe<Scalars['Int']>;
+  addAcquittalOffences?: Maybe<Scalars['Int']>;
+  addAcquittalPersons?: Maybe<Scalars['Int']>;
+  addDismissalOffences?: Maybe<Scalars['Int']>;
+  addDismissalOtherOffences?: Maybe<Scalars['Int']>;
+  addDismissalOtherPersons?: Maybe<Scalars['Int']>;
+  addDismissalPersons?: Maybe<Scalars['Int']>;
+  addDisqualification?: Maybe<Scalars['Int']>;
+  addFine?: Maybe<Scalars['Int']>;
+  addFine100_300?: Maybe<Scalars['Int']>;
+  addFine1M?: Maybe<Scalars['Int']>;
+  addFine25_100?: Maybe<Scalars['Int']>;
+  addFine300_500?: Maybe<Scalars['Int']>;
+  addFine5?: Maybe<Scalars['Int']>;
+  addFine500_1M?: Maybe<Scalars['Int']>;
+  addFine5_25?: Maybe<Scalars['Int']>;
+  addFineSum?: Maybe<Scalars['Int']>;
+  addRestrain?: Maybe<Scalars['Int']>;
+  addTitlesWithdraw?: Maybe<Scalars['Int']>;
+  addTotalOffences?: Maybe<Scalars['Int']>;
+  addTotalPersons?: Maybe<Scalars['Int']>;
+  addUnfitToPleadOffences?: Maybe<Scalars['Int']>;
+  addUnfitToPleadPersons?: Maybe<Scalars['Int']>;
+  coerciveMeasures?: Maybe<Scalars['Int']>;
+  dismissalAbsenceOfEvent?: Maybe<Scalars['Int']>;
+  dismissalAmnesty?: Maybe<Scalars['Int']>;
+  dismissalCourtFine?: Maybe<Scalars['Int']>;
+  dismissalCourtFine100?: Maybe<Scalars['Int']>;
+  dismissalCourtFine25_100?: Maybe<Scalars['Int']>;
+  dismissalCourtFine5?: Maybe<Scalars['Int']>;
+  dismissalCourtFine5_25?: Maybe<Scalars['Int']>;
+  dismissalCourtFineSum?: Maybe<Scalars['Int']>;
+  dismissalOther?: Maybe<Scalars['Int']>;
+  dismissalReconciliation?: Maybe<Scalars['Int']>;
+  dismissalRepentance?: Maybe<Scalars['Int']>;
+  dismissalRepentance2?: Maybe<Scalars['Int']>;
   exemptionAmnesty?: Maybe<Scalars['Int']>;
   exemptionFromImprisonment?: Maybe<Scalars['Int']>;
   exemptionOther?: Maybe<Scalars['Int']>;
+  noCrimeNecessity?: Maybe<Scalars['Int']>;
+  noCrimeOther?: Maybe<Scalars['Int']>;
+  noCrimeSelf_defence?: Maybe<Scalars['Int']>;
   part?: Maybe<Scalars['String']>;
-  year?: Maybe<Scalars['Int']>;
+  primaryArrest?: Maybe<Scalars['Int']>;
+  primaryCommunityService?: Maybe<Scalars['Int']>;
+  primaryCorrectionalLabour?: Maybe<Scalars['Int']>;
+  primaryDisqualification?: Maybe<Scalars['Int']>;
+  primaryFine?: Maybe<Scalars['Int']>;
+  primaryFine100_300?: Maybe<Scalars['Int']>;
+  primaryFine1M?: Maybe<Scalars['Int']>;
+  primaryFine25_100?: Maybe<Scalars['Int']>;
+  primaryFine300_500?: Maybe<Scalars['Int']>;
+  primaryFine5?: Maybe<Scalars['Int']>;
+  primaryFine500_1M?: Maybe<Scalars['Int']>;
+  primaryFine5_25?: Maybe<Scalars['Int']>;
+  primaryFineSum?: Maybe<Scalars['Int']>;
+  primaryForcedLabour?: Maybe<Scalars['Int']>;
+  primaryImprisonment?: Maybe<Scalars['Int']>;
+  primaryImprisonment1?: Maybe<Scalars['Int']>;
+  primaryImprisonment10_15?: Maybe<Scalars['Int']>;
+  primaryImprisonment15_20?: Maybe<Scalars['Int']>;
+  primaryImprisonment1_2?: Maybe<Scalars['Int']>;
+  primaryImprisonment2_3?: Maybe<Scalars['Int']>;
+  primaryImprisonment3_5?: Maybe<Scalars['Int']>;
+  primaryImprisonment5_8?: Maybe<Scalars['Int']>;
+  primaryImprisonment8_10?: Maybe<Scalars['Int']>;
+  primaryImprisonmentUnderLowerLimit?: Maybe<Scalars['Int']>;
+  primaryLifeSentence?: Maybe<Scalars['Int']>;
+  primaryMilitaryDisciplinaryUnit?: Maybe<Scalars['Int']>;
+  primaryOther?: Maybe<Scalars['Int']>;
+  primaryRestrain?: Maybe<Scalars['Int']>;
+  primaryRestrictionsInMilitaryService?: Maybe<Scalars['Int']>;
+  primarySuspended?: Maybe<Scalars['Int']>;
+  totalConvicted?: Maybe<Scalars['Int']>;
+  unfinishedOffence?: Maybe<Scalars['Int']>;
+  year?: Maybe<Scalars['String']>;
 };
 
 export type SitePluginPluginOptionsSchemaTypeFilterInput = {
+  acquittal?: Maybe<IntQueryOperatorInput>;
+  addAcquittalOffences?: Maybe<IntQueryOperatorInput>;
+  addAcquittalPersons?: Maybe<IntQueryOperatorInput>;
+  addDismissalOffences?: Maybe<IntQueryOperatorInput>;
+  addDismissalOtherOffences?: Maybe<IntQueryOperatorInput>;
+  addDismissalOtherPersons?: Maybe<IntQueryOperatorInput>;
+  addDismissalPersons?: Maybe<IntQueryOperatorInput>;
+  addDisqualification?: Maybe<IntQueryOperatorInput>;
+  addFine?: Maybe<IntQueryOperatorInput>;
+  addFine100_300?: Maybe<IntQueryOperatorInput>;
+  addFine1M?: Maybe<IntQueryOperatorInput>;
+  addFine25_100?: Maybe<IntQueryOperatorInput>;
+  addFine300_500?: Maybe<IntQueryOperatorInput>;
+  addFine5?: Maybe<IntQueryOperatorInput>;
+  addFine500_1M?: Maybe<IntQueryOperatorInput>;
+  addFine5_25?: Maybe<IntQueryOperatorInput>;
+  addFineSum?: Maybe<IntQueryOperatorInput>;
+  addRestrain?: Maybe<IntQueryOperatorInput>;
+  addTitlesWithdraw?: Maybe<IntQueryOperatorInput>;
+  addTotalOffences?: Maybe<IntQueryOperatorInput>;
+  addTotalPersons?: Maybe<IntQueryOperatorInput>;
+  addUnfitToPleadOffences?: Maybe<IntQueryOperatorInput>;
+  addUnfitToPleadPersons?: Maybe<IntQueryOperatorInput>;
+  coerciveMeasures?: Maybe<IntQueryOperatorInput>;
+  dismissalAbsenceOfEvent?: Maybe<IntQueryOperatorInput>;
+  dismissalAmnesty?: Maybe<IntQueryOperatorInput>;
+  dismissalCourtFine?: Maybe<IntQueryOperatorInput>;
+  dismissalCourtFine100?: Maybe<IntQueryOperatorInput>;
+  dismissalCourtFine25_100?: Maybe<IntQueryOperatorInput>;
+  dismissalCourtFine5?: Maybe<IntQueryOperatorInput>;
+  dismissalCourtFine5_25?: Maybe<IntQueryOperatorInput>;
+  dismissalCourtFineSum?: Maybe<IntQueryOperatorInput>;
+  dismissalOther?: Maybe<IntQueryOperatorInput>;
+  dismissalReconciliation?: Maybe<IntQueryOperatorInput>;
+  dismissalRepentance?: Maybe<IntQueryOperatorInput>;
+  dismissalRepentance2?: Maybe<IntQueryOperatorInput>;
   exemptionAmnesty?: Maybe<IntQueryOperatorInput>;
   exemptionFromImprisonment?: Maybe<IntQueryOperatorInput>;
   exemptionOther?: Maybe<IntQueryOperatorInput>;
+  noCrimeNecessity?: Maybe<IntQueryOperatorInput>;
+  noCrimeOther?: Maybe<IntQueryOperatorInput>;
+  noCrimeSelf_defence?: Maybe<IntQueryOperatorInput>;
   part?: Maybe<StringQueryOperatorInput>;
-  year?: Maybe<IntQueryOperatorInput>;
+  primaryArrest?: Maybe<IntQueryOperatorInput>;
+  primaryCommunityService?: Maybe<IntQueryOperatorInput>;
+  primaryCorrectionalLabour?: Maybe<IntQueryOperatorInput>;
+  primaryDisqualification?: Maybe<IntQueryOperatorInput>;
+  primaryFine?: Maybe<IntQueryOperatorInput>;
+  primaryFine100_300?: Maybe<IntQueryOperatorInput>;
+  primaryFine1M?: Maybe<IntQueryOperatorInput>;
+  primaryFine25_100?: Maybe<IntQueryOperatorInput>;
+  primaryFine300_500?: Maybe<IntQueryOperatorInput>;
+  primaryFine5?: Maybe<IntQueryOperatorInput>;
+  primaryFine500_1M?: Maybe<IntQueryOperatorInput>;
+  primaryFine5_25?: Maybe<IntQueryOperatorInput>;
+  primaryFineSum?: Maybe<IntQueryOperatorInput>;
+  primaryForcedLabour?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment1?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment10_15?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment15_20?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment1_2?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment2_3?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment3_5?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment5_8?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonment8_10?: Maybe<IntQueryOperatorInput>;
+  primaryImprisonmentUnderLowerLimit?: Maybe<IntQueryOperatorInput>;
+  primaryLifeSentence?: Maybe<IntQueryOperatorInput>;
+  primaryMilitaryDisciplinaryUnit?: Maybe<IntQueryOperatorInput>;
+  primaryOther?: Maybe<IntQueryOperatorInput>;
+  primaryRestrain?: Maybe<IntQueryOperatorInput>;
+  primaryRestrictionsInMilitaryService?: Maybe<IntQueryOperatorInput>;
+  primarySuspended?: Maybe<IntQueryOperatorInput>;
+  totalConvicted?: Maybe<IntQueryOperatorInput>;
+  unfinishedOffence?: Maybe<IntQueryOperatorInput>;
+  year?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginSortInput = {
@@ -3411,7 +3905,7 @@ export type StringQueryOperatorInput = {
 export type IndexQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type IndexQueryQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl' | 'author' | 'twitter' | 'adsense'>> }>, allInternalCases: { edges: Array<{ node: Pick<Internal__Cases, 'part' | 'exemptionAmnesty' | 'exemptionFromImprisonment'> }> } };
+export type IndexQueryQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl' | 'author' | 'twitter' | 'adsense'>> }>, allApiServerCases: { edges: Array<{ node: Pick<Api_Server__Cases, 'part' | 'year'> }> } };
 
 export type ProfilePageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
