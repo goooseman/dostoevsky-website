@@ -60,7 +60,6 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.4",
-    "gh-pages": "^3.0.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
@@ -69,7 +68,6 @@
     "stylelint-config-idiomatic-order": "^8.1.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
-    "textlint": "^11.6.3",
     "typescript": "^3.9.3"
   },
   "keywords": [
@@ -83,9 +81,7 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.+(js|json|md)\" --ignore-path .gitignore",
     "lint:check": "npm run lint:prettier:check . && npm run lint:tsc:check && npm run lint:eslint:check . && npm run lint:stylelint:check .",
     "lint:write": "npm run lint:prettier:write . && npm run lint:eslint:write . && npm run lint:stylelint:write .",
     "lint:prettier:check": "prettier --check",
@@ -95,7 +91,6 @@
     "lint:eslint:write": "eslint --ext .ts,.tsx --ignore-path .gitignore --fix",
     "lint:stylelint:check": "stylelint --ignore-path .gitignore",
     "lint:stylelint:write": "stylelint --fix --ignore-path .gitignore",
-    "test": "prettier --write \"**/*.+(js|jsx|json|css|scss)\"",
     "intl:update-po": "gettext-utils export-strings --default-locale=en-GB && git add src/i18n/*.po*",
     "intl:generate-json": "gettext-utils import-strings"
   }
