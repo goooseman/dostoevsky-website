@@ -115,10 +115,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "Gatstrap",
-        short_name: "Gatstrap",
-        description: "Gatsby starter for bootstrap a blog",
-        homepage_url: "https://gatstrap.netlify.com",
+        name: "Dostoevsky",
+        short_name: "Dostoevsky",
+        description: "SEO description of dostoevsky",
+        homepage_url: "https://dostoevsky.goooseman.ru/",
         start_url: "/",
         background_color: "#fff",
         theme_color: "#673ab7",
