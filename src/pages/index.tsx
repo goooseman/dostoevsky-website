@@ -18,7 +18,7 @@ const Index: React.FC<Props> = ({ data, location }: Props) => {
       {cases.map((n) => (
         <ul key={`${n.node.part}-${n.node.year}`}>
           <li>
-            <a href="/">
+            <a href={`/${n.node.part}-${n.node.year}`}>
               {n.node.part} ({n.node.year})
             </a>
           </li>

@@ -70,7 +70,6 @@ export type Api_Server__Cases = Node & {
   exemptionAmnesty?: Maybe<Scalars['Int']>;
   exemptionFromImprisonment?: Maybe<Scalars['Int']>;
   exemptionOther?: Maybe<Scalars['Int']>;
-  name?: Maybe<Scalars['String']>;
   noCrimeNecessity?: Maybe<Scalars['Int']>;
   noCrimeOther?: Maybe<Scalars['Int']>;
   noCrimeSelf_defence?: Maybe<Scalars['Int']>;
@@ -108,6 +107,7 @@ export type Api_Server__Cases = Node & {
   totalConvicted?: Maybe<Scalars['Int']>;
   unfinishedOffence?: Maybe<Scalars['Int']>;
   year?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
 };
 
 export type Api_Server__CasesConnection = {
@@ -263,7 +263,6 @@ export type Api_Server__CasesFieldsEnum =
   | 'exemptionAmnesty'
   | 'exemptionFromImprisonment'
   | 'exemptionOther'
-  | 'name'
   | 'noCrimeNecessity'
   | 'noCrimeOther'
   | 'noCrimeSelf_defence'
@@ -300,7 +299,8 @@ export type Api_Server__CasesFieldsEnum =
   | 'primarySuspended'
   | 'totalConvicted'
   | 'unfinishedOffence'
-  | 'year';
+  | 'year'
+  | 'name';
 
 export type Api_Server__CasesFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -346,7 +346,6 @@ export type Api_Server__CasesFilterInput = {
   exemptionAmnesty?: Maybe<IntQueryOperatorInput>;
   exemptionFromImprisonment?: Maybe<IntQueryOperatorInput>;
   exemptionOther?: Maybe<IntQueryOperatorInput>;
-  name?: Maybe<StringQueryOperatorInput>;
   noCrimeNecessity?: Maybe<IntQueryOperatorInput>;
   noCrimeOther?: Maybe<IntQueryOperatorInput>;
   noCrimeSelf_defence?: Maybe<IntQueryOperatorInput>;
@@ -384,6 +383,7 @@ export type Api_Server__CasesFilterInput = {
   totalConvicted?: Maybe<IntQueryOperatorInput>;
   unfinishedOffence?: Maybe<IntQueryOperatorInput>;
   year?: Maybe<StringQueryOperatorInput>;
+  name?: Maybe<StringQueryOperatorInput>;
 };
 
 export type Api_Server__CasesGroupConnection = {
@@ -2299,6 +2299,7 @@ export type QuerySitePageArgs = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
+  context?: Maybe<SitePageContextFilterInput>;
   pluginCreator?: Maybe<SitePluginFilterInput>;
   pluginCreatorId?: Maybe<StringQueryOperatorInput>;
   componentPath?: Maybe<StringQueryOperatorInput>;
@@ -2428,7 +2429,6 @@ export type QueryApiServerCasesArgs = {
   exemptionAmnesty?: Maybe<IntQueryOperatorInput>;
   exemptionFromImprisonment?: Maybe<IntQueryOperatorInput>;
   exemptionOther?: Maybe<IntQueryOperatorInput>;
-  name?: Maybe<StringQueryOperatorInput>;
   noCrimeNecessity?: Maybe<IntQueryOperatorInput>;
   noCrimeOther?: Maybe<IntQueryOperatorInput>;
   noCrimeSelf_defence?: Maybe<IntQueryOperatorInput>;
@@ -2466,6 +2466,7 @@ export type QueryApiServerCasesArgs = {
   totalConvicted?: Maybe<IntQueryOperatorInput>;
   unfinishedOffence?: Maybe<IntQueryOperatorInput>;
   year?: Maybe<StringQueryOperatorInput>;
+  name?: Maybe<StringQueryOperatorInput>;
 };
 
 
@@ -2860,6 +2861,7 @@ export type SitePage = Node & {
   children: Array<Node>;
   internal: Internal;
   isCreatedByStatefulCreatePages?: Maybe<Scalars['Boolean']>;
+  context?: Maybe<SitePageContext>;
   pluginCreator?: Maybe<SitePlugin>;
   pluginCreatorId?: Maybe<Scalars['String']>;
   componentPath?: Maybe<Scalars['String']>;
@@ -2884,6 +2886,16 @@ export type SitePageConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
   field: SitePageFieldsEnum;
+};
+
+export type SitePageContext = {
+  part?: Maybe<Scalars['String']>;
+  year?: Maybe<Scalars['Date']>;
+};
+
+export type SitePageContextFilterInput = {
+  part?: Maybe<StringQueryOperatorInput>;
+  year?: Maybe<DateQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -2985,6 +2997,8 @@ export type SitePageFieldsEnum =
   | 'internal___owner'
   | 'internal___type'
   | 'isCreatedByStatefulCreatePages'
+  | 'context___part'
+  | 'context___year'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'
@@ -3177,6 +3191,7 @@ export type SitePageFilterInput = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
+  context?: Maybe<SitePageContextFilterInput>;
   pluginCreator?: Maybe<SitePluginFilterInput>;
   pluginCreatorId?: Maybe<StringQueryOperatorInput>;
   componentPath?: Maybe<StringQueryOperatorInput>;
@@ -3911,6 +3926,14 @@ export type ProfilePageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type ProfilePageQueryQuery = { profile?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixed_WithWebpFragment> }> }> };
+
+export type CasePageQueryQueryVariables = Exact<{
+  part: Scalars['String'];
+  year: Scalars['String'];
+}>;
+
+
+export type CasePageQueryQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl' | 'author' | 'twitter' | 'adsense'>> }>, apiServerCases?: Maybe<Pick<Api_Server__Cases, 'part' | 'year' | 'exemptionOther'>> };
 
 export type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
