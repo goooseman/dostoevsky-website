@@ -27,7 +27,6 @@
     "gatsby-plugin-sass": "^2.2.4",
     "gatsby-plugin-sharp": "^2.6.12",
     "gatsby-plugin-sitemap": "^2.4.5",
-    "gatsby-plugin-twitter": "^2.3.4",
     "gatsby-plugin-typescript": "^2.4.4",
     "gatsby-remark-copy-linked-files": "^2.3.5",
     "gatsby-remark-images": "^3.3.11",

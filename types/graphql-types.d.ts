@@ -2518,8 +2518,6 @@ export type SiteFieldsEnum =
   | 'siteMetadata___title'
   | 'siteMetadata___description'
   | 'siteMetadata___siteUrl'
-  | 'siteMetadata___author'
-  | 'siteMetadata___twitter'
   | 'port'
   | 'host'
   | 'pathPrefix'
@@ -3668,16 +3666,12 @@ export type SiteSiteMetadata = {
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   siteUrl?: Maybe<Scalars['String']>;
-  author?: Maybe<Scalars['String']>;
-  twitter?: Maybe<Scalars['String']>;
 };
 
 export type SiteSiteMetadataFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
   siteUrl?: Maybe<StringQueryOperatorInput>;
-  author?: Maybe<StringQueryOperatorInput>;
-  twitter?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SiteSortInput = {
@@ -3701,7 +3695,7 @@ export type StringQueryOperatorInput = {
 export type IndexQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type IndexQueryQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl' | 'author' | 'twitter'>> }>, allApiServerCases: { edges: Array<{ node: Pick<Api_Server__Cases, 'part' | 'year'> }> } };
+export type IndexQueryQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, allApiServerCases: { edges: Array<{ node: Pick<Api_Server__Cases, 'part' | 'year'> }> } };
 
 export type CasePageQueryQueryVariables = Exact<{
   part: Scalars['String'];
@@ -3709,7 +3703,7 @@ export type CasePageQueryQueryVariables = Exact<{
 }>;
 
 
-export type CasePageQueryQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl' | 'author' | 'twitter'>> }>, apiServerCases?: Maybe<Pick<Api_Server__Cases, 'part' | 'year' | 'exemptionOther'>> };
+export type CasePageQueryQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, apiServerCases?: Maybe<Pick<Api_Server__Cases, 'part' | 'year' | 'exemptionOther'>> };
 
 export type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

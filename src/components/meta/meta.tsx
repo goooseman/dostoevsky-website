@@ -5,10 +5,7 @@ import { SiteSiteMetadata } from "../../../types/graphql-types";
 
 interface Props {
   site:
-    | Pick<
-        SiteSiteMetadata,
-        "title" | "description" | "author" | "twitter" | "siteUrl"
-      >
+    | Pick<SiteSiteMetadata, "title" | "description" | "siteUrl">
     | null
     | undefined;
   title?: string;
@@ -23,11 +20,6 @@ const Meta: React.FC<Props> = ({ site, title }: Props) => {
     <Helmet
       title={pageTitle}
       meta={[
-        { name: "twitter:card", content: "summary" },
-        {
-          name: "twitter:site",
-          content: `@${site?.twitter}`,
-        },
         { property: "og:title", content: pageTitle },
         { property: "og:type", content: "website" },
         {
@@ -37,10 +29,6 @@ const Meta: React.FC<Props> = ({ site, title }: Props) => {
         {
           property: "og:url",
           content: `${siteUrl}/profile`,
-        },
-        {
-          property: "og:image",
-          content: `${siteUrl}/img/profile.jpg`,
         },
       ]}
     />

@@ -32,8 +32,6 @@ export const query = graphql`
         title
         description
         siteUrl
-        author
-        twitter
       }
     }
     apiServerCases(part: { eq: $part }, year: { eq: $year }) {

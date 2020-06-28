@@ -37,8 +37,6 @@ export const pageQuery = graphql`
         title
         description
         siteUrl
-        author
-        twitter
       }
     }
     allApiServerCases(filter: { id: { ne: "dummy" } }) {

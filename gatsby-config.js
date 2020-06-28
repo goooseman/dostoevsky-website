@@ -82,11 +82,9 @@ const caseType = {
 
 module.exports = {
   siteMetadata: {
-    title: "Gatstrap",
-    description: "Gatsby starter for bootstrap a blog",
-    siteUrl: "https://gatstrap.netlify.com",
-    author: "jaxx2104",
-    twitter: "jaxx2104",
+    title: "Dostoevsky",
+    description: "SEO description of dostoevsky",
+    siteUrl: "https://dostoevsky.goooseman.ru/",
   },
   pathPrefix: "/",
   plugins: [
@@ -172,7 +170,6 @@ module.exports = {
     "gatsby-plugin-sass",
     "gatsby-plugin-sharp",
     "gatsby-plugin-sitemap",
-    "gatsby-plugin-twitter",
     "gatsby-plugin-typescript",
     "gatsby-transformer-sharp",
     {
