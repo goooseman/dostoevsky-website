@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import { CasePageQueryQuery } from "types/graphql-types";
 import Meta from "src/components/meta";
 import Layout from "src/components/layout";
+import { T } from "react-targem";
 
 interface CasePageProps {
   data: CasePageQueryQuery;
@@ -16,9 +17,16 @@ class CasePage extends PureComponent<CasePageProps> {
       <Layout location={location}>
         <Meta site={data.site?.meta} />
         <div>
-          <p>Статья: {data.apiServerCases?.part}</p>
+          <p>
+            Статья: {data.apiServerCases?.part} (
+            <b>{data.apiServerCases?.name}</b>)
+          </p>
           <p>Год: {data.apiServerCases?.year}</p>
-          <p>Какая-то цифра: {data.apiServerCases?.exemptionOther}</p>
+          <T
+            message="In 2017 one man has been convicted."
+            messagePlural="In 2017 {{ count }} men has been convicted."
+            count={data.apiServerCases?.totalConvicted || 0}
+          />
         </div>
       </Layout>
     );
@@ -37,7 +45,9 @@ export const query = graphql`
     apiServerCases(part: { eq: $part }, year: { eq: $year }) {
       part
       year
+      name
       exemptionOther
+      totalConvicted
     }
   }
 `;

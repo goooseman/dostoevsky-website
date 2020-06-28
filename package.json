@@ -37,6 +37,7 @@
     "gatsby-source-filesystem": "^2.3.12",
     "gatsby-transformer-remark": "^2.8.17",
     "gatsby-transformer-sharp": "^2.5.5",
+    "gettext-utils": "^2.2.0",
     "jquery": "^3.5.1",
     "modern-normalize": "^0.6.0",
     "node-sass": "^4.14.1",
@@ -44,7 +45,9 @@
     "prismjs": "^1.20.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-targem": "^1.6.1",
+    "webpack-shell-plugin-next": "^1.1.9"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
@@ -92,6 +95,8 @@
     "lint:eslint:write": "eslint --ext .ts,.tsx --ignore-path .gitignore --fix",
     "lint:stylelint:check": "stylelint --ignore-path .gitignore",
     "lint:stylelint:write": "stylelint --fix --ignore-path .gitignore",
-    "test": "prettier --write \"**/*.+(js|jsx|json|css|scss)\""
+    "test": "prettier --write \"**/*.+(js|jsx|json|css|scss)\"",
+    "intl:update-po": "gettext-utils export-strings --default-locale=en-GB && git add src/i18n/*.po*",
+    "intl:generate-json": "gettext-utils import-strings"
   }
 }

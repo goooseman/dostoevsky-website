@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require("path");
+const WebpackShellPluginNext = require("webpack-shell-plugin-next");
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -38,5 +39,14 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         types: path.resolve(__dirname, "types/"),
       },
     },
+    plugins: [
+      new WebpackShellPluginNext({
+        onBuildStart: {
+          scripts: ["npm run intl:generate-json"],
+          blocking: true,
+          parallel: false,
+        },
+      }),
+    ],
   });
 };
