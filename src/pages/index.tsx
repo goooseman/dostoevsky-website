@@ -1,16 +1,15 @@
 import { graphql } from "gatsby";
 import React from "react";
-
 import { IndexQueryQuery } from "../../types/graphql-types";
-import Meta from "../components/meta/meta";
-import Layout from "../components/layout/layout";
+import Meta from "src/components/meta";
+import Layout from "src/components/layout";
 
 interface Props {
   data: IndexQueryQuery;
   location: Location;
 }
 
-const BlogIndex: React.FC<Props> = ({ data, location }: Props) => {
+const Index: React.FC<Props> = ({ data, location }: Props) => {
   const meta = data.site?.meta;
   const cases = data.allApiServerCases?.edges;
   return (
@@ -29,7 +28,7 @@ const BlogIndex: React.FC<Props> = ({ data, location }: Props) => {
   );
 };
 
-export default BlogIndex;
+export default Index;
 
 export const pageQuery = graphql`
   query IndexQuery {
