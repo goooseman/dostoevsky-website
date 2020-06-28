@@ -7,7 +7,7 @@ interface Props {
   site:
     | Pick<
         SiteSiteMetadata,
-        "title" | "description" | "author" | "twitter" | "adsense" | "siteUrl"
+        "title" | "description" | "author" | "twitter" | "siteUrl"
       >
     | null
     | undefined;

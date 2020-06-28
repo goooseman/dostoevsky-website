@@ -3,8 +3,8 @@ import React, { useEffect } from "react";
 // @ts-ignore
 import emergence from "emergence.js";
 
-import Navibar from "../navibar/navibar";
-import Footer from "../footer/footer";
+import Navibar from "src/components/navibar";
+import Footer from "src/components/footer";
 import { siteMetadata } from "../../../gatsby-config";
 
 import "modern-normalize/modern-normalize.css";

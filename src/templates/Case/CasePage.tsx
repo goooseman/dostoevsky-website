@@ -34,7 +34,6 @@ export const query = graphql`
         siteUrl
         author
         twitter
-        adsense
       }
     }
     apiServerCases(part: { eq: $part }, year: { eq: $year }) {

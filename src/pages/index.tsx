@@ -39,7 +39,6 @@ export const pageQuery = graphql`
         siteUrl
         author
         twitter
-        adsense
       }
     }
     allApiServerCases(filter: { id: { ne: "dummy" } }) {

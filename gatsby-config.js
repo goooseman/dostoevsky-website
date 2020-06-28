@@ -87,17 +87,9 @@ module.exports = {
     siteUrl: "https://gatstrap.netlify.com",
     author: "jaxx2104",
     twitter: "jaxx2104",
-    adsense: "",
   },
   pathPrefix: "/",
   plugins: [
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/content/posts/`,
-        name: "posts",
-      },
-    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
