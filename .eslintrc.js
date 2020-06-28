@@ -20,6 +20,7 @@ module.exports = {
       jsx: true,
     },
   },
+  ignorePatterns: ["types/graphql-types.d.ts"],
   rules: {
     "prettier/prettier": "error",
     "no-console": "error",

@@ -1,65 +1,33 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require("path");
-const PostTemplate = path.resolve("./src/templates/template.tsx");
+const WebpackShellPluginNext = require("webpack-shell-plugin-next");
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  return new Promise((resolve, reject) => {
-    resolve(
-      graphql(
-        `
-          {
-            allFile(filter: { extension: { regex: "/md|tsx/" } }, limit: 1000) {
-              edges {
-                node {
-                  id
-                  name: sourceInstanceName
-                  path: absolutePath
-                  remark: childMarkdownRemark {
-                    id
-                    frontmatter {
-                      layout
-                      path
-                    }
-                  }
-                }
-              }
-            }
+  const result = await graphql(`
+    query {
+      allApiServerCases(filter: { id: { ne: "dummy" } }) {
+        edges {
+          node {
+            part
+            year
           }
-        `
-      ).then(({ errors, data }) => {
-        if (errors) {
-          // eslint-disable-next-line no-console
-          console.error(errors);
-          reject(errors);
         }
+      }
+    }
+  `);
 
-        // Create blog posts & pages.
-        const items = data.allFile.edges;
-        const posts = items.filter(({ node }) => /posts/.test(node.name));
-        posts.forEach(({ node }) => {
-          if (!node.remark) return;
-          const { path } = node.remark.frontmatter;
-          createPage({
-            path,
-            component: PostTemplate,
-          });
-        });
-
-        const pages = items.filter(({ node }) => /page/.test(node.name));
-        pages.forEach(({ node }) => {
-          if (!node.remark) return;
-          const { name } = path.parse(node.path);
-          const PageTemplate = path.resolve(node.path);
-          createPage({
-            path: name,
-            component: PageTemplate,
-          });
-        });
-      })
-    );
+  result.data.allApiServerCases.edges.forEach(({ node }) => {
+    createPage({
+      path: `${node.part}-${node.year}`,
+      component: path.resolve(`src/templates/Case/CasePage.tsx`),
+      context: {
+        part: node.part,
+        year: node.year,
+      },
+    });
   });
 };
 
@@ -67,10 +35,18 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {
-        components: path.resolve(__dirname, "src/components"),
-        templates: path.resolve(__dirname, "src/templates"),
-        scss: path.resolve(__dirname, "src/scss"),
+        src: path.resolve(__dirname, "src/"),
+        types: path.resolve(__dirname, "types/"),
       },
     },
+    plugins: [
+      new WebpackShellPluginNext({
+        onBuildStart: {
+          scripts: ["npm run intl:generate-json"],
+          blocking: true,
+          parallel: false,
+        },
+      }),
+    ],
   });
 };

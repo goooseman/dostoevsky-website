@@ -27,16 +27,17 @@
     "gatsby-plugin-sass": "^2.2.4",
     "gatsby-plugin-sharp": "^2.6.12",
     "gatsby-plugin-sitemap": "^2.4.5",
-    "gatsby-plugin-twitter": "^2.3.4",
     "gatsby-plugin-typescript": "^2.4.4",
     "gatsby-remark-copy-linked-files": "^2.3.5",
     "gatsby-remark-images": "^3.3.11",
     "gatsby-remark-prismjs": "^3.5.4",
     "gatsby-remark-responsive-iframe": "^2.4.5",
     "gatsby-remark-smartypants": "^2.3.4",
+    "gatsby-source-apiserver": "^2.1.6",
     "gatsby-source-filesystem": "^2.3.12",
     "gatsby-transformer-remark": "^2.8.17",
     "gatsby-transformer-sharp": "^2.5.5",
+    "gettext-utils": "^2.2.0",
     "jquery": "^3.5.1",
     "modern-normalize": "^0.6.0",
     "node-sass": "^4.14.1",
@@ -44,7 +45,9 @@
     "prismjs": "^1.20.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-targem": "^1.6.1",
+    "webpack-shell-plugin-next": "^1.1.9"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
@@ -57,7 +60,6 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.4",
-    "gh-pages": "^3.0.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
@@ -66,7 +68,6 @@
     "stylelint-config-idiomatic-order": "^8.1.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
-    "textlint": "^11.6.3",
     "typescript": "^3.9.3"
   },
   "keywords": [
@@ -80,18 +81,17 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.+(js|json|md)\" --ignore-path .gitignore",
     "lint:check": "npm run lint:prettier:check . && npm run lint:tsc:check && npm run lint:eslint:check . && npm run lint:stylelint:check .",
     "lint:write": "npm run lint:prettier:write . && npm run lint:eslint:write . && npm run lint:stylelint:write .",
-    "lint:prettier:check": "prettier --check --ignore-path .gitignore",
-    "lint:prettier:write": "prettier --write --ignore-path .gitignore",
+    "lint:prettier:check": "prettier --check",
+    "lint:prettier:write": "prettier --write",
     "lint:tsc:check": "tsc --noEmit",
     "lint:eslint:check": "eslint --ext .ts,.tsx --ignore-path .gitignore",
     "lint:eslint:write": "eslint --ext .ts,.tsx --ignore-path .gitignore --fix",
     "lint:stylelint:check": "stylelint --ignore-path .gitignore",
     "lint:stylelint:write": "stylelint --fix --ignore-path .gitignore",
-    "test": "prettier --write \"**/*.+(js|jsx|json|css|scss)\""
+    "intl:update-po": "gettext-utils export-strings --default-locale=en-GB && git add src/i18n/*.po*",
+    "intl:generate-json": "gettext-utils import-strings"
   }
 }

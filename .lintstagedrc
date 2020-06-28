@@ -1,5 +1,6 @@
 {
   "*.(js|jsx|ts|tsx)": [
+    "npm run intl:update-po",
     "npm run lint:prettier:write",
     "npm run lint:eslint:write"
   ],
