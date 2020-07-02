@@ -5,3 +5,4 @@ public
 .intermediate-representation
 .cache
 /types/graphql-types.d.ts
+/src/i18n/translations.json
