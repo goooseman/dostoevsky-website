@@ -5,7 +5,6 @@
   "author": "goooseman <goooseman@me.com>",
   "private": true,
   "dependencies": {
-    "babel-eslint": "^10.1.0",
     "gatsby": "^2.23.14",
     "gatsby-image": "^2.4.11",
     "gatsby-link": "^2.4.10",
@@ -27,7 +26,6 @@
     "gatsby-transformer-remark": "^2.8.22",
     "gatsby-transformer-sharp": "^2.5.9",
     "gettext-utils": "^2.2.0",
-    "prismjs": "^1.20.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",

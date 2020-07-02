@@ -70,6 +70,7 @@ export type Api_Server__Cases = Node & {
   exemptionAmnesty?: Maybe<Scalars['Int']>;
   exemptionFromImprisonment?: Maybe<Scalars['Int']>;
   exemptionOther?: Maybe<Scalars['Int']>;
+  name?: Maybe<Scalars['String']>;
   noCrimeNecessity?: Maybe<Scalars['Int']>;
   noCrimeOther?: Maybe<Scalars['Int']>;
   noCrimeSelf_defence?: Maybe<Scalars['Int']>;
@@ -107,7 +108,6 @@ export type Api_Server__Cases = Node & {
   totalConvicted?: Maybe<Scalars['Int']>;
   unfinishedOffence?: Maybe<Scalars['Int']>;
   year?: Maybe<Scalars['String']>;
-  name?: Maybe<Scalars['String']>;
 };
 
 export type Api_Server__CasesConnection = {
@@ -263,6 +263,7 @@ export type Api_Server__CasesFieldsEnum =
   | 'exemptionAmnesty'
   | 'exemptionFromImprisonment'
   | 'exemptionOther'
+  | 'name'
   | 'noCrimeNecessity'
   | 'noCrimeOther'
   | 'noCrimeSelf_defence'
@@ -299,8 +300,7 @@ export type Api_Server__CasesFieldsEnum =
   | 'primarySuspended'
   | 'totalConvicted'
   | 'unfinishedOffence'
-  | 'year'
-  | 'name';
+  | 'year';
 
 export type Api_Server__CasesFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -346,6 +346,7 @@ export type Api_Server__CasesFilterInput = {
   exemptionAmnesty?: Maybe<IntQueryOperatorInput>;
   exemptionFromImprisonment?: Maybe<IntQueryOperatorInput>;
   exemptionOther?: Maybe<IntQueryOperatorInput>;
+  name?: Maybe<StringQueryOperatorInput>;
   noCrimeNecessity?: Maybe<IntQueryOperatorInput>;
   noCrimeOther?: Maybe<IntQueryOperatorInput>;
   noCrimeSelf_defence?: Maybe<IntQueryOperatorInput>;
@@ -383,7 +384,6 @@ export type Api_Server__CasesFilterInput = {
   totalConvicted?: Maybe<IntQueryOperatorInput>;
   unfinishedOffence?: Maybe<IntQueryOperatorInput>;
   year?: Maybe<StringQueryOperatorInput>;
-  name?: Maybe<StringQueryOperatorInput>;
 };
 
 export type Api_Server__CasesGroupConnection = {
@@ -2200,6 +2200,7 @@ export type QueryApiServerCasesArgs = {
   exemptionAmnesty?: Maybe<IntQueryOperatorInput>;
   exemptionFromImprisonment?: Maybe<IntQueryOperatorInput>;
   exemptionOther?: Maybe<IntQueryOperatorInput>;
+  name?: Maybe<StringQueryOperatorInput>;
   noCrimeNecessity?: Maybe<IntQueryOperatorInput>;
   noCrimeOther?: Maybe<IntQueryOperatorInput>;
   noCrimeSelf_defence?: Maybe<IntQueryOperatorInput>;
@@ -2237,7 +2238,6 @@ export type QueryApiServerCasesArgs = {
   totalConvicted?: Maybe<IntQueryOperatorInput>;
   unfinishedOffence?: Maybe<IntQueryOperatorInput>;
   year?: Maybe<StringQueryOperatorInput>;
-  name?: Maybe<StringQueryOperatorInput>;
 };
 
 
