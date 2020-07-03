@@ -1,0 +1,42 @@
+.common {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--color-text);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  letter-spacing: var(--letter-spacing-base);
+  line-height: var(--line-height-base);
+}
+
+.common.gutter-bottom {
+  margin-bottom: 0.7rem;
+}
+
+.common.color-inverted {
+  color: var(--color-text-inverted);
+}
+
+.common a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.common a:visited {
+  color: inherit;
+}
+
+.common a:active {
+  color: inherit;
+}
+
+.h1 {
+  font-size: 2.8rem;
+}
+
+.h2 {
+  font-size: 2.4rem;
+}
+
+.h3 {
+  font-size: 2rem;
+}
