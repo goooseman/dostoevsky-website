@@ -1,33 +1,59 @@
 import React from "react";
 import { Link } from "gatsby";
+import cn from "clsx";
+import classes from "./Navibar.module.css";
+import Container from "src/components/ui-kit/Container";
+import Typography from "src/components/ui-kit/Typography/Typography";
 
 interface Props {
   title: string;
   location: Location;
 }
 
-const Navibar: React.FC<Props> = ({ location, title }: Props) => {
+const Navibar: React.FC<Props> = ({ location }: Props) => {
   return (
-    <nav className="navbar navbar-expand navbar-dark flex-column flex-md-row bg-primary">
-      <div className="container">
-        <Link className="text-center" to="/">
-          <h1 className="navbar-brand mb-0">{title}</h1>
-        </Link>
-        <div className="navbar-nav-scroll">
-          <ul className="navbar-nav bd-navbar-nav flex-row">
-            <li
-              className={
-                location.pathname === "/" ? "nav-item active" : "nav-item"
-              }
-            >
-              <Link to="/" className="nav-link">
-                Home
-              </Link>
-            </li>
-          </ul>
+    <nav className={cn(classes.container)}>
+      <Container>
+        <div className={cn(classes.firstRow)}>
+          <Typography
+            className={cn(classes.logo)}
+            variant="span"
+            color="inverted"
+          >
+            <Link to="/">Достоевский</Link>
+          </Typography>
         </div>
-        <div className="navbar-nav flex-row ml-md-auto d-none d-md-flex" />
-      </div>
+        <ul className={classes.menu}>
+          <li
+            className={cn(classes.menuItem, {
+              [classes.menuItemActive]: location.pathname === "/clauses",
+            })}
+          >
+            <Typography variant="span" color="inverted">
+              <Link to="/clauses">каталог статей ук рф</Link>
+            </Typography>
+          </li>
+          <li
+            className={cn(classes.menuItem, {
+              [classes.menuItemActive]: location.pathname === "/faq",
+            })}
+          >
+            {" "}
+            <Typography variant="span" color="inverted">
+              <Link to="/faq">о датасете</Link>
+            </Typography>
+          </li>
+          <li
+            className={cn(classes.menuItem, {
+              [classes.menuItemActive]: location.pathname === "/about",
+            })}
+          >
+            <Typography variant="span" color="inverted">
+              <Link to="/about">о проекте</Link>
+            </Typography>
+          </li>
+        </ul>
+      </Container>
     </nav>
   );
 };

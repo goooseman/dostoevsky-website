@@ -8,6 +8,14 @@ html {
   line-height: var(--line-height-base);
 }
 
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 @media screen and (--viewport-sm-max) {
   html {
     font-size: 14px;
