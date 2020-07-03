@@ -6,10 +6,13 @@
 :root {
   /* colors */
   --color-text: #000;
+  --color-text-inverted: #fff;
   --color-outer-background: #000;
   --color-main-background: #eff5f3;
   --color-primary: #ff6700;
   --color-secondary: #7c89e4;
+  --color-border: #000;
+  --color-border-inverted: #fff;
 
   /* fonts */
   --font-family-primary: helvetica neue, helvetica, arial, sans-serif;
