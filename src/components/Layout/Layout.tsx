@@ -12,13 +12,12 @@ const translationsJson = require("src/i18n/translations.json");
 
 interface Props {
   children?: React.ReactNode;
-  location: Location;
 }
 
-const Layout: React.FC<Props> = ({ children, location }: Props) => {
+const Layout: React.FC<Props> = ({ children }: Props) => {
   return (
     <TargemProvider detectLocale translations={translationsJson}>
-      <Navibar title={siteMetadata.title} location={location} />
+      <Navibar title={siteMetadata.title} />
       {children}
       <Footer title={siteMetadata.title} />
     </TargemProvider>

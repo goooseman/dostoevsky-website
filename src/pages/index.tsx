@@ -4,15 +4,15 @@ import { IndexQueryQuery } from "../../types/graphql-types";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
 
-interface Props {
+interface IndexPageProps {
   data: IndexQueryQuery;
   location: Location;
 }
 
-const Index: React.FC<Props> = ({ data, location }: Props) => {
+const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
   const meta = data.site?.meta;
   return (
-    <Layout location={location}>
+    <Layout>
       <Meta site={meta} />
       <img
         src="https://nizrp.narod.ru/pics/dost5.jpg"

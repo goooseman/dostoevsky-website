@@ -12,9 +12,9 @@ interface CasePageProps {
 
 class CasePage extends PureComponent<CasePageProps> {
   render(): React.ReactNode {
-    const { data, location } = this.props;
+    const { data } = this.props;
     return (
-      <Layout location={location}>
+      <Layout>
         <Meta site={data.site?.meta} />
         <div>
           <p>

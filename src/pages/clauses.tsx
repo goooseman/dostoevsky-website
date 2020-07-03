@@ -4,16 +4,16 @@ import { ClausesQueryQuery } from "../../types/graphql-types";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
 
-interface Props {
+interface ClausesPageProps {
   data: ClausesQueryQuery;
   location: Location;
 }
 
-const Clauses: React.FC<Props> = ({ data, location }: Props) => {
+const Clauses: React.FC<ClausesPageProps> = ({ data }: ClausesPageProps) => {
   const meta = data.site?.meta;
   const cases = data.allApiServerCases?.edges;
   return (
-    <Layout location={location}>
+    <Layout>
       <Meta site={meta} />
       {cases.map((n) => (
         <ul key={`${n.node.part}-${n.node.year}`}>

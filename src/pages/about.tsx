@@ -4,15 +4,15 @@ import { AboutPageQuery } from "../../types/graphql-types";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
 
-interface Props {
+interface AboutPageProps {
   data: AboutPageQuery;
   location: Location;
 }
 
-const Index: React.FC<Props> = ({ data, location }: Props) => {
+const Index: React.FC<AboutPageProps> = ({ data }: AboutPageProps) => {
   const meta = data.site?.meta;
   return (
-    <Layout location={location}>
+    <Layout>
       <Meta site={meta} />
     </Layout>
   );

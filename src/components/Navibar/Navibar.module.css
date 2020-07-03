@@ -37,6 +37,6 @@
   padding: 0.2rem 1rem;
 }
 
-.menu-item-active a {
+.menu-item a.menu-link-active {
   background-color: var(--color-primary);
 }
