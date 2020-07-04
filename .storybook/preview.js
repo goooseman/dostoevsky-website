@@ -1,5 +1,9 @@
 import { action } from "@storybook/addon-actions";
+import { addDecorator, addParameters } from "@storybook/react";
+import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
+import { withA11y } from "@storybook/addon-a11y";
 import "../src/styles/global.css";
+import "@storybook/addon-console";
 
 // Gatsby's Link overrides:
 // Gatsby Link calls the `enqueue` & `hovering` methods on the global variable ___loader.
@@ -20,3 +24,10 @@ global.__BASE_PATH__ = "";
 window.___navigate = (pathname) => {
   action("NavigateTo:")(pathname);
 };
+
+addDecorator(withA11y);
+addParameters({
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
+  },
+});
