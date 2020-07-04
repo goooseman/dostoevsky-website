@@ -2,7 +2,9 @@
 
 /* Colors: https://www.materialui.co/colors */
 
-/* This vars will be taken by postcss-custom-properties to create fallback css properties */
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Roboto:wght@400;500;700&display=swap");
+
+/* These vars will be taken by postcss-custom-properties to create fallback css properties */
 :root {
   /* colors */
   --color-text: #000;
@@ -15,7 +17,8 @@
   --color-border-inverted: #fff;
 
   /* fonts */
-  --font-family-primary: helvetica neue, helvetica, arial, sans-serif;
+  --font-family-primary: "Roboto", helvetica neue, helvetica, arial, sans-serif;
+  --font-family-secondary: "PT Serif", serif;
   --font-size-base: 16px;
   --letter-spacing-base: 0;
   --line-height-base: 1.3;
