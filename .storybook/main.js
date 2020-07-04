@@ -93,6 +93,10 @@ module.exports = {
       ],
     });
 
+    config.resolve.alias = {
+      src: path.resolve(__dirname, "../src/"),
+    };
+
     return config;
   },
 };

@@ -5,9 +5,7 @@ import classes from "./Navibar.module.css";
 import Container from "src/components/ui-kit/Container";
 import Typography from "src/components/ui-kit/Typography/Typography";
 
-interface NavibarProps {
-  title: string;
-}
+interface NavibarProps {}
 
 const Navibar: React.FC<NavibarProps> = () => {
   return (

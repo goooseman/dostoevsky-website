@@ -17,7 +17,7 @@ interface Props {
 const Layout: React.FC<Props> = ({ children }: Props) => {
   return (
     <TargemProvider detectLocale translations={translationsJson}>
-      <Navibar title={siteMetadata.title} />
+      <Navibar />
       {children}
       <Footer title={siteMetadata.title} />
     </TargemProvider>
