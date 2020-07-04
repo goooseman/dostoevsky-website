@@ -31,6 +31,8 @@ class Typography extends PureComponent<TypographyProps> {
       size,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       gutterBottom,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      color,
       ...otherProps
     } = this.props;
     const Component = variant;
