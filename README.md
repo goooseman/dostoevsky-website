@@ -7,3 +7,9 @@
 <p align="center">
   <img src="./docs/Dostoevsky.jpg" alt="Fyodor Michalych" />
 </p>
+
+### Useful links
+
+- [Website interactive prototype](https://www.figma.com/proto/ATV2uD5P5pHjNbnQHs2YB2/Sasha's-Team-Colors)
+- [Design mock-ups](https://www.figma.com/file/ATV2uD5P5pHjNbnQHs2YB2/Sasha's-Team-Colors)
+- [FAQ (including field names of every clause)](https://docs.google.com/document/d/15QNlG6dXG-1IusP7cn-iHPCa2JtotncHd-jv1bEVlcA/edit?invite=CN6u7vcI&ts=5efc9621)
