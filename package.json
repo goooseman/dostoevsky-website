@@ -52,6 +52,7 @@
     "@storybook/addon-viewport": "^5.3.19",
     "@storybook/addons": "^5.3.19",
     "@storybook/react": "^5.3.19",
+    "@types/jsdom": "^16.2.3",
     "@types/react-helmet": "^6.0.0",
     "@typescript-eslint/eslint-plugin": "^3.5.0",
     "@typescript-eslint/parser": "^3.5.0",
@@ -63,6 +64,7 @@
     "eslint-plugin-react": "7.20.0",
     "eslint-plugin-react-hooks": "^4.0.5",
     "husky": "^4.2.5",
+    "jsdom": "^16.2.2",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "react-docgen-typescript-loader": "^3.7.2",
@@ -71,6 +73,7 @@
     "stylelint-config-idiomatic-order": "^8.1.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
+    "ts-node": "^8.10.2",
     "typescript": "^3.9.6"
   },
   "keywords": [
@@ -97,6 +100,7 @@
     "lint:stylelint:check": "stylelint --ignore-path .gitignore",
     "lint:stylelint:write": "stylelint --fix --ignore-path .gitignore",
     "intl:update-po": "gettext-utils export-strings --default-locale=en-GB && git add src/i18n/*.po*",
-    "intl:generate-json": "gettext-utils import-strings"
+    "intl:generate-json": "gettext-utils import-strings",
+    "extra:parse-uk-rf": "ts-node --project tsconfig.node.json extra/ук-рф-parser.ts "
   }
 }
