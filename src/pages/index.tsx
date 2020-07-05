@@ -17,7 +17,7 @@ const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
       <img
         src="https://nizrp.narod.ru/pics/dost5.jpg"
         style={{
-          display: "inline-block",
+          display: "block",
           width: "100%",
         }}
       />
