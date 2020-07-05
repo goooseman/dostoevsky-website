@@ -1,26 +1,19 @@
 import { graphql } from "gatsby";
 import React from "react";
-import { IndexQueryQuery } from "../../types/graphql-types";
+import { FaqPageQuery } from "../../types/graphql-types";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
 
-interface IndexPageProps {
-  data: IndexQueryQuery;
+interface FaqPageProps {
+  data: FaqPageQuery;
   location: Location;
 }
 
-const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
+const Index: React.FC<FaqPageProps> = ({ data }: FaqPageProps) => {
   const meta = data.site?.meta;
   return (
     <Layout>
       <Meta site={meta} />
-      <img
-        src="https://nizrp.narod.ru/pics/dost5.jpg"
-        style={{
-          display: "inline-block",
-          width: "100%",
-        }}
-      />
     </Layout>
   );
 };
@@ -28,7 +21,7 @@ const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
 export default Index;
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query FaqPage {
     site {
       meta: siteMetadata {
         title

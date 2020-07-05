@@ -1,8 +1,8 @@
 import React, { PureComponent } from "react";
 import { graphql } from "gatsby";
 import { CasePageQueryQuery } from "types/graphql-types";
-import Meta from "src/components/meta";
-import Layout from "src/components/layout";
+import Meta from "src/components/Meta";
+import Layout from "src/components/Layout";
 import { T } from "react-targem";
 
 interface CasePageProps {
@@ -12,9 +12,9 @@ interface CasePageProps {
 
 class CasePage extends PureComponent<CasePageProps> {
   render(): React.ReactNode {
-    const { data, location } = this.props;
+    const { data } = this.props;
     return (
-      <Layout location={location}>
+      <Layout>
         <Meta site={data.site?.meta} />
         <div>
           <p>

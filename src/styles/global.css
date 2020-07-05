@@ -1,0 +1,23 @@
+@import "./vendor.css";
+@import "./themes/default.css";
+
+html {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  letter-spacing: var(--letter-spacing-base);
+  line-height: var(--line-height-base);
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media screen and (--viewport-sm-max) {
+  html {
+    font-size: 14px;
+  }
+}
