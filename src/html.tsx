@@ -12,7 +12,7 @@ const HTML: React.FC<Props> = ({
   postBodyComponents,
 }: Props) => {
   return (
-    <html lang="en">
+    <html>
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />

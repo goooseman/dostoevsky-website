@@ -1,8 +1,8 @@
 import { graphql } from "gatsby";
 import React from "react";
 import { IndexQueryQuery } from "../../types/graphql-types";
-import Meta from "src/components/meta";
-import Layout from "src/components/layout";
+import Meta from "src/components/Meta";
+import Layout from "src/components/Layout";
 
 interface Props {
   data: IndexQueryQuery;

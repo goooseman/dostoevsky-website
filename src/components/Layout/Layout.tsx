@@ -1,6 +1,6 @@
 import React from "react";
-import Navibar from "src/components/navibar";
-import Footer from "src/components/footer";
+import Navibar from "src/components/Navibar";
+import Footer from "src/components/Footer";
 import { siteMetadata } from "../../../gatsby-config";
 import { TargemProvider } from "react-targem";
 
