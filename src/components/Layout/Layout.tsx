@@ -1,5 +1,5 @@
 import React from "react";
-import Navibar from "src/components/Navibar";
+import Header from "src/components/Header";
 import Footer from "src/components/Footer";
 import { siteMetadata } from "../../../gatsby-config";
 import { TargemProvider } from "react-targem";
@@ -17,7 +17,7 @@ interface Props {
 const Layout: React.FC<Props> = ({ children }: Props) => {
   return (
     <TargemProvider detectLocale translations={translationsJson}>
-      <Navibar />
+      <Header />
       {children}
       <Footer title={siteMetadata.title} />
     </TargemProvider>

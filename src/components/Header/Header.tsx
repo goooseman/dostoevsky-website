@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "gatsby";
 import cn from "clsx";
-import classes from "./Navibar.module.css";
+import classes from "./Header.module.css";
 import Container from "src/components/ui-kit/Container";
 import Typography from "src/components/ui-kit/Typography/Typography";
 
-interface NavibarProps {}
+interface HeaderProps {}
 
-const Navibar: React.FC<NavibarProps> = () => {
+const Header: React.FC<HeaderProps> = () => {
   return (
     <nav className={cn(classes.container)}>
       <Container>
@@ -48,4 +48,4 @@ const Navibar: React.FC<NavibarProps> = () => {
   );
 };
 
-export default Navibar;
+export default Header;
