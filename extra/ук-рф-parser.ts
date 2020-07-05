@@ -6,32 +6,54 @@ import path from "path";
 const USER_AGENT =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36";
 
-interface Result {
-  [key: string]: string | Result;
+export interface UkRfPart {
+  text: {
+    ru: string;
+  };
+  url?: string;
+  key?: string;
+  children?: UkRfPart[];
 }
 
-const getParsedList = (listNode: Element): Result => {
-  const result: Result = {};
+// Статья 19. Общие условия уголовной ответственности
+// Статья 19.1
+// Статья 322.1. Организация незаконной миграции
+const getKeyByLinkText = (text: string): string => {
+  const match = text.match(/Статья (.+)\./);
+  if (!match) {
+    throw new Error(`Not able to retrive ID from ${text}`);
+  }
+  return match[1];
+};
+
+const getParsedList = (listNode: Element): UkRfPart[] => {
+  const result: UkRfPart[] = [];
   for (const liNode of listNode.querySelectorAll("li")) {
     if (liNode.parentNode !== listNode) {
       // liNode is not 1st level child of listNode
       continue;
     }
 
+    const link = liNode.querySelector("a")!;
+
     if (liNode.nextElementSibling?.tagName === "UL") {
-      result[liNode.querySelector("a")?.textContent || ""] = getParsedList(
-        liNode.nextElementSibling!
-      );
+      result.push({
+        text: { ru: link.textContent! },
+        children: getParsedList(liNode.nextElementSibling!),
+      });
       continue;
     }
 
-    const link = liNode.querySelector("a");
-    result[link?.textContent || ""] = link?.getAttribute("href") as string;
+    result.push({
+      text: { ru: link.textContent! },
+      url: link.getAttribute("href") as string,
+      key: getKeyByLinkText(link.textContent!),
+    });
   }
   return result;
 };
 
-const getParsedDocument = async (url: string): Promise<Result> => {
+const getParsedDocument = async (url: string): Promise<UkRfPart[]> => {
   const resourceLoader = new ResourceLoader({ userAgent: USER_AGENT });
   const dom = await JSDOM.fromURL(url, {
     resources: resourceLoader,
@@ -39,7 +61,16 @@ const getParsedDocument = async (url: string): Promise<Result> => {
 
   const { document } = dom.window;
   const initialListNode = document.querySelector(".document contents ul");
-  return getParsedList(initialListNode!);
+  const parsedList = getParsedList(initialListNode!);
+  const особеннаяЧасть = parsedList.find(
+    (n) => n.text.ru === "Особенная часть"
+  );
+  if (!особеннаяЧасть) {
+    throw new Error(
+      `Страница ${url} не содержит указателя "Особенная часть" или структура страницы изменилась и не может быть разобрана.`
+    );
+  }
+  return особеннаяЧасть.children!;
 };
 
 (async () => {

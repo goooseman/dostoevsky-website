@@ -2,33 +2,27 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require("path");
 const WebpackShellPluginNext = require("webpack-shell-plugin-next");
+const ukRf = require("./content/ук-рф.json");
+const years = require("./content/years.json");
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ actions }) => {
   const { createPage } = actions;
-
-  const result = await graphql(`
-    query {
-      allApiServerData(filter: { id: { ne: "dummy" } }) {
-        edges {
-          node {
-            part
-            year
-          }
+  for (let part of ukRf) {
+    for (let section of part.children) {
+      for (let chapter of section.children) {
+        for (let year of years) {
+          createPage({
+            path: `/${chapter.key}/${year}`,
+            component: path.resolve(`src/templates/Case/CasePage.tsx`),
+            context: {
+              partRegex: `/^${chapter.key}/i`,
+              year,
+            },
+          });
         }
       }
     }
-  `);
-
-  result.data.allApiServerData.edges.forEach(({ node }) => {
-    createPage({
-      path: `${node.part}-${node.year}`,
-      component: path.resolve(`src/templates/Case/CasePage.tsx`),
-      context: {
-        partRegex: `/^${node.part}/i`,
-        year: node.year,
-      },
-    });
-  });
+  }
 };
 
 exports.onCreateWebpackConfig = ({ actions }) => {
@@ -36,6 +30,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     resolve: {
       alias: {
         src: path.resolve(__dirname, "src/"),
+        content: path.resolve(__dirname, "content/"),
         types: path.resolve(__dirname, "types/"),
       },
     },

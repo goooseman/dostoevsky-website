@@ -3,6 +3,9 @@ import React from "react";
 import { ClausesQueryQuery } from "../../types/graphql-types";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
+import ukRf from "content/ук-рф.json";
+import years from "content/years.json";
+import Typography from "src/components/ui-kit/Typography";
 
 interface ClausesPageProps {
   data: ClausesQueryQuery;
@@ -11,18 +14,23 @@ interface ClausesPageProps {
 
 const Clauses: React.FC<ClausesPageProps> = ({ data }: ClausesPageProps) => {
   const meta = data.site?.meta;
-  const clauses = data.allApiServerData?.edges;
   return (
     <Layout>
       <Meta site={meta} />
-      {clauses.map((n) => (
-        <ul key={`${n.node.part}-${n.node.year}`}>
-          <li>
-            <a href={`/${n.node.part}-${n.node.year}`}>
-              {n.node.part} ({n.node.year})
-            </a>
-          </li>
-        </ul>
+      {ukRf.map((part) => (
+        <>
+          <Typography>{part.text.ru}</Typography>
+          {part.children.map((section) => (
+            <>
+              <Typography>{section.text.ru}</Typography>
+              {section.children.map((chapter) => (
+                <Typography key={chapter.key}>
+                  <a href={`/${chapter.key}/${years[0]}`}>{chapter.text.ru}</a>
+                </Typography>
+              ))}
+            </>
+          ))}
+        </>
       ))}
     </Layout>
   );
@@ -37,14 +45,6 @@ export const pageQuery = graphql`
         title
         description
         siteUrl
-      }
-    }
-    allApiServerData(filter: { id: { ne: "dummy" } }) {
-      edges {
-        node {
-          part
-          year
-        }
       }
     }
   }
