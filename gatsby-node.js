@@ -8,7 +8,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const result = await graphql(`
     query {
-      allApiServerCases(filter: { id: { ne: "dummy" } }) {
+      allApiServerData(filter: { id: { ne: "dummy" } }) {
         edges {
           node {
             part
@@ -19,12 +19,12 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  result.data.allApiServerCases.edges.forEach(({ node }) => {
+  result.data.allApiServerData.edges.forEach(({ node }) => {
     createPage({
       path: `${node.part}-${node.year}`,
       component: path.resolve(`src/templates/Case/CasePage.tsx`),
       context: {
-        part: node.part,
+        partRegex: `/^${node.part}/i`,
         year: node.year,
       },
     });

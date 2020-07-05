@@ -11,11 +11,11 @@ interface ClausesPageProps {
 
 const Clauses: React.FC<ClausesPageProps> = ({ data }: ClausesPageProps) => {
   const meta = data.site?.meta;
-  const cases = data.allApiServerCases?.edges;
+  const clauses = data.allApiServerData?.edges;
   return (
     <Layout>
       <Meta site={meta} />
-      {cases.map((n) => (
+      {clauses.map((n) => (
         <ul key={`${n.node.part}-${n.node.year}`}>
           <li>
             <a href={`/${n.node.part}-${n.node.year}`}>
@@ -39,7 +39,7 @@ export const pageQuery = graphql`
         siteUrl
       }
     }
-    allApiServerCases(filter: { id: { ne: "dummy" } }) {
+    allApiServerData(filter: { id: { ne: "dummy" } }) {
       edges {
         node {
           part
