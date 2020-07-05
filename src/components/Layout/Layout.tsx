@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "src/components/Header";
 import Footer from "src/components/Footer";
-import { siteMetadata } from "../../../gatsby-config";
 import { TargemProvider } from "react-targem";
 import "src/styles/global.css";
 
@@ -19,7 +18,7 @@ const Layout: React.FC<Props> = ({ children }: Props) => {
     <TargemProvider detectLocale translations={translationsJson}>
       <Header />
       {children}
-      <Footer title={siteMetadata.title} />
+      <Footer />
     </TargemProvider>
   );
 };

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "POT-Creation-Date: Sun Jun 28 2020 09:29:14 GMT+0300 (Israel Daylight Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -12,8 +12,16 @@ msgstr ""
 "Last-Translator: \n"
 "Language: en\n"
 
+#: src/components/Footer/Footer.tsx:
+msgid "OI logo"
+msgstr "OI logo"
+
+#: src/components/Footer/Footer.tsx:
+msgid "D4S logo"
+msgstr "D4S logo"
+
 #: src/templates/Case/CasePage.tsx:
 msgid "In 2017 one man has been convicted."
 msgid_plural "In 2017 {{ count }} men has been convicted."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "In 2017 one man has been convicted."
+msgstr[1] "In 2017 {{ count }} men has been convicted."
