@@ -20,8 +20,8 @@ msgstr "OI logo"
 msgid "D4S logo"
 msgstr "D4S logo"
 
-#: src/templates/Case/CasePage.tsx:
-msgid "In 2017 one man has been convicted."
-msgid_plural "In 2017 {{ count }} men has been convicted."
-msgstr[0] "In 2017 one man has been convicted."
-msgstr[1] "In 2017 {{ count }} men has been convicted."
+#: src/templates/ClausePage/ClausePage.tsx:
+msgid "One man has been convicted."
+msgid_plural "{{ count }} men has been convicted."
+msgstr[0] "One man has been convicted."
+msgstr[1] "{{ count }} men has been convicted."

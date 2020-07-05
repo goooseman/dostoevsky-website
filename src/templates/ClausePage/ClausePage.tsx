@@ -1,16 +1,16 @@
 import React, { PureComponent } from "react";
 import { graphql } from "gatsby";
-import { CasePageQueryQuery } from "types/graphql-types";
+import { ClausePageQuery } from "types/graphql-types";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
 import { T } from "react-targem";
 
-interface CasePageProps {
-  data: CasePageQueryQuery;
+interface ClausePageProps {
+  data: ClausePageQuery;
   location: Location;
 }
 
-class CasePage extends PureComponent<CasePageProps> {
+class ClausePage extends PureComponent<ClausePageProps> {
   render(): React.ReactNode {
     const { data } = this.props;
     const parts = data.allApiServerData.edges;
@@ -30,8 +30,8 @@ class CasePage extends PureComponent<CasePageProps> {
           <p>Статья: {partOne.name}</p>
           <p>Год: {partOne.year}</p>
           <T
-            message="In 2017 one man has been convicted."
-            messagePlural="In 2017 {{ count }} men has been convicted."
+            message="One man has been convicted."
+            messagePlural="{{ count }} men has been convicted."
             count={totalConvicted}
           />
         </div>
@@ -41,7 +41,7 @@ class CasePage extends PureComponent<CasePageProps> {
 }
 
 export const query = graphql`
-  query CasePageQuery($partRegex: String!, $year: String!) {
+  query ClausePage($partRegex: String!, $year: String!) {
     site {
       meta: siteMetadata {
         title
@@ -65,4 +65,4 @@ export const query = graphql`
   }
 `;
 
-export default CasePage;
+export default ClausePage;
