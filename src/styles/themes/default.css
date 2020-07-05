@@ -13,7 +13,7 @@
   --color-main-background: #eff5f3;
   --color-primary: #ff6700;
   --color-secondary: #7c89e4;
-  --color-border: #000;
+  --color-border: var(--color-secondary);
   --color-border-inverted: #fff;
 
   /* fonts */
@@ -25,7 +25,7 @@
 
   /* sizes */
   --border-width-regular: 0.1rem;
-  --border-radius: 0;
+  --border-radius: 25px;
 
   /* z-indexes */
   --z-index-0: 0;

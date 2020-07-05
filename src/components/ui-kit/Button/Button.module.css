@@ -1,0 +1,29 @@
+.button {
+  min-width: 3rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--color-border);
+  background-color: transparent;
+  border-radius: var(--border-radius);
+  color: var(--color-text);
+  cursor: pointer;
+  outline: 0;
+  text-transform: uppercase;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.button:hover,
+.button:active,
+.button:focus {
+  background-color: var(--color-border);
+}
+
+.button-lg {
+  padding: 1rem 1.5rem;
+}
+
+.button-inverted {
+  border-color: var(--color-border-inverted);
+  color: var(--color-text-inverted);
+}
