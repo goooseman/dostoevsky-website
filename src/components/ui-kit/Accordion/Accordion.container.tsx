@@ -43,7 +43,9 @@ class AccordionContainer extends PureComponent<
   }
 
   private handleClick = (index: number) => () => {
-    this.setState({ activeNode: index });
+    this.setState((state: AccordionContainerState) => ({
+      activeNode: state.activeNode === index ? -1 : index,
+    }));
   };
 }
 
