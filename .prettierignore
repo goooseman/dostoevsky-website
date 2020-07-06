@@ -6,3 +6,4 @@ public
 .cache
 /types/graphql-types.d.ts
 /src/i18n/translations.json
+/content/api-data.json
