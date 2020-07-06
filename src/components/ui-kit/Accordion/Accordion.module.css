@@ -1,0 +1,57 @@
+.title {
+  position: relative;
+}
+
+.title-button {
+  width: 100%;
+  padding-top: 2rem;
+  padding-right: 0;
+  padding-bottom: 2rem;
+  padding-left: 0;
+  border: 0;
+  border-bottom: 1px solid var(--color-text);
+  background-color: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.contents {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-text);
+  margin: 0;
+}
+
+.variant-primary ~ .contents {
+  border-bottom: none;
+}
+
+.is-opened .title-button {
+  border-bottom: none;
+}
+
+.variant-primary .title-button,
+.variant-primary.is-opened .title-button {
+  border-bottom: 2px solid var(--color-text);
+}
+
+.variant-primary-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -3rem;
+  border: none;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.variant-secondary-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+}

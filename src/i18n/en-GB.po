@@ -20,6 +20,22 @@ msgstr "OI logo"
 msgid "D4S logo"
 msgstr "D4S logo"
 
+#: src/components/ui-kit/Accordion/Accordion.tsx:
+msgid "Minus icon"
+msgstr "Minus icon"
+
+#: src/components/ui-kit/Accordion/Accordion.tsx:
+msgid "Plus icon"
+msgstr "Plus icon"
+
+#: src/components/ui-kit/Accordion/Accordion.tsx:
+msgid "Up icon"
+msgstr "Up icon"
+
+#: src/components/ui-kit/Accordion/Accordion.tsx:
+msgid "Down icon"
+msgstr "Down icon"
+
 #: src/templates/ClausePage/ClausePage.tsx:
 msgid "One man has been convicted."
 msgid_plural "{{ count }} men has been convicted."
