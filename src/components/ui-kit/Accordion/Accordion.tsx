@@ -50,7 +50,7 @@ class AccordionNodePure extends PureComponent<AccordionNodeProps> {
   getPrimaryVariantIcon = (): React.ReactNode => {
     const { isOpened, t, onClick } = this.props;
     return isOpened ? (
-      <button className={cn(classes.variantPrimaryIcon)}>
+      <button onClick={onClick} className={cn(classes.variantPrimaryIcon)}>
         <img src={require("./assets/minus.svg")} alt={t("Minus icon")} />
       </button>
     ) : (
