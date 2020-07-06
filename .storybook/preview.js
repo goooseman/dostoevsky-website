@@ -1,8 +1,10 @@
+import React from "react";
 import { action } from "@storybook/addon-actions";
 import { addDecorator, addParameters } from "@storybook/react";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { withA11y } from "@storybook/addon-a11y";
 import "../src/styles/global.css";
+import { TargemProvider } from "react-targem";
 import "@storybook/addon-console";
 
 // Gatsby's Link overrides:
@@ -26,6 +28,9 @@ window.___navigate = (pathname) => {
 };
 
 addDecorator(withA11y);
+addDecorator((story) =>
+  React.createElement(TargemProvider, { translations: {} }, story())
+);
 addParameters({
   viewport: {
     viewports: INITIAL_VIEWPORTS,

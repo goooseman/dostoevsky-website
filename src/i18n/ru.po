@@ -22,7 +22,15 @@ msgid "D4S logo"
 msgstr "Логотип D4S"
 
 #: src/components/ui-kit/Accordion/Accordion.tsx:
+msgid "Close hidden content"
+msgstr ""
+
+#: src/components/ui-kit/Accordion/Accordion.tsx:
 msgid "Minus icon"
+msgstr ""
+
+#: src/components/ui-kit/Accordion/Accordion.tsx:
+msgid "Open hidden content"
 msgstr ""
 
 #: src/components/ui-kit/Accordion/Accordion.tsx:
