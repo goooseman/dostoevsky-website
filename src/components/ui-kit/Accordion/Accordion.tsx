@@ -96,7 +96,7 @@ interface AccordionProps {
 
 class Accordion extends PureComponent<AccordionProps> {
   render(): React.ReactNode {
-    return <dl>{this.props.children}</dl>;
+    return <dl className={classes.container}>{this.props.children}</dl>;
   }
 }
 
