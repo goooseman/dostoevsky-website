@@ -3,6 +3,7 @@ import classes from "./ClausesPage.module.css";
 import cn from "clsx";
 import Container from "src/components/ui-kit/Container";
 import Accordion, { AccordionNode } from "src/components/ui-kit/Accordion";
+import Typography from "src/components/ui-kit/Typography";
 
 interface ClauseText {
   ru: string;
@@ -11,34 +12,45 @@ interface ClauseText {
 interface ClausesPageProps {
   parts: {
     text: ClauseText;
-    sections: {
+    children: {
       text: ClauseText;
-      chapters: {
+      children: {
         text: ClauseText;
-        url: string;
+        key: string;
       }[];
     }[];
-  };
+  }[];
+  actualYear: string;
 }
 
 class ClausesPage extends PureComponent<ClausesPageProps> {
   render(): React.ReactNode {
-    const { parts } = this.props;
+    const { parts, actualYear } = this.props;
     return (
       <main className={cn(classes.container)}>
         <Container>
           <Accordion>
-            <AccordionNode title={parts.text.ru} variant="primary">
-              {parts.sections.map((section) => (
-                <Accordion key={section.text.ru}>
-                  <AccordionNode title={section.text.ru} variant="secondary">
-                    {section.chapters.map((chapter) => (
-                      <a key={chapter.text.ru}>{chapter.text.ru}</a>
-                    ))}
-                  </AccordionNode>
-                </Accordion>
-              ))}
-            </AccordionNode>
+            {parts.map((part) => (
+              <AccordionNode
+                key={part.text.ru}
+                title={part.text.ru}
+                variant="primary"
+              >
+                {part.children.map((section) => (
+                  <Accordion key={section.text.ru}>
+                    <AccordionNode title={section.text.ru} variant="secondary">
+                      {section.children.map((chapter) => (
+                        <Typography key={chapter.key}>
+                          <a href={`/${chapter.key}/${actualYear}`}>
+                            {chapter.text.ru}
+                          </a>
+                        </Typography>
+                      ))}
+                    </AccordionNode>
+                  </Accordion>
+                ))}
+              </AccordionNode>
+            ))}
           </Accordion>
         </Container>
       </main>

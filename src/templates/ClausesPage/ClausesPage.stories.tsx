@@ -1,23 +1,10 @@
 import React from "react";
 import ClausesPage from "./ClausesPage";
+import ukRf from "content/ук-рф.json";
+import years from "content/years.json";
 
 export default { title: "pages/ClausesPage", component: ClausesPage };
 
-const parts = {
-  text: { ru: "Фуу" },
-  sections: [
-    {
-      text: { ru: "Секция" },
-      chapters: [
-        {
-          text: { ru: "Глава" },
-          url: "https://google.com",
-        },
-      ],
-    },
-  ],
-};
-
 export const withDefaultClauses = (): React.ReactNode => (
-  <ClausesPage parts={parts} />
+  <ClausesPage parts={ukRf} actualYear={years[0]} />
 );

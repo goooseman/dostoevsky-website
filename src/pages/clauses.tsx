@@ -5,7 +5,7 @@ import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
 import ukRf from "content/ук-рф.json";
 import years from "content/years.json";
-import Typography from "src/components/ui-kit/Typography";
+import ClausesPage from "src/templates/ClausesPage/ClausesPage";
 
 interface ClausesPageProps {
   data: ClausesQueryQuery;
@@ -17,21 +17,7 @@ const Clauses: React.FC<ClausesPageProps> = ({ data }: ClausesPageProps) => {
   return (
     <Layout>
       <Meta site={meta} />
-      {ukRf.map((part) => (
-        <>
-          <Typography>{part.text.ru}</Typography>
-          {part.children.map((section) => (
-            <>
-              <Typography>{section.text.ru}</Typography>
-              {section.children.map((chapter) => (
-                <Typography key={chapter.key}>
-                  <a href={`/${chapter.key}/${years[0]}`}>{chapter.text.ru}</a>
-                </Typography>
-              ))}
-            </>
-          ))}
-        </>
-      ))}
+      <ClausesPage parts={ukRf} actualYear={years[0]} />
     </Layout>
   );
 };
