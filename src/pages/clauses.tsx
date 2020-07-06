@@ -5,7 +5,7 @@ import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
 import ukRf from "content/ук-рф.json";
 import years from "content/years.json";
-import ClausesPage from "src/templates/ClausesPage/ClausesPage";
+import ClausesPage from "src/templates/ClausesPage";
 
 interface ClausesPageProps {
   data: ClausesQueryQuery;
