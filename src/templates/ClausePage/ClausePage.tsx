@@ -4,19 +4,41 @@ import { ClausePageQuery } from "types/graphql-types";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
 import { T } from "react-targem";
+import Container from "src/components/ui-kit/Container";
+import Typography from "src/components/ui-kit/Typography";
 
 interface ClausePageProps {
   data: ClausePageQuery;
   location: Location;
+  pageContext: {
+    partRegex: string;
+    year: string;
+    clause: string;
+  };
 }
 
 class ClausePage extends PureComponent<ClausePageProps> {
   render(): React.ReactNode {
-    const { data } = this.props;
+    const { data, pageContext } = this.props;
     const parts = data.allApiServerData.edges;
-    const partOne = parts[0]?.node;
-    if (!partOne) {
-      throw new Error("No parts information");
+    const firstPart = parts[0]?.node;
+    if (!firstPart) {
+      return (
+        <Layout>
+          <Meta site={data.site?.meta} />
+          <Container>
+            <Typography>
+              <T
+                message="No data for clause {{ clauseNumber }} for year {{ year }}"
+                scope={{
+                  clauseNumber: pageContext.clause,
+                  year: pageContext.year,
+                }}
+              />
+            </Typography>
+          </Container>
+        </Layout>
+      );
     }
     const totalConvicted = parts.reduce(
       (curr: number, n) => curr + (n.node.totalConvicted || 0),
@@ -27,8 +49,8 @@ class ClausePage extends PureComponent<ClausePageProps> {
       <Layout>
         <Meta site={data.site?.meta} />
         <div>
-          <p>Статья: {partOne.name}</p>
-          <p>Год: {partOne.year}</p>
+          <p>Статья: {firstPart.name}</p>
+          <p>Год: {firstPart.year}</p>
           <T
             message="One man has been convicted."
             messagePlural="{{ count }} men has been convicted."

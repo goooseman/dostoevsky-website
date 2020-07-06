@@ -2659,11 +2659,13 @@ export type SitePageConnectionGroupArgs = {
 export type SitePageContext = {
   partRegex?: Maybe<Scalars['String']>;
   year?: Maybe<Scalars['Date']>;
+  clause?: Maybe<Scalars['String']>;
 };
 
 export type SitePageContextFilterInput = {
   partRegex?: Maybe<StringQueryOperatorInput>;
   year?: Maybe<DateQueryOperatorInput>;
+  clause?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -2767,6 +2769,7 @@ export type SitePageFieldsEnum =
   | 'isCreatedByStatefulCreatePages'
   | 'context___partRegex'
   | 'context___year'
+  | 'context___clause'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'
@@ -2842,12 +2845,13 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___typePrefix'
   | 'pluginCreator___pluginOptions___allowCache'
   | 'pluginCreator___pluginOptions___maxCacheDurationSeconds'
+  | 'pluginCreator___pluginOptions___localSave'
+  | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___verboseOutput'
   | 'pluginCreator___pluginOptions___entitiesArray'
   | 'pluginCreator___pluginOptions___entitiesArray___name'
   | 'pluginCreator___pluginOptions___entitiesArray___url'
   | 'pluginCreator___pluginOptions___entitiesArray___method'
-  | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
@@ -3072,6 +3076,8 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___typePrefix'
   | 'pluginOptions___allowCache'
   | 'pluginOptions___maxCacheDurationSeconds'
+  | 'pluginOptions___localSave'
+  | 'pluginOptions___path'
   | 'pluginOptions___verboseOutput'
   | 'pluginOptions___entitiesArray'
   | 'pluginOptions___entitiesArray___name'
@@ -3156,7 +3162,6 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___entitiesArray___schemaType___totalConvicted'
   | 'pluginOptions___entitiesArray___schemaType___unfinishedOffence'
   | 'pluginOptions___entitiesArray___schemaType___year'
-  | 'pluginOptions___path'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
   | 'browserAPIs'
@@ -3295,9 +3300,10 @@ export type SitePluginPluginOptions = {
   typePrefix?: Maybe<Scalars['String']>;
   allowCache?: Maybe<Scalars['Boolean']>;
   maxCacheDurationSeconds?: Maybe<Scalars['Int']>;
+  localSave?: Maybe<Scalars['Boolean']>;
+  path?: Maybe<Scalars['String']>;
   verboseOutput?: Maybe<Scalars['Boolean']>;
   entitiesArray?: Maybe<Array<Maybe<SitePluginPluginOptionsEntitiesArray>>>;
-  path?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
@@ -3525,9 +3531,10 @@ export type SitePluginPluginOptionsFilterInput = {
   typePrefix?: Maybe<StringQueryOperatorInput>;
   allowCache?: Maybe<BooleanQueryOperatorInput>;
   maxCacheDurationSeconds?: Maybe<IntQueryOperatorInput>;
+  localSave?: Maybe<BooleanQueryOperatorInput>;
+  path?: Maybe<StringQueryOperatorInput>;
   verboseOutput?: Maybe<BooleanQueryOperatorInput>;
   entitiesArray?: Maybe<SitePluginPluginOptionsEntitiesArrayFilterListInput>;
-  path?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
 

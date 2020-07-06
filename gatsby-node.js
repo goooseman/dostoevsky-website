@@ -17,6 +17,7 @@ exports.createPages = async ({ actions }) => {
             context: {
               partRegex: `/^${chapter.key}/i`,
               year,
+              clause: chapter.key,
             },
           });
         }
