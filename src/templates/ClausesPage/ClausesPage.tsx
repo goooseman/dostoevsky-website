@@ -12,8 +12,10 @@ interface ClauseText {
 interface ClausesPageProps {
   parts: {
     text: ClauseText;
+    key: string;
     children: {
       text: ClauseText;
+      key: string;
       children: {
         text: ClauseText;
         key: string;
@@ -32,12 +34,12 @@ class ClausesPage extends PureComponent<ClausesPageProps> {
           <Accordion>
             {parts.map((part) => (
               <AccordionNode
-                key={part.text.ru}
+                key={part.key}
                 title={part.text.ru}
                 variant="primary"
               >
                 {part.children.map((section) => (
-                  <Accordion key={section.text.ru}>
+                  <Accordion key={section.key}>
                     <AccordionNode title={section.text.ru} variant="secondary">
                       {section.children.map((chapter) => (
                         <Typography key={chapter.key}>

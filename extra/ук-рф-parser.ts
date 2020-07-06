@@ -10,8 +10,8 @@ export interface UkRfPart {
   text: {
     ru: string;
   };
-  url?: string;
-  key?: string;
+  url: string;
+  key: string;
   children?: UkRfPart[];
 }
 
@@ -40,6 +40,8 @@ const getParsedList = (listNode: Element): UkRfPart[] => {
       result.push({
         text: { ru: link.textContent! },
         children: getParsedList(liNode.nextElementSibling!),
+        key: link.getAttribute("href") as string,
+        url: link.getAttribute("href") as string,
       });
       continue;
     }
