@@ -34,7 +34,7 @@ class AccordionNodePure extends PureComponent<AccordionNodeProps> {
             aria-expanded={isOpened}
           >
             <Typography>
-              <b>{title}</b>
+              {variant === "primary" ? <b>{title}</b> : title}
 
               {variant === "secondary" ? this.getSecondaryVariantIcon() : null}
             </Typography>
