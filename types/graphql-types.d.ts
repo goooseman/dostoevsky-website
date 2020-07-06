@@ -3625,6 +3625,14 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
+export type ClausePageQueryVariables = Exact<{
+  partRegex: Scalars['String'];
+  year: Scalars['String'];
+}>;
+
+
+export type ClausePageQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, allApiServerData: { edges: Array<{ node: Pick<Api_Server__Data, 'part' | 'year' | 'name' | 'exemptionOther' | 'totalConvicted'> }> } };
+
 export type AboutPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -3644,14 +3652,6 @@ export type IndexQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type IndexQueryQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }> };
-
-export type ClausePageQueryVariables = Exact<{
-  partRegex: Scalars['String'];
-  year: Scalars['String'];
-}>;
-
-
-export type ClausePageQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, allApiServerData: { edges: Array<{ node: Pick<Api_Server__Data, 'part' | 'year' | 'name' | 'exemptionOther' | 'totalConvicted'> }> } };
 
 export type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
