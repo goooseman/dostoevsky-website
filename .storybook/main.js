@@ -95,6 +95,8 @@ module.exports = {
 
     config.resolve.alias = {
       src: path.resolve(__dirname, "../src/"),
+      content: path.resolve(__dirname, "../content/"),
+      types: path.resolve(__dirname, "../types/"),
     };
 
     return config;

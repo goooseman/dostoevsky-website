@@ -37,6 +37,7 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "react-targem": "^1.6.1",
+    "uuid": "^8.2.0",
     "webpack-shell-plugin-next": "^1.1.9"
   },
   "devDependencies": {
@@ -52,17 +53,26 @@
     "@storybook/addon-viewport": "^5.3.19",
     "@storybook/addons": "^5.3.19",
     "@storybook/react": "^5.3.19",
+    "@testing-library/jest-dom": "^5.11.0",
+    "@testing-library/react": "^10.4.4",
+    "@types/jest": "^26.0.3",
+    "@types/jsdom": "^16.2.3",
     "@types/react-helmet": "^6.0.0",
+    "@types/uuid": "^8.0.0",
     "@typescript-eslint/eslint-plugin": "^3.5.0",
     "@typescript-eslint/parser": "^3.5.0",
     "babel-loader": "^8.1.0",
     "babel-preset-react-app": "^9.1.2",
     "eslint": "^7.3.1",
     "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-jest-dom": "^3.0.1",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "7.20.0",
     "eslint-plugin-react-hooks": "^4.0.5",
     "husky": "^4.2.5",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.1.0",
+    "jsdom": "^16.2.2",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "react-docgen-typescript-loader": "^3.7.2",
@@ -71,6 +81,8 @@
     "stylelint-config-idiomatic-order": "^8.1.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
+    "ts-jest": "^26.1.1",
+    "ts-node": "^8.10.2",
     "typescript": "^3.9.6"
   },
   "keywords": [
@@ -87,6 +99,7 @@
     "storybook": "start-storybook -p 6006",
     "build": "gatsby build",
     "build:storybook": "build-storybook",
+    "test": "jest",
     "lint:check": "npm run lint:prettier:check . && npm run lint:tsc:check && npm run lint:eslint:check . && npm run lint:stylelint:check .",
     "lint:write": "npm run lint:prettier:write . && npm run lint:eslint:write . && npm run lint:stylelint:write .",
     "lint:prettier:check": "prettier --check",
@@ -97,6 +110,7 @@
     "lint:stylelint:check": "stylelint --ignore-path .gitignore",
     "lint:stylelint:write": "stylelint --fix --ignore-path .gitignore",
     "intl:update-po": "gettext-utils export-strings --default-locale=en-GB && git add src/i18n/*.po*",
-    "intl:generate-json": "gettext-utils import-strings"
+    "intl:generate-json": "gettext-utils import-strings",
+    "extra:parse-uk-rf": "ts-node --project tsconfig.node.json extra/ук-рф-parser.ts "
   }
 }

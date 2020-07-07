@@ -15,21 +15,43 @@ msgstr ""
 
 #: src/components/Footer/Footer.tsx:
 msgid "OI logo"
-msgstr ""
+msgstr "Логотип OI"
 
 #: src/components/Footer/Footer.tsx:
 msgid "D4S logo"
+msgstr "Логотип D4S"
+
+#: src/components/ui-kit/Accordion/Accordion.tsx:
+msgid "Close hidden content"
 msgstr ""
 
-#: src/templates/Case/CasePage.tsx:
-msgid "In 2017 one man has been convicted."
-msgid_plural "In 2017 {{ count }} men has been convicted."
-msgstr[0] ""
-"В 2017 году по данной статье были осуждены по основному составу {{ count }} "
-"человек."
-msgstr[1] ""
-"В 2017 году по данной статье были осуждены по основному составу {{ count }} "
-"человека."
-msgstr[2] ""
-"В 2017 году по данной статье были осуждены по основному составу {{ count }} "
-"человек."
+#: src/components/ui-kit/Accordion/Accordion.tsx:
+msgid "Minus icon"
+msgstr ""
+
+#: src/components/ui-kit/Accordion/Accordion.tsx:
+msgid "Open hidden content"
+msgstr ""
+
+#: src/components/ui-kit/Accordion/Accordion.tsx:
+msgid "Plus icon"
+msgstr ""
+
+#: src/components/ui-kit/Accordion/Accordion.tsx:
+msgid "Up icon"
+msgstr ""
+
+#: src/components/ui-kit/Accordion/Accordion.tsx:
+msgid "Down icon"
+msgstr ""
+
+#: src/templates/ClausePage/ClausePage.tsx:
+msgid "No data for clause {{ clauseNumber }} for year {{ year }}"
+msgstr ""
+
+#: src/templates/ClausePage/ClausePage.tsx:
+msgid "One man has been convicted."
+msgid_plural "{{ count }} men has been convicted."
+msgstr[0] "По данной статье были осуждены по основному составу {{ count }} человек."
+msgstr[1] "По данной статье были осуждены по основному составу {{ count }} человека."
+msgstr[2] "По данной статье были осуждены по основному составу {{ count }} человек."

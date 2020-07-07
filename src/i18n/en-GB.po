@@ -20,8 +20,36 @@ msgstr "OI logo"
 msgid "D4S logo"
 msgstr "D4S logo"
 
-#: src/templates/Case/CasePage.tsx:
-msgid "In 2017 one man has been convicted."
-msgid_plural "In 2017 {{ count }} men has been convicted."
-msgstr[0] "In 2017 one man has been convicted."
-msgstr[1] "In 2017 {{ count }} men has been convicted."
+#: src/components/ui-kit/Accordion/Accordion.tsx:
+msgid "Close hidden content"
+msgstr "Close hidden content"
+
+#: src/components/ui-kit/Accordion/Accordion.tsx:
+msgid "Minus icon"
+msgstr "Minus icon"
+
+#: src/components/ui-kit/Accordion/Accordion.tsx:
+msgid "Open hidden content"
+msgstr "Open hidden content"
+
+#: src/components/ui-kit/Accordion/Accordion.tsx:
+msgid "Plus icon"
+msgstr "Plus icon"
+
+#: src/components/ui-kit/Accordion/Accordion.tsx:
+msgid "Up icon"
+msgstr "Up icon"
+
+#: src/components/ui-kit/Accordion/Accordion.tsx:
+msgid "Down icon"
+msgstr "Down icon"
+
+#: src/templates/ClausePage/ClausePage.tsx:
+msgid "No data for clause {{ clauseNumber }} for year {{ year }}"
+msgstr "No data for clause {{ clauseNumber }} for year {{ year }}"
+
+#: src/templates/ClausePage/ClausePage.tsx:
+msgid "One man has been convicted."
+msgid_plural "{{ count }} men has been convicted."
+msgstr[0] "One man has been convicted."
+msgstr[1] "{{ count }} men has been convicted."

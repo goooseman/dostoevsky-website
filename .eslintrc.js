@@ -23,7 +23,7 @@ module.exports = {
   ignorePatterns: ["types/graphql-types.d.ts"],
   rules: {
     "prettier/prettier": "error",
-    "no-console": "error",
+    "no-console": ["error", { allow: ["error"] }],
     "@typescript-eslint/ban-types": "off",
     "@typescript-eslint/no-empty-interface": "off",
   },
