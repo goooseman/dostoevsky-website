@@ -25,6 +25,30 @@
     ],
     "description": "Creates a React component class with ES7 module system and TypeScript interfaces"
   },
+  "React Container": {
+    "prefix": "reactContainer",
+    "body": [
+      "import React, { PureComponent } from \"react\";",
+      "import ${TM_FILENAME_BASE/.container//} from \"./${TM_FILENAME_BASE/.container//}\";",
+      "",
+      "interface ${TM_FILENAME_BASE/.container//}ContainerProps {}",
+      "interface ${TM_FILENAME_BASE/.container//}ContainerState {}",
+      "",
+      "class ${TM_FILENAME_BASE/.container//}Container extends PureComponent<${TM_FILENAME_BASE/.container//}ContainerProps, ${TM_FILENAME_BASE/.container//}ContainerState> {",
+      "",
+      "\trender(): React.ReactNode {",
+      "\t\treturn (",
+      "\t\t\t<${TM_FILENAME_BASE/.container//}>",
+      "\t\t\t\t$0",
+      "\t\t\t</${TM_FILENAME_BASE/.container//}>",
+      "\t\t)",
+      "\t}",
+      "}",
+      "",
+      "export default ${TM_FILENAME_BASE/.container//}Container;"
+    ],
+    "description": "Creates a React component class with ES7 module system and TypeScript interfaces"
+  },
   "React Component Index": {
     "prefix": "reactComponentIndex",
     "body": ["import ${1} from \"./${1}\";", "export default ${1};"]
