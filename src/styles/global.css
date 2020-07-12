@@ -12,6 +12,16 @@ body {
   margin: 0;
 }
 
+html,
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+main {
+  background-color: var(--color-outer-background);
+}
+
 * {
   box-sizing: border-box;
 }

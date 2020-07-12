@@ -67,31 +67,37 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
                 />
               </div>
             ) : null}
-            <div className={cn(classes.header)}>
-              <Typography
-                isLineHeightDisabled
-                variant="h1"
-                className={cn(classes.title)}
-              >
-                статья{" "}
+            <div className={cn(classes.headerContainer)}>
+              <div className={cn(classes.header)}>
                 <Typography
                   isLineHeightDisabled
-                  component="span"
-                  className={cn(classes.clauseNumber)}
+                  variant="h1"
+                  className={cn(classes.title)}
                 >
-                  {clauseNumber}
+                  статья{" "}
+                  <Typography
+                    isLineHeightDisabled
+                    component="span"
+                    className={cn(classes.clauseNumber)}
+                  >
+                    {clauseNumber}
+                  </Typography>
                 </Typography>
-              </Typography>
 
-              <Typography variant="h3" component="h2">
-                {clauseText.ru}
-              </Typography>
+                <Typography
+                  variant="h3"
+                  component="h2"
+                  className={cn(classes.subtitle)}
+                >
+                  {clauseText.ru}
+                </Typography>
 
-              <Typography className={cn(classes.docLink)}>
-                <OutboundLink target="_blank" href={clauseOutsideLink}>
-                  КонсультантПлюс
-                </OutboundLink>
-              </Typography>
+                <Typography className={cn(classes.docLink)}>
+                  <OutboundLink target="_blank" href={clauseOutsideLink}>
+                    КонсультантПлюс
+                  </OutboundLink>
+                </Typography>
+              </div>
             </div>
             <div>{children}</div>
           </div>

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Sun Jul 12 2020 17:49:27 GMT+0300 (Israel Daylight Time)\n"
+"POT-Creation-Date: Sun Jul 12 2020 19:34:29 GMT+0300 (Israel Daylight Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -49,13 +49,3 @@ msgstr ""
 #: src/components/ui-kit/Accordion/Accordion.tsx:
 msgid "Down icon"
 msgstr ""
-
-#: src/templates/ClausePage/ClausePage.tsx:
-msgid "No data for clause {{ clauseNumber }} for year {{ year }}"
-msgstr ""
-
-#: src/templates/ClausePage/ClausePage.tsx:
-msgid "One man has been convicted."
-msgid_plural "{{ count }} men has been convicted."
-msgstr[0] ""
-msgstr[1] ""

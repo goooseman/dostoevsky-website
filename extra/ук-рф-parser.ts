@@ -2,19 +2,10 @@
 import { JSDOM, ResourceLoader } from "jsdom";
 import fs from "fs";
 import path from "path";
-import type { I18nText } from "src/types";
+import type { UkRfPart } from "src/types";
 
 const USER_AGENT =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36";
-
-export interface UkRfPart {
-  text: I18nText;
-  url: string;
-  key: number;
-  minClause?: number;
-  maxClause?: number;
-  children?: UkRfPart[];
-}
 
 // Статья 19. Общие условия уголовной ответственности
 // Статья 19.1

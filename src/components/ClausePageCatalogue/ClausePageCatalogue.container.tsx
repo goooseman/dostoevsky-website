@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import ClausePageCatalogue from "./ClausePageCatalogue";
 import ukRf from "content/ук-рф.json";
+import { getClauseById } from "src/utils/ук-рф";
 
 interface ClausePageCatalogueContainerProps {
   year: number;
@@ -24,12 +25,7 @@ class ClausePageCatalogueContainer extends PureComponent<
     const clauseId = props.clauseId;
     let activePartId, activeSectionId, activeClauseId: number | undefined;
     if (clauseId !== undefined) {
-      const part = ukRf.find(
-        (p) => p.minClause < clauseId && p.maxClause > clauseId
-      );
-      const section = part?.children.find(
-        (s) => s.minClause < clauseId && s.maxClause > clauseId
-      );
+      const { part, section } = getClauseById(clauseId);
       activePartId = part?.key;
       activeSectionId = section?.key;
       if (section) {

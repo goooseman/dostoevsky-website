@@ -47,9 +47,15 @@
 
 .page-container {
   position: relative;
+  flex-grow: 1;
   padding-top: 45px;
   padding-right: 30px;
   padding-left: 30px;
+}
+
+.header-container {
+  overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .header {
@@ -73,6 +79,10 @@
 
 .title {
   border-right: 4px solid var(--color-primary);
+}
+
+.subtitle {
+  flex-grow: 1;
 }
 
 .doc-link {

@@ -16,8 +16,8 @@ exports.createPages = async ({ actions }) => {
             component: path.resolve(`src/page-templates/clause.tsx`),
             context: {
               partRegex: `/^${chapter.key}/i`,
-              year,
-              clause: chapter.key,
+              year: year.toString(),
+              clauseId: chapter.key,
             },
           });
         }

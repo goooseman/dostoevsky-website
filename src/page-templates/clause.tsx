@@ -11,21 +11,20 @@ interface ClauseProps {
   pageContext: {
     partRegex: string;
     year: string;
-    clause: string;
+    clauseId: number;
   };
 }
 
 class Clause extends PureComponent<ClauseProps> {
   render(): React.ReactNode {
     const { data, pageContext } = this.props;
-    const parts = data.allApiServerData.edges;
+
     return (
       <Layout>
         <Meta site={data.site?.meta} />
         <ClausePage
-          parts={parts.map((p) => p.node)}
-          clause={pageContext.clause}
-          year={pageContext.year}
+          year={parseInt(pageContext.year)}
+          clauseNumber={pageContext.clauseId}
         />
       </Layout>
     );
