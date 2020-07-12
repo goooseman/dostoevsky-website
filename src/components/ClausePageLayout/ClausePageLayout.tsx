@@ -36,25 +36,35 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
       <main>
         <Container className={cn(classes.container)}>
           <div className={cn(classes.sidebar)}>
-            <button onClick={onCatalogueSwitch}>
-              <Typography color="inverted" variant="span">
+            <button
+              onClick={onCatalogueSwitch}
+              className={cn({ [classes.active]: isCatalogueOpened })}
+            >
+              <Typography size="small" color="inverted" variant="span">
                 статья в каталоге
               </Typography>
+              <img src={require("./assets/arrow-right.svg")} />
             </button>
 
             <Link to={clauseLink} activeClassName={cn(classes.itemActive)}>
-              <Typography variant="span">
+              <Typography size="small" variant="span">
                 основной и дополнительный составы
               </Typography>
             </Link>
             <Link to={`${clauseLink}/parts`}>
-              <Typography variant="span">части</Typography>
+              <Typography size="small" variant="span">
+                части
+              </Typography>
             </Link>
             <Link to={`${clauseLink}/chronology`}>
-              <Typography variant="span">хронология</Typography>
+              <Typography size="small" variant="span">
+                хронология
+              </Typography>
             </Link>
             <Link to={`${clauseLink}/full`}>
-              <Typography variant="span">полная статистика</Typography>
+              <Typography size="small" variant="span">
+                полная статистика
+              </Typography>
             </Link>
           </div>
           <div className={cn(classes.pageContainer)}>
