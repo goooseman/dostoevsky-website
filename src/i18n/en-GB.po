@@ -13,16 +13,16 @@ msgstr ""
 "Language: en\n"
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
-msgid "Стрелка вправо"
-msgstr "Стрелка вправо"
+msgid "Right arrow"
+msgstr "Right arrow"
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
-msgid "Закрыть"
-msgstr "Закрыть"
+msgid "Close"
+msgstr "Close"
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
-msgid "Крестик"
-msgstr "Крестик"
+msgid "Times icon"
+msgstr "Times icon"
 
 #: src/components/Footer/Footer.tsx:
 msgid "OI logo"

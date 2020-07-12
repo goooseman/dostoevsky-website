@@ -14,15 +14,15 @@ msgstr ""
 "Language: ru\n"
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
-msgid "Стрелка вправо"
+msgid "Right arrow"
 msgstr ""
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
-msgid "Закрыть"
+msgid "Close"
 msgstr ""
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
-msgid "Крестик"
+msgid "Times icon"
 msgstr ""
 
 #: src/components/Footer/Footer.tsx:

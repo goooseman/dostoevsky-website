@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 
 module.exports = {
   stories: ["../src/**/*.stories.(tsx|mdx)"],
@@ -98,6 +99,12 @@ module.exports = {
       content: path.resolve(__dirname, "../content/"),
       types: path.resolve(__dirname, "../types/"),
     };
+
+    config.plugins.push(
+      new webpack.EnvironmentPlugin({
+        DISABLE_TARGEM_WARNINGS: true,
+      })
+    );
 
     return config;
   },
