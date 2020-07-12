@@ -13,7 +13,7 @@ exports.createPages = async ({ actions }) => {
         for (let year of years) {
           createPage({
             path: `/${chapter.key}/${year}`,
-            component: path.resolve(`src/page-templates/clause.tsx`),
+            component: path.resolve(`src/page-templates/clause-main.tsx`),
             context: {
               partRegex: `/^${chapter.key}/i`,
               year: year.toString(),

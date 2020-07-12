@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import { graphql } from "gatsby";
 import { ClausePageQuery } from "types/graphql-types";
-import ClausePage from "src/templates/ClausePage";
+import ClausePage from "src/templates/ClauseMainPage";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
 
