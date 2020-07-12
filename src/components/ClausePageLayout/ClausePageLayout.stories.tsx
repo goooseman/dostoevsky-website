@@ -10,8 +10,10 @@ export default {
 const defaultProps = {
   year: 2019,
   clauseNumber: 282,
-  clauseText:
-    "Возбуждение ненависти либо вражды, а равно унижение человеческого достоинства",
+  clauseText: {
+    ru:
+      "Возбуждение ненависти либо вражды, а равно унижение человеческого достоинства",
+  },
   clauseOutsideLink:
     "http://www.consultant.ru/document/cons_doc_LAW_10699/d350878ee36f956a74c2c86830d066eafce20149/",
   clauseLink: "",

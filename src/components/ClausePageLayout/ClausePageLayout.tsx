@@ -6,10 +6,11 @@ import Typography from "src/components/ui-kit/Typography";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 import Container from "src/components/ui-kit/Container";
 import ClausePageCatalogue from "src/components/ClausePageCatalogue";
+import type { I18nText } from "src/types";
 
 interface ClausePageLayoutProps {
   clauseNumber: number;
-  clauseText: string;
+  clauseText: I18nText;
   clauseOutsideLink: string;
   clauseLink: string;
   year: number;
@@ -83,7 +84,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
               </Typography>
 
               <Typography variant="h3" component="h2">
-                {clauseText}
+                {clauseText.ru}
               </Typography>
 
               <Typography className={cn(classes.docLink)}>
