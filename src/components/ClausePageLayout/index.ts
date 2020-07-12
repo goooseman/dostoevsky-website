@@ -1,2 +1,2 @@
-import ClausePageLayout from "./ClausePageLayout";
-export default ClausePageLayout;
+import ClausePageLayoutContainer from "./ClausePageLayout.container";
+export default ClausePageLayoutContainer;
