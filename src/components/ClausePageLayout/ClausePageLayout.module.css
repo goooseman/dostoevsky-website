@@ -17,6 +17,7 @@
   align-items: center;
   padding: 1rem;
   border: none;
+  text-align: left;
 }
 
 .sidebar button {
@@ -45,6 +46,7 @@
 }
 
 .page-container {
+  position: relative;
   padding-top: 45px;
   padding-right: 30px;
   padding-left: 30px;
@@ -75,4 +77,11 @@
 
 .doc-link {
   align-self: flex-start;
+}
+
+.floating-catalogue-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
 }

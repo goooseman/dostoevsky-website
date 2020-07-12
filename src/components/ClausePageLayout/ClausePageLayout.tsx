@@ -2,16 +2,20 @@ import React, { PureComponent } from "react";
 import classes from "./ClausePageLayout.module.css";
 import cn from "clsx";
 import { Link } from "gatsby";
-import Typography from "../ui-kit/Typography";
+import Typography from "src/components/ui-kit/Typography";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
-import Container from "../ui-kit/Container";
+import Container from "src/components/ui-kit/Container";
+import ClausePageCatalogue from "src/components/ClausePageCatalogue";
 
 interface ClausePageLayoutProps {
   clauseNumber: number;
   clauseText: string;
   clauseOutsideLink: string;
   clauseLink: string;
+  year: number;
   children: React.ReactNode;
+  isCatalogueOpened: boolean;
+  onCatalogueSwitch: () => void;
 }
 
 class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
@@ -22,17 +26,21 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
       clauseOutsideLink,
       clauseText,
       children,
+      year,
+      isCatalogueOpened,
+      onCatalogueSwitch,
     } = this.props;
 
     return (
       <main>
         <Container className={cn(classes.container)}>
           <div className={cn(classes.sidebar)}>
-            <button>
+            <button onClick={onCatalogueSwitch}>
               <Typography color="inverted" variant="span">
                 статья в каталоге
               </Typography>
             </button>
+
             <Link to={clauseLink} activeClassName={cn(classes.itemActive)}>
               <Typography variant="span">
                 основной и дополнительный составы
@@ -49,6 +57,15 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
             </Link>
           </div>
           <div className={cn(classes.pageContainer)}>
+            {isCatalogueOpened ? (
+              <div className={cn(classes.floatingCatalogueContainer)}>
+                <ClausePageCatalogue
+                  onClose={onCatalogueSwitch}
+                  year={year}
+                  clauseId={clauseNumber}
+                />
+              </div>
+            ) : null}
             <div className={cn(classes.header)}>
               <Typography
                 isLineHeightDisabled

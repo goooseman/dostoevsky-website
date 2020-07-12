@@ -1,2 +1,2 @@
-import ClausePageCatalogue from "./ClausePageCatalogue";
-export default ClausePageCatalogue;
+import ClausePageCatalogueContainer from "./ClausePageCatalogue.container";
+export default ClausePageCatalogueContainer;

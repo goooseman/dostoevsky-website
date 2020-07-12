@@ -3,7 +3,7 @@ import classes from "./ClausePageCatalogue.module.css";
 import cn from "clsx";
 import { withLocale, WithLocale } from "react-targem";
 import { getClauseLink } from "src/config/routes";
-import Typography from "../ui-kit/Typography";
+import Typography from "src/components/ui-kit/Typography";
 
 interface CatalogueRowProps {
   id: number;
@@ -41,7 +41,7 @@ const CatalogueRow: React.FC<CatalogueRowProps> = ({
           <img
             className={cn(classes.arrowRight)}
             src={require("./assets/right.svg")}
-            alt={t("Стрелка вправо")}
+            alt={t("Right arrow")}
           />
         ) : null}
       </a>
@@ -58,13 +58,13 @@ interface ClausePageCatalogueProps extends WithLocale {
     text: I18nText;
     key: number;
   }[];
-  activePartKey?: number;
+  activePartId?: number;
   onPartClick: (partKey: number) => void;
   sections?: {
     text: I18nText;
     key: number;
   }[];
-  activeSectionKey?: number;
+  activeSectionId?: number;
   onSectionClick: (sectionKey: number) => void;
   clauses?: {
     text: I18nText;
@@ -82,8 +82,8 @@ class ClausePageCatalogue extends PureComponent<ClausePageCatalogueProps> {
       parts,
       sections,
       t,
-      activePartKey,
-      activeSectionKey,
+      activePartId: activePartKey,
+      activeSectionId: activeSectionKey,
       activeClauseKey,
       year,
       onClose,
@@ -137,9 +137,9 @@ class ClausePageCatalogue extends PureComponent<ClausePageCatalogueProps> {
         <button
           onClick={onClose}
           className={cn(classes.closeButton)}
-          aria-label={t("Закрыть")}
+          aria-label={t("Close")}
         >
-          <img src={require("./assets/close.svg")} alt={t("Крестик")} />
+          <img src={require("./assets/close.svg")} alt={t("Times icon")} />
         </button>
       </div>
     );
