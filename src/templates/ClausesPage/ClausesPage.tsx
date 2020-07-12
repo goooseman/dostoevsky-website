@@ -20,7 +20,7 @@ interface ClausesPageProps {
       }[];
     }[];
   }[];
-  actualYear: string;
+  actualYear: number;
 }
 
 class ClausesPage extends PureComponent<ClausesPageProps> {
@@ -44,7 +44,7 @@ class ClausesPage extends PureComponent<ClausesPageProps> {
                           <a
                             href={getClauseLink(
                               chapter.key.toString(),
-                              actualYear
+                              actualYear.toString()
                             )}
                           >
                             {chapter.text.ru}
