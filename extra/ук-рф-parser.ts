@@ -25,7 +25,7 @@ const getKeyByLinkText = (text: string): number => {
   if (!match) {
     throw new Error(`Not able to retrive ID from ${text}`);
   }
-  return parseInt(match[1]);
+  return parseFloat(match[1]);
 };
 
 const getParsedList = (listNode: Element): UkRfPart[] => {
