@@ -13,6 +13,18 @@ msgstr ""
 "Last-Translator: \n"
 "Language: ru\n"
 
+#: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
+msgid "Стрелка вправо"
+msgstr ""
+
+#: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
+msgid "Закрыть"
+msgstr ""
+
+#: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
+msgid "Крестик"
+msgstr ""
+
 #: src/components/Footer/Footer.tsx:
 msgid "OI logo"
 msgstr "Логотип OI"

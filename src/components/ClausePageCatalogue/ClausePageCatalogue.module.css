@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  width: 100%;
+  height: 500px;
+  background-color: var(--color-main-background);
+}
+
+.column {
+  flex-basis: 32%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  overflow-y: auto;
+}
+
+.column a {
+  display: block;
+  padding: 16px 32px;
+  cursor: pointer;
+}
+
+.column .arrow-right {
+  display: none;
+  float: right;
+}
+
+.column a.active {
+  background-color: var(--color-secondary-lighter);
+}
+
+.column a.active .arrow-right {
+  display: block;
+}
+
+.close-button {
+  width: 100%;
+  align-self: flex-start;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  text-align: right;
+}

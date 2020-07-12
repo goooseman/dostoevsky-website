@@ -12,6 +12,18 @@ msgstr ""
 "Last-Translator: \n"
 "Language: en\n"
 
+#: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
+msgid "Стрелка вправо"
+msgstr "Стрелка вправо"
+
+#: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
+msgid "Закрыть"
+msgstr "Закрыть"
+
+#: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
+msgid "Крестик"
+msgstr "Крестик"
+
 #: src/components/Footer/Footer.tsx:
 msgid "OI logo"
 msgstr "OI logo"
