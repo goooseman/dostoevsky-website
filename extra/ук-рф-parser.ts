@@ -18,6 +18,9 @@ const getKeyByLinkText = (text: string): number => {
   return parseFloat(match[1]);
 };
 
+const getKonsultantUrl = (path: string | null): string =>
+  `http://www.consultant.ru${path}`;
+
 const getParsedList = (listNode: Element): UkRfPart[] => {
   const result: UkRfPart[] = [];
   for (const liNode of listNode.querySelectorAll("li")) {
@@ -38,14 +41,14 @@ const getParsedList = (listNode: Element): UkRfPart[] => {
         maxClause:
           children[children.length - 1].maxClause ||
           children[children.length - 1].key,
-        url: link.getAttribute("href") as string,
+        url: getKonsultantUrl(link.getAttribute("href")),
       });
       continue;
     }
 
     result.push({
       text: { ru: link.textContent! },
-      url: link.getAttribute("href") as string,
+      url: getKonsultantUrl(link.getAttribute("href")),
       key: getKeyByLinkText(link.textContent!),
     });
   }
