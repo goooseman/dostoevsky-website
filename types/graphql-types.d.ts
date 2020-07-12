@@ -2659,13 +2659,13 @@ export type SitePageConnectionGroupArgs = {
 export type SitePageContext = {
   partRegex?: Maybe<Scalars['String']>;
   year?: Maybe<Scalars['Date']>;
-  clause?: Maybe<Scalars['String']>;
+  clause?: Maybe<Scalars['Int']>;
 };
 
 export type SitePageContextFilterInput = {
   partRegex?: Maybe<StringQueryOperatorInput>;
   year?: Maybe<DateQueryOperatorInput>;
-  clause?: Maybe<StringQueryOperatorInput>;
+  clause?: Maybe<IntQueryOperatorInput>;
 };
 
 export type SitePageEdge = {

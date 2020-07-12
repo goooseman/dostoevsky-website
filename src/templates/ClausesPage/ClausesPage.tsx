@@ -4,6 +4,7 @@ import cn from "clsx";
 import Container from "src/components/ui-kit/Container";
 import Accordion, { AccordionNode } from "src/components/ui-kit/Accordion";
 import Typography from "src/components/ui-kit/Typography";
+import { getClauseLink } from "src/config/routes";
 
 interface ClauseText {
   ru: string;
@@ -12,13 +13,13 @@ interface ClauseText {
 interface ClausesPageProps {
   parts: {
     text: ClauseText;
-    key: string;
+    key: number;
     children: {
       text: ClauseText;
-      key: string;
+      key: number;
       children: {
         text: ClauseText;
-        key: string;
+        key: number;
       }[];
     }[];
   }[];
@@ -43,7 +44,12 @@ class ClausesPage extends PureComponent<ClausesPageProps> {
                     <AccordionNode title={section.text.ru} variant="secondary">
                       {section.children.map((chapter) => (
                         <Typography key={chapter.key}>
-                          <a href={`/${chapter.key}/${actualYear}`}>
+                          <a
+                            href={getClauseLink(
+                              chapter.key.toString(),
+                              actualYear
+                            )}
+                          >
                             {chapter.text.ru}
                           </a>
                         </Typography>
