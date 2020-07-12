@@ -5,20 +5,17 @@ import Container from "src/components/ui-kit/Container";
 import Accordion, { AccordionNode } from "src/components/ui-kit/Accordion";
 import Typography from "src/components/ui-kit/Typography";
 import { getClauseLink } from "src/config/routes";
-
-interface ClauseText {
-  ru: string;
-}
+import type { I18nText } from "src/types";
 
 interface ClausesPageProps {
   parts: {
-    text: ClauseText;
+    text: I18nText;
     key: number;
     children: {
-      text: ClauseText;
+      text: I18nText;
       key: number;
       children: {
-        text: ClauseText;
+        text: I18nText;
         key: number;
       }[];
     }[];

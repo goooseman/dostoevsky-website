@@ -4,6 +4,7 @@ import cn from "clsx";
 import { withLocale, WithLocale } from "react-targem";
 import { getClauseLink } from "src/config/routes";
 import Typography from "src/components/ui-kit/Typography";
+import type { I18nText } from "src/types";
 
 interface CatalogueRowProps {
   id: number;
@@ -48,10 +49,6 @@ const CatalogueRow: React.FC<CatalogueRowProps> = ({
     </Typography>
   );
 };
-
-interface I18nText {
-  ru: string;
-}
 
 interface ClausePageCatalogueProps extends WithLocale {
   parts: {
