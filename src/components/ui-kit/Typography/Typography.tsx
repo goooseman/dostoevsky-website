@@ -4,7 +4,9 @@ import cn from "clsx";
 
 interface TypographyProps {
   variant: "p" | "h1" | "h2" | "h3" | "label" | "span";
+  component?: "p" | "h1" | "h2" | "h3" | "label" | "span";
   gutterBottom: boolean;
+  isLineHeightDisabled: boolean;
   size: "small" | "normal";
   color: "normal" | "inverted";
   children: React.ReactNode;
@@ -21,21 +23,25 @@ class Typography extends PureComponent<TypographyProps> {
     color: "normal",
     gutterBottom: false,
     size: "normal",
+    isLineHeightDisabled: false,
   };
 
   render(): React.ReactNode {
     const {
+      component,
       variant,
       children,
       style,
       size,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      isLineHeightDisabled,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       gutterBottom,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       color,
       ...otherProps
     } = this.props;
-    const Component = variant;
+    const Component = component || variant;
 
     return (
       <Component {...otherProps} style={style} className={this.getClassName()}>
@@ -45,7 +51,13 @@ class Typography extends PureComponent<TypographyProps> {
   }
 
   private getClassName = (): string => {
-    const { variant, className, color, gutterBottom } = this.props;
+    const {
+      variant,
+      className,
+      color,
+      gutterBottom,
+      isLineHeightDisabled,
+    } = this.props;
     return cn(
       classes.common,
       {
@@ -54,6 +66,7 @@ class Typography extends PureComponent<TypographyProps> {
         [classes.h2]: variant === "h2",
         [classes.h3]: variant === "h3",
         [classes.colorInverted]: color === "inverted",
+        [classes.isLineHeightDisabled]: isLineHeightDisabled,
         [classes.gutterBottom]: gutterBottom,
       },
       className

@@ -4,6 +4,7 @@
   color: var(--color-text);
   font-family: var(--font-family-primary);
   font-size: var(--font-size-base);
+  font-weight: normal;
   letter-spacing: var(--letter-spacing-base);
   line-height: var(--line-height-base);
 }
@@ -21,6 +22,10 @@
   text-decoration: none;
 }
 
+.common a[target="_blank"] {
+  text-decoration: underline;
+}
+
 .common a:visited {
   color: inherit;
 }
@@ -30,13 +35,17 @@
 }
 
 .h1 {
-  font-size: 2.8rem;
+  font-size: 1.875rem;
 }
 
 .h2 {
-  font-size: 2.4rem;
+  font-size: 1.5rem;
 }
 
 .h3 {
-  font-size: 2rem;
+  font-size: 1.3rem;
+}
+
+.is-line-height-disabled {
+  line-height: 1;
 }
