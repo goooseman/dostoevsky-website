@@ -3,7 +3,7 @@
     "prefix": "reactComponent",
     "body": [
       "import React, { PureComponent } from \"react\";",
-      "import classes from \"./${1:${TM_FILENAME_BASE}}.css\";",
+      "import classes from \"./${1:${TM_FILENAME_BASE}}.module.css\";",
       "import cn from \"clsx\";",
       "",
       "interface ${1:${TM_FILENAME_BASE}}Props {",
