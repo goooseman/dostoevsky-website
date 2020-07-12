@@ -11,19 +11,21 @@ export interface UkRfPart {
     ru: string;
   };
   url: string;
-  key: string;
+  key: number;
+  minClause?: number;
+  maxClause?: number;
   children?: UkRfPart[];
 }
 
 // Статья 19. Общие условия уголовной ответственности
 // Статья 19.1
 // Статья 322.1. Организация незаконной миграции
-const getKeyByLinkText = (text: string): string => {
+const getKeyByLinkText = (text: string): number => {
   const match = text.match(/Статья (.+)\./);
   if (!match) {
     throw new Error(`Not able to retrive ID from ${text}`);
   }
-  return match[1];
+  return parseInt(match[1]);
 };
 
 const getParsedList = (listNode: Element): UkRfPart[] => {
@@ -37,10 +39,15 @@ const getParsedList = (listNode: Element): UkRfPart[] => {
     const link = liNode.querySelector("a")!;
 
     if (liNode.nextElementSibling?.tagName === "UL") {
+      const children = getParsedList(liNode.nextElementSibling!);
       result.push({
         text: { ru: link.textContent! },
-        children: getParsedList(liNode.nextElementSibling!),
-        key: link.getAttribute("href") as string,
+        children: children,
+        key: children[0].key,
+        minClause: children[0].minClause || children[0].key,
+        maxClause:
+          children[children.length - 1].maxClause ||
+          children[children.length - 1].key,
         url: link.getAttribute("href") as string,
       });
       continue;
