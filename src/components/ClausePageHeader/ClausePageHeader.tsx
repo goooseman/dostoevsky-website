@@ -54,15 +54,11 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
 
   private renderOption = (props: { option: Option }): React.ReactElement => {
     const { option } = props;
-    const { clauseNumber, year, pageType } = this.props;
+    const { clauseNumber, pageType } = this.props;
     return (
-      <Typography>
+      <Typography component="span">
         <a
-          href={getClauseLink(
-            clauseNumber.toString(),
-            year.toString(),
-            pageType
-          )}
+          href={getClauseLink(clauseNumber.toString(), option.value, pageType)}
         >
           {option.value}
         </a>
