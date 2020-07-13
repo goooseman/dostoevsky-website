@@ -11,14 +11,30 @@ exports.createPages = async ({ actions }) => {
     for (let section of part.children) {
       for (let chapter of section.children) {
         for (let year of years) {
+          const context = {
+            partRegex: `/^${chapter.id}/i`,
+            year: year.toString(),
+            clauseId: chapter.id,
+          };
           createPage({
-            path: `/${chapter.key}/${year}`,
-            component: path.resolve(`src/page-templates/clause.tsx`),
-            context: {
-              partRegex: `/^${chapter.key}/i`,
-              year,
-              clause: chapter.key,
-            },
+            path: `/${chapter.id}/${year}/`,
+            component: path.resolve(`src/page-templates/clause-main.tsx`),
+            context,
+          });
+          createPage({
+            path: `/${chapter.id}/${year}/parts/`,
+            component: path.resolve(`src/page-templates/clause-parts.tsx`),
+            context,
+          });
+          createPage({
+            path: `/${chapter.id}/${year}/chronology/`,
+            component: path.resolve(`src/page-templates/clause-chronology.tsx`),
+            context,
+          });
+          createPage({
+            path: `/${chapter.id}/${year}/full/`,
+            component: path.resolve(`src/page-templates/clause-full.tsx`),
+            context,
           });
         }
       }

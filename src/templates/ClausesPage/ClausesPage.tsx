@@ -4,25 +4,23 @@ import cn from "clsx";
 import Container from "src/components/ui-kit/Container";
 import Accordion, { AccordionNode } from "src/components/ui-kit/Accordion";
 import Typography from "src/components/ui-kit/Typography";
-
-interface ClauseText {
-  ru: string;
-}
+import { getClauseLink } from "src/config/routes";
+import type { I18nText } from "src/types";
 
 interface ClausesPageProps {
   parts: {
-    text: ClauseText;
-    key: string;
+    text: I18nText;
+    id: number;
     children: {
-      text: ClauseText;
-      key: string;
+      text: I18nText;
+      id: number;
       children: {
-        text: ClauseText;
-        key: string;
+        text: I18nText;
+        id: number;
       }[];
     }[];
   }[];
-  actualYear: string;
+  actualYear: number;
 }
 
 class ClausesPage extends PureComponent<ClausesPageProps> {
@@ -34,16 +32,23 @@ class ClausesPage extends PureComponent<ClausesPageProps> {
           <Accordion>
             {parts.map((part) => (
               <AccordionNode
-                key={part.key}
+                key={part.id}
                 title={part.text.ru}
                 variant="primary"
               >
                 {part.children.map((section) => (
-                  <Accordion key={section.key}>
+                  <Accordion key={section.id}>
                     <AccordionNode title={section.text.ru} variant="secondary">
                       {section.children.map((chapter) => (
-                        <Typography key={chapter.key}>
-                          <a href={`/${chapter.key}/${actualYear}`}>
+                        <Typography key={chapter.id}>
+                          <a
+                            href={getClauseLink(
+                              chapter.id.toString(),
+                              actualYear.toString(),
+                              "main"
+                            )}
+                          >
+                            <b>Статья {chapter.id}. </b>
                             {chapter.text.ru}
                           </a>
                         </Typography>

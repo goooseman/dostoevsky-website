@@ -1,31 +1,30 @@
 import React, { PureComponent } from "react";
 import { graphql } from "gatsby";
-import { ClausePageQuery } from "types/graphql-types";
-import ClausePage from "src/templates/ClausePage";
+import { ClausePartsQuery } from "types/graphql-types";
+import ClausePartsPage from "src/templates/ClausePartsPage";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
 
-interface ClauseProps {
-  data: ClausePageQuery;
+interface ClausePartsProps {
+  data: ClausePartsQuery;
   location: Location;
   pageContext: {
     partRegex: string;
     year: string;
-    clause: string;
+    clauseId: number;
   };
 }
 
-class Clause extends PureComponent<ClauseProps> {
+class ClauseParts extends PureComponent<ClausePartsProps> {
   render(): React.ReactNode {
     const { data, pageContext } = this.props;
-    const parts = data.allApiServerData.edges;
+
     return (
       <Layout>
         <Meta site={data.site?.meta} />
-        <ClausePage
-          parts={parts.map((p) => p.node)}
-          clause={pageContext.clause}
-          year={pageContext.year}
+        <ClausePartsPage
+          year={parseInt(pageContext.year)}
+          clauseNumber={pageContext.clauseId}
         />
       </Layout>
     );
@@ -33,7 +32,7 @@ class Clause extends PureComponent<ClauseProps> {
 }
 
 export const query = graphql`
-  query ClausePage($partRegex: String!, $year: String!) {
+  query ClauseParts($partRegex: String!, $year: String!) {
     site {
       meta: siteMetadata {
         title
@@ -57,4 +56,4 @@ export const query = graphql`
   }
 `;
 
-export default Clause;
+export default ClauseParts;

@@ -13,6 +13,18 @@ msgstr ""
 "Last-Translator: \n"
 "Language: ru\n"
 
+#: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
+msgid "Right arrow"
+msgstr ""
+
+#: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
+msgid "Close"
+msgstr ""
+
+#: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
+msgid "Times icon"
+msgstr ""
+
 #: src/components/Footer/Footer.tsx:
 msgid "OI logo"
 msgstr "Логотип OI"
@@ -44,14 +56,3 @@ msgstr ""
 #: src/components/ui-kit/Accordion/Accordion.tsx:
 msgid "Down icon"
 msgstr ""
-
-#: src/templates/ClausePage/ClausePage.tsx:
-msgid "No data for clause {{ clauseNumber }} for year {{ year }}"
-msgstr ""
-
-#: src/templates/ClausePage/ClausePage.tsx:
-msgid "One man has been convicted."
-msgid_plural "{{ count }} men has been convicted."
-msgstr[0] "По данной статье были осуждены по основному составу {{ count }} человек."
-msgstr[1] "По данной статье были осуждены по основному составу {{ count }} человека."
-msgstr[2] "По данной статье были осуждены по основному составу {{ count }} человек."

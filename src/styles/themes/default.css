@@ -13,15 +13,18 @@
   --color-main-background: #eff5f3;
   --color-primary: #ff6700;
   --color-secondary: #7c89e4;
+  --color-secondary-lighter: #cdd5ee;
   --color-border: var(--color-secondary);
   --color-border-inverted: #fff;
+  --color-border-dark: #000;
 
   /* fonts */
-  --font-family-primary: "Roboto", helvetica neue, helvetica, arial, sans-serif;
-  --font-family-secondary: "PT Serif", serif;
+  --font-family-sans-serif: "Roboto", system-ui, -apple-system,
+    "BlinkMacSystemFont", "Segoe UI", "Ubuntu", "Helvetica Neue", sans-serif;
+  --font-family-serif: "PT Serif", "Times New Roman", "Times", serif;
   --font-size-base: 16px;
   --letter-spacing-base: 0;
-  --line-height-base: 1.3;
+  --line-height-base: 1.4;
 
   /* sizes */
   --border-width-regular: 0.1rem;
