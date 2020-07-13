@@ -12,10 +12,13 @@ class ClauseFullPage extends PureComponent<ClauseFullPageProps> {
     const { clauseNumber, year } = this.props;
 
     return (
-      <ClausePageLayout clauseNumber={clauseNumber} year={year}>
-        <Typography component="h3" variant="h1" font="serif">
-          Полная статистика
-        </Typography>
+      <ClausePageLayout
+        clauseNumber={clauseNumber}
+        year={year}
+        title="Полная статистика"
+        pageType="full"
+      >
+        <Typography>Full Page</Typography>
       </ClausePageLayout>
     );
   }

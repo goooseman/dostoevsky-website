@@ -24,6 +24,14 @@ msgstr "Close"
 msgid "Times icon"
 msgstr "Times icon"
 
+#: src/components/ClausePageHeader/ClausePageHeader.tsx:
+msgid "Select year"
+msgstr "Select year"
+
+#: src/components/ClausePageHeader/ClausePageHeader.tsx:
+msgid "Down arrow"
+msgstr "Down arrow"
+
 #: src/components/Footer/Footer.tsx:
 msgid "OI logo"
 msgstr "OI logo"

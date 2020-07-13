@@ -19,7 +19,9 @@ const defaultProps = {
   clauseLink: "",
   isCatalogueOpened: false,
   onCatalogueSwitch: action("onCatalogueSwitch"),
-};
+  title: "Основной и дополнительный составы",
+  pageType: "main",
+} as const;
 
 export const byDefault = (): React.ReactNode => (
   <ClausePageLayout {...defaultProps}>

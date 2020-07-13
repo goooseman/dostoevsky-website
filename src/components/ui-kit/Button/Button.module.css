@@ -1,7 +1,7 @@
 .button {
   min-width: 3rem;
   padding: 0.5rem 1rem;
-  border: 2px solid var(--color-border);
+  border: 2px solid var(--color-border-dark);
   background-color: transparent;
   border-radius: var(--border-radius);
   color: var(--color-text);

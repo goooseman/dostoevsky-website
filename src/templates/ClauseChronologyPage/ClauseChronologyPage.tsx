@@ -12,10 +12,13 @@ class ClauseChronologyPage extends PureComponent<ClauseChronologyPageProps> {
     const { clauseNumber, year } = this.props;
 
     return (
-      <ClausePageLayout clauseNumber={clauseNumber} year={year}>
-        <Typography component="h3" variant="h1" font="serif">
-          Хронология
-        </Typography>
+      <ClausePageLayout
+        clauseNumber={clauseNumber}
+        year={year}
+        title="Хронология"
+        pageType="chronology"
+      >
+        <Typography>Chronology</Typography>
       </ClausePageLayout>
     );
   }

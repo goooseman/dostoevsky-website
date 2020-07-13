@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Sun Jul 12 2020 19:34:29 GMT+0300 (Israel Daylight Time)\n"
+"POT-Creation-Date: Mon Jul 13 2020 19:54:28 GMT+0300 (Israel Daylight Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -16,6 +16,14 @@ msgstr ""
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
 msgid "Times icon"
+msgstr ""
+
+#: src/components/ClausePageHeader/ClausePageHeader.tsx:
+msgid "Select year"
+msgstr ""
+
+#: src/components/ClausePageHeader/ClausePageHeader.tsx:
+msgid "Down arrow"
 msgstr ""
 
 #: src/components/Footer/Footer.tsx:

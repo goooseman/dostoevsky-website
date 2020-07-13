@@ -35,6 +35,7 @@
     "postcss-normalize": "^9.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-dropdown-aria": "^2.0.6",
     "react-helmet": "^6.1.0",
     "react-targem": "^1.6.1",
     "uuid": "^8.2.0",

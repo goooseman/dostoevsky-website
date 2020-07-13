@@ -12,10 +12,13 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
     const { clauseNumber, year } = this.props;
 
     return (
-      <ClausePageLayout clauseNumber={clauseNumber} year={year}>
-        <Typography component="h3" variant="h1" font="serif">
-          Части
-        </Typography>
+      <ClausePageLayout
+        clauseNumber={clauseNumber}
+        year={year}
+        title="Части"
+        pageType="parts"
+      >
+        <Typography>Parts</Typography>
       </ClausePageLayout>
     );
   }
