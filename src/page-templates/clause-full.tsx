@@ -1,12 +1,12 @@
 import React, { PureComponent } from "react";
 import { graphql } from "gatsby";
-import ClauseMainPage from "src/templates/ClauseMainPage";
-import { ClauseMainQuery } from "types/graphql-types";
+import { ClauseFullQuery } from "types/graphql-types";
+import ClauseFullPage from "src/templates/ClauseFullPage";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
 
-interface ClauseMainProps {
-  data: ClauseMainQuery;
+interface ClauseFullProps {
+  data: ClauseFullQuery;
   location: Location;
   pageContext: {
     partRegex: string;
@@ -15,14 +15,14 @@ interface ClauseMainProps {
   };
 }
 
-class ClauseMain extends PureComponent<ClauseMainProps> {
+class ClauseFull extends PureComponent<ClauseFullProps> {
   render(): React.ReactNode {
     const { data, pageContext } = this.props;
 
     return (
       <Layout>
         <Meta site={data.site?.meta} />
-        <ClauseMainPage
+        <ClauseFullPage
           year={parseInt(pageContext.year)}
           clauseNumber={pageContext.clauseId}
         />
@@ -32,7 +32,7 @@ class ClauseMain extends PureComponent<ClauseMainProps> {
 }
 
 export const query = graphql`
-  query ClauseMain {
+  query ClauseFull($partRegex: String!, $year: String!) {
     site {
       meta: siteMetadata {
         title
@@ -40,7 +40,20 @@ export const query = graphql`
         siteUrl
       }
     }
+    allApiServerData(
+      filter: { part: { regex: $partRegex }, year: { eq: $year } }
+    ) {
+      edges {
+        node {
+          part
+          year
+          name
+          exemptionOther
+          totalConvicted
+        }
+      }
+    }
   }
 `;
 
-export default ClauseMain;
+export default ClauseFull;

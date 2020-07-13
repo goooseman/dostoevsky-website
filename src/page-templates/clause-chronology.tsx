@@ -1,12 +1,12 @@
 import React, { PureComponent } from "react";
 import { graphql } from "gatsby";
-import ClauseMainPage from "src/templates/ClauseMainPage";
-import { ClauseMainQuery } from "types/graphql-types";
+import { ClauseChronologyQuery } from "types/graphql-types";
+import ClauseChronologyPage from "src/templates/ClauseChronologyPage";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
 
-interface ClauseMainProps {
-  data: ClauseMainQuery;
+interface ClauseChronologyProps {
+  data: ClauseChronologyQuery;
   location: Location;
   pageContext: {
     partRegex: string;
@@ -15,14 +15,14 @@ interface ClauseMainProps {
   };
 }
 
-class ClauseMain extends PureComponent<ClauseMainProps> {
+class ClauseChronology extends PureComponent<ClauseChronologyProps> {
   render(): React.ReactNode {
     const { data, pageContext } = this.props;
 
     return (
       <Layout>
         <Meta site={data.site?.meta} />
-        <ClauseMainPage
+        <ClauseChronologyPage
           year={parseInt(pageContext.year)}
           clauseNumber={pageContext.clauseId}
         />
@@ -32,7 +32,7 @@ class ClauseMain extends PureComponent<ClauseMainProps> {
 }
 
 export const query = graphql`
-  query ClauseMain {
+  query ClauseChronology($partRegex: String!, $year: String!) {
     site {
       meta: siteMetadata {
         title
@@ -40,7 +40,20 @@ export const query = graphql`
         siteUrl
       }
     }
+    allApiServerData(
+      filter: { part: { regex: $partRegex }, year: { eq: $year } }
+    ) {
+      edges {
+        node {
+          part
+          year
+          name
+          exemptionOther
+          totalConvicted
+        }
+      }
+    }
   }
 `;
 
-export default ClauseMain;
+export default ClauseChronology;
