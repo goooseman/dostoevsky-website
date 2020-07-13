@@ -10,13 +10,13 @@ import type { I18nText } from "src/types";
 interface ClausesPageProps {
   parts: {
     text: I18nText;
-    key: number;
+    id: number;
     children: {
       text: I18nText;
-      key: number;
+      id: number;
       children: {
         text: I18nText;
-        key: number;
+        id: number;
       }[];
     }[];
   }[];
@@ -32,18 +32,18 @@ class ClausesPage extends PureComponent<ClausesPageProps> {
           <Accordion>
             {parts.map((part) => (
               <AccordionNode
-                key={part.key}
+                key={part.id}
                 title={part.text.ru}
                 variant="primary"
               >
                 {part.children.map((section) => (
-                  <Accordion key={section.key}>
+                  <Accordion key={section.id}>
                     <AccordionNode title={section.text.ru} variant="secondary">
                       {section.children.map((chapter) => (
-                        <Typography key={chapter.key}>
+                        <Typography key={chapter.id}>
                           <a
                             href={getClauseLink(
-                              chapter.key.toString(),
+                              chapter.id.toString(),
                               actualYear.toString(),
                               "main"
                             )}

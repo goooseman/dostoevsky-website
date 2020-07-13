@@ -86,11 +86,11 @@ const getParsedList = (listNode: Element): UkRfPart[] => {
       result.push({
         text: { ru: getTitle(link.textContent!) },
         children: children,
-        key: getIdByLinkText(link.textContent!),
-        minClause: children[0].minClause || children[0].key,
+        id: getIdByLinkText(link.textContent!),
+        minClause: children[0].minClause || children[0].id,
         maxClause:
           children[children.length - 1].maxClause ||
-          children[children.length - 1].key,
+          children[children.length - 1].id,
         url: getKonsultantUrl(link.getAttribute("href")),
       });
       continue;
@@ -99,7 +99,7 @@ const getParsedList = (listNode: Element): UkRfPart[] => {
     result.push({
       text: { ru: getTitle(link.textContent!) },
       url: getKonsultantUrl(link.getAttribute("href")),
-      key: getIdByLinkText(link.textContent!),
+      id: getIdByLinkText(link.textContent!),
     });
   }
   return result;

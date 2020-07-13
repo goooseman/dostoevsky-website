@@ -5,7 +5,7 @@ export interface I18nText {
 export interface UkRfPart {
   text: I18nText;
   url: string;
-  key: number;
+  id: number;
   minClause?: number;
   maxClause?: number;
   children?: UkRfPart[];

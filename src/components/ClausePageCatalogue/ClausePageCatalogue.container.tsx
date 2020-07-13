@@ -26,8 +26,8 @@ class ClausePageCatalogueContainer extends PureComponent<
     let activePartId, activeSectionId, activeClauseId: number | undefined;
     if (clauseId !== undefined) {
       const { part, section } = getClauseById(clauseId);
-      activePartId = part?.key;
-      activeSectionId = section?.key;
+      activePartId = part?.id;
+      activeSectionId = section?.id;
       if (section) {
         activeClauseId = clauseId;
       }
@@ -44,11 +44,11 @@ class ClausePageCatalogueContainer extends PureComponent<
     const { activePartId, activeSectionId, activeClauseId } = this.state;
 
     const part = activePartId
-      ? ukRf.find((p) => p.key === activePartId)
+      ? ukRf.find((p) => p.id === activePartId)
       : undefined;
     const section =
       part && activeSectionId
-        ? part.children.find((s) => s.key === activeSectionId)
+        ? part.children.find((s) => s.id === activeSectionId)
         : undefined;
 
     return (
@@ -58,7 +58,7 @@ class ClausePageCatalogueContainer extends PureComponent<
         clauses={section?.children}
         activePartId={activePartId}
         activeSectionId={activeSectionId}
-        activeClauseKey={activeClauseId}
+        activeClauseId={activeClauseId}
         onPartClick={this.handlePartClick}
         onSectionClick={this.handleSectionClick}
         year={year}

@@ -23,7 +23,7 @@ export const withActivePart = (): React.ReactNode => (
   <ClausePageCatalogue
     parts={ukRf}
     sections={ukRf[0].children}
-    activePartId={ukRf[0].key}
+    activePartId={ukRf[0].id}
     {...defaultProps}
   />
 );
@@ -33,8 +33,8 @@ export const withActiveSection = (): React.ReactNode => (
     parts={ukRf}
     sections={ukRf[0].children}
     clauses={ukRf[0].children[0].children}
-    activePartId={ukRf[0].key}
-    activeSectionId={ukRf[0].children[0].key}
+    activePartId={ukRf[0].id}
+    activeSectionId={ukRf[0].children[0].id}
     {...defaultProps}
   />
 );
@@ -44,9 +44,9 @@ export const withActiveClause = (): React.ReactNode => (
     parts={ukRf}
     sections={ukRf[0].children}
     clauses={ukRf[0].children[0].children}
-    activePartId={ukRf[0].key}
-    activeSectionId={ukRf[0].children[0].key}
-    activeClauseKey={ukRf[0].children[0].children[0].key}
+    activePartId={ukRf[0].id}
+    activeSectionId={ukRf[0].children[0].id}
+    activeClauseId={ukRf[0].children[0].children[0].id}
     {...defaultProps}
   />
 );

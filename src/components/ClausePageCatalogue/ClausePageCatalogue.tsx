@@ -53,21 +53,21 @@ const CatalogueRow: React.FC<CatalogueRowProps> = ({
 interface ClausePageCatalogueProps extends WithLocale {
   parts: {
     text: I18nText;
-    key: number;
+    id: number;
   }[];
   activePartId?: number;
-  onPartClick: (partKey: number) => void;
+  onPartClick: (partId: number) => void;
   sections?: {
     text: I18nText;
-    key: number;
+    id: number;
   }[];
   activeSectionId?: number;
-  onSectionClick: (sectionKey: number) => void;
+  onSectionClick: (sectionId: number) => void;
   clauses?: {
     text: I18nText;
-    key: number;
+    id: number;
   }[];
-  activeClauseKey?: number;
+  activeClauseId?: number;
   year: number;
   onClose: () => void;
 }
@@ -79,9 +79,9 @@ class ClausePageCatalogue extends PureComponent<ClausePageCatalogueProps> {
       parts,
       sections,
       t,
-      activePartId: activePartKey,
-      activeSectionId: activeSectionKey,
-      activeClauseKey,
+      activePartId,
+      activeSectionId,
+      activeClauseId,
       year,
       onClose,
       onPartClick,
@@ -93,10 +93,10 @@ class ClausePageCatalogue extends PureComponent<ClausePageCatalogueProps> {
         <div className={cn(classes.column)}>
           {parts.map((p) => (
             <CatalogueRow
-              id={p.key}
-              activeId={activePartKey}
+              id={p.id}
+              activeId={activePartId}
               text={p.text}
-              key={p.key}
+              key={p.id}
               onClick={onPartClick}
               t={t}
             />
@@ -106,10 +106,10 @@ class ClausePageCatalogue extends PureComponent<ClausePageCatalogueProps> {
           {sections
             ? sections.map((s) => (
                 <CatalogueRow
-                  id={s.key}
-                  activeId={activeSectionKey}
+                  id={s.id}
+                  activeId={activeSectionId}
                   text={s.text}
-                  key={s.key}
+                  key={s.id}
                   t={t}
                   onClick={onSectionClick}
                 />
@@ -120,15 +120,11 @@ class ClausePageCatalogue extends PureComponent<ClausePageCatalogueProps> {
           {clauses
             ? clauses.map((c) => (
                 <CatalogueRow
-                  id={c.key}
-                  activeId={activeClauseKey}
+                  id={c.id}
+                  activeId={activeClauseId}
                   text={c.text}
-                  href={getClauseLink(
-                    c.key.toString(),
-                    year.toString(),
-                    "main"
-                  )}
-                  key={c.key}
+                  href={getClauseLink(c.id.toString(), year.toString(), "main")}
+                  key={c.id}
                   t={t}
                   isClause
                 />

@@ -14,6 +14,6 @@ export const getClauseById = (
   const section = part?.children.find(
     (s) => s.minClause <= clauseId && s.maxClause >= clauseId
   );
-  const clause = section?.children.find((c) => c.key === clauseId);
+  const clause = section?.children.find((c) => c.id === clauseId);
   return { part, section, clause };
 };
