@@ -48,6 +48,7 @@ class ClausesPage extends PureComponent<ClausesPageProps> {
                               "main"
                             )}
                           >
+                            <b>Статья {chapter.id}. </b>
                             {chapter.text.ru}
                           </a>
                         </Typography>
