@@ -19,8 +19,9 @@
   --color-border-dark: #000;
 
   /* fonts */
-  --font-family-primary: "Roboto", helvetica neue, helvetica, arial, sans-serif;
-  --font-family-secondary: "PT Serif", serif;
+  --font-family-sans-serif: "Roboto", helvetica neue, helvetica, arial,
+    sans-serif;
+  --font-family-serif: "PT Serif", serif;
   --font-size-base: 16px;
   --letter-spacing-base: 0;
   --line-height-base: 1.4;
