@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ClausePageLayout from "./ClausePageLayout";
 import { getClauseById } from "src/utils/ук-рф";
-import { getClauseLink } from "src/config/routes";
 
 interface ClausePageLayoutContainerProps {
   clauseNumber: number;
@@ -28,10 +27,6 @@ const ClausePageLayoutContainer: React.SFC<ClausePageLayoutContainerProps> = (
       {...props}
       clauseText={clause.text}
       clauseOutsideLink={clause.url}
-      clauseLink={getClauseLink(
-        props.clauseNumber.toString(),
-        props.year.toString()
-      )}
       isCatalogueOpened={isCatalogueOpened}
       onCatalogueSwitch={switchIsCatalogueOpened}
     />

@@ -7,12 +7,12 @@ import { OutboundLink } from "gatsby-plugin-google-analytics";
 import Container from "src/components/ui-kit/Container";
 import ClausePageCatalogue from "src/components/ClausePageCatalogue";
 import type { I18nText } from "src/types";
+import { getClauseLink } from "src/config/routes";
 
 interface ClausePageLayoutProps {
   clauseNumber: number;
   clauseText: I18nText;
   clauseOutsideLink: string;
-  clauseLink: string;
   year: number;
   children: React.ReactNode;
   isCatalogueOpened: boolean;
@@ -22,7 +22,6 @@ interface ClausePageLayoutProps {
 class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
   render(): React.ReactNode {
     const {
-      clauseLink,
       clauseNumber,
       clauseOutsideLink,
       clauseText,
@@ -46,22 +45,50 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
               <img src={require("./assets/arrow-right.svg")} />
             </button>
 
-            <Link to={clauseLink} activeClassName={cn(classes.itemActive)}>
+            <Link
+              to={getClauseLink(
+                clauseNumber.toString(),
+                year.toString(),
+                "main"
+              )}
+              activeClassName={cn(classes.itemActive)}
+            >
               <Typography size="small" variant="span">
                 основной и дополнительный составы
               </Typography>
             </Link>
-            <Link to={`${clauseLink}/parts`}>
+            <Link
+              to={getClauseLink(
+                clauseNumber.toString(),
+                year.toString(),
+                "parts"
+              )}
+              activeClassName={cn(classes.itemActive)}
+            >
               <Typography size="small" variant="span">
                 части
               </Typography>
             </Link>
-            <Link to={`${clauseLink}/chronology`}>
+            <Link
+              to={getClauseLink(
+                clauseNumber.toString(),
+                year.toString(),
+                "chronology"
+              )}
+              activeClassName={cn(classes.itemActive)}
+            >
               <Typography size="small" variant="span">
                 хронология
               </Typography>
             </Link>
-            <Link to={`${clauseLink}/full`}>
+            <Link
+              to={getClauseLink(
+                clauseNumber.toString(),
+                year.toString(),
+                "full"
+              )}
+              activeClassName={cn(classes.itemActive)}
+            >
               <Typography size="small" variant="span">
                 полная статистика
               </Typography>

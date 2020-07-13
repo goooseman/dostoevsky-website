@@ -17,22 +17,22 @@ exports.createPages = async ({ actions }) => {
             clauseId: chapter.key,
           };
           createPage({
-            path: `/${chapter.key}/${year}`,
+            path: `/${chapter.key}/${year}/`,
             component: path.resolve(`src/page-templates/clause-main.tsx`),
             context,
           });
           createPage({
-            path: `/${chapter.key}/${year}/parts`,
+            path: `/${chapter.key}/${year}/parts/`,
             component: path.resolve(`src/page-templates/clause-parts.tsx`),
             context,
           });
           createPage({
-            path: `/${chapter.key}/${year}/chronology`,
+            path: `/${chapter.key}/${year}/chronology/`,
             component: path.resolve(`src/page-templates/clause-chronology.tsx`),
             context,
           });
           createPage({
-            path: `/${chapter.key}/${year}/full`,
+            path: `/${chapter.key}/${year}/full/`,
             component: path.resolve(`src/page-templates/clause-full.tsx`),
             context,
           });

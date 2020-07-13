@@ -44,7 +44,8 @@ class ClausesPage extends PureComponent<ClausesPageProps> {
                           <a
                             href={getClauseLink(
                               chapter.key.toString(),
-                              actualYear.toString()
+                              actualYear.toString(),
+                              "main"
                             )}
                           >
                             {chapter.text.ru}
