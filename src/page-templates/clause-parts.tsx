@@ -25,6 +25,7 @@ class ClauseParts extends PureComponent<ClausePartsProps> {
         <ClausePartsPage
           year={parseInt(pageContext.year)}
           clauseNumber={pageContext.clauseId}
+          parts={data.allApiServerData.edges.map((e) => e.node)}
         />
       </Layout>
     );
@@ -46,10 +47,7 @@ export const query = graphql`
       edges {
         node {
           part
-          year
           name
-          exemptionOther
-          totalConvicted
         }
       }
     }

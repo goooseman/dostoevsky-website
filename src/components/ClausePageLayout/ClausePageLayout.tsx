@@ -19,6 +19,7 @@ interface ClausePageLayoutProps {
   isCatalogueOpened: boolean;
   onCatalogueSwitch: () => void;
   title: React.ReactNode;
+  headerChildren?: React.ReactNode;
   pageType: "main" | "parts" | "chronology" | "full";
 }
 
@@ -33,6 +34,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
       isCatalogueOpened,
       onCatalogueSwitch,
       title,
+      headerChildren,
       pageType,
     } = this.props;
 
@@ -148,7 +150,9 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
               year={year}
               clauseNumber={clauseNumber}
               pageType={pageType}
-            />
+            >
+              {headerChildren}
+            </ClausePageHeader>
             <div>{children}</div>
           </div>
         </Container>

@@ -1,10 +1,13 @@
 .container {
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 .title {
   position: relative;
+  width: 100%;
 }
 
 .title-button {
@@ -21,6 +24,7 @@
 }
 
 .contents {
+  width: 100%;
   padding-top: 1rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--color-text);
@@ -52,11 +56,30 @@
   cursor: pointer;
 }
 
-.variant-secondary-icon {
+.arrow-icon {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   margin-top: auto;
   margin-bottom: auto;
+}
+
+.arrow-icon-container {
+  margin-right: 3rem;
+}
+
+.variant-horizontal {
+  width: auto;
+  order: 1;
+  margin-right: 5rem;
+}
+
+.variant-horizontal button {
+  border-bottom: none;
+}
+
+.variant-horizontal ~ .contents {
+  order: 2;
+  border-bottom: none;
 }
