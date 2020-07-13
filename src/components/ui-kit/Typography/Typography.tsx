@@ -6,6 +6,7 @@ interface TypographyProps {
   variant: "p" | "h1" | "h2" | "h3" | "label" | "span";
   component?: "p" | "h1" | "h2" | "h3" | "label" | "span";
   font: "sans-serif" | "serif";
+  isUpperCased: boolean;
   gutterBottom: boolean;
   isLineHeightDisabled: boolean;
   size: "small" | "normal";
@@ -26,6 +27,7 @@ class Typography extends PureComponent<TypographyProps> {
     size: "normal",
     isLineHeightDisabled: false,
     font: "sans-serif",
+    isUpperCased: false,
   };
 
   render(): React.ReactNode {
@@ -43,6 +45,8 @@ class Typography extends PureComponent<TypographyProps> {
       gutterBottom,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       color,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      isUpperCased,
       ...otherProps
     } = this.props;
     const Component = component || variant;
@@ -62,6 +66,7 @@ class Typography extends PureComponent<TypographyProps> {
       gutterBottom,
       isLineHeightDisabled,
       font,
+      isUpperCased,
     } = this.props;
     return cn(
       classes.common,
@@ -75,6 +80,7 @@ class Typography extends PureComponent<TypographyProps> {
         [classes.gutterBottom]: gutterBottom,
         [classes.sansSerif]: font === "sans-serif",
         [classes.serif]: font === "serif",
+        [classes.isUppercased]: isUpperCased,
       },
       className
     );

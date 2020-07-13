@@ -16,6 +16,11 @@
   font-family: var(--font-family-serif);
 }
 
+.is-uppercased {
+  font-variant: small-caps;
+  text-transform: uppercase;
+}
+
 .common.gutter-bottom {
   margin-bottom: 0.7rem;
 }

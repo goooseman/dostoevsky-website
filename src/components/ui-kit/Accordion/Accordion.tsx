@@ -33,11 +33,15 @@ class AccordionNodePure extends PureComponent<AccordionNodeProps> {
             aria-controls={id}
             aria-expanded={isOpened}
           >
-            <Typography>
-              {variant === "primary" ? <b>{title}</b> : title}
-
-              {variant === "secondary" ? this.getSecondaryVariantIcon() : null}
-            </Typography>
+            {variant === "primary" ? (
+              <Typography variant="h3" isUpperCased>
+                <b>{title}</b>
+              </Typography>
+            ) : (
+              <Typography variant="h3">
+                {title} {this.getSecondaryVariantIcon()}
+              </Typography>
+            )}
           </button>
         </dt>
         <dd className={cn(classes.contents)} id={id} hidden={!isOpened}>
