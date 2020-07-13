@@ -3652,7 +3652,7 @@ export type ClausePartsQueryVariables = Exact<{
 }>;
 
 
-export type ClausePartsQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, allApiServerData: { edges: Array<{ node: Pick<Api_Server__Data, 'part' | 'year' | 'name' | 'exemptionOther' | 'totalConvicted'> }> } };
+export type ClausePartsQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, allApiServerData: { edges: Array<{ node: Pick<Api_Server__Data, 'part' | 'name'> }> } };
 
 export type AboutPageQueryVariables = Exact<{ [key: string]: never; }>;
 

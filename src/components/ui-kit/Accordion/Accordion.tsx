@@ -9,21 +9,34 @@ interface AccordionNodeProps extends WithLocale {
   title: React.ReactNode;
   children: React.ReactNode;
   isOpened?: boolean;
-  variant: "primary" | "secondary";
+  variant: "primary" | "secondary" | "horizontal";
   onClick?: () => void;
+  className?: string;
 }
 
 class AccordionNodePure extends PureComponent<AccordionNodeProps> {
   render(): React.ReactNode {
-    const { children, title, isOpened, variant, onClick } = this.props;
+    const {
+      children,
+      title,
+      isOpened,
+      variant,
+      onClick,
+      className,
+    } = this.props;
     const id = uuidv4();
     return (
       <>
         <dt
-          className={cn(classes.title, {
-            [classes.variantPrimary]: variant === "primary",
-            [classes.isOpened]: isOpened,
-          })}
+          className={cn(
+            classes.title,
+            {
+              [classes.variantPrimary]: variant === "primary",
+              [classes.variantHorizontal]: variant === "horizontal",
+              [classes.isOpened]: isOpened,
+            },
+            className
+          )}
         >
           {variant === "primary" ? this.getPrimaryVariantIcon() : null}
 
@@ -38,8 +51,11 @@ class AccordionNodePure extends PureComponent<AccordionNodeProps> {
                 <b>{title}</b>
               </Typography>
             ) : (
-              <Typography variant="h3">
-                {title} {this.getSecondaryVariantIcon()}
+              <Typography
+                variant="h3"
+                className={cn(classes.arrowIconContainer)}
+              >
+                {title} {this.getArrowIcon()}
               </Typography>
             )}
           </button>
@@ -74,19 +90,19 @@ class AccordionNodePure extends PureComponent<AccordionNodeProps> {
     );
   };
 
-  getSecondaryVariantIcon = (): React.ReactNode => {
+  getArrowIcon = (): React.ReactNode => {
     const { isOpened, t } = this.props;
     return isOpened ? (
       <img
         src={require("./assets/up.svg")}
         alt={t("Up icon")}
-        className={cn(classes.variantSecondaryIcon)}
+        className={cn(classes.arrowIcon)}
       />
     ) : (
       <img
         src={require("./assets/down.svg")}
         alt={t("Down icon")}
-        className={cn(classes.variantSecondaryIcon)}
+        className={cn(classes.arrowIcon)}
       />
     );
   };
@@ -100,7 +116,7 @@ interface AccordionProps {
 
 class Accordion extends PureComponent<AccordionProps> {
   render(): React.ReactNode {
-    return <dl className={classes.container}>{this.props.children}</dl>;
+    return <dl className={cn(classes.container)}>{this.props.children}</dl>;
   }
 }
 

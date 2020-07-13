@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  min-height: 110px;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--color-border-dark);
+}
+
+.text-container {
+  flex-grow: 1;
+}
+
+.container .dropdown,
+.container .dropdown:hover {
+  min-width: 135px;
+  border-color: var(--color-border-dark);
+  background-color: transparent;
+  font-size: 24px;
+}
+
+.container .dropdown span {
+  color: var(--color-text);
+}
+
+.container .dropdown-list {
+  top: calc(100% + 10px);
+  border-color: var(--color-border-dark);
+  background-color: transparent;
+}
+
+.container .dropdown-list > div {
+  padding: 0;
+  background-color: white;
+}
+
+.container .dropdown-list > div * {
+  width: 100%;
+}
+
+.container .dropdown-list > div a {
+  display: inline-block;
+  padding: 0 0.5rem;
+}
+
+.container .dropdown-list > div:hover {
+  background-color: var(--color-primary);
+}
+
+.dropdown::before {
+  position: relative;
+  left: 11px;
+
+  /* content: attr(data-before); */
+  content: "год";
+  font-size: 16px;
+  font-variant: small-caps;
+}

@@ -8,6 +8,7 @@ import Accordion from "./Accordion";
 
 interface AccordionContainerProps {
   children: React.ReactNode;
+  isOpened: boolean;
 }
 
 interface AccordionContainerState {
@@ -18,9 +19,16 @@ class AccordionContainer extends PureComponent<
   AccordionContainerProps,
   AccordionContainerState
 > {
-  public state: AccordionContainerState = {
-    activeNode: 0,
+  public static defaultProps = {
+    isOpened: true,
   };
+
+  public constructor(props: AccordionContainerProps) {
+    super(props);
+    this.state = {
+      activeNode: props.isOpened ? 0 : -1,
+    };
+  }
 
   render(): React.ReactNode {
     const { children } = this.props;

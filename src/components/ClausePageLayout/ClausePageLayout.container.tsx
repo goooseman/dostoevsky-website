@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import ClausePageLayout from "./ClausePageLayout";
 import { getClauseById } from "src/utils/ук-рф";
 
-interface ClausePageLayoutContainerProps {
-  clauseNumber: number;
-  year: number;
-  children: React.ReactNode;
-}
+interface ClausePageLayoutContainerProps
+  extends Omit<
+    React.ComponentProps<typeof ClausePageLayout>,
+    | "clauseText"
+    | "clauseOutsideLink"
+    | "isCatalogueOpened"
+    | "onCatalogueSwitch"
+  > {}
 
 const ClausePageLayoutContainer: React.SFC<ClausePageLayoutContainerProps> = (
   props: ClausePageLayoutContainerProps

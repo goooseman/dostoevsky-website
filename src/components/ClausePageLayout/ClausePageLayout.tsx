@@ -8,6 +8,7 @@ import Container from "src/components/ui-kit/Container";
 import ClausePageCatalogue from "src/components/ClausePageCatalogue";
 import type { I18nText } from "src/types";
 import { getClauseLink } from "src/config/routes";
+import ClausePageHeader from "src/components/ClausePageHeader";
 
 interface ClausePageLayoutProps {
   clauseNumber: number;
@@ -17,6 +18,9 @@ interface ClausePageLayoutProps {
   children: React.ReactNode;
   isCatalogueOpened: boolean;
   onCatalogueSwitch: () => void;
+  title: React.ReactNode;
+  headerChildren?: React.ReactNode;
+  pageType: "main" | "parts" | "chronology" | "full";
 }
 
 class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
@@ -29,6 +33,9 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
       year,
       isCatalogueOpened,
       onCatalogueSwitch,
+      title,
+      headerChildren,
+      pageType,
     } = this.props;
 
     return (
@@ -138,6 +145,14 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
                 </Typography>
               </div>
             </div>
+            <ClausePageHeader
+              title={title}
+              year={year}
+              clauseNumber={clauseNumber}
+              pageType={pageType}
+            >
+              {headerChildren}
+            </ClausePageHeader>
             <div>{children}</div>
           </div>
         </Container>
