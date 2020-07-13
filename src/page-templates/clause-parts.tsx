@@ -25,7 +25,12 @@ class ClauseParts extends PureComponent<ClausePartsProps> {
         <ClausePartsPage
           year={parseInt(pageContext.year)}
           clauseNumber={pageContext.clauseId}
-          parts={data.allApiServerData.edges.map((e) => e.node)}
+          parts={
+            data.allApiServerData.edges.map((e) => e.node) as {
+              part: string;
+              name: string;
+            }[]
+          }
         />
       </Layout>
     );
