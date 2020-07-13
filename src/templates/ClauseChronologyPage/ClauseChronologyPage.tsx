@@ -13,7 +13,7 @@ class ClauseChronologyPage extends PureComponent<ClauseChronologyPageProps> {
 
     return (
       <ClausePageLayout clauseNumber={clauseNumber} year={year}>
-        <Typography component="h3" variant="h1">
+        <Typography component="h3" variant="h1" font="serif">
           Хронология
         </Typography>
       </ClausePageLayout>

@@ -5,6 +5,7 @@ import cn from "clsx";
 interface TypographyProps {
   variant: "p" | "h1" | "h2" | "h3" | "label" | "span";
   component?: "p" | "h1" | "h2" | "h3" | "label" | "span";
+  font: "sans-serif" | "serif";
   gutterBottom: boolean;
   isLineHeightDisabled: boolean;
   size: "small" | "normal";
@@ -24,6 +25,7 @@ class Typography extends PureComponent<TypographyProps> {
     gutterBottom: false,
     size: "normal",
     isLineHeightDisabled: false,
+    font: "sans-serif",
   };
 
   render(): React.ReactNode {
@@ -33,6 +35,8 @@ class Typography extends PureComponent<TypographyProps> {
       children,
       style,
       size,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      font,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       isLineHeightDisabled,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -57,6 +61,7 @@ class Typography extends PureComponent<TypographyProps> {
       color,
       gutterBottom,
       isLineHeightDisabled,
+      font,
     } = this.props;
     return cn(
       classes.common,
@@ -68,6 +73,8 @@ class Typography extends PureComponent<TypographyProps> {
         [classes.colorInverted]: color === "inverted",
         [classes.isLineHeightDisabled]: isLineHeightDisabled,
         [classes.gutterBottom]: gutterBottom,
+        [classes.sansSerif]: font === "sans-serif",
+        [classes.serif]: font === "serif",
       },
       className
     );

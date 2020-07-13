@@ -13,7 +13,7 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
 
     return (
       <ClausePageLayout clauseNumber={clauseNumber} year={year}>
-        <Typography component="h3" variant="h1">
+        <Typography component="h3" variant="h1" font="serif">
           Части
         </Typography>
       </ClausePageLayout>

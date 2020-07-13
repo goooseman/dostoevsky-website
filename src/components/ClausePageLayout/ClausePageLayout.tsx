@@ -109,12 +109,14 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
                 <Typography
                   isLineHeightDisabled
                   variant="h1"
+                  font="serif"
                   className={cn(classes.title)}
                 >
                   статья{" "}
                   <Typography
                     isLineHeightDisabled
                     component="span"
+                    font="serif"
                     className={cn(classes.clauseNumber)}
                   >
                     {clauseNumber}

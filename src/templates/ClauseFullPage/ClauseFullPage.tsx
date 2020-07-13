@@ -13,7 +13,7 @@ class ClauseFullPage extends PureComponent<ClauseFullPageProps> {
 
     return (
       <ClausePageLayout clauseNumber={clauseNumber} year={year}>
-        <Typography component="h3" variant="h1">
+        <Typography component="h3" variant="h1" font="serif">
           Полная статистика
         </Typography>
       </ClausePageLayout>
