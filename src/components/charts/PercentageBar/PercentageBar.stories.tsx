@@ -25,3 +25,16 @@ const twoGroups = {
 export const withTwoGroups = (): React.ReactNode => (
   <PercentageBar {...twoGroups} />
 );
+
+const oneGroup = {
+  groups: [
+    {
+      title: "",
+      values: [14, 5],
+    },
+  ],
+  labels: ["часть 1", "часть 2"],
+};
+export const withOneGroup = (): React.ReactNode => (
+  <PercentageBar {...oneGroup} />
+);

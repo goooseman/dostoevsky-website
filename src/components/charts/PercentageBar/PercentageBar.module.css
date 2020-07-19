@@ -1,29 +1,61 @@
-.container {
+.chart {
   overflow: hidden;
   :global {
-    .ct-series-a .ct-bar,
-    .ct-series-a .ct-line,
-    .ct-series-a .ct-point,
-    .ct-series-a .ct-slice-donut {
-      stroke: var(--color-primary);
+    .ct-series-a {
+      color: var(--color-palette-a);
     }
-    .ct-series-b .ct-bar,
-    .ct-series-b .ct-line,
-    .ct-series-b .ct-point,
-    .ct-series-b .ct-slice-donut {
-      stroke: var(--color-secondary);
+    .ct-series-b {
+      color: var(--color-palette-b);
+    }
+    .ct-series-c {
+      color: var(--color-palette-c);
+    }
+    .ct-series-d {
+      color: var(--color-palette-d);
+    }
+    .ct-series-e {
+      color: var(--color-palette-e);
+    }
+    .ct-series-f {
+      color: var(--color-palette-f);
+    }
+    .ct-series-g {
+      color: var(--color-palette-g);
+    }
+    .ct-series-h {
+      color: var(--color-palette-h);
+    }
+    .ct-series-i {
+      color: var(--color-palette-i);
+    }
+    .ct-series-j {
+      color: var(--color-palette-j);
+    }
+    .ct-series-k {
+      color: var(--color-palette-k);
+    }
+    .ct-series-l {
+      color: var(--color-palette-l);
+    }
+    .ct-bar,
+    .ct-line,
+    .ct-point,
+    .ct-slice-donut {
+      stroke: currentColor !important;
     }
     .ct-label {
       overflow: visible;
       color: var(--color-text);
-      fill: var(--color-text);
       font-size: 12px;
-      font-variant: small-caps;
-      text-transform: uppercase;
+      text-transform: lowercase;
       white-space: nowrap;
     }
     .ct-labels {
       border-top: 1px solid black;
+    }
+    .ct-grid {
+      stroke: var(--color-border-gray);
+      stroke-dasharray: none;
     }
   }
 }

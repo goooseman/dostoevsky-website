@@ -1,0 +1,18 @@
+.legend {
+  display: flex;
+}
+
+.legend svg {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.legend .legend-icon {
+  fill: currentColor;
+  stroke-width: 16px;
+}
+
+.legend-item {
+  margin-right: 10px;
+  margin-left: 10px;
+}
