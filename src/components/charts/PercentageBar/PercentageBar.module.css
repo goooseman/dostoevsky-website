@@ -1,0 +1,29 @@
+.container {
+  overflow: hidden;
+  :global {
+    .ct-series-a .ct-bar,
+    .ct-series-a .ct-line,
+    .ct-series-a .ct-point,
+    .ct-series-a .ct-slice-donut {
+      stroke: var(--color-primary);
+    }
+    .ct-series-b .ct-bar,
+    .ct-series-b .ct-line,
+    .ct-series-b .ct-point,
+    .ct-series-b .ct-slice-donut {
+      stroke: var(--color-secondary);
+    }
+    .ct-label {
+      overflow: visible;
+      color: var(--color-text);
+      fill: var(--color-text);
+      font-size: 12px;
+      font-variant: small-caps;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .ct-labels {
+      border-top: 1px solid black;
+    }
+  }
+}
