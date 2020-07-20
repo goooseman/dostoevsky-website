@@ -3,9 +3,12 @@ import {
   Bar,
   Svg,
   FixedScaleAxis,
-  IChartistSvg,
   IChartistFixedScaleAxis,
   IChartistStepAxis,
+  ChartDrawData,
+  IChartDrawBarData,
+  IChartDrawGridData,
+  IChartDrawLabelData,
 } from "chartist";
 import "chartist/dist/chartist.min.css";
 
@@ -13,97 +16,6 @@ const ROW_HEIGHT = 90;
 const BAR_HEIGHT = 61;
 const Y_LABEL_MARGIN = 15;
 const X_TICKS = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
-
-interface ChartistRect {
-  height: () => void;
-  width: () => void;
-  padding: {
-    bottom: number;
-    left: number;
-    right: number;
-    top: number;
-  };
-  x1: number;
-  x2: number;
-  y1: number;
-  y2: number;
-}
-
-interface ChartistUnits {
-  dir: "vertical" | "horizontal";
-  len: "height" | "width";
-  pos: "x" | "y";
-  rectEnd: string;
-  rectOffset: string;
-  rectStart: string;
-}
-
-interface ChartistAxis {
-  axisLength: number;
-  chartRect: ChartistRect;
-  counterUnits: ChartistUnits;
-  divisor: number;
-  gridOffset: number;
-  options: unknown;
-  range: {
-    min: number;
-    max: number;
-  };
-  stepLength: number;
-  ticks: number[];
-  units: ChartistUnits;
-}
-
-interface ChartistDrawLabelData {
-  type: "label";
-  axis: ChartistAxis;
-  element: IChartistSvg;
-  group: IChartistSvg;
-  height: number;
-  index: number;
-  text: number;
-  width: number;
-  x: number;
-  y: number;
-}
-
-interface ChartistDrawGridData {
-  type: "grid";
-  axis: ChartistAxis;
-  element: IChartistSvg;
-  group: IChartistSvg;
-  index: number;
-  x1: number;
-  x2: number;
-  y1: number;
-  y2: number;
-}
-
-interface ChartistDrawBarData {
-  type: "bar";
-  axisX: ChartistAxis;
-  axisY: ChartistAxis;
-  chartRect: ChartistRect;
-  element: IChartistSvg;
-  group: IChartistSvg;
-  index: number;
-  meta: unknown;
-  series: number[];
-  seriesIndex: number;
-  value: {
-    x?: number;
-    y?: number;
-  };
-  x1: number;
-  x2: number;
-  y1: number;
-  y2: number;
-}
-
-type ChartistDrawData =
-  | ChartistDrawBarData
-  | ChartistDrawGridData
-  | ChartistDrawLabelData;
 
 interface PercentageBarProps {
   groups: {
@@ -160,7 +72,7 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
         } as IChartistStepAxis,
       }
     );
-    chart.on("draw", (data: ChartistDrawData) => {
+    chart.on("draw", (data: ChartDrawData) => {
       this.positionXLabel(data);
       this.addTextValueToBar(data);
       this.increaseBarHeight(data);
@@ -178,7 +90,7 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
     );
   }
 
-  private positionXLabel = (data: ChartistDrawData): void => {
+  private positionXLabel = (data: ChartDrawData): void => {
     if (!this.isLabel(data) || !this.isXLabel(data)) {
       return;
     }
@@ -198,7 +110,7 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
     });
   };
 
-  private addTextValueToBar = (data: ChartistDrawData): void => {
+  private addTextValueToBar = (data: ChartDrawData): void => {
     if (!this.isBar(data)) {
       return;
     }
@@ -214,7 +126,7 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
     data.group.append(t);
   };
 
-  private increaseBarHeight = (data: ChartistDrawData): void => {
+  private increaseBarHeight = (data: ChartDrawData): void => {
     if (!this.isBar(data)) {
       return;
     }
@@ -224,7 +136,7 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
   };
 
   /** Function to remove all horizontal lines, except for the last one */
-  private styleHorizontalGrid = (data: ChartistDrawData): void => {
+  private styleHorizontalGrid = (data: ChartDrawData): void => {
     if (!this.isGrid(data) || !this.isYGrid(data)) {
       return;
     }
@@ -234,7 +146,7 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
   };
 
   /** Function to show vertical grid under the canvas */
-  private styleVerticalGrid = (data: ChartistDrawData): void => {
+  private styleVerticalGrid = (data: ChartDrawData): void => {
     if (!this.isGrid(data) || !this.isXGrid(data)) {
       return;
     }
@@ -244,23 +156,21 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
     });
   };
 
-  private isBar = (data: ChartistDrawData): data is ChartistDrawBarData =>
+  private isBar = (data: ChartDrawData): data is IChartDrawBarData =>
     data.type === "bar";
 
-  private isLabel = (data: ChartistDrawData): data is ChartistDrawLabelData =>
+  private isLabel = (data: ChartDrawData): data is IChartDrawLabelData =>
     data.type === "label";
 
-  private isXLabel = (data: ChartistDrawLabelData) =>
+  private isXLabel = (data: IChartDrawLabelData) =>
     data.axis?.units.pos === "x";
 
-  private isGrid = (data: ChartistDrawData): data is ChartistDrawGridData =>
+  private isGrid = (data: ChartDrawData): data is IChartDrawGridData =>
     data.type === "grid";
 
-  private isYGrid = (data: ChartistDrawGridData) =>
-    data.axis?.units.pos === "y";
+  private isYGrid = (data: IChartDrawGridData) => data.axis?.units.pos === "y";
 
-  private isXGrid = (data: ChartistDrawGridData) =>
-    data.axis?.units.pos === "x";
+  private isXGrid = (data: IChartDrawGridData) => data.axis?.units.pos === "x";
 }
 
 export default PercentageBar;
