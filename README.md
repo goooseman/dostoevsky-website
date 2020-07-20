@@ -10,6 +10,7 @@
 
 ### Useful links
 
-- [Website interactive prototype](https://www.figma.com/proto/ATV2uD5P5pHjNbnQHs2YB2/Sasha's-Team-Colors)
+- [Website interactive prototype](https://www.figma.com/proto/ATV2uD5P5pHjNbnQHs2YB2/Sasha's-Team-Colors?node-id=686%3A4546)
 - [Design mock-ups](https://www.figma.com/file/ATV2uD5P5pHjNbnQHs2YB2/Sasha's-Team-Colors)
-- [FAQ (including field names of every clause)](https://docs.google.com/document/d/15QNlG6dXG-1IusP7cn-iHPCa2JtotncHd-jv1bEVlcA/edit?invite=CN6u7vcI&ts=5efc9621)
+- [Translation](https://docs.google.com/document/d/1zvBFKtdBaUmnlMZEHbFJ1WSartSofl7M2vv7LtSbS08/edit)
+- [FAQ (including field names of every clause)](https://docs.google.com/document/d/1Mmc-QWchjd1oxy6gHVGP1Lb6pIMj2IowQWc9Y4dpm-k/edit)
