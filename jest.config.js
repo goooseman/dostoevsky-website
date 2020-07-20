@@ -6,7 +6,7 @@ module.exports = {
       "<rootDir>/__mocks__/fileMock.js",
     "\\.(css)$": "identity-obj-proxy",
   },
-  setupFiles: [],
+  setupFiles: ["<rootDir>/__mocks__/matchMediaMock.js"],
   modulePaths: ["<rootDir>/"],
   collectCoverageFrom: [
     "src/**/*.ts?(x)",

@@ -1,2 +1,2 @@
-import Bar from "./Bar";
-export default Bar;
+import BarContainer from "./Bar.container";
+export default BarContainer;
