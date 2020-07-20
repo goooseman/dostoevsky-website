@@ -1,0 +1,121 @@
+.container {
+  display: flex;
+  min-width: 100%;
+  justify-content: flex-end;
+}
+
+.chart {
+  overflow: hidden;
+  max-width: 900px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  :global {
+    .ct-series-a {
+      color: var(--color-palette-a);
+    }
+    .ct-series-b {
+      color: var(--color-palette-b);
+    }
+    .ct-series-c {
+      color: var(--color-palette-c);
+    }
+    .ct-series-d {
+      color: var(--color-palette-d);
+    }
+    .ct-series-e {
+      color: var(--color-palette-e);
+    }
+    .ct-series-f {
+      color: var(--color-palette-f);
+    }
+    .ct-series-g {
+      color: var(--color-palette-g);
+    }
+    .ct-series-h {
+      color: var(--color-palette-h);
+    }
+    .ct-series-i {
+      color: var(--color-palette-i);
+    }
+    .ct-series-j {
+      color: var(--color-palette-j);
+    }
+    .ct-series-k {
+      color: var(--color-palette-k);
+    }
+    .ct-series-l {
+      color: var(--color-palette-l);
+    }
+    .ct-bar,
+    .ct-line,
+    .ct-point,
+    .ct-slice-donut {
+      stroke: currentColor !important;
+    }
+    .ct-label {
+      overflow: visible;
+      color: var(--color-text);
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: lowercase;
+      white-space: nowrap;
+    }
+    .ct-labels {
+      border-top: 1px solid black;
+    }
+    .ct-grid {
+      stroke: var(--color-border-gray);
+      stroke-dasharray: none;
+    }
+  }
+}
+
+.legend {
+  display: flex;
+}
+
+.legend svg {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.legend .legend-icon {
+  fill: currentColor;
+  stroke-width: 16px;
+}
+
+.legend-item {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.title {
+  max-width: 700px;
+  margin-right: 10px;
+  margin-bottom: 30px;
+  margin-left: 10px;
+}
+
+.two-columns {
+  display: flex;
+}
+
+.left-column {
+  flex-grow: 1;
+}
+
+.border {
+  border-color: var(--color-border-gray);
+  margin-top: 35px;
+  margin-bottom: 15px;
+}
+
+.actions {
+  align-self: flex-end;
+  margin-bottom: 30px;
+}
+
+.actions button {
+  border: none;
+  background-color: transparent;
+}

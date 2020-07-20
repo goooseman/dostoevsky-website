@@ -9,6 +9,7 @@
   /* colors */
   --color-text: #000;
   --color-text-inverted: #fff;
+  --color-text-muted: #959494;
   --color-outer-background: #000;
   --color-main-background: #eff5f3;
   --color-primary: #ff6700;
@@ -17,6 +18,21 @@
   --color-border: var(--color-secondary);
   --color-border-inverted: #fff;
   --color-border-dark: #000;
+  --color-border-gray: #c8c8c8;
+
+  /* color palette (for charts) */
+  --color-palette-a: var(--color-primary);
+  --color-palette-b: var(--color-secondary);
+  --color-palette-c: #3d4686;
+  --color-palette-d: #925e9e;
+  --color-palette-e: #ba9baf;
+  --color-palette-f: #ffa76b;
+  --color-palette-g: #f3607b;
+  --color-palette-h: #b04700;
+  --color-palette-i: #b04700;
+  --color-palette-j: #959494;
+  --color-palette-k: #ffd336;
+  --color-palette-l: #bec6ff;
 
   /* fonts */
   --font-family-sans-serif: "Roboto", system-ui, -apple-system,

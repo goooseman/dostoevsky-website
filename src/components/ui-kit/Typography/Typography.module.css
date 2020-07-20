@@ -12,6 +12,10 @@
   font-family: var(--font-family-sans-serif);
 }
 
+.sans-serif b {
+  font-weight: 500;
+}
+
 .serif {
   font-family: var(--font-family-serif);
 }
@@ -27,6 +31,10 @@
 
 .common.color-inverted {
   color: var(--color-text-inverted);
+}
+
+.common.color-muted {
+  color: var(--color-text-muted);
 }
 
 .common a {

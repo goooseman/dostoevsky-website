@@ -1,5 +1,6 @@
 module.exports = {
   plugins: {
+    "postcss-nested": {},
     "postcss-normalize": {},
     "postcss-custom-properties": {
       preserve: true,
