@@ -167,6 +167,7 @@ module.exports = {
   },
   pathPrefix: "/",
   plugins: [
+    "gatsby-plugin-postcss",
     {
       resolve: "gatsby-transformer-remark",
       options: {
