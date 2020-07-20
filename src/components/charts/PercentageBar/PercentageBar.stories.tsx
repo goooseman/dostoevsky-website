@@ -1,8 +1,10 @@
 import React from "react";
 import PercentageBar from "./PercentageBar";
-import ChartWrapper from "src/components/ChartWrapper";
 
-export default { title: "components/PercentageBar", component: PercentageBar };
+export default {
+  title: "components/charts/PercentageBar",
+  component: PercentageBar,
+};
 
 const twoGroups = {
   groups: [
@@ -21,15 +23,11 @@ const twoGroups = {
     "прекращённых",
     "принудительное лечение",
   ],
+  title: "Чем закончились дела, дошедшие до суда по каждой части статьи 282",
 };
 
 export const withTwoGroups = (): React.ReactNode => (
-  <ChartWrapper
-    labels={twoGroups.labels}
-    title="Чем закончились дела, дошедшие до суда по каждой части статьи 282"
-  >
-    <PercentageBar {...twoGroups} />
-  </ChartWrapper>
+  <PercentageBar {...twoGroups} />
 );
 
 const oneGroup = {
@@ -40,12 +38,9 @@ const oneGroup = {
     },
   ],
   labels: ["часть 1", "часть 2"],
+  title:
+    "Сравнение частей между собой: сколько человек осуждено по каждой части статьи 282 по основному составу",
 };
 export const withOneGroup = (): React.ReactNode => (
-  <ChartWrapper
-    labels={oneGroup.labels}
-    title="Сравнение частей между собой: сколько человек осуждено по каждой части статьи 282 по основному составу "
-  >
-    <PercentageBar {...oneGroup} />
-  </ChartWrapper>
+  <PercentageBar {...oneGroup} />
 );

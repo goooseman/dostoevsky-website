@@ -4,7 +4,6 @@ import classes from "./ClausePartsPage.module.css";
 import cn from "clsx";
 import Accordion, { AccordionNode } from "src/components/ui-kit/Accordion";
 import PercentageBar from "src/components/charts/PercentageBar";
-import ChartWrapper from "src/components/ChartWrapper";
 
 interface ClausePartsPageProps {
   clauseNumber: number;
@@ -42,37 +41,30 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
         headerChildren={this.renderHeaderChildren()}
       >
         <div>
-          <ChartWrapper
+          <PercentageBar
             labels={parts.map((p) => p.part)}
             title={`СРАВНЕНИЕ ЧАСТЕЙ МЕЖДУ СОБОЙ: СКОЛЬКО ЧЕЛОВЕК ОСУЖДЕНО ПО КАЖДОЙ ЧАСТИ СТАТЬИ ${clauseNumber} ПО ОСНОВНОМУ СОСТАВУ`}
-          >
-            <PercentageBar
-              labels={parts.map((p) => p.part)}
-              groups={[
-                {
-                  title: "",
-                  values: parts.map((p) => p.count),
-                },
-              ]}
-            />
-          </ChartWrapper>
-          <ChartWrapper
-            labels={byResultLabels}
+            groups={[
+              {
+                title: "",
+                values: parts.map((p) => p.count),
+              },
+            ]}
+          />
+
+          <PercentageBar
             title={`Чем закончились дела, дошедшие до суда по каждой части статьи ${clauseNumber}`}
-          >
-            <PercentageBar
-              labels={byResultLabels}
-              groups={parts.map((p) => ({
-                title: p.part,
-                values: [
-                  p.byResult.convictedCount,
-                  p.byResult.acquittalCount,
-                  p.byResult.dismissalCount,
-                  p.byResult.compulsoryTreatmentCount,
-                ],
-              }))}
-            />
-          </ChartWrapper>
+            labels={byResultLabels}
+            groups={parts.map((p) => ({
+              title: p.part,
+              values: [
+                p.byResult.convictedCount,
+                p.byResult.acquittalCount,
+                p.byResult.dismissalCount,
+                p.byResult.compulsoryTreatmentCount,
+              ],
+            }))}
+          />
         </div>
       </ClausePageLayout>
     );

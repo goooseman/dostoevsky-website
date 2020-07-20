@@ -10,6 +10,7 @@ import {
   IChartDrawGridData,
   IChartDrawLabelData,
 } from "chartist";
+import ChartWrapper from "src/components/ChartWrapper";
 import "chartist/dist/chartist.min.css";
 
 const ROW_HEIGHT = 90;
@@ -23,6 +24,7 @@ interface PercentageBarProps {
     title: string;
   }[];
   labels: string[];
+  title: React.ReactNode;
 }
 
 class PercentageBar extends PureComponent<PercentageBarProps> {
@@ -83,10 +85,15 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
 
   render(): React.ReactNode {
     return (
-      <div
-        style={{ height: this.props.groups.length * ROW_HEIGHT + 50 }}
-        ref={this.chartRef}
-      ></div>
+      <ChartWrapper
+        labels={this.props.labels}
+        title="Чем закончились дела, дошедшие до суда по каждой части статьи 282"
+      >
+        <div
+          style={{ height: this.props.groups.length * ROW_HEIGHT + 50 }}
+          ref={this.chartRef}
+        ></div>
+      </ChartWrapper>
     );
   }
 
