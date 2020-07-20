@@ -1,2 +1,2 @@
-import ClausePartsPage from "./ClausePartsPage";
-export default ClausePartsPage;
+import ClausePartsPageContainer from "./ClausePartsPage.container";
+export default ClausePartsPageContainer;

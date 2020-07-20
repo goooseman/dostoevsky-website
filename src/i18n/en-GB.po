@@ -12,6 +12,14 @@ msgstr ""
 "Last-Translator: \n"
 "Language: en\n"
 
+#: src/components/ChartWrapper/ChartWrapper.tsx:
+msgid "Code icon"
+msgstr "Code icon"
+
+#: src/components/ChartWrapper/ChartWrapper.tsx:
+msgid "Download icon"
+msgstr "Download icon"
+
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
 msgid "Right arrow"
 msgstr "Right arrow"

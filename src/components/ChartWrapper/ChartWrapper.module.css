@@ -1,5 +1,14 @@
+.container {
+  display: flex;
+  min-width: 100%;
+  justify-content: flex-end;
+}
+
 .chart {
   overflow: hidden;
+  max-width: 900px;
+  margin-top: 50px;
+  margin-bottom: 20px;
   :global {
     .ct-series-a {
       color: var(--color-palette-a);
@@ -58,4 +67,54 @@
       stroke-dasharray: none;
     }
   }
+}
+
+.legend {
+  display: flex;
+}
+
+.legend svg {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.legend .legend-icon {
+  fill: currentColor;
+  stroke-width: 16px;
+}
+
+.legend-item {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.title {
+  max-width: 700px;
+  margin-right: 10px;
+  margin-bottom: 30px;
+  margin-left: 10px;
+}
+
+.two-columns {
+  display: flex;
+}
+
+.left-column {
+  flex-grow: 1;
+}
+
+.border {
+  border-color: var(--color-border-gray);
+  margin-top: 35px;
+  margin-bottom: 15px;
+}
+
+.actions {
+  align-self: flex-end;
+  margin-bottom: 30px;
+}
+
+.actions button {
+  border: none;
+  background-color: transparent;
 }

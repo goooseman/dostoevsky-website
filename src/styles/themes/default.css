@@ -9,6 +9,7 @@
   /* colors */
   --color-text: #000;
   --color-text-inverted: #fff;
+  --color-text-muted: #959494;
   --color-outer-background: #000;
   --color-main-background: #eff5f3;
   --color-primary: #ff6700;
@@ -20,8 +21,8 @@
   --color-border-gray: #c8c8c8;
 
   /* color palette (for charts) */
-  --color-palette-a: #ff6700;
-  --color-palette-b: #7c89e4;
+  --color-palette-a: var(--color-primary);
+  --color-palette-b: var(--color-secondary);
   --color-palette-c: #3d4686;
   --color-palette-d: #925e9e;
   --color-palette-e: #ba9baf;

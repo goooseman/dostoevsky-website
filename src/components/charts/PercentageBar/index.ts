@@ -1,2 +1,2 @@
-import PercentageBart from "./PercentageBart";
+import PercentageBart from "./PercentageBar";
 export default PercentageBart;

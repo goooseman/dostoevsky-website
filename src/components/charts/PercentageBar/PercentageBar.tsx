@@ -1,6 +1,4 @@
 import React, { PureComponent } from "react";
-import classes from "./PercentageBar.module.css";
-import cn from "clsx";
 import {
   Bar,
   Svg,
@@ -10,7 +8,6 @@ import {
   IChartistStepAxis,
 } from "chartist";
 import "chartist/dist/chartist.min.css";
-import ChartLegend from "src/components/ChartLegend";
 
 const ROW_HEIGHT = 90;
 const BAR_HEIGHT = 61;
@@ -174,13 +171,10 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
 
   render(): React.ReactNode {
     return (
-      <div className={cn(classes.chart)}>
-        <ChartLegend labels={this.props.labels} />
-        <div
-          style={{ height: this.props.groups.length * ROW_HEIGHT + 50 }}
-          ref={this.chartRef}
-        ></div>
-      </div>
+      <div
+        style={{ height: this.props.groups.length * ROW_HEIGHT + 50 }}
+        ref={this.chartRef}
+      ></div>
     );
   }
 
