@@ -6,6 +6,7 @@
 
 .chart {
   overflow: hidden;
+  width: 100%;
   max-width: 900px;
   margin-top: 50px;
   margin-bottom: 20px;
@@ -54,9 +55,12 @@
     }
     .ct-label {
       overflow: visible;
+      justify-content: flex-start !important;
       color: var(--color-text);
       font-size: 12px;
       font-weight: 500;
+      text-align: left !important;
+      text-anchor: start !important;
       text-transform: lowercase;
       white-space: nowrap;
     }
@@ -105,7 +109,9 @@
 }
 
 .border {
-  border-color: var(--color-border-gray);
+  height: 1px;
+  border: 0;
+  border-top: 1px solid var(--color-border-gray);
   margin-top: 35px;
   margin-bottom: 15px;
 }
