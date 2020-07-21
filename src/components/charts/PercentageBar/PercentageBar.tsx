@@ -29,24 +29,43 @@ interface PercentageBarProps {
   downloadFilename: string;
 }
 
+interface PercentageBarMeta {
+  count: string;
+  isLast: boolean;
+}
+
 class PercentageBar extends PureComponent<PercentageBarProps> {
   private chartRef = React.createRef<HTMLDivElement>();
 
   public componentDidMount(): void {
-    const series: { value: number; meta: { count: string } }[][] = [];
+    const series: {
+      value: number;
+      meta: PercentageBarMeta;
+    }[][] = [];
     const labels: string[] = [];
 
-    this.props.groups.reverse().forEach((g, iG) => {
-      labels.push(g.title);
-      const totalCount = g.values.reduce((sum, val) => sum + val, 0);
-      g.values.forEach((v, iV) => {
-        if (!series[iV]) {
-          series[iV] = [];
-        }
-        const percentage = v / (totalCount / 100);
-        series[iV][iG] = { value: percentage, meta: { count: v.toString() } };
+    this.props.groups
+      .slice()
+      .reverse()
+      .forEach((g, iG) => {
+        labels.push(g.title);
+        const totalCount = g.values.reduce((sum, val) => sum + val, 0);
+        g.values.forEach((v, iV) => {
+          if (!series[iV]) {
+            series[iV] = [];
+          }
+          const percentage = v / (totalCount / 100);
+          if (v !== 0) {
+            for (let i = 0; i < iV; i++) {
+              series[i][iG].meta.isLast = false;
+            }
+          }
+          series[iV][iG] = {
+            value: percentage,
+            meta: { count: v.toString(), isLast: true },
+          };
+        });
       });
-    });
 
     const chart = new Bar(
       this.chartRef.current,
@@ -132,14 +151,30 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
     if (!this.isBar(data)) {
       return;
     }
+
+    let textColor = "white";
+    let x = data.x1 + 5;
+
+    if (this.isLastBar(data)) {
+      x = data.x2 - 15;
+      if (this.isSmallBar(data)) {
+        x = data.x1 + 10;
+        textColor = "black";
+      }
+    }
+
     const t = new Svg("text", {
-      x: data.x1 + 10,
+      x,
       y: data.y2 + 5,
-      fill: "white",
+      fill: textColor,
     });
     const meta = data.meta as {
       count: string;
     };
+    if (meta.count === "0") {
+      return;
+    }
+
     t.text(meta.count);
     data.group.append(t);
   };
@@ -174,8 +209,15 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
     });
   };
 
-  private isBar = (data: ChartDrawData): data is IChartDrawBarData =>
-    data.type === "bar";
+  private isBar = (
+    data: ChartDrawData
+  ): data is IChartDrawBarData<PercentageBarMeta> => data.type === "bar";
+
+  private isLastBar = (data: IChartDrawBarData<PercentageBarMeta>): boolean =>
+    data.meta.isLast;
+
+  private isSmallBar = (data: IChartDrawBarData<PercentageBarMeta>): boolean =>
+    data.x2 - data.x1 < 30;
 
   private isLabel = (data: ChartDrawData): data is IChartDrawLabelData =>
     data.type === "label";

@@ -1,5 +1,5 @@
 diff --git a/node_modules/@types/chartist/index.d.ts b/node_modules/@types/chartist/index.d.ts
-index 1c72b7e..460c77c 100644
+index 1c72b7e..b96e5b8 100644
 --- a/node_modules/@types/chartist/index.d.ts
 +++ b/node_modules/@types/chartist/index.d.ts
 @@ -1,6 +1,6 @@
@@ -75,7 +75,7 @@ index 1c72b7e..460c77c 100644
 +        y2: number;
 +    }
 +
-+    interface IChartDrawBarData {
++    interface IChartDrawBarData<M extends object> {
 +        type: "bar";
 +        axisX: IChartAxis;
 +        axisY: IChartAxis;
@@ -83,7 +83,7 @@ index 1c72b7e..460c77c 100644
 +        element: IChartistSvg;
 +        group: IChartistSvg;
 +        index: number;
-+        meta: unknown;
++        meta: M;
 +        series: number[];
 +        seriesIndex: number;
 +        value: {
