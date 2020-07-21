@@ -10,7 +10,7 @@ const twoGroups = {
   groups: [
     {
       title: "Часть 2",
-      values: [5, 5, 0, 0],
+      values: [5, 0, 5, 0],
     },
     {
       title: "Часть 1",
@@ -24,6 +24,7 @@ const twoGroups = {
     "принудительное лечение",
   ],
   title: "Чем закончились дела, дошедшие до суда по каждой части статьи 282",
+  downloadFilename: "test",
 };
 
 export const withTwoGroups = (): React.ReactNode => (
@@ -40,6 +41,7 @@ const oneGroup = {
   labels: ["часть 1", "часть 2"],
   title:
     "Сравнение частей между собой: сколько человек осуждено по каждой части статьи 282 по основному составу",
+  downloadFilename: "test",
 };
 export const withOneGroup = (): React.ReactNode => (
   <PercentageBar {...oneGroup} />
