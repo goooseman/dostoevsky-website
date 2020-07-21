@@ -88,7 +88,7 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
           showGrid: true,
           stretch: true,
           labelOffset: {
-            x: 40,
+            x: 0,
             y: -40,
           },
           offset: 0,
