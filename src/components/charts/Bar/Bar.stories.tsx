@@ -31,6 +31,7 @@ const twoGroups = {
     "лишение свободы",
   ],
   title: "Виды наказаний по частям статьи 282",
+  downloadFilename: "test",
 };
 
 export const withTwoGroups = (): React.ReactNode => <Bar {...twoGroups} />;
