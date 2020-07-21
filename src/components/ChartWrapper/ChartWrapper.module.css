@@ -49,22 +49,26 @@
     .ct-label,
     .ct-inner-label {
       overflow: visible;
-      justify-content: flex-start !important;
-      fill: var(--color-main-background);
       font-size: 12px;
       font-weight: 500;
       text-transform: lowercase;
       white-space: nowrap;
     }
 
+    .ct-inner-label {
+      fill: var(--color-main-background);
+      font-weight: bold;
+    }
+
     .ct-inner-label-dark {
       fill: var(--color-text);
     }
+    .ct-chart-bar.ct-horizontal-bars .ct-label.ct-vertical.ct-start {
+      justify-content: flex-start;
+    }
+
     .ct-label {
       color: var(--color-text);
-    }
-    .ct-inner-label {
-      font-weight: bold;
     }
     .ct-labels {
       border-top: 1px solid black;
@@ -82,7 +86,6 @@
 
 .legend svg {
   margin-right: 5px;
-  vertical-align: middle;
 }
 
 .legend .legend-icon {
@@ -91,8 +94,15 @@
 }
 
 .legend-item {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
   margin-right: 10px;
   margin-left: 10px;
+}
+
+.legend-title {
+  line-height: 14px;
 }
 
 .title {

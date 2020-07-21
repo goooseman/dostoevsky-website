@@ -11,7 +11,6 @@ import {
   IChartDrawLabelData,
 } from "chartist";
 import ChartWrapper from "src/components/ChartWrapper";
-import { downloadSvg } from "src/utils/svg";
 import "chartist/dist/chartist.min.css";
 
 const ROW_HEIGHT = 90;
@@ -105,27 +104,21 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
   }
 
   render(): React.ReactNode {
+    const { labels, groups, title, downloadFilename } = this.props;
+
     return (
       <ChartWrapper
-        onDownloadButtonClick={this.handleDownloadButtonClick}
-        labels={this.props.labels}
-        title={this.props.title}
+        labels={labels}
+        title={title}
+        downloadFilename={downloadFilename}
       >
         <div
-          style={{ height: this.props.groups.length * ROW_HEIGHT + 50 }}
+          style={{ height: groups.length * ROW_HEIGHT + 50 }}
           ref={this.chartRef}
         ></div>
       </ChartWrapper>
     );
   }
-
-  private handleDownloadButtonClick = () => {
-    if (!this.chartRef.current) {
-      return;
-    }
-    const svg = this.chartRef.current.querySelector("svg");
-    downloadSvg(svg, `${this.props.downloadFilename}.png`);
-  };
 
   private positionXLabel = (data: ChartDrawData): void => {
     if (!this.isLabel(data) || !this.isXLabel(data)) {
