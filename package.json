@@ -32,6 +32,7 @@
     "gatsby-transformer-remark": "^2.8.22",
     "gatsby-transformer-sharp": "^2.5.9",
     "gettext-utils": "^2.2.0",
+    "patch-package": "^6.2.2",
     "postcss-custom-media": "^7.0.8",
     "postcss-custom-properties": "^9.1.1",
     "postcss-nested": "^4.2.3",
@@ -100,6 +101,7 @@
   "license": "",
   "main": "n/a",
   "scripts": {
+    "postinstall": "patch-package",
     "develop": "gatsby develop",
     "storybook": "start-storybook -p 6006",
     "build": "gatsby build",

@@ -6,6 +6,7 @@
 
 .chart {
   overflow: hidden;
+  width: 100%;
   max-width: 900px;
   margin-top: 50px;
   margin-bottom: 20px;
@@ -52,13 +53,25 @@
     .ct-slice-donut {
       stroke: currentColor !important;
     }
-    .ct-label {
+    .ct-label,
+    .ct-inner-label {
       overflow: visible;
-      color: var(--color-text);
+      justify-content: flex-start !important;
+      fill: var(--color-main-background);
       font-size: 12px;
       font-weight: 500;
       text-transform: lowercase;
       white-space: nowrap;
+    }
+
+    .ct-inner-label-dark {
+      fill: var(--color-text);
+    }
+    .ct-label {
+      color: var(--color-text);
+    }
+    .ct-inner-label {
+      font-weight: bold;
     }
     .ct-labels {
       border-top: 1px solid black;
@@ -105,12 +118,15 @@
 }
 
 .border {
-  border-color: var(--color-border-gray);
+  height: 1px;
+  border: 0;
+  border-top: 1px solid var(--color-border-gray);
   margin-top: 35px;
   margin-bottom: 15px;
 }
 
 .actions {
+  min-width: 100px;
   align-self: flex-end;
   margin-bottom: 30px;
 }
@@ -118,4 +134,5 @@
 .actions button {
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }

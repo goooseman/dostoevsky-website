@@ -70,7 +70,6 @@ export type Api_Server__Data = Node & {
   exemptionAmnesty?: Maybe<Scalars['Int']>;
   exemptionFromImprisonment?: Maybe<Scalars['Int']>;
   exemptionOther?: Maybe<Scalars['Int']>;
-  name?: Maybe<Scalars['String']>;
   noCrimeNecessity?: Maybe<Scalars['Int']>;
   noCrimeOther?: Maybe<Scalars['Int']>;
   noCrimeSelf_defence?: Maybe<Scalars['Int']>;
@@ -103,11 +102,13 @@ export type Api_Server__Data = Node & {
   primaryMilitaryDisciplinaryUnit?: Maybe<Scalars['Int']>;
   primaryOther?: Maybe<Scalars['Int']>;
   primaryRestrain?: Maybe<Scalars['Int']>;
+  primaryRestrain2009?: Maybe<Scalars['Int']>;
   primaryRestrictionsInMilitaryService?: Maybe<Scalars['Int']>;
   primarySuspended?: Maybe<Scalars['Int']>;
   totalConvicted?: Maybe<Scalars['Int']>;
   unfinishedOffence?: Maybe<Scalars['Int']>;
   year?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
 };
 
 export type Api_Server__DataConnection = {
@@ -263,7 +264,6 @@ export type Api_Server__DataFieldsEnum =
   | 'exemptionAmnesty'
   | 'exemptionFromImprisonment'
   | 'exemptionOther'
-  | 'name'
   | 'noCrimeNecessity'
   | 'noCrimeOther'
   | 'noCrimeSelf_defence'
@@ -296,11 +296,13 @@ export type Api_Server__DataFieldsEnum =
   | 'primaryMilitaryDisciplinaryUnit'
   | 'primaryOther'
   | 'primaryRestrain'
+  | 'primaryRestrain2009'
   | 'primaryRestrictionsInMilitaryService'
   | 'primarySuspended'
   | 'totalConvicted'
   | 'unfinishedOffence'
-  | 'year';
+  | 'year'
+  | 'name';
 
 export type Api_Server__DataFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -346,7 +348,6 @@ export type Api_Server__DataFilterInput = {
   exemptionAmnesty?: Maybe<IntQueryOperatorInput>;
   exemptionFromImprisonment?: Maybe<IntQueryOperatorInput>;
   exemptionOther?: Maybe<IntQueryOperatorInput>;
-  name?: Maybe<StringQueryOperatorInput>;
   noCrimeNecessity?: Maybe<IntQueryOperatorInput>;
   noCrimeOther?: Maybe<IntQueryOperatorInput>;
   noCrimeSelf_defence?: Maybe<IntQueryOperatorInput>;
@@ -379,11 +380,13 @@ export type Api_Server__DataFilterInput = {
   primaryMilitaryDisciplinaryUnit?: Maybe<IntQueryOperatorInput>;
   primaryOther?: Maybe<IntQueryOperatorInput>;
   primaryRestrain?: Maybe<IntQueryOperatorInput>;
+  primaryRestrain2009?: Maybe<IntQueryOperatorInput>;
   primaryRestrictionsInMilitaryService?: Maybe<IntQueryOperatorInput>;
   primarySuspended?: Maybe<IntQueryOperatorInput>;
   totalConvicted?: Maybe<IntQueryOperatorInput>;
   unfinishedOffence?: Maybe<IntQueryOperatorInput>;
   year?: Maybe<StringQueryOperatorInput>;
+  name?: Maybe<StringQueryOperatorInput>;
 };
 
 export type Api_Server__DataGroupConnection = {
@@ -2091,8 +2094,6 @@ export type QueryAllSitePageArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<DateQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2200,7 +2201,6 @@ export type QueryApiServerDataArgs = {
   exemptionAmnesty?: Maybe<IntQueryOperatorInput>;
   exemptionFromImprisonment?: Maybe<IntQueryOperatorInput>;
   exemptionOther?: Maybe<IntQueryOperatorInput>;
-  name?: Maybe<StringQueryOperatorInput>;
   noCrimeNecessity?: Maybe<IntQueryOperatorInput>;
   noCrimeOther?: Maybe<IntQueryOperatorInput>;
   noCrimeSelf_defence?: Maybe<IntQueryOperatorInput>;
@@ -2233,11 +2233,13 @@ export type QueryApiServerDataArgs = {
   primaryMilitaryDisciplinaryUnit?: Maybe<IntQueryOperatorInput>;
   primaryOther?: Maybe<IntQueryOperatorInput>;
   primaryRestrain?: Maybe<IntQueryOperatorInput>;
+  primaryRestrain2009?: Maybe<IntQueryOperatorInput>;
   primaryRestrictionsInMilitaryService?: Maybe<IntQueryOperatorInput>;
   primarySuspended?: Maybe<IntQueryOperatorInput>;
   totalConvicted?: Maybe<IntQueryOperatorInput>;
   unfinishedOffence?: Maybe<IntQueryOperatorInput>;
   year?: Maybe<StringQueryOperatorInput>;
+  name?: Maybe<StringQueryOperatorInput>;
 };
 
 
@@ -2293,8 +2295,6 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
-  port?: Maybe<Scalars['Date']>;
-  host?: Maybe<Scalars['String']>;
   pathPrefix?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   id: Scalars['ID'];
@@ -2305,14 +2305,6 @@ export type Site = Node & {
 
 
 export type SiteBuildTimeArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type SitePortArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
@@ -2505,8 +2497,6 @@ export type SiteFieldsEnum =
   | 'siteMetadata___title'
   | 'siteMetadata___description'
   | 'siteMetadata___siteUrl'
-  | 'port'
-  | 'host'
   | 'pathPrefix'
   | 'polyfill'
   | 'id'
@@ -2599,8 +2589,6 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<DateQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -3157,6 +3145,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___entitiesArray___schemaType___primaryMilitaryDisciplinaryUnit'
   | 'pluginOptions___entitiesArray___schemaType___primaryOther'
   | 'pluginOptions___entitiesArray___schemaType___primaryRestrain'
+  | 'pluginOptions___entitiesArray___schemaType___primaryRestrain2009'
   | 'pluginOptions___entitiesArray___schemaType___primaryRestrictionsInMilitaryService'
   | 'pluginOptions___entitiesArray___schemaType___primarySuspended'
   | 'pluginOptions___entitiesArray___schemaType___totalConvicted'
@@ -3419,6 +3408,7 @@ export type SitePluginPluginOptionsEntitiesArraySchemaType = {
   primaryMilitaryDisciplinaryUnit?: Maybe<Scalars['Int']>;
   primaryOther?: Maybe<Scalars['Int']>;
   primaryRestrain?: Maybe<Scalars['Int']>;
+  primaryRestrain2009?: Maybe<Scalars['Int']>;
   primaryRestrictionsInMilitaryService?: Maybe<Scalars['Int']>;
   primarySuspended?: Maybe<Scalars['Int']>;
   totalConvicted?: Maybe<Scalars['Int']>;
@@ -3498,6 +3488,7 @@ export type SitePluginPluginOptionsEntitiesArraySchemaTypeFilterInput = {
   primaryMilitaryDisciplinaryUnit?: Maybe<IntQueryOperatorInput>;
   primaryOther?: Maybe<IntQueryOperatorInput>;
   primaryRestrain?: Maybe<IntQueryOperatorInput>;
+  primaryRestrain2009?: Maybe<IntQueryOperatorInput>;
   primaryRestrictionsInMilitaryService?: Maybe<IntQueryOperatorInput>;
   primarySuspended?: Maybe<IntQueryOperatorInput>;
   totalConvicted?: Maybe<IntQueryOperatorInput>;
@@ -3652,7 +3643,7 @@ export type ClausePartsQueryVariables = Exact<{
 }>;
 
 
-export type ClausePartsQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, allApiServerData: { edges: Array<{ node: Pick<Api_Server__Data, 'part' | 'name' | 'totalConvicted' | 'acquittal' | 'dismissalAbsenceOfEvent' | 'dismissalAmnesty' | 'dismissalReconciliation' | 'dismissalRepentance' | 'dismissalOther' | 'dismissalCourtFine' | 'coerciveMeasures'> }> } };
+export type ClausePartsQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, allApiServerData: { edges: Array<{ node: Pick<Api_Server__Data, 'part' | 'name' | 'totalConvicted' | 'acquittal' | 'dismissalAbsenceOfEvent' | 'dismissalAmnesty' | 'dismissalReconciliation' | 'dismissalRepentance' | 'dismissalOther' | 'dismissalCourtFine' | 'coerciveMeasures' | 'primaryLifeSentence' | 'primarySuspended' | 'primaryArrest' | 'primaryRestrain' | 'primaryRestrain2009' | 'primaryCorrectionalLabour' | 'primaryCommunityService' | 'primaryForcedLabour' | 'primaryFine' | 'primaryDisqualification' | 'primaryOther' | 'primaryMilitaryDisciplinaryUnit' | 'primaryRestrictionsInMilitaryService' | 'primaryImprisonment'> }> } };
 
 export type AboutPageQueryVariables = Exact<{ [key: string]: never; }>;
 
