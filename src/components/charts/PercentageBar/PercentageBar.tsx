@@ -109,7 +109,7 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
       <ChartWrapper
         onDownloadButtonClick={this.handleDownloadButtonClick}
         labels={this.props.labels}
-        title="Чем закончились дела, дошедшие до суда по каждой части статьи 282"
+        title={this.props.title}
       >
         <div
           style={{ height: this.props.groups.length * ROW_HEIGHT + 50 }}

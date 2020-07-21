@@ -57,7 +57,7 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
     return (
       <ChartWrapper
         labels={this.props.groups.map((g) => g.title)}
-        title="Виды наказаний по частям статьи 282"
+        title={this.props.title}
         onDownloadButtonClick={this.handleDownloadButtonClick}
       >
         <div

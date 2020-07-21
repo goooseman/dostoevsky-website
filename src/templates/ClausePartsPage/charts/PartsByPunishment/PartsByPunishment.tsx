@@ -25,7 +25,7 @@ class PartsByPunishment extends PureComponent<ClausePartsPageProps> {
 
     return (
       <Bar
-        title="Виды наказаний по частям статьи 282"
+        title={`Виды наказаний по частям статьи ${clauseNumber}`}
         labels={byPunishmentLabels}
         downloadFilename={`${clauseNumber}-${year}-parts-by-punishment`}
         groups={parts.map((p) => ({
