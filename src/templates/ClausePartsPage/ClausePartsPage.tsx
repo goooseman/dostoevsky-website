@@ -70,9 +70,17 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
         pageType="parts"
         headerChildren={this.renderHeaderChildren()}
       >
-        <PartsChart {...this.props} />
-        <PartsByResultChart {...this.props} />
-        <PartsByPunishment {...this.props} />
+        <div className={cn(classes.charts)}>
+          <div className={cn(classes.chartContainer)}>
+            <PartsChart {...this.props} />
+          </div>
+          <div className={cn(classes.chartContainer)}>
+            <PartsByResultChart {...this.props} />
+          </div>
+          <div className={cn(classes.chartContainer)}>
+            <PartsByPunishment {...this.props} />
+          </div>
+        </div>
       </ClausePageLayout>
     );
   }

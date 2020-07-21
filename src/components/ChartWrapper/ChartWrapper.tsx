@@ -16,32 +16,32 @@ class ChartWrapper extends PureComponent<ChartWrapperProps> {
     const { children, labels, title, t, onDownloadButtonClick } = this.props;
 
     return (
-      <div className={cn(classes.container)}>
-        <div className={cn(classes.chart)}>
-          <Typography className={cn(classes.title)} variant="h3" isUpperCased>
-            <b>{title}</b>
-          </Typography>
-          <div className={cn(classes.legend)}>
-            {labels.map((l, i) => (
-              <div key={i} className={cn(classes.legendItem)}>
-                <svg
+      <div className={cn(classes.chart)}>
+        <Typography className={cn(classes.title)} variant="h3" isUpperCased>
+          <b>{title}</b>
+        </Typography>
+        <div className={cn(classes.legend)}>
+          {labels.map((l, i) => (
+            <div key={i} className={cn(classes.legendItem)}>
+              <svg
+                width="16"
+                height="16"
+                className={`ct-series-${String.fromCharCode(97 + i)}`}
+              >
+                <rect
                   width="16"
                   height="16"
-                  className={`ct-series-${String.fromCharCode(97 + i)}`}
-                >
-                  <rect
-                    width="16"
-                    height="16"
-                    className={cn(classes.legendIcon)}
-                  ></rect>
-                </svg>
-                <Typography variant="span">{l}</Typography>
-              </div>
-            ))}
-          </div>
-          <div className={cn(classes.twoColumns)}>
-            <div className={cn(classes.leftColumn)}>
-              {children}
+                  className={cn(classes.legendIcon)}
+                ></rect>
+              </svg>
+              <Typography variant="span">{l}</Typography>
+            </div>
+          ))}
+        </div>
+        <div className={cn(classes.twoColumns)}>
+          <div className={cn(classes.leftColumn)}>
+            {children}
+            <div className={cn(classes.footer)}>
               <hr className={cn(classes.border)} />
               <Typography color="muted">
                 <small>
@@ -55,17 +55,17 @@ class ChartWrapper extends PureComponent<ChartWrapperProps> {
                 </small>
               </Typography>
             </div>
-            <div className={cn(classes.actions)}>
-              <button>
-                <img src={require("./assets/embed.svg")} alt={t("Code icon")} />
-              </button>
-              <button onClick={onDownloadButtonClick}>
-                <img
-                  src={require("./assets/download.svg")}
-                  alt={t("Download icon")}
-                />
-              </button>
-            </div>
+          </div>
+          <div className={cn(classes.actions)}>
+            <button>
+              <img src={require("./assets/embed.svg")} alt={t("Code icon")} />
+            </button>
+            <button onClick={onDownloadButtonClick}>
+              <img
+                src={require("./assets/download.svg")}
+                alt={t("Download icon")}
+              />
+            </button>
           </div>
         </div>
       </div>

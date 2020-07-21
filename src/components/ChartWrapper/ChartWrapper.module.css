@@ -1,15 +1,8 @@
-.container {
-  display: flex;
-  min-width: 100%;
-  justify-content: flex-end;
-}
-
 .chart {
   overflow: hidden;
   width: 100%;
-  max-width: 900px;
-  margin-top: 50px;
-  margin-bottom: 20px;
+  padding: 20px 10px;
+
   :global {
     .ct-series-a {
       color: var(--color-palette-a);
@@ -115,6 +108,10 @@
 
 .left-column {
   flex-grow: 1;
+}
+
+.footer {
+  padding-left: 10px;
 }
 
 .border {
