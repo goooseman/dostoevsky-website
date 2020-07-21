@@ -4,6 +4,7 @@ import classes from "./ClausePartsPage.module.css";
 import cn from "clsx";
 import Accordion, { AccordionNode } from "src/components/ui-kit/Accordion";
 import PercentageBar from "src/components/charts/PercentageBar";
+import Bar from "src/components/charts/Bar";
 
 interface ClausePartsPageProps {
   clauseNumber: number;
@@ -18,6 +19,22 @@ interface ClausePartsPageProps {
       dismissalCount: number;
       compulsoryTreatmentCount: number;
     };
+    byPunishment: {
+      primaryLifeSentenceCount: number; // Пожизненное лишение свободы
+      primarySuspendedCount: number; // Условное осуждение к лишению свободы
+      primaryArrestCount: number; // Арест
+      primaryRestrainCount: number; // Ограничение свободы
+      primaryRestrain2009Count: number; // Ограничение свободы/ограничение по военной службе, содержание в дисциплинарной воинской части
+      primaryCorrectionalLabourCount: number; // Исправительные работы
+      primaryCommunityServiceCount: number; // Обязательные работы
+      primaryForcedLabourCount: number; // Принудительные работы
+      primaryFineCount: number; // Штраф
+      primaryDisqualificationCount: number; // Лишение права занимать определенные должности или заниматься определенной деятельностью
+      primaryOtherCount: number; // Условное осуждение к иным мерам
+      primaryMilitaryDisciplinaryUnitCount: number; // Содержание в дисциплинарной воинской части
+      primaryRestrictionsInMilitaryServiceCount: number; // Ограничение по военной службе
+      primaryImprisonmentCount: number; // Лишение свободы
+    };
   }[];
 }
 
@@ -26,6 +43,23 @@ const byResultLabels = [
   "оправданных",
   "прекращённых",
   "принудительное лечение",
+];
+
+const byPunishmentLabels = [
+  "пожизненное лишение свободы",
+  "условное осуждение к лишению свободы",
+  "арест",
+  "ограничение свободы",
+  "ограничение свободы/ограничение по военной службе, содержание в дисциплинарной воинской части",
+  "исправительные работы",
+  "обязательные работы",
+  "принудительные работы",
+  "штраф",
+  "лишение права занимать определенные должности",
+  "условное осуждение к иным мерам",
+  "содержание в дисциплинарной воинской части",
+  "ограничение по военной службе",
+  "лишение свободы",
 ];
 
 class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
@@ -55,13 +89,37 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
           <PercentageBar
             title={`Чем закончились дела, дошедшие до суда по каждой части статьи ${clauseNumber}`}
             labels={byResultLabels}
-            groups={parts.map((p) => ({
+            groups={parts.reverse().map((p) => ({
               title: p.part,
               values: [
                 p.byResult.convictedCount,
                 p.byResult.acquittalCount,
                 p.byResult.dismissalCount,
                 p.byResult.compulsoryTreatmentCount,
+              ],
+            }))}
+          />
+
+          <Bar
+            title="Виды наказаний по частям статьи 282"
+            labels={byPunishmentLabels}
+            groups={parts.reverse().map((p) => ({
+              title: p.part,
+              values: [
+                p.byPunishment.primaryLifeSentenceCount,
+                p.byPunishment.primarySuspendedCount,
+                p.byPunishment.primaryArrestCount,
+                p.byPunishment.primaryRestrainCount,
+                p.byPunishment.primaryRestrain2009Count,
+                p.byPunishment.primaryCorrectionalLabourCount,
+                p.byPunishment.primaryCommunityServiceCount,
+                p.byPunishment.primaryForcedLabourCount,
+                p.byPunishment.primaryFineCount,
+                p.byPunishment.primaryDisqualificationCount,
+                p.byPunishment.primaryOtherCount,
+                p.byPunishment.primaryMilitaryDisciplinaryUnitCount,
+                p.byPunishment.primaryRestrictionsInMilitaryServiceCount,
+                p.byPunishment.primaryImprisonmentCount,
               ],
             }))}
           />

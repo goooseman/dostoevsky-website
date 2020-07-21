@@ -61,6 +61,20 @@ export const query = graphql`
           dismissalOther
           dismissalCourtFine
           coerciveMeasures
+          primaryLifeSentence
+          primarySuspended
+          primaryArrest
+          primaryRestrain
+          primaryRestrain2009
+          primaryCorrectionalLabour
+          primaryCommunityService
+          primaryForcedLabour
+          primaryFine
+          primaryDisqualification
+          primaryOther
+          primaryMilitaryDisciplinaryUnit
+          primaryRestrictionsInMilitaryService
+          primaryImprisonment
         }
       }
     }

@@ -103,6 +103,7 @@ export type Api_Server__Data = Node & {
   primaryMilitaryDisciplinaryUnit?: Maybe<Scalars['Int']>;
   primaryOther?: Maybe<Scalars['Int']>;
   primaryRestrain?: Maybe<Scalars['Int']>;
+  primaryRestrain2009?: Maybe<Scalars['Int']>;
   primaryRestrictionsInMilitaryService?: Maybe<Scalars['Int']>;
   primarySuspended?: Maybe<Scalars['Int']>;
   totalConvicted?: Maybe<Scalars['Int']>;
@@ -296,6 +297,7 @@ export type Api_Server__DataFieldsEnum =
   | 'primaryMilitaryDisciplinaryUnit'
   | 'primaryOther'
   | 'primaryRestrain'
+  | 'primaryRestrain2009'
   | 'primaryRestrictionsInMilitaryService'
   | 'primarySuspended'
   | 'totalConvicted'
@@ -379,6 +381,7 @@ export type Api_Server__DataFilterInput = {
   primaryMilitaryDisciplinaryUnit?: Maybe<IntQueryOperatorInput>;
   primaryOther?: Maybe<IntQueryOperatorInput>;
   primaryRestrain?: Maybe<IntQueryOperatorInput>;
+  primaryRestrain2009?: Maybe<IntQueryOperatorInput>;
   primaryRestrictionsInMilitaryService?: Maybe<IntQueryOperatorInput>;
   primarySuspended?: Maybe<IntQueryOperatorInput>;
   totalConvicted?: Maybe<IntQueryOperatorInput>;
@@ -2233,6 +2236,7 @@ export type QueryApiServerDataArgs = {
   primaryMilitaryDisciplinaryUnit?: Maybe<IntQueryOperatorInput>;
   primaryOther?: Maybe<IntQueryOperatorInput>;
   primaryRestrain?: Maybe<IntQueryOperatorInput>;
+  primaryRestrain2009?: Maybe<IntQueryOperatorInput>;
   primaryRestrictionsInMilitaryService?: Maybe<IntQueryOperatorInput>;
   primarySuspended?: Maybe<IntQueryOperatorInput>;
   totalConvicted?: Maybe<IntQueryOperatorInput>;
@@ -3157,6 +3161,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___entitiesArray___schemaType___primaryMilitaryDisciplinaryUnit'
   | 'pluginOptions___entitiesArray___schemaType___primaryOther'
   | 'pluginOptions___entitiesArray___schemaType___primaryRestrain'
+  | 'pluginOptions___entitiesArray___schemaType___primaryRestrain2009'
   | 'pluginOptions___entitiesArray___schemaType___primaryRestrictionsInMilitaryService'
   | 'pluginOptions___entitiesArray___schemaType___primarySuspended'
   | 'pluginOptions___entitiesArray___schemaType___totalConvicted'
@@ -3419,6 +3424,7 @@ export type SitePluginPluginOptionsEntitiesArraySchemaType = {
   primaryMilitaryDisciplinaryUnit?: Maybe<Scalars['Int']>;
   primaryOther?: Maybe<Scalars['Int']>;
   primaryRestrain?: Maybe<Scalars['Int']>;
+  primaryRestrain2009?: Maybe<Scalars['Int']>;
   primaryRestrictionsInMilitaryService?: Maybe<Scalars['Int']>;
   primarySuspended?: Maybe<Scalars['Int']>;
   totalConvicted?: Maybe<Scalars['Int']>;
@@ -3498,6 +3504,7 @@ export type SitePluginPluginOptionsEntitiesArraySchemaTypeFilterInput = {
   primaryMilitaryDisciplinaryUnit?: Maybe<IntQueryOperatorInput>;
   primaryOther?: Maybe<IntQueryOperatorInput>;
   primaryRestrain?: Maybe<IntQueryOperatorInput>;
+  primaryRestrain2009?: Maybe<IntQueryOperatorInput>;
   primaryRestrictionsInMilitaryService?: Maybe<IntQueryOperatorInput>;
   primarySuspended?: Maybe<IntQueryOperatorInput>;
   totalConvicted?: Maybe<IntQueryOperatorInput>;
@@ -3652,7 +3659,7 @@ export type ClausePartsQueryVariables = Exact<{
 }>;
 
 
-export type ClausePartsQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, allApiServerData: { edges: Array<{ node: Pick<Api_Server__Data, 'part' | 'name' | 'totalConvicted' | 'acquittal' | 'dismissalAbsenceOfEvent' | 'dismissalAmnesty' | 'dismissalReconciliation' | 'dismissalRepentance' | 'dismissalOther' | 'dismissalCourtFine' | 'coerciveMeasures'> }> } };
+export type ClausePartsQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, allApiServerData: { edges: Array<{ node: Pick<Api_Server__Data, 'part' | 'name' | 'totalConvicted' | 'acquittal' | 'dismissalAbsenceOfEvent' | 'dismissalAmnesty' | 'dismissalReconciliation' | 'dismissalRepentance' | 'dismissalOther' | 'dismissalCourtFine' | 'coerciveMeasures' | 'primaryLifeSentence' | 'primarySuspended' | 'primaryArrest' | 'primaryRestrain' | 'primaryRestrain2009' | 'primaryCorrectionalLabour' | 'primaryCommunityService' | 'primaryForcedLabour' | 'primaryFine' | 'primaryDisqualification' | 'primaryOther' | 'primaryMilitaryDisciplinaryUnit' | 'primaryRestrictionsInMilitaryService' | 'primaryImprisonment'> }> } };
 
 export type AboutPageQueryVariables = Exact<{ [key: string]: never; }>;
 

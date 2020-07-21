@@ -16,6 +16,20 @@ interface ClausePartsPageContainerProps {
     dismissalCourtFine: number; // Прекращено судебный штраф
     dismissalOther: number; // Прекращено по другим основаниям
     coerciveMeasures: number;
+    primaryLifeSentence: number;
+    primarySuspended: number;
+    primaryArrest: number;
+    primaryRestrain: number;
+    primaryRestrain2009: number;
+    primaryCorrectionalLabour: number;
+    primaryCommunityService: number;
+    primaryForcedLabour: number;
+    primaryFine: number;
+    primaryDisqualification: number;
+    primaryOther: number;
+    primaryMilitaryDisciplinaryUnit: number;
+    primaryRestrictionsInMilitaryService: number;
+    primaryImprisonment: number;
   }[];
 }
 
@@ -59,6 +73,24 @@ class ClausePartsPageContainer extends PureComponent<
           acquittalCount,
           dismissalCount,
           compulsoryTreatmentCount,
+        },
+        byPunishment: {
+          primaryLifeSentenceCount: p.primaryLifeSentence,
+          primarySuspendedCount: p.primarySuspended,
+          primaryArrestCount: p.primaryArrest,
+          primaryRestrainCount: p.primaryRestrain,
+          primaryRestrain2009Count: p.primaryRestrain2009 || 0,
+          primaryCorrectionalLabourCount: p.primaryCorrectionalLabour,
+          primaryCommunityServiceCount: p.primaryCommunityService,
+          primaryForcedLabourCount: p.primaryForcedLabour,
+          primaryFineCount: p.primaryFine,
+          primaryDisqualificationCount: p.primaryDisqualification,
+          primaryOtherCount: p.primaryOther,
+          primaryMilitaryDisciplinaryUnitCount:
+            p.primaryMilitaryDisciplinaryUnit,
+          primaryRestrictionsInMilitaryServiceCount:
+            p.primaryRestrictionsInMilitaryService,
+          primaryImprisonmentCount: p.primaryImprisonment,
         },
       };
     });
