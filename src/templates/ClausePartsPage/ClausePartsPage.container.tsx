@@ -1,9 +1,10 @@
 import React, { PureComponent } from "react";
-import ClausePartsPage from "./ClausePartsPage";
+import ClausePartsPage, { ClausePartsPageViewMode } from "./ClausePartsPage";
 
 interface ClausePartsPageContainerProps {
   clauseNumber: number;
   year: number;
+  view: ClausePartsPageViewMode;
   parts: {
     part: string;
     name: string;
@@ -37,11 +38,15 @@ class ClausePartsPageContainer extends PureComponent<
   ClausePartsPageContainerProps
 > {
   render(): React.ReactNode {
-    const { clauseNumber, year } = this.props;
+    const { clauseNumber, year, view } = this.props;
+    if (this.props.parts.length === 0) {
+      return <p>404</p>;
+    }
     return (
       <ClausePartsPage
         clauseNumber={clauseNumber}
         year={year}
+        view={view}
         parts={this.getParts()}
       ></ClausePartsPage>
     );

@@ -21,11 +21,23 @@ exports.createPages = async ({ actions }) => {
             component: path.resolve(`src/page-templates/clause-main.tsx`),
             context,
           });
-          createPage({
-            path: `/${chapter.id}/${year}/parts/`,
-            component: path.resolve(`src/page-templates/clause-parts.tsx`),
-            context,
-          });
+          const partsPageViewModes = [
+            "page",
+            "iframe-parts",
+            "iframe-parts-by-result",
+            "iframe-parts-by-punishment",
+          ];
+          for (const view of partsPageViewModes) {
+            const webPath =
+              view === "page"
+                ? `/${chapter.id}/${year}/parts/`
+                : `/${chapter.id}/${year}/parts/${view}`;
+            createPage({
+              path: webPath,
+              component: path.resolve(`src/page-templates/clause-parts.tsx`),
+              context: { ...context, view },
+            });
+          }
           createPage({
             path: `/${chapter.id}/${year}/chronology/`,
             component: path.resolve(`src/page-templates/clause-chronology.tsx`),
