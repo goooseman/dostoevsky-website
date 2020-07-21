@@ -21,9 +21,12 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
 
   public componentDidMount(): void {
     const series: { value: number }[][] = this.props.groups.map((g) =>
-      g.values.reverse().map((v) => ({ value: v }))
+      g.values
+        .slice()
+        .reverse()
+        .map((v) => ({ value: v }))
     );
-    const labels: string[] = this.props.labels.reverse();
+    const labels: string[] = this.props.labels.slice().reverse();
 
     new Bar(
       this.chartRef.current,
