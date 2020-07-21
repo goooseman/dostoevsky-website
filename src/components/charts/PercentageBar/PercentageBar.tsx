@@ -152,22 +152,25 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
       return;
     }
 
-    let textColor = "white";
     let x = data.x1 + 5;
+    let textAnchor = "start";
+    let className = "ct-inner-label";
 
     if (this.isLastBar(data)) {
-      x = data.x2 - 15;
+      x = data.x2 - 5;
       if (this.isSmallBar(data)) {
-        x = data.x1 + 10;
-        textColor = "black";
+        x = data.x2 + 1;
+        className += " ct-inner-label-dark";
+      } else {
+        textAnchor = "end";
       }
     }
 
     const t = new Svg("text", {
       x,
       y: data.y2 + 5,
-      fill: textColor,
-    });
+      "text-anchor": textAnchor,
+    }).addClass(className);
     const meta = data.meta as {
       count: string;
     };
@@ -217,7 +220,7 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
     data.meta.isLast;
 
   private isSmallBar = (data: IChartDrawBarData<PercentageBarMeta>): boolean =>
-    data.x2 - data.x1 < 30;
+    data.x2 - data.x1 < 20;
 
   private isLabel = (data: ChartDrawData): data is IChartDrawLabelData =>
     data.type === "label";
