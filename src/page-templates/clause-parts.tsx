@@ -23,7 +23,7 @@ class ClauseParts extends PureComponent<ClausePartsProps> {
     const { data, pageContext } = this.props;
 
     return (
-      <Layout>
+      <Layout hasPageLayout={pageContext.view === "page"}>
         <Meta site={data.site?.meta} />
         <ClausePartsPage
           year={parseInt(pageContext.year)}
