@@ -5,6 +5,17 @@ const WebpackShellPluginNext = require("webpack-shell-plugin-next");
 const ukRf = require("./content/ук-рф.json");
 const years = require("./content/years.json");
 
+const getRouteForClausePage = (clauseId, year, page, view) => {
+  let route = `/${clauseId}/${year}/`;
+  if (page !== "") {
+    route += `${page}/`;
+  }
+  if (view !== "page") {
+    route += `${view}/`;
+  }
+  return route;
+};
+
 exports.createPages = async ({ actions }) => {
   const { createPage } = actions;
   for (let part of ukRf) {
@@ -17,7 +28,7 @@ exports.createPages = async ({ actions }) => {
             clauseId: chapter.id,
           };
           createPage({
-            path: `/${chapter.id}/${year}/`,
+            path: getRouteForClausePage(chapter.id, year, "", "page"),
             component: path.resolve(`src/page-templates/clause-main.tsx`),
             context,
           });
@@ -28,23 +39,19 @@ exports.createPages = async ({ actions }) => {
             "iframe-parts-by-punishment",
           ];
           for (const view of partsPageViewModes) {
-            const webPath =
-              view === "page"
-                ? `/${chapter.id}/${year}/parts/`
-                : `/${chapter.id}/${year}/parts/${view}`;
             createPage({
-              path: webPath,
+              path: getRouteForClausePage(chapter.id, year, "parts", view),
               component: path.resolve(`src/page-templates/clause-parts.tsx`),
               context: { ...context, view },
             });
           }
           createPage({
-            path: `/${chapter.id}/${year}/chronology/`,
+            path: getRouteForClausePage(chapter.id, year, "chronology", "page"),
             component: path.resolve(`src/page-templates/clause-chronology.tsx`),
             context,
           });
           createPage({
-            path: `/${chapter.id}/${year}/full/`,
+            path: getRouteForClausePage(chapter.id, year, "full", "page"),
             component: path.resolve(`src/page-templates/clause-full.tsx`),
             context,
           });
