@@ -94,22 +94,25 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
               title={`Чем закончились дела, дошедшие до суда по каждой части статьи ${clauseNumber}`}
               labels={byResultLabels}
               downloadFilename={`${clauseNumber}-${year}-parts-by-result`}
-              groups={parts.reverse().map((p) => ({
-                title: p.part,
-                values: [
-                  p.byResult.convictedCount,
-                  p.byResult.acquittalCount,
-                  p.byResult.dismissalCount,
-                  p.byResult.compulsoryTreatmentCount,
-                ],
-              }))}
+              groups={parts
+                .slice()
+                .reverse()
+                .map((p) => ({
+                  title: p.part,
+                  values: [
+                    p.byResult.convictedCount,
+                    p.byResult.acquittalCount,
+                    p.byResult.dismissalCount,
+                    p.byResult.compulsoryTreatmentCount,
+                  ],
+                }))}
             />
 
             <Bar
               title="Виды наказаний по частям статьи 282"
               labels={byPunishmentLabels}
               downloadFilename={`${clauseNumber}-${year}-parts-by-punishment`}
-              groups={parts.reverse().map((p) => ({
+              groups={parts.map((p) => ({
                 title: p.part,
                 values: [
                   p.byPunishment.primaryLifeSentenceCount,
