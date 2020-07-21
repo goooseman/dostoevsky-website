@@ -11,6 +11,7 @@ const byPunishment = {
   primarySuspendedCount: 0,
   primaryArrestCount: 0,
   primaryRestrainCount: 0,
+  primaryRestrain2009Count: 0,
   primaryCorrectionalLabourCount: 0,
   primaryCommunityServiceCount: 0,
   primaryForcedLabourCount: 0,
@@ -69,4 +70,8 @@ const defaultProps = {
 
 export const withTwoParts = (): React.ReactNode => (
   <ClausePartsPage {...defaultProps} />
+);
+
+export const withZeroParts = (): React.ReactNode => (
+  <ClausePartsPage {...defaultProps} parts={[]} />
 );

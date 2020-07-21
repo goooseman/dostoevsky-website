@@ -74,59 +74,63 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
         pageType="parts"
         headerChildren={this.renderHeaderChildren()}
       >
-        <div>
-          <PercentageBar
-            labels={parts.map((p) => p.part)}
-            downloadFilename={`${clauseNumber}-${year}-parts`}
-            title={`СРАВНЕНИЕ ЧАСТЕЙ МЕЖДУ СОБОЙ: СКОЛЬКО ЧЕЛОВЕК ОСУЖДЕНО ПО КАЖДОЙ ЧАСТИ СТАТЬИ ${clauseNumber} ПО ОСНОВНОМУ СОСТАВУ`}
-            groups={[
-              {
-                title: "",
-                values: parts.map((p) => p.count),
-              },
-            ]}
-          />
+        {parts.length === 0 ? (
+          <p>Нет данных</p>
+        ) : (
+          <div>
+            <PercentageBar
+              labels={parts.map((p) => p.part)}
+              downloadFilename={`${clauseNumber}-${year}-parts`}
+              title={`СРАВНЕНИЕ ЧАСТЕЙ МЕЖДУ СОБОЙ: СКОЛЬКО ЧЕЛОВЕК ОСУЖДЕНО ПО КАЖДОЙ ЧАСТИ СТАТЬИ ${clauseNumber} ПО ОСНОВНОМУ СОСТАВУ`}
+              groups={[
+                {
+                  title: "",
+                  values: parts.map((p) => p.count),
+                },
+              ]}
+            />
 
-          <PercentageBar
-            title={`Чем закончились дела, дошедшие до суда по каждой части статьи ${clauseNumber}`}
-            labels={byResultLabels}
-            downloadFilename={`${clauseNumber}-${year}-parts-by-result`}
-            groups={parts.reverse().map((p) => ({
-              title: p.part,
-              values: [
-                p.byResult.convictedCount,
-                p.byResult.acquittalCount,
-                p.byResult.dismissalCount,
-                p.byResult.compulsoryTreatmentCount,
-              ],
-            }))}
-          />
+            <PercentageBar
+              title={`Чем закончились дела, дошедшие до суда по каждой части статьи ${clauseNumber}`}
+              labels={byResultLabels}
+              downloadFilename={`${clauseNumber}-${year}-parts-by-result`}
+              groups={parts.reverse().map((p) => ({
+                title: p.part,
+                values: [
+                  p.byResult.convictedCount,
+                  p.byResult.acquittalCount,
+                  p.byResult.dismissalCount,
+                  p.byResult.compulsoryTreatmentCount,
+                ],
+              }))}
+            />
 
-          <Bar
-            title="Виды наказаний по частям статьи 282"
-            labels={byPunishmentLabels}
-            downloadFilename={`${clauseNumber}-${year}-parts-by-punishment`}
-            groups={parts.reverse().map((p) => ({
-              title: p.part,
-              values: [
-                p.byPunishment.primaryLifeSentenceCount,
-                p.byPunishment.primarySuspendedCount,
-                p.byPunishment.primaryArrestCount,
-                p.byPunishment.primaryRestrainCount,
-                p.byPunishment.primaryRestrain2009Count,
-                p.byPunishment.primaryCorrectionalLabourCount,
-                p.byPunishment.primaryCommunityServiceCount,
-                p.byPunishment.primaryForcedLabourCount,
-                p.byPunishment.primaryFineCount,
-                p.byPunishment.primaryDisqualificationCount,
-                p.byPunishment.primaryOtherCount,
-                p.byPunishment.primaryMilitaryDisciplinaryUnitCount,
-                p.byPunishment.primaryRestrictionsInMilitaryServiceCount,
-                p.byPunishment.primaryImprisonmentCount,
-              ],
-            }))}
-          />
-        </div>
+            <Bar
+              title="Виды наказаний по частям статьи 282"
+              labels={byPunishmentLabels}
+              downloadFilename={`${clauseNumber}-${year}-parts-by-punishment`}
+              groups={parts.reverse().map((p) => ({
+                title: p.part,
+                values: [
+                  p.byPunishment.primaryLifeSentenceCount,
+                  p.byPunishment.primarySuspendedCount,
+                  p.byPunishment.primaryArrestCount,
+                  p.byPunishment.primaryRestrainCount,
+                  p.byPunishment.primaryRestrain2009Count,
+                  p.byPunishment.primaryCorrectionalLabourCount,
+                  p.byPunishment.primaryCommunityServiceCount,
+                  p.byPunishment.primaryForcedLabourCount,
+                  p.byPunishment.primaryFineCount,
+                  p.byPunishment.primaryDisqualificationCount,
+                  p.byPunishment.primaryOtherCount,
+                  p.byPunishment.primaryMilitaryDisciplinaryUnitCount,
+                  p.byPunishment.primaryRestrictionsInMilitaryServiceCount,
+                  p.byPunishment.primaryImprisonmentCount,
+                ],
+              }))}
+            />
+          </div>
+        )}
       </ClausePageLayout>
     );
   }
