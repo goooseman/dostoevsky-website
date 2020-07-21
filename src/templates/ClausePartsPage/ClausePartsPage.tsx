@@ -77,6 +77,7 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
         <div>
           <PercentageBar
             labels={parts.map((p) => p.part)}
+            downloadFilename={`${clauseNumber}-${year}-parts`}
             title={`СРАВНЕНИЕ ЧАСТЕЙ МЕЖДУ СОБОЙ: СКОЛЬКО ЧЕЛОВЕК ОСУЖДЕНО ПО КАЖДОЙ ЧАСТИ СТАТЬИ ${clauseNumber} ПО ОСНОВНОМУ СОСТАВУ`}
             groups={[
               {
@@ -89,6 +90,7 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
           <PercentageBar
             title={`Чем закончились дела, дошедшие до суда по каждой части статьи ${clauseNumber}`}
             labels={byResultLabels}
+            downloadFilename={`${clauseNumber}-${year}-parts-by-result`}
             groups={parts.reverse().map((p) => ({
               title: p.part,
               values: [
@@ -103,6 +105,7 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
           <Bar
             title="Виды наказаний по частям статьи 282"
             labels={byPunishmentLabels}
+            downloadFilename={`${clauseNumber}-${year}-parts-by-punishment`}
             groups={parts.reverse().map((p) => ({
               title: p.part,
               values: [

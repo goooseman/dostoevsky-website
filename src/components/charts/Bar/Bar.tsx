@@ -2,6 +2,7 @@ import React, { PureComponent } from "react";
 import { Bar, IChartistStepAxis } from "chartist";
 import "chartist/dist/chartist.min.css";
 import ChartWrapper from "src/components/ChartWrapper";
+import { downloadSvg } from "src/utils/svg";
 
 interface PercentageBarProps {
   groups: {
@@ -10,6 +11,7 @@ interface PercentageBarProps {
   }[];
   labels: string[];
   title: React.ReactNode;
+  downloadFilename: string;
 }
 
 const ROW_HEIGHT = 50;
@@ -53,6 +55,7 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
       <ChartWrapper
         labels={this.props.groups.map((g) => g.title)}
         title="Виды наказаний по частям статьи 282"
+        onDownloadButtonClick={this.handleDownloadButtonClick}
       >
         <div
           ref={this.chartRef}
@@ -61,6 +64,14 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
       </ChartWrapper>
     );
   }
+
+  private handleDownloadButtonClick = () => {
+    if (!this.chartRef.current) {
+      return;
+    }
+    const svg = this.chartRef.current.querySelector("svg");
+    downloadSvg(svg, `${this.props.downloadFilename}.png`);
+  };
 }
 
 export default PercentageBar;

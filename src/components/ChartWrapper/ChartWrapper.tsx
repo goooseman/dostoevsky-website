@@ -8,11 +8,12 @@ interface ChartWrapperProps extends WithLocale {
   labels: string[];
   children: React.ReactNode;
   title: React.ReactNode;
+  onDownloadButtonClick: () => void;
 }
 
 class ChartWrapper extends PureComponent<ChartWrapperProps> {
   render(): React.ReactNode {
-    const { children, labels, title, t } = this.props;
+    const { children, labels, title, t, onDownloadButtonClick } = this.props;
 
     return (
       <div className={cn(classes.container)}>
@@ -58,7 +59,7 @@ class ChartWrapper extends PureComponent<ChartWrapperProps> {
               <button>
                 <img src={require("./assets/embed.svg")} alt={t("Code icon")} />
               </button>
-              <button>
+              <button onClick={onDownloadButtonClick}>
                 <img
                   src={require("./assets/download.svg")}
                   alt={t("Download icon")}

@@ -1,0 +1,14 @@
+diff --git a/node_modules/chartist/dist/chartist.js b/node_modules/chartist/dist/chartist.js
+index 68536a7..c0b4c16 100644
+--- a/node_modules/chartist/dist/chartist.js
++++ b/node_modules/chartist/dist/chartist.js
+@@ -2171,9 +2171,6 @@ var Chartist = {
+       content = container.firstChild;
+     }
+ 
+-    // Adding namespace to content element
+-    content.setAttribute('xmlns', Chartist.namespaces.xmlns);
+-
+     // Creating the foreignObject without required extension attribute (as described here
+     // http://www.w3.org/TR/SVG/extend.html#ForeignObjectElement)
+     var fnObj = this.elem('foreignObject', attributes, className, insertFirst);
