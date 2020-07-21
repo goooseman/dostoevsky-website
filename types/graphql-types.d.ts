@@ -2843,6 +2843,7 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___entitiesArray___name'
   | 'pluginCreator___pluginOptions___entitiesArray___url'
   | 'pluginCreator___pluginOptions___entitiesArray___method'
+  | 'pluginCreator___pluginOptions___excludePaths'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
@@ -3154,6 +3155,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___entitiesArray___schemaType___totalConvicted'
   | 'pluginOptions___entitiesArray___schemaType___unfinishedOffence'
   | 'pluginOptions___entitiesArray___schemaType___year'
+  | 'pluginOptions___excludePaths'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
   | 'browserAPIs'
@@ -3296,6 +3298,7 @@ export type SitePluginPluginOptions = {
   path?: Maybe<Scalars['String']>;
   verboseOutput?: Maybe<Scalars['Boolean']>;
   entitiesArray?: Maybe<Array<Maybe<SitePluginPluginOptionsEntitiesArray>>>;
+  excludePaths?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
@@ -3529,6 +3532,7 @@ export type SitePluginPluginOptionsFilterInput = {
   path?: Maybe<StringQueryOperatorInput>;
   verboseOutput?: Maybe<BooleanQueryOperatorInput>;
   entitiesArray?: Maybe<SitePluginPluginOptionsEntitiesArrayFilterListInput>;
+  excludePaths?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
 
