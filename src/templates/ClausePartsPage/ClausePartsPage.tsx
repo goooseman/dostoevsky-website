@@ -51,15 +51,15 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
     const { clauseNumber, year, view } = this.props;
 
     if (view === "iframe-parts") {
-      return <PartsChart {...this.props} />;
+      return <PartsChart {...this.props} isIframeMode />;
     }
 
     if (view === "iframe-parts-by-result") {
-      return <PartsByResultChart {...this.props} />;
+      return <PartsByResultChart {...this.props} isIframeMode />;
     }
 
     if (view === "iframe-parts-by-punishment") {
-      return <PartsByPunishment {...this.props} />;
+      return <PartsByPunishment {...this.props} isIframeMode />;
     }
 
     return (

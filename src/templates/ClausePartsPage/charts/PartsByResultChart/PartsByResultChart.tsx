@@ -9,15 +9,20 @@ const byResultLabels = [
   "принудительное лечение",
 ];
 
-class PartsByResultChart extends PureComponent<ClausePartsPageProps> {
+interface PartsByResultChartProps extends ClausePartsPageProps {
+  isIframeMode?: boolean;
+}
+
+class PartsByResultChart extends PureComponent<PartsByResultChartProps> {
   render(): React.ReactNode {
-    const { clauseNumber, year, parts } = this.props;
+    const { clauseNumber, year, parts, isIframeMode } = this.props;
 
     return (
       <PercentageBar
         title={`Чем закончились дела, дошедшие до суда по каждой части статьи ${clauseNumber}`}
         labels={byResultLabels}
         downloadFilename={`${clauseNumber}-${year}-parts-by-result`}
+        isIframeMode={isIframeMode}
         groups={parts
           .slice()
           .reverse()

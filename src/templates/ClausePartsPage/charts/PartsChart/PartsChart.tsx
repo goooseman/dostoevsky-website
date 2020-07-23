@@ -2,9 +2,13 @@ import React, { PureComponent } from "react";
 import PercentageBar from "src/components/charts/PercentageBar";
 import type { ClausePartsPageProps } from "../../ClausePartsPage";
 
-class Parts extends PureComponent<ClausePartsPageProps> {
+interface PartsProps extends ClausePartsPageProps {
+  isIframeMode?: boolean;
+}
+
+class Parts extends PureComponent<PartsProps> {
   render(): React.ReactNode {
-    const { clauseNumber, year, parts } = this.props;
+    const { clauseNumber, year, parts, isIframeMode } = this.props;
 
     return (
       <PercentageBar
@@ -17,6 +21,7 @@ class Parts extends PureComponent<ClausePartsPageProps> {
             values: parts.map((p) => p.count),
           },
         ]}
+        isIframeMode={isIframeMode}
       />
     );
   }

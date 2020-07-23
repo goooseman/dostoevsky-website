@@ -18,14 +18,11 @@ const BAR_HEIGHT = 61;
 const Y_LABEL_MARGIN = 15;
 const X_TICKS = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
-interface PercentageBarProps {
+interface PercentageBarProps extends React.ComponentProps<typeof ChartWrapper> {
   groups: {
     values: number[];
     title: string;
   }[];
-  labels: string[];
-  title: React.ReactNode;
-  downloadFilename: string;
 }
 
 interface PercentageBarMeta {
@@ -104,14 +101,10 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
   }
 
   render(): React.ReactNode {
-    const { labels, groups, title, downloadFilename } = this.props;
+    const { labels, groups, ...wrapperProps } = this.props;
 
     return (
-      <ChartWrapper
-        labels={labels}
-        title={title}
-        downloadFilename={downloadFilename}
-      >
+      <ChartWrapper {...wrapperProps} labels={labels}>
         <div
           style={{ height: groups.length * ROW_HEIGHT + 50 }}
           ref={this.chartRef}

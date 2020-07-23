@@ -19,12 +19,17 @@ const byPunishmentLabels = [
   "лишение свободы",
 ];
 
-class PartsByPunishment extends PureComponent<ClausePartsPageProps> {
+interface PartsByPunishmentProps extends ClausePartsPageProps {
+  isIframeMode?: boolean;
+}
+
+class PartsByPunishment extends PureComponent<PartsByPunishmentProps> {
   render(): React.ReactNode {
-    const { clauseNumber, year, parts } = this.props;
+    const { clauseNumber, year, parts, isIframeMode } = this.props;
 
     return (
       <Bar
+        isIframeMode={isIframeMode}
         title={`Виды наказаний по частям статьи ${clauseNumber}`}
         labels={byPunishmentLabels}
         downloadFilename={`${clauseNumber}-${year}-parts-by-punishment`}

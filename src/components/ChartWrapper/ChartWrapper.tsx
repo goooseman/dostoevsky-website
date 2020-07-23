@@ -8,16 +8,22 @@ import { saveAs } from "file-saver";
 
 interface ChartWrapperProps extends WithLocale {
   labels: string[];
-  children: React.ReactNode;
   title: React.ReactNode;
   downloadFilename: string;
+  isIframeMode?: boolean;
 }
 
-class ChartWrapper extends PureComponent<ChartWrapperProps> {
+class ChartWrapper extends PureComponent<
+  React.PropsWithChildren<ChartWrapperProps>
+> {
+  public static defaultProps = {
+    isIframeMode: false,
+  };
+
   private imageContainerRef = React.createRef<HTMLDivElement>();
 
   render(): React.ReactNode {
-    const { children, labels, title, t } = this.props;
+    const { children, labels, title, t, isIframeMode } = this.props;
 
     return (
       <div className={cn(classes.chart)} ref={this.imageContainerRef}>
@@ -62,17 +68,19 @@ class ChartWrapper extends PureComponent<ChartWrapperProps> {
               </Typography>
             </div>
           </div>
-          <div className={cn(classes.actions)}>
-            <button>
-              <img src={require("./assets/embed.svg")} alt={t("Code icon")} />
-            </button>
-            <button onClick={this.handleDownloadButtonClick}>
-              <img
-                src={require("./assets/download.svg")}
-                alt={t("Download icon")}
-              />
-            </button>
-          </div>
+          {!isIframeMode ? (
+            <div className={cn(classes.actions)}>
+              <button>
+                <img src={require("./assets/embed.svg")} alt={t("Code icon")} />
+              </button>
+              <button onClick={this.handleDownloadButtonClick}>
+                <img
+                  src={require("./assets/download.svg")}
+                  alt={t("Download icon")}
+                />
+              </button>
+            </div>
+          ) : null}
         </div>
       </div>
     );

@@ -6,7 +6,7 @@ interface BarContainerState {}
 
 class BarContainer extends PureComponent<BarContainerProps, BarContainerState> {
   render(): React.ReactNode {
-    const { groups, title, labels, downloadFilename } = this.props;
+    const { groups, labels, ...otherProps } = this.props;
     const forbiddenLabelsIndexes: { [key: number]: boolean } = {};
     groups[0].values.forEach((v: number, i: number) => {
       if (v !== 0) {
@@ -20,14 +20,7 @@ class BarContainer extends PureComponent<BarContainerProps, BarContainerState> {
     });
 
     if (Object.keys(forbiddenLabelsIndexes).length === 0) {
-      return (
-        <Bar
-          groups={groups}
-          title={title}
-          labels={labels}
-          downloadFilename={downloadFilename}
-        />
-      );
+      return <Bar groups={groups} labels={labels} {...otherProps} />;
     }
 
     const filterOutForbiddenIndexes = (v: unknown, i: number) =>
@@ -41,12 +34,7 @@ class BarContainer extends PureComponent<BarContainerProps, BarContainerState> {
     }));
 
     return (
-      <Bar
-        labels={filteredLabels}
-        groups={filteredGroups}
-        title={title}
-        downloadFilename={downloadFilename}
-      />
+      <Bar labels={filteredLabels} groups={filteredGroups} {...otherProps} />
     );
   }
 }

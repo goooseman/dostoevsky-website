@@ -3,14 +3,11 @@ import { Bar, IChartistStepAxis } from "chartist";
 import "chartist/dist/chartist.min.css";
 import ChartWrapper from "src/components/ChartWrapper";
 
-interface PercentageBarProps {
+interface PercentageBarProps extends React.ComponentProps<typeof ChartWrapper> {
   groups: {
     values: number[];
     title: string;
   }[];
-  labels: string[];
-  title: React.ReactNode;
-  downloadFilename: string;
 }
 
 const ROW_HEIGHT = 50;
@@ -53,13 +50,10 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
   }
 
   render(): React.ReactNode {
-    const { labels, groups, title, downloadFilename } = this.props;
+    const { labels, groups, ...wrapperProps } = this.props;
+
     return (
-      <ChartWrapper
-        labels={groups.map((g) => g.title)}
-        title={title}
-        downloadFilename={downloadFilename}
-      >
+      <ChartWrapper {...wrapperProps} labels={groups.map((g) => g.title)}>
         <div
           ref={this.chartRef}
           style={{ height: labels.length * ROW_HEIGHT }}
