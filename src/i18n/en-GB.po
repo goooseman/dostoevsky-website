@@ -13,8 +13,16 @@ msgstr ""
 "Language: en\n"
 
 #: src/components/ChartWrapper/ChartWrapper.tsx:
+msgid "Get embed code"
+msgstr "Get embed code"
+
+#: src/components/ChartWrapper/ChartWrapper.tsx:
 msgid "Code icon"
 msgstr "Code icon"
+
+#: src/components/ChartWrapper/ChartWrapper.tsx:
+msgid "Download chart"
+msgstr "Download chart"
 
 #: src/components/ChartWrapper/ChartWrapper.tsx:
 msgid "Download icon"

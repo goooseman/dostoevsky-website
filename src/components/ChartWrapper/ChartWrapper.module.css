@@ -118,6 +118,8 @@
 
 .left-column {
   flex-grow: 1;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .footer {

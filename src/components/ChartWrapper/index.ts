@@ -1,2 +1,2 @@
-import ChartWrapper from "./ChartWrapper";
-export default ChartWrapper;
+import ChartWrapperContainer from "./ChartWrapper.container";
+export default ChartWrapperContainer;
