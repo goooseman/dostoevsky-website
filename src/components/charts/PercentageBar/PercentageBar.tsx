@@ -121,7 +121,7 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
       return;
     }
     const x = data.x || 0;
-    if (data.index === X_TICKS.length - 1) {
+    if (data.index === data.axis.ticks.length - 1) {
       data.element.attr({
         x: x - 19,
       });

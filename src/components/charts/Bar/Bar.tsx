@@ -1,7 +1,12 @@
 import React, { PureComponent } from "react";
-import { Bar, IChartistStepAxis } from "chartist";
 import "chartist/dist/chartist.min.css";
 import ChartWrapper from "src/components/ChartWrapper";
+import {
+  Bar,
+  IChartistStepAxis,
+  ChartDrawData,
+  IChartDrawLabelData,
+} from "chartist";
 
 interface PercentageBarProps extends React.ComponentProps<typeof ChartWrapper> {
   groups: {
@@ -24,7 +29,7 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
     );
     const labels: string[] = this.props.labels.slice().reverse();
 
-    new Bar(
+    const chart = new Bar(
       this.chartRef.current,
       {
         labels,
@@ -35,6 +40,7 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
         horizontalBars: true,
         axisX: {
           onlyInteger: true,
+          showGrid: false,
         },
         axisY: {
           stretch: true,
@@ -47,6 +53,10 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
         } as IChartistStepAxis,
       }
     );
+
+    chart.on("draw", (data: ChartDrawData) => {
+      this.positionXLabel(data);
+    });
   }
 
   render(): React.ReactNode {
@@ -61,6 +71,33 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
       </ChartWrapper>
     );
   }
+
+  private positionXLabel = (data: ChartDrawData): void => {
+    if (!this.isLabel(data) || !this.isXLabel(data)) {
+      return;
+    }
+    if (data.index === 0) {
+      return;
+    }
+    const x = data.x || 0;
+
+    if (data.index === data.axis.ticks.length - 1) {
+      data.element.attr({
+        x: x - 19,
+      });
+      return;
+    }
+
+    data.element.attr({
+      x: x - 7,
+    });
+  };
+
+  private isLabel = (data: ChartDrawData): data is IChartDrawLabelData =>
+    data.type === "label";
+
+  private isXLabel = (data: IChartDrawLabelData) =>
+    data.axis?.units.pos === "x";
 }
 
 export default PercentageBar;
