@@ -4,6 +4,9 @@ import cn from "clsx";
 import Typography from "src/components/ui-kit/Typography";
 import { withLocale, WithLocale } from "react-targem";
 
+import "chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css";
+import "chartist/dist/chartist.min.css";
+
 interface ChartWrapperProps extends WithLocale {
   labels: string[];
   title: React.ReactNode;

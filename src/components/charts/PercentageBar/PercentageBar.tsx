@@ -1,7 +1,5 @@
 import React, { PureComponent } from "react";
-import {
-  Bar,
-  Svg,
+import Chartist, {
   FixedScaleAxis,
   IChartistFixedScaleAxis,
   IChartistStepAxis,
@@ -10,8 +8,9 @@ import {
   IChartDrawGridData,
   IChartDrawLabelData,
 } from "chartist";
+import "chartist-plugin-tooltips";
 import ChartWrapper from "src/components/ChartWrapper";
-import "chartist/dist/chartist.min.css";
+import he from "he";
 
 const ROW_HEIGHT = 90;
 const BAR_HEIGHT = 61;
@@ -23,11 +22,17 @@ interface PercentageBarProps extends React.ComponentProps<typeof ChartWrapper> {
     values: number[];
     title: string;
   }[];
+  tooltipDescription: {
+    [key: string]: string;
+  };
 }
 
 interface PercentageBarMeta {
   count: string;
   isLast: boolean;
+  tooltip: {
+    [key: string]: string;
+  };
 }
 
 class PercentageBar extends PureComponent<PercentageBarProps> {
@@ -39,8 +44,8 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
       meta: PercentageBarMeta;
     }[][] = [];
     const labels: string[] = [];
-
-    this.props.groups
+    const { tooltipDescription, groups } = this.props;
+    groups
       .slice()
       .reverse()
       .forEach((g, iG) => {
@@ -58,12 +63,16 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
           }
           series[iV][iG] = {
             value: percentage,
-            meta: { count: v.toString(), isLast: true },
+            meta: {
+              count: v.toString(),
+              isLast: true,
+              tooltip: tooltipDescription,
+            },
           };
         });
       });
 
-    const chart = new Bar(
+    const chart = new Chartist.Bar(
       this.chartRef.current,
       {
         labels,
@@ -89,6 +98,12 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
           },
           offset: 0,
         } as IChartistStepAxis,
+        plugins: [
+          Chartist.plugins.tooltip({
+            appendToBody: true,
+            tooltipFnc: this.getTooltipText,
+          }),
+        ],
       }
     );
     chart.on("draw", (data: ChartDrawData) => {
@@ -112,6 +127,27 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
       </ChartWrapper>
     );
   }
+
+  private getTooltipText = (meta: string) => {
+    let metaDeserialized: {
+      data: PercentageBarMeta;
+    };
+    try {
+      metaDeserialized = JSON.parse(he.decode(meta));
+    } catch (e) {
+      console.error(e);
+      return '<span class="chartist-tooltip-meta">Error</span>';
+    }
+    const lines = [];
+    for (const [lineKey, lineValue] of Object.entries(
+      metaDeserialized.data.tooltip
+    )) {
+      lines.push(
+        `${lineKey}: ${lineValue.replace("%%", metaDeserialized.data.count)}`
+      );
+    }
+    return `<span class="chartist-tooltip-meta">${lines.join("<br>")}</span>`;
+  };
 
   private positionXLabel = (data: ChartDrawData): void => {
     if (!this.isLabel(data) || !this.isXLabel(data)) {
@@ -152,7 +188,7 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
       }
     }
 
-    const t = new Svg("text", {
+    const t = new Chartist.Svg("text", {
       x,
       y: data.y2 + 5,
       "text-anchor": textAnchor,

@@ -52,6 +52,11 @@ class PartsByPunishment extends PureComponent<PartsByPunishmentProps> {
             p.byPunishment.primaryImprisonmentCount,
           ],
         }))}
+        tooltipDescription={{
+          Состав: `${clauseNumber} основной состав`,
+          Год: `${year}`,
+          "Число человек": "%%",
+        }}
       />
     );
   }

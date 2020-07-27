@@ -72,7 +72,3 @@ const defaultProps = {
 export const withTwoParts = (): React.ReactNode => (
   <ClausePartsPage {...defaultProps} />
 );
-
-export const withZeroParts = (): React.ReactNode => (
-  <ClausePartsPage {...defaultProps} parts={[]} />
-);

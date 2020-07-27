@@ -35,6 +35,11 @@ class PartsByResultChart extends PureComponent<PartsByResultChartProps> {
               p.byResult.compulsoryTreatmentCount,
             ],
           }))}
+        tooltipDescription={{
+          Состав: `${clauseNumber} основной состав`,
+          Год: `${year}`,
+          "Число человек": "%%",
+        }}
       />
     );
   }

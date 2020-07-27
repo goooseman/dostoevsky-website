@@ -22,6 +22,11 @@ class Parts extends PureComponent<PartsProps> {
           },
         ]}
         isIframeMode={isIframeMode}
+        tooltipDescription={{
+          Состав: `${clauseNumber} основной состав`,
+          Год: `${year}`,
+          "Число человек": "%%",
+        }}
       />
     );
   }

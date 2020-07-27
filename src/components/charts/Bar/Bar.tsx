@@ -1,18 +1,21 @@
 import React, { PureComponent } from "react";
-import "chartist/dist/chartist.min.css";
 import ChartWrapper from "src/components/ChartWrapper";
-import {
-  Bar,
+import "chartist-plugin-tooltips";
+import Chartist, {
   IChartistStepAxis,
   ChartDrawData,
   IChartDrawLabelData,
 } from "chartist";
+import he from "he";
 
 interface PercentageBarProps extends React.ComponentProps<typeof ChartWrapper> {
   groups: {
     values: number[];
     title: string;
   }[];
+  tooltipDescription: {
+    [key: string]: string;
+  };
 }
 
 const ROW_HEIGHT = 50;
@@ -21,18 +24,19 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
   private chartRef = React.createRef<HTMLDivElement>();
 
   public componentDidMount(): void {
-    const series: { value: number }[][] = this.props.groups.map((g) =>
+    const { groups, labels, tooltipDescription } = this.props;
+    const series: { value: number }[][] = groups.map((g) =>
       g.values
         .slice()
         .reverse()
-        .map((v) => ({ value: v }))
+        .map((v) => ({ value: v, meta: { tooltip: tooltipDescription } }))
     );
-    const labels: string[] = this.props.labels.slice().reverse();
+    const chartLabels: string[] = labels.slice().reverse();
 
-    const chart = new Bar(
+    const chart = new Chartist.Bar(
       this.chartRef.current,
       {
-        labels,
+        labels: chartLabels,
         series,
       },
       {
@@ -51,6 +55,12 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
           },
           offset: 0,
         } as IChartistStepAxis,
+        plugins: [
+          Chartist.plugins.tooltip({
+            appendToBody: true,
+            tooltipFnc: this.getTooltipText,
+          }),
+        ],
       }
     );
 
@@ -91,6 +101,29 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
     data.element.attr({
       x: x - 7,
     });
+  };
+
+  private getTooltipText = (meta: string, value: number) => {
+    let metaDeserialized: {
+      data: {
+        tooltip: {
+          [key: string]: string;
+        };
+      };
+    };
+    try {
+      metaDeserialized = JSON.parse(he.decode(meta));
+    } catch (e) {
+      console.error(e);
+      return '<span class="chartist-tooltip-meta">Error</span>';
+    }
+    const lines = [];
+    for (const [lineKey, lineValue] of Object.entries(
+      metaDeserialized.data.tooltip
+    )) {
+      lines.push(`${lineKey}: ${lineValue.replace("%%", value.toString())}`);
+    }
+    return `<span class="chartist-tooltip-meta">${lines.join("<br>")}</span>`;
   };
 
   private isLabel = (data: ChartDrawData): data is IChartDrawLabelData =>
