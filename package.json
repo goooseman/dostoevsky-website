@@ -10,6 +10,7 @@
     "chartist": "^0.11.4",
     "chartist-plugin-tooltips": "0.0.17",
     "clsx": "^1.1.1",
+    "copy-to-clipboard": "^3.3.1",
     "cssnano": "^4.1.10",
     "dom-to-image": "^2.6.0",
     "file-saver": "^2.0.2",
