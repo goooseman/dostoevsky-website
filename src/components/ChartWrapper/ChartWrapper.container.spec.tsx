@@ -33,6 +33,7 @@ it("should create an image of a chart", async () => {
       downloadFilename="test"
       labels={["fdfd"]}
       isImageGenerationDebug
+      iframePath="/"
     >
       <p>Chart</p>
     </ChatWrapperContainer>

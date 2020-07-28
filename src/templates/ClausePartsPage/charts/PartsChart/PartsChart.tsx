@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import PercentageBar from "src/components/charts/PercentageBar";
 import type { ClausePartsPageProps } from "../../ClausePartsPage";
+import { getClauseLink } from "src/config/routes";
 
 interface PartsProps extends ClausePartsPageProps {
   isIframeMode?: boolean;
@@ -27,6 +28,12 @@ class Parts extends PureComponent<PartsProps> {
           Год: `${year}`,
           "Число человек": "%%",
         }}
+        iframePath={getClauseLink(
+          clauseNumber.toString(),
+          year.toString(),
+          "parts",
+          "iframe-parts"
+        )}
       />
     );
   }

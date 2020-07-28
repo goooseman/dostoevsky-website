@@ -8,7 +8,7 @@ interface ButtonProps
     HTMLButtonElement
   > {
   size: "md" | "lg";
-  color: "normal" | "inverted";
+  color: "normal" | "inverted" | "secondary";
 }
 
 /**
@@ -28,6 +28,7 @@ class Button extends PureComponent<ButtonProps> {
         className={cn(className, classes.button, {
           [classes.buttonLg]: size === "lg",
           [classes.buttonInverted]: color === "inverted",
+          [classes.buttonSecondary]: color === "secondary",
         })}
         {...otherProps}
       >

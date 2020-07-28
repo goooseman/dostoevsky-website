@@ -37,6 +37,7 @@ const twoGroups = {
     Состав: "Основной состав",
     "Число человек": "%%",
   },
+  iframePath: "/",
 };
 
 export const withTwoGroups = (): React.ReactNode => <Bar {...twoGroups} />;

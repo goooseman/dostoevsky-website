@@ -30,6 +30,7 @@
   z-index: var(--z-index-2);
   width: 100%;
   padding: 1rem;
+  padding-bottom: 3rem;
   margin: 1.5rem auto;
   background: var(--color-main-background);
 }

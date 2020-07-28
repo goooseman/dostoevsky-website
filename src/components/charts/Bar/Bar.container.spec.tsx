@@ -8,6 +8,7 @@ const defaultProps = {
   tooltipDescription: {
     Foo: "Bar",
   },
+  iframePath: "/",
 };
 
 it("should contain 1 bar", async () => {

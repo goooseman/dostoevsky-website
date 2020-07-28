@@ -165,7 +165,7 @@ module.exports = {
   siteMetadata: {
     title: "Dostoevsky",
     description: "SEO description of dostoevsky",
-    siteUrl: "https://dostoevsky.goooseman.ru/",
+    siteUrl: "https://dostoevsky.goooseman.ru",
   },
   pathPrefix: "/",
   plugins: [

@@ -14,6 +14,7 @@ const commonProps = {
     Состав: "Основной состав",
     "Число человек": "%%",
   },
+  iframePath: "/",
 };
 
 const byResult = [

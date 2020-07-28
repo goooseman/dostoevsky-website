@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import Bar from "src/components/charts/Bar";
 import type { ClausePartsPageProps } from "../../ClausePartsPage";
+import { getClauseLink } from "src/config/routes";
 
 const byPunishmentLabels = [
   "пожизненное лишение свободы",
@@ -57,6 +58,12 @@ class PartsByPunishment extends PureComponent<PartsByPunishmentProps> {
           Год: `${year}`,
           "Число человек": "%%",
         }}
+        iframePath={getClauseLink(
+          clauseNumber.toString(),
+          year.toString(),
+          "parts",
+          "iframe-parts-by-punishment"
+        )}
       />
     );
   }

@@ -14,19 +14,23 @@ msgstr ""
 "Language: ru\n"
 
 #: src/components/ChartWrapper/ChartWrapper.tsx:
-msgid "Get embed code"
-msgstr ""
-
-#: src/components/ChartWrapper/ChartWrapper.tsx:
-msgid "Code icon"
-msgstr ""
-
-#: src/components/ChartWrapper/ChartWrapper.tsx:
 msgid "Download chart"
 msgstr ""
 
 #: src/components/ChartWrapper/ChartWrapper.tsx:
 msgid "Download icon"
+msgstr ""
+
+#: src/components/ChartWrapper/components/EmbedModal/EmbedModal.tsx:
+msgid "Embed"
+msgstr ""
+
+#: src/components/ChartWrapper/components/EmbedModal/EmbedModal.tsx:
+msgid "Copied"
+msgstr ""
+
+#: src/components/ChartWrapper/components/EmbedModal/EmbedModal.tsx:
+msgid "Copy"
 msgstr ""
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:

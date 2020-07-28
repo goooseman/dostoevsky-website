@@ -3639,6 +3639,11 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
+export type SiteMetadataQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type SiteMetadataQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }> };
+
 export type ClauseChronologyQueryVariables = Exact<{
   partRegex: Scalars['String'];
   year: Scalars['String'];

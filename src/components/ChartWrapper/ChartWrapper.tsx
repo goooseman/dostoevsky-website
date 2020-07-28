@@ -6,6 +6,7 @@ import { withLocale, WithLocale } from "react-targem";
 
 import "chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css";
 import "chartist/dist/chartist.min.css";
+import EmbedModal from "./components/EmbedModal";
 
 interface ChartWrapperProps extends WithLocale {
   labels: string[];
@@ -14,6 +15,7 @@ interface ChartWrapperProps extends WithLocale {
   isIframeMode?: boolean;
   onDownloadButtonClick: () => void;
   downloadAreaRef: React.Ref<HTMLDivElement>;
+  iframePath: string;
 }
 
 class ChartWrapper extends PureComponent<
@@ -32,6 +34,7 @@ class ChartWrapper extends PureComponent<
       isIframeMode,
       onDownloadButtonClick,
       downloadAreaRef,
+      iframePath,
     } = this.props;
 
     return (
@@ -82,9 +85,7 @@ class ChartWrapper extends PureComponent<
           </div>
           {!isIframeMode ? (
             <div className={cn(classes.actions)}>
-              <button title={t("Get embed code")}>
-                <img src={require("./assets/embed.svg")} alt={t("Code icon")} />
-              </button>
+              <EmbedModal iframePath={iframePath} />
               <button
                 title={t("Download chart")}
                 onClick={onDownloadButtonClick}
