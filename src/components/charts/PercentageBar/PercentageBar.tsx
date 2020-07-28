@@ -8,7 +8,6 @@ import Chartist, {
   IChartDrawGridData,
   IChartDrawLabelData,
 } from "chartist";
-import "chartist-plugin-tooltips";
 import ChartWrapper from "src/components/ChartWrapper";
 import he from "he";
 
@@ -72,6 +71,18 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
         });
       });
 
+    const plugins = [];
+
+    if (typeof window !== `undefined`) {
+      require("chartist-plugin-tooltips");
+      plugins.push(
+        Chartist.plugins.tooltip({
+          appendToBody: true,
+          tooltipFnc: this.getTooltipText,
+        })
+      );
+    }
+
     const chart = new Chartist.Bar(
       this.chartRef.current,
       {
@@ -98,12 +109,7 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
           },
           offset: 0,
         } as IChartistStepAxis,
-        plugins: [
-          Chartist.plugins.tooltip({
-            appendToBody: true,
-            tooltipFnc: this.getTooltipText,
-          }),
-        ],
+        plugins,
       }
     );
     chart.on("draw", (data: ChartDrawData) => {

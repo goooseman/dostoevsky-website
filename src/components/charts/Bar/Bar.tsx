@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
 import ChartWrapper from "src/components/ChartWrapper";
-import "chartist-plugin-tooltips";
 import Chartist, {
   IChartistStepAxis,
   ChartDrawData,
@@ -33,6 +32,18 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
     );
     const chartLabels: string[] = labels.slice().reverse();
 
+    const plugins = [];
+
+    if (typeof window !== `undefined`) {
+      require("chartist-plugin-tooltips");
+      plugins.push(
+        Chartist.plugins.tooltip({
+          appendToBody: true,
+          tooltipFnc: this.getTooltipText,
+        })
+      );
+    }
+
     const chart = new Chartist.Bar(
       this.chartRef.current,
       {
@@ -55,12 +66,7 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
           },
           offset: 0,
         } as IChartistStepAxis,
-        plugins: [
-          Chartist.plugins.tooltip({
-            appendToBody: true,
-            tooltipFnc: this.getTooltipText,
-          }),
-        ],
+        plugins,
       }
     );
 
