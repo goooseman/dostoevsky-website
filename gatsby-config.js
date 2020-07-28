@@ -161,11 +161,16 @@ const dataResponseType = {
   year: "String",
 };
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: "Dostoevsky",
     description: "SEO description of dostoevsky",
-    siteUrl: "https://dostoevsky.goooseman.ru",
+    siteUrl: process.env.SITE_URL,
   },
   pathPrefix: "/",
   plugins: [
@@ -199,7 +204,7 @@ module.exports = {
         name: "Dostoevsky",
         short_name: "Dostoevsky",
         description: "SEO description of dostoevsky",
-        homepage_url: "https://dostoevsky.goooseman.ru/",
+        homepage_url: process.env.SITE_URL,
         start_url: "/",
         background_color: "#fff",
         theme_color: "#673ab7",
