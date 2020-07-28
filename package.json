@@ -71,6 +71,7 @@
     "@types/he": "^1.1.1",
     "@types/jest": "^26.0.3",
     "@types/jsdom": "^16.2.3",
+    "@types/react-dom": "^16.9.8",
     "@types/react-helmet": "^6.0.0",
     "@types/uuid": "^8.0.0",
     "@typescript-eslint/eslint-plugin": "^3.5.0",
