@@ -26,7 +26,8 @@ const useSiteMetadata = (): Pick<
     if (
       (e as Error).message.includes(
         "The result of this StaticQuery could not be fetched."
-      )
+      ) ||
+      (e as Error).message.includes("It appears like Gatsby is misconfigured.")
     ) {
       return {
         title: "Storybook Gatsby",
