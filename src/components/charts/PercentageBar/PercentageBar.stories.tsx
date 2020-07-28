@@ -9,6 +9,12 @@ export default {
 const commonProps = {
   downloadFilename: "test",
   title: "Заголовок",
+  tooltipDescription: {
+    Foo: "Bar",
+    Состав: "Основной состав",
+    "Число человек": "%%",
+  },
+  iframePath: "/",
 };
 
 const byResult = [

@@ -15,7 +15,7 @@ body {
 html,
 body {
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 main {

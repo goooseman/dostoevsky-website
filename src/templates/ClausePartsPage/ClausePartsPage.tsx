@@ -3,12 +3,20 @@ import ClausePageLayout from "src/components/ClausePageLayout";
 import classes from "./ClausePartsPage.module.css";
 import cn from "clsx";
 import Accordion, { AccordionNode } from "src/components/ui-kit/Accordion";
-import PercentageBar from "src/components/charts/PercentageBar";
-import Bar from "src/components/charts/Bar";
+import PartsChart from "./charts/PartsChart";
+import PartsByResultChart from "./charts/PartsByResultChart";
+import PartsByPunishment from "./charts/PartsByPunishment";
 
-interface ClausePartsPageProps {
+export type ClausePartsPageViewMode =
+  | "page"
+  | "iframe-parts"
+  | "iframe-parts-by-result"
+  | "iframe-parts-by-punishment";
+
+export interface ClausePartsPageProps {
   clauseNumber: number;
   year: number;
+  view: ClausePartsPageViewMode;
   parts: {
     part: string;
     name: string;
@@ -38,33 +46,21 @@ interface ClausePartsPageProps {
   }[];
 }
 
-const byResultLabels = [
-  "осуждённых",
-  "оправданных",
-  "прекращённых",
-  "принудительное лечение",
-];
-
-const byPunishmentLabels = [
-  "пожизненное лишение свободы",
-  "условное осуждение к лишению свободы",
-  "арест",
-  "ограничение свободы",
-  "ограничение свободы/ограничение по военной службе, содержание в дисциплинарной воинской части",
-  "исправительные работы",
-  "обязательные работы",
-  "принудительные работы",
-  "штраф",
-  "лишение права занимать определенные должности",
-  "условное осуждение к иным мерам",
-  "содержание в дисциплинарной воинской части",
-  "ограничение по военной службе",
-  "лишение свободы",
-];
-
 class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
   render(): React.ReactNode {
-    const { clauseNumber, year, parts } = this.props;
+    const { clauseNumber, year, view } = this.props;
+
+    if (view === "iframe-parts") {
+      return <PartsChart {...this.props} isIframeMode />;
+    }
+
+    if (view === "iframe-parts-by-result") {
+      return <PartsByResultChart {...this.props} isIframeMode />;
+    }
+
+    if (view === "iframe-parts-by-punishment") {
+      return <PartsByPunishment {...this.props} isIframeMode />;
+    }
 
     return (
       <ClausePageLayout
@@ -74,66 +70,17 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
         pageType="parts"
         headerChildren={this.renderHeaderChildren()}
       >
-        {parts.length === 0 ? (
-          <p>Нет данных</p>
-        ) : (
-          <div>
-            <PercentageBar
-              labels={parts.map((p) => p.part)}
-              downloadFilename={`${clauseNumber}-${year}-parts`}
-              title={`СРАВНЕНИЕ ЧАСТЕЙ МЕЖДУ СОБОЙ: СКОЛЬКО ЧЕЛОВЕК ОСУЖДЕНО ПО КАЖДОЙ ЧАСТИ СТАТЬИ ${clauseNumber} ПО ОСНОВНОМУ СОСТАВУ`}
-              groups={[
-                {
-                  title: "",
-                  values: parts.map((p) => p.count),
-                },
-              ]}
-            />
-
-            <PercentageBar
-              title={`Чем закончились дела, дошедшие до суда по каждой части статьи ${clauseNumber}`}
-              labels={byResultLabels}
-              downloadFilename={`${clauseNumber}-${year}-parts-by-result`}
-              groups={parts
-                .slice()
-                .reverse()
-                .map((p) => ({
-                  title: p.part,
-                  values: [
-                    p.byResult.convictedCount,
-                    p.byResult.acquittalCount,
-                    p.byResult.dismissalCount,
-                    p.byResult.compulsoryTreatmentCount,
-                  ],
-                }))}
-            />
-
-            <Bar
-              title="Виды наказаний по частям статьи 282"
-              labels={byPunishmentLabels}
-              downloadFilename={`${clauseNumber}-${year}-parts-by-punishment`}
-              groups={parts.map((p) => ({
-                title: p.part,
-                values: [
-                  p.byPunishment.primaryLifeSentenceCount,
-                  p.byPunishment.primarySuspendedCount,
-                  p.byPunishment.primaryArrestCount,
-                  p.byPunishment.primaryRestrainCount,
-                  p.byPunishment.primaryRestrain2009Count,
-                  p.byPunishment.primaryCorrectionalLabourCount,
-                  p.byPunishment.primaryCommunityServiceCount,
-                  p.byPunishment.primaryForcedLabourCount,
-                  p.byPunishment.primaryFineCount,
-                  p.byPunishment.primaryDisqualificationCount,
-                  p.byPunishment.primaryOtherCount,
-                  p.byPunishment.primaryMilitaryDisciplinaryUnitCount,
-                  p.byPunishment.primaryRestrictionsInMilitaryServiceCount,
-                  p.byPunishment.primaryImprisonmentCount,
-                ],
-              }))}
-            />
+        <div className={cn(classes.charts)}>
+          <div className={cn(classes.chartContainer)}>
+            <PartsChart {...this.props} />
           </div>
-        )}
+          <div className={cn(classes.chartContainer)}>
+            <PartsByResultChart {...this.props} />
+          </div>
+          <div className={cn(classes.chartContainer)}>
+            <PartsByPunishment {...this.props} />
+          </div>
+        </div>
       </ClausePageLayout>
     );
   }

@@ -5,6 +5,10 @@ import { render, waitFor } from "__utils__/render";
 const defaultProps = {
   title: "Title",
   downloadFilename: "test",
+  tooltipDescription: {
+    Foo: "Bar",
+  },
+  iframePath: "/",
 };
 
 it("should contain 1 bar", async () => {

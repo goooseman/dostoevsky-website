@@ -27,3 +27,7 @@
   border-color: var(--color-border-inverted);
   color: var(--color-text-inverted);
 }
+
+.button-secondary {
+  border-color: var(--color-secondary);
+}

@@ -32,6 +32,12 @@ const twoGroups = {
   ],
   title: "Виды наказаний по частям статьи 282",
   downloadFilename: "test",
+  tooltipDescription: {
+    Foo: "Bar",
+    Состав: "Основной состав",
+    "Число человек": "%%",
+  },
+  iframePath: "/",
 };
 
 export const withTwoGroups = (): React.ReactNode => <Bar {...twoGroups} />;

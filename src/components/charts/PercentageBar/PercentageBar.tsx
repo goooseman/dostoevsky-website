@@ -1,7 +1,5 @@
 import React, { PureComponent } from "react";
-import {
-  Bar,
-  Svg,
+import Chartist, {
   FixedScaleAxis,
   IChartistFixedScaleAxis,
   IChartistStepAxis,
@@ -11,27 +9,29 @@ import {
   IChartDrawLabelData,
 } from "chartist";
 import ChartWrapper from "src/components/ChartWrapper";
-import { downloadSvg } from "src/utils/svg";
-import "chartist/dist/chartist.min.css";
+import he from "he";
 
 const ROW_HEIGHT = 90;
 const BAR_HEIGHT = 61;
 const Y_LABEL_MARGIN = 15;
 const X_TICKS = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
-interface PercentageBarProps {
+interface PercentageBarProps extends React.ComponentProps<typeof ChartWrapper> {
   groups: {
     values: number[];
     title: string;
   }[];
-  labels: string[];
-  title: React.ReactNode;
-  downloadFilename: string;
+  tooltipDescription: {
+    [key: string]: string;
+  };
 }
 
 interface PercentageBarMeta {
   count: string;
   isLast: boolean;
+  tooltip: {
+    [key: string]: string;
+  };
 }
 
 class PercentageBar extends PureComponent<PercentageBarProps> {
@@ -43,8 +43,8 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
       meta: PercentageBarMeta;
     }[][] = [];
     const labels: string[] = [];
-
-    this.props.groups
+    const { tooltipDescription, groups } = this.props;
+    groups
       .slice()
       .reverse()
       .forEach((g, iG) => {
@@ -62,12 +62,28 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
           }
           series[iV][iG] = {
             value: percentage,
-            meta: { count: v.toString(), isLast: true },
+            meta: {
+              count: v.toString(),
+              isLast: true,
+              tooltip: tooltipDescription,
+            },
           };
         });
       });
 
-    const chart = new Bar(
+    const plugins = [];
+
+    if (typeof window !== `undefined`) {
+      require("chartist-plugin-tooltips");
+      plugins.push(
+        Chartist.plugins.tooltip({
+          appendToBody: true,
+          tooltipFnc: this.getTooltipText,
+        })
+      );
+    }
+
+    const chart = new Chartist.Bar(
       this.chartRef.current,
       {
         labels,
@@ -93,6 +109,7 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
           },
           offset: 0,
         } as IChartistStepAxis,
+        plugins,
       }
     );
     chart.on("draw", (data: ChartDrawData) => {
@@ -105,26 +122,37 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
   }
 
   render(): React.ReactNode {
+    const { labels, groups, ...wrapperProps } = this.props;
+
     return (
-      <ChartWrapper
-        onDownloadButtonClick={this.handleDownloadButtonClick}
-        labels={this.props.labels}
-        title="Чем закончились дела, дошедшие до суда по каждой части статьи 282"
-      >
+      <ChartWrapper {...wrapperProps} labels={labels}>
         <div
-          style={{ height: this.props.groups.length * ROW_HEIGHT + 50 }}
+          style={{ height: groups.length * ROW_HEIGHT + 50 }}
           ref={this.chartRef}
         ></div>
       </ChartWrapper>
     );
   }
 
-  private handleDownloadButtonClick = () => {
-    if (!this.chartRef.current) {
-      return;
+  private getTooltipText = (meta: string) => {
+    let metaDeserialized: {
+      data: PercentageBarMeta;
+    };
+    try {
+      metaDeserialized = JSON.parse(he.decode(meta));
+    } catch (e) {
+      console.error(e);
+      return '<span class="chartist-tooltip-meta">Error</span>';
     }
-    const svg = this.chartRef.current.querySelector("svg");
-    downloadSvg(svg, `${this.props.downloadFilename}.png`);
+    const lines = [];
+    for (const [lineKey, lineValue] of Object.entries(
+      metaDeserialized.data.tooltip
+    )) {
+      lines.push(
+        `${lineKey}: ${lineValue.replace("%%", metaDeserialized.data.count)}`
+      );
+    }
+    return `<span class="chartist-tooltip-meta">${lines.join("<br>")}</span>`;
   };
 
   private positionXLabel = (data: ChartDrawData): void => {
@@ -135,7 +163,7 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
       return;
     }
     const x = data.x || 0;
-    if (data.index === X_TICKS.length - 1) {
+    if (data.index === data.axis.ticks.length - 1) {
       data.element.attr({
         x: x - 19,
       });
@@ -166,7 +194,7 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
       }
     }
 
-    const t = new Svg("text", {
+    const t = new Chartist.Svg("text", {
       x,
       y: data.y2 + 5,
       "text-anchor": textAnchor,

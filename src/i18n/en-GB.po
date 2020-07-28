@@ -13,12 +13,24 @@ msgstr ""
 "Language: en\n"
 
 #: src/components/ChartWrapper/ChartWrapper.tsx:
-msgid "Code icon"
-msgstr "Code icon"
+msgid "Download chart"
+msgstr "Download chart"
 
 #: src/components/ChartWrapper/ChartWrapper.tsx:
 msgid "Download icon"
 msgstr "Download icon"
+
+#: src/components/ChartWrapper/components/EmbedModal/EmbedModal.tsx:
+msgid "Embed"
+msgstr "Embed"
+
+#: src/components/ChartWrapper/components/EmbedModal/EmbedModal.tsx:
+msgid "Copied"
+msgstr "Copied"
+
+#: src/components/ChartWrapper/components/EmbedModal/EmbedModal.tsx:
+msgid "Copy"
+msgstr "Copy"
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
 msgid "Right arrow"

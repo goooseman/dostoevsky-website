@@ -11,14 +11,15 @@ const translationsJson = require("src/i18n/translations.json");
 
 interface Props {
   children?: React.ReactNode;
+  hasPageLayout?: boolean;
 }
 
-const Layout: React.FC<Props> = ({ children }: Props) => {
+const Layout: React.FC<Props> = ({ children, hasPageLayout = true }: Props) => {
   return (
     <TargemProvider detectLocale translations={translationsJson}>
-      <Header />
+      {hasPageLayout ? <Header /> : null}
       {children}
-      <Footer />
+      {hasPageLayout ? <Footer /> : null}
     </TargemProvider>
   );
 };

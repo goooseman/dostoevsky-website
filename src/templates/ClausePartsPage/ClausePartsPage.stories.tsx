@@ -66,12 +66,9 @@ const defaultProps = {
   clauseNumber: 282,
   year: 2019,
   parts,
+  view: "page",
 } as const;
 
 export const withTwoParts = (): React.ReactNode => (
   <ClausePartsPage {...defaultProps} />
-);
-
-export const withZeroParts = (): React.ReactNode => (
-  <ClausePartsPage {...defaultProps} parts={[]} />
 );

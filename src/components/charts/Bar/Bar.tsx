@@ -1,17 +1,20 @@
 import React, { PureComponent } from "react";
-import { Bar, IChartistStepAxis } from "chartist";
-import "chartist/dist/chartist.min.css";
 import ChartWrapper from "src/components/ChartWrapper";
-import { downloadSvg } from "src/utils/svg";
+import Chartist, {
+  IChartistStepAxis,
+  ChartDrawData,
+  IChartDrawLabelData,
+} from "chartist";
+import he from "he";
 
-interface PercentageBarProps {
+interface PercentageBarProps extends React.ComponentProps<typeof ChartWrapper> {
   groups: {
     values: number[];
     title: string;
   }[];
-  labels: string[];
-  title: React.ReactNode;
-  downloadFilename: string;
+  tooltipDescription: {
+    [key: string]: string;
+  };
 }
 
 const ROW_HEIGHT = 50;
@@ -20,18 +23,31 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
   private chartRef = React.createRef<HTMLDivElement>();
 
   public componentDidMount(): void {
-    const series: { value: number }[][] = this.props.groups.map((g) =>
+    const { groups, labels, tooltipDescription } = this.props;
+    const series: { value: number }[][] = groups.map((g) =>
       g.values
         .slice()
         .reverse()
-        .map((v) => ({ value: v }))
+        .map((v) => ({ value: v, meta: { tooltip: tooltipDescription } }))
     );
-    const labels: string[] = this.props.labels.slice().reverse();
+    const chartLabels: string[] = labels.slice().reverse();
 
-    new Bar(
+    const plugins = [];
+
+    if (typeof window !== `undefined`) {
+      require("chartist-plugin-tooltips");
+      plugins.push(
+        Chartist.plugins.tooltip({
+          appendToBody: true,
+          tooltipFnc: this.getTooltipText,
+        })
+      );
+    }
+
+    const chart = new Chartist.Bar(
       this.chartRef.current,
       {
-        labels,
+        labels: chartLabels,
         series,
       },
       {
@@ -39,6 +55,7 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
         horizontalBars: true,
         axisX: {
           onlyInteger: true,
+          showGrid: false,
         },
         axisY: {
           stretch: true,
@@ -49,32 +66,77 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
           },
           offset: 0,
         } as IChartistStepAxis,
+        plugins,
       }
     );
+
+    chart.on("draw", (data: ChartDrawData) => {
+      this.positionXLabel(data);
+    });
   }
 
   render(): React.ReactNode {
+    const { labels, groups, ...wrapperProps } = this.props;
+
     return (
-      <ChartWrapper
-        labels={this.props.groups.map((g) => g.title)}
-        title="Виды наказаний по частям статьи 282"
-        onDownloadButtonClick={this.handleDownloadButtonClick}
-      >
+      <ChartWrapper {...wrapperProps} labels={groups.map((g) => g.title)}>
         <div
           ref={this.chartRef}
-          style={{ height: this.props.labels.length * ROW_HEIGHT }}
+          style={{ height: labels.length * ROW_HEIGHT }}
         ></div>
       </ChartWrapper>
     );
   }
 
-  private handleDownloadButtonClick = () => {
-    if (!this.chartRef.current) {
+  private positionXLabel = (data: ChartDrawData): void => {
+    if (!this.isLabel(data) || !this.isXLabel(data)) {
       return;
     }
-    const svg = this.chartRef.current.querySelector("svg");
-    downloadSvg(svg, `${this.props.downloadFilename}.png`);
+    if (data.index === 0) {
+      return;
+    }
+    const x = data.x || 0;
+
+    if (data.index === data.axis.ticks.length - 1) {
+      data.element.attr({
+        x: x - 19,
+      });
+      return;
+    }
+
+    data.element.attr({
+      x: x - 7,
+    });
   };
+
+  private getTooltipText = (meta: string, value: number) => {
+    let metaDeserialized: {
+      data: {
+        tooltip: {
+          [key: string]: string;
+        };
+      };
+    };
+    try {
+      metaDeserialized = JSON.parse(he.decode(meta));
+    } catch (e) {
+      console.error(e);
+      return '<span class="chartist-tooltip-meta">Error</span>';
+    }
+    const lines = [];
+    for (const [lineKey, lineValue] of Object.entries(
+      metaDeserialized.data.tooltip
+    )) {
+      lines.push(`${lineKey}: ${lineValue.replace("%%", value.toString())}`);
+    }
+    return `<span class="chartist-tooltip-meta">${lines.join("<br>")}</span>`;
+  };
+
+  private isLabel = (data: ChartDrawData): data is IChartDrawLabelData =>
+    data.type === "label";
+
+  private isXLabel = (data: IChartDrawLabelData) =>
+    data.axis?.units.pos === "x";
 }
 
 export default PercentageBar;
