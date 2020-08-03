@@ -230,14 +230,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-netlify",
-      options: {
-        mergeSecurityHeaders: true,
-        mergeLinkHeaders: true,
-        mergeCachingHeaders: true,
-      },
-    },
-    {
       resolve: "gatsby-plugin-graphql-codegen",
       options: {
         fileName: `types/graphql-types.d.ts`,
