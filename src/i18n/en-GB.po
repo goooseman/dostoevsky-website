@@ -12,14 +12,6 @@ msgstr ""
 "Last-Translator: \n"
 "Language: en\n"
 
-#: src/components/ChartWrapper/ChartWrapper.tsx:
-msgid "Download chart"
-msgstr "Download chart"
-
-#: src/components/ChartWrapper/ChartWrapper.tsx:
-msgid "Download icon"
-msgstr "Download icon"
-
 #: src/components/ChartWrapper/components/EmbedModal/EmbedModal.tsx:
 msgid "Embed"
 msgstr "Embed"
@@ -51,6 +43,14 @@ msgstr "Select year"
 #: src/components/ClausePageHeader/ClausePageHeader.tsx:
 msgid "Down arrow"
 msgstr "Down arrow"
+
+#: src/components/DownloadButton/DownloadButton.tsx:
+msgid "Download chart"
+msgstr "Download chart"
+
+#: src/components/DownloadButton/DownloadButton.tsx:
+msgid "Download icon"
+msgstr "Download icon"
 
 #: src/components/Footer/Footer.tsx:
 msgid "OI logo"

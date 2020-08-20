@@ -13,3 +13,9 @@
 .button-container {
   text-align: center;
 }
+
+.button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}

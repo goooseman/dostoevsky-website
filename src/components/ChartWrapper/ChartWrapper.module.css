@@ -168,9 +168,3 @@ body {
   align-self: flex-end;
   margin-bottom: 30px;
 }
-
-.actions button {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-}

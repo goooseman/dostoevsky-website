@@ -13,14 +13,6 @@ msgstr ""
 "Last-Translator: \n"
 "Language: ru\n"
 
-#: src/components/ChartWrapper/ChartWrapper.tsx:
-msgid "Download chart"
-msgstr ""
-
-#: src/components/ChartWrapper/ChartWrapper.tsx:
-msgid "Download icon"
-msgstr ""
-
 #: src/components/ChartWrapper/components/EmbedModal/EmbedModal.tsx:
 msgid "Embed"
 msgstr ""
@@ -51,6 +43,14 @@ msgstr ""
 
 #: src/components/ClausePageHeader/ClausePageHeader.tsx:
 msgid "Down arrow"
+msgstr ""
+
+#: src/components/DownloadButton/DownloadButton.tsx:
+msgid "Download chart"
+msgstr ""
+
+#: src/components/DownloadButton/DownloadButton.tsx:
+msgid "Download icon"
 msgstr ""
 
 #: src/components/Footer/Footer.tsx:

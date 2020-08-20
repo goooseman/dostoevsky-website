@@ -2,17 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Tue Jul 28 2020 08:48:29 GMT+0300 (Israel Daylight Time)\n"
+"POT-Creation-Date: Thu Aug 20 2020 09:18:30 GMT+0300 (Israel Daylight Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#: src/components/ChartWrapper/ChartWrapper.tsx:
-msgid "Download chart"
-msgstr ""
-
-#: src/components/ChartWrapper/ChartWrapper.tsx:
-msgid "Download icon"
-msgstr ""
 
 #: src/components/ChartWrapper/components/EmbedModal/EmbedModal.tsx:
 msgid "Embed"
@@ -44,6 +36,14 @@ msgstr ""
 
 #: src/components/ClausePageHeader/ClausePageHeader.tsx:
 msgid "Down arrow"
+msgstr ""
+
+#: src/components/DownloadButton/DownloadButton.tsx:
+msgid "Download chart"
+msgstr ""
+
+#: src/components/DownloadButton/DownloadButton.tsx:
+msgid "Download icon"
 msgstr ""
 
 #: src/components/Footer/Footer.tsx:
