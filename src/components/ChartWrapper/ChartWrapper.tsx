@@ -2,11 +2,11 @@ import React, { PureComponent } from "react";
 import classes from "./ChartWrapper.module.css";
 import cn from "clsx";
 import Typography from "src/components/ui-kit/Typography";
+import EmbedModal from "src/components/EmbedModal";
+import DownloadButton from "src/components/DownloadButton";
 
 import "chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css";
 import "chartist/dist/chartist.min.css";
-import EmbedModal from "./components/EmbedModal";
-import DownloadButton from "../DownloadButton";
 
 interface ChartWrapperProps {
   labels: string[];

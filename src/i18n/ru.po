@@ -13,18 +13,6 @@ msgstr ""
 "Last-Translator: \n"
 "Language: ru\n"
 
-#: src/components/ChartWrapper/components/EmbedModal/EmbedModal.tsx:
-msgid "Embed"
-msgstr ""
-
-#: src/components/ChartWrapper/components/EmbedModal/EmbedModal.tsx:
-msgid "Copied"
-msgstr ""
-
-#: src/components/ChartWrapper/components/EmbedModal/EmbedModal.tsx:
-msgid "Copy"
-msgstr ""
-
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
 msgid "Right arrow"
 msgstr ""
@@ -51,6 +39,18 @@ msgstr ""
 
 #: src/components/DownloadButton/DownloadButton.tsx:
 msgid "Download icon"
+msgstr ""
+
+#: src/components/EmbedModal/EmbedModal.tsx:
+msgid "Embed"
+msgstr ""
+
+#: src/components/EmbedModal/EmbedModal.tsx:
+msgid "Copied"
+msgstr ""
+
+#: src/components/EmbedModal/EmbedModal.tsx:
+msgid "Copy"
 msgstr ""
 
 #: src/components/Footer/Footer.tsx:

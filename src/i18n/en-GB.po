@@ -12,18 +12,6 @@ msgstr ""
 "Last-Translator: \n"
 "Language: en\n"
 
-#: src/components/ChartWrapper/components/EmbedModal/EmbedModal.tsx:
-msgid "Embed"
-msgstr "Embed"
-
-#: src/components/ChartWrapper/components/EmbedModal/EmbedModal.tsx:
-msgid "Copied"
-msgstr "Copied"
-
-#: src/components/ChartWrapper/components/EmbedModal/EmbedModal.tsx:
-msgid "Copy"
-msgstr "Copy"
-
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
 msgid "Right arrow"
 msgstr "Right arrow"
@@ -51,6 +39,18 @@ msgstr "Download chart"
 #: src/components/DownloadButton/DownloadButton.tsx:
 msgid "Download icon"
 msgstr "Download icon"
+
+#: src/components/EmbedModal/EmbedModal.tsx:
+msgid "Embed"
+msgstr "Embed"
+
+#: src/components/EmbedModal/EmbedModal.tsx:
+msgid "Copied"
+msgstr "Copied"
+
+#: src/components/EmbedModal/EmbedModal.tsx:
+msgid "Copy"
+msgstr "Copy"
 
 #: src/components/Footer/Footer.tsx:
 msgid "OI logo"
