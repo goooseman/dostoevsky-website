@@ -9,6 +9,7 @@ import ClausePageCatalogue from "src/components/ClausePageCatalogue";
 import type { I18nText } from "src/types";
 import { getClauseLink } from "src/config/routes";
 import ClausePageHeader from "src/components/ClausePageHeader";
+import { Menu, MenuLink } from "src/components/Menu";
 
 interface ClausePageLayoutProps {
   clauseNumber: number;
@@ -153,6 +154,27 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
             >
               {headerChildren}
             </ClausePageHeader>
+            <Menu variant="activeBorderBottom">
+              <MenuLink
+                to={getClauseLink(
+                  clauseNumber.toString(),
+                  year.toString(),
+                  pageType
+                )}
+              >
+                ЧАРТЫ
+              </MenuLink>
+              <MenuLink
+                to={getClauseLink(
+                  clauseNumber.toString(),
+                  year.toString(),
+                  pageType,
+                  "table"
+                )}
+              >
+                ТАБЛИЦА
+              </MenuLink>
+            </Menu>
             <div>{children}</div>
           </div>
         </Container>

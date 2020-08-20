@@ -6,21 +6,49 @@ import { Link } from "gatsby";
 
 interface MenuProps {
   children: React.ReactNode;
+  variant: "activeBorderBottom" | "default" | "onBlackBackground";
 }
 
 export class Menu extends PureComponent<MenuProps> {
   render(): React.ReactNode {
-    return <ul className={cn(classes.menu)}>{this.props.children}</ul>;
+    const { variant, children } = this.props;
+    return (
+      <ul
+        className={cn(classes.menu, {
+          [classes.onBlackBackground]: variant === "onBlackBackground",
+          [classes.activeBorderBottom]: variant === "activeBorderBottom",
+        })}
+      >
+        {children}
+      </ul>
+    );
   }
 }
 
 interface MenuItemProps {
   children: React.ReactNode;
+  isActive: boolean;
+  onClick: () => void;
 }
 
 export class MenuItem extends PureComponent<MenuItemProps> {
+  static defaultProps = {
+    isActive: false,
+  };
+
   render(): React.ReactNode {
-    return <li className={cn(classes.menuItem)}>{this.props.children}</li>;
+    const { children, isActive, onClick } = this.props;
+    return (
+      <li
+        className={cn(classes.menuItem, { [classes.menuItemActive]: isActive })}
+      >
+        <button onClick={onClick} className={cn(classes.menuLink)}>
+          <Typography variant="span">
+            <b>{children}</b>
+          </Typography>
+        </button>
+      </li>
+    );
   }
 }
 
@@ -33,13 +61,17 @@ export class MenuLink extends PureComponent<MenuLinkProps> {
   render(): React.ReactNode {
     const { to, children } = this.props;
     return (
-      <MenuItem>
-        <Typography variant="span" color="inverted">
-          <Link to={to} activeClassName={cn(classes.menuLinkActive)}>
-            {children}
+      <li className={cn(classes.menuItem)}>
+        <Typography variant="span">
+          <Link
+            to={to}
+            className={cn(classes.menuLink)}
+            activeClassName={cn(classes.menuLinkActive)}
+          >
+            <b>{children}</b>
           </Link>
         </Typography>
-      </MenuItem>
+      </li>
     );
   }
 }

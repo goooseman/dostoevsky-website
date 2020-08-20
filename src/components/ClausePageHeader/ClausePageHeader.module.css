@@ -2,7 +2,6 @@
   display: flex;
   min-height: 110px;
   align-items: flex-start;
-  border-bottom: 1px solid var(--color-border-dark);
 }
 
 .text-container {
