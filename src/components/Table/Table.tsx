@@ -35,24 +35,28 @@ class Table extends PureComponent<TableProps> {
           </div>
         </div>
         <table className={cn(classes.table)}>
-          <tr>
-            {columns.map((c) => (
-              <th key={c.key}>
-                <Typography isUpperCased component="span">
-                  <b>{c.title}</b>
-                </Typography>
-              </th>
-            ))}
-          </tr>
-          {rows.map((r) => (
-            <tr key={r.key}>
-              {r.values.map((v) => (
-                <td key={v.key}>
-                  <Typography component="span">{v.value}</Typography>
-                </td>
+          <thead>
+            <tr>
+              {columns.map((c) => (
+                <th key={c.key}>
+                  <Typography isUpperCased component="span">
+                    <b>{c.title}</b>
+                  </Typography>
+                </th>
               ))}
             </tr>
-          ))}
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr key={r.key}>
+                {r.values.map((v) => (
+                  <td key={v.key}>
+                    <Typography component="span">{v.value}</Typography>
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
     );
