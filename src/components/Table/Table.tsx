@@ -11,6 +11,7 @@ interface TableProps {
   columns: {
     title: React.ReactNode;
     key: string;
+    isHidden?: boolean;
   }[];
   rows: {
     values: {
@@ -36,29 +37,33 @@ class Table extends PureComponent<TableProps> {
             <DownloadButton onClick={onDownloadButtonClick} />
           </div>
         </div>
-        <table className={cn(classes.table)}>
-          <thead>
-            <tr>
-              {columns.map((c) => (
-                <th key={c.key}>
-                  <Typography isUpperCased component="span">
-                    <b>{c.title}</b>
-                  </Typography>
-                </th>
+        <div className={cn(classes.tableContainer)}>
+          <table className={cn(classes.table)}>
+            <thead>
+              <tr>
+                {columns.map((c) =>
+                  !c.isHidden ? (
+                    <th key={c.key}>
+                      <Typography isUpperCased component="span">
+                        <b>{c.title}</b>
+                      </Typography>
+                    </th>
+                  ) : null
+                )}
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r) => (
+                <TableRow
+                  isAccordion={Boolean(r.isAccordion)}
+                  columnsCount={columns.length}
+                  values={r.values}
+                  key={r.key}
+                />
               ))}
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((r) => (
-              <TableRow
-                isAccordion={Boolean(r.isAccordion)}
-                columnsCount={columns.length}
-                values={r.values}
-                key={r.key}
-              />
-            ))}
-          </tbody>
-        </table>
+            </tbody>
+          </table>
+        </div>
       </div>
     );
   }

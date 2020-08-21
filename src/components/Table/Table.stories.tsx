@@ -50,8 +50,8 @@ export const withClauseMainFocused = (): React.ReactNode => (
     <Table
       title="Результаты рассмотрения дел по статье 282 (Основной состав)"
       columns={[
-        { title: "", key: "title" },
-        { title: "", key: "main" },
+        { title: "", key: "title", isHidden: true },
+        { title: "", key: "main", isHidden: true },
       ]}
       rows={[
         {
