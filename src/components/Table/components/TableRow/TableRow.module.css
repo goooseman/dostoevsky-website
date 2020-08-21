@@ -1,0 +1,11 @@
+.row-accordion {
+  cursor: pointer;
+}
+
+.row-accordion ~ tr {
+  display: none;
+}
+
+.row-accordion.is-opened ~ tr {
+  display: table-row;
+}

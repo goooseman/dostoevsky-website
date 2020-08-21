@@ -4,6 +4,7 @@ import cn from "clsx";
 import Typography from "src/components/ui-kit/Typography";
 import EmbedModal from "src/components/EmbedModal";
 import DownloadButton from "src/components/DownloadButton";
+import TableRow from "./components/TableRow";
 
 interface TableProps {
   title: React.ReactNode;
@@ -17,6 +18,7 @@ interface TableProps {
       key: string;
     }[];
     key: string;
+    isAccordion?: boolean;
   }[];
   onDownloadButtonClick: () => void;
   downloadFilename: string;
@@ -48,13 +50,12 @@ class Table extends PureComponent<TableProps> {
           </thead>
           <tbody>
             {rows.map((r) => (
-              <tr key={r.key}>
-                {r.values.map((v) => (
-                  <td key={v.key}>
-                    <Typography component="span">{v.value}</Typography>
-                  </td>
-                ))}
-              </tr>
+              <TableRow
+                isAccordion={Boolean(r.isAccordion)}
+                columnsCount={columns.length}
+                values={r.values}
+                key={r.key}
+              />
             ))}
           </tbody>
         </table>
