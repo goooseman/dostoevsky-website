@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = () => {
             <Link to="/">Достоевский</Link>
           </Typography>
         </div>
-        <Menu>
+        <Menu variant="onBlackBackground">
           <MenuLink to="/clauses">каталог статей ук рф</MenuLink>
           <MenuLink to="/faq">о датасете</MenuLink>
           <MenuLink to="/about">о проекте</MenuLink>
