@@ -46,7 +46,7 @@ export const withClauseMain = (): React.ReactNode => (
 );
 
 export const withClauseMainFocused = (): React.ReactNode => (
-  <div style={{ padding: "0 0 0 50px" }}>
+  <div style={{ padding: "0 0 0 100px" }}>
     <Table
       title="Результаты рассмотрения дел по статье 282 (Основной состав)"
       columns={[

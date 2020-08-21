@@ -61,18 +61,22 @@ msgstr "Логотип OI"
 msgid "D4S logo"
 msgstr "Логотип D4S"
 
+#: src/components/Table/components/TableRow/TableRow.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
 msgid "Close hidden content"
 msgstr ""
 
+#: src/components/Table/components/TableRow/TableRow.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
 msgid "Minus icon"
 msgstr ""
 
+#: src/components/Table/components/TableRow/TableRow.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
 msgid "Open hidden content"
 msgstr ""
 
+#: src/components/Table/components/TableRow/TableRow.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
 msgid "Plus icon"
 msgstr ""

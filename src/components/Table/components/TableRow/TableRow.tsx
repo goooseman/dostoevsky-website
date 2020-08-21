@@ -2,8 +2,9 @@ import React, { PureComponent } from "react";
 import classes from "./TableRow.module.css";
 import cn from "clsx";
 import Typography from "src/components/ui-kit/Typography";
+import { WithLocale, withLocale } from "react-targem";
 
-interface TableRowProps {
+interface TableRowProps extends WithLocale {
   values: {
     value: React.ReactNode;
     key: string;
@@ -28,6 +29,7 @@ class TableRow extends PureComponent<TableRowProps> {
       >
         {values.map((v) => (
           <td key={v.key} colSpan={isAccordion ? columnsCount : undefined}>
+            {this.getAccrodionButton()}
             <Typography isUpperCased={Boolean(isAccordion)} component="span">
               {isAccordion ? <b>{v.value}</b> : v.value}
             </Typography>
@@ -36,6 +38,30 @@ class TableRow extends PureComponent<TableRowProps> {
       </tr>
     );
   }
+
+  getAccrodionButton = (): React.ReactNode => {
+    const { isOpened, t, isAccordion } = this.props;
+    if (!isAccordion) {
+      return null;
+    }
+    return isOpened ? (
+      <button
+        tabIndex={-1}
+        title={t("Close hidden content")}
+        className={cn(classes.collapseIconButton)}
+      >
+        <img src={require("./assets/minus.svg")} alt={t("Minus icon")} />
+      </button>
+    ) : (
+      <button
+        tabIndex={-1}
+        title={t("Open hidden content")}
+        className={cn(classes.collapseIconButton)}
+      >
+        <img src={require("./assets/plus.svg")} alt={t("Plus icon")} />
+      </button>
+    );
+  };
 }
 
-export default TableRow;
+export default withLocale(TableRow);
