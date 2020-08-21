@@ -19,6 +19,7 @@ interface TableProps {
     key: string;
   }[];
   onDownloadButtonClick: () => void;
+  downloadFilename: string;
 }
 
 class Table extends PureComponent<TableProps> {
