@@ -42,6 +42,7 @@ export const withClauseMain = (): React.ReactNode => (
     ]}
     onDownloadButtonClick={handleDownloadButtonClick}
     downloadFilename="test.csv"
+    iframePath="/test"
   />
 );
 
@@ -140,6 +141,7 @@ export const withClauseMainFocused = (): React.ReactNode => (
       ]}
       onDownloadButtonClick={handleDownloadButtonClick}
       downloadFilename="test.csv"
+      iframePath="/test"
     />
   </div>
 );

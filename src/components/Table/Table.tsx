@@ -23,17 +23,24 @@ interface TableProps {
   }[];
   onDownloadButtonClick: () => void;
   downloadFilename: string;
+  iframePath: string;
 }
 
 class Table extends PureComponent<TableProps> {
   render(): React.ReactNode {
-    const { title, columns, rows, onDownloadButtonClick } = this.props;
+    const {
+      title,
+      columns,
+      iframePath,
+      rows,
+      onDownloadButtonClick,
+    } = this.props;
     return (
       <div>
         <div className={cn(classes.titleContainer)}>
           <Typography variant="h3">{title}</Typography>
           <div className={cn(classes.buttonsContainer)}>
-            <EmbedModal iframePath="TODO" />
+            <EmbedModal iframePath={iframePath} />
             <DownloadButton onClick={onDownloadButtonClick} />
           </div>
         </div>
