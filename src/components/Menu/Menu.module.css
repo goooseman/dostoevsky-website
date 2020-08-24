@@ -17,12 +17,19 @@
   text-align: center;
 }
 
-.menu-item:last-of-type {
+.menu-item:first-of-type {
+  border-left: 1px solid var(--color-border-dark);
+}
+
+.menu.on-black-background:last-of-type,
+.menu.on-black-background:first-of-type {
   border-right: none;
+  border-left: none;
 }
 
 .menu.active-border-bottom .menu-item {
   border-right: none;
+  border-left: none;
 }
 
 .menu.on-black-background .menu-item {

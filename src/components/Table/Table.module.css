@@ -5,7 +5,7 @@
 
 .table-container {
   border-top: 4px solid var(--color-border-dark);
-  margin-top: 3rem;
+  margin-top: 0.5rem;
 }
 
 .table tr th,
@@ -26,6 +26,7 @@
 .title-container {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 3rem;
 }
 
 .buttons-container {
