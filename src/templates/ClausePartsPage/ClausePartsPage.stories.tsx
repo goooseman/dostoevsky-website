@@ -72,3 +72,7 @@ const defaultProps = {
 export const withTwoParts = (): React.ReactNode => (
   <ClausePartsPage {...defaultProps} />
 );
+
+export const withTwoPartsTable = (): React.ReactNode => (
+  <ClausePartsPage {...defaultProps} view="table" />
+);

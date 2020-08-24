@@ -6,12 +6,15 @@ import Accordion, { AccordionNode } from "src/components/ui-kit/Accordion";
 import PartsChart from "./charts/PartsChart";
 import PartsByResultChart from "./charts/PartsByResultChart";
 import PartsByPunishment from "./charts/PartsByPunishment";
+import ClausePartsTable from "./components/ClausePartsTable";
 
 export type ClausePartsPageViewMode =
   | "page"
+  | "table"
   | "iframe-parts"
   | "iframe-parts-by-result"
-  | "iframe-parts-by-punishment";
+  | "iframe-parts-by-punishment"
+  | "iframe-table-parts";
 
 export interface ClausePartsPageProps {
   clauseNumber: number;
@@ -62,6 +65,10 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
       return <PartsByPunishment {...this.props} isIframeMode />;
     }
 
+    if (view === "iframe-table-parts") {
+      return <ClausePartsTable {...this.props} />;
+    }
+
     return (
       <ClausePageLayout
         clauseNumber={clauseNumber}
@@ -70,17 +77,20 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
         pageType="parts"
         headerChildren={this.renderHeaderChildren()}
       >
-        <div className={cn(classes.charts)}>
-          <div className={cn(classes.chartContainer)}>
-            <PartsChart {...this.props} />
+        {view === "table" ? <ClausePartsTable {...this.props} /> : null}
+        {view === "page" ? (
+          <div className={cn(classes.charts)}>
+            <div className={cn(classes.chartContainer)}>
+              <PartsChart {...this.props} />
+            </div>
+            <div className={cn(classes.chartContainer)}>
+              <PartsByResultChart {...this.props} />
+            </div>
+            <div className={cn(classes.chartContainer)}>
+              <PartsByPunishment {...this.props} />
+            </div>
           </div>
-          <div className={cn(classes.chartContainer)}>
-            <PartsByResultChart {...this.props} />
-          </div>
-          <div className={cn(classes.chartContainer)}>
-            <PartsByPunishment {...this.props} />
-          </div>
-        </div>
+        ) : null}
       </ClausePageLayout>
     );
   }
