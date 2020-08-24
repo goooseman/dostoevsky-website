@@ -44,7 +44,7 @@ class ClausePartsTable extends PureComponent<ClausePartsTableProps> {
               key: "2",
               values: [
                 { key: "title", value: "Всего осуждено" },
-                { key: "main", value: "14" },
+                { key: "main", value: p.byResult.convictedCount },
               ],
             },
           ],
