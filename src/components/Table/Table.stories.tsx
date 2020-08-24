@@ -9,7 +9,7 @@ const handleTableTitleClick = action("onTableTitleClick");
 
 const defaultProps = {
   onDownloadButtonClick: handleDownloadButtonClick,
-  downloadFilename: "test.csv",
+  downloadFilename: "test",
   iframePath: "/test",
   activeTableIndex: 0,
   onTableTitleClick: () => handleTableTitleClick,
@@ -286,6 +286,69 @@ export const withClausePartsSecondTab = (): React.ReactNode => (
       {...defaultProps}
       title="Результаты рассмотрения дел по статье 282"
       tables={clauseParts}
+      activeTableIndex={1}
+    />
+  </div>
+);
+
+const clauseManyParts = [
+  {
+    title: "Часть 1",
+    columns: hiddenColumns,
+    rows: clauseRows,
+  },
+  {
+    title: "Часть 2",
+    columns: hiddenColumns,
+    rows: clauseRows,
+  },
+  {
+    title: "Часть 3",
+    columns: hiddenColumns,
+    rows: clauseRows,
+  },
+  {
+    title: "Часть 4",
+    columns: hiddenColumns,
+    rows: clauseRows,
+  },
+  {
+    title: "Часть 5",
+    columns: hiddenColumns,
+    rows: clauseRows,
+  },
+  {
+    title: "Часть 6",
+    columns: hiddenColumns,
+    rows: clauseRows,
+  },
+  {
+    title: "Часть 7",
+    columns: hiddenColumns,
+    rows: clauseRows,
+  },
+  {
+    title: "Часть 8",
+    columns: hiddenColumns,
+    rows: clauseRows,
+  },
+  {
+    title: "Часть 9",
+    columns: hiddenColumns,
+    rows: clauseRows,
+  },
+  {
+    title: "Часть 10",
+    columns: hiddenColumns,
+    rows: clauseRows,
+  },
+];
+export const withClausePartsManyParts = (): React.ReactNode => (
+  <div style={{ padding: "0 0 0 100px" }}>
+    <Table
+      {...defaultProps}
+      title="Результаты рассмотрения дел по статье 282"
+      tables={clauseManyParts}
       activeTableIndex={1}
     />
   </div>

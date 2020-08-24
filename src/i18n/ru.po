@@ -88,3 +88,11 @@ msgstr ""
 #: src/components/ui-kit/Accordion/Accordion.tsx:
 msgid "Down icon"
 msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Результаты рассмотрения дел по статье {{ clause }}"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "основной состав"
+msgstr ""

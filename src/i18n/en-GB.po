@@ -87,3 +87,11 @@ msgstr "Up icon"
 #: src/components/ui-kit/Accordion/Accordion.tsx:
 msgid "Down icon"
 msgstr "Down icon"
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Результаты рассмотрения дел по статье {{ clause }}"
+msgstr "Результаты рассмотрения дел по статье {{ clause }}"
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "основной состав"
+msgstr "основной состав"
