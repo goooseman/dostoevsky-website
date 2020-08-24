@@ -48,7 +48,9 @@ class Table extends PureComponent<TableProps> {
     return (
       <div>
         <div className={cn(classes.titleContainer)}>
-          <Typography variant="h3">{title}</Typography>
+          <Typography variant="h3">
+            <b>{title}</b>
+          </Typography>
           <div className={cn(classes.buttonsContainer)}>
             <EmbedModal iframePath={iframePath} />
             <DownloadButton onClick={onDownloadButtonClick} />

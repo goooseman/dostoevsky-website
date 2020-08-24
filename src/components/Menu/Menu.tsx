@@ -7,17 +7,22 @@ import { Link } from "gatsby";
 interface MenuProps {
   children: React.ReactNode;
   variant: "activeBorderBottom" | "default" | "onBlackBackground";
+  className?: string;
 }
 
 export class Menu extends PureComponent<MenuProps> {
   render(): React.ReactNode {
-    const { variant, children } = this.props;
+    const { variant, children, className } = this.props;
     return (
       <ul
-        className={cn(classes.menu, {
-          [classes.onBlackBackground]: variant === "onBlackBackground",
-          [classes.activeBorderBottom]: variant === "activeBorderBottom",
-        })}
+        className={cn(
+          classes.menu,
+          {
+            [classes.onBlackBackground]: variant === "onBlackBackground",
+            [classes.activeBorderBottom]: variant === "activeBorderBottom",
+          },
+          className
+        )}
       >
         {children}
       </ul>

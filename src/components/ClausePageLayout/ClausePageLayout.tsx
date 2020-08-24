@@ -154,7 +154,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
             >
               {headerChildren}
             </ClausePageHeader>
-            <Menu variant="activeBorderBottom">
+            <Menu variant="activeBorderBottom" className={cn(classes.menu)}>
               <MenuLink
                 to={getClauseLink(
                   clauseNumber.toString(),
