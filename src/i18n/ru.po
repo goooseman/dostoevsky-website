@@ -96,3 +96,7 @@ msgstr ""
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "основной состав"
 msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Всего осуждено"
+msgstr ""

@@ -95,3 +95,7 @@ msgstr "Результаты рассмотрения дел по статье {
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "основной состав"
 msgstr "основной состав"
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Всего осуждено"
+msgstr "Всего осуждено"

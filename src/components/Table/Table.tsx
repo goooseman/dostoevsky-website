@@ -11,13 +11,13 @@ interface TableProps {
   title: React.ReactNode;
   tables: {
     columns: {
-      title: React.ReactNode;
+      title: string;
       key: string;
       isHidden?: boolean;
     }[];
     rows: {
       values: {
-        value: React.ReactNode;
+        value: string;
         key: string;
       }[];
       key: string;

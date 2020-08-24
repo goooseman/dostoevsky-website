@@ -32,11 +32,27 @@ class TableContainer extends PureComponent<
   }
 
   private handleDownloadButtonClick = () => {
-    const csvContent = "раз\tдва\tтри\nСтатья\t1\t2";
+    const csvContent = this.getCsv();
     const blob = new Blob([
       new Uint8Array(iconv.encode(csvContent, "utf16-le", { addBOM: true })),
     ]);
     saveAs(blob, `${this.props.downloadFilename}.csv`);
+  };
+
+  private getCsv = (): string => {
+    const { tables } = this.props;
+    const { activeTableIndex } = this.state;
+    const table = tables[activeTableIndex];
+    let result = "";
+    result += this.getCsvRow(table.columns.map((c) => c.title));
+    for (const row of table.rows) {
+      result += this.getCsvRow(row.values.map((v) => v.value));
+    }
+    return result;
+  };
+
+  private getCsvRow = (row: string[]) => {
+    return row.join("\t") + "\n";
   };
 
   private hanldeTableTitleClick = (index: number) => () => {
