@@ -71,6 +71,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
                 year.toString(),
                 "parts"
               )}
+              partiallyActive
               activeClassName={cn(classes.itemActive)}
             >
               <Typography size="small" variant="span">

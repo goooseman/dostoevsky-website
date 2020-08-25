@@ -3,6 +3,10 @@
   border-collapse: collapse;
 }
 
+.container {
+  padding-left: 70px;
+}
+
 .table-container {
   border-top: 4px solid var(--color-border-dark);
   margin-top: 0.5rem;

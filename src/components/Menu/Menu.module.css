@@ -43,6 +43,7 @@
   padding: 0.2rem 1rem;
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .menu-item a.menu-link-active,
@@ -54,6 +55,10 @@
   position: relative;
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.menu.active-border-bottom .menu-item .menu-link-active {
+  background-color: transparent;
 }
 
 .menu.active-border-bottom .menu-item .menu-link-active::after,

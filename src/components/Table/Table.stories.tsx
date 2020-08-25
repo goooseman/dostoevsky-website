@@ -63,102 +63,100 @@ const hiddenColumns = [
 ];
 
 export const withClauseMainFocused = (): React.ReactNode => (
-  <div style={{ padding: "0 0 0 100px" }}>
-    <Table
-      title="Результаты рассмотрения дел по статье 282 (Основной состав)"
-      tables={[
-        {
-          columns: hiddenColumns,
-          rows: [
-            {
-              key: "1",
-              values: [
-                { key: "title", value: "Всего осуждено" },
-                { key: "main", value: "19" },
-              ],
-            },
-            {
-              key: "2",
-              values: [
-                { key: "title", value: "Оправдано" },
-                { key: "main", value: "3" },
-              ],
-            },
-            {
-              key: "3",
-              values: [
-                { key: "title", value: "Принудительные меры к невменяемым" },
-                { key: "main", value: "1" },
-              ],
-            },
-            {
-              key: "4",
-              values: [
-                {
-                  key: "title",
-                  value:
-                    "Преступление не является оконченным (приготовление, покушение)",
-                },
-                { key: "main", value: "0" },
-              ],
-            },
-            {
-              key: "5",
-              values: [
-                {
-                  key: "title",
-                  value:
-                    "Число лиц, в отношении которых уголовные дела прекращены за отсутствием состава, события преступления, непричастностью к преступлению по основной статье",
-                },
-                { key: "main", value: "62" },
-              ],
-            },
-            {
-              key: "6",
-              values: [
-                {
-                  key: "title",
-                  value:
-                    "Число лиц, в отношении которых уголовные дела прекращены по иным основаниям по основной статье",
-                },
-                { key: "main", value: "38" },
-              ],
-            },
-            {
-              key: "7",
-              values: [{ key: "title", value: "ВИДЫ основного НАКАЗАНИЯ" }],
-              isAccordion: true,
-            },
-            {
-              key: "8",
-              values: [
-                { key: "title", value: "лишение свободы" },
-                { key: "main", value: "6" },
-              ],
-            },
-            {
-              key: "9",
-              values: [
-                { key: "title", value: "условное осуждение к лишению свободы" },
-                { key: "main", value: "10" },
-              ],
-            },
-            {
-              key: "10",
-              values: [
-                {
-                  key: "title",
-                  value: "содержание в дисциплинарной воинской част",
-                },
-                { key: "main", value: "0" },
-              ],
-            },
-          ],
-        },
-      ]}
-      {...defaultProps}
-    />
-  </div>
+  <Table
+    title="Результаты рассмотрения дел по статье 282 (Основной состав)"
+    tables={[
+      {
+        columns: hiddenColumns,
+        rows: [
+          {
+            key: "1",
+            values: [
+              { key: "title", value: "Всего осуждено" },
+              { key: "main", value: "19" },
+            ],
+          },
+          {
+            key: "2",
+            values: [
+              { key: "title", value: "Оправдано" },
+              { key: "main", value: "3" },
+            ],
+          },
+          {
+            key: "3",
+            values: [
+              { key: "title", value: "Принудительные меры к невменяемым" },
+              { key: "main", value: "1" },
+            ],
+          },
+          {
+            key: "4",
+            values: [
+              {
+                key: "title",
+                value:
+                  "Преступление не является оконченным (приготовление, покушение)",
+              },
+              { key: "main", value: "0" },
+            ],
+          },
+          {
+            key: "5",
+            values: [
+              {
+                key: "title",
+                value:
+                  "Число лиц, в отношении которых уголовные дела прекращены за отсутствием состава, события преступления, непричастностью к преступлению по основной статье",
+              },
+              { key: "main", value: "62" },
+            ],
+          },
+          {
+            key: "6",
+            values: [
+              {
+                key: "title",
+                value:
+                  "Число лиц, в отношении которых уголовные дела прекращены по иным основаниям по основной статье",
+              },
+              { key: "main", value: "38" },
+            ],
+          },
+          {
+            key: "7",
+            values: [{ key: "title", value: "ВИДЫ основного НАКАЗАНИЯ" }],
+            isAccordion: true,
+          },
+          {
+            key: "8",
+            values: [
+              { key: "title", value: "лишение свободы" },
+              { key: "main", value: "6" },
+            ],
+          },
+          {
+            key: "9",
+            values: [
+              { key: "title", value: "условное осуждение к лишению свободы" },
+              { key: "main", value: "10" },
+            ],
+          },
+          {
+            key: "10",
+            values: [
+              {
+                key: "title",
+                value: "содержание в дисциплинарной воинской част",
+              },
+              { key: "main", value: "0" },
+            ],
+          },
+        ],
+      },
+    ]}
+    {...defaultProps}
+  />
 );
 
 const clauseRows = [
@@ -271,24 +269,20 @@ const clauseParts = [
 ];
 
 export const withClauseParts = (): React.ReactNode => (
-  <div style={{ padding: "0 0 0 100px" }}>
-    <Table
-      {...defaultProps}
-      title="Результаты рассмотрения дел по статье 282"
-      tables={clauseParts}
-    />
-  </div>
+  <Table
+    {...defaultProps}
+    title="Результаты рассмотрения дел по статье 282"
+    tables={clauseParts}
+  />
 );
 
 export const withClausePartsSecondTab = (): React.ReactNode => (
-  <div style={{ padding: "0 0 0 100px" }}>
-    <Table
-      {...defaultProps}
-      title="Результаты рассмотрения дел по статье 282"
-      tables={clauseParts}
-      activeTableIndex={1}
-    />
-  </div>
+  <Table
+    {...defaultProps}
+    title="Результаты рассмотрения дел по статье 282"
+    tables={clauseParts}
+    activeTableIndex={1}
+  />
 );
 
 const clauseManyParts = [
@@ -344,12 +338,10 @@ const clauseManyParts = [
   },
 ];
 export const withClausePartsManyParts = (): React.ReactNode => (
-  <div style={{ padding: "0 0 0 100px" }}>
-    <Table
-      {...defaultProps}
-      title="Результаты рассмотрения дел по статье 282"
-      tables={clauseManyParts}
-      activeTableIndex={1}
-    />
-  </div>
+  <Table
+    {...defaultProps}
+    title="Результаты рассмотрения дел по статье 282"
+    tables={clauseManyParts}
+    activeTableIndex={1}
+  />
 );

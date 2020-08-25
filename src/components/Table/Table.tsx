@@ -46,7 +46,7 @@ class Table extends PureComponent<TableProps> {
     const { rows, columns } = tables[activeTableIndex];
 
     return (
-      <div>
+      <div className={cn(classes.container)}>
         <div className={cn(classes.titleContainer)}>
           <Typography variant="h3">
             <b>{title}</b>
