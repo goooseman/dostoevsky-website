@@ -17,7 +17,7 @@ interface TableProps {
     }[];
     rows: {
       values: {
-        value: string;
+        value: string | number;
         key: string;
       }[];
       key: string;

@@ -28,7 +28,15 @@ export interface ClausePartsPageProps {
       convictedCount: number;
       acquittalCount: number;
       dismissalCount: number;
-      compulsoryTreatmentCount: number;
+      compulsoryTreatmentCount: number; // TODO rename
+      unfinishedOffenceCount: number; // Преступление не является оконченным (приготовление, покушение)
+      addTotalPersonsCount: number; // Доп. квалификация: осуждено по числу лиц
+      addTotalOffencesCount: number; // Доп. квалификация: осуждено по количеству составов преступлений
+      addAcquittalPersonsCount: number; // Доп. квалификация: оправдано по числу лиц
+      addAcquittalOffencesCount: number; // Доп. квалификация: оправдано по количеству составов преступлений
+      noCrimeSelfDefenceCount: number; // Обстоятельства, исключающие преступность: необходимая оборона
+      noCrimeNecessityCount: number; // Обстоятельства, исключающие преступность: крайняя необходимость
+      noCrimeOtherCount: number; // Обстоятельства, исключающие преступность, предусмотренные статьями 38, 40 - 42 УК РФ
     };
     byPunishment: {
       primaryLifeSentenceCount: number; // Пожизненное лишение свободы
@@ -45,6 +53,25 @@ export interface ClausePartsPageProps {
       primaryMilitaryDisciplinaryUnitCount: number; // Содержание в дисциплинарной воинской части
       primaryRestrictionsInMilitaryServiceCount: number; // Ограничение по военной службе
       primaryImprisonmentCount: number; // Лишение свободы
+      addDisqualificationCount: number; // Дополнительное наказание: лишение права занимать определенные должности или заниматься определенной деятельностью
+      addFineCount: number; // Дополнительное наказание: штраф
+      addTitlesWithdrawCount: number; // Дополнительное наказание: лишение специального, воинского или почетного звания, классного чина и государственных наград
+      addRestrainCount: number; // Дополнительное наказание: ограничение свободы
+    };
+    byDismissal: {
+      dismissalAbsenceOfEventCount: number; // Прекращено за отсутствием события, состава, непричастностью к преступлению
+      dismissalAmnestyCount: number; // Прекращено по амнистии
+      dismissalReconciliationCount: number; // Прекращено за примирением с потерпевшим
+      dismissalRepentanceCount: number; // Прекращено в связи с деятельным раскаянием
+      dismissalCourtFinеCount: number; // Прекращено судебный штраф
+      dismissalOtherCount: number; // Прекращено по другим основаниям
+      dismissalRepentance2Count: number; // Прекращено по другим основаниям: на основании примечаний к статьям УК РФ (в связи с деятельным раскаянием ч. 2 ст. 28 УПК РФ)'
+      addDismissalPersonsCount: number; // Доп. квалификация: прекращено по числу лиц
+      addDismissalOffencesCount: number; // Доп. квалификация: прекращено по количеству составов преступлений
+      addDismissalOtherPersonsCount: number; // Доп. квалификация: прекращено по иным основаниям по числу лиц
+      addDismissalOtherOffencesCount: number; // Доп. квалификация: прекращено по иным основаниям по количеству составов преступлений
+      // addUnfitToPleadPersonsCount: number; // Доп. квалификация: признано невменяемыми по числу лиц
+      // addUnfitToPleadOffencesCount: number; // Доп. квалификация: признано невменяемыми по количеству составов преступлений
     };
   }[];
 }
