@@ -3634,7 +3634,7 @@ export type ClauseChronologyQueryVariables = Exact<{
 }>;
 
 
-export type ClauseChronologyQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, allApiServerData: { edges: Array<{ node: Pick<Api_Server__Data, 'part' | 'year' | 'name' | 'exemptionOther' | 'totalConvicted'> }> } };
+export type ClauseChronologyQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, parts: { edges: Array<{ node: Pick<Api_Server__Data, 'part' | 'year' | 'name' | 'exemptionOther' | 'totalConvicted'> }> } };
 
 export type ClauseFullQueryVariables = Exact<{
   partRegex: Scalars['String'];
@@ -3642,12 +3642,15 @@ export type ClauseFullQueryVariables = Exact<{
 }>;
 
 
-export type ClauseFullQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, allApiServerData: { edges: Array<{ node: Pick<Api_Server__Data, 'part' | 'year' | 'name' | 'exemptionOther' | 'totalConvicted'> }> } };
+export type ClauseFullQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, parts: { edges: Array<{ node: Pick<Api_Server__Data, 'part' | 'year' | 'name' | 'exemptionOther' | 'totalConvicted'> }> } };
 
-export type ClauseMainQueryVariables = Exact<{ [key: string]: never; }>;
+export type ClauseMainQueryVariables = Exact<{
+  partRegex: Scalars['String'];
+  year: Scalars['String'];
+}>;
 
 
-export type ClauseMainQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }> };
+export type ClauseMainQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, parts: { edges: Array<{ node: Pick<Api_Server__Data, 'part'> }> } };
 
 export type ClausePartsQueryVariables = Exact<{
   partRegex: Scalars['String'];

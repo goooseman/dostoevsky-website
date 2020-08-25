@@ -5,14 +5,12 @@ import Typography from "src/components/ui-kit/Typography";
 interface ClauseMainPageProps {
   clauseNumber: number;
   year: number;
-  parts: {
-    part: string;
-  }[];
+  partsCount: number;
 }
 
 class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
   render(): React.ReactNode {
-    const { clauseNumber, year, parts } = this.props;
+    const { clauseNumber, year, partsCount } = this.props;
 
     return (
       <ClausePageLayout
@@ -20,7 +18,7 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
         year={year}
         title="Основной и дополнительный составы"
         pageType="main"
-        hasParts={parts.length > 1}
+        hasParts={partsCount > 0}
       >
         <Typography>Main</Typography>
       </ClausePageLayout>

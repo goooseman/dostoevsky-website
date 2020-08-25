@@ -1,5 +1,7 @@
 import React, { PureComponent } from "react";
 import ClausePartsPage, { ClausePartsPageViewMode } from "./ClausePartsPage";
+import { Redirect } from "@reach/router";
+import { getClauseLink } from "src/config/routes";
 
 interface ClausePartsPageContainerProps {
   clauseNumber: number;
@@ -40,7 +42,11 @@ class ClausePartsPageContainer extends PureComponent<
   render(): React.ReactNode {
     const { clauseNumber, year, view } = this.props;
     if (this.props.parts.length === 0) {
-      throw new Error("Page does not exists");
+      return (
+        <Redirect
+          to={getClauseLink(clauseNumber.toString(), year.toString(), "main")}
+        />
+      );
     }
     return (
       <ClausePartsPage
