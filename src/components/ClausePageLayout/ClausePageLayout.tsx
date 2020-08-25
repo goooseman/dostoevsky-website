@@ -14,6 +14,7 @@ import { Menu, MenuLink } from "src/components/Menu";
 interface ClausePageLayoutProps {
   clauseNumber: number;
   clauseText: I18nText;
+  hasParts?: boolean;
   clauseOutsideLink: string;
   year: number;
   children: React.ReactNode;
@@ -37,6 +38,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
       title,
       headerChildren,
       pageType,
+      hasParts,
     } = this.props;
 
     return (
@@ -65,19 +67,22 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
                 основной и дополнительный составы
               </Typography>
             </Link>
-            <Link
-              to={getClauseLink(
-                clauseNumber.toString(),
-                year.toString(),
-                "parts"
-              )}
-              partiallyActive
-              activeClassName={cn(classes.itemActive)}
-            >
-              <Typography size="small" variant="span">
-                части
-              </Typography>
-            </Link>
+            {hasParts ? (
+              <Link
+                to={getClauseLink(
+                  clauseNumber.toString(),
+                  year.toString(),
+                  "parts"
+                )}
+                partiallyActive
+                activeClassName={cn(classes.itemActive)}
+              >
+                <Typography size="small" variant="span">
+                  части
+                </Typography>
+              </Link>
+            ) : null}
+
             <Link
               to={getClauseLink(
                 clauseNumber.toString(),

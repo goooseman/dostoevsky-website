@@ -25,6 +25,11 @@ class ClauseMain extends PureComponent<ClauseMainProps> {
         <ClauseMainPage
           year={parseInt(pageContext.year)}
           clauseNumber={pageContext.clauseId}
+          parts={
+            data.allApiServerData.edges.map(
+              (e) => e.node
+            ) as React.ComponentProps<typeof ClauseMainPage>["parts"]
+          }
         />
       </Layout>
     );
@@ -32,12 +37,21 @@ class ClauseMain extends PureComponent<ClauseMainProps> {
 }
 
 export const query = graphql`
-  query ClauseMain {
+  query ClauseMain($partRegex: String!, $year: String!) {
     site {
       meta: siteMetadata {
         title
         description
         siteUrl
+      }
+    }
+    allApiServerData(
+      filter: { part: { regex: $partRegex }, year: { eq: $year } }
+    ) {
+      edges {
+        node {
+          part
+        }
       }
     }
   }

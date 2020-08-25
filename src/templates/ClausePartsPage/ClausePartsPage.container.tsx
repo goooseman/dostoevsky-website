@@ -40,7 +40,7 @@ class ClausePartsPageContainer extends PureComponent<
   render(): React.ReactNode {
     const { clauseNumber, year, view } = this.props;
     if (this.props.parts.length === 0) {
-      return <p>404</p>;
+      throw new Error("Page does not exists");
     }
     return (
       <ClausePartsPage

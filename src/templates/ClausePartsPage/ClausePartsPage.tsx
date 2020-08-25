@@ -51,7 +51,7 @@ export interface ClausePartsPageProps {
 
 class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
   render(): React.ReactNode {
-    const { clauseNumber, year, view } = this.props;
+    const { clauseNumber, year, view, parts } = this.props;
 
     if (view === "iframe-parts") {
       return <PartsChart {...this.props} isIframeMode />;
@@ -76,6 +76,7 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
         title="Части"
         pageType="parts"
         headerChildren={this.renderHeaderChildren()}
+        hasParts={parts.length > 1}
       >
         {view === "table" ? <ClausePartsTable {...this.props} /> : null}
         {view === "page" ? (

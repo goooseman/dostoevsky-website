@@ -25,6 +25,11 @@ class ClauseChronology extends PureComponent<ClauseChronologyProps> {
         <ClauseChronologyPage
           year={parseInt(pageContext.year)}
           clauseNumber={pageContext.clauseId}
+          parts={
+            data.allApiServerData.edges.map(
+              (e) => e.node
+            ) as React.ComponentProps<typeof ClauseChronologyPage>["parts"]
+          }
         />
       </Layout>
     );

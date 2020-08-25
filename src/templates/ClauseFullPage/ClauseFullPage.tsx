@@ -5,11 +5,14 @@ import Typography from "src/components/ui-kit/Typography";
 interface ClauseFullPageProps {
   clauseNumber: number;
   year: number;
+  parts: {
+    part: string;
+  }[];
 }
 
 class ClauseFullPage extends PureComponent<ClauseFullPageProps> {
   render(): React.ReactNode {
-    const { clauseNumber, year } = this.props;
+    const { clauseNumber, year, parts } = this.props;
 
     return (
       <ClausePageLayout
@@ -17,6 +20,7 @@ class ClauseFullPage extends PureComponent<ClauseFullPageProps> {
         year={year}
         title="Полная статистика"
         pageType="full"
+        hasParts={parts.length > 1}
       >
         <Typography>Full Page</Typography>
       </ClausePageLayout>

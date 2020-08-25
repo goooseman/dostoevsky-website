@@ -25,6 +25,11 @@ class ClauseFull extends PureComponent<ClauseFullProps> {
         <ClauseFullPage
           year={parseInt(pageContext.year)}
           clauseNumber={pageContext.clauseId}
+          parts={
+            data.allApiServerData.edges.map(
+              (e) => e.node
+            ) as React.ComponentProps<typeof ClauseFullPage>["parts"]
+          }
         />
       </Layout>
     );

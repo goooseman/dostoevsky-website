@@ -34,3 +34,9 @@ export const withCatalogueOpened = (): React.ReactNode => (
     <div style={{ height: 2000 }}></div>
   </ClausePageLayout>
 );
+
+export const withoutPartsPage = (): React.ReactNode => (
+  <ClausePageLayout {...defaultProps} hasParts={false}>
+    <div style={{ height: 2000 }}></div>
+  </ClausePageLayout>
+);

@@ -41,11 +41,20 @@ exports.createPages = async ({ actions }) => {
             "iframe-table-parts",
           ];
           for (const view of partsPageViewModes) {
-            createPage({
-              path: getRouteForClausePage(chapter.id, year, "parts", view),
-              component: path.resolve(`src/page-templates/clause-parts.tsx`),
-              context: { ...context, view },
-            });
+            try {
+              createPage({
+                path: getRouteForClausePage(chapter.id, year, "parts", view),
+                component: path.resolve(`src/page-templates/clause-parts.tsx`),
+                context: { ...context, view },
+              });
+            } catch (e) {
+              if (!(e instanceof Error)) {
+                throw e;
+              }
+              if (e.message !== "Page does not exists") {
+                throw e;
+              }
+            }
           }
           createPage({
             path: getRouteForClausePage(chapter.id, year, "chronology", "page"),
