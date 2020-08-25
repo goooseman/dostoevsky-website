@@ -19,7 +19,7 @@ class Parts extends PureComponent<PartsProps> {
         groups={[
           {
             title: "",
-            values: parts.map((p) => p.count),
+            values: parts.map((p) => p.totalConvicted),
           },
         ]}
         isIframeMode={isIframeMode}

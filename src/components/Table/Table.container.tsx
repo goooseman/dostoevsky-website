@@ -46,7 +46,7 @@ class TableContainer extends PureComponent<
     let result = "";
     result += this.getCsvRow(table.columns.map((c) => c.title));
     for (const row of table.rows) {
-      result += this.getCsvRow(row.values.map((v) => v.value));
+      result += this.getCsvRow(row.values.map((v) => v.value.toString()));
     }
     return result;
   };

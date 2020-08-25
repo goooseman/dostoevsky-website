@@ -1,6 +1,4 @@
-import React, { PureComponent } from "react";
-import classes from "./ClausePartsTable.module.css";
-import cn from "clsx";
+import React from "react";
 import Table from "src/components/Table";
 import { useLocale, T } from "react-targem";
 import type { ClausePartsPageProps } from "../../ClausePartsPage";
@@ -45,14 +43,14 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
             key: "2",
             values: [
               { key: "title", value: t("Всего осуждено") },
-              { key: "main", value: p.byResult.convictedCount },
+              { key: "main", value: p.totalConvicted },
             ],
           },
           {
             key: "3",
             values: [
               { key: "title", value: t("Оправдано") },
-              { key: "main", value: p.byResult.acquittalCount },
+              { key: "main", value: p.totalAcquittal },
             ],
           },
           {
@@ -61,7 +59,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               { key: "title", value: t("Принудительные меры к невменяемым") },
               {
                 key: "main",
-                value: p.byResult.compulsoryTreatmentCount,
+                value: p.coerciveMeasures,
               },
             ],
           },
@@ -76,7 +74,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               },
               {
                 key: "main",
-                value: p.byResult.unfinishedOffenceCount,
+                value: p.unfinishedOffence,
               },
             ],
           },
@@ -127,7 +125,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               { key: "title", value: t("Всего осуждено (по числу лиц)") },
               {
                 key: "main",
-                value: p.byResult.addTotalPersonsCount,
+                value: p.addTotalPersons,
               },
             ],
           },
@@ -142,7 +140,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               },
               {
                 key: "main",
-                value: p.byResult.addTotalOffencesCount,
+                value: p.addTotalOffences,
               },
             ],
           },
@@ -152,7 +150,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               { key: "title", value: t("Оправдано (по числу лиц)") },
               {
                 key: "main",
-                value: p.byResult.addAcquittalPersonsCount,
+                value: p.addAcquittalPersons,
               },
             ],
           },
@@ -165,7 +163,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               },
               {
                 key: "main",
-                value: p.byResult.addAcquittalOffencesCount,
+                value: p.addAcquittalOffences,
               },
             ],
           },
@@ -180,7 +178,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               { key: "title", value: t("Лишение свободы") },
               {
                 key: "main",
-                value: p.byPunishment.primaryImprisonmentCount,
+                value: p.primaryImprisonment,
               },
             ],
           },
@@ -193,7 +191,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               },
               {
                 key: "main",
-                value: p.byPunishment.primarySuspendedCount,
+                value: p.primarySuspended,
               },
             ],
           },
@@ -206,7 +204,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               },
               {
                 key: "main",
-                value: p.byPunishment.primaryMilitaryDisciplinaryUnitCount,
+                value: p.primaryMilitaryDisciplinaryUnit,
               },
             ],
           },
@@ -216,7 +214,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               { key: "title", value: t("Арест") },
               {
                 key: "main",
-                value: p.byPunishment.primaryArrestCount,
+                value: p.primaryArrest,
               },
             ],
           },
@@ -226,7 +224,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               { key: "title", value: t("Ограничение свободы") },
               {
                 key: "main",
-                value: p.byPunishment.primaryRestrainCount,
+                value: p.primaryRestrain,
               },
             ],
           },
@@ -236,7 +234,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               { key: "title", value: t("Ограничение по военной службе") },
               {
                 key: "main",
-                value: p.byPunishment.primaryRestrictionsInMilitaryServiceCount,
+                value: p.primaryRestrictionsInMilitaryService,
               },
             ],
           },
@@ -251,7 +249,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               { key: "title", value: t("Исправительные работы") },
               {
                 key: "main",
-                value: p.byPunishment.primaryCorrectionalLabourCount,
+                value: p.primaryCorrectionalLabour,
               },
             ],
           },
@@ -261,7 +259,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               { key: "title", value: t("Обязательные работы") },
               {
                 key: "main",
-                value: p.byPunishment.primaryCommunityServiceCount,
+                value: p.primaryCommunityService,
               },
             ],
           },
@@ -271,7 +269,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               { key: "title", value: t("Принудительные работы") },
               {
                 key: "main",
-                value: p.byPunishment.primaryForcedLabourCount,
+                value: p.primaryForcedLabour,
               },
             ],
           },
@@ -286,7 +284,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               },
               {
                 key: "main",
-                value: p.byPunishment.primaryDisqualificationCount,
+                value: p.primaryDisqualification,
               },
             ],
           },
@@ -296,7 +294,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               { key: "title", value: t("Штраф") },
               {
                 key: "main",
-                value: p.byPunishment.primaryFineCount,
+                value: p.primaryFine,
               },
             ],
           },
@@ -306,7 +304,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               { key: "title", value: t("Условное осуждение к иным мерам") },
               {
                 key: "main",
-                value: p.byPunishment.primaryOtherCount,
+                value: p.primaryOther,
               },
             ],
           },
@@ -328,7 +326,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               },
               {
                 key: "main",
-                value: p.byDismissal.dismissalAbsenceOfEventCount,
+                value: p.dismissalAbsenceOfEvent,
               },
             ],
           },
@@ -338,7 +336,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               { key: "title", value: t("По амнистии") },
               {
                 key: "main",
-                value: p.byDismissal.dismissalAmnestyCount,
+                value: p.dismissalAmnesty,
               },
             ],
           },
@@ -351,7 +349,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               },
               {
                 key: "main",
-                value: p.byDismissal.dismissalReconciliationCount,
+                value: p.dismissalReconciliation,
               },
             ],
           },
@@ -364,7 +362,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               },
               {
                 key: "main",
-                value: p.byDismissal.dismissalRepentanceCount,
+                value: p.dismissalRepentance,
               },
             ],
           },
@@ -379,7 +377,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               },
               {
                 key: "main",
-                value: p.byDismissal.dismissalCourtFinеCount,
+                value: p.dismissalCourtFinе,
               },
             ],
           },
@@ -389,7 +387,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               { key: "title", value: t("По другим основаниям") },
               {
                 key: "main",
-                value: p.byDismissal.dismissalOtherCount,
+                value: p.dismissalOther,
               },
             ],
           },
@@ -404,7 +402,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               },
               {
                 key: "main",
-                value: p.byDismissal.dismissalRepentance2Count,
+                value: p.dismissalRepentance2,
               },
             ],
           },
@@ -426,7 +424,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               },
               {
                 key: "main",
-                value: p.byDismissal.addDismissalPersonsCount,
+                value: p.addDismissalPersons,
               },
             ],
           },
@@ -441,7 +439,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               },
               {
                 key: "main",
-                value: p.byDismissal.addDismissalOffencesCount,
+                value: p.addDismissalOffences,
               },
             ],
           },
@@ -451,7 +449,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               { key: "title", value: t("По иным основаниям (по числу лиц) ") },
               {
                 key: "main",
-                value: p.byDismissal.addDismissalOtherPersonsCount,
+                value: p.addDismissalOtherPersons,
               },
             ],
           },
@@ -466,7 +464,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               },
               {
                 key: "main",
-                value: p.byDismissal.addDismissalOtherOffencesCount,
+                value: p.addDismissalOtherOffences,
               },
             ],
           },
@@ -486,7 +484,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               },
               {
                 key: "main",
-                value: p.byPunishment.addDisqualificationCount,
+                value: p.addDisqualification,
               },
             ],
           },
@@ -494,7 +492,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
             key: "39",
             values: [
               { key: "title", value: t("Штраф") },
-              { key: "main", value: p.byPunishment.addFineCount },
+              { key: "main", value: p.addFine },
             ],
           },
           {
@@ -506,14 +504,14 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
                   "Лишение специального, воинского или почетного звания, классного чина и государственных наград"
                 ),
               },
-              { key: "main", value: p.byPunishment.addTitlesWithdrawCount },
+              { key: "main", value: p.addTitlesWithdraw },
             ],
           },
           {
             key: "41",
             values: [
               { key: "title", value: t("Ограничение свободы") },
-              { key: "main", value: p.byPunishment.addRestrainCount },
+              { key: "main", value: p.addRestrain },
             ],
           },
           {
@@ -532,7 +530,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
             key: "43",
             values: [
               { key: "title", value: t("необходимая оборона (ст. 37 УК РФ)") },
-              { key: "main", value: p.byResult.noCrimeSelfDefenceCount },
+              { key: "main", value: p.noCrimeSelfDefence },
             ],
           },
           {
@@ -542,7 +540,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
                 key: "title",
                 value: t("крайняя необходимость (ст. 39 УК РФ)"),
               },
-              { key: "main", value: p.byResult.noCrimeNecessityCount },
+              { key: "main", value: p.noCrimeNecessity },
             ],
           },
           {
@@ -554,7 +552,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
                   "обстоятельства, предусмотренные статьями 38, 40 - 42 УК РФ"
                 ),
               },
-              { key: "main", value: p.byResult.noCrimeOtherCount },
+              { key: "main", value: p.noCrimeOther },
             ],
           },
         ],

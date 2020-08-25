@@ -30,10 +30,10 @@ class PartsByResultChart extends PureComponent<PartsByResultChartProps> {
           .map((p) => ({
             title: p.part,
             values: [
-              p.byResult.convictedCount,
-              p.byResult.acquittalCount,
-              p.byResult.dismissalCount,
-              p.byResult.compulsoryTreatmentCount,
+              p.totalConvicted,
+              p.totalAcquittal,
+              p.totalDismissal,
+              p.coerciveMeasures,
             ],
           }))}
         tooltipDescription={{
