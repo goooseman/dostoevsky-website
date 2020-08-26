@@ -1,0 +1,77 @@
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.menu.active-border-bottom {
+  border-top: 1px solid var(--color-border-dark);
+  border-bottom: 4px solid var(--color-border-dark);
+}
+
+.menu-item {
+  width: 12.5%;
+  flex-grow: 1;
+  border-right: 1px solid var(--color-border-dark);
+  text-align: center;
+}
+
+.menu-item:first-of-type {
+  border-left: 1px solid var(--color-border-dark);
+}
+
+.menu.on-black-background:last-of-type,
+.menu.on-black-background:first-of-type {
+  border-right: none;
+  border-left: none;
+}
+
+.menu.active-border-bottom .menu-item {
+  border-right: none;
+  border-left: none;
+}
+
+.menu.on-black-background .menu-item {
+  border-right-color: var(--color-border-inverted);
+}
+
+.menu-item .menu-link {
+  display: inline-block;
+  padding: 0.2rem 1rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.menu-item a.menu-link-active,
+.menu-item.menu-item-active .menu-link {
+  background-color: var(--color-primary);
+}
+
+.menu.active-border-bottom .menu-item .menu-link {
+  position: relative;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.menu.active-border-bottom .menu-item .menu-link-active {
+  background-color: transparent;
+}
+
+.menu.active-border-bottom .menu-item .menu-link-active::after,
+.menu.active-border-bottom .menu-item.menu-item-active .menu-link::after {
+  position: absolute;
+  right: 0;
+  bottom: -4px;
+  left: 0;
+  height: 4px;
+  background-color: var(--color-primary);
+  content: "";
+}
+
+.menu.on-black-background .menu-item .menu-link {
+  color: var(--color-text-inverted);
+}

@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
 import Bar from "src/components/charts/Bar";
-import type { ClausePartsPageProps } from "../../ClausePartsPage";
 import { getClauseLink } from "src/config/routes";
 
 const byPunishmentLabels = [
@@ -20,8 +19,27 @@ const byPunishmentLabels = [
   "лишение свободы",
 ];
 
-interface PartsByPunishmentProps extends ClausePartsPageProps {
+interface PartsByPunishmentProps {
   isIframeMode?: boolean;
+  clauseNumber: number;
+  year: number;
+  parts: {
+    part: string;
+    primaryLifeSentence: number;
+    primarySuspended: number;
+    primaryArrest: number;
+    primaryRestrain: number;
+    primaryRestrain2009: number;
+    primaryCorrectionalLabour: number;
+    primaryCommunityService: number;
+    primaryForcedLabour: number;
+    primaryFine: number;
+    primaryDisqualification: number;
+    primaryOther: number;
+    primaryMilitaryDisciplinaryUnit: number;
+    primaryRestrictionsInMilitaryService: number;
+    primaryImprisonment: number;
+  }[];
 }
 
 class PartsByPunishment extends PureComponent<PartsByPunishmentProps> {
@@ -37,20 +55,20 @@ class PartsByPunishment extends PureComponent<PartsByPunishmentProps> {
         groups={parts.map((p) => ({
           title: p.part,
           values: [
-            p.byPunishment.primaryLifeSentenceCount,
-            p.byPunishment.primarySuspendedCount,
-            p.byPunishment.primaryArrestCount,
-            p.byPunishment.primaryRestrainCount,
-            p.byPunishment.primaryRestrain2009Count,
-            p.byPunishment.primaryCorrectionalLabourCount,
-            p.byPunishment.primaryCommunityServiceCount,
-            p.byPunishment.primaryForcedLabourCount,
-            p.byPunishment.primaryFineCount,
-            p.byPunishment.primaryDisqualificationCount,
-            p.byPunishment.primaryOtherCount,
-            p.byPunishment.primaryMilitaryDisciplinaryUnitCount,
-            p.byPunishment.primaryRestrictionsInMilitaryServiceCount,
-            p.byPunishment.primaryImprisonmentCount,
+            p.primaryLifeSentence,
+            p.primarySuspended,
+            p.primaryArrest,
+            p.primaryRestrain,
+            p.primaryRestrain2009,
+            p.primaryCorrectionalLabour,
+            p.primaryCommunityService,
+            p.primaryForcedLabour,
+            p.primaryFine,
+            p.primaryDisqualification,
+            p.primaryOther,
+            p.primaryMilitaryDisciplinaryUnit,
+            p.primaryRestrictionsInMilitaryService,
+            p.primaryImprisonment,
           ],
         }))}
         tooltipDescription={{

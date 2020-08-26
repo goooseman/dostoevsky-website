@@ -34,9 +34,11 @@ exports.createPages = async ({ actions }) => {
           });
           const partsPageViewModes = [
             "page",
+            "table",
             "iframe-parts",
             "iframe-parts-by-result",
             "iframe-parts-by-punishment",
+            "iframe-table-parts",
           ];
           for (const view of partsPageViewModes) {
             createPage({

@@ -5,11 +5,12 @@ import Typography from "src/components/ui-kit/Typography";
 interface ClauseChronologyPageProps {
   clauseNumber: number;
   year: number;
+  partsCount: number;
 }
 
 class ClauseChronologyPage extends PureComponent<ClauseChronologyPageProps> {
   render(): React.ReactNode {
-    const { clauseNumber, year } = this.props;
+    const { clauseNumber, year, partsCount } = this.props;
 
     return (
       <ClausePageLayout
@@ -17,6 +18,7 @@ class ClauseChronologyPage extends PureComponent<ClauseChronologyPageProps> {
         year={year}
         title="Хронология"
         pageType="chronology"
+        hasParts={partsCount > 0}
       >
         <Typography>Chronology</Typography>
       </ClausePageLayout>

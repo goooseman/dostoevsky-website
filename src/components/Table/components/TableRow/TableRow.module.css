@@ -1,0 +1,23 @@
+.row-accordion {
+  position: relative;
+  cursor: pointer;
+  transform: scale(1); /* https://stackoverflow.com/a/51407758 */
+}
+
+.row-accordion ~ tr {
+  display: none;
+}
+
+.row-accordion.is-opened ~ tr {
+  display: table-row;
+}
+
+.collapse-icon-button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -50px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}

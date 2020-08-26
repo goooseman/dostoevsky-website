@@ -25,6 +25,7 @@ class ClauseFull extends PureComponent<ClauseFullProps> {
         <ClauseFullPage
           year={parseInt(pageContext.year)}
           clauseNumber={pageContext.clauseId}
+          partsCount={data.parts.edges.length}
         />
       </Layout>
     );
@@ -40,16 +41,12 @@ export const query = graphql`
         siteUrl
       }
     }
-    allApiServerData(
+    parts: allApiServerData(
       filter: { part: { regex: $partRegex }, year: { eq: $year } }
     ) {
       edges {
         node {
           part
-          year
-          name
-          exemptionOther
-          totalConvicted
         }
       }
     }

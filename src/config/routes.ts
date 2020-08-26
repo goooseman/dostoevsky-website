@@ -6,8 +6,8 @@ enum clauseLinkTypes {
 }
 
 export const getClauseLink = (
-  clause: string,
-  year: string,
+  clause: string | number,
+  year: string | number,
   type: keyof typeof clauseLinkTypes,
   view = "page"
 ): string => {

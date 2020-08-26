@@ -2,13 +2,13 @@ import React, { PureComponent } from "react";
 import classes from "./ChartWrapper.module.css";
 import cn from "clsx";
 import Typography from "src/components/ui-kit/Typography";
-import { withLocale, WithLocale } from "react-targem";
+import EmbedModal from "src/components/EmbedModal";
+import DownloadButton from "src/components/DownloadButton";
 
 import "chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css";
 import "chartist/dist/chartist.min.css";
-import EmbedModal from "./components/EmbedModal";
 
-interface ChartWrapperProps extends WithLocale {
+interface ChartWrapperProps {
   labels: string[];
   title: React.ReactNode;
   downloadFilename: string;
@@ -30,7 +30,6 @@ class ChartWrapper extends PureComponent<
       children,
       labels,
       title,
-      t,
       isIframeMode,
       onDownloadButtonClick,
       downloadAreaRef,
@@ -86,15 +85,7 @@ class ChartWrapper extends PureComponent<
           {!isIframeMode ? (
             <div className={cn(classes.actions)}>
               <EmbedModal iframePath={iframePath} />
-              <button
-                title={t("Download chart")}
-                onClick={onDownloadButtonClick}
-              >
-                <img
-                  src={require("./assets/download.svg")}
-                  alt={t("Download icon")}
-                />
-              </button>
+              <DownloadButton onClick={onDownloadButtonClick} />
             </div>
           ) : null}
         </div>
@@ -103,4 +94,4 @@ class ChartWrapper extends PureComponent<
   }
 }
 
-export default withLocale(ChartWrapper);
+export default ChartWrapper;

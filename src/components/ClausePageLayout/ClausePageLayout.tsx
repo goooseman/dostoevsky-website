@@ -9,10 +9,12 @@ import ClausePageCatalogue from "src/components/ClausePageCatalogue";
 import type { I18nText } from "src/types";
 import { getClauseLink } from "src/config/routes";
 import ClausePageHeader from "src/components/ClausePageHeader";
+import { Menu, MenuLink } from "src/components/Menu";
 
 interface ClausePageLayoutProps {
   clauseNumber: number;
   clauseText: I18nText;
+  hasParts?: boolean;
   clauseOutsideLink: string;
   year: number;
   children: React.ReactNode;
@@ -36,6 +38,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
       title,
       headerChildren,
       pageType,
+      hasParts,
     } = this.props;
 
     return (
@@ -64,18 +67,22 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
                 основной и дополнительный составы
               </Typography>
             </Link>
-            <Link
-              to={getClauseLink(
-                clauseNumber.toString(),
-                year.toString(),
-                "parts"
-              )}
-              activeClassName={cn(classes.itemActive)}
-            >
-              <Typography size="small" variant="span">
-                части
-              </Typography>
-            </Link>
+            {hasParts ? (
+              <Link
+                to={getClauseLink(
+                  clauseNumber.toString(),
+                  year.toString(),
+                  "parts"
+                )}
+                partiallyActive
+                activeClassName={cn(classes.itemActive)}
+              >
+                <Typography size="small" variant="span">
+                  части
+                </Typography>
+              </Link>
+            ) : null}
+
             <Link
               to={getClauseLink(
                 clauseNumber.toString(),
@@ -153,6 +160,27 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
             >
               {headerChildren}
             </ClausePageHeader>
+            <Menu variant="activeBorderBottom" className={cn(classes.menu)}>
+              <MenuLink
+                to={getClauseLink(
+                  clauseNumber.toString(),
+                  year.toString(),
+                  pageType
+                )}
+              >
+                ЧАРТЫ
+              </MenuLink>
+              <MenuLink
+                to={getClauseLink(
+                  clauseNumber.toString(),
+                  year.toString(),
+                  pageType,
+                  "table"
+                )}
+              >
+                ТАБЛИЦА
+              </MenuLink>
+            </Menu>
             <div>{children}</div>
           </div>
         </Container>

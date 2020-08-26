@@ -13,26 +13,6 @@ msgstr ""
 "Last-Translator: \n"
 "Language: ru\n"
 
-#: src/components/ChartWrapper/ChartWrapper.tsx:
-msgid "Download chart"
-msgstr ""
-
-#: src/components/ChartWrapper/ChartWrapper.tsx:
-msgid "Download icon"
-msgstr ""
-
-#: src/components/ChartWrapper/components/EmbedModal/EmbedModal.tsx:
-msgid "Embed"
-msgstr ""
-
-#: src/components/ChartWrapper/components/EmbedModal/EmbedModal.tsx:
-msgid "Copied"
-msgstr ""
-
-#: src/components/ChartWrapper/components/EmbedModal/EmbedModal.tsx:
-msgid "Copy"
-msgstr ""
-
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
 msgid "Right arrow"
 msgstr ""
@@ -53,6 +33,26 @@ msgstr ""
 msgid "Down arrow"
 msgstr ""
 
+#: src/components/DownloadButton/DownloadButton.tsx:
+msgid "Download chart"
+msgstr ""
+
+#: src/components/DownloadButton/DownloadButton.tsx:
+msgid "Download icon"
+msgstr ""
+
+#: src/components/EmbedModal/EmbedModal.tsx:
+msgid "Embed"
+msgstr ""
+
+#: src/components/EmbedModal/EmbedModal.tsx:
+msgid "Copied"
+msgstr ""
+
+#: src/components/EmbedModal/EmbedModal.tsx:
+msgid "Copy"
+msgstr ""
+
 #: src/components/Footer/Footer.tsx:
 msgid "OI logo"
 msgstr "Логотип OI"
@@ -61,18 +61,22 @@ msgstr "Логотип OI"
 msgid "D4S logo"
 msgstr "Логотип D4S"
 
+#: src/components/Table/components/TableRow/TableRow.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
 msgid "Close hidden content"
 msgstr ""
 
+#: src/components/Table/components/TableRow/TableRow.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
 msgid "Minus icon"
 msgstr ""
 
+#: src/components/Table/components/TableRow/TableRow.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
 msgid "Open hidden content"
 msgstr ""
 
+#: src/components/Table/components/TableRow/TableRow.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
 msgid "Plus icon"
 msgstr ""
@@ -83,4 +87,209 @@ msgstr ""
 
 #: src/components/ui-kit/Accordion/Accordion.tsx:
 msgid "Down icon"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Результаты рассмотрения дел по статье {{ clause }}"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "основной состав"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Всего осуждено"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Оправдано"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Принудительные меры к невменяемым"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Преступление не является оконченным (приготовление, покушение)"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid ""
+"Число лиц, в отношении которых уголовные дела прекращены за отсутствием "
+"состава, события преступления, непричастностью к преступлению по основной статье"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid ""
+"Число лиц, в отношении которых уголовные дела прекращены по иным основаниям по "
+"основной статье"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Освобождено от наказания или наказание не назначалось"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Дополнительный состав"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Всего осуждено (по числу лиц)"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Всего осуждено (по количеству составов преступлений) "
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Оправдано (по числу лиц)"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Оправдано (по количеству составов преступлений)"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Виды основного наказания"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Лишение свободы"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Условное осуждение к лишению свободы"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Содержание в дисциплинарной воинской части"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Арест"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Ограничение свободы"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Ограничение по военной службе"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Работы"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Исправительные работы"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Обязательные работы"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Принудительные работы"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid ""
+"Лишение права занимать определенные должности или заниматься определенной "
+"деятельностью"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Штраф"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Условное осуждение к иным мерам"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Прекращено (основной состав)"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "За отсутствием события, состава, непричастностью к преступлению"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "По амнистии"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "За примирением с потерпевшим (ст. 25 УПК РФ)"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "В связи с деятельным раскаянием (ст. 28 УПК РФ)"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Назначена мера уголовно-правового характера судебный штраф (ст. 25.1 УПК РФ)"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "По другим основаниям"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid ""
+"На основании примечаний к статьям УК РФ (в том числе в связи с деятельным "
+"раскаянием ч. 2 ст. 28 УПК РФ)"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Прекращено (дополнительный состав)"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid ""
+"За отсутствием состава, события преступления, непричастностью к преступлению "
+"(по числу лиц)"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid ""
+"За отсутствием состава, события преступления, непричастностью к преступлению "
+"(по количеству составов преступлений)"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "По иным основаниям (по числу лиц) "
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "По иным основаниям (по количеству составов преступлений)"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Дополнительное наказание"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid ""
+"Лишение специального, воинского или почетного звания, классного чина и "
+"государственных наград"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Деяние совершено при обстоятельствах, исключающих преступность"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "необходимая оборона (ст. 37 УК РФ)"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "крайняя необходимость (ст. 39 УК РФ)"
+msgstr ""
+
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "обстоятельства, предусмотренные статьями 38, 40 - 42 УК РФ"
 msgstr ""

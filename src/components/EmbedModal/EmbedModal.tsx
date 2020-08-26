@@ -24,7 +24,11 @@ const EmbedModal: React.FC<EmbedModalProps> = ({
 
   return (
     <>
-      <button title={"Get embed code"} onClick={toggle}>
+      <button
+        className={cn(classes.button)}
+        title={"Get embed code"}
+        onClick={toggle}
+      >
         <img src={require("./assets/embed.svg")} alt={"Code icon"} />
       </button>
       <Modal

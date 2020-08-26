@@ -1,0 +1,39 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.container {
+  padding-left: 70px;
+}
+
+.table-container {
+  border-top: 4px solid var(--color-border-dark);
+  margin-top: 0.5rem;
+}
+
+.table tr th,
+.table tr td {
+  width: 110px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border-gray);
+  text-align: center;
+}
+
+.table tr th:nth-of-type(1),
+.table tr td:nth-of-type(1) {
+  width: auto;
+  text-align: left;
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+}

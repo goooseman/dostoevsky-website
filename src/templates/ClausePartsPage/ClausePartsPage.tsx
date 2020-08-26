@@ -6,12 +6,15 @@ import Accordion, { AccordionNode } from "src/components/ui-kit/Accordion";
 import PartsChart from "./charts/PartsChart";
 import PartsByResultChart from "./charts/PartsByResultChart";
 import PartsByPunishment from "./charts/PartsByPunishment";
+import ClausePartsTable from "./components/ClausePartsTable";
 
 export type ClausePartsPageViewMode =
   | "page"
+  | "table"
   | "iframe-parts"
   | "iframe-parts-by-result"
-  | "iframe-parts-by-punishment";
+  | "iframe-parts-by-punishment"
+  | "iframe-table-parts";
 
 export interface ClausePartsPageProps {
   clauseNumber: number;
@@ -20,35 +23,57 @@ export interface ClausePartsPageProps {
   parts: {
     part: string;
     name: string;
-    count: number;
-    byResult: {
-      convictedCount: number;
-      acquittalCount: number;
-      dismissalCount: number;
-      compulsoryTreatmentCount: number;
-    };
-    byPunishment: {
-      primaryLifeSentenceCount: number; // Пожизненное лишение свободы
-      primarySuspendedCount: number; // Условное осуждение к лишению свободы
-      primaryArrestCount: number; // Арест
-      primaryRestrainCount: number; // Ограничение свободы
-      primaryRestrain2009Count: number; // Ограничение свободы/ограничение по военной службе, содержание в дисциплинарной воинской части
-      primaryCorrectionalLabourCount: number; // Исправительные работы
-      primaryCommunityServiceCount: number; // Обязательные работы
-      primaryForcedLabourCount: number; // Принудительные работы
-      primaryFineCount: number; // Штраф
-      primaryDisqualificationCount: number; // Лишение права занимать определенные должности или заниматься определенной деятельностью
-      primaryOtherCount: number; // Условное осуждение к иным мерам
-      primaryMilitaryDisciplinaryUnitCount: number; // Содержание в дисциплинарной воинской части
-      primaryRestrictionsInMilitaryServiceCount: number; // Ограничение по военной службе
-      primaryImprisonmentCount: number; // Лишение свободы
-    };
+    totalConvicted: number; // Всего осуждено
+    totalAcquittal: number; // Оправдано
+    totalDismissal: number; // Прекращено
+    coerciveMeasures: number; // Принудительные меры к невменяемым
+    unfinishedOffence: number; // Преступление не является оконченным (приготовление, покушение)
+    addTotalPersons: number; // Доп. квалификация: осуждено по числу лиц
+    addTotalOffences: number; // Доп. квалификация: осуждено по количеству составов преступлений
+    addAcquittalPersons: number; // Доп. квалификация: оправдано по числу лиц
+    addAcquittalOffences: number; // Доп. квалификация: оправдано по количеству составов преступлений
+    noCrimeSelfDefence: number; // Обстоятельства, исключающие преступность: необходимая оборона
+    noCrimeNecessity: number; // Обстоятельства, исключающие преступность: крайняя необходимость
+    noCrimeOther: number; // Обстоятельства, исключающие преступность, предусмотренные статьями 38, 40 - 42 УК РФ
+
+    primaryLifeSentence: number; // Пожизненное лишение свободы
+    primarySuspended: number; // Условное осуждение к лишению свободы
+    primaryArrest: number; // Арест
+    primaryRestrain: number; // Ограничение свободы
+    primaryRestrain2009: number; // Ограничение свободы/ограничение по военной службе, содержание в дисциплинарной воинской части
+    primaryCorrectionalLabour: number; // Исправительные работы
+    primaryCommunityService: number; // Обязательные работы
+    primaryForcedLabour: number; // Принудительные работы
+    primaryFine: number; // Штраф
+    primaryDisqualification: number; // Лишение права занимать определенные должности или заниматься определенной деятельностью
+    primaryOther: number; // Условное осуждение к иным мерам
+    primaryMilitaryDisciplinaryUnit: number; // Содержание в дисциплинарной воинской части
+    primaryRestrictionsInMilitaryService: number; // Ограничение по военной службе
+    primaryImprisonment: number; // Лишение свободы
+    addDisqualification: number; // Дополнительное наказание: лишение права занимать определенные должности или заниматься определенной деятельностью
+    addFine: number; // Дополнительное наказание: штраф
+    addTitlesWithdraw: number; // Дополнительное наказание: лишение специального, воинского или почетного звания, классного чина и государственных наград
+    addRestrain: number; // Дополнительное наказание: ограничение свободы
+
+    dismissalAbsenceOfEvent: number; // Прекращено за отсутствием события, состава, непричастностью к преступлению
+    dismissalAmnesty: number; // Прекращено по амнистии
+    dismissalReconciliation: number; // Прекращено за примирением с потерпевшим
+    dismissalRepentance: number; // Прекращено в связи с деятельным раскаянием
+    dismissalCourtFine: number; // Прекращено судебный штраф
+    dismissalOther: number; // Прекращено по другим основаниям
+    dismissalRepentance2: number; // Прекращено по другим основаниям: на основании примечаний к статьям УК РФ (в связи с деятельным раскаянием ч. 2 ст. 28 УПК РФ)'
+    addDismissalPersons: number; // Доп. квалификация: прекращено по числу лиц
+    addDismissalOffences: number; // Доп. квалификация: прекращено по количеству составов преступлений
+    addDismissalOtherPersons: number; // Доп. квалификация: прекращено по иным основаниям по числу лиц
+    addDismissalOtherOffences: number; // Доп. квалификация: прекращено по иным основаниям по количеству составов преступлений
+    // addUnfitToPleadPersons: number; // Доп. квалификация: признано невменяемыми по числу лиц
+    // addUnfitToPleadOffences: number; // Доп. квалификация: признано невменяемыми по количеству составов преступлений
   }[];
 }
 
 class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
   render(): React.ReactNode {
-    const { clauseNumber, year, view } = this.props;
+    const { clauseNumber, year, view, parts } = this.props;
 
     if (view === "iframe-parts") {
       return <PartsChart {...this.props} isIframeMode />;
@@ -62,6 +87,10 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
       return <PartsByPunishment {...this.props} isIframeMode />;
     }
 
+    if (view === "iframe-table-parts") {
+      return <ClausePartsTable {...this.props} />;
+    }
+
     return (
       <ClausePageLayout
         clauseNumber={clauseNumber}
@@ -69,18 +98,22 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
         title="Части"
         pageType="parts"
         headerChildren={this.renderHeaderChildren()}
+        hasParts={parts.length > 1}
       >
-        <div className={cn(classes.charts)}>
-          <div className={cn(classes.chartContainer)}>
-            <PartsChart {...this.props} />
+        {view === "table" ? <ClausePartsTable {...this.props} /> : null}
+        {view === "page" ? (
+          <div className={cn(classes.charts)}>
+            <div className={cn(classes.chartContainer)}>
+              <PartsChart {...this.props} />
+            </div>
+            <div className={cn(classes.chartContainer)}>
+              <PartsByResultChart {...this.props} />
+            </div>
+            <div className={cn(classes.chartContainer)}>
+              <PartsByPunishment {...this.props} />
+            </div>
           </div>
-          <div className={cn(classes.chartContainer)}>
-            <PartsByResultChart {...this.props} />
-          </div>
-          <div className={cn(classes.chartContainer)}>
-            <PartsByPunishment {...this.props} />
-          </div>
-        </div>
+        ) : null}
       </ClausePageLayout>
     );
   }
