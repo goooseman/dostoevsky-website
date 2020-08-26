@@ -3,9 +3,9 @@ import ClausePageLayout from "src/components/ClausePageLayout";
 import classes from "./ClausePartsPage.module.css";
 import cn from "clsx";
 import Accordion, { AccordionNode } from "src/components/ui-kit/Accordion";
-import PartsChart from "./charts/PartsChart";
-import PartsByResultChart from "./charts/PartsByResultChart";
-import PartsByPunishment from "./charts/PartsByPunishment";
+import PartsChart from "./components/charts/PartsChart";
+import PartsByResultChart from "./components/charts/PartsByResultChart";
+import PartsByPunishment from "./components/charts/PartsByPunishment";
 import ClausePartsTable from "./components/ClausePartsTable";
 
 export type ClausePartsPageViewMode =
