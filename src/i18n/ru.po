@@ -91,6 +91,63 @@ msgstr ""
 msgid "Plus icon"
 msgstr ""
 
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid ""
+"В {{ year }} году по части {{ partIndex }} статьи {{ clauseNumber }} были "
+"осуждены по основному составу {{ count }} человек."
+msgid_plural ""
+"В {{ year }} году по части {{ partIndex }} статьи {{ clauseNumber }} были "
+"осуждены по основному составу {{ count }} человек."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid ""
+"По части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному "
+"составу {{ count }} человек."
+msgid_plural ""
+"По части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному "
+"составу {{ count }} человек."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid ""
+"Из них {{ count }} ({{ primarySuspendedPercent }}%) был приговорен к лишению "
+"свободы условно,"
+msgid_plural ""
+"Из них {{ count }} ({{ primarySuspendedPercent }}%) были приговорены к лишению "
+"свободы условно,"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid "еще {{ count }} ({{ primaryRestrainPercent }}%) получил реальные сроки."
+msgid_plural "еще {{ count }} ({{ primaryRestrainPercent }}%) получили реальные сроки."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid "Оправдан {{ count }} человек."
+msgid_plural "Оправданы {{ count }} человека."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid "Прекращены дела в отношении"
+msgstr ""
+
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid "человек"
+msgid_plural "человек"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid "По дополнительному составу осуждены"
+msgstr ""
+
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Результаты рассмотрения дел по статье {{ clause }}"
 msgstr ""
