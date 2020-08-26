@@ -377,7 +377,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
               },
               {
                 key: "main",
-                value: p.dismissalCourtFinе,
+                value: p.dismissalCourtFine,
               },
             ],
           },

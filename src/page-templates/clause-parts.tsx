@@ -66,8 +66,8 @@ export const query = graphql`
           dismissalAmnesty
           dismissalReconciliation
           dismissalRepentance
-          dismissalOther
           dismissalCourtFine
+          dismissalOther
           coerciveMeasures
           primaryLifeSentence
           primarySuspended
@@ -83,6 +83,23 @@ export const query = graphql`
           primaryMilitaryDisciplinaryUnit
           primaryRestrictionsInMilitaryService
           primaryImprisonment
+          unfinishedOffence
+          addTotalPersons
+          addTotalOffences
+          addAcquittalPersons
+          addAcquittalOffences
+          noCrimeSelf_defence
+          noCrimeNecessity
+          noCrimeOther
+          addDisqualification
+          addFine
+          addTitlesWithdraw
+          addRestrain
+          dismissalRepentance2
+          addDismissalPersons
+          addDismissalOffences
+          addDismissalOtherPersons
+          addDismissalOtherOffences
         }
       }
     }

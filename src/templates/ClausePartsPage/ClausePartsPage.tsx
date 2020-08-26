@@ -59,7 +59,7 @@ export interface ClausePartsPageProps {
     dismissalAmnesty: number; // Прекращено по амнистии
     dismissalReconciliation: number; // Прекращено за примирением с потерпевшим
     dismissalRepentance: number; // Прекращено в связи с деятельным раскаянием
-    dismissalCourtFinе: number; // Прекращено судебный штраф
+    dismissalCourtFine: number; // Прекращено судебный штраф
     dismissalOther: number; // Прекращено по другим основаниям
     dismissalRepentance2: number; // Прекращено по другим основаниям: на основании примечаний к статьям УК РФ (в связи с деятельным раскаянием ч. 2 ст. 28 УПК РФ)'
     addDismissalPersons: number; // Доп. квалификация: прекращено по числу лиц

@@ -33,6 +33,23 @@ interface ClausePartsPageContainerProps {
     primaryMilitaryDisciplinaryUnit: number;
     primaryRestrictionsInMilitaryService: number;
     primaryImprisonment: number;
+    unfinishedOffence: number;
+    addTotalPersons: number;
+    addTotalOffences: number;
+    addAcquittalPersons: number;
+    addAcquittalOffences: number;
+    noCrimeSelf_defence: number;
+    noCrimeNecessity: number;
+    noCrimeOther: number;
+    addDisqualification: number;
+    addFine: number;
+    addTitlesWithdraw: number;
+    addRestrain: number;
+    dismissalRepentance2: number;
+    addDismissalPersons: number;
+    addDismissalOffences: number;
+    addDismissalOtherPersons: number;
+    addDismissalOtherOffences: number;
   }[];
 }
 
@@ -64,9 +81,8 @@ class ClausePartsPageContainer extends PureComponent<
     const { parts } = this.props;
 
     return parts.map((p) => {
-      const convictedCount = p.totalConvicted;
-      const acquittalCount = p.acquittal;
-      const dismissalCount =
+      const totalAcquittal = p.acquittal;
+      const totalDismissal =
         p.dismissalAbsenceOfEvent +
         p.dismissalAmnesty +
         p.dismissalReconciliation +
@@ -74,35 +90,11 @@ class ClausePartsPageContainer extends PureComponent<
         p.dismissalCourtFine +
         p.dismissalOther +
         p.coerciveMeasures;
-      const compulsoryTreatmentCount = p.coerciveMeasures;
       return {
-        part: p.part,
-        name: p.name,
-        count: convictedCount,
-        byResult: {
-          convictedCount,
-          acquittalCount,
-          dismissalCount,
-          compulsoryTreatmentCount,
-        },
-        byPunishment: {
-          primaryLifeSentenceCount: p.primaryLifeSentence,
-          primarySuspendedCount: p.primarySuspended,
-          primaryArrestCount: p.primaryArrest,
-          primaryRestrainCount: p.primaryRestrain,
-          primaryRestrain2009Count: p.primaryRestrain2009 || 0,
-          primaryCorrectionalLabourCount: p.primaryCorrectionalLabour,
-          primaryCommunityServiceCount: p.primaryCommunityService,
-          primaryForcedLabourCount: p.primaryForcedLabour,
-          primaryFineCount: p.primaryFine,
-          primaryDisqualificationCount: p.primaryDisqualification,
-          primaryOtherCount: p.primaryOther,
-          primaryMilitaryDisciplinaryUnitCount:
-            p.primaryMilitaryDisciplinaryUnit,
-          primaryRestrictionsInMilitaryServiceCount:
-            p.primaryRestrictionsInMilitaryService,
-          primaryImprisonmentCount: p.primaryImprisonment,
-        },
+        totalAcquittal,
+        totalDismissal,
+        ...p,
+        noCrimeSelfDefence: p.noCrimeSelf_defence,
       };
     });
   };
