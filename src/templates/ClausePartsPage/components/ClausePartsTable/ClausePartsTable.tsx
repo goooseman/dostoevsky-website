@@ -1,10 +1,59 @@
 import React from "react";
 import Table from "src/components/Table";
 import { useLocale, T } from "react-targem";
-import type { ClausePartsPageProps } from "../../ClausePartsPage";
 import { getClauseLink } from "src/config/routes";
 
-interface ClausePartsTableProps extends ClausePartsPageProps {}
+interface ClausePartsTableProps {
+  clauseNumber: number;
+  year: number;
+  parts: {
+    part: string;
+    name: string;
+    totalConvicted: number; // Всего осуждено
+    totalAcquittal: number; // Оправдано
+    totalDismissal: number; // Прекращено
+    coerciveMeasures: number; // Принудительные меры к невменяемым
+    unfinishedOffence: number; // Преступление не является оконченным (приготовление, покушение)
+    addTotalPersons: number; // Доп. квалификация: осуждено по числу лиц
+    addTotalOffences: number; // Доп. квалификация: осуждено по количеству составов преступлений
+    addAcquittalPersons: number; // Доп. квалификация: оправдано по числу лиц
+    addAcquittalOffences: number; // Доп. квалификация: оправдано по количеству составов преступлений
+    noCrimeSelfDefence: number; // Обстоятельства, исключающие преступность: необходимая оборона
+    noCrimeNecessity: number; // Обстоятельства, исключающие преступность: крайняя необходимость
+    noCrimeOther: number; // Обстоятельства, исключающие преступность, предусмотренные статьями 38, 40 - 42 УК РФ
+
+    primaryLifeSentence: number; // Пожизненное лишение свободы
+    primarySuspended: number; // Условное осуждение к лишению свободы
+    primaryArrest: number; // Арест
+    primaryRestrain: number; // Ограничение свободы
+    primaryRestrain2009: number; // Ограничение свободы/ограничение по военной службе, содержание в дисциплинарной воинской части
+    primaryCorrectionalLabour: number; // Исправительные работы
+    primaryCommunityService: number; // Обязательные работы
+    primaryForcedLabour: number; // Принудительные работы
+    primaryFine: number; // Штраф
+    primaryDisqualification: number; // Лишение права занимать определенные должности или заниматься определенной деятельностью
+    primaryOther: number; // Условное осуждение к иным мерам
+    primaryMilitaryDisciplinaryUnit: number; // Содержание в дисциплинарной воинской части
+    primaryRestrictionsInMilitaryService: number; // Ограничение по военной службе
+    primaryImprisonment: number; // Лишение свободы
+    addDisqualification: number; // Дополнительное наказание: лишение права занимать определенные должности или заниматься определенной деятельностью
+    addFine: number; // Дополнительное наказание: штраф
+    addTitlesWithdraw: number; // Дополнительное наказание: лишение специального, воинского или почетного звания, классного чина и государственных наград
+    addRestrain: number; // Дополнительное наказание: ограничение свободы
+
+    dismissalAbsenceOfEvent: number; // Прекращено за отсутствием события, состава, непричастностью к преступлению
+    dismissalAmnesty: number; // Прекращено по амнистии
+    dismissalReconciliation: number; // Прекращено за примирением с потерпевшим
+    dismissalRepentance: number; // Прекращено в связи с деятельным раскаянием
+    dismissalCourtFine: number; // Прекращено судебный штраф
+    dismissalOther: number; // Прекращено по другим основаниям
+    dismissalRepentance2: number; // Прекращено по другим основаниям: на основании примечаний к статьям УК РФ (в связи с деятельным раскаянием ч. 2 ст. 28 УПК РФ)'
+    addDismissalPersons: number; // Доп. квалификация: прекращено по числу лиц
+    addDismissalOffences: number; // Доп. квалификация: прекращено по количеству составов преступлений
+    addDismissalOtherPersons: number; // Доп. квалификация: прекращено по иным основаниям по числу лиц
+    addDismissalOtherOffences: number; // Доп. квалификация: прекращено по иным основаниям по количеству составов преступлений
+  }[];
+}
 
 const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
   clauseNumber,

@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
 import PercentageBar from "src/components/charts/PercentageBar";
-import type { ClausePartsPageProps } from "../../ClausePartsPage";
 import { getClauseLink } from "src/config/routes";
 
 const byResultLabels = [
@@ -10,8 +9,17 @@ const byResultLabels = [
   "принудительное лечение",
 ];
 
-interface PartsByResultChartProps extends ClausePartsPageProps {
+interface PartsByResultChartProps {
   isIframeMode?: boolean;
+  clauseNumber: number;
+  year: number;
+  parts: {
+    part: string;
+    totalConvicted: number;
+    totalAcquittal: number;
+    totalDismissal: number;
+    coerciveMeasures: number;
+  }[];
 }
 
 class PartsByResultChart extends PureComponent<PartsByResultChartProps> {

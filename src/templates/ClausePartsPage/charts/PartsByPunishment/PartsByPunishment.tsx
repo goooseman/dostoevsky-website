@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
 import Bar from "src/components/charts/Bar";
-import type { ClausePartsPageProps } from "../../ClausePartsPage";
 import { getClauseLink } from "src/config/routes";
 
 const byPunishmentLabels = [
@@ -20,8 +19,27 @@ const byPunishmentLabels = [
   "лишение свободы",
 ];
 
-interface PartsByPunishmentProps extends ClausePartsPageProps {
+interface PartsByPunishmentProps {
   isIframeMode?: boolean;
+  clauseNumber: number;
+  year: number;
+  parts: {
+    part: string;
+    primaryLifeSentence: number;
+    primarySuspended: number;
+    primaryArrest: number;
+    primaryRestrain: number;
+    primaryRestrain2009: number;
+    primaryCorrectionalLabour: number;
+    primaryCommunityService: number;
+    primaryForcedLabour: number;
+    primaryFine: number;
+    primaryDisqualification: number;
+    primaryOther: number;
+    primaryMilitaryDisciplinaryUnit: number;
+    primaryRestrictionsInMilitaryService: number;
+    primaryImprisonment: number;
+  }[];
 }
 
 class PartsByPunishment extends PureComponent<PartsByPunishmentProps> {

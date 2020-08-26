@@ -1,10 +1,15 @@
 import React, { PureComponent } from "react";
 import PercentageBar from "src/components/charts/PercentageBar";
-import type { ClausePartsPageProps } from "../../ClausePartsPage";
 import { getClauseLink } from "src/config/routes";
 
-interface PartsProps extends ClausePartsPageProps {
+interface PartsProps {
   isIframeMode?: boolean;
+  clauseNumber: number;
+  year: number;
+  parts: {
+    part: string;
+    totalConvicted: number;
+  }[];
 }
 
 class Parts extends PureComponent<PartsProps> {
