@@ -44,7 +44,12 @@ class TableContainer extends PureComponent<
     const { activeTableIndex } = this.state;
     const table = tables[activeTableIndex];
     let result = "";
-    result += this.getCsvRow(table.columns.map((c) => c.title));
+    const titleRow = this.getCsvRow(
+      table.columns.filter((c) => !c.isHidden).map((c) => c.title)
+    );
+    if (titleRow !== "\n") {
+      result += titleRow;
+    }
     for (const row of table.rows) {
       result += this.getCsvRow(row.values.map((v) => v.value.toString()));
     }

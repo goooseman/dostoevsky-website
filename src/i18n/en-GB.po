@@ -60,6 +60,16 @@ msgstr "OI logo"
 msgid "D4S logo"
 msgstr "D4S logo"
 
+#: src/components/SpoilerText/SpoilerText.tsx:
+#: src/components/ui-kit/Accordion/Accordion.tsx:
+msgid "Up icon"
+msgstr "Up icon"
+
+#: src/components/SpoilerText/SpoilerText.tsx:
+#: src/components/ui-kit/Accordion/Accordion.tsx:
+msgid "Down icon"
+msgstr "Down icon"
+
 #: src/components/Table/components/TableRow/TableRow.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
 msgid "Close hidden content"
@@ -80,13 +90,74 @@ msgstr "Open hidden content"
 msgid "Plus icon"
 msgstr "Plus icon"
 
-#: src/components/ui-kit/Accordion/Accordion.tsx:
-msgid "Up icon"
-msgstr "Up icon"
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid ""
+"В {{ year }} году по части {{ partIndex }} статьи {{ clauseNumber }} были "
+"осуждены по основному составу {{ count }} человек."
+msgid_plural ""
+"В {{ year }} году по части {{ partIndex }} статьи {{ clauseNumber }} были "
+"осуждены по основному составу {{ count }} человек."
+msgstr[0] ""
+"В {{ year }} году по части {{ partIndex }} статьи {{ clauseNumber }} были "
+"осуждены по основному составу {{ count }} человек."
+msgstr[1] ""
+"В {{ year }} году по части {{ partIndex }} статьи {{ clauseNumber }} были "
+"осуждены по основному составу {{ count }} человек."
 
-#: src/components/ui-kit/Accordion/Accordion.tsx:
-msgid "Down icon"
-msgstr "Down icon"
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid ""
+"По части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному "
+"составу {{ count }} человек."
+msgid_plural ""
+"По части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному "
+"составу {{ count }} человек."
+msgstr[0] ""
+"По части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному "
+"составу {{ count }} человек."
+msgstr[1] ""
+"По части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному "
+"составу {{ count }} человек."
+
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid ""
+"Из них {{ count }} ({{ primarySuspendedPercent }}%) был приговорен к лишению "
+"свободы условно,"
+msgid_plural ""
+"Из них {{ count }} ({{ primarySuspendedPercent }}%) были приговорены к лишению "
+"свободы условно,"
+msgstr[0] ""
+"Из них {{ count }} ({{ primarySuspendedPercent }}%) был приговорен к лишению "
+"свободы условно,"
+msgstr[1] ""
+"Из них {{ count }} ({{ primarySuspendedPercent }}%) были приговорены к лишению "
+"свободы условно,"
+
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid "еще {{ count }} ({{ primaryRestrainPercent }}%) получил реальные сроки."
+msgid_plural "еще {{ count }} ({{ primaryRestrainPercent }}%) получили реальные сроки."
+msgstr[0] "еще {{ count }} ({{ primaryRestrainPercent }}%) получил реальные сроки."
+msgstr[1] "еще {{ count }} ({{ primaryRestrainPercent }}%) получили реальные сроки."
+
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid "Оправдан {{ count }} человек."
+msgid_plural "Оправданы {{ count }} человека."
+msgstr[0] "Оправдан {{ count }} человек."
+msgstr[1] "Оправданы {{ count }} человека."
+
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid "Прекращены дела в отношении"
+msgstr "Прекращены дела в отношении"
+
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid "человек"
+msgid_plural "человек"
+msgstr[0] "человек"
+msgstr[1] "человек"
+
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid "По дополнительному составу осуждены"
+msgstr "По дополнительному составу осуждены"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Результаты рассмотрения дел по статье {{ clause }}"

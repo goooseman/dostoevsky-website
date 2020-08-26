@@ -279,12 +279,5 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: "gatsby-plugin-no-javascript",
-      options: {
-        // https://stackoverflow.com/a/406408
-        excludePaths: "^((?!iframe).)*$",
-      },
-    },
   ],
 };
