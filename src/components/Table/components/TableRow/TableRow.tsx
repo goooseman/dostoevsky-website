@@ -24,7 +24,8 @@ class TableRow extends PureComponent<TableRowProps> {
         onClick={isAccordion ? onClick : undefined}
         className={cn({
           [classes.rowAccordion]: isAccordion,
-          [classes.isOpened]: isOpened,
+          [classes.isRegular]: !isAccordion,
+          [classes.isClosed]: !isOpened,
         })}
       >
         {values.map((v) => (

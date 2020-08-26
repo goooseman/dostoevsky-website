@@ -4,12 +4,210 @@
   transform: scale(1); /* https://stackoverflow.com/a/51407758 */
 }
 
-.row-accordion ~ tr {
+.row-accordion.is-closed + tr.is-regular,
+.row-accordion.is-closed + tr.is-regular + tr.is-regular,
+.row-accordion.is-closed + tr.is-regular + tr.is-regular + tr.is-regular,
+.row-accordion.is-closed
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular,
+.row-accordion.is-closed
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular,
+.row-accordion.is-closed
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular,
+.row-accordion.is-closed
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular,
+.row-accordion.is-closed
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular,
+.row-accordion.is-closed
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular,
+.row-accordion.is-closed
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular,
+.row-accordion.is-closed
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular,
+.row-accordion.is-closed
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular,
+.row-accordion.is-closed
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular,
+.row-accordion.is-closed
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular,
+.row-accordion.is-closed
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular,
+.row-accordion.is-closed
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular,
+.row-accordion.is-closed
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular,
+.row-accordion.is-closed
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular,
+.row-accordion.is-closed
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular
+  + tr.is-regular {
   display: none;
-}
-
-.row-accordion.is-opened ~ tr {
-  display: table-row;
 }
 
 .collapse-icon-button {

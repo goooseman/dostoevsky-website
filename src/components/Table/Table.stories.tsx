@@ -15,6 +15,50 @@ const defaultProps = {
   onTableTitleClick: () => handleTableTitleClick,
 };
 
+export const withTwoSections = (): React.ReactNode => (
+  <Table
+    {...defaultProps}
+    title="Foo"
+    tables={[
+      {
+        columns: [{ title: "", key: "title" }],
+        rows: [
+          {
+            key: "1",
+            values: [{ key: "title", value: "Foo" }],
+          },
+          {
+            key: "2",
+            values: [{ key: "title", value: "Block 1" }],
+            isAccordion: true,
+          },
+          {
+            key: "3",
+            values: [{ key: "title", value: "Foo 1" }],
+          },
+          {
+            key: "4",
+            values: [{ key: "title", value: "Foo 1" }],
+          },
+          {
+            key: "5",
+            values: [{ key: "title", value: "Block 2" }],
+            isAccordion: true,
+          },
+          {
+            key: "6",
+            values: [{ key: "title", value: "Foo 2" }],
+          },
+          {
+            key: "7",
+            values: [{ key: "title", value: "Foo 2" }],
+          },
+        ],
+      },
+    ]}
+  />
+);
+
 export const withClauseMain = (): React.ReactNode => (
   <Table
     {...defaultProps}
