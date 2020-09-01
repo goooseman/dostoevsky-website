@@ -23,6 +23,7 @@ interface BarProps extends React.ComponentProps<typeof ChartWrapper> {
     };
   }[];
   labels: string[];
+  areLabelsRotated?: boolean;
 }
 
 const ROW_HEIGHT = 50;
@@ -40,7 +41,7 @@ class Bar extends PureComponent<BarProps> {
   }
 
   public componentDidMount(): void {
-    const { charts, labels } = this.props;
+    const { charts, labels, areLabelsRotated } = this.props;
     for (let i = 0; i < charts.length; i++) {
       const { groups, tooltipDescription } = charts[i];
       const series: { value: number }[][] = groups.map((g) =>
@@ -75,7 +76,7 @@ class Bar extends PureComponent<BarProps> {
             onlyInteger: true,
             showGrid: true,
             labelOffset: {
-              y: Y_LABEL_MARGIN,
+              y: areLabelsRotated ? 0 : Y_LABEL_MARGIN,
             },
           },
           axisY: {
@@ -88,6 +89,9 @@ class Bar extends PureComponent<BarProps> {
             offset: 0,
             fullWidth: true,
           } as IChartistStepAxis,
+          chartPadding: {
+            bottom: areLabelsRotated ? 20 : 0,
+          },
           plugins,
         }
       );
@@ -101,7 +105,7 @@ class Bar extends PureComponent<BarProps> {
   }
 
   render(): React.ReactNode {
-    const { labels, charts, ...wrapperProps } = this.props;
+    const { labels, charts, areLabelsRotated, ...wrapperProps } = this.props;
 
     return (
       <ChartWrapper {...wrapperProps} labels={this.getLabels()}>
@@ -114,11 +118,10 @@ class Bar extends PureComponent<BarProps> {
             </Typography>
             <div
               ref={this.chartRefs[i]}
-              className={
-                charts.length > 1
-                  ? `ct-chart-${String.fromCharCode(97 + i)}`
-                  : undefined
-              }
+              className={cn({
+                [`ct-chart-${String.fromCharCode(97 + i)}`]: charts.length > 1,
+                [classes.areLabelsRotated]: areLabelsRotated,
+              })}
               style={{
                 height: labels.length * ROW_HEIGHT,
               }}

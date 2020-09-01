@@ -153,5 +153,5 @@ const forChronoPageProps = {
 };
 
 export const forChronoPage = (): React.ReactNode => (
-  <Bar {...forChronoPageProps} />
+  <Bar {...forChronoPageProps} areLabelsRotated />
 );
