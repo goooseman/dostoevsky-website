@@ -16,6 +16,7 @@ interface LineChartProps extends React.ComponentProps<typeof ChartWrapper> {
   tooltipDescription: {
     [key: string]: string;
   };
+  labels: string[];
 }
 
 const Y_LABEL_MARGIN = 15;

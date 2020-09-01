@@ -5,17 +5,20 @@ import { render, waitFor } from "__utils__/render";
 const defaultProps = {
   title: "Title",
   downloadFilename: "test",
-  tooltipDescription: {
-    Foo: "Bar",
-  },
   iframePath: "/",
+};
+
+const tooltipDescription = {
+  Foo: "Bar",
 };
 
 it("should contain 1 bar", async () => {
   const { container } = render(
     <BarContainer
       labels={["foo"]}
-      groups={[{ title: "group", values: [1] }]}
+      charts={[
+        { groups: [{ title: "group", values: [1] }], tooltipDescription },
+      ]}
       {...defaultProps}
     />
   );
@@ -30,9 +33,14 @@ it("should not render empty bar", async () => {
   const { container } = render(
     <BarContainer
       labels={["foo", "bar"]}
-      groups={[
-        { title: "group 1", values: [1, 0] },
-        { title: "group 2", values: [0, 0] },
+      charts={[
+        {
+          groups: [
+            { title: "group 1", values: [1, 0] },
+            { title: "group 2", values: [0, 0] },
+          ],
+          tooltipDescription,
+        },
       ]}
       {...defaultProps}
     />

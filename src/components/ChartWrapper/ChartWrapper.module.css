@@ -109,6 +109,10 @@ body {
   }
 }
 
+.charts-container {
+  display: flex;
+}
+
 .legend {
   display: flex;
 }
@@ -127,6 +131,7 @@ body {
   flex-wrap: nowrap;
   align-items: flex-end;
   margin-right: 10px;
+  margin-bottom: 5px;
   margin-left: 10px;
 }
 
