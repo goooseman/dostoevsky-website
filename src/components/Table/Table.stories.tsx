@@ -389,3 +389,187 @@ export const withClausePartsManyParts = (): React.ReactNode => (
     activeTableIndex={1}
   />
 );
+
+const clauseChrono = [
+  {
+    title: "Часть 1",
+    columns: [
+      { title: "Год", key: "1" },
+      { title: "Всего осуждено", key: "2" },
+      { title: "Оправдано", key: "3" },
+      {
+        title:
+          "Прекращено за отсутствием события, состава, непричастности к преступлению",
+        key: "4",
+      },
+      { title: "Прекращено по амнистии", key: "5" },
+      { title: "Прекращено в связи с деятельным раскаянием ", key: "6" },
+      { title: "Прекращено за примирением ", key: "7" },
+      { title: "Судебный штраф", key: "8" },
+      { title: "Прекращено по другим основаниям", key: "9" },
+      { title: "Принудительные меры к невменяемым", key: "10" },
+    ],
+    rows: [
+      {
+        key: "1",
+        values: [
+          { key: "1", value: "2019" },
+          { key: "2", value: "19" },
+          { key: "3", value: "3" },
+          { key: "4", value: "62" },
+          { key: "5", value: "0" },
+          { key: "6", value: "1" },
+          { key: "7", value: "0" },
+          { key: "8", value: "1" },
+          { key: "9", value: "36" },
+          { key: "10", value: "1" },
+        ],
+      },
+      {
+        key: "2",
+        values: [
+          { key: "1", value: "2018" },
+          { key: "2", value: "426" },
+          { key: "3", value: "2" },
+          { key: "4", value: "0" },
+          { key: "5", value: "0" },
+          { key: "6", value: "19" },
+          { key: "7", value: "1" },
+          { key: "8", value: "45" },
+          { key: "9", value: "11" },
+          { key: "10", value: "10" },
+        ],
+      },
+      {
+        key: "3",
+        values: [
+          { key: "1", value: "2017" },
+          { key: "2", value: "426" },
+          { key: "3", value: "2" },
+          { key: "4", value: "0" },
+          { key: "5", value: "0" },
+          { key: "6", value: "19" },
+          { key: "7", value: "1" },
+          { key: "8", value: "45" },
+          { key: "9", value: "11" },
+          { key: "10", value: "10" },
+        ],
+      },
+      {
+        key: "4",
+        values: [
+          { key: "1", value: "2016" },
+          { key: "2", value: "426" },
+          { key: "3", value: "2" },
+          { key: "4", value: "0" },
+          { key: "5", value: "0" },
+          { key: "6", value: "19" },
+          { key: "7", value: "1" },
+          { key: "8", value: "45" },
+          { key: "9", value: "11" },
+          { key: "10", value: "10" },
+        ],
+      },
+      {
+        key: "5",
+        values: [
+          { key: "1", value: "2015" },
+          { key: "2", value: "426" },
+          { key: "3", value: "2" },
+          { key: "4", value: "0" },
+          { key: "5", value: "0" },
+          { key: "6", value: "19" },
+          { key: "7", value: "1" },
+          { key: "8", value: "45" },
+          { key: "9", value: "11" },
+          { key: "10", value: "10" },
+        ],
+      },
+      {
+        key: "6",
+        values: [
+          { key: "1", value: "2014" },
+          { key: "2", value: "426" },
+          { key: "3", value: "2" },
+          { key: "4", value: "0" },
+          { key: "5", value: "0" },
+          { key: "6", value: "19" },
+          { key: "7", value: "1" },
+          { key: "8", value: "45" },
+          { key: "9", value: "11" },
+          { key: "10", value: "10" },
+        ],
+      },
+      {
+        key: "7",
+        values: [
+          { key: "1", value: "2013" },
+          { key: "2", value: "426" },
+          { key: "3", value: "2" },
+          { key: "4", value: "0" },
+          { key: "5", value: "0" },
+          { key: "6", value: "19" },
+          { key: "7", value: "1" },
+          { key: "8", value: "45" },
+          { key: "9", value: "11" },
+          { key: "10", value: "10" },
+        ],
+      },
+      {
+        key: "8",
+        values: [
+          { key: "1", value: "2012" },
+          { key: "2", value: "426" },
+          { key: "3", value: "2" },
+          { key: "4", value: "0" },
+          { key: "5", value: "0" },
+          { key: "6", value: "19" },
+          { key: "7", value: "1" },
+          { key: "8", value: "45" },
+          { key: "9", value: "11" },
+          { key: "10", value: "10" },
+        ],
+      },
+      {
+        key: "9",
+        values: [
+          { key: "1", value: "2011" },
+          { key: "2", value: "426" },
+          { key: "3", value: "2" },
+          { key: "4", value: "0" },
+          { key: "5", value: "0" },
+          { key: "6", value: "19" },
+          { key: "7", value: "1" },
+          { key: "8", value: "45" },
+          { key: "9", value: "11" },
+          { key: "10", value: "10" },
+        ],
+      },
+      {
+        key: "10",
+        values: [
+          { key: "1", value: "2010" },
+          { key: "2", value: "426" },
+          { key: "3", value: "2" },
+          { key: "4", value: "0" },
+          { key: "5", value: "0" },
+          { key: "6", value: "19" },
+          { key: "7", value: "1" },
+          { key: "8", value: "45" },
+          { key: "9", value: "11" },
+          { key: "10", value: "10" },
+        ],
+      },
+    ],
+  },
+];
+
+export const withClauseChronology = (): React.ReactNode => (
+  <Table
+    {...defaultProps}
+    isEqualWidth
+    isColored
+    title="основные параметры"
+    tables={clauseChrono}
+  />
+);

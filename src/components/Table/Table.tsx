@@ -25,6 +25,8 @@ interface TableProps {
     }[];
     title?: React.ReactNode;
   }[];
+  isEqualWidth?: boolean;
+  isColored?: boolean;
   onDownloadButtonClick: () => void;
   onTableTitleClick: (i: number) => () => void;
   activeTableIndex: number;
@@ -41,6 +43,8 @@ class Table extends PureComponent<TableProps> {
       onDownloadButtonClick,
       onTableTitleClick,
       activeTableIndex,
+      isEqualWidth,
+      isColored,
     } = this.props;
 
     const { rows, columns } = tables[activeTableIndex];
@@ -71,14 +75,21 @@ class Table extends PureComponent<TableProps> {
         ) : null}
 
         <div className={cn(classes.tableContainer)}>
-          <table className={cn(classes.table)}>
+          <table
+            className={cn(classes.table, {
+              [classes.isEqualWidth]: isEqualWidth,
+              [classes.isColored]: isColored,
+            })}
+          >
             <thead>
               <tr>
                 {columns.map((c) =>
                   !c.isHidden ? (
                     <th key={c.key}>
                       <Typography isUpperCased component="span">
-                        <b>{c.title}</b>
+                        <b>
+                          <small>{c.title}</small>
+                        </b>
                       </Typography>
                     </th>
                   ) : null
