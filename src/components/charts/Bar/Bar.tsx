@@ -106,6 +106,11 @@ class Bar extends PureComponent<BarProps> {
           <div
             key={i}
             ref={this.chartRefs[i]}
+            className={
+              charts.length > 1
+                ? `ct-chart-${String.fromCharCode(97 + i)}`
+                : undefined
+            }
             style={{
               height: labels.length * ROW_HEIGHT,
               width: `${100 / charts.length}%`,
