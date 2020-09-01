@@ -124,6 +124,9 @@ body {
 .charts-container {
   display: flex;
 }
+.charts-container > div {
+  width: 100%;
+}
 
 .legend {
   display: flex;
