@@ -6,7 +6,10 @@ import Chartist, {
   IChartDrawLabelData,
   IChartDrawGridData,
 } from "chartist";
+import classes from "./Bar.module.css";
+import cn from "clsx";
 import he from "he";
+import Typography from "src/components/ui-kit/Typography";
 
 interface BarProps extends React.ComponentProps<typeof ChartWrapper> {
   charts: {
@@ -103,19 +106,24 @@ class Bar extends PureComponent<BarProps> {
     return (
       <ChartWrapper {...wrapperProps} labels={this.getLabels()}>
         {charts.map((c, i) => (
-          <div
-            key={i}
-            ref={this.chartRefs[i]}
-            className={
-              charts.length > 1
-                ? `ct-chart-${String.fromCharCode(97 + i)}`
-                : undefined
-            }
-            style={{
-              height: labels.length * ROW_HEIGHT,
-              width: `${100 / charts.length}%`,
-            }}
-          ></div>
+          <div key={i} style={{ width: `${100 / charts.length}%` }}>
+            <Typography className={cn(classes.chartTitle)} isUpperCased>
+              <b>
+                <small>{c.title}</small>
+              </b>
+            </Typography>
+            <div
+              ref={this.chartRefs[i]}
+              className={
+                charts.length > 1
+                  ? `ct-chart-${String.fromCharCode(97 + i)}`
+                  : undefined
+              }
+              style={{
+                height: labels.length * ROW_HEIGHT,
+              }}
+            ></div>
+          </div>
         ))}
       </ChartWrapper>
     );
