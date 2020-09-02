@@ -61,7 +61,7 @@ class ClauseChronologyPage extends PureComponent<ClauseChronologyPageProps> {
       <ClausePageLayout
         clauseNumber={clauseNumber}
         title={<T message="Хронология" />}
-        pageType="parts"
+        pageType="chronology"
         hasParts={partsCount > 1}
       >
         {view === "page" ? (
