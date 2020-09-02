@@ -70,6 +70,7 @@ export type Api_Server__Data = Node & {
   exemptionAmnesty?: Maybe<Scalars['Int']>;
   exemptionFromImprisonment?: Maybe<Scalars['Int']>;
   exemptionOther?: Maybe<Scalars['Int']>;
+  name?: Maybe<Scalars['String']>;
   noCrimeNecessity?: Maybe<Scalars['Int']>;
   noCrimeOther?: Maybe<Scalars['Int']>;
   noCrimeSelf_defence?: Maybe<Scalars['Int']>;
@@ -108,7 +109,6 @@ export type Api_Server__Data = Node & {
   totalConvicted?: Maybe<Scalars['Int']>;
   unfinishedOffence?: Maybe<Scalars['Int']>;
   year?: Maybe<Scalars['String']>;
-  name?: Maybe<Scalars['String']>;
 };
 
 export type Api_Server__DataConnection = {
@@ -264,6 +264,7 @@ export type Api_Server__DataFieldsEnum =
   | 'exemptionAmnesty'
   | 'exemptionFromImprisonment'
   | 'exemptionOther'
+  | 'name'
   | 'noCrimeNecessity'
   | 'noCrimeOther'
   | 'noCrimeSelf_defence'
@@ -301,8 +302,7 @@ export type Api_Server__DataFieldsEnum =
   | 'primarySuspended'
   | 'totalConvicted'
   | 'unfinishedOffence'
-  | 'year'
-  | 'name';
+  | 'year';
 
 export type Api_Server__DataFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -348,6 +348,7 @@ export type Api_Server__DataFilterInput = {
   exemptionAmnesty?: Maybe<IntQueryOperatorInput>;
   exemptionFromImprisonment?: Maybe<IntQueryOperatorInput>;
   exemptionOther?: Maybe<IntQueryOperatorInput>;
+  name?: Maybe<StringQueryOperatorInput>;
   noCrimeNecessity?: Maybe<IntQueryOperatorInput>;
   noCrimeOther?: Maybe<IntQueryOperatorInput>;
   noCrimeSelf_defence?: Maybe<IntQueryOperatorInput>;
@@ -386,7 +387,6 @@ export type Api_Server__DataFilterInput = {
   totalConvicted?: Maybe<IntQueryOperatorInput>;
   unfinishedOffence?: Maybe<IntQueryOperatorInput>;
   year?: Maybe<StringQueryOperatorInput>;
-  name?: Maybe<StringQueryOperatorInput>;
 };
 
 export type Api_Server__DataGroupConnection = {
@@ -2201,6 +2201,7 @@ export type QueryApiServerDataArgs = {
   exemptionAmnesty?: Maybe<IntQueryOperatorInput>;
   exemptionFromImprisonment?: Maybe<IntQueryOperatorInput>;
   exemptionOther?: Maybe<IntQueryOperatorInput>;
+  name?: Maybe<StringQueryOperatorInput>;
   noCrimeNecessity?: Maybe<IntQueryOperatorInput>;
   noCrimeOther?: Maybe<IntQueryOperatorInput>;
   noCrimeSelf_defence?: Maybe<IntQueryOperatorInput>;
@@ -2239,7 +2240,6 @@ export type QueryApiServerDataArgs = {
   totalConvicted?: Maybe<IntQueryOperatorInput>;
   unfinishedOffence?: Maybe<IntQueryOperatorInput>;
   year?: Maybe<StringQueryOperatorInput>;
-  name?: Maybe<StringQueryOperatorInput>;
 };
 
 
@@ -2646,6 +2646,7 @@ export type SitePageConnectionGroupArgs = {
 
 export type SitePageContext = {
   partRegex?: Maybe<Scalars['String']>;
+  clauseRegex?: Maybe<Scalars['String']>;
   year?: Maybe<Scalars['Date']>;
   clauseId?: Maybe<Scalars['Float']>;
   view?: Maybe<Scalars['String']>;
@@ -2653,6 +2654,7 @@ export type SitePageContext = {
 
 export type SitePageContextFilterInput = {
   partRegex?: Maybe<StringQueryOperatorInput>;
+  clauseRegex?: Maybe<StringQueryOperatorInput>;
   year?: Maybe<DateQueryOperatorInput>;
   clauseId?: Maybe<FloatQueryOperatorInput>;
   view?: Maybe<StringQueryOperatorInput>;
@@ -2758,6 +2760,7 @@ export type SitePageFieldsEnum =
   | 'internal___type'
   | 'isCreatedByStatefulCreatePages'
   | 'context___partRegex'
+  | 'context___clauseRegex'
   | 'context___year'
   | 'context___clauseId'
   | 'context___view'
@@ -2812,23 +2815,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___maxWidth'
   | 'pluginCreator___pluginOptions___linkImagesToOriginal'
   | 'pluginCreator___pluginOptions___wrapperStyle'
-  | 'pluginCreator___pluginOptions___trackingId'
-  | 'pluginCreator___pluginOptions___mergeSecurityHeaders'
-  | 'pluginCreator___pluginOptions___mergeLinkHeaders'
-  | 'pluginCreator___pluginOptions___mergeCachingHeaders'
-  | 'pluginCreator___pluginOptions___fileName'
-  | 'pluginCreator___pluginOptions___typePrefix'
-  | 'pluginCreator___pluginOptions___allowCache'
-  | 'pluginCreator___pluginOptions___maxCacheDurationSeconds'
-  | 'pluginCreator___pluginOptions___localSave'
-  | 'pluginCreator___pluginOptions___path'
-  | 'pluginCreator___pluginOptions___verboseOutput'
-  | 'pluginCreator___pluginOptions___entitiesArray'
-  | 'pluginCreator___pluginOptions___entitiesArray___name'
-  | 'pluginCreator___pluginOptions___entitiesArray___url'
-  | 'pluginCreator___pluginOptions___entitiesArray___method'
-  | 'pluginCreator___pluginOptions___excludePaths'
-  | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___pluginOptions___name'
   | 'pluginCreator___pluginOptions___short_name'
   | 'pluginCreator___pluginOptions___description'
@@ -2845,6 +2831,19 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___include_favicon'
   | 'pluginCreator___pluginOptions___legacy'
   | 'pluginCreator___pluginOptions___theme_color_in_head'
+  | 'pluginCreator___pluginOptions___trackingId'
+  | 'pluginCreator___pluginOptions___fileName'
+  | 'pluginCreator___pluginOptions___typePrefix'
+  | 'pluginCreator___pluginOptions___allowCache'
+  | 'pluginCreator___pluginOptions___maxCacheDurationSeconds'
+  | 'pluginCreator___pluginOptions___localSave'
+  | 'pluginCreator___pluginOptions___path'
+  | 'pluginCreator___pluginOptions___verboseOutput'
+  | 'pluginCreator___pluginOptions___entitiesArray'
+  | 'pluginCreator___pluginOptions___entitiesArray___name'
+  | 'pluginCreator___pluginOptions___entitiesArray___url'
+  | 'pluginCreator___pluginOptions___entitiesArray___method'
+  | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
   | 'pluginCreator___ssrAPIs'
@@ -3044,10 +3043,23 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___maxWidth'
   | 'pluginOptions___linkImagesToOriginal'
   | 'pluginOptions___wrapperStyle'
+  | 'pluginOptions___name'
+  | 'pluginOptions___short_name'
+  | 'pluginOptions___description'
+  | 'pluginOptions___homepage_url'
+  | 'pluginOptions___start_url'
+  | 'pluginOptions___background_color'
+  | 'pluginOptions___theme_color'
+  | 'pluginOptions___display'
+  | 'pluginOptions___icons'
+  | 'pluginOptions___icons___src'
+  | 'pluginOptions___icons___sizes'
+  | 'pluginOptions___icons___type'
+  | 'pluginOptions___cache_busting_mode'
+  | 'pluginOptions___include_favicon'
+  | 'pluginOptions___legacy'
+  | 'pluginOptions___theme_color_in_head'
   | 'pluginOptions___trackingId'
-  | 'pluginOptions___mergeSecurityHeaders'
-  | 'pluginOptions___mergeLinkHeaders'
-  | 'pluginOptions___mergeCachingHeaders'
   | 'pluginOptions___fileName'
   | 'pluginOptions___typePrefix'
   | 'pluginOptions___allowCache'
@@ -3139,24 +3151,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___entitiesArray___schemaType___totalConvicted'
   | 'pluginOptions___entitiesArray___schemaType___unfinishedOffence'
   | 'pluginOptions___entitiesArray___schemaType___year'
-  | 'pluginOptions___excludePaths'
   | 'pluginOptions___pathCheck'
-  | 'pluginOptions___name'
-  | 'pluginOptions___short_name'
-  | 'pluginOptions___description'
-  | 'pluginOptions___homepage_url'
-  | 'pluginOptions___start_url'
-  | 'pluginOptions___background_color'
-  | 'pluginOptions___theme_color'
-  | 'pluginOptions___display'
-  | 'pluginOptions___icons'
-  | 'pluginOptions___icons___src'
-  | 'pluginOptions___icons___sizes'
-  | 'pluginOptions___icons___type'
-  | 'pluginOptions___cache_busting_mode'
-  | 'pluginOptions___include_favicon'
-  | 'pluginOptions___legacy'
-  | 'pluginOptions___theme_color_in_head'
   | 'nodeAPIs'
   | 'browserAPIs'
   | 'ssrAPIs'
@@ -3273,20 +3268,6 @@ export type SitePluginPluginOptions = {
   maxWidth?: Maybe<Scalars['Int']>;
   linkImagesToOriginal?: Maybe<Scalars['Boolean']>;
   wrapperStyle?: Maybe<Scalars['String']>;
-  trackingId?: Maybe<Scalars['String']>;
-  mergeSecurityHeaders?: Maybe<Scalars['Boolean']>;
-  mergeLinkHeaders?: Maybe<Scalars['Boolean']>;
-  mergeCachingHeaders?: Maybe<Scalars['Boolean']>;
-  fileName?: Maybe<Scalars['String']>;
-  typePrefix?: Maybe<Scalars['String']>;
-  allowCache?: Maybe<Scalars['Boolean']>;
-  maxCacheDurationSeconds?: Maybe<Scalars['Int']>;
-  localSave?: Maybe<Scalars['Boolean']>;
-  path?: Maybe<Scalars['String']>;
-  verboseOutput?: Maybe<Scalars['Boolean']>;
-  entitiesArray?: Maybe<Array<Maybe<SitePluginPluginOptionsEntitiesArray>>>;
-  excludePaths?: Maybe<Scalars['String']>;
-  pathCheck?: Maybe<Scalars['Boolean']>;
   name?: Maybe<Scalars['String']>;
   short_name?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
@@ -3300,6 +3281,16 @@ export type SitePluginPluginOptions = {
   include_favicon?: Maybe<Scalars['Boolean']>;
   legacy?: Maybe<Scalars['Boolean']>;
   theme_color_in_head?: Maybe<Scalars['Boolean']>;
+  trackingId?: Maybe<Scalars['String']>;
+  fileName?: Maybe<Scalars['String']>;
+  typePrefix?: Maybe<Scalars['String']>;
+  allowCache?: Maybe<Scalars['Boolean']>;
+  maxCacheDurationSeconds?: Maybe<Scalars['Int']>;
+  localSave?: Maybe<Scalars['Boolean']>;
+  path?: Maybe<Scalars['String']>;
+  verboseOutput?: Maybe<Scalars['Boolean']>;
+  entitiesArray?: Maybe<Array<Maybe<SitePluginPluginOptionsEntitiesArray>>>;
+  pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
 export type SitePluginPluginOptionsEntitiesArray = {
@@ -3507,20 +3498,6 @@ export type SitePluginPluginOptionsFilterInput = {
   maxWidth?: Maybe<IntQueryOperatorInput>;
   linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>;
   wrapperStyle?: Maybe<StringQueryOperatorInput>;
-  trackingId?: Maybe<StringQueryOperatorInput>;
-  mergeSecurityHeaders?: Maybe<BooleanQueryOperatorInput>;
-  mergeLinkHeaders?: Maybe<BooleanQueryOperatorInput>;
-  mergeCachingHeaders?: Maybe<BooleanQueryOperatorInput>;
-  fileName?: Maybe<StringQueryOperatorInput>;
-  typePrefix?: Maybe<StringQueryOperatorInput>;
-  allowCache?: Maybe<BooleanQueryOperatorInput>;
-  maxCacheDurationSeconds?: Maybe<IntQueryOperatorInput>;
-  localSave?: Maybe<BooleanQueryOperatorInput>;
-  path?: Maybe<StringQueryOperatorInput>;
-  verboseOutput?: Maybe<BooleanQueryOperatorInput>;
-  entitiesArray?: Maybe<SitePluginPluginOptionsEntitiesArrayFilterListInput>;
-  excludePaths?: Maybe<StringQueryOperatorInput>;
-  pathCheck?: Maybe<BooleanQueryOperatorInput>;
   name?: Maybe<StringQueryOperatorInput>;
   short_name?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
@@ -3534,6 +3511,16 @@ export type SitePluginPluginOptionsFilterInput = {
   include_favicon?: Maybe<BooleanQueryOperatorInput>;
   legacy?: Maybe<BooleanQueryOperatorInput>;
   theme_color_in_head?: Maybe<BooleanQueryOperatorInput>;
+  trackingId?: Maybe<StringQueryOperatorInput>;
+  fileName?: Maybe<StringQueryOperatorInput>;
+  typePrefix?: Maybe<StringQueryOperatorInput>;
+  allowCache?: Maybe<BooleanQueryOperatorInput>;
+  maxCacheDurationSeconds?: Maybe<IntQueryOperatorInput>;
+  localSave?: Maybe<BooleanQueryOperatorInput>;
+  path?: Maybe<StringQueryOperatorInput>;
+  verboseOutput?: Maybe<BooleanQueryOperatorInput>;
+  entitiesArray?: Maybe<SitePluginPluginOptionsEntitiesArrayFilterListInput>;
+  pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsIcons = {
@@ -3630,11 +3617,13 @@ export type SiteMetadataQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteS
 
 export type ClauseChronologyQueryVariables = Exact<{
   partRegex: Scalars['String'];
-  year: Scalars['String'];
 }>;
 
 
-export type ClauseChronologyQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, parts: { edges: Array<{ node: Pick<Api_Server__Data, 'part'> }> } };
+export type ClauseChronologyQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, parts: { edges: Array<{ node: Pick<Api_Server__Data, 'part'> }> }, years: { edges: Array<{ node: (
+        Pick<Api_Server__Data, 'year' | 'part' | 'totalConvicted' | 'primaryImprisonment' | 'primarySuspended' | 'primaryCommunityService' | 'primaryForcedLabour' | 'primaryCorrectionalLabour' | 'primaryFine' | 'coerciveMeasures' | 'primaryOther' | 'dismissalAbsenceOfEvent' | 'dismissalAmnesty' | 'dismissalRepentance' | 'dismissalReconciliation' | 'dismissalCourtFine' | 'dismissalOther'>
+        & { totalAcquittal: Api_Server__Data['acquittal'] }
+      ) }> } };
 
 export type ClauseFullQueryVariables = Exact<{
   partRegex: Scalars['String'];

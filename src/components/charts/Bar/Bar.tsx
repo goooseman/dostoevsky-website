@@ -24,6 +24,7 @@ interface BarProps extends React.ComponentProps<typeof ChartWrapper> {
   }[];
   labels: string[];
   areLabelsRotated?: boolean;
+  isIframeMode?: boolean;
 }
 
 const ROW_HEIGHT = 50;

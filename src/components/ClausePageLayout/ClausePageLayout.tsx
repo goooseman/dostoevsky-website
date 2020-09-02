@@ -97,7 +97,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
               <div className={cn(classes.floatingCatalogueContainer)}>
                 <ClausePageCatalogue
                   onClose={onCatalogueSwitch}
-                  year={year}
+                  year={year || 2019}
                   clauseId={clauseNumber}
                 />
               </div>
