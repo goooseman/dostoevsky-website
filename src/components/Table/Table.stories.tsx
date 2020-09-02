@@ -392,7 +392,7 @@ export const withClausePartsManyParts = (): React.ReactNode => (
 
 const clauseChrono = [
   {
-    title: "Часть 1",
+    title: "Все года",
     columns: [
       { title: "Год", key: "1" },
       { title: "Всего осуждено", key: "2" },

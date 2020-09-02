@@ -14,3 +14,11 @@
 .chart-container-full-width {
   max-width: 100%;
 }
+
+.table-container {
+  margin-bottom: 4rem;
+}
+
+.table-container:last-of-type {
+  margin-bottom: 0;
+}

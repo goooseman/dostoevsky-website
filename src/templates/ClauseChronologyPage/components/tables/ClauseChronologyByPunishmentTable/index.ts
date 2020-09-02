@@ -1,0 +1,2 @@
+import ClauseChronologyByPunishmentTable from "./ClauseChronologyByPunishmentTable";
+export default ClauseChronologyByPunishmentTable;

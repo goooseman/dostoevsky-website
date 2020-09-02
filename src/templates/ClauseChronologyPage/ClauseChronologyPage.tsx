@@ -4,6 +4,8 @@ import classes from "./ClauseChronologyPage.module.css";
 import cn from "clsx";
 import ChronologyConvictedDynamics from "./components/charts/ChronologyConvictedDynamics";
 import ChronologyPunishmentDynamics from "./components/charts/ChronologyPunishmentDynamics";
+import ClauseChronologyByResultTable from "./components/tables/ClauseChronologyByResultTable";
+import ClauseChronologyByPunishmentTable from "./components/tables/ClauseChronologyByPunishmentTable";
 import { T } from "react-targem";
 
 export type ClauseChronologyPageViewMode =
@@ -11,7 +13,8 @@ export type ClauseChronologyPageViewMode =
   | "table"
   | "iframe-convicted-dynamics"
   | "iframe-punishment-dynamics"
-  | "iframe-table-chronology";
+  | "iframe-table-chronology-by-result"
+  | "iframe-table-chronology-by-punishment";
 
 interface Year {
   year: string;
@@ -78,6 +81,16 @@ class ClauseChronologyPage extends PureComponent<ClauseChronologyPageProps> {
               <ChronologyPunishmentDynamics {...this.props} />
             </div>
           </div>
+        ) : null}
+        {view === "table" ? (
+          <>
+            <div className={cn(classes.tableContainer)}>
+              <ClauseChronologyByResultTable {...this.props} />
+            </div>
+            <div className={cn(classes.tableContainer)}>
+              <ClauseChronologyByPunishmentTable {...this.props} />
+            </div>
+          </>
         ) : null}
       </ClausePageLayout>
     );
