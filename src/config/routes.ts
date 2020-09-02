@@ -7,11 +7,14 @@ enum clauseLinkTypes {
 
 export const getClauseLink = (
   clause: string | number,
-  year: string | number,
+  year: string | number | undefined,
   type: keyof typeof clauseLinkTypes,
   view = "page"
 ): string => {
-  let route = `/${clause}/${year}/`;
+  let route = `/${clause}/`;
+  if (year) {
+    route += `${year}/`;
+  }
   if (type !== "main") {
     route += `${clauseLinkTypes[type]}/`;
   }

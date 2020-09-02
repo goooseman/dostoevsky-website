@@ -68,6 +68,7 @@ class LineChart extends PureComponent<LineChartProps> {
           offset: 20,
         } as IChartistStepAxis,
         fullWidth: true,
+        reverseData: true,
         plugins,
       }
     );

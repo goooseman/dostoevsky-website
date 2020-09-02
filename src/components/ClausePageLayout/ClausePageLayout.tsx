@@ -16,7 +16,7 @@ interface ClausePageLayoutProps {
   clauseText: I18nText;
   hasParts?: boolean;
   clauseOutsideLink: string;
-  year: number;
+  year?: number;
   children: React.ReactNode;
   isCatalogueOpened: boolean;
   onCatalogueSwitch: () => void;
@@ -56,11 +56,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
             </button>
 
             <Link
-              to={getClauseLink(
-                clauseNumber.toString(),
-                year.toString(),
-                "main"
-              )}
+              to={getClauseLink(clauseNumber, year, "main")}
               activeClassName={cn(classes.itemActive)}
             >
               <Typography size="small" variant="span">
@@ -69,11 +65,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
             </Link>
             {hasParts ? (
               <Link
-                to={getClauseLink(
-                  clauseNumber.toString(),
-                  year.toString(),
-                  "parts"
-                )}
+                to={getClauseLink(clauseNumber, year, "parts")}
                 partiallyActive
                 activeClassName={cn(classes.itemActive)}
               >
@@ -84,11 +76,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
             ) : null}
 
             <Link
-              to={getClauseLink(
-                clauseNumber.toString(),
-                year.toString(),
-                "chronology"
-              )}
+              to={getClauseLink(clauseNumber, year, "chronology")}
               activeClassName={cn(classes.itemActive)}
             >
               <Typography size="small" variant="span">
@@ -96,11 +84,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
               </Typography>
             </Link>
             <Link
-              to={getClauseLink(
-                clauseNumber.toString(),
-                year.toString(),
-                "full"
-              )}
+              to={getClauseLink(clauseNumber, year, "full")}
               activeClassName={cn(classes.itemActive)}
             >
               <Typography size="small" variant="span">
@@ -161,22 +145,11 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
               {headerChildren}
             </ClausePageHeader>
             <Menu variant="activeBorderBottom" className={cn(classes.menu)}>
-              <MenuLink
-                to={getClauseLink(
-                  clauseNumber.toString(),
-                  year.toString(),
-                  pageType
-                )}
-              >
+              <MenuLink to={getClauseLink(clauseNumber, year, pageType)}>
                 ЧАРТЫ
               </MenuLink>
               <MenuLink
-                to={getClauseLink(
-                  clauseNumber.toString(),
-                  year.toString(),
-                  pageType,
-                  "table"
-                )}
+                to={getClauseLink(clauseNumber, year, pageType, "table")}
               >
                 ТАБЛИЦА
               </MenuLink>

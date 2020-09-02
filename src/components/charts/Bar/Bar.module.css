@@ -1,5 +1,7 @@
 .chart-title {
-  height: 42px;
+  display: flex;
+  height: 100px;
+  flex-direction: column-reverse;
   margin-left: 10px;
 }
 

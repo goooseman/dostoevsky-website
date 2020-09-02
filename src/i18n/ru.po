@@ -91,6 +91,97 @@ msgstr ""
 msgid "Plus icon"
 msgstr ""
 
+#: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:
+msgid "Хронология"
+msgstr ""
+
+#: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:
+msgid ""
+"На этой странице мы сравнили ключевые показатели по статье за период с 2009 по "
+"2019 годы. Полноценных данных до 2009 года в открытом доступе не существует: "
+"Судебный департамент Верховного суда начал публиковать сводную статистику по "
+"рассмотрению судами уголовных дел после появления соответствующего закона и "
+"регламента в 2008 году."
+msgstr ""
+
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyConvictedDynamics/ChronologyConvictedDynamics.tsx:
+msgid "Динамика числа осужденных по основному составу"
+msgstr ""
+
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyConvictedDynamics/ChronologyConvictedDynamics.tsx:
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyConvictedDynamics/ChronologyConvictedDynamics.tsx:
+msgid "{{ clauseNumber }} Основной состав"
+msgstr ""
+
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyConvictedDynamics/ChronologyConvictedDynamics.tsx:
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+msgid "Число человек"
+msgstr ""
+
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+msgid "Состав"
+msgstr ""
+
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+msgid "Наказание"
+msgstr ""
+
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+msgid "Основной состав"
+msgstr ""
+
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "Лишение свободы"
+msgstr ""
+
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+msgid "условное осуждение к лишению свободы"
+msgstr ""
+
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+msgid "обязательные работы"
+msgstr ""
+
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+msgid "принудительные работы"
+msgstr ""
+
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+msgid "исправительные работы"
+msgstr ""
+
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+msgid "штраф"
+msgstr ""
+
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+msgid "принудительное лечение"
+msgstr ""
+
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+msgid "условное осуждение к иным мерам"
+msgstr ""
+
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+msgid "Динамика наказаний по статье с 2009 по 2019 гг."
+msgstr ""
+
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
 msgid ""
 "В {{ year }} году по части {{ partIndex }} статьи {{ clauseNumber }} были "
@@ -210,10 +301,6 @@ msgstr ""
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Виды основного наказания"
-msgstr ""
-
-#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
-msgid "Лишение свободы"
 msgstr ""
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
