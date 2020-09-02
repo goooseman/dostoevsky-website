@@ -42,7 +42,7 @@ const ClauseChronologyByPunishmentTable: React.FC<ClauseChronologyByPunishmentTa
         },
         { title: t("Исправительные работы"), key: "6" },
         { title: t("Штраф"), key: "7" },
-        { title: t("Принуд. лечение"), key: "8" },
+        { title: t("Принудительные меры к невменяемым"), key: "8" },
         { title: t("Условное к иным мерам"), key: "9" },
       ],
       rows: years.map((y) => ({

@@ -102,8 +102,10 @@ const ChronologyConvictedDynamics: React.SFC<ChronologyConvictedDynamicsProps> =
           values: years.map((y) => y.coerciveMeasures),
         },
       ],
-      title: t("принудительное лечение"),
-      tooltipDescription: getTooltipDescription(t("принудительное лечение")),
+      title: t("Принудительные меры к невменяемым"),
+      tooltipDescription: getTooltipDescription(
+        t("Принудительные меры к невменяемым")
+      ),
     },
     {
       groups: [
