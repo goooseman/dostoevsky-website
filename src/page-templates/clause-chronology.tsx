@@ -22,7 +22,10 @@ interface ClauseChronologyProps {
 class ClauseChronology extends PureComponent<ClauseChronologyProps> {
   render(): React.ReactNode {
     const { data, pageContext } = this.props;
-    const years = distinctNodes(data.years.edges, "year");
+    const years = distinctNodes<
+      ClauseChronologyQuery["years"]["edges"][number]["node"],
+      ClauseChronologyQuery["years"]["edges"][number]
+    >(data.years.edges, "year");
 
     return (
       <Layout

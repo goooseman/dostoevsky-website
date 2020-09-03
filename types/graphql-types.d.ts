@@ -70,7 +70,6 @@ export type Api_Server__Data = Node & {
   exemptionAmnesty?: Maybe<Scalars['Int']>;
   exemptionFromImprisonment?: Maybe<Scalars['Int']>;
   exemptionOther?: Maybe<Scalars['Int']>;
-  name?: Maybe<Scalars['String']>;
   noCrimeNecessity?: Maybe<Scalars['Int']>;
   noCrimeOther?: Maybe<Scalars['Int']>;
   noCrimeSelf_defence?: Maybe<Scalars['Int']>;
@@ -109,6 +108,7 @@ export type Api_Server__Data = Node & {
   totalConvicted?: Maybe<Scalars['Int']>;
   unfinishedOffence?: Maybe<Scalars['Int']>;
   year?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
 };
 
 export type Api_Server__DataConnection = {
@@ -264,7 +264,6 @@ export type Api_Server__DataFieldsEnum =
   | 'exemptionAmnesty'
   | 'exemptionFromImprisonment'
   | 'exemptionOther'
-  | 'name'
   | 'noCrimeNecessity'
   | 'noCrimeOther'
   | 'noCrimeSelf_defence'
@@ -302,7 +301,8 @@ export type Api_Server__DataFieldsEnum =
   | 'primarySuspended'
   | 'totalConvicted'
   | 'unfinishedOffence'
-  | 'year';
+  | 'year'
+  | 'name';
 
 export type Api_Server__DataFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -348,7 +348,6 @@ export type Api_Server__DataFilterInput = {
   exemptionAmnesty?: Maybe<IntQueryOperatorInput>;
   exemptionFromImprisonment?: Maybe<IntQueryOperatorInput>;
   exemptionOther?: Maybe<IntQueryOperatorInput>;
-  name?: Maybe<StringQueryOperatorInput>;
   noCrimeNecessity?: Maybe<IntQueryOperatorInput>;
   noCrimeOther?: Maybe<IntQueryOperatorInput>;
   noCrimeSelf_defence?: Maybe<IntQueryOperatorInput>;
@@ -387,6 +386,7 @@ export type Api_Server__DataFilterInput = {
   totalConvicted?: Maybe<IntQueryOperatorInput>;
   unfinishedOffence?: Maybe<IntQueryOperatorInput>;
   year?: Maybe<StringQueryOperatorInput>;
+  name?: Maybe<StringQueryOperatorInput>;
 };
 
 export type Api_Server__DataGroupConnection = {
@@ -2201,7 +2201,6 @@ export type QueryApiServerDataArgs = {
   exemptionAmnesty?: Maybe<IntQueryOperatorInput>;
   exemptionFromImprisonment?: Maybe<IntQueryOperatorInput>;
   exemptionOther?: Maybe<IntQueryOperatorInput>;
-  name?: Maybe<StringQueryOperatorInput>;
   noCrimeNecessity?: Maybe<IntQueryOperatorInput>;
   noCrimeOther?: Maybe<IntQueryOperatorInput>;
   noCrimeSelf_defence?: Maybe<IntQueryOperatorInput>;
@@ -2240,6 +2239,7 @@ export type QueryApiServerDataArgs = {
   totalConvicted?: Maybe<IntQueryOperatorInput>;
   unfinishedOffence?: Maybe<IntQueryOperatorInput>;
   year?: Maybe<StringQueryOperatorInput>;
+  name?: Maybe<StringQueryOperatorInput>;
 };
 
 
@@ -3647,7 +3647,10 @@ export type ClausePartsQueryVariables = Exact<{
 }>;
 
 
-export type ClausePartsQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, allApiServerData: { edges: Array<{ node: Pick<Api_Server__Data, 'part' | 'name' | 'totalConvicted' | 'acquittal' | 'dismissalAbsenceOfEvent' | 'dismissalAmnesty' | 'dismissalReconciliation' | 'dismissalRepentance' | 'dismissalCourtFine' | 'dismissalOther' | 'coerciveMeasures' | 'primaryLifeSentence' | 'primarySuspended' | 'primaryArrest' | 'primaryRestrain' | 'primaryRestrain2009' | 'primaryCorrectionalLabour' | 'primaryCommunityService' | 'primaryForcedLabour' | 'primaryFine' | 'primaryDisqualification' | 'primaryOther' | 'primaryMilitaryDisciplinaryUnit' | 'primaryRestrictionsInMilitaryService' | 'primaryImprisonment' | 'unfinishedOffence' | 'addTotalPersons' | 'addTotalOffences' | 'addAcquittalPersons' | 'addAcquittalOffences' | 'noCrimeSelf_defence' | 'noCrimeNecessity' | 'noCrimeOther' | 'addDisqualification' | 'addFine' | 'addTitlesWithdraw' | 'addRestrain' | 'dismissalRepentance2' | 'addDismissalPersons' | 'addDismissalOffences' | 'addDismissalOtherPersons' | 'addDismissalOtherOffences'> }> } };
+export type ClausePartsQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, parts: { edges: Array<{ node: (
+        Pick<Api_Server__Data, 'part' | 'name' | 'totalConvicted' | 'dismissalAbsenceOfEvent' | 'dismissalAmnesty' | 'dismissalReconciliation' | 'dismissalRepentance' | 'dismissalCourtFine' | 'dismissalOther' | 'coerciveMeasures' | 'primaryLifeSentence' | 'primarySuspended' | 'primaryArrest' | 'primaryRestrain' | 'primaryRestrain2009' | 'primaryCorrectionalLabour' | 'primaryCommunityService' | 'primaryForcedLabour' | 'primaryFine' | 'primaryDisqualification' | 'primaryOther' | 'primaryMilitaryDisciplinaryUnit' | 'primaryRestrictionsInMilitaryService' | 'primaryImprisonment' | 'unfinishedOffence' | 'addTotalPersons' | 'addTotalOffences' | 'addAcquittalPersons' | 'addAcquittalOffences' | 'noCrimeNecessity' | 'noCrimeOther' | 'addDisqualification' | 'addFine' | 'addTitlesWithdraw' | 'addRestrain' | 'dismissalRepentance2' | 'addDismissalPersons' | 'addDismissalOffences' | 'addDismissalOtherPersons' | 'addDismissalOtherOffences'>
+        & { totalAcquittal: Api_Server__Data['acquittal'], noCrimeSelfDefence: Api_Server__Data['noCrimeSelf_defence'] }
+      ) }> } };
 
 export type AboutPageQueryVariables = Exact<{ [key: string]: never; }>;
 
