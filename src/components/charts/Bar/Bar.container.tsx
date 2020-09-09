@@ -1,22 +1,25 @@
 import React, { PureComponent } from "react";
 import Bar from "./Bar";
 
-interface BarContainerProps extends React.ComponentProps<typeof Bar> {}
+interface BarContainerProps
+  extends Omit<React.ComponentProps<typeof Bar>, "maxLabelsCount"> {}
 interface BarContainerState {}
 
 class BarContainer extends PureComponent<BarContainerProps, BarContainerState> {
   render(): React.ReactNode {
-    const { charts, labels, ...otherProps } = this.props;
-    const forbiddenLabelsIndexes: { [key: number]: boolean } = {};
-    let filteredLabels = [...labels];
-    for (const chart of charts) {
+    const { charts, ...otherProps } = this.props;
+    const maxLabelsCount = charts[0].labels.length;
+    const forbiddenChartsIndexes: { [key: number]: boolean } = {};
+    charts.forEach((chart, chartI) => {
+      let filteredLabels = [...chart.labels];
+      const forbiddenLabelsIndexes: { [key: number]: boolean } = {};
       const { groups } = chart;
       groups[0].values.forEach((v: number, i: number) => {
-        if (v !== 0) {
+        if (v !== 0 && v !== null) {
           return;
         }
         const notEmptyGroupWithSameLabel = groups.find(
-          (g) => g.values[i] !== 0
+          (g) => g.values[i] !== 0 && g.values[i] !== null
         );
         if (notEmptyGroupWithSameLabel) {
           return;
@@ -25,7 +28,20 @@ class BarContainer extends PureComponent<BarContainerProps, BarContainerState> {
       });
 
       if (Object.keys(forbiddenLabelsIndexes).length === 0) {
-        return <Bar charts={charts} labels={labels} {...otherProps} />;
+        return (
+          <Bar
+            maxLabelsCount={maxLabelsCount}
+            charts={charts}
+            {...otherProps}
+          />
+        );
+      }
+
+      if (
+        Object.keys(forbiddenLabelsIndexes).length === groups[0].values.length
+      ) {
+        forbiddenChartsIndexes[chartI] = true;
+        return;
       }
 
       const filterOutForbiddenIndexes = (v: unknown, i: number) =>
@@ -39,9 +55,20 @@ class BarContainer extends PureComponent<BarContainerProps, BarContainerState> {
       }));
 
       chart.groups = filteredGroups;
-    }
+      chart.labels = filteredLabels;
+    });
 
-    return <Bar labels={filteredLabels} charts={charts} {...otherProps} />;
+    const filteredCharts = charts.filter(
+      (v: unknown, i: number) => !forbiddenChartsIndexes.hasOwnProperty(i)
+    );
+
+    return (
+      <Bar
+        maxLabelsCount={maxLabelsCount}
+        charts={filteredCharts}
+        {...otherProps}
+      />
+    );
   }
 }
 

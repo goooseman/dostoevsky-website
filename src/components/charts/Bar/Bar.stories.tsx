@@ -14,6 +14,23 @@ const tooltipDescription = {
   "Число человек": "%%",
 } as const;
 
+const twoGroupsLabels = [
+  "пожизненное лишение свободы",
+  "условное осуждение к лишению свободы",
+  "арест",
+  "ограничение свободы",
+  "ограничение свободы/ограничение по военной службе, содержание в дисциплинарной воинской части",
+  "исправительные работы",
+  "обязательные работы",
+  "принудительные работы",
+  "штраф",
+  "лишение права занимать определенные должности",
+  "условное осуждение к иным мерам",
+  "содержание в дисциплинарной воинской части",
+  "ограничение по военной службе",
+  "лишение свободы",
+];
+
 const twoGroups = {
   charts: [
     {
@@ -27,30 +44,30 @@ const twoGroups = {
           values: [0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 9],
         },
       ],
+      labels: twoGroupsLabels,
       tooltipDescription,
     },
   ],
-  labels: [
-    "пожизненное лишение свободы",
-    "условное осуждение к лишению свободы",
-    "арест",
-    "ограничение свободы",
-    "ограничение свободы/ограничение по военной службе, содержание в дисциплинарной воинской части",
-    "исправительные работы",
-    "обязательные работы",
-    "принудительные работы",
-    "штраф",
-    "лишение права занимать определенные должности",
-    "условное осуждение к иным мерам",
-    "содержание в дисциплинарной воинской части",
-    "ограничение по военной службе",
-    "лишение свободы",
-  ],
   title: "Виды наказаний по частям статьи 282",
+  maxLabelsCount: twoGroupsLabels.length,
   ...commonProps,
 };
 
 export const withTwoGroups = (): React.ReactNode => <Bar {...twoGroups} />;
+
+const forChronoPageLabels = [
+  "2019",
+  "2018",
+  "2017",
+  "2016",
+  "2015",
+  "2014",
+  "2013",
+  "2012",
+  "2011",
+  "2010",
+  "2009",
+];
 
 const forChronoPageProps = {
   charts: [
@@ -61,6 +78,7 @@ const forChronoPageProps = {
           values: [20, 80, 80, 60, 50, 20, 10, 20, 30, 20, 10],
         },
       ],
+      labels: forChronoPageLabels,
       title: "Лишение свободы",
       tooltipDescription,
     },
@@ -71,6 +89,7 @@ const forChronoPageProps = {
           values: [20, 80, 80, 60, 50, 20, 10, 20, 30, 20, 10],
         },
       ],
+      labels: forChronoPageLabels,
       title: "условное осуждение к лишению свободы ",
       tooltipDescription,
     },
@@ -81,6 +100,7 @@ const forChronoPageProps = {
           values: [20, 80, 80, 60, 50, 20, 10, 20, 30, 20, 10],
         },
       ],
+      labels: forChronoPageLabels,
       title: "обязательные работы",
       tooltipDescription,
     },
@@ -91,6 +111,7 @@ const forChronoPageProps = {
           values: [20, 80, 80, 60, 50, 20, 10, 20, 30, 20, 10],
         },
       ],
+      labels: forChronoPageLabels,
       title: "принудительные работы",
       tooltipDescription,
     },
@@ -101,6 +122,7 @@ const forChronoPageProps = {
           values: [20, 80, 80, 60, 50, 20, 10, 20, 30, 20, 10],
         },
       ],
+      labels: forChronoPageLabels,
       title: "исправительные работы",
       tooltipDescription,
     },
@@ -111,6 +133,7 @@ const forChronoPageProps = {
           values: [20, 80, 80, 60, 50, 20, 10, 20, 30, 20, 10],
         },
       ],
+      labels: forChronoPageLabels,
       title: "штраф",
       tooltipDescription,
     },
@@ -121,6 +144,7 @@ const forChronoPageProps = {
           values: [20, 80, 80, 60, 50, 20, 10, 20, 30, 20, 10],
         },
       ],
+      labels: forChronoPageLabels,
       title: "принудительное лечение",
       tooltipDescription,
     },
@@ -131,23 +155,12 @@ const forChronoPageProps = {
           values: [20, 80, 80, 60, 50, 20, 10, 20, 30, 20, 10],
         },
       ],
+      labels: forChronoPageLabels,
       title: "условное осуждение к иным мерам",
       tooltipDescription,
     },
   ],
-  labels: [
-    "2019",
-    "2018",
-    "2017",
-    "2016",
-    "2015",
-    "2014",
-    "2013",
-    "2012",
-    "2011",
-    "2010",
-    "2009",
-  ],
+  maxLabelsCount: forChronoPageLabels.length,
   title: "Динамика наказаний по статье с 2009 по 2019 гг.",
   ...commonProps,
 };

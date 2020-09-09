@@ -32,6 +32,8 @@ const ChronologyConvictedDynamics: React.SFC<ChronologyConvictedDynamicsProps> =
     [t("Число человек")]: "%%",
   });
 
+  const labels = years.map((y) => y.year);
+
   const charts = [
     {
       groups: [
@@ -41,6 +43,7 @@ const ChronologyConvictedDynamics: React.SFC<ChronologyConvictedDynamicsProps> =
         },
       ],
       title: t("Лишение свободы"),
+      labels,
       tooltipDescription: getTooltipDescription(t("Лишение свободы")),
     },
     {
@@ -50,6 +53,7 @@ const ChronologyConvictedDynamics: React.SFC<ChronologyConvictedDynamicsProps> =
           values: years.map((y) => y.primarySuspended),
         },
       ],
+      labels,
       title: t("условное осуждение к лишению свободы"),
       tooltipDescription: getTooltipDescription(
         t("условное осуждение к лишению свободы")
@@ -62,6 +66,7 @@ const ChronologyConvictedDynamics: React.SFC<ChronologyConvictedDynamicsProps> =
           values: years.map((y) => y.primaryCommunityService),
         },
       ],
+      labels,
       title: t("обязательные работы"),
       tooltipDescription: getTooltipDescription(t("обязательные работы")),
     },
@@ -72,6 +77,7 @@ const ChronologyConvictedDynamics: React.SFC<ChronologyConvictedDynamicsProps> =
           values: years.map((y) => y.primaryForcedLabour),
         },
       ],
+      labels,
       title: t("принудительные работы"),
       tooltipDescription: getTooltipDescription(t("принудительные работы")),
     },
@@ -82,6 +88,7 @@ const ChronologyConvictedDynamics: React.SFC<ChronologyConvictedDynamicsProps> =
           values: years.map((y) => y.primaryCorrectionalLabour),
         },
       ],
+      labels,
       title: t("исправительные работы"),
       tooltipDescription: getTooltipDescription(t("исправительные работы")),
     },
@@ -92,6 +99,7 @@ const ChronologyConvictedDynamics: React.SFC<ChronologyConvictedDynamicsProps> =
           values: years.map((y) => y.primaryFine),
         },
       ],
+      labels,
       title: t("штраф"),
       tooltipDescription: getTooltipDescription(t("штраф")),
     },
@@ -102,6 +110,7 @@ const ChronologyConvictedDynamics: React.SFC<ChronologyConvictedDynamicsProps> =
           values: years.map((y) => y.coerciveMeasures),
         },
       ],
+      labels,
       title: t("Принудительные меры к невменяемым"),
       tooltipDescription: getTooltipDescription(
         t("Принудительные меры к невменяемым")
@@ -114,6 +123,7 @@ const ChronologyConvictedDynamics: React.SFC<ChronologyConvictedDynamicsProps> =
           values: years.map((y) => y.primaryOther),
         },
       ],
+      labels,
       title: t("условное осуждение к иным мерам"),
       tooltipDescription: getTooltipDescription(
         t("условное осуждение к иным мерам")
@@ -125,7 +135,6 @@ const ChronologyConvictedDynamics: React.SFC<ChronologyConvictedDynamicsProps> =
     <Bar
       isIframeMode={isIframeMode}
       title={<T message="Динамика наказаний по статье с 2009 по 2019 гг." />}
-      labels={years.map((y) => y.year)}
       downloadFilename={`${clauseNumber}-punishment-dynamics`}
       charts={charts}
       areLabelsRotated

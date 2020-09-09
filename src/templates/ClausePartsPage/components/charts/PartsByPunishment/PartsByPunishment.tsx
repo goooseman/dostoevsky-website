@@ -50,7 +50,6 @@ class PartsByPunishment extends PureComponent<PartsByPunishmentProps> {
       <Bar
         isIframeMode={isIframeMode}
         title={`Виды наказаний по частям статьи ${clauseNumber}`}
-        labels={byPunishmentLabels}
         downloadFilename={`${clauseNumber}-${year}-parts-by-punishment`}
         charts={[
           {
@@ -73,6 +72,7 @@ class PartsByPunishment extends PureComponent<PartsByPunishmentProps> {
                 p.primaryImprisonment,
               ],
             })),
+            labels: byPunishmentLabels,
             tooltipDescription: {
               Состав: `${clauseNumber} основной состав`,
               Год: `${year}`,

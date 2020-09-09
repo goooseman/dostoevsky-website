@@ -15,9 +15,12 @@ const tooltipDescription = {
 it("should contain 1 bar", async () => {
   const { container } = render(
     <BarContainer
-      labels={["foo"]}
       charts={[
-        { groups: [{ title: "group", values: [1] }], tooltipDescription },
+        {
+          groups: [{ title: "group", values: [1] }],
+          tooltipDescription,
+          labels: ["foo"],
+        },
       ]}
       {...defaultProps}
     />
@@ -32,13 +35,13 @@ it("should contain 1 bar", async () => {
 it("should not render empty bar", async () => {
   const { container } = render(
     <BarContainer
-      labels={["foo", "bar"]}
       charts={[
         {
           groups: [
             { title: "group 1", values: [1, 0] },
             { title: "group 2", values: [0, 0] },
           ],
+          labels: ["foo", "bar"],
           tooltipDescription,
         },
       ]}
@@ -50,4 +53,25 @@ it("should not render empty bar", async () => {
       container.querySelectorAll("span.ct-label.ct-vertical")
     ).toHaveLength(1)
   );
+});
+
+it("should not render empty chart", async () => {
+  const { queryByText } = render(
+    <BarContainer
+      charts={[
+        {
+          title: "Foo Chart",
+          labels: ["foo", "bar"],
+          groups: [
+            { title: "group 1", values: [0, 0] },
+            { title: "group 2", values: [0, 0] },
+          ],
+          tooltipDescription,
+        },
+      ]}
+      {...defaultProps}
+    />
+  );
+
+  expect(queryByText("Foo Chart")).not.toBeInTheDocument();
 });

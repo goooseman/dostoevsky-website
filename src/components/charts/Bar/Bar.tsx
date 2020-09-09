@@ -21,8 +21,9 @@ interface BarProps extends React.ComponentProps<typeof ChartWrapper> {
     tooltipDescription: {
       [key: string]: string;
     };
+    labels: string[];
   }[];
-  labels: string[];
+  maxLabelsCount: number;
   areLabelsRotated?: boolean;
   isIframeMode?: boolean;
 }
@@ -42,9 +43,9 @@ class Bar extends PureComponent<BarProps> {
   }
 
   public componentDidMount(): void {
-    const { charts, labels, areLabelsRotated } = this.props;
+    const { charts, areLabelsRotated } = this.props;
     for (let i = 0; i < charts.length; i++) {
-      const { groups, tooltipDescription } = charts[i];
+      const { groups, tooltipDescription, labels } = charts[i];
       const series: { value: number }[][] = groups.map((g) =>
         g.values
           .slice()
@@ -106,7 +107,12 @@ class Bar extends PureComponent<BarProps> {
   }
 
   render(): React.ReactNode {
-    const { labels, charts, areLabelsRotated, ...wrapperProps } = this.props;
+    const {
+      charts,
+      areLabelsRotated,
+      maxLabelsCount,
+      ...wrapperProps
+    } = this.props;
 
     return (
       <ChartWrapper {...wrapperProps} labels={this.getLabels()}>
@@ -124,7 +130,7 @@ class Bar extends PureComponent<BarProps> {
                 [classes.areLabelsRotated]: areLabelsRotated,
               })}
               style={{
-                height: labels.length * ROW_HEIGHT,
+                height: maxLabelsCount * ROW_HEIGHT,
               }}
             ></div>
           </div>
