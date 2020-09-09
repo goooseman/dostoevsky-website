@@ -22,21 +22,23 @@ interface ClausePartsProps {
 class ClauseParts extends PureComponent<ClausePartsProps> {
   render(): React.ReactNode {
     const { data, pageContext } = this.props;
-
-    const parts = distinctNodes<
+    type ClausePartsPageParts = React.ComponentProps<
+      typeof ClausePartsPage
+    >["parts"];
+    const parts: ClausePartsPageParts = distinctNodes<
       ClausePartsQuery["parts"]["edges"][number]["node"],
       ClausePartsQuery["parts"]["edges"][number]
-    >(data.parts.edges, "year").map((p) => {
-      p.totalDismissal =
+    >(data.parts.edges, "part").map((p) => ({
+      ...p,
+      totalDismissal:
         p.dismissalAbsenceOfEvent +
         p.dismissalAmnesty +
         p.dismissalReconciliation +
         p.dismissalRepentance +
         p.dismissalCourtFine +
         p.dismissalOther +
-        p.coerciveMeasures;
-      return p;
-    });
+        p.coerciveMeasures,
+    }));
 
     return (
       <Layout
