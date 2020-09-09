@@ -49,7 +49,7 @@ class LineChart extends PureComponent<LineChartProps> {
       this.chartRef.current,
       {
         labels: labels,
-        series,
+        series: series.slice().reverse(),
       },
       {
         axisX: {
@@ -68,7 +68,6 @@ class LineChart extends PureComponent<LineChartProps> {
           offset: 20,
         } as IChartistStepAxis,
         fullWidth: true,
-        reverseData: true,
         plugins,
       }
     );
