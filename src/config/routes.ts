@@ -12,8 +12,8 @@ export const getClauseLink = (
   view = "page"
 ): string => {
   let route = `/${clause}/`;
-  if (year) {
-    route += `${year}/`;
+  if (type !== "chronology") {
+    route += `${year || 2019}/`;
   }
   if (type !== "main") {
     route += `${clauseLinkTypes[type]}/`;
