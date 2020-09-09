@@ -78,7 +78,7 @@ class Bar extends PureComponent<BarProps> {
             onlyInteger: true,
             showGrid: true,
             labelOffset: {
-              y: areLabelsRotated ? 0 : Y_LABEL_MARGIN,
+              y: areLabelsRotated ? 10 : Y_LABEL_MARGIN,
             },
           },
           axisY: {
@@ -151,6 +151,9 @@ class Bar extends PureComponent<BarProps> {
     if (!this.isLabel(data) || !this.isXLabel(data)) {
       return;
     }
+    data.element.attr({
+      width: 35,
+    });
     if (data.index === 0) {
       return;
     }

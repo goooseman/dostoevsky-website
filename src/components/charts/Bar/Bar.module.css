@@ -8,6 +8,7 @@
 .are-labels-rotated {
   :global {
     .ct-label.ct-horizontal {
+      width: 100% !important;
       transform: rotate(-45deg);
     }
   }

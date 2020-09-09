@@ -75,7 +75,7 @@ const forChronoPageProps = {
       groups: [
         {
           title: "Основной состав",
-          values: [20, 80, 80, 60, 50, 20, 10, 20, 30, 20, 10],
+          values: [2000, 8000, 80000, 60, 50, 2099, 102, 203, 3055, 2000, 1012],
         },
       ],
       labels: forChronoPageLabels,
