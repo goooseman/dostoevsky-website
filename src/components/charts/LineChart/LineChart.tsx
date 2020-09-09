@@ -64,8 +64,9 @@ class LineChart extends PureComponent<LineChartProps> {
           scaleMinSpace: 40,
           labelOffset: {
             y: 6,
+            x: 4,
           },
-          offset: 20,
+          offset: 35,
         } as IChartistStepAxis,
         fullWidth: true,
         plugins,
