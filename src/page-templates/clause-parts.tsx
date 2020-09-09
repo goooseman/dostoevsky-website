@@ -6,6 +6,7 @@ import ClausePartsPage, {
 } from "src/templates/ClausePartsPage";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
+import { distinctNodes } from "src/utils/objects";
 
 interface ClausePartsProps {
   data: ClausePartsQuery;
@@ -21,6 +22,23 @@ interface ClausePartsProps {
 class ClauseParts extends PureComponent<ClausePartsProps> {
   render(): React.ReactNode {
     const { data, pageContext } = this.props;
+    type ClausePartsPageParts = React.ComponentProps<
+      typeof ClausePartsPage
+    >["parts"];
+    const parts: ClausePartsPageParts = distinctNodes<
+      ClausePartsQuery["parts"]["edges"][number]["node"],
+      ClausePartsQuery["parts"]["edges"][number]
+    >(data.parts.edges, "part").map((p) => ({
+      ...p,
+      totalDismissal:
+        p.dismissalAbsenceOfEvent +
+        p.dismissalAmnesty +
+        p.dismissalReconciliation +
+        p.dismissalRepentance +
+        p.dismissalCourtFine +
+        p.dismissalOther +
+        p.coerciveMeasures,
+    }));
 
     return (
       <Layout
@@ -33,11 +51,7 @@ class ClauseParts extends PureComponent<ClausePartsProps> {
           year={parseInt(pageContext.year)}
           clauseNumber={pageContext.clauseId}
           view={pageContext.view}
-          parts={
-            data.allApiServerData.edges.map(
-              (e) => e.node
-            ) as React.ComponentProps<typeof ClausePartsPage>["parts"]
-          }
+          parts={parts}
         />
       </Layout>
     );
@@ -53,7 +67,7 @@ export const query = graphql`
         siteUrl
       }
     }
-    allApiServerData(
+    parts: allApiServerData(
       filter: { part: { regex: $partRegex }, year: { eq: $year } }
     ) {
       edges {
@@ -61,7 +75,7 @@ export const query = graphql`
           part
           name
           totalConvicted
-          acquittal
+          totalAcquittal: acquittal
           dismissalAbsenceOfEvent
           dismissalAmnesty
           dismissalReconciliation
@@ -88,7 +102,7 @@ export const query = graphql`
           addTotalOffences
           addAcquittalPersons
           addAcquittalOffences
-          noCrimeSelf_defence
+          noCrimeSelfDefence: noCrimeSelf_defence
           noCrimeNecessity
           noCrimeOther
           addDisqualification

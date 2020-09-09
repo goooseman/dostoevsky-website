@@ -14,6 +14,7 @@
   --color-main-background: #eff5f3;
   --color-primary: #ff6700;
   --color-secondary: #7c89e4;
+  --color-secondary-opaque: rgba(124, 137, 228, 0.1);
   --color-secondary-lighter: #cdd5ee;
   --color-border: var(--color-secondary);
   --color-border-inverted: #fff;

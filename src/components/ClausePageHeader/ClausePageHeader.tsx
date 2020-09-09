@@ -9,7 +9,7 @@ import { getClauseLink } from "src/config/routes";
 
 interface ClausePageHeaderProps extends WithLocale {
   title: React.ReactNode;
-  year: number;
+  year?: number;
   years: number[];
   clauseNumber: number;
   pageType: "main" | "parts" | "chronology" | "full";
@@ -27,18 +27,20 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
           </Typography>
           {children}
         </div>
-
-        <Dropdown
-          ariaLabel={t("Select year")}
-          className={cn(classes.dropdown)}
-          contentClassName={cn(classes.dropdownList)}
-          options={this.getDropdownOptions()}
-          optionItemRenderer={this.renderOption}
-          onChange={this.handleChange}
-          value={year.toString()}
-          searchable={false}
-          arrowRenderer={this.renderArrow}
-        />
+        {year ? (
+          <Dropdown
+            ariaLabel={t("Select year")}
+            className={cn(classes.dropdown)}
+            contentClassName={cn(classes.dropdownList)}
+            options={this.getDropdownOptions()}
+            optionItemRenderer={this.renderOption}
+            onChange={this.handleChange}
+            value={year.toString()}
+            searchable={false}
+            arrowRenderer={this.renderArrow}
+          />
+        ) : null}
+        ;
       </div>
     );
   }

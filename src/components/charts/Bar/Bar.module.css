@@ -1,0 +1,15 @@
+.chart-title {
+  display: flex;
+  height: 100px;
+  flex-direction: column-reverse;
+  margin-left: 10px;
+}
+
+.are-labels-rotated {
+  :global {
+    .ct-label.ct-horizontal {
+      width: 100% !important;
+      transform: rotate(-45deg);
+    }
+  }
+}

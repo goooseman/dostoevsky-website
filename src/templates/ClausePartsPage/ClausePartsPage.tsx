@@ -19,7 +19,7 @@ export type ClausePartsPageViewMode =
   | "iframe-parts-by-punishment"
   | "iframe-table-parts";
 
-interface Part {
+export interface Part {
   part: string;
   name: string;
   totalConvicted: number; // Всего осуждено

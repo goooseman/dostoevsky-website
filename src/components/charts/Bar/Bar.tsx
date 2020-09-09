@@ -4,94 +4,156 @@ import Chartist, {
   IChartistStepAxis,
   ChartDrawData,
   IChartDrawLabelData,
+  IChartDrawGridData,
 } from "chartist";
+import classes from "./Bar.module.css";
+import cn from "clsx";
 import he from "he";
+import Typography from "src/components/ui-kit/Typography";
 
-interface PercentageBarProps extends React.ComponentProps<typeof ChartWrapper> {
-  groups: {
-    values: number[];
-    title: string;
+interface BarProps extends React.ComponentProps<typeof ChartWrapper> {
+  charts: {
+    groups: {
+      values: number[];
+      title: string;
+    }[];
+    title?: React.ReactNode;
+    tooltipDescription: {
+      [key: string]: string;
+    };
+    labels: string[];
   }[];
-  tooltipDescription: {
-    [key: string]: string;
-  };
+  maxLabelsCount: number;
+  areLabelsRotated?: boolean;
+  isIframeMode?: boolean;
 }
 
 const ROW_HEIGHT = 50;
+const Y_LABEL_MARGIN = 15;
 
-class PercentageBar extends PureComponent<PercentageBarProps> {
-  private chartRef = React.createRef<HTMLDivElement>();
+class Bar extends PureComponent<BarProps> {
+  private chartRefs: React.RefObject<HTMLDivElement>[];
+
+  public constructor(props: BarProps) {
+    super(props);
+    this.chartRefs = [];
+    for (let i = 0; i < props.charts.length; i++) {
+      this.chartRefs[i] = React.createRef<HTMLDivElement>();
+    }
+  }
 
   public componentDidMount(): void {
-    const { groups, labels, tooltipDescription } = this.props;
-    const series: { value: number }[][] = groups.map((g) =>
-      g.values
-        .slice()
-        .reverse()
-        .map((v) => ({ value: v, meta: { tooltip: tooltipDescription } }))
-    );
-    const chartLabels: string[] = labels.slice().reverse();
-
-    const plugins = [];
-
-    if (typeof window !== `undefined`) {
-      require("chartist-plugin-tooltips");
-      plugins.push(
-        Chartist.plugins.tooltip({
-          appendToBody: true,
-          tooltipFnc: this.getTooltipText,
-        })
+    const { charts, areLabelsRotated } = this.props;
+    for (let i = 0; i < charts.length; i++) {
+      const { groups, tooltipDescription, labels } = charts[i];
+      const series: { value: number }[][] = groups.map((g) =>
+        g.values
+          .slice()
+          .reverse()
+          .map((v) => ({ value: v, meta: { tooltip: tooltipDescription } }))
       );
-    }
+      const chartLabels: string[] = labels.slice().reverse();
 
-    const chart = new Chartist.Bar(
-      this.chartRef.current,
-      {
-        labels: chartLabels,
-        series,
-      },
-      {
-        stackBars: true,
-        horizontalBars: true,
-        axisX: {
-          onlyInteger: true,
-          showGrid: false,
-        },
-        axisY: {
-          stretch: true,
-          showGrid: false,
-          labelOffset: {
-            x: 0,
-            y: -17,
-          },
-          offset: 0,
-        } as IChartistStepAxis,
-        plugins,
+      const plugins = [];
+
+      if (typeof window !== `undefined`) {
+        require("chartist-plugin-tooltips");
+        plugins.push(
+          Chartist.plugins.tooltip({
+            appendToBody: true,
+            tooltipFnc: this.getTooltipText,
+          })
+        );
       }
-    );
+      const chart = new Chartist.Bar(
+        this.chartRefs[i].current,
+        {
+          labels: chartLabels,
+          series,
+        },
+        {
+          stackBars: true,
+          horizontalBars: true,
+          axisX: {
+            onlyInteger: true,
+            showGrid: true,
+            labelOffset: {
+              y: areLabelsRotated ? 10 : Y_LABEL_MARGIN,
+            },
+          },
+          axisY: {
+            stretch: true,
+            showGrid: true,
+            labelOffset: {
+              x: 0,
+              y: -17,
+            },
+            offset: 0,
+            fullWidth: true,
+          } as IChartistStepAxis,
+          chartPadding: {
+            bottom: areLabelsRotated ? 20 : 0,
+          },
+          plugins,
+        }
+      );
 
-    chart.on("draw", (data: ChartDrawData) => {
-      this.positionXLabel(data);
-    });
+      chart.on("draw", (data: ChartDrawData) => {
+        this.positionXLabel(data);
+        this.styleVerticalGrid(data);
+        this.styleHorizontalGrid(data);
+      });
+    }
   }
 
   render(): React.ReactNode {
-    const { labels, groups, ...wrapperProps } = this.props;
+    const {
+      charts,
+      areLabelsRotated,
+      maxLabelsCount,
+      ...wrapperProps
+    } = this.props;
 
     return (
-      <ChartWrapper {...wrapperProps} labels={groups.map((g) => g.title)}>
-        <div
-          ref={this.chartRef}
-          style={{ height: labels.length * ROW_HEIGHT }}
-        ></div>
+      <ChartWrapper {...wrapperProps} labels={this.getLabels()}>
+        {charts.map((c, i) => (
+          <div key={i} style={{ width: `${100 / charts.length}%` }}>
+            <Typography className={cn(classes.chartTitle)} isUpperCased>
+              <b>
+                <small>{c.title}</small>
+              </b>
+            </Typography>
+            <div
+              ref={this.chartRefs[i]}
+              className={cn({
+                [`ct-chart-${String.fromCharCode(97 + i)}`]: charts.length > 1,
+                [classes.areLabelsRotated]: areLabelsRotated,
+              })}
+              style={{
+                height: maxLabelsCount * ROW_HEIGHT,
+              }}
+            ></div>
+          </div>
+        ))}
       </ChartWrapper>
     );
   }
+
+  private getLabels = () => {
+    const { charts } = this.props;
+    if (charts.length === 1) {
+      return charts[0].groups.map((g) => g.title);
+    }
+    return undefined;
+  };
 
   private positionXLabel = (data: ChartDrawData): void => {
     if (!this.isLabel(data) || !this.isXLabel(data)) {
       return;
     }
+    data.element.attr({
+      width: 35,
+    });
     if (data.index === 0) {
       return;
     }
@@ -99,13 +161,34 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
 
     if (data.index === data.axis.ticks.length - 1) {
       data.element.attr({
-        x: x - 19,
+        x: x - 15,
       });
       return;
     }
 
     data.element.attr({
-      x: x - 7,
+      x: x - 6,
+    });
+  };
+
+  /** Function to remove all horizontal lines, except for the last one */
+  private styleHorizontalGrid = (data: ChartDrawData): void => {
+    if (!this.isGrid(data) || !this.isYGrid(data)) {
+      return;
+    }
+    if (data.index !== 0) {
+      data.element.remove();
+    }
+  };
+
+  /** Function to show vertical grid under the canvas */
+  private styleVerticalGrid = (data: ChartDrawData): void => {
+    if (!this.isGrid(data) || !this.isXGrid(data)) {
+      return;
+    }
+    data.element.attr({
+      y1: data.y2,
+      y2: data.y2 + Y_LABEL_MARGIN - 5,
     });
   };
 
@@ -137,6 +220,13 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
 
   private isXLabel = (data: IChartDrawLabelData) =>
     data.axis?.units.pos === "x";
+
+  private isGrid = (data: ChartDrawData): data is IChartDrawGridData =>
+    data.type === "grid";
+
+  private isYGrid = (data: IChartDrawGridData) => data.axis?.units.pos === "y";
+
+  private isXGrid = (data: IChartDrawGridData) => data.axis?.units.pos === "x";
 }
 
-export default PercentageBar;
+export default Bar;

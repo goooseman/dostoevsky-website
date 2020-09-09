@@ -21,6 +21,7 @@ interface PercentageBarProps extends React.ComponentProps<typeof ChartWrapper> {
     values: number[];
     title: string;
   }[];
+  labels: string[];
   tooltipDescription: {
     [key: string]: string;
   };

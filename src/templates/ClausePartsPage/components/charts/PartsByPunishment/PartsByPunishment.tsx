@@ -50,32 +50,37 @@ class PartsByPunishment extends PureComponent<PartsByPunishmentProps> {
       <Bar
         isIframeMode={isIframeMode}
         title={`Виды наказаний по частям статьи ${clauseNumber}`}
-        labels={byPunishmentLabels}
         downloadFilename={`${clauseNumber}-${year}-parts-by-punishment`}
-        groups={parts.map((p) => ({
-          title: p.part,
-          values: [
-            p.primaryLifeSentence,
-            p.primarySuspended,
-            p.primaryArrest,
-            p.primaryRestrain,
-            p.primaryRestrain2009,
-            p.primaryCorrectionalLabour,
-            p.primaryCommunityService,
-            p.primaryForcedLabour,
-            p.primaryFine,
-            p.primaryDisqualification,
-            p.primaryOther,
-            p.primaryMilitaryDisciplinaryUnit,
-            p.primaryRestrictionsInMilitaryService,
-            p.primaryImprisonment,
-          ],
-        }))}
-        tooltipDescription={{
-          Состав: `${clauseNumber} основной состав`,
-          Год: `${year}`,
-          "Число человек": "%%",
-        }}
+        areLabelsFiltered
+        charts={[
+          {
+            groups: parts.map((p) => ({
+              title: p.part,
+              values: [
+                p.primaryLifeSentence,
+                p.primarySuspended,
+                p.primaryArrest,
+                p.primaryRestrain,
+                p.primaryRestrain2009,
+                p.primaryCorrectionalLabour,
+                p.primaryCommunityService,
+                p.primaryForcedLabour,
+                p.primaryFine,
+                p.primaryDisqualification,
+                p.primaryOther,
+                p.primaryMilitaryDisciplinaryUnit,
+                p.primaryRestrictionsInMilitaryService,
+                p.primaryImprisonment,
+              ],
+            })),
+            labels: byPunishmentLabels,
+            tooltipDescription: {
+              Состав: `${clauseNumber} основной состав`,
+              Год: `${year}`,
+              "Число человек": "%%",
+            },
+          },
+        ]}
         iframePath={getClauseLink(
           clauseNumber.toString(),
           year.toString(),

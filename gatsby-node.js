@@ -6,7 +6,10 @@ const ukRf = require("./content/ук-рф.json");
 const years = require("./content/years.json");
 
 const getRouteForClausePage = (clauseId, year, page, view) => {
-  let route = `/${clauseId}/${year}/`;
+  let route = `/${clauseId}/`;
+  if (year) {
+    route += `${year}/`;
+  }
   if (page !== "") {
     route += `${page}/`;
   }
@@ -21,16 +24,21 @@ exports.createPages = async ({ actions }) => {
   for (let part of ukRf) {
     for (let section of part.children) {
       for (let chapter of section.children) {
+        const context = {
+          partRegex: `/^${chapter.id}[^\.]/i`,
+          clauseId: chapter.id,
+        };
         for (let year of years) {
-          const context = {
+          const contextWithYear = {
             partRegex: `/^${chapter.id}[^\.]/i`,
+            clauseRegex: `/^${chapter.id}[^\.]/i`,
             year: year.toString(),
             clauseId: chapter.id,
           };
           createPage({
             path: getRouteForClausePage(chapter.id, year, "", "page"),
             component: path.resolve(`src/page-templates/clause-main.tsx`),
-            context,
+            context: contextWithYear,
           });
           const partsPageViewModes = [
             "page",
@@ -44,18 +52,34 @@ exports.createPages = async ({ actions }) => {
             createPage({
               path: getRouteForClausePage(chapter.id, year, "parts", view),
               component: path.resolve(`src/page-templates/clause-parts.tsx`),
-              context: { ...context, view },
+              context: { ...contextWithYear, view },
             });
           }
           createPage({
-            path: getRouteForClausePage(chapter.id, year, "chronology", "page"),
-            component: path.resolve(`src/page-templates/clause-chronology.tsx`),
-            context,
-          });
-          createPage({
             path: getRouteForClausePage(chapter.id, year, "full", "page"),
             component: path.resolve(`src/page-templates/clause-full.tsx`),
-            context,
+            context: contextWithYear,
+          });
+        }
+
+        const chronoPageViewModes = [
+          "page",
+          "table",
+          "iframe-convicted-dynamics",
+          "iframe-punishment-dynamics",
+          "iframe-table-chronology-by-result",
+          "iframe-table-chronology-by-punishment",
+        ];
+        for (const view of chronoPageViewModes) {
+          createPage({
+            path: getRouteForClausePage(
+              chapter.id,
+              undefined,
+              "chronology",
+              view
+            ),
+            component: path.resolve(`src/page-templates/clause-chronology.tsx`),
+            context: { ...context, view },
           });
         }
       }

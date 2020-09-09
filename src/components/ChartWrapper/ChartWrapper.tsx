@@ -9,7 +9,7 @@ import "chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css";
 import "chartist/dist/chartist.min.css";
 
 interface ChartWrapperProps {
-  labels: string[];
+  labels?: string[];
   title: React.ReactNode;
   downloadFilename: string;
   isIframeMode?: boolean;
@@ -44,7 +44,7 @@ class ChartWrapper extends PureComponent<
               <b>{title}</b>
             </Typography>
             <div className={cn(classes.legend)}>
-              {labels.map((l, i) => (
+              {labels?.map((l, i) => (
                 <div key={i} className={cn(classes.legendItem)}>
                   <svg
                     width="16"
@@ -66,7 +66,7 @@ class ChartWrapper extends PureComponent<
                 </div>
               ))}
             </div>
-            {children}
+            <div className={cn(classes.chartsContainer)}>{children}</div>
             <div className={cn(classes.footer)}>
               <hr className={cn(classes.border)} />
               <Typography color="muted">
