@@ -2,18 +2,21 @@ import React, { PureComponent } from "react";
 import Bar from "./Bar";
 
 interface BarContainerProps
-  extends Omit<React.ComponentProps<typeof Bar>, "maxLabelsCount"> {}
+  extends Omit<React.ComponentProps<typeof Bar>, "maxLabelsCount"> {
+  areLabelsFiltered?: boolean;
+}
 interface BarContainerState {}
 
 class BarContainer extends PureComponent<BarContainerProps, BarContainerState> {
   render(): React.ReactNode {
-    const { charts, ...otherProps } = this.props;
+    const { charts, areLabelsFiltered, ...otherProps } = this.props;
     const maxLabelsCount = charts[0].labels.length;
     const forbiddenChartsIndexes: { [key: number]: boolean } = {};
     charts.forEach((chart, chartI) => {
       let filteredLabels = [...chart.labels];
       const forbiddenLabelsIndexes: { [key: number]: boolean } = {};
       const { groups } = chart;
+
       groups[0].values.forEach((v: number, i: number) => {
         if (v !== 0 && v !== null) {
           return;
@@ -43,7 +46,9 @@ class BarContainer extends PureComponent<BarContainerProps, BarContainerState> {
         forbiddenChartsIndexes[chartI] = true;
         return;
       }
-
+      if (!areLabelsFiltered) {
+        return;
+      }
       const filterOutForbiddenIndexes = (v: unknown, i: number) =>
         !forbiddenLabelsIndexes.hasOwnProperty(i);
 

@@ -46,6 +46,7 @@ it("should not render empty bar", async () => {
         },
       ]}
       {...defaultProps}
+      areLabelsFiltered
     />
   );
   await waitFor(() =>

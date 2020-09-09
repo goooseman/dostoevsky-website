@@ -51,6 +51,7 @@ class PartsByPunishment extends PureComponent<PartsByPunishmentProps> {
         isIframeMode={isIframeMode}
         title={`Виды наказаний по частям статьи ${clauseNumber}`}
         downloadFilename={`${clauseNumber}-${year}-parts-by-punishment`}
+        areLabelsFiltered
         charts={[
           {
             groups: parts.map((p) => ({
