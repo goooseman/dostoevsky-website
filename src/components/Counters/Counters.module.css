@@ -1,0 +1,22 @@
+.counters {
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-secondary-opaque);
+  border-radius: var(--border-radius);
+}
+
+.counter-block {
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  margin: 3rem 1.5rem;
+  text-align: center;
+}
+
+.counter-number {
+  font-size: 70px;
+}
+
+.counter-line {
+  border-color: var(--color-secondary);
+}

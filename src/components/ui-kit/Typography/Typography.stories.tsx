@@ -38,6 +38,10 @@ export const withInvertedColor = (): React.ReactNode => (
   </div>
 );
 
+export const withSecondaryColor = (): React.ReactNode => (
+  <Typography color="secondary">Hello, world!</Typography>
+);
+
 export const withLink = (): React.ReactNode => (
   <Typography>
     <Link to="/">Hello, world!</Link>
