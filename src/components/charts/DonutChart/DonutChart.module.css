@@ -1,0 +1,15 @@
+.chart-title {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.donut-chart {
+  :global {
+    .ct-label {
+      fill: var(--color-text-inverted);
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
+}
