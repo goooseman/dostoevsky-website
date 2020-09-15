@@ -1,10 +1,12 @@
 .chart-title {
+  height: 2.8rem;
   margin-top: 3rem;
   margin-bottom: 2rem;
   text-align: center;
 }
 
 .donut-chart {
+  margin: 0 1rem;
   :global {
     .ct-label {
       fill: var(--color-text-inverted);

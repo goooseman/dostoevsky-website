@@ -1,11 +1,6 @@
 import React, { PureComponent } from "react";
 import ChartWrapper from "src/components/ChartWrapper";
-import Chartist, {
-  IChartistStepAxis,
-  ChartDrawData,
-  IChartDrawLabelData,
-  IChartDrawGridData,
-} from "chartist";
+import Chartist from "chartist";
 import classes from "./DonutChart.module.css";
 import cn from "clsx";
 import Typography from "src/components/ui-kit/Typography";
@@ -62,10 +57,14 @@ class DonutChart extends PureComponent<DonutChartProps> {
         },
         {
           donut: true,
-          donutWidth: 120,
+          donutWidth: 80,
           showLabel: true,
-          labelInterpolationFnc: (label: string, value: number) => {
-            return value;
+          labelInterpolationFnc: (label: string, idx: number) => {
+            const val = groups[idx];
+            if (val < 3) {
+              return;
+            }
+            return val;
           },
           plugins,
         }
