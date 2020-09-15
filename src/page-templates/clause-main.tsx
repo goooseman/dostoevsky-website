@@ -1,6 +1,8 @@
 import React, { PureComponent } from "react";
 import { graphql } from "gatsby";
-import ClauseMainPage from "src/templates/ClauseMainPage";
+import ClauseMainPage, {
+  ClausePartsPageViewMode,
+} from "src/templates/ClauseMainPage";
 import { ClauseMainQuery } from "types/graphql-types";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
@@ -12,6 +14,7 @@ interface ClauseMainProps {
     partRegex: string;
     year: string;
     clauseId: number;
+    view: ClausePartsPageViewMode;
   };
 }
 
@@ -20,7 +23,11 @@ class ClauseMain extends PureComponent<ClauseMainProps> {
     const { data, pageContext } = this.props;
 
     return (
-      <Layout>
+      <Layout
+        hasPageLayout={
+          pageContext.view === "page" || pageContext.view === "table"
+        }
+      >
         <Meta site={data.site?.meta} />
         <ClauseMainPage
           year={parseInt(pageContext.year)}
