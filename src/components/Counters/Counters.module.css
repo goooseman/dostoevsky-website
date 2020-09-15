@@ -6,6 +6,7 @@
 }
 
 .counter-block {
+  max-width: 25%;
   flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 1;

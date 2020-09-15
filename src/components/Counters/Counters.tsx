@@ -5,10 +5,15 @@ import Typography from "../ui-kit/Typography";
 
 interface CountersProps {
   children: React.ReactNode;
+  className?: string;
 }
 
 export const Counters: React.SFC<CountersProps> = (props: CountersProps) => {
-  return <div className={cn(classes.counters)}>{props.children}</div>;
+  return (
+    <div className={cn(classes.counters, props.className)}>
+      {props.children}
+    </div>
+  );
 };
 
 interface CounterProps {
@@ -19,7 +24,11 @@ interface CounterProps {
 export const Counter: React.SFC<CounterProps> = (props: CounterProps) => {
   return (
     <div className={cn(classes.counterBlock)}>
-      <Typography font="serif" className={cn(classes.counterNumber)}>
+      <Typography
+        font="serif"
+        className={cn(classes.counterNumber)}
+        color="secondary"
+      >
         <b>{props.counter}</b>
       </Typography>
       <hr className={cn(classes.counterLine)} />

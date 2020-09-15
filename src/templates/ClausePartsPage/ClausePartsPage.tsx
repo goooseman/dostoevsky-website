@@ -136,44 +136,48 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
       <>
         {partIndex === 1 ? (
           <T
-            message="В {{ year }} году по части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному составу {{ count }} человек."
-            messagePlural="В {{ year }} году по части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному составу {{ count }} человек."
+            message="В {{ year }} году по части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному составу {{ count }} человек"
+            messagePlural="В {{ year }} году по части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному составу {{ count }} человек"
             scope={{ year, clauseNumber, partIndex }}
             count={part.totalConvicted}
           />
         ) : (
           <T
-            message="По части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному составу {{ count }} человек."
-            messagePlural="По части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному составу {{ count }} человек."
+            message="По части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному составу {{ count }} человек"
+            messagePlural="По части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному составу {{ count }} человек"
             scope={{ clauseNumber, partIndex }}
             count={part.totalConvicted}
           />
-        )}{" "}
+        )}
+        {". "}
         <T
-          message="Из них {{ count }} ({{ primarySuspendedPercent }}%) был приговорен к лишению свободы условно,"
-          messagePlural="Из них {{ count }} ({{ primarySuspendedPercent }}%) были приговорены к лишению свободы условно,"
+          message="Из них {{ count }} ({{ primarySuspendedPercent }}%) был приговорен к лишению свободы условно"
+          messagePlural="Из них {{ count }} ({{ primarySuspendedPercent }}%) были приговорены к лишению свободы условно"
           scope={{
             primarySuspendedPercent: formatNumber(
               part.primarySuspended / (part.totalConvicted / 100)
             ),
           }}
           count={part.primarySuspended}
-        />{" "}
+        />
+        {", "}
         <T
-          message="еще {{ count }} ({{ primaryRestrainPercent }}%) получил реальные сроки."
-          messagePlural="еще {{ count }} ({{ primaryRestrainPercent }}%) получили реальные сроки."
+          message="еще {{ count }} ({{ primaryRestrainPercent }}%) получил реальные сроки"
+          messagePlural="еще {{ count }} ({{ primaryRestrainPercent }}%) получили реальные сроки"
           count={part.primaryRestrain}
           scope={{
             primaryRestrainPercent: formatNumber(
               part.primaryRestrain / (part.totalConvicted / 100)
             ),
           }}
-        />{" "}
+        />
+        {". "}
         <T
-          message="Оправдан {{ count }} человек."
-          messagePlural="Оправданы {{ count }} человека."
+          message="Оправдан {{ count }} человек"
+          messagePlural="Оправданы {{ count }} человека"
           count={part.totalAcquittal}
-        />{" "}
+        />
+        {". "}
         <T message="Прекращены дела в отношении" /> <b>{part.totalDismissal}</b>{" "}
         <T
           message="человек"
