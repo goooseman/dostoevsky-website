@@ -18,14 +18,14 @@ interface ClauseMainPageProps {
   view: ClausePartsPageViewMode;
 
   total: number; // Прошли через суд (totalConvicted + dismissalAbsenceOfEvent + dismissalAmnesty + dismissalReconciliation + dismissalRepentance + dismissalCourtFine + dismissalOther + acquittal + noCrimeSelf-defence + noCrimeNecessity + noCrimeOther + coerciveMeasures)
-  totalCases: number; // Случаев использования статьи (totalConvicted + addTotalOffences + dismissalAbsenceOfEvent + dismissalAmnesty + dismissalReconciliation + dismissalRepentance + dismissalCourtFinе + dismissalOther + addDismissalOffences + addDismissalOtherOffences + acquittal + принудительные меры к невменяемым + noCrimeSelf-defence + noCrimeNecessity + noCrimeOther + exemption)
+  totalCases: number; // Случаев использования статьи (totalConvicted + addTotalOffences + dismissalAbsenceOfEvent + dismissalAmnesty + dismissalReconciliation + dismissalRepentance + dismissalCourtFine + dismissalOther + addDismissalOffences + addDismissalOtherOffences + acquittal + coerciveMeasures + noCrimeSelf-defence + noCrimeNecessity + noCrimeOther + exemption)
 
   totalConvicted: number; // Всего осуждено
   totalAcquittal: number; // Оправдано
   totalDismissal: number; // Прекращено
   coerciveMeasures: number; // Принудительные меры к невменяемым
 
-  nonRehabilitating: number; // По нереабилитирующим основаниям (dismissalAmnesty + dismissalReconciliation + dismissalRepentance + dismissalCourtFinе + dismissalOther + addDismissalOtherOffences)
+  nonRehabilitating: number; // По нереабилитирующим основаниям (dismissalAmnesty + dismissalReconciliation + dismissalRepentance + dismissalCourtFine + dismissalOther + addDismissalOtherOffences)
   primarySuspended: number; // Условное осуждение к лишению свободы
   primaryRestrain: number; // Ограничение свободы
 

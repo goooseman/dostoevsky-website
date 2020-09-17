@@ -26,12 +26,13 @@ exports.createPages = async ({ actions }) => {
       for (let chapter of section.children) {
         const context = {
           partRegex: `/^${chapter.id}[^\.]/i`,
+          clauseRegex: `/^${chapter.id}/i`,
           clauseId: chapter.id,
         };
         for (let year of years) {
           const contextWithYear = {
             partRegex: `/^${chapter.id}[^\.]/i`,
-            clauseRegex: `/^${chapter.id}[^\.]/i`,
+            clauseRegex: `/^${chapter.id}/i`,
             year: year.toString(),
             clauseId: chapter.id,
           };
