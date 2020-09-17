@@ -12,6 +12,7 @@ const defaultProps = {
   view: "page" as const,
   partsCount: 2,
   total: 36,
+  totalCases: 220,
   coerciveMeasures: 1,
 
   totalConvicted: 19,

@@ -17,7 +17,8 @@ interface ClauseMainPageProps {
   partsCount: number;
   view: ClausePartsPageViewMode;
 
-  total: number; // Прошли через суд
+  total: number; // Прошли через суд (totalConvicted + dismissalAbsenceOfEvent + dismissalAmnesty + dismissalReconciliation + dismissalRepentance + dismissalCourtFine + dismissalOther + acquittal + noCrimeSelf-defence + noCrimeNecessity + noCrimeOther + coerciveMeasures)
+  totalCases: number; // Случаев использования статьи (totalConvicted + addTotalOffences + dismissalAbsenceOfEvent + dismissalAmnesty + dismissalReconciliation + dismissalRepentance + dismissalCourtFinе + dismissalOther + addDismissalOffences + addDismissalOtherOffences + acquittal + принудительные меры к невменяемым + noCrimeSelf-defence + noCrimeNecessity + noCrimeOther + exemption)
 
   totalConvicted: number; // Всего осуждено
   totalAcquittal: number; // Оправдано
@@ -51,6 +52,7 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
       addTotalPersons,
       totalAcquittal,
       totalDismissal,
+      totalCases,
     } = this.props;
 
     return (
@@ -90,7 +92,7 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
         </Counters>
         <Counters className={cn(classes.counter)}>
           <Counter
-            counter={220}
+            counter={totalCases}
             label={
               <T message="общее количество случаев использования этой статьи" />
             }
