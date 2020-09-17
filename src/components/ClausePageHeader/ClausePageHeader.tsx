@@ -40,7 +40,6 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
             arrowRenderer={this.renderArrow}
           />
         ) : null}
-        ;
       </div>
     );
   }

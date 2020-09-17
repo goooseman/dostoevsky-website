@@ -6,7 +6,7 @@ import ClauseChronologyPage, {
 } from "src/templates/ClauseChronologyPage";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
-import { distinctNodes } from "src/utils/objects";
+import { accumulateNodes } from "src/utils/objects";
 
 interface ClauseChronologyProps {
   data: ClauseChronologyQuery;
@@ -22,10 +22,10 @@ interface ClauseChronologyProps {
 class ClauseChronology extends PureComponent<ClauseChronologyProps> {
   render(): React.ReactNode {
     const { data, pageContext } = this.props;
-    const years = distinctNodes<
+    const years = accumulateNodes<
       ClauseChronologyQuery["years"]["edges"][number]["node"],
       ClauseChronologyQuery["years"]["edges"][number]
-    >(data.years.edges, "year");
+    >(data.years.edges, "year", ["part"]);
 
     return (
       <Layout
@@ -46,7 +46,7 @@ class ClauseChronology extends PureComponent<ClauseChronologyProps> {
 }
 
 export const query = graphql`
-  query ClauseChronology($partRegex: String!) {
+  query ClauseChronology($partRegex: String!, $clauseRegex: String!) {
     site {
       meta: siteMetadata {
         title
@@ -63,7 +63,7 @@ export const query = graphql`
         }
       }
     }
-    years: allApiServerData(filter: { part: { regex: $partRegex } }) {
+    years: allApiServerData(filter: { part: { regex: $clauseRegex } }) {
       edges {
         node {
           year

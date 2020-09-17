@@ -19,3 +19,34 @@ export const distinctNodes = <N extends Object, O extends { node: N }>(
   }
   return result as NoUndefinedField<N>[];
 };
+
+export const accumulateNodes = <N extends Object, O extends { node: N }>(
+  objects: O[],
+  keyToAccumulate: keyof N,
+  keysToIgnore: (keyof N)[]
+): NoUndefinedField<N>[] => {
+  const result: NoUndefinedField<N>[] = [];
+  const map = new Map();
+  for (const item of objects) {
+    if (!item.node[keyToAccumulate]) {
+      continue;
+    }
+    if (!map.has(item.node[keyToAccumulate])) {
+      const index = result.push(item.node as NoUndefinedField<N>) - 1;
+      map.set(item.node[keyToAccumulate], index);
+      continue;
+    }
+    const index = map.get(item.node[keyToAccumulate]);
+    const savedItem = result[index];
+
+    for (const key of Object.keys(item.node)) {
+      if (key === keyToAccumulate || keysToIgnore.includes(key as keyof N)) {
+        continue;
+      }
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      savedItem[key] = item.node[key] + savedItem[key];
+    }
+  }
+  return result;
+};

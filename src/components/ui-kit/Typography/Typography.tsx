@@ -10,7 +10,7 @@ interface TypographyProps {
   gutterBottom: boolean;
   isLineHeightDisabled: boolean;
   size: "small" | "normal";
-  color: "normal" | "inverted" | "muted";
+  color: "normal" | "inverted" | "muted" | "secondary";
   children: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
@@ -77,6 +77,7 @@ class Typography extends PureComponent<TypographyProps> {
         [classes.h3]: variant === "h3",
         [classes.colorInverted]: color === "inverted",
         [classes.colorMuted]: color === "muted",
+        [classes.colorSecondary]: color === "secondary",
         [classes.isLineHeightDisabled]: isLineHeightDisabled,
         [classes.gutterBottom]: gutterBottom,
         [classes.sansSerif]: font === "sans-serif",

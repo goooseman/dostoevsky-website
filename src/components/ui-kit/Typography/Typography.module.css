@@ -33,6 +33,10 @@
   color: var(--color-text-inverted);
 }
 
+.common.color-secondary {
+  color: var(--color-secondary);
+}
+
 .common.color-muted {
   color: var(--color-text-muted);
 }

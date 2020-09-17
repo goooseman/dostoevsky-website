@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Wed Sep 02 2020 23:05:18 GMT+0300 (Israel Daylight Time)\n"
+"POT-Creation-Date: Tue Sep 15 2020 08:36:48 GMT+0300 (Israel Daylight Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -108,14 +108,17 @@ msgstr ""
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyConvictedDynamics/ChronologyConvictedDynamics.tsx:
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
 msgid "Число человек"
 msgstr ""
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
 msgid "Состав"
 msgstr ""
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
 msgid "Наказание"
 msgstr ""
 
@@ -127,6 +130,7 @@ msgstr ""
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
 msgid "Основной состав"
 msgstr ""
 
@@ -260,56 +264,194 @@ msgstr ""
 msgid "Динамика числа осужденных по основному составу. Основные параметры."
 msgstr ""
 
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "количество человек, чьи дела прошли через суд"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "человек Осуждены по основному составу"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "человек Осуждены по дополнительному составу"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "человек оправданы по основному составу"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "человека, в отношении которых дело было прекращено по основному составу"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "общее количество случаев использования этой статьи"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid ""
+"Если человека судят только за одно преступление, состав такого уголовного дела "
+"называется простым, если же судят за несколько сразу — квалифицированным. "
+"Наиболее тяжкое из вменяемых преступлений является основным составом, а "
+"остальные — дополнительными (иногда дополнительный состав также называют "
+"дополнительной квалификацией)."
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "В {{ year }} году по данной статье был осужден по основному составу"
+msgid_plural "В {{ year }} году по данной статье были осуждены по основному составу"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid "человек"
+msgid_plural "человек"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "Из них"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "({{ primarySuspendedPercent }}%) был приговорен к лишению свободы условно"
+msgid_plural "({{ primarySuspendedPercent }}%) были приговорены к лишению свободы условно"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "еще"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "({{ primaryRestrainPercent }}%) получил реальные сроки"
+msgid_plural "({{ primaryRestrainPercent }}%) получили реальные сроки"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "Оправдан"
+msgid_plural "Оправданы"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid "Прекращены дела в отношении"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "({{ dismissalPercent }}% от всех, попавших в суд)"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "из них {{ nonRehabilitating }} по нереабилитирующим основаниям"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "человек были осуждены по дополнительному составу"
+msgid_plural "человека были осуждены по дополнительному составу"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "Еще в отношении"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid ""
+"человек суд принял решение прекратить дело по данной статье по дополнительному "
+"составу"
+msgid_plural ""
+"человек суд принял решение прекратить дело по данной статье по дополнительному "
+"составу"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "человек были оправданы по дополнительному составу"
+msgid_plural "человек были оправданы по дополнительному составу"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
+msgid "прекращено дел в отношении человек"
+msgstr ""
+
+#: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
+msgid "оправданы"
+msgstr ""
+
+#: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
+msgid "осуждены"
+msgstr ""
+
+#: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
+msgid "принудительное лечение"
+msgstr ""
+
+#: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
+msgid ""
+"Чем закончились дела по статье {{ clauseNumber }}, дошедшие до суда (основной "
+"состав)"
+msgstr ""
+
+#: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "основной состав"
+msgstr ""
+
+#: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
+msgid "доп. состав (по числу лиц)"
+msgstr ""
+
+#: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
+msgid "доп. состав (по количеству составов)"
+msgstr ""
+
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
 msgid ""
 "В {{ year }} году по части {{ partIndex }} статьи {{ clauseNumber }} были "
-"осуждены по основному составу {{ count }} человек."
+"осуждены по основному составу {{ count }} человек"
 msgid_plural ""
 "В {{ year }} году по части {{ partIndex }} статьи {{ clauseNumber }} были "
-"осуждены по основному составу {{ count }} человек."
+"осуждены по основному составу {{ count }} человек"
 msgstr[0] ""
 msgstr[1] ""
 
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
 msgid ""
 "По части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному "
-"составу {{ count }} человек."
+"составу {{ count }} человек"
 msgid_plural ""
 "По части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному "
-"составу {{ count }} человек."
+"составу {{ count }} человек"
 msgstr[0] ""
 msgstr[1] ""
 
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
 msgid ""
 "Из них {{ count }} ({{ primarySuspendedPercent }}%) был приговорен к лишению "
-"свободы условно,"
+"свободы условно"
 msgid_plural ""
 "Из них {{ count }} ({{ primarySuspendedPercent }}%) были приговорены к лишению "
-"свободы условно,"
+"свободы условно"
 msgstr[0] ""
 msgstr[1] ""
 
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
-msgid "еще {{ count }} ({{ primaryRestrainPercent }}%) получил реальные сроки."
-msgid_plural "еще {{ count }} ({{ primaryRestrainPercent }}%) получили реальные сроки."
+msgid "еще {{ count }} ({{ primaryRestrainPercent }}%) получил реальные сроки"
+msgid_plural "еще {{ count }} ({{ primaryRestrainPercent }}%) получили реальные сроки"
 msgstr[0] ""
 msgstr[1] ""
 
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
-msgid "Оправдан {{ count }} человек."
-msgid_plural "Оправданы {{ count }} человека."
-msgstr[0] ""
-msgstr[1] ""
-
-#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
-msgid "Прекращены дела в отношении"
-msgstr ""
-
-#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
-#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
-msgid "человек"
-msgid_plural "человек"
+msgid "Оправдан {{ count }} человек"
+msgid_plural "Оправданы {{ count }} человека"
 msgstr[0] ""
 msgstr[1] ""
 
@@ -319,10 +461,6 @@ msgstr ""
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Результаты рассмотрения дел по статье {{ clause }}"
-msgstr ""
-
-#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
-msgid "основной состав"
 msgstr ""
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
