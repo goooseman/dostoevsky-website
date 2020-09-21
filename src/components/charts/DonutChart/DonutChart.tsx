@@ -8,7 +8,7 @@ import he from "he";
 
 interface DonutChartProps extends React.ComponentProps<typeof ChartWrapper> {
   charts: {
-    groups: number[];
+    groups: (number | null)[];
     title: React.ReactNode;
     tooltipDescription: {
       [key: string]: string;
@@ -34,7 +34,7 @@ class DonutChart extends PureComponent<DonutChartProps> {
       const { groups, tooltipDescription, labels } = charts[i];
 
       const series: { value: number }[] = groups.map((g, ii) => ({
-        value: g,
+        value: g || 0,
         meta: { tooltip: tooltipDescription, label: labels[ii] },
       }));
 
@@ -61,7 +61,7 @@ class DonutChart extends PureComponent<DonutChartProps> {
           showLabel: true,
           labelInterpolationFnc: (label: string, idx: number) => {
             const val = groups[idx];
-            if (val < 3) {
+            if (!val || val < 3) {
               return;
             }
             return val;
