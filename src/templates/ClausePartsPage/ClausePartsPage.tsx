@@ -103,7 +103,7 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
         title="Части"
         pageType="parts"
         headerChildren={this.renderHeaderChildren()}
-        hasParts={parts.length > 1}
+        hasParts={parts.length > 0}
       >
         {view === "table" ? <ClausePartsTable {...this.props} /> : null}
         {view === "page" ? (

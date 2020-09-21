@@ -1,15 +1,22 @@
 import React, { PureComponent } from "react";
 import ClausePageLayout from "src/components/ClausePageLayout";
 import Typography from "src/components/ui-kit/Typography";
-import { T } from "react-targem";
+import { T, t } from "react-targem";
 import classes from "./ClauseMainPage.module.css";
 import cn from "clsx";
 import { Counters, Counter } from "src/components/Counters";
 import SpoilerText from "src/components/SpoilerText";
 import { formatNumber } from "src/utils/numbers";
 import MainByResult from "./components/charts/MainByResult";
+import CommonMainResultsTable from "./components/tables/CommonMainResultsTable";
+import CommonAddResultsTable from "./components/tables/CommonAddResultsTable";
 
-export type ClausePartsPageViewMode = "page" | "table";
+export type ClausePartsPageViewMode =
+  | "page"
+  | "table"
+  | "iframe-table-common-main-by-result"
+  | "iframe-table-common-add-by-result"
+  | "iframe-by-result";
 
 interface ClauseMainPageProps {
   clauseNumber: number;
@@ -53,7 +60,20 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
       totalAcquittal,
       totalDismissal,
       totalCases,
+      view,
     } = this.props;
+
+    if (view === "iframe-table-common-main-by-result") {
+      return <CommonMainResultsTable {...this.props} />;
+    }
+
+    if (view === "iframe-table-common-add-by-result") {
+      return <CommonAddResultsTable {...this.props} />;
+    }
+
+    if (view === "iframe-by-result") {
+      return <MainByResult {...this.props} isIframeMode />;
+    }
 
     return (
       <ClausePageLayout
@@ -64,46 +84,62 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
         hasParts={partsCount > 0}
         headerChildren={this.renderHeaderChildren()}
       >
-        <Counters className={cn(classes.counter)}>
-          <Counter
-            counter={total}
-            label={
-              <T message="количество человек, чьи дела прошли через суд" />
-            }
-          />
-          <Counter
-            counter={totalConvicted}
-            label={<T message="человек Осуждены по основному составу" />}
-          />
-          <Counter
-            counter={addTotalPersons}
-            label={<T message="человек Осуждены по дополнительному составу" />}
-          />
-          <Counter
-            counter={totalAcquittal}
-            label={<T message="человек оправданы по основному составу" />}
-          />
-          <Counter
-            counter={totalDismissal}
-            label={
-              <T message="человека, в отношении которых дело было прекращено по основному составу" />
-            }
-          />
-        </Counters>
-        <Counters className={cn(classes.counter)}>
-          <Counter
-            counter={totalCases}
-            label={
-              <T message="общее количество случаев использования этой статьи" />
-            }
-          />
-        </Counters>
-        <div className={cn(classes.charts)}>
-          <div className={cn(classes.chartContainer)}>
-            <SpoilerText text={this.getText()} />
-          </div>
-        </div>
-        <MainByResult {...this.props} />
+        {view === "table" ? (
+          <>
+            <div className={classes.tableContainer}>
+              <CommonMainResultsTable {...this.props} />
+            </div>
+            <div className={classes.tableContainer}>
+              <CommonAddResultsTable {...this.props} />
+            </div>
+          </>
+        ) : null}
+        {view === "page" ? (
+          <>
+            <Counters className={cn(classes.counter)}>
+              <Counter
+                counter={total}
+                label={
+                  <T message="количество человек, чьи дела прошли через суд" />
+                }
+              />
+              <Counter
+                counter={totalConvicted}
+                label={<T message="человек Осуждены по основному составу" />}
+              />
+              <Counter
+                counter={addTotalPersons}
+                label={
+                  <T message="человек Осуждены по дополнительному составу" />
+                }
+              />
+              <Counter
+                counter={totalAcquittal}
+                label={<T message="человек оправданы по основному составу" />}
+              />
+              <Counter
+                counter={totalDismissal}
+                label={
+                  <T message="человека, в отношении которых дело было прекращено по основному составу" />
+                }
+              />
+            </Counters>
+            <Counters className={cn(classes.counter)}>
+              <Counter
+                counter={totalCases}
+                label={
+                  <T message="общее количество случаев использования этой статьи" />
+                }
+              />
+            </Counters>
+            <div className={cn(classes.charts)}>
+              <div className={cn(classes.chartContainer)}>
+                <SpoilerText text={this.getText()} />
+              </div>
+            </div>
+            <MainByResult {...this.props} />
+          </>
+        ) : null}
       </ClausePageLayout>
     );
   }

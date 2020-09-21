@@ -423,6 +423,7 @@ msgstr ""
 "состав)"
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
+#: src/templates/ClauseMainPage/components/tables/CommonMainResultsTable/CommonMainResultsTable.tsx:
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "основной состав"
 msgstr "основной состав"
@@ -434,6 +435,26 @@ msgstr "доп. состав (по числу лиц)"
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
 msgid "доп. состав (по количеству составов)"
 msgstr "доп. состав (по количеству составов)"
+
+#: src/templates/ClauseMainPage/components/tables/CommonAddResultsTable/CommonAddResultsTable.tsx:
+msgid "по числу лиц"
+msgstr "по числу лиц"
+
+#: src/templates/ClauseMainPage/components/tables/CommonAddResultsTable/CommonAddResultsTable.tsx:
+msgid "по количеству составов преступлений"
+msgstr "по количеству составов преступлений"
+
+#: src/templates/ClauseMainPage/components/tables/CommonAddResultsTable/CommonAddResultsTable.tsx:
+msgid "Дополнительный состав: детали"
+msgstr "Дополнительный состав: детали"
+
+#: src/templates/ClauseMainPage/components/tables/CommonMainResultsTable/CommonMainResultsTable.tsx:
+msgid "дополнительный состав"
+msgstr "дополнительный состав"
+
+#: src/templates/ClauseMainPage/components/tables/CommonMainResultsTable/CommonMainResultsTable.tsx:
+msgid "Результаты рассмотрения дел по статье: основные параметры"
+msgstr "Результаты рассмотрения дел по статье: основные параметры"
 
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
 msgid ""
