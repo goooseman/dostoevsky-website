@@ -1,3 +1,5 @@
+import { getRouteForClausePage } from "../../gatsby-routing";
+
 enum clauseLinkTypes {
   main = "",
   parts = "parts",
@@ -10,16 +12,4 @@ export const getClauseLink = (
   year: string | number | undefined,
   type: keyof typeof clauseLinkTypes,
   view = "page"
-): string => {
-  let route = `/${clause}/`;
-  if (type !== "chronology") {
-    route += `${year || 2019}/`;
-  }
-  if (type !== "main") {
-    route += `${clauseLinkTypes[type]}/`;
-  }
-  if (view !== "page") {
-    route += `${view}/`;
-  }
-  return route;
-};
+): string => getRouteForClausePage(clause, year, type, view);

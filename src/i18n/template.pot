@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Tue Sep 15 2020 08:36:48 GMT+0300 (Israel Daylight Time)\n"
+"POT-Creation-Date: Mon Sep 21 2020 08:22:16 GMT+0300 (Israel Daylight Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -401,6 +401,7 @@ msgid ""
 msgstr ""
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
+#: src/templates/ClauseMainPage/components/tables/CommonMainResultsTable/CommonMainResultsTable.tsx:
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "основной состав"
 msgstr ""
@@ -411,6 +412,26 @@ msgstr ""
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
 msgid "доп. состав (по количеству составов)"
+msgstr ""
+
+#: src/templates/ClauseMainPage/components/tables/CommonAddResultsTable/CommonAddResultsTable.tsx:
+msgid "по числу лиц"
+msgstr ""
+
+#: src/templates/ClauseMainPage/components/tables/CommonAddResultsTable/CommonAddResultsTable.tsx:
+msgid "по количеству составов преступлений"
+msgstr ""
+
+#: src/templates/ClauseMainPage/components/tables/CommonAddResultsTable/CommonAddResultsTable.tsx:
+msgid "Дополнительный состав: детали"
+msgstr ""
+
+#: src/templates/ClauseMainPage/components/tables/CommonMainResultsTable/CommonMainResultsTable.tsx:
+msgid "дополнительный состав"
+msgstr ""
+
+#: src/templates/ClauseMainPage/components/tables/CommonMainResultsTable/CommonMainResultsTable.tsx:
+msgid "Результаты рассмотрения дел по статье: основные параметры"
 msgstr ""
 
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:

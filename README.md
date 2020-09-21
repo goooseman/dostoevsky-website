@@ -15,3 +15,7 @@
 - [Design documentation](https://docs.google.com/document/d/1UiDOOroIXw4wTsjwwhm5uhZ2CzYFXzXc_oECGrwsgg4/edit?ts=5f188437)
 - [Translation](https://docs.google.com/document/d/1zvBFKtdBaUmnlMZEHbFJ1WSartSofl7M2vv7LtSbS08/edit)
 - [FAQ (including field names of every clause)](https://docs.google.com/document/d/1Mmc-QWchjd1oxy6gHVGP1Lb6pIMj2IowQWc9Y4dpm-k/edit)
+
+### Cheat sheet
+
+- To build faster in development use `npm run develop:semi` script, which builds the website only for the first clause group
