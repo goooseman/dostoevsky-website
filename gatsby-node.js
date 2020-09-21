@@ -4,23 +4,15 @@ const path = require("path");
 const WebpackShellPluginNext = require("webpack-shell-plugin-next");
 const ukRf = require("./content/ук-рф.json");
 const years = require("./content/years.json");
-
-const getRouteForClausePage = (clauseId, year, page, view) => {
-  let route = `/${clauseId}/`;
-  if (year) {
-    route += `${year}/`;
-  }
-  if (page !== "") {
-    route += `${page}/`;
-  }
-  if (view !== "page") {
-    route += `${view}/`;
-  }
-  return route;
-};
+const { getRouteForClausePage } = require("./gatsby-routing");
 
 exports.createPages = async ({ actions }) => {
   const { createPage } = actions;
+  const IS_SEMI_BUILD = Boolean(process.env.IS_SEMI_BUILD);
+  if (IS_SEMI_BUILD) {
+    ukRf.splice(1); // Leave only first 1 clause group
+  }
+
   for (let part of ukRf) {
     for (let section of part.children) {
       for (let chapter of section.children) {
@@ -36,11 +28,20 @@ exports.createPages = async ({ actions }) => {
             year: year.toString(),
             clauseId: chapter.id,
           };
-          createPage({
-            path: getRouteForClausePage(chapter.id, year, "", "page"),
-            component: path.resolve(`src/page-templates/clause-main.tsx`),
-            context: contextWithYear,
-          });
+          const mainPageViewModes = [
+            "page",
+            "table",
+            "iframe-table-common-main-by-result",
+            "iframe-table-common-add-by-result",
+            "iframe-by-result",
+          ];
+          for (const view of mainPageViewModes) {
+            createPage({
+              path: getRouteForClausePage(chapter.id, year, "main", view),
+              component: path.resolve(`src/page-templates/clause-main.tsx`),
+              context: { ...contextWithYear, view },
+            });
+          }
           const partsPageViewModes = [
             "page",
             "table",
