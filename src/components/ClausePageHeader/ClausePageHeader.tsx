@@ -20,7 +20,7 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
   render(): React.ReactNode {
     const { title, t, year, children } = this.props;
     return (
-      <>
+      <div className={classes.header}>
         <div className={cn(classes.container)}>
           <div className={cn(classes.textContainer)}>
             <Typography component="h3" variant="h1" font="serif">
@@ -42,7 +42,7 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
           ) : null}
         </div>
         {children}
-      </>
+      </div>
     );
   }
 
