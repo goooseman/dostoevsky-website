@@ -10,6 +10,7 @@ import type { I18nText } from "src/types";
 import { getClauseLink } from "src/config/routes";
 import ClausePageHeader from "src/components/ClausePageHeader";
 import { Menu, MenuLink } from "src/components/Menu";
+import { LinkGetProps } from "@reach/router";
 
 interface ClausePageLayoutProps {
   clauseNumber: number;
@@ -57,8 +58,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
 
             <Link
               to={getClauseLink(clauseNumber, year, "main")}
-              partiallyActive
-              activeClassName={cn(classes.itemActive)}
+              getProps={this.getMainLinkProps}
             >
               <Typography size="small" variant="span">
                 основной и дополнительный составы
@@ -162,6 +162,18 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
       </main>
     );
   }
+
+  private getMainLinkProps = (props: LinkGetProps) => {
+    const notActivePathnames = ["chronology", "parts", "full"];
+    for (const notActivePathname of notActivePathnames) {
+      if (props.location.pathname.includes(notActivePathname)) {
+        return {};
+      }
+    }
+    return {
+      className: classes.itemActive,
+    };
+  };
 }
 
 export default ClausePageLayout;
