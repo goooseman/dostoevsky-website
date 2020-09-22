@@ -57,6 +57,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
 
             <Link
               to={getClauseLink(clauseNumber, year, "main")}
+              partiallyActive
               activeClassName={cn(classes.itemActive)}
             >
               <Typography size="small" variant="span">
@@ -77,6 +78,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
 
             <Link
               to={getClauseLink(clauseNumber, year, "chronology")}
+              partiallyActive
               activeClassName={cn(classes.itemActive)}
             >
               <Typography size="small" variant="span">

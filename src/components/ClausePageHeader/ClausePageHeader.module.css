@@ -1,6 +1,5 @@
 .container {
   display: flex;
-  min-height: 110px;
   align-items: flex-start;
 }
 

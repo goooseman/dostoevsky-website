@@ -30,3 +30,9 @@
 .table-container {
   margin-bottom: 40px;
 }
+
+.focus-menu {
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border-dark);
+  margin-top: 1rem;
+}
