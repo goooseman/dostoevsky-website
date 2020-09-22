@@ -1,7 +1,7 @@
 const getRouteForClausePage = (clauseId, year, page, view) => {
   let route = `/${clauseId}/`;
-  if (year) {
-    route += `${year}/`;
+  if (page !== "chronology") {
+    route += `${year || 2019}/`;
   }
   if (page !== "main") {
     route += `${page}/`;
