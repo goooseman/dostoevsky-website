@@ -27,3 +27,22 @@ export const fromClauseMainSecondOne = (): React.ReactNode => (
     />
   </Counters>
 );
+
+export const fromClauseMainFocus = (): React.ReactNode => (
+  <Counters>
+    <Counter counter={19} label="человек осуждены за год" />
+
+    <Counter counter={9} label="человек оправданы" />
+
+    <Counter
+      counter={141}
+      label="человек, в отношении которых дело было прекращено"
+    />
+
+    <Counter
+      counter={0}
+      label="преступлений признано неоконченными"
+      helpText="Это может означать как то, что все были оконченными, так и то, что сам состав является формальным и не имеет стадий совершения правонарушения (например, можно готовить покушение убийство, но нельзя готовить покушение на неоднократное участие в несогласованных акциях)."
+    />
+  </Counters>
+);

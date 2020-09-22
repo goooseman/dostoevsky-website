@@ -48,6 +48,7 @@
     "react-dropdown-aria": "^2.0.6",
     "react-helmet": "^6.1.0",
     "react-targem": "^1.7.1",
+    "react-tooltip": "^4.2.10",
     "uuid": "^8.3.0",
     "webpack-shell-plugin-next": "^1.1.9"
   },

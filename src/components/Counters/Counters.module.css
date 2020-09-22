@@ -6,6 +6,7 @@
 }
 
 .counter-block {
+  position: relative;
   max-width: 25%;
   flex-basis: 0;
   flex-grow: 1;
@@ -20,4 +21,39 @@
 
 .counter-line {
   border-color: var(--color-secondary);
+}
+
+.info {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+}
+
+.counter-block .tooltip {
+  width: 300px;
+  border: 1px solid var(--color-border-dark);
+  background-color: var(--color-main-background);
+  color: var(--color--text);
+  font-family: var(--font-family-sans-serif);
+  font-size: var(--font-size-base);
+  font-weight: normal;
+}
+
+.counter-block .tooltip:global(.place-bottom)::before {
+  border-bottom-color: var(--color-border-dark);
+}
+
+.counter-block .tooltip:global(.place-bottom)::after {
+  border-bottom-color: var(--color-main-background);
+}
+
+.counter-block .tooltip:global(.place-left)::before {
+  border-left-color: var(--color-border-dark);
+}
+
+.counter-block .tooltip:global(.place-left)::after {
+  border-left-color: var(--color-main-background);
 }
