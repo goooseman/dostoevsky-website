@@ -33,6 +33,14 @@ msgstr ""
 msgid "Down arrow"
 msgstr ""
 
+#: src/components/ClausePageLayout/ClausePageLayout.tsx:
+msgid "ЧАРТЫ"
+msgstr ""
+
+#: src/components/ClausePageLayout/ClausePageLayout.tsx:
+msgid "ТАБЛИЦА"
+msgstr ""
+
 #: src/components/DownloadButton/DownloadButton.tsx:
 msgid "Download chart"
 msgstr ""

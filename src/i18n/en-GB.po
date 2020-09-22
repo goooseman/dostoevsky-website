@@ -32,6 +32,14 @@ msgstr "Select year"
 msgid "Down arrow"
 msgstr "Down arrow"
 
+#: src/components/ClausePageLayout/ClausePageLayout.tsx:
+msgid "ЧАРТЫ"
+msgstr "ЧАРТЫ"
+
+#: src/components/ClausePageLayout/ClausePageLayout.tsx:
+msgid "ТАБЛИЦА"
+msgstr "ТАБЛИЦА"
+
 #: src/components/DownloadButton/DownloadButton.tsx:
 msgid "Download chart"
 msgstr "Download chart"

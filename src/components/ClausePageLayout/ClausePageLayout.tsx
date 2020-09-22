@@ -11,6 +11,7 @@ import { getClauseLink } from "src/config/routes";
 import ClausePageHeader from "src/components/ClausePageHeader";
 import { Menu, MenuLink } from "src/components/Menu";
 import { LinkGetProps } from "@reach/router";
+import { T } from "react-targem";
 
 interface ClausePageLayoutProps {
   clauseNumber: number;
@@ -148,12 +149,12 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
             </ClausePageHeader>
             <Menu variant="activeBorderBottom" className={cn(classes.menu)}>
               <MenuLink to={getClauseLink(clauseNumber, year, pageType)}>
-                ЧАРТЫ
+                <T message="ЧАРТЫ" />
               </MenuLink>
               <MenuLink
                 to={getClauseLink(clauseNumber, year, pageType, "table")}
               >
-                ТАБЛИЦА
+                <T message="ТАБЛИЦА" />
               </MenuLink>
             </Menu>
             <div>{children}</div>
