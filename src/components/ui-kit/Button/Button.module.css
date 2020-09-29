@@ -1,4 +1,5 @@
 .button {
+  display: inline-block;
   min-width: 3rem;
   padding: 0.5rem 1rem;
   border: 2px solid var(--color-border-dark);
@@ -7,6 +8,7 @@
   color: var(--color-text);
   cursor: pointer;
   outline: 0;
+  text-decoration: none;
   text-transform: uppercase;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,

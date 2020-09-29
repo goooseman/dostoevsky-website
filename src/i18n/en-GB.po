@@ -40,6 +40,18 @@ msgstr "ЧАРТЫ"
 msgid "ТАБЛИЦА"
 msgstr "ТАБЛИЦА"
 
+#: src/components/ClausePageLayout/ClausePageLayout.tsx:
+msgid "Нужны данные по всем статьям и годам?"
+msgstr "Нужны данные по всем статьям и годам?"
+
+#: src/components/ClausePageLayout/ClausePageLayout.tsx:
+msgid "Полный доступ к датасету"
+msgstr "Полный доступ к датасету"
+
+#: src/components/ClausePageLayout/ClausePageLayout.tsx:
+msgid "Перейти"
+msgstr "Перейти"
+
 #: src/components/DownloadButton/DownloadButton.tsx:
 msgid "Download chart"
 msgstr "Download chart"
