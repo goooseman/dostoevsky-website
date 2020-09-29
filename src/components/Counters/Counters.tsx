@@ -38,7 +38,11 @@ export const Counter: React.SFC<CounterProps> = (props: CounterProps) => {
         <b>{props.label}</b>
       </Typography>
       {props.helpText ? (
-        <div data-tip={props.helpText} className={classes.info}></div>
+        <img
+          data-tip={props.helpText}
+          className={classes.info}
+          src={require("./assets/info.svg")}
+        />
       ) : null}
       <ReactTooltip className={classes.tooltip} place="bottom" effect="solid" />
     </div>
