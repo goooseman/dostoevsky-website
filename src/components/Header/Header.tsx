@@ -25,6 +25,7 @@ const Header: React.FC<HeaderProps> = () => {
           <MenuLink to="/clauses">каталог статей ук рф</MenuLink>
           <MenuLink to="/faq">о датасете</MenuLink>
           <MenuLink to="/about">о проекте</MenuLink>
+          <MenuLink to="/full">полный датасет</MenuLink>
         </Menu>
       </Container>
     </nav>
