@@ -32,6 +32,26 @@ msgstr "Select year"
 msgid "Down arrow"
 msgstr "Down arrow"
 
+#: src/components/ClausePageLayout/ClausePageLayout.tsx:
+msgid "ЧАРТЫ"
+msgstr "ЧАРТЫ"
+
+#: src/components/ClausePageLayout/ClausePageLayout.tsx:
+msgid "ТАБЛИЦА"
+msgstr "ТАБЛИЦА"
+
+#: src/components/ClausePageLayout/ClausePageLayout.tsx:
+msgid "Нужны данные по всем статьям и годам?"
+msgstr "Нужны данные по всем статьям и годам?"
+
+#: src/components/ClausePageLayout/ClausePageLayout.tsx:
+msgid "Полный доступ к датасету"
+msgstr "Полный доступ к датасету"
+
+#: src/components/ClausePageLayout/ClausePageLayout.tsx:
+msgid "Перейти"
+msgstr "Перейти"
+
 #: src/components/DownloadButton/DownloadButton.tsx:
 msgid "Download chart"
 msgstr "Download chart"
@@ -298,6 +318,14 @@ msgstr "человека, в отношении которых дело было
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "общее количество случаев использования этой статьи"
 msgstr "общее количество случаев использования этой статьи"
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "Основной и дополнительный состав: общие сведения"
+msgstr "Основной и дополнительный состав: общие сведения"
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "Основной состав: в фокусе"
+msgstr "Основной состав: в фокусе"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid ""

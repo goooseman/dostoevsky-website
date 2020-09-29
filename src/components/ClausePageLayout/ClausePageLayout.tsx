@@ -10,6 +10,9 @@ import type { I18nText } from "src/types";
 import { getClauseLink } from "src/config/routes";
 import ClausePageHeader from "src/components/ClausePageHeader";
 import { Menu, MenuLink } from "src/components/Menu";
+import { LinkGetProps } from "@reach/router";
+import { T } from "react-targem";
+import Button from "../ui-kit/Button";
 
 interface ClausePageLayoutProps {
   clauseNumber: number;
@@ -57,7 +60,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
 
             <Link
               to={getClauseLink(clauseNumber, year, "main")}
-              activeClassName={cn(classes.itemActive)}
+              getProps={this.getMainLinkProps}
             >
               <Typography size="small" variant="span">
                 основной и дополнительный составы
@@ -77,6 +80,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
 
             <Link
               to={getClauseLink(clauseNumber, year, "chronology")}
+              partiallyActive
               activeClassName={cn(classes.itemActive)}
             >
               <Typography size="small" variant="span">
@@ -146,20 +150,49 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
             </ClausePageHeader>
             <Menu variant="activeBorderBottom" className={cn(classes.menu)}>
               <MenuLink to={getClauseLink(clauseNumber, year, pageType)}>
-                ЧАРТЫ
+                <T message="ЧАРТЫ" />
               </MenuLink>
               <MenuLink
                 to={getClauseLink(clauseNumber, year, pageType, "table")}
               >
-                ТАБЛИЦА
+                <T message="ТАБЛИЦА" />
               </MenuLink>
             </Menu>
             <div>{children}</div>
           </div>
         </Container>
+        <Container>
+          <div className={classes.footer}>
+            <Typography font="serif" variant="h3" component="h3">
+              <i>
+                <T message="Нужны данные по всем статьям и годам?" />
+              </i>
+            </Typography>
+            <Typography font="serif" variant="h2" component="p">
+              <b>
+                <T message="Полный доступ к датасету" />
+              </b>
+            </Typography>
+            <Button to="/full" className={classes.button}>
+              <T message="Перейти" />
+            </Button>
+          </div>
+        </Container>
       </main>
     );
   }
+
+  private getMainLinkProps = (props: LinkGetProps) => {
+    const notActivePathnames = ["chronology", "parts", "full"];
+    for (const notActivePathname of notActivePathnames) {
+      if (props.location.pathname.includes(notActivePathname)) {
+        return {};
+      }
+    }
+    return {
+      className: classes.itemActive,
+    };
+  };
 }
 
 export default ClausePageLayout;

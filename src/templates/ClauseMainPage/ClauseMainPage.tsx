@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import ClausePageLayout from "src/components/ClausePageLayout";
 import Typography from "src/components/ui-kit/Typography";
-import { T, t } from "react-targem";
+import { T } from "react-targem";
 import classes from "./ClauseMainPage.module.css";
 import cn from "clsx";
 import { Counters, Counter } from "src/components/Counters";
@@ -10,10 +10,13 @@ import { formatNumber } from "src/utils/numbers";
 import MainByResult from "./components/charts/MainByResult";
 import CommonMainResultsTable from "./components/tables/CommonMainResultsTable";
 import CommonAddResultsTable from "./components/tables/CommonAddResultsTable";
+import { Menu, MenuLink } from "src/components/Menu";
+import { getClauseLink } from "src/config/routes";
 
 export type ClausePartsPageViewMode =
   | "page"
   | "table"
+  | "focus"
   | "iframe-table-common-main-by-result"
   | "iframe-table-common-add-by-result"
   | "iframe-by-result";
@@ -145,12 +148,25 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
   }
 
   private renderHeaderChildren = () => {
+    const { clauseNumber, year } = this.props;
     return (
-      <div className={cn(classes.textContainer)}>
-        <Typography className={cn(classes.text)}>
-          <T message="Если человека судят только за одно преступление, состав такого уголовного дела называется простым, если же судят за несколько сразу — квалифицированным. Наиболее тяжкое из вменяемых преступлений является основным составом, а остальные — дополнительными (иногда дополнительный состав также называют дополнительной квалификацией)." />
-        </Typography>
-      </div>
+      <>
+        <div className={classes.focusMenu}>
+          <Menu variant="default">
+            <MenuLink to={getClauseLink(clauseNumber, year, "main")}>
+              <T message="Основной и дополнительный состав: общие сведения" />
+            </MenuLink>
+            <MenuLink to={getClauseLink(clauseNumber, year, "main", "focus")}>
+              <T message="Основной состав: в фокусе" />
+            </MenuLink>
+          </Menu>
+        </div>
+        <div className={cn(classes.textContainer)}>
+          <Typography className={cn(classes.text)}>
+            <T message="Если человека судят только за одно преступление, состав такого уголовного дела называется простым, если же судят за несколько сразу — квалифицированным. Наиболее тяжкое из вменяемых преступлений является основным составом, а остальные — дополнительными (иногда дополнительный состав также называют дополнительной квалификацией)." />
+          </Typography>
+        </div>
+      </>
     );
   };
 

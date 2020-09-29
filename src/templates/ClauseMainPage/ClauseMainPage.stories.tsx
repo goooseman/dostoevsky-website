@@ -41,3 +41,7 @@ export const withGraphs = (): React.ReactNode => (
 export const withTable = (): React.ReactNode => (
   <ClauseMainPage {...defaultProps} view="table" />
 );
+
+export const withFocusGraphs = (): React.ReactNode => (
+  <ClauseMainPage {...defaultProps} view="focus" />
+);

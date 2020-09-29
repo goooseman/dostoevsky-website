@@ -31,6 +31,7 @@ exports.createPages = async ({ actions }) => {
           const mainPageViewModes = [
             "page",
             "table",
+            "focus",
             "iframe-table-common-main-by-result",
             "iframe-table-common-add-by-result",
             "iframe-by-result",

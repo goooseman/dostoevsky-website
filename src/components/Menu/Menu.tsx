@@ -67,7 +67,7 @@ export class MenuLink extends PureComponent<MenuLinkProps> {
     const { to, children } = this.props;
     return (
       <li className={cn(classes.menuItem)}>
-        <Typography variant="span">
+        <Typography variant="span" isUpperCased>
           <Link
             to={to}
             className={cn(classes.menuLink)}

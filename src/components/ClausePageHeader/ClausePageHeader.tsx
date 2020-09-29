@@ -20,26 +20,28 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
   render(): React.ReactNode {
     const { title, t, year, children } = this.props;
     return (
-      <div className={cn(classes.container)}>
-        <div className={cn(classes.textContainer)}>
-          <Typography component="h3" variant="h1" font="serif">
-            {title}
-          </Typography>
-          {children}
+      <div className={classes.header}>
+        <div className={cn(classes.container)}>
+          <div className={cn(classes.textContainer)}>
+            <Typography component="h3" variant="h1" font="serif">
+              {title}
+            </Typography>
+          </div>
+          {year ? (
+            <Dropdown
+              ariaLabel={t("Select year")}
+              className={cn(classes.dropdown)}
+              contentClassName={cn(classes.dropdownList)}
+              options={this.getDropdownOptions()}
+              optionItemRenderer={this.renderOption}
+              onChange={this.handleChange}
+              value={year.toString()}
+              searchable={false}
+              arrowRenderer={this.renderArrow}
+            />
+          ) : null}
         </div>
-        {year ? (
-          <Dropdown
-            ariaLabel={t("Select year")}
-            className={cn(classes.dropdown)}
-            contentClassName={cn(classes.dropdownList)}
-            options={this.getDropdownOptions()}
-            optionItemRenderer={this.renderOption}
-            onChange={this.handleChange}
-            value={year.toString()}
-            searchable={false}
-            arrowRenderer={this.renderArrow}
-          />
-        ) : null}
+        {children}
       </div>
     );
   }

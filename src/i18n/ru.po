@@ -33,6 +33,26 @@ msgstr ""
 msgid "Down arrow"
 msgstr ""
 
+#: src/components/ClausePageLayout/ClausePageLayout.tsx:
+msgid "ЧАРТЫ"
+msgstr ""
+
+#: src/components/ClausePageLayout/ClausePageLayout.tsx:
+msgid "ТАБЛИЦА"
+msgstr ""
+
+#: src/components/ClausePageLayout/ClausePageLayout.tsx:
+msgid "Нужны данные по всем статьям и годам?"
+msgstr ""
+
+#: src/components/ClausePageLayout/ClausePageLayout.tsx:
+msgid "Полный доступ к датасету"
+msgstr ""
+
+#: src/components/ClausePageLayout/ClausePageLayout.tsx:
+msgid "Перейти"
+msgstr ""
+
 #: src/components/DownloadButton/DownloadButton.tsx:
 msgid "Download chart"
 msgstr ""
@@ -293,6 +313,14 @@ msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "общее количество случаев использования этой статьи"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "Основной и дополнительный состав: общие сведения"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "Основной состав: в фокусе"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:

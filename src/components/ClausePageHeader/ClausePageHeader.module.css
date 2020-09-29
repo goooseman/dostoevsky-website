@@ -1,6 +1,9 @@
+.header {
+  min-height: 70px;
+}
+
 .container {
   display: flex;
-  min-height: 110px;
   align-items: flex-start;
 }
 
