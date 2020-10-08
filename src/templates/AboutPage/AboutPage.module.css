@@ -1,0 +1,47 @@
+.container {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: var(--color-main-background);
+}
+
+.sub-title {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  font-size: 1.875rem;
+  font-weight: 600;
+}
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  width: 25%;
+  margin-bottom: 2rem;
+}
+
+.team-photo-wrapper {
+  width: 10rem;
+  height: 10rem;
+  margin: 0 auto;
+  background-color: #7c89e4;
+  border-radius: 50%;
+}
+
+.team-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.team-member-name {
+  margin-top: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.team-member-position {
+  margin-top: 0.5rem;
+  text-align: center;
+}

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Tue Sep 29 2020 07:52:42 GMT+0300 (Israel Daylight Time)\n"
+"POT-Creation-Date: Wed Oct 07 2020 18:04:48 GMT+0300 (GMT+03:00)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -102,6 +102,26 @@ msgstr ""
 #: src/components/Table/components/TableRow/TableRow.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
 msgid "Plus icon"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid ""
+"В 2018 году по статье “Возбуждение ненависти либо вражды, а равно\n"
+"                    унижение человеческого достоинства” в судах рассмотрели 531 "
+"дело. В\n"
+"                    461 случае суд закончился обвинительным приговором. Из них "
+"282 (61%)\n"
+"                    осужденных были приговорены к лишению свободы условно. К "
+"реальному\n"
+"                    лишению свободы приговорено 50 человек, из них 27 человек "
+"получили\n"
+"                    сроки от 1 до 2 лет. Оправдано 3 человека. Прекращено 67 "
+"дел, из них\n"
+"                    65 по нереабилитирующим основаниям."
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Команда"
 msgstr ""
 
 #: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:
