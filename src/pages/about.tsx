@@ -1,8 +1,9 @@
 import { graphql } from "gatsby";
 import React from "react";
+import Layout from "src/components/Layout";
 import { AboutPageQuery } from "../../types/graphql-types";
 import Meta from "src/components/Meta";
-import Layout from "src/components/Layout";
+import AboutPage from "src/templates/AboutPage";
 
 interface AboutPageProps {
   data: AboutPageQuery;
@@ -14,6 +15,7 @@ const Index: React.FC<AboutPageProps> = ({ data }: AboutPageProps) => {
   return (
     <Layout>
       <Meta site={meta} />
+      <AboutPage />
     </Layout>
   );
 };
