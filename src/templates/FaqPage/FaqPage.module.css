@@ -1,0 +1,19 @@
+.container {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: var(--color-main-background);
+}
+
+.search-button {
+  width: 34.51px;
+  height: 36.15px;
+  cursor: pointer;
+}
+
+.faq-menu {
+  margin-top: 2rem;
+}
+
+.accordion-wrapper {
+  margin-top: 3rem;
+}
