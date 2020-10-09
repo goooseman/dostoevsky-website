@@ -3,6 +3,7 @@ import React from "react";
 import { FaqPageQuery } from "../../types/graphql-types";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
+import FaqPage from "src/templates/FaqPage";
 
 interface FaqPageProps {
   data: FaqPageQuery;
@@ -14,6 +15,7 @@ const Index: React.FC<FaqPageProps> = ({ data }: FaqPageProps) => {
   return (
     <Layout>
       <Meta site={meta} />
+      <FaqPage />
     </Layout>
   );
 };
