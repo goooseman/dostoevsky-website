@@ -10,7 +10,7 @@ interface FaqPageProps {
   location: Location;
 }
 
-const Index: React.FC<FaqPageProps> = ({ data }: FaqPageProps) => {
+const Faq: React.FC<FaqPageProps> = ({ data }: FaqPageProps) => {
   const meta = data.site?.meta;
   return (
     <Layout>
@@ -20,7 +20,7 @@ const Index: React.FC<FaqPageProps> = ({ data }: FaqPageProps) => {
   );
 };
 
-export default Index;
+export default Faq;
 
 export const pageQuery = graphql`
   query FaqPage {

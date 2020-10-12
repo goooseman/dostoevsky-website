@@ -2,6 +2,7 @@ import React, { PureComponent } from "react";
 import Table from "./Table";
 import { saveAs } from "file-saver";
 import iconv from "iconv-lite";
+import { getCsv } from "src/utils/csv";
 
 interface TableContainerProps
   extends Omit<
@@ -32,7 +33,9 @@ class TableContainer extends PureComponent<
   }
 
   private handleDownloadButtonClick = () => {
-    const csvContent = this.getCsv();
+    const { tables } = this.props;
+    const { activeTableIndex } = this.state;
+    const csvContent = getCsv(tables, activeTableIndex);
     const blob = new Blob([
       new Uint8Array(iconv.encode(csvContent, "utf16-le", { addBOM: true })),
     ]);

@@ -3661,6 +3661,8 @@ export type ClausePartsQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetada
         & { totalAcquittal: Api_Server__Data['acquittal'], noCrimeSelfDefence: Api_Server__Data['noCrimeSelf_defence'] }
       ) }> } };
 
+export type FullDatasetPageQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }> };
+
 export type AboutPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
