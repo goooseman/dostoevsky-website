@@ -28,6 +28,7 @@ interface TableProps {
   isEqualWidth?: boolean;
   isNotPaddedLeft?: boolean;
   isColored?: boolean;
+  hideEmbed?: boolean;
   onDownloadButtonClick: () => void;
   onTableTitleClick: (i: number) => () => void;
   activeTableIndex: number;
@@ -47,6 +48,7 @@ class Table extends PureComponent<TableProps> {
       isNotPaddedLeft,
       isEqualWidth,
       isColored,
+      hideEmbed,
     } = this.props;
 
     const { rows, columns } = tables[activeTableIndex];
@@ -61,10 +63,12 @@ class Table extends PureComponent<TableProps> {
           <Typography variant="h3">
             <b>{title}</b>
           </Typography>
-          <div className={cn(classes.buttonsContainer)}>
-            <EmbedModal iframePath={iframePath} />
-            <DownloadButton onClick={onDownloadButtonClick} />
-          </div>
+          {!hideEmbed ? (
+            <div className={cn(classes.buttonsContainer)}>
+              <EmbedModal iframePath={iframePath} />
+              <DownloadButton onClick={onDownloadButtonClick} />
+            </div>
+          ) : null}
         </div>
         {tables.length > 1 ? (
           <Menu variant="default">

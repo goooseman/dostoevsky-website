@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Fri Oct 09 2020 14:55:41 GMT+0300 (GMT+03:00)\n"
+"POT-Creation-Date: Fri Oct 16 2020 22:52:58 GMT+0300 (GMT+03:00)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -19,7 +19,7 @@ msgid "Times icon"
 msgstr ""
 
 #: src/components/ClausePageHeader/ClausePageHeader.tsx:
-msgid "Select year"
+msgid "год"
 msgstr ""
 
 #: src/components/ClausePageHeader/ClausePageHeader.tsx:
@@ -772,4 +772,8 @@ msgstr ""
 msgid ""
 "Например, можно убить и ограбить. Тогда основным преступлением (квалификацией) "
 "будет убийство (более тяжкое), а дополнительным - грабеж."
+msgstr ""
+
+#: src/templates/FullDatasetPage/FullDatasetPage.tsx:
+msgid "Произошла ошибка. Пожалуйста, измените параметры поиска."
 msgstr ""

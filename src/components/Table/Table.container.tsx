@@ -42,27 +42,6 @@ class TableContainer extends PureComponent<
     saveAs(blob, `${this.props.downloadFilename}.csv`);
   };
 
-  private getCsv = (): string => {
-    const { tables } = this.props;
-    const { activeTableIndex } = this.state;
-    const table = tables[activeTableIndex];
-    let result = "";
-    const titleRow = this.getCsvRow(
-      table.columns.filter((c) => !c.isHidden).map((c) => c.title)
-    );
-    if (titleRow !== "\n") {
-      result += titleRow;
-    }
-    for (const row of table.rows) {
-      result += this.getCsvRow(row.values.map((v) => v.value.toString()));
-    }
-    return result;
-  };
-
-  private getCsvRow = (row: string[]) => {
-    return row.join("\t") + "\n";
-  };
-
   private hanldeTableTitleClick = (index: number) => () => {
     this.setState({
       activeTableIndex: index,
