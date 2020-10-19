@@ -84,7 +84,7 @@ const FullDatasetSelect: React.FC<FullDatasetSelectProps> = ({
 
   return (
     <div className={cn(classes.fullDatasetSelectWrapper)}>
-      <Typography component="label">
+      <Typography component="label" isUpperCased size="small">
         <T message={label} />
       </Typography>
       <Select

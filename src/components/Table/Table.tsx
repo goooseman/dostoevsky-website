@@ -8,7 +8,7 @@ import TableRow from "./components/TableRow";
 import { Menu, MenuItem } from "src/components/Menu";
 
 interface TableProps {
-  title: React.ReactNode;
+  title?: React.ReactNode;
   tables: {
     columns: {
       title: string;
@@ -29,11 +29,11 @@ interface TableProps {
   isNotPaddedLeft?: boolean;
   isColored?: boolean;
   hideEmbed?: boolean;
-  onDownloadButtonClick: () => void;
-  onTableTitleClick: (i: number) => () => void;
+  onDownloadButtonClick?: () => void;
+  onTableTitleClick?: (i: number) => () => void;
   activeTableIndex: number;
-  downloadFilename: string;
-  iframePath: string;
+  downloadFilename?: string;
+  iframePath?: string;
 }
 
 class Table extends PureComponent<TableProps> {

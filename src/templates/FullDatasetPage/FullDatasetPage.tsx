@@ -3,20 +3,17 @@ import classes from "./FullDatasetPage.module.css";
 import cn from "clsx";
 import Container from "src/components/ui-kit/Container";
 import Typography from "src/components/ui-kit/Typography";
+import Button from "src/components/ui-kit/Button";
+import { useModal } from "src/components/ui-kit/Modal";
 import SinglePageLayout from "src/components/SinglePageLayout";
 import { T } from "react-targem";
-import Select, {
-  components,
-  OptionTypeBase,
-  GroupedOptionsType,
-} from "react-select";
+import { OptionTypeBase, GroupedOptionsType } from "react-select";
 import axios from "axios";
 import metricsData from "content/metriсs.json";
 import Table from "src/components/Table";
-import { getCsv } from "src/utils/csv";
-import { saveAs } from "file-saver";
-import iconv from "iconv-lite";
 import FullDatasetSelect from "./FullDatasetSelect";
+
+import FullDatasetDownloadModal from "./FullDatasetDownloadModal";
 
 const BREAKDOWN_OPTIONS = [
   { value: "year", label: "Год" },
@@ -95,6 +92,8 @@ const FullDatasetPage: React.FC = () => {
 
   const [loadingDataset, setLoadingDataset] = useState(false);
   const [showError, setShowError] = useState(false);
+
+  const { isShowing, toggle } = useModal();
 
   useEffect(() => {
     (async function () {
@@ -265,15 +264,6 @@ const FullDatasetPage: React.FC = () => {
     }
   };
 
-  const handleDownload = () => {
-    if (loadingDataset || !tables) return false;
-    const csvContent = getCsv(tables, 0);
-    const blob = new Blob([
-      new Uint8Array(iconv.encode(csvContent, "utf16-le", { addBOM: true })),
-    ]);
-    saveAs(blob, `dataset.csv`);
-  };
-
   const tables = createTableData(dataset, metricsValue);
 
   return (
@@ -312,20 +302,27 @@ const FullDatasetPage: React.FC = () => {
             </div>
           ) : null}
           {loadingDataset || tables ? (
-            <button
+            <Button
               className={cn(classes.downloadButton)}
-              onClick={handleDownload}
+              color="secondary"
+              onClick={toggle}
             >
               <T
                 message={loadingDataset ? "Загрузка..." : "Выгрузить данные"}
               />
-            </button>
+            </Button>
           ) : null}
           {tables ? (
             <Table tables={tables} hideEmbed isNotPaddedLeft isEqualWidth />
           ) : null}
         </SinglePageLayout>
       </Container>
+      <FullDatasetDownloadModal
+        isShowing={isShowing}
+        toggle={toggle}
+        loadingDataset={loadingDataset}
+        tables={tables}
+      />
     </main>
   );
 };
