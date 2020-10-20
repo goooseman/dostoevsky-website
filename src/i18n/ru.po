@@ -26,7 +26,7 @@ msgid "Times icon"
 msgstr ""
 
 #: src/components/ClausePageHeader/ClausePageHeader.tsx:
-msgid "Select year"
+msgid "год"
 msgstr ""
 
 #: src/components/ClausePageHeader/ClausePageHeader.tsx:
@@ -779,4 +779,24 @@ msgstr ""
 msgid ""
 "Например, можно убить и ограбить. Тогда основным преступлением (квалификацией) "
 "будет убийство (более тяжкое), а дополнительным - грабеж."
+msgstr ""
+
+#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+msgid "Скачать данные"
+msgstr ""
+
+#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+msgid ""
+"Если вы оставите свой email, мы будем время от времени присылать вам что-нибудь "
+"полезное!"
+msgstr ""
+
+#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+msgid ""
+"При использовании данных, пожалуйста, указывайте ссылку на Достоевский и "
+"делитесь с нами своими материалами."
+msgstr ""
+
+#: src/templates/FullDatasetPage/FullDatasetPage.tsx:
+msgid "Произошла ошибка. Пожалуйста, измените параметры поиска."
 msgstr ""
