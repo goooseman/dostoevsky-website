@@ -1,0 +1,22 @@
+.input {
+  padding-bottom: 0.5rem;
+  border-top: none;
+  border-right: none;
+  border-bottom: 2px solid var(--color-border-dark);
+  border-left: none;
+  background-color: transparent;
+  font-size: 16px;
+}
+
+.input::-webkit-input-placeholder {
+  font-family: "PT Serif", "Times New Roman", Times, serif;
+  font-style: italic;
+}
+.input:-moz-placeholder {
+  font-family: "PT Serif", "Times New Roman", Times, serif;
+  font-style: italic;
+}
+.input:-ms-input-placeholder {
+  font-family: "PT Serif", "Times New Roman", Times, serif;
+  font-style: italic;
+}

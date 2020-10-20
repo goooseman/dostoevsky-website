@@ -8,7 +8,7 @@ import TableRow from "./components/TableRow";
 import { Menu, MenuItem } from "src/components/Menu";
 
 interface TableProps {
-  title: React.ReactNode;
+  title?: React.ReactNode;
   tables: {
     columns: {
       title: string;
@@ -28,11 +28,12 @@ interface TableProps {
   isEqualWidth?: boolean;
   isNotPaddedLeft?: boolean;
   isColored?: boolean;
-  onDownloadButtonClick: () => void;
-  onTableTitleClick: (i: number) => () => void;
+  hideEmbed?: boolean;
+  onDownloadButtonClick?: () => void;
+  onTableTitleClick?: (i: number) => () => void;
   activeTableIndex: number;
-  downloadFilename: string;
-  iframePath: string;
+  downloadFilename?: string;
+  iframePath?: string;
 }
 
 class Table extends PureComponent<TableProps> {
@@ -47,6 +48,7 @@ class Table extends PureComponent<TableProps> {
       isNotPaddedLeft,
       isEqualWidth,
       isColored,
+      hideEmbed,
     } = this.props;
 
     const { rows, columns } = tables[activeTableIndex];
@@ -61,10 +63,16 @@ class Table extends PureComponent<TableProps> {
           <Typography variant="h3">
             <b>{title}</b>
           </Typography>
-          <div className={cn(classes.buttonsContainer)}>
-            <EmbedModal iframePath={iframePath} />
-            <DownloadButton onClick={onDownloadButtonClick} />
-          </div>
+          {!hideEmbed && iframePath ? (
+            <div className={cn(classes.buttonsContainer)}>
+              <EmbedModal iframePath={iframePath} />
+              <DownloadButton
+                onClick={
+                  onDownloadButtonClick ? onDownloadButtonClick : () => false
+                }
+              />
+            </div>
+          ) : null}
         </div>
         {tables.length > 1 ? (
           <Menu variant="default">
@@ -72,7 +80,9 @@ class Table extends PureComponent<TableProps> {
               <MenuItem
                 key={i}
                 isActive={i === activeTableIndex}
-                onClick={onTableTitleClick(i)}
+                onClick={
+                  onTableTitleClick ? () => onTableTitleClick(i) : () => false
+                }
               >
                 {t.title}
               </MenuItem>

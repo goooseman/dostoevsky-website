@@ -1,29 +1,31 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Layout from "src/components/Layout";
-import { AboutPageQuery } from "../../types/graphql-types";
+import { FullDatasetPageQuery } from "../../types/graphql-types";
 import Meta from "src/components/Meta";
-import AboutPage from "src/templates/AboutPage";
+import FullDatasetPage from "src/templates/FullDatasetPage";
 
-interface AboutPageProps {
-  data: AboutPageQuery;
+interface FullDatasetPageProps {
+  data: FullDatasetPageQuery;
   location: Location;
 }
 
-const About: React.FC<AboutPageProps> = ({ data }: AboutPageProps) => {
+const FullDataset: React.FC<FullDatasetPageProps> = ({
+  data,
+}: FullDatasetPageProps) => {
   const meta = data.site?.meta;
   return (
     <Layout>
       <Meta site={meta} />
-      <AboutPage />
+      <FullDatasetPage />
     </Layout>
   );
 };
 
-export default About;
+export default FullDataset;
 
 export const pageQuery = graphql`
-  query AboutPage {
+  query FullDatasetPage {
     site {
       meta: siteMetadata {
         title

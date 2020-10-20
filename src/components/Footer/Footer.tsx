@@ -23,19 +23,13 @@ const Footer: React.FC<FooterProps> = ({ t }: FooterProps) => (
       <div className={cn(classes.middleContainer)}>
         <div className={classes.linksContainer}>
           <Typography variant="span" color="inverted">
-            <Link to="/clauses" activeClassName={cn(classes.menuLinkActive)}>
-              Каталог статей УК РФ
-            </Link>
+            <Link to="/clauses">Каталог статей УК РФ</Link>
           </Typography>
           <Typography variant="span" color="inverted">
-            <Link to="/faq" activeClassName={cn(classes.menuLinkActive)}>
-              О датасете
-            </Link>
+            <Link to="/faq">О датасете</Link>
           </Typography>
           <Typography variant="span" color="inverted">
-            <Link to="/about" activeClassName={cn(classes.menuLinkActive)}>
-              О проекте
-            </Link>
+            <Link to="/about">О проекте</Link>
           </Typography>
         </div>
         <Typography size="small" color="inverted">
