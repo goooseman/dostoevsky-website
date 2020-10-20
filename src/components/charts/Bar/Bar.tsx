@@ -57,7 +57,10 @@ class Bar extends PureComponent<BarProps> {
               tooltip: tooltipDescription,
               sum:
                 chartType === "partsByPunishment"
-                  ? groups[0].values[i] + groups[1].values[i]
+                  ? groups.reduce((a, c) => {
+                      a += c.values[i];
+                      return a;
+                    }, 0)
                   : null,
             },
           }))
@@ -116,7 +119,7 @@ class Bar extends PureComponent<BarProps> {
         this.styleVerticalGrid(data);
         this.styleHorizontalGrid(data);
         if (chartType === "partsByPunishment") {
-          this.getBarSum(data);
+          this.getBarSum(data, series.length);
         }
       });
     }
@@ -238,8 +241,8 @@ class Bar extends PureComponent<BarProps> {
     return `<span class="chartist-tooltip-meta">${lines.join("<br>")}</span>`;
   };
 
-  private getBarSum = (data: ChartDrawData) => {
-    if (data.type === "bar" && data.seriesIndex === 1) {
+  private getBarSum = (data: ChartDrawData, seriesLength: number) => {
+    if (data.type === "bar" && data.seriesIndex === seriesLength - 1) {
       const foreignObject = document.createElementNS(
         "http://www.w3.org/2000/svg",
         "foreignObject"
