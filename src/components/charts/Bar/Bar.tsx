@@ -26,6 +26,7 @@ interface BarProps extends React.ComponentProps<typeof ChartWrapper> {
   maxLabelsCount: number;
   areLabelsRotated?: boolean;
   isIframeMode?: boolean;
+  chartType?: string;
 }
 
 const ROW_HEIGHT = 50;
@@ -43,15 +44,26 @@ class Bar extends PureComponent<BarProps> {
   }
 
   public componentDidMount(): void {
-    const { charts, areLabelsRotated } = this.props;
+    const { charts, areLabelsRotated, chartType } = this.props;
     for (let i = 0; i < charts.length; i++) {
       const { groups, tooltipDescription, labels } = charts[i];
+
       const series: { value: number }[][] = groups.map((g) =>
         g.values
           .slice()
+          .map((v, i) => ({
+            value: v,
+            meta: {
+              tooltip: tooltipDescription,
+              sum:
+                chartType === "partsByPunishment"
+                  ? groups[0].values[i] + groups[1].values[i]
+                  : null,
+            },
+          }))
           .reverse()
-          .map((v) => ({ value: v, meta: { tooltip: tooltipDescription } }))
       );
+
       const chartLabels: string[] = labels.slice().reverse();
 
       const plugins = [];
@@ -65,6 +77,7 @@ class Bar extends PureComponent<BarProps> {
           })
         );
       }
+
       const chart = new Chartist.Bar(
         this.chartRefs[i].current,
         {
@@ -102,6 +115,9 @@ class Bar extends PureComponent<BarProps> {
         this.positionXLabel(data);
         this.styleVerticalGrid(data);
         this.styleHorizontalGrid(data);
+        if (chartType === "partsByPunishment") {
+          this.getBarSum(data);
+        }
       });
     }
   }
@@ -111,6 +127,7 @@ class Bar extends PureComponent<BarProps> {
       charts,
       areLabelsRotated,
       maxLabelsCount,
+      chartType,
       ...wrapperProps
     } = this.props;
 
@@ -118,19 +135,25 @@ class Bar extends PureComponent<BarProps> {
       <ChartWrapper {...wrapperProps} labels={this.getLabels()}>
         {charts.map((c, i) => (
           <div key={i} style={{ width: `${100 / charts.length}%` }}>
-            <Typography className={cn(classes.chartTitle)} isUpperCased>
-              <b>
-                <small>{c.title}</small>
-              </b>
-            </Typography>
+            {chartType !== "partsByPunishment" ? (
+              <Typography className={cn(classes.chartTitle)} isUpperCased>
+                <b>
+                  <small>{c.title}</small>
+                </b>
+              </Typography>
+            ) : null}
             <div
               ref={this.chartRefs[i]}
               className={cn({
                 [`ct-chart-${String.fromCharCode(97 + i)}`]: charts.length > 1,
                 [classes.areLabelsRotated]: areLabelsRotated,
+                [classes.barPartsByPunishment]:
+                  chartType === "partsByPunishment",
               })}
               style={{
-                height: maxLabelsCount * ROW_HEIGHT,
+                height:
+                  maxLabelsCount *
+                  (chartType === "partsByPunishment" ? 38 : ROW_HEIGHT),
               }}
             ></div>
           </div>
@@ -213,6 +236,26 @@ class Bar extends PureComponent<BarProps> {
       lines.push(`${lineKey}: ${lineValue.replace("%%", value.toString())}`);
     }
     return `<span class="chartist-tooltip-meta">${lines.join("<br>")}</span>`;
+  };
+
+  private getBarSum = (data: ChartDrawData) => {
+    if (data.type === "bar" && data.seriesIndex === 1) {
+      const foreignObject = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "foreignObject"
+      );
+      foreignObject.setAttribute("x", data.x2 + 7);
+      foreignObject.setAttribute("y", String(data.y2 - 12));
+      foreignObject.setAttribute("width", "100");
+      foreignObject.setAttribute("height", "100");
+
+      const div = document.createElement("span");
+      div.innerHTML = data.meta.sum;
+      div.setAttribute("class", "ct-bar-sum");
+
+      foreignObject.appendChild(div);
+      data.element._node.parentElement.appendChild(foreignObject);
+    }
   };
 
   private isLabel = (data: ChartDrawData): data is IChartDrawLabelData =>

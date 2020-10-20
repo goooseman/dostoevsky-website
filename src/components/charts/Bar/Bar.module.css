@@ -13,3 +13,14 @@
     }
   }
 }
+
+.bar-parts-by-punishment {
+  :global {
+    .ct-bar {
+      stroke-width: 27px;
+    }
+    .ct-label {
+      margin-top: -10px;
+    }
+  }
+}
