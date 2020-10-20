@@ -71,7 +71,6 @@ class Typography extends PureComponent<TypographyProps> {
     return cn(
       classes.common,
       {
-        [classes.p]: variant === "p",
         [classes.h1]: variant === "h1",
         [classes.h2]: variant === "h2",
         [classes.h3]: variant === "h3",

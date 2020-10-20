@@ -62,6 +62,7 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
 
   private renderControl = (props: object) => {
     return (
+      /* @ts-ignore */
       <components.Control
         {...props}
         className={cn(classes.yearSelectControl)}
@@ -71,6 +72,7 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
 
   private renderValueContainer = (props: { children: React.ReactNode }) => {
     return (
+      /* @ts-ignore */
       <components.ValueContainer
         {...props}
         className={cn(classes.yearSelectValueContainer)}
@@ -87,6 +89,7 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
 
   private renderIndicatorsContainer = (props: object) => {
     return (
+      /* @ts-ignore */
       <components.IndicatorsContainer
         {...props}
         className={cn(classes.yearSelectIndicatorsContainer)}
@@ -97,6 +100,7 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
   private renderDropdownIndicator = (props: object) => {
     const { t } = this.props;
     return (
+      /* @ts-ignore */
       <components.DropdownIndicator {...props}>
         <img src={require("./assets/down.svg")} alt={t("Down arrow")} />
       </components.DropdownIndicator>
@@ -104,6 +108,7 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
   };
 
   private renderSingleValue = (props: { children: React.ReactNode }) => (
+    /* @ts-ignore */
     <components.SingleValue
       {...props}
       className={cn(classes.yearSelectSingleValue)}
@@ -112,8 +117,9 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
     </components.SingleValue>
   );
 
-  private renderMenu = (props: { children: React.ReactNode }) => {
+  private renderMenu = (props: { children: React.ReactElement }) => {
     return (
+      /* @ts-ignore */
       <components.Menu {...props} className={cn(classes.yearSelectMenu)}>
         {props.children}
       </components.Menu>
@@ -122,6 +128,7 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
 
   private renderMenuList = (props: { children: React.ReactNode }) => {
     return (
+      /* @ts-ignore */
       <components.MenuList
         {...props}
         className={cn(classes.yearSelectMenuList)}
@@ -131,7 +138,7 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
     );
   };
 
-  private renderOption = (props: { value: string }) => {
+  private renderOption = (props: any) => {
     const { clauseNumber, pageType } = this.props;
     return (
       <components.Option {...props} className={cn(classes.yearSelectOption)}>

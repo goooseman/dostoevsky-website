@@ -21,6 +21,7 @@ const FullDatasetSelect: React.FC<FullDatasetSelectProps> = ({
 }: FullDatasetSelectProps) => {
   const renderControl = (props: object) => {
     return (
+      /* @ts-ignore */
       <components.Control
         {...props}
         className={cn(classes.fullDatasetSelectControl)}
@@ -30,6 +31,7 @@ const FullDatasetSelect: React.FC<FullDatasetSelectProps> = ({
 
   const renderIndicatorsContainer = (props: object) => {
     return (
+      /* @ts-ignore */
       <components.IndicatorsContainer
         {...props}
         className={cn(classes.fullDatasetSelectIndicatorsContainer)}
@@ -39,6 +41,7 @@ const FullDatasetSelect: React.FC<FullDatasetSelectProps> = ({
 
   const renderDropdownIndicator = (props: object) => {
     return (
+      /* @ts-ignore */
       <components.DropdownIndicator {...props}>
         <img src={require("./assets/down.svg")} alt="Down arrow" />
       </components.DropdownIndicator>
@@ -46,6 +49,7 @@ const FullDatasetSelect: React.FC<FullDatasetSelectProps> = ({
   };
 
   const renderSingleValue = (props: { children: React.ReactNode }) => (
+    /* @ts-ignore */
     <components.SingleValue
       {...props}
       className={cn(classes.fullDatasetSelectSingleValue)}
@@ -54,8 +58,9 @@ const FullDatasetSelect: React.FC<FullDatasetSelectProps> = ({
     </components.SingleValue>
   );
 
-  const renderMenu = (props: { children: React.ReactNode }) => {
+  const renderMenu = (props: { children: React.ReactElement }) => {
     return (
+      /* @ts-ignore */
       <components.Menu {...props} className={cn(classes.fullDatasetSelectMenu)}>
         {props.children}
       </components.Menu>
@@ -64,6 +69,7 @@ const FullDatasetSelect: React.FC<FullDatasetSelectProps> = ({
 
   const renderMenuList = (props: { children: React.ReactNode }) => {
     return (
+      /* @ts-ignore */
       <components.MenuList
         {...props}
         className={cn(classes.fullDatasetSelectMenuList)}
@@ -75,6 +81,7 @@ const FullDatasetSelect: React.FC<FullDatasetSelectProps> = ({
 
   const renderOption = (props: object) => {
     return (
+      /* @ts-ignore */
       <components.Option
         {...props}
         className={cn(classes.fullDatasetSelectOption)}

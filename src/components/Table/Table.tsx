@@ -63,10 +63,14 @@ class Table extends PureComponent<TableProps> {
           <Typography variant="h3">
             <b>{title}</b>
           </Typography>
-          {!hideEmbed ? (
+          {!hideEmbed && iframePath ? (
             <div className={cn(classes.buttonsContainer)}>
               <EmbedModal iframePath={iframePath} />
-              <DownloadButton onClick={onDownloadButtonClick} />
+              <DownloadButton
+                onClick={
+                  onDownloadButtonClick ? onDownloadButtonClick : () => false
+                }
+              />
             </div>
           ) : null}
         </div>
@@ -76,7 +80,9 @@ class Table extends PureComponent<TableProps> {
               <MenuItem
                 key={i}
                 isActive={i === activeTableIndex}
-                onClick={onTableTitleClick(i)}
+                onClick={
+                  onTableTitleClick ? () => onTableTitleClick(i) : () => false
+                }
               >
                 {t.title}
               </MenuItem>
