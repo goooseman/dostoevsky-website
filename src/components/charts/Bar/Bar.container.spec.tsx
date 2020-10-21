@@ -23,6 +23,7 @@ it("should contain 1 bar", async () => {
         },
       ]}
       {...defaultProps}
+      chartType="partsByPunishment"
     />
   );
   await waitFor(() =>
@@ -47,6 +48,7 @@ it("should not render empty bar", async () => {
       ]}
       {...defaultProps}
       areLabelsFiltered
+      chartType="partsByPunishment"
     />
   );
   await waitFor(() =>
@@ -71,6 +73,7 @@ it("should not render empty chart", async () => {
         },
       ]}
       {...defaultProps}
+      chartType="partsByPunishment"
     />
   );
 

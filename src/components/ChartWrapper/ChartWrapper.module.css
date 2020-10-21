@@ -87,8 +87,12 @@ body {
     .ct-slice-donut {
       stroke: currentColor !important;
     }
+    .ct-bar-sum {
+      color: var(--color-text);
+    }
     .ct-label,
-    .ct-inner-label {
+    .ct-inner-label,
+    .ct-bar-sum {
       overflow: visible;
       font-size: 12px;
       font-weight: 500;
