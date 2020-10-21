@@ -138,6 +138,7 @@ const ChronologyConvictedDynamics: React.SFC<ChronologyConvictedDynamicsProps> =
       downloadFilename={`${clauseNumber}-punishment-dynamics`}
       charts={charts}
       areLabelsRotated
+      chartType="dynamicsPunishment"
       iframePath={getClauseLink(
         clauseNumber.toString(),
         undefined,

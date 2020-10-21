@@ -53,7 +53,9 @@ const twoGroups = {
   ...commonProps,
 };
 
-export const withTwoGroups = (): React.ReactNode => <Bar {...twoGroups} />;
+export const withTwoGroups = (): React.ReactNode => (
+  <Bar {...twoGroups} chartType="partsByPunishment" />
+);
 
 const forChronoPageLabels = [
   "2019",
@@ -166,5 +168,9 @@ const forChronoPageProps = {
 };
 
 export const forChronoPage = (): React.ReactNode => (
-  <Bar {...forChronoPageProps} areLabelsRotated />
+  <Bar
+    {...forChronoPageProps}
+    areLabelsRotated
+    chartType="dynamicsPunishment"
+  />
 );

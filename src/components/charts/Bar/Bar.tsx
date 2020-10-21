@@ -26,7 +26,7 @@ interface BarProps extends React.ComponentProps<typeof ChartWrapper> {
   maxLabelsCount: number;
   areLabelsRotated?: boolean;
   isIframeMode?: boolean;
-  chartType?: string;
+  chartType: "partsByPunishment" | "dynamicsPunishment";
 }
 
 const ROW_HEIGHT = 50;

@@ -4,7 +4,6 @@ import Bar from "./Bar";
 interface BarContainerProps
   extends Omit<React.ComponentProps<typeof Bar>, "maxLabelsCount"> {
   areLabelsFiltered?: boolean;
-  chartType?: string;
 }
 interface BarContainerState {}
 
