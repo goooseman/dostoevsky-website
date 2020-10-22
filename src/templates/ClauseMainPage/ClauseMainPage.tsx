@@ -12,6 +12,7 @@ import CommonMainResultsTable from "./components/tables/CommonMainResultsTable";
 import CommonAddResultsTable from "./components/tables/CommonAddResultsTable";
 import { Menu, MenuLink } from "src/components/Menu";
 import { getClauseLink } from "src/config/routes";
+import Treemap from "src/components/charts/Treemap";
 
 export type ClausePartsPageViewMode =
   | "page"
@@ -87,6 +88,27 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
         hasParts={partsCount > 0}
         headerChildren={this.renderHeaderChildren()}
       >
+        {view === "focus" ? (
+          <Treemap
+            data={[
+              {
+                value: this.props.totalConvicted,
+                label: "прекращено дел в отношении человек",
+              },
+              { value: this.props.totalAcquittal, label: "осуждены" },
+              {
+                value: this.props.totalDismissal,
+                label: "оправданы",
+              },
+              {
+                value: this.props.coerciveMeasures,
+                label: "принудительное лечение",
+              },
+            ]}
+            width={625}
+            height={392}
+          />
+        ) : null}
         {view === "table" ? (
           <>
             <div className={classes.tableContainer}>
