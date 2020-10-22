@@ -49,6 +49,7 @@ class PartsByPunishment extends PureComponent<PartsByPunishmentProps> {
     return (
       <Bar
         isIframeMode={isIframeMode}
+        chartType="partsByPunishment"
         title={`Виды наказаний по частям статьи ${clauseNumber}`}
         downloadFilename={`${clauseNumber}-${year}-parts-by-punishment`}
         areLabelsFiltered
