@@ -127,7 +127,7 @@
     "key": "dismissalRepentance",
     "title": "Прекращено в связи с деятельным раскаянием"
   },
-  { "key": "dismissalCourtFinе", "title": "Прекращено судебный штраф" },
+  { "key": "dismissalCourtFine", "title": "Прекращено судебный штраф" },
   { "key": "dismissalOther", "title": "Прекращено по другим основаниям" },
   {
     "key": "dismissalRepentance2",
