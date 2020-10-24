@@ -1,0 +1,56 @@
+.clause-full-page-wrapper {
+  display: flex;
+  margin-left: 2rem;
+}
+
+.clause-full-page-top-element-wrapper,
+.clause-full-page-element-primary-wrapper,
+.clause-full-page-element-secondary-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.clause-full-page-top-element-wrapper {
+  margin-top: 1.25rem;
+}
+
+.clause-full-page-top-element-wrapper:first-of-type {
+  margin-top: 2rem;
+}
+
+.clause-full-page-element-secondary-wrapper {
+  margin-bottom: 1.25rem;
+}
+
+.clause-full-page-element-third-wrapper {
+  margin-left: 2rem;
+}
+
+.clause-full-page-element-secondary-wrapper:first-of-type {
+  margin-top: 2rem;
+}
+
+.clause-full-page-element-secondary-wrapper:last-of-type {
+  margin-bottom: 0;
+}
+
+.clause-full-page-element-title {
+  margin-left: 1rem;
+}
+
+.clause-full-page-download-wrapper {
+  margin-left: auto;
+}
+
+.clause-full-page-download-button {
+  width: 66px;
+  height: 46px;
+  border: none;
+  margin-top: 5rem;
+  margin-left: 3rem;
+  background-color: #7c89e4;
+  background-image: url("src/templates/ClauseFullPage/assets/download.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
