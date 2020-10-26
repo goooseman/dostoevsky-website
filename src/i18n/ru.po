@@ -210,6 +210,7 @@ msgstr ""
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/FaqPage/FaqPage.tsx:
 msgid "штраф"
 msgstr ""
 
@@ -262,6 +263,7 @@ msgstr ""
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByPunishmentTable/ClauseChronologyByPunishmentTable.tsx:
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+#: src/templates/FaqPage/FaqPage.tsx:
 msgid "Штраф"
 msgstr ""
 
@@ -494,6 +496,7 @@ msgid "Дополнительный состав: детали"
 msgstr ""
 
 #: src/templates/ClauseMainPage/components/tables/CommonMainResultsTable/CommonMainResultsTable.tsx:
+#: src/templates/FaqPage/FaqPage.tsx:
 msgid "дополнительный состав"
 msgstr ""
 
@@ -717,80 +720,754 @@ msgstr ""
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid ""
-"Штрафы не рекомендует связывать, так как за штрафами скрываются разные истории: "
-"штраф как основное наказание говорит нам о ситуациях, когда человек заплатил "
-"штраф и свободен, а штраф как дополнительное – человек отбывает более строгое "
-"наказание и еще штраф платит. Если эти цифры сложить, то получится путаница. "
+"И амнистия, и помилование — это полное или частичное освобождение от уголовной "
+"ответственности, что подразумевает отмену или ослабление наказания и снятие "
+"судимости. Однако между ними есть несколько отличий."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Амнистия:"
 msgstr ""
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid ""
-"Преступления часто совершаются в совокупности, например: убийство, ограбление и "
-"угон одновременно. В таком случае основное наказание назначается по самой "
-"тяжелой статье (в нашем примере это убийство). Грабеж и угон, в этом случае, "
-"попадут в статистику по дополнительному составу. У кого-то грабеж - основная "
-"статья, у кого-то - дополнительная, а сложив их, вы получите реальное "
-"количество грабежей."
+"выносится Государственной Думой в отношении индивидуально неопределенного круга "
+"лиц — амнистированные не перечисляются поименно;"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "возможна уже с момента возбуждения уголовного дела;"
 msgstr ""
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid ""
-"Судебный штраф, – основание для прекращения дела – нельзя складывать с "
-"показателями «Штраф». Это достаточно новая конструкция в российском уголовном "
-"праве. Смысл в том, чтобы меньше привлекать к уголовке людей. Если человек "
-"впервые совершил преступление небольшой и средней тяжести (до 5 лет лишения "
-"свободы) и загладил ущерб, примирился и т.д., то его могут освободить от "
-"уголовной ответственности, назначив судебный штраф."
+"не принимает во внимание желание осужденных — решение об амнистии, как правило, "
+"продиктовано политическими интересами."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Пример:"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Постановление об амнистии 2001 года"
 msgstr ""
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid ""
-"И человек официально не будет судим и т.д. Если назначают обычный штраф как "
-"наказание, то человек считается судимым."
+" в отношении несовершеннолетних и женщин — под её действие попали примерно 9% "
+"всех заключенных."
 msgstr ""
 
 #: src/templates/FaqPage/FaqPage.tsx:
-msgid "Нет, в случае прекращения человек не признается виновным,"
+msgid "Помилование:"
 msgstr ""
 
 #: src/templates/FaqPage/FaqPage.tsx:
-msgid ""
-"а в случае освобождения – признается виновным, но освобождается от наказания "
-"(например, из-за болезни и т.д.)."
+msgid "выносится Президентом в отношении конкретного человека;"
 msgstr ""
 
 #: src/templates/FaqPage/FaqPage.tsx:
-msgid ""
-"Нет, это значит, что человек признается виновным, допустим, не в убийстве, а в "
-"приготовлениях или в покушении на убийство. Это тоже преступление. Наш УК "
-"содержит наказания не только за оконченные действия, но и за приготовления и "
-"покушения (по некоторым видам преступлений). Судстат это отдельно отмечает."
+msgid "возможно только после вступления в силу обвинительного приговора;"
 msgstr ""
 
 #: src/templates/FaqPage/FaqPage.tsx:
-msgid ""
-"Поскольку один человек мог получить несколько дополнительных статей, то цифры "
-"по разным статьям нельзя складывать. Например, в 2018 году 100 человек осудили "
-"по доп. статье за грабеж и 100 - за угон. Это не значит, что всего их было 200, "
-"т.к. один человек, как в примере, мог и ограбить, и угнать."
+msgid "обычно инициируется самим осужденным — для этого нужно подать ходатайство."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Указ о помиловании"
 msgstr ""
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid ""
-"Дополнительные наказания, это отдельный вид наказаний. Например, человека могут "
-"посадить и оштрафовать: лишение свободы - основное наказание, а штраф - "
-"дополнительное. Есть такие наказания, которые бывают только дополнительными. "
-"Например, лишение специального звания."
-msgstr ""
-
-#: src/templates/FaqPage/FaqPage.tsx:
-msgid "Дополнительная квалификация относится к самому преступлению."
+" украинской военнослужащей Надежды Савченко, осужденной по делу об убийстве "
+"журналистов ВГТРК в Донбассе."
 msgstr ""
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid ""
-"Например, можно убить и ограбить. Тогда основным преступлением (квалификацией) "
-"будет убийство (более тяжкое), а дополнительным - грабеж."
+"Согласно уголовному кодексу, при обвинении применяется тот закон, который "
+"действовал во время совершения преступления"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Предположим, гражданин Д. совершил грабеж и через три года его арестовали. За "
+"это время законодательство изменилось, но, согласно принципу действия закона во "
+"времени, судить Д. будут по старой статье, действительной на момент грабежа."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"При этом в некоторых случаях закон всё же имеет обратную силу. Так, если "
+"впоследствии наказание стало мягче, к обвиняемому применят новые, более "
+"благоприятные правила, а если статью отменили — снимут обвинение или судимость. "
+"Если же закон был ужесточен, судить будут по старой статье"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "ст. 10 УК"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"В результате в уголовную статистику иногда попадают дела по тем статьям, "
+"которые уже не действительны — это усложняет анализ данных и может исказить "
+"результаты."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Уголовный кодекс выделяет три типа наказаний:"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "основные — они выступают самостоятельными наказаниями;"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "дополнительные — могут прибавляться к основным, чтобы сделать приговор строже;"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "смешанные — используются в обоих качествах."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Решение о прибавлении дополнительного наказания к основному по большей части "
+"зависит от судьи, хотя в юридической практике заметна корреляция: если состав "
+"простой и без отягчающих обстоятельств — то есть судят за одно преступление, — "
+"суд скорее ограничится основным наказанием; если же в деле есть"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"или отягчающие обстоятельства — в приговоре с большей вероятностью будет еще и "
+"дополнительное наказание."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "В качестве дополнительного наказания могут применять"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"запрет на определённую деятельность, лишение специального, воинского или "
+"почетного звания и другие меры"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "ст. 45 УК"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Преступление считается неоконченным, если имело место только приготовление или "
+"покушение"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Приготовление"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"это любые намеренные действия, предшествовавшие преступлению или\n"
+"              покушению, например, подготовка орудий, поиск соучастников или\n"
+"              сговор."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Покушение"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"это неудачная попытка совершения преступления, предпринятая осознанно. "
+"Бездействие тоже может считаться покушением. Например, если кассир специально "
+"не закрыл кассу, чтобы позже украсть из неё деньги. "
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Небольшие и средние неоконченные преступления — причинение легкого вреда "
+"здоровью, клевета или убийство в состоянии аффекта — не преследуются по закону, "
+"а вот тяжкие и особо тяжкие случаи — умышленное убийство, грабеж, изнасилование "
+"— уголовно наказуемы, но оцениваются мягче. Так, приговор за приготовление не "
+"может превышать половины максимального срока за такое же оконченное "
+"преступление, а приговор за покушение — трех четвертей."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Формально противоправные действия — например, нанесение тяжкого вреда здоровью, "
+"— не преследуются по закону, если они были спровоцированы особыми внешними "
+"факторами. Причинение вреда в этих обстоятельствах не влечет уголовной "
+"ответственности. Уголовный кодекс выделяет шесть таких ситуаций"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "гл. 8 УК"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Оборона"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Защита личности и прав обороняющегося или других лиц. Важно, чтобы масштаб "
+"обороны соответствовал опасности, иначе это может быть уголовно наказуемо."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+#: src/templates/FaqPage/FaqPage.tsx:
+#: src/templates/FaqPage/FaqPage.tsx:
+#: src/templates/FaqPage/FaqPage.tsx:
+#: src/templates/FaqPage/FaqPage.tsx:
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Пример: "
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "оборона при нападении в парке."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Задержание лица, совершившего преступление"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Вред может быть причинен, если преступник совершил оконченное преступление и "
+"пытается скрыться."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "при попытке задержать вора вы сломали его руку. "
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Крайняя необходимость"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Ситуация, в которой одно неправомерное деяние необходимо, чтобы исключить "
+"другое более тяжкое деяние. Или это может быть конфликт двух взаимоисключающих "
+"прав, когда реализация одного значит нарушение другого."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "в экстренной ситуации врач вынужден спасти того пациента, чей риск смерти выше."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Физическое или психическое принуждение"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Если действия выполняются в результате принуждения, а не по воле самого "
+"человека, они не рассматриваются как преступление."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "с помощью пыток человека заставляют оклеветать соседа по лестничной клетке."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Обоснованный риск"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Риск, связанный с научной, коммерческой, предпринимательской деятельностью, "
+"производством или управлением персоналом."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "технические испытания ракеты, которые могут привести к жертвам."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Исполнение приказа"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"При соответствующих полномочиях и обязанности исполнить приказ, должностное "
+"лицо может причинить вред. Если приказ или распоряжение заведомо незаконны, "
+"преступность не исключается."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "убийство на войне."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Главное отличие между освобождением от наказания и прекращением уголовного "
+"преследования заключается в том, что в первом случае человек остается виновным "
+"в преступлении, несмотря на послабления в мере наказания"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "гл. 12 УК"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "во втором случае все обвинения снимают"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "ст. 27 УПК"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Освобождение от наказания"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"применяется только после вступления обвинительного приговора в силу. Оно может "
+"быть связано с болезнью или аддикцией осужденного, изменением обстановки, "
+"истечением сроков давности обвинительного приговора."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+#: src/templates/FaqPage/FaqPage.tsx:
+#: src/templates/FaqPage/FaqPage.tsx:
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Пример"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "в 2017 году адвокат К."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "была освобождена"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"от штрафа в 100 тыс. рублей за дачу взятки из-за истечения срока давности "
+"уголовного преследования."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Прекращение уголовного преследования"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "возможно по"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "реабилитирующим и нереабилитирующим основаниям,"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "а также при отсутствии процессуальных условий для продолжения дела."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "В 2019 году"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "было прекращено"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"\n"
+"              уголовное преследование в отношении журналиста Ивана Голунова,\n"
+"              которого обвиняли в покушении на сбыт наркотиков. МВД объяснило\n"
+"              это решение тем, что причастность Голунова к преступлению не была\n"
+"              доказана."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Состав — это конкретные действия, которые преследуются по закону и являются "
+"основанием для уголовной ответственности. Если в деле фигурируют сразу "
+"несколько преступлений, то выделяют основной дополнительные составы. "
+"Предположим, помимо убийства обвиняемый совершил кражу и употреблял "
+"наркотические вещества в общественном месте. Наиболее тяжкое из этих "
+"преступлений — умышленное убийство. При условии, что суд будет рассматривать "
+"эти дела вместе, именно оно будет являться основным составом, а менее весомые "
+"деяния — дополнительным."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Наказание назначается отдельно за каждое преступление и зависит в первую "
+"очередь от основного состава, а дополнительные складываются с ним по "
+"специальным формулам или поглощаются"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "ст. 69 УК"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Чтобы было проще разобраться в опубликованных данных, мы подготовили"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "подробный материал"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"о составах преступления, вынесении наказания и сборе информации по этим "
+"показателям."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Если психическое состояние обвиняемого представляет опасность для него самого "
+"или окружающих, суд может назначить обязательное лечение"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "гл. 15 УК"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Это происходит в следующих случаях:"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "преступление было совершено в состоянии невменяемости;"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"психическое расстройство наступило после преступления, так что назначить и "
+"исполнить наказание — невозможно;"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "обвиняемый вменяем, но страдает психическим расстройством и опасен;"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"обвиняемый совершил преступление против половой неприкосновенности "
+"несовершеннолетнего."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Время в психиатрическом стационаре засчитывается осужденному в срок наказания, "
+"а если его признают выздоровевшим, уголовное дело будет возобновлено."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Все виды работ, предусмотренные Уголовным кодексом, применяются только в "
+"качестве"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "основных видов наказаний"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"это означает, что они могут выступать только как самостоятельные наказания, но "
+"не могут быть дополнением к другим мерам."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Обязательные работы — общественно полезный труд"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "ст. 49 УК"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "назначаются за преступления небольшой и средней тяжести;"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "включают общественно полезный труд в свободное от работы или учебы время;"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "срок исполнения — от 60 до 480 часов, не больше 4 часов в день."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"причинение легкого вреда здоровью, угроза убийством, нарушение "
+"неприкосновенности жилища, повторное наказание за вождение в состоянии "
+"опьянения."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Исправительные работы — дополнительный налог на зарплату"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "ст. 50 УК"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"подразумевают взимание от 5 до 20% заработной платы осужденного в доход "
+"государства;"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "срок исполнения — от 2 месяцев до 2 лет."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"кражи, неуплата алиментов, нарушение неприкосновенности жилища или оскорбление "
+"представителя власти."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Принудительные работы — альтернатива лишению свободы"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "ст. 53.1 УК"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"назначаются за небольшие и средние преступления, а также за тяжкие, если они "
+"совершены впервые;"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"осужденные живут в исправительном центре ФСИН и получают заработную плату, из "
+"которой также от 5 до 20% уходит в доход государства;"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "срок исполнения — от 2 месяцев до 5 лет."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "К реабилитирующим основаниям"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "прекращения уголовного преследования относятся:"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "непричастность подозреваемого к совершению преступления;"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "отсутствие события преступления;"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "отсутствие в деянии"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "состава преступления"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "ст. 212 УПК"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"В этом случае суд признает за бывшим обвиняемым право на возмещение "
+"имущественного и морального вреда и восстановление в трудовых, пенсионных, "
+"жилищных и иных правах"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "ст. 133 УПК"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "К"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "нереабилитирующим основаниям"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "относятся:"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "истечение сроков давности уголовного преследования;"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "деятельное раскаяние "
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "подозреваемого;"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "примирение сторон;"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "смерть подозреваемого или обвиняемого;"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "акт амнистии;"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "принятия закона, устраняющего преступность или наказуемость деяния;"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "возмещение ущерба, если преступление касалось экономической деятельности;"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Прекратить уголовное преследование по нереабилитирующим основаниям можно только "
+"с согласия фигуранта дела, так как это означает добровольное признание вины и "
+"принятие последствий."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Если следствие обвиняет человека сразу в нескольких преступлениях (см."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Состав преступления"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "мы имеем дело с совокупностью преступлений"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "ст. 17 УК"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Реальная совокупность означает, что человек последовательно совершил несколько "
+"преступлений. Например, сначала публично призывал к свержению конституционного "
+"строя, а через час сбил пешехода."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Идеальная совокупность означает, что человек одним действием совершил сразу "
+"несколько преступлений. Например, прошел обучение в террористической организации"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "ст. 205.3 УК"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "и одновременно в ней участвовал"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "ст. 205.4 УК"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Такие дела — когда один или несколько человек совершают серию преступлений — "
+"могут быть объединены в одно дело и рассматриваться в суде вместе. Наказание "
+"будет вынесено за каждое совершенное преступление по соответствующей статье. В"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "статье 69 УК"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"приведена инструкция, как должны суммироваться меры наказания в зависимости от "
+"тяжести преступлений и от того, какие  наказания назначены по отдельности. Если "
+"же дела рассматривали отдельно, будет действовать правило назначения наказания "
+"по совокупности приговоров"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "ст. 70 УК"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Судебный штраф — это способ освобождения от уголовной ответственности и "
+"основание для прекращения дела, но не одна из мер наказания (см."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Если человек впервые совершил преступление небольшой или средней тяжести (за "
+"это можно получить до 5 лет лишения свободы), а затем загладил ущерб и "
+"примирился с истцом, ему могут назначить судебный штраф — тогда ответчик "
+"официально не будет судим."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Такая практика — компромисс между сторонами в уголовном процессе. Ее "
+"преимущество заключается в первую очередь в гуманности и упрощенном "
+"судопроизводстве. Это недавнее явление в российском уголовном праве — оно "
+"появилось только в 2016 году, — но применяется всё более активно. В 2017 "
+"судебный штраф был назначен более 20 тысяч раз, а уже в 2019 — более 52 тысяч."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Штраф — это один из видов"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "наказаний"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"В некоторых уголовных делах он выступает как основная мера — это означает, что "
+"обвиняемый остался судим, заплатил штраф и избежал заключения. В"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "других"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"случаях штраф это дополнительная мера — тогда человек отбывает более строгое "
+"наказание и в дополнение к этому выплачивает определенную сумму государству. "
+"При подсчете статистики нельзя просто сложить количество первых и вторых дел — "
+"получится путаница, так как эти данные демонстрируют разные ситуации."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Размер штрафа зависит от тяжести преступления и финансового положения "
+"осужденного. Иногда суд может назначить штраф с рассрочкой выплаты на срок до "
+"пяти лет."
 msgstr ""
 
 #: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:

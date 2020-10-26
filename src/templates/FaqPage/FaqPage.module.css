@@ -17,3 +17,15 @@
 .accordion-wrapper {
   margin-top: 3rem;
 }
+
+.accordion-wrapper p {
+  margin-bottom: 2rem;
+}
+
+.accordion-wrapper mark {
+  background-color: #bec6ff;
+}
+
+.ul-with-additional-margin li {
+  margin-bottom: 2rem;
+}
