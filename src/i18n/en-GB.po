@@ -327,6 +327,18 @@ msgstr "Прекращено по другим основаниям"
 msgid "Динамика числа осужденных по основному составу. Основные параметры."
 msgstr "Динамика числа осужденных по основному составу. Основные параметры."
 
+#: src/templates/ClauseFullPage/ClauseFullPage.tsx:
+msgid "Вы можете выбрать интересующие вас параметры и скачать данные в формате .csv: "
+msgstr "Вы можете выбрать интересующие вас параметры и скачать данные в формате .csv: "
+
+#: src/templates/ClauseFullPage/ClauseFullPage.tsx:
+msgid "Выбрать все параметры"
+msgstr "Выбрать все параметры"
+
+#: src/templates/ClauseFullPage/ClauseFullPage.tsx:
+msgid "Разбить по статьям"
+msgstr "Разбить по статьям"
+
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "количество человек, чьи дела прошли через суд"
 msgstr "количество человек, чьи дела прошли через суд"

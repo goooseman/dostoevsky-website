@@ -311,6 +311,18 @@ msgstr ""
 msgid "Динамика числа осужденных по основному составу. Основные параметры."
 msgstr ""
 
+#: src/templates/ClauseFullPage/ClauseFullPage.tsx:
+msgid "Вы можете выбрать интересующие вас параметры и скачать данные в формате .csv: "
+msgstr ""
+
+#: src/templates/ClauseFullPage/ClauseFullPage.tsx:
+msgid "Выбрать все параметры"
+msgstr ""
+
+#: src/templates/ClauseFullPage/ClauseFullPage.tsx:
+msgid "Разбить по статьям"
+msgstr ""
+
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "количество человек, чьи дела прошли через суд"
 msgstr ""
