@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Fri Oct 23 2020 22:10:06 GMT+0300 (GMT+03:00)\n"
+"POT-Creation-Date: Mon Oct 26 2020 13:49:43 GMT+0300 (GMT+03:00)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -313,7 +313,7 @@ msgid "Выбрать все параметры"
 msgstr ""
 
 #: src/templates/ClauseFullPage/ClauseFullPage.tsx:
-msgid "Разбить по статьям"
+msgid "Разбить по частям"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:

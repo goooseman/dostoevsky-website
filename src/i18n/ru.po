@@ -320,7 +320,7 @@ msgid "Выбрать все параметры"
 msgstr ""
 
 #: src/templates/ClauseFullPage/ClauseFullPage.tsx:
-msgid "Разбить по статьям"
+msgid "Разбить по частям"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:

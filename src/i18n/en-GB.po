@@ -336,8 +336,8 @@ msgid "Выбрать все параметры"
 msgstr "Выбрать все параметры"
 
 #: src/templates/ClauseFullPage/ClauseFullPage.tsx:
-msgid "Разбить по статьям"
-msgstr "Разбить по статьям"
+msgid "Разбить по частям"
+msgstr "Разбить по частям"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "количество человек, чьи дела прошли через суд"

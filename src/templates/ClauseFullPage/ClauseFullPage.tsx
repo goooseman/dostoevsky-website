@@ -340,7 +340,7 @@ class ClauseFullPage extends PureComponent<
                   onChange={(e) => this.handleToggleSplitByArticle(e)}
                 />
                 <Typography className={cn(classes.clauseFullPageElementTitle)}>
-                  <T message="Разбить по статьям" />
+                  <T message="Разбить по частям" />
                 </Typography>
               </div>
             ) : null}
