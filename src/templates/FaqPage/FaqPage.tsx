@@ -7,11 +7,14 @@ import Accordion, { AccordionNode } from "src/components/ui-kit/Accordion";
 import SinglePageLayout from "src/components/SinglePageLayout";
 import { T } from "react-targem";
 import { Menu, MenuItem } from "src/components/Menu";
+import FaqPageHowWasCollected from "./FaqPageHowWasCollected";
+import FaqPageUploadFieldsNParameterTree from "./FaqPageUploadFieldsNParameterTree";
 
 const faqData = [
   {
     id: "glossary",
     title: "Глоссарий",
+    accordion: true,
     data: [
       {
         title: "Амнистия и помилование",
@@ -743,11 +746,15 @@ const faqData = [
       },
     ],
   },
-  { id: "howWasCollected", title: "Как собирались эти данные", data: [] },
+  {
+    id: "howWasCollected",
+    title: "Как собирали эти данные",
+    content: <FaqPageHowWasCollected />,
+  },
   {
     id: "uploadFieldsNParameterTree",
     title: "Поля выгрузки и «дерево» параметров",
-    data: [],
+    content: <FaqPageUploadFieldsNParameterTree />,
   },
 ];
 
@@ -783,14 +790,21 @@ const FaqPage: React.FC = () => {
           {currentFaqItem &&
           currentFaqItem.data &&
           currentFaqItem.data.length ? (
-            <div className={cn(classes.accordionWrapper)}>
-              <Accordion>
-                {currentFaqItem.data.map((f, i) => (
-                  <AccordionNode key={i} variant="secondary" title={f.title}>
-                    {f.content}
-                  </AccordionNode>
-                ))}
-              </Accordion>
+            <div className={cn(classes.contentWrapper)}>
+              {currentFaqItem.accordion ? (
+                <Accordion>
+                  {currentFaqItem.data.map((f, i) => (
+                    <AccordionNode key={i} variant="secondary" title={f.title}>
+                      {f.content}
+                    </AccordionNode>
+                  ))}
+                </Accordion>
+              ) : null}
+            </div>
+          ) : null}
+          {currentFaqItem && currentFaqItem.content ? (
+            <div className={cn(classes.contentWrapper)}>
+              {currentFaqItem.content}
             </div>
           ) : null}
         </SinglePageLayout>

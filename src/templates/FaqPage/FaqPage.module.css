@@ -14,15 +14,15 @@
   margin-top: 2rem;
 }
 
-.accordion-wrapper {
+.content-wrapper {
   margin-top: 3rem;
 }
 
-.accordion-wrapper p {
+.content-wrapper p {
   margin-bottom: 2rem;
 }
 
-.accordion-wrapper mark {
+.content-wrapper mark {
   background-color: #bec6ff;
 }
 
