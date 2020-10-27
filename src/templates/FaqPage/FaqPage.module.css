@@ -26,6 +26,6 @@
   background-color: #bec6ff;
 }
 
-.ul-with-additional-margin li {
+.ul-with-additional-margin > li {
   margin-bottom: 2rem;
 }

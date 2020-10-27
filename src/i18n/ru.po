@@ -213,6 +213,7 @@ msgstr ""
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/FaqPage/FaqPage.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "штраф"
 msgstr ""
 
@@ -221,6 +222,7 @@ msgstr ""
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByPunishmentTable/ClauseChronologyByPunishmentTable.tsx:
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Принудительные меры к невменяемым"
 msgstr ""
 
@@ -297,10 +299,12 @@ msgid "Прекращено за отсутствием события, сост
 msgstr ""
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Прекращено по амнистии"
 msgstr ""
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Прекращено в связи с деятельным раскаянием"
 msgstr ""
 
@@ -313,6 +317,7 @@ msgid "Судебный штраф"
 msgstr ""
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Прекращено по другим основаниям"
 msgstr ""
 
@@ -495,6 +500,11 @@ msgid "по числу лиц"
 msgstr ""
 
 #: src/templates/ClauseMainPage/components/tables/CommonAddResultsTable/CommonAddResultsTable.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "по количеству составов преступлений"
 msgstr ""
 
@@ -1040,6 +1050,14 @@ msgid "ст. 27 УПК"
 msgstr ""
 
 #: src/templates/FaqPage/FaqPage.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Освобождение от наказания"
 msgstr ""
 
@@ -1923,6 +1941,14 @@ msgstr ""
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Штраф: количество осужденных по размеру штрафа"
 msgstr ""
 
@@ -1935,6 +1961,8 @@ msgid "(primaryFine5);"
 msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "свыше 5 тыс. до 25 тыс. рублей"
 msgstr ""
 
@@ -1942,6 +1970,7 @@ msgstr ""
 msgid "(primaryFine5_25);"
 msgstr ""
 
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "свыше 25 тыс. до 500 тыс. рублей"
 msgstr ""
@@ -1951,6 +1980,8 @@ msgid "(primaryFine25_500);"
 msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "свыше 25 тыс. до 100 тыс. рублей"
 msgstr ""
 
@@ -1958,6 +1989,7 @@ msgstr ""
 msgid "(primaryFine25_100);"
 msgstr ""
 
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "свыше 100 тыс. до 300 тыс. рублей"
 msgstr ""
@@ -1967,6 +1999,7 @@ msgid "(primaryFine100_300);"
 msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "свыше 300 тыс. до 500 тыс. рублей"
 msgstr ""
 
@@ -1975,6 +2008,7 @@ msgid "(primaryFine300_500);"
 msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "свыше 500 тыс. до 1 млн рублей"
 msgstr ""
 
@@ -1982,6 +2016,7 @@ msgstr ""
 msgid "(primaryFine500_1M);"
 msgstr ""
 
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "свыше 1 млн рублей"
 msgstr ""
@@ -2046,6 +2081,7 @@ msgid "(dismissalAbsenceOfEvent)."
 msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Обстоятельства, исключающие преступность деяния."
 msgstr ""
 
@@ -2063,17 +2099,21 @@ msgid "Обстоятельства, исключающие преступнос
 msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "необходимая оборона"
 msgstr ""
 
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(noCrimeSelf-defence)"
 msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "крайняя необходимость"
 msgstr ""
 
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(noCrimeNecessity)"
 msgstr ""
@@ -2085,11 +2125,373 @@ msgid ""
 msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(noCrimeOther)"
 msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Нереабилитирующие основания."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(dismissalAmnesty)"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "Прекращено за примирением с потерпевшим"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(dismissalReconciliation)"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(dismissalRepentance) и"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid ""
+"прекращено по другим основаниям: на основании примечаний к статьям УК РФ (в "
+"связи с деятельным раскаянием ч. 2 ст. 28 УПК РФ)"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid ""
+"(dismissalRepentance2). Мы не знаем, интерпретирует ли Судебный департамент эти "
+"данные как один или разные показатели. Это может быть детализация или наслоение "
+"данных"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "Прекращено с назначением судебного штрафа"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(dismissalCourtFinе):"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "Судебный штраф: количество осужденных по размеру штрафа"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "до 5 тыс. рублей"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(dismissalCourtFine5)"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(dismissalCourtFine5_25)"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(dismissalCourtFine25_100)"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "свыше 100 тыс. рублей"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(dismissalCourtFine100)"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid ""
+"(dismissalOther). Мы не знаем, какие именно основания входят в эту категорию. "
+"Здесь могут быть некоторые из реабилитирующих и нереабилитирующих оснований."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid ""
+"(coerciveMeasures). Показатель описывает случаи, когда к человеку были "
+"применены принудительные меры медицинского характера."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid ""
+"(exemption). Мы не знаем, является ли эта категория в статистике Судебного "
+"департамента одним из исходов дела, наряду с обвинением и оправданием, или "
+"дополнительной характеристикой тех случаев, когда человека осудили (всего "
+"осуждено (totalConvicted)), поэтому мы включили её в оба раздела. Категории нет "
+"в таблице, дана детализация по видам:"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "по амнистии"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(exemptionAmnest)"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "по другим основаниям: лишение свободы"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(exemptionFromImprisonment)"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "по другим основаниям: от иных мер или наказание не назначалось"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(examptionOther)"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "Дополнительные характеристики по основному составу"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "Коррупционный мотив"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid ""
+"(corruption). Дополнительная характеристика мотивов для тех, кого признали "
+"виновными («Всего осуждено» (totalConvicted)), данные есть за 2010-2012 годы "
+"включительно."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "Наказание назначено ниже низшего предела лишение свободы"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid ""
+"(primaryImprisonmentUnderLowerLimit). Дополнительная характеристика для тех, "
+"кому назначили лишение свободы ((primaryImprisonment) — по всем детализациям)."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "Преступление не является оконченным"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid ""
+"(приготовление, покушение) (unfinishedOffence). Дополнительная характеристика "
+"по категории «Всего осуждено» (totalConvicted)."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "Общая сумма штрафов"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid ""
+"(primaryFineSum). Дополнительная характеристика совокупности наказаний в виде "
+"штрафа в качестве основного наказания."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "Судебный штраф: общая сумма"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid ""
+"(dismissalCourtFineSum). Дополнительная характеристика одного из видов "
+"прекращения судебного производства. Этот штраф не следует складывать со штрафом "
+"как видом наказания, основным или дополнительным."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "Дополнительные наказания."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid ""
+"Дополнительная характеристика категории «Всего осуждено» (totalConvicted), "
+"показывает случаи, когда к основному наказанию суд назначает дополнительное за "
+"тот же состав преступления. Категории нет в таблице, дана детализация по видам:"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "Дополнительное наказание:"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid ""
+"лишение права занимать определенные должности или заниматься определенной "
+"деятельностью"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(addDisqualification)"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(addFine)"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(addFine5)"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(addFine5_25)"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(addFine25_500)"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(addFine25_100)"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(addFine100_300)"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(addFine300_500)"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(addFine500_1M)"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(addFine1M)"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "Штраф (дополнительное наказание): общая сумма"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid ""
+"(addFineSum). Дополнительная характеристика показателя по штрафам в качестве "
+"дополнительного наказания. Может складываться с общей суммой штрафа как "
+"основного наказания."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid ""
+"лишение специального, воинского или почетного звания, классного чина и "
+"государственных наград"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(addTitlesWithdraw)"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "ограничение свободы"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(addRestrain)"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid ""
+"Мы не знаем, интерпретирует ли Судебный департамент эти данные как детализацию "
+"прекращения дел по реабилитирующим обстоятельствам или как дополнительную "
+"характеристику по основному составу, поэтому включили эту категорию в оба "
+"раздела. Категории нет в таблице, дана детализация по видам:"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "Обстоятельства исключающие преступность деяния:"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid ""
+"Обстоятельства, исключающие преступность, предусмотренные статьями 38, 40 - 42 "
+"УК РФ"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "Осуждено: по числу лиц"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(addTotalPersons) и"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(addTotalOffences)"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "Оправдано: по числу лиц"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(addAcquittalPersons) и"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(addAcquittalOffences)"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "Прекращено."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid ""
+"Мы не знаем, какие именно основания включены в эту категорию. Это могут быть "
+"некоторые из реабилитирующих и нереабилитирующих оснований. Категории нет в "
+"таблице, дана детализация по основаниям прекращения:"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "Прекращено: по числу лиц"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(addAcquittalOffences) и"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(addDismissalOffences)"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "Прекращено по другим основаниям: по числу лиц"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(addDismissalOtherPersons) и"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(addDismissalOtherOffences)."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "Признаны невменяемыми: по числу лиц"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(addUnfitToPleadPersons) и"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "(addUnfitToPleadOffences)."
 msgstr ""
 
 #: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
