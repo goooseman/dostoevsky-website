@@ -2570,8 +2570,8 @@ msgstr "по амнистии"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
-msgid "(exemptionAmnest)"
-msgstr "(exemptionAmnest)"
+msgid "(exemptionAmnesty)"
+msgstr "(exemptionAmnesty)"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:

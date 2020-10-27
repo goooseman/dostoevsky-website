@@ -95,7 +95,6 @@ body {
     .ct-bar-sum {
       overflow: visible;
       font-size: 12px;
-      font-weight: 500;
       text-transform: lowercase;
       white-space: nowrap;
     }
@@ -109,6 +108,7 @@ body {
       fill: var(--color-text);
     }
     .ct-chart-bar.ct-horizontal-bars .ct-label.ct-vertical.ct-start {
+      width: 100% !important;
       justify-content: flex-start;
     }
 
@@ -155,7 +155,7 @@ body {
 }
 
 .legend-title {
-  line-height: 14px;
+  font-size: 12px;
 }
 
 .title {

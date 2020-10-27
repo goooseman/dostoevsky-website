@@ -415,7 +415,7 @@ const FaqPageUploadFieldsNParameterTree = () => {
                 <b>
                   <T message="по амнистии" />
                 </b>{" "}
-                <T message="(exemptionAmnest)" />
+                <T message="(exemptionAmnesty)" />
               </li>
               <li>
                 <T message="Освобождение от наказания" />{" "}
@@ -485,7 +485,7 @@ const FaqPageUploadFieldsNParameterTree = () => {
                 <b>
                   <T message="по амнистии" />
                 </b>{" "}
-                <T message="(exemptionAmnest)" />
+                <T message="(exemptionAmnesty)" />
               </li>
               <li>
                 <T message="Освобождение от наказания" />{" "}
