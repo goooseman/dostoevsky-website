@@ -4,11 +4,13 @@ import cn from "clsx";
 import Container from "src/components/ui-kit/Container";
 import Typography from "src/components/ui-kit/Typography";
 import Accordion, { AccordionNode } from "src/components/ui-kit/Accordion";
+import Input from "src/components/ui-kit/Input";
 import SinglePageLayout from "src/components/SinglePageLayout";
-import { T } from "react-targem";
+import { useLocale, T } from "react-targem";
 import { Menu, MenuItem } from "src/components/Menu";
 import FaqPageHowWasCollected from "./FaqPageHowWasCollected";
 import FaqPageUploadFieldsNParameterTree from "./FaqPageUploadFieldsNParameterTree";
+import FaqPageTooltip from "./FaqPageTooltip";
 
 const faqData = [
   {
@@ -502,7 +504,7 @@ const faqData = [
                 </li>
                 <li>
                   <T message="подразумевают взимание от 5 до 20% заработной платы осужденного в доход государства;" />
-                  {/* [Если у осужденного нет постоянного места работы, его назначает суд. Как правило, это самый низкооплачиваемый труд: грузчик, дворник, уборщик. ] */}
+                  <FaqPageTooltip tip="Если у осужденного нет постоянного места работы, его назначает суд. Как правило, это самый низкооплачиваемый труд: грузчик, дворник, уборщик." />
                 </li>
                 <li>
                   <T message="срок исполнения — от 2 месяцев до 2 лет." />
@@ -759,10 +761,16 @@ const faqData = [
 ];
 
 const FaqPage: React.FC = () => {
+  const { t } = useLocale();
   const [activeMenuItem, setActiveMenuItem] = useState("glossary");
+  const [searchValue, setSearchValue] = useState("");
 
   const handleClickMenuItem = (menuItemId: string) => {
     setActiveMenuItem(menuItemId);
+  };
+
+  const handleSearch = (e: any) => {
+    setSearchValue(e.target.value);
   };
 
   const currentFaqItem = faqData.find((d) => d.id == activeMenuItem);
@@ -771,9 +779,15 @@ const FaqPage: React.FC = () => {
     <main className={cn(classes.container)}>
       <Container>
         <SinglePageLayout>
-          {/* <div className={cn(classes.searchButton)}>
-            <img src={require("./assets/search.png")} />
-          </div> */}
+          <div className={cn(classes.searchWrapper)}>
+            <Input
+              type="text"
+              value={searchValue}
+              withIcon={require("./assets/search.svg")}
+              placeholder={t("поиск по разделу")}
+              onChange={handleSearch}
+            />
+          </div>
           <Menu variant="default" className={cn(classes.faqMenu)}>
             {faqData.map((f) => (
               <MenuItem

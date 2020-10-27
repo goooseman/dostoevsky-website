@@ -1704,6 +1704,10 @@ msgstr ""
 "осужденного. Иногда суд может назначить штраф с рассрочкой выплаты на срок до "
 "пяти лет."
 
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "поиск по разделу"
+msgstr "поиск по разделу"
+
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "статья"
 msgstr "статья"
@@ -2201,12 +2205,18 @@ msgstr "Ограничения по воинской службе"
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid ""
 "(primaryRestrictionsInMilitaryService). Этот показатель частично пересекается с "
-"пунктом I.4. Вероятно, в некоторых таблицах эта мера наказания была объединена "
-"с другими, затем статистические формы поменяли"
+"пунктом I.4."
 msgstr ""
 "(primaryRestrictionsInMilitaryService). Этот показатель частично пересекается с "
-"пунктом I.4. Вероятно, в некоторых таблицах эта мера наказания была объединена "
-"с другими, затем статистические формы поменяли"
+"пунктом I.4."
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid ""
+"Вероятно, в некоторых таблицах эта мера наказания была объединена с другими, "
+"затем статистические формы поменяли"
+msgstr ""
+"Вероятно, в некоторых таблицах эта мера наказания была объединена с другими, "
+"затем статистические формы поменяли"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(primaryCorrectionalLabour)"
@@ -2374,6 +2384,10 @@ msgstr "Реабилитирующие основания."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Категории нет в таблице, дана детализация по видам:"
 msgstr "Категории нет в таблице, дана детализация по видам:"
 
@@ -2395,13 +2409,15 @@ msgid ""
 "Мы не знаем, интерпретирует ли Судебный департамент эти данные как детализацию "
 "прекращения дела по реабилитирующим обстоятельствам или как дополнительную "
 "характеристику по основному составу, поэтому включили эту категорию в оба "
-"раздела. Категории нет в таблице, дана детализация по видам:"
+"раздела."
 msgstr ""
 "Мы не знаем, интерпретирует ли Судебный департамент эти данные как детализацию "
 "прекращения дела по реабилитирующим обстоятельствам или как дополнительную "
 "характеристику по основному составу, поэтому включили эту категорию в оба "
-"раздела. Категории нет в таблице, дана детализация по видам:"
+"раздела."
 
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Обстоятельства, исключающие преступность деяния:"
@@ -2540,14 +2556,12 @@ msgid ""
 "(exemption). Мы не знаем, является ли эта категория в статистике Судебного "
 "департамента одним из исходов дела, наряду с обвинением и оправданием, или "
 "дополнительной характеристикой тех случаев, когда человека осудили (всего "
-"осуждено (totalConvicted)), поэтому мы включили её в оба раздела. Категории нет "
-"в таблице, дана детализация по видам:"
+"осуждено (totalConvicted)), поэтому мы включили её в оба раздела."
 msgstr ""
 "(exemption). Мы не знаем, является ли эта категория в статистике Судебного "
 "департамента одним из исходов дела, наряду с обвинением и оправданием, или "
 "дополнительной характеристикой тех случаев, когда человека осудили (всего "
-"осуждено (totalConvicted)), поэтому мы включили её в оба раздела. Категории нет "
-"в таблице, дана детализация по видам:"
+"осуждено (totalConvicted)), поэтому мы включили её в оба раздела."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
@@ -2756,17 +2770,12 @@ msgid ""
 "Мы не знаем, интерпретирует ли Судебный департамент эти данные как детализацию "
 "прекращения дел по реабилитирующим обстоятельствам или как дополнительную "
 "характеристику по основному составу, поэтому включили эту категорию в оба "
-"раздела. Категории нет в таблице, дана детализация по видам:"
+"раздела."
 msgstr ""
 "Мы не знаем, интерпретирует ли Судебный департамент эти данные как детализацию "
 "прекращения дел по реабилитирующим обстоятельствам или как дополнительную "
 "характеристику по основному составу, поэтому включили эту категорию в оба "
-"раздела. Категории нет в таблице, дана детализация по видам:"
-
-#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
-#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
-msgid "Обстоятельства исключающие преступность деяния:"
-msgstr "Обстоятельства исключающие преступность деяния:"
+"раздела."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid ""
