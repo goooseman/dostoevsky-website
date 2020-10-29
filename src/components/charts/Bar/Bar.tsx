@@ -136,7 +136,7 @@ class Bar extends PureComponent<BarProps> {
     } = this.props;
 
     const wrapperHeight =
-      chartType === "partsByPunishment"
+      chartType === "partsByPunishment" && charts.length
         ? 60 * charts[0].labels.length + 50
         : maxLabelsCount * ROW_HEIGHT;
 
