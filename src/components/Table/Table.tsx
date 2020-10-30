@@ -27,6 +27,7 @@ interface TableProps {
   }[];
   isEqualWidth?: boolean;
   isNotPaddedLeft?: boolean;
+  isNotMarginTop?: boolean;
   isColored?: boolean;
   hideEmbed?: boolean;
   onDownloadButtonClick?: () => void;
@@ -46,6 +47,7 @@ class Table extends PureComponent<TableProps> {
       onTableTitleClick,
       activeTableIndex,
       isNotPaddedLeft,
+      isNotMarginTop,
       isEqualWidth,
       isColored,
       hideEmbed,
@@ -59,7 +61,11 @@ class Table extends PureComponent<TableProps> {
           [classes.isNotPaddedLeft]: isNotPaddedLeft,
         })}
       >
-        <div className={cn(classes.titleContainer)}>
+        <div
+          className={cn(classes.titleContainer, {
+            [classes.isNotMarginTop]: isNotMarginTop,
+          })}
+        >
           <Typography variant="h3">
             <b>{title}</b>
           </Typography>

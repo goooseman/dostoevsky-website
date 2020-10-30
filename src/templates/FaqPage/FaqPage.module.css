@@ -4,16 +4,64 @@
   background-color: var(--color-main-background);
 }
 
-.search-button {
-  width: 34.51px;
-  height: 36.15px;
-  cursor: pointer;
+.search-wrapper {
+  display: flex;
+}
+
+.search-wrapper input {
+  margin-left: auto;
 }
 
 .faq-menu {
   margin-top: 2rem;
 }
 
-.accordion-wrapper {
+.content-wrapper {
   margin-top: 3rem;
+}
+
+.content-wrapper p {
+  margin-bottom: 2rem;
+}
+
+.content-wrapper mark {
+  background-color: #bec6ff;
+}
+
+.ul-with-additional-margin > li {
+  margin-bottom: 2rem;
+}
+
+.content-wrapper .tooltip {
+  max-width: 300px;
+  padding: 14px 18px;
+  border: 1px solid var(--color-border-dark);
+  margin-top: 20px;
+  background-color: var(--color-main-background);
+  color: var(--color-text);
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 17px;
+  opacity: 1;
+}
+
+.tooltip-image {
+  margin: 0 5px -4px 5px;
+}
+
+.tooltip::before {
+  display: none !important;
+}
+
+.tooltip::after {
+  top: -8.75px !important;
+  width: 15px;
+  height: 15px;
+  border-top: 1px solid #000 !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  border-left: 1px solid #000 !important;
+  margin-left: -6px !important;
+  background: #eff5f3;
+  transform: rotate(45deg);
 }
