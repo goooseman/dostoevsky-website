@@ -25,7 +25,7 @@
   width: 10rem;
   height: 10rem;
   margin: 0 auto;
-  background-color: #7c89e4;
+  background-color: var(--color-secondary-background);
   border-radius: 50%;
 }
 

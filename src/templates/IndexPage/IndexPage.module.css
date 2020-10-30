@@ -1,0 +1,143 @@
+.top-block-wrapper {
+  padding: 2rem 0;
+  background: var(--color-secondary-background);
+}
+
+.top-block {
+  display: flex;
+}
+
+.top-block .left-text {
+  width: 480px;
+}
+
+.top-block .images {
+  position: relative;
+  margin-left: 6rem;
+}
+
+.top-block .images .graph-icon {
+  position: absolute;
+  top: 1.5rem;
+  left: 34px;
+}
+
+.top-block .images .chart-icon {
+  position: absolute;
+  top: 4.5rem;
+  left: 155px;
+}
+
+.top-block .images .table-icon {
+  position: absolute;
+  bottom: 0;
+  left: 80px;
+}
+
+.top-block .right-text {
+  position: relative;
+  width: 298px;
+  margin-top: 1.5rem;
+  margin-left: auto;
+  line-height: 24px;
+}
+
+.top-block .right-text::before {
+  position: absolute;
+  top: -15px;
+  left: 0;
+  width: 80px;
+  height: 5px;
+  background-color: var(--color-outer-background);
+  content: "";
+}
+
+.filter-block-wrapper {
+  padding: 2rem 0;
+}
+
+.filter-block-wrapper .filter-block {
+  display: flex;
+  border: 1px solid var(--color-border-dark);
+  border-radius: 5px;
+
+  :global {
+    .select__control {
+      padding-top: 1.5rem;
+      border: none;
+      background-color: transparent;
+    }
+    .select__value-container {
+      padding-left: 0;
+    }
+    .select__placeholder,
+    .select__input,
+    .select__single-value {
+      margin-left: 0;
+    }
+    .select__placeholder,
+    .select__input input,
+    .select__single-value,
+    .select__menu-notice {
+      font-family: var(--font-family-serif);
+      font-style: italic;
+    }
+    .select__indicators {
+      display: none;
+    }
+    .select__menu {
+      top: 150%;
+      border: 1px solid var(--color-border-dark);
+      border-radius: 5px;
+      box-shadow: none;
+    }
+    .select__menu-list {
+      padding: 1rem 0;
+    }
+    .select__option {
+      padding: 0.25rem 1.5rem;
+    }
+    .select__option--is-focused,
+    .select__option--is-selected {
+      background-color: var(--color-secondary-lighter);
+      color: var(--color-text);
+    }
+  }
+}
+
+.filter-block-wrapper .filter-block > * {
+  padding: 1.5rem 0;
+}
+
+.filter-block-wrapper .filter-block .uk-select-wrapper {
+  position: relative;
+  width: 531px;
+  padding-left: 1.5rem;
+}
+
+.filter-block-wrapper .filter-block .select-label {
+  position: absolute;
+  z-index: 100;
+}
+
+.filter-block-wrapper .filter-block .year-select-wrapper {
+  flex-grow: 1;
+  padding-left: 1.5rem;
+  border-left: 0.5px solid var(--color-border-dark);
+  background-color: var(--color-secondary-lighter);
+  :global {
+    .select__menu {
+      width: 134px;
+    }
+  }
+}
+
+.filter-block-wrapper .filter-block .button-wrapper {
+  display: flex;
+  width: 400px;
+  justify-content: space-around;
+}
+
+.promo-wrapper {
+  background: var(--color-secondary-lighter);
+}

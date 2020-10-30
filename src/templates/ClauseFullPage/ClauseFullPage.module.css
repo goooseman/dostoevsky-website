@@ -48,7 +48,7 @@
   border: none;
   margin-top: 5rem;
   margin-left: 3rem;
-  background-color: #7c89e4;
+  background-color: var(--color-secondary-background);
   background-image: url("src/templates/ClauseFullPage/assets/download.svg");
   background-position: center center;
   background-repeat: no-repeat;

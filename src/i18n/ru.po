@@ -26,6 +26,7 @@ msgid "Times icon"
 msgstr ""
 
 #: src/components/ClausePageHeader/ClausePageHeader.tsx:
+#: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "год"
 msgstr ""
 
@@ -39,18 +40,6 @@ msgstr ""
 
 #: src/components/ClausePageLayout/ClausePageLayout.tsx:
 msgid "ТАБЛИЦА"
-msgstr ""
-
-#: src/components/ClausePageLayout/ClausePageLayout.tsx:
-msgid "Нужны данные по всем статьям и годам?"
-msgstr ""
-
-#: src/components/ClausePageLayout/ClausePageLayout.tsx:
-msgid "Полный доступ к датасету"
-msgstr ""
-
-#: src/components/ClausePageLayout/ClausePageLayout.tsx:
-msgid "Перейти"
 msgstr ""
 
 #: src/components/DownloadButton/DownloadButton.tsx:
@@ -80,6 +69,18 @@ msgstr "Логотип OI"
 #: src/components/Footer/Footer.tsx:
 msgid "D4S logo"
 msgstr "Логотип D4S"
+
+#: src/components/Promo/Promo.tsx:
+msgid "Нужны данные по всем статьям и годам?"
+msgstr ""
+
+#: src/components/Promo/Promo.tsx:
+msgid "Полный доступ к датасету"
+msgstr ""
+
+#: src/components/Promo/Promo.tsx:
+msgid "Перейти"
+msgstr ""
 
 #: src/components/SpoilerText/SpoilerText.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
@@ -811,4 +812,46 @@ msgstr ""
 
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 msgid "Произошла ошибка. Пожалуйста, измените параметры поиска."
+msgstr ""
+
+#: src/templates/IndexPage/IndexPage.tsx:
+msgid "Статистика судебных решений"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPage.tsx:
+msgid ""
+"по статьям Уголовного кодекса на основе публикаций Судебного департамента при "
+"Верховном Суде РФ"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPage.tsx:
+msgid ""
+"Вы сможете найти информацию по любой статье УК с 2009 по 2019 год: статистика "
+"обвинительных и оправдательных приговоров, лишений свободы, амнистий и многое "
+"другое."
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageAnalythics.tsx:
+msgid "Статистика решений суда по всем статьям УК РФ в 2019 году"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageFilter.tsx:
+msgid "№ статьи ук рф или вид преступления"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageFilter.tsx:
+msgid "Введите статью..."
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageFilter.tsx:
+#: src/templates/IndexPage/IndexPageFilter.tsx:
+msgid "Ничего не найдено"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageFilter.tsx:
+msgid "Введите год..."
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageFilter.tsx:
+msgid "Перейти к данным"
 msgstr ""
