@@ -13,13 +13,29 @@ class SearchService {
     locale: "ru"
   ): Promise<SearchResult[]> {
     const results = await this.searchServiceAdaper.getArticlesByText(
-      queryString
+      queryString,
+      locale
     );
     return results.map((r) => {
-      return {
-        text: `Статья ${r.id}. ${r.text[locale]}`,
-        link: `/${r.id}/${year}/`,
-      };
+      switch (r.type) {
+        case "clause":
+          return {
+            text: `Статья ${r.id}. ${r.text[locale]}`,
+            link: `/${r.id}/${year}/`,
+          };
+        case "part":
+          return {
+            text: r.text[locale],
+            link: `/clauses?partId=${r.id}`,
+          };
+        case "section":
+          return {
+            text: r.text[locale],
+            link: `/clauses?partId=${r.partId}&sectionId=${r.id}`,
+          };
+        default:
+          throw new Error("Unknown type");
+      }
     });
   }
 

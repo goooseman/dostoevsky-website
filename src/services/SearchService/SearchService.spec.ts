@@ -17,6 +17,7 @@ const fakeSearchResult282: SearchResult[] = [
       ru: "Foo",
     },
     id: "282",
+    type: "clause",
   },
 ];
 
@@ -26,6 +27,17 @@ const fakeSearchResult281: SearchResult[] = [
       ru: "Bar",
     },
     id: "281",
+    type: "clause",
+  },
+];
+
+const fakeSearchResultPart7: SearchResult[] = [
+  {
+    text: {
+      ru: "Part Foo",
+    },
+    id: "7",
+    type: "part",
   },
 ];
 
@@ -67,6 +79,45 @@ describe("getAutocompleteItems", () => {
       {
         text: "Статья 281. Bar",
         link: "/281/2019/",
+      },
+    ]);
+  });
+
+  it("should return autocomplete results for 'Преступления против личности'", async () => {
+    mockGetArticlesByTextResponse(fakeSearchResultPart7);
+    const results = await searchService.getAutocompleteItems(
+      "Преступления против личности",
+      2019,
+      "ru"
+    );
+    expect(results).toEqual([
+      {
+        text: "Part Foo",
+        link: "/clauses?partId=7",
+      },
+    ]);
+  });
+
+  it("should return autocomplete results for 'преступления против жизни'", async () => {
+    mockGetArticlesByTextResponse([
+      {
+        text: {
+          ru: "Section Bar",
+        },
+        id: "2",
+        partId: "7",
+        type: "section",
+      },
+    ]);
+    const results = await searchService.getAutocompleteItems(
+      "преступления против жизни",
+      2019,
+      "ru"
+    );
+    expect(results).toEqual([
+      {
+        text: "Section Bar",
+        link: "/clauses?partId=7&sectionId=2",
       },
     ]);
   });
