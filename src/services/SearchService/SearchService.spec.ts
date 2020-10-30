@@ -37,35 +37,51 @@ const mockGetArticlesByTextResponse = (response: SearchResult[]) => {
   );
 };
 
-it("should return autocomplete results for '282'", async () => {
-  mockGetArticlesByTextResponse(fakeSearchResult282);
-  const results = await searchService.getAutocompleteItems("282", 2019, "ru");
-  expect(results).toEqual([
-    {
-      text: "Статья 282. Foo",
-      link: "/282/2019/",
-    },
-  ]);
+describe("getAutocompleteItems", () => {
+  it("should return autocomplete results for '282'", async () => {
+    mockGetArticlesByTextResponse(fakeSearchResult282);
+    const results = await searchService.getAutocompleteItems("282", 2019, "ru");
+    expect(results).toEqual([
+      {
+        text: "Статья 282. Foo",
+        link: "/282/2019/",
+      },
+    ]);
+  });
+
+  it("should return autocomplete results for '282' for different year", async () => {
+    mockGetArticlesByTextResponse(fakeSearchResult282);
+    const results = await searchService.getAutocompleteItems("282", 2018, "ru");
+    expect(results).toEqual([
+      {
+        text: "Статья 282. Foo",
+        link: "/282/2018/",
+      },
+    ]);
+  });
+
+  it("should return autocomplete results for '281'", async () => {
+    mockGetArticlesByTextResponse(fakeSearchResult281);
+    const results = await searchService.getAutocompleteItems("281", 2019, "ru");
+    expect(results).toEqual([
+      {
+        text: "Статья 281. Bar",
+        link: "/281/2019/",
+      },
+    ]);
+  });
 });
 
-it("should return autocomplete results for '282' for different year", async () => {
-  mockGetArticlesByTextResponse(fakeSearchResult282);
-  const results = await searchService.getAutocompleteItems("282", 2018, "ru");
-  expect(results).toEqual([
-    {
-      text: "Статья 282. Foo",
-      link: "/282/2018/",
-    },
-  ]);
-});
-
-it("should return autocomplete results for '281'", async () => {
-  mockGetArticlesByTextResponse(fakeSearchResult281);
-  const results = await searchService.getAutocompleteItems("281", 2019, "ru");
-  expect(results).toEqual([
-    {
-      text: "Статья 281. Bar",
-      link: "/281/2019/",
-    },
-  ]);
+describe("getHelpItems", () => {
+  it("should return default help items", () => {
+    const result = searchService.getHelpItems("ru");
+    expect(result).toEqual([
+      "282",
+      "282 часть 2",
+      "против личности",
+      "против государствa",
+      "экстремизм",
+      "убийство",
+    ]);
+  });
 });

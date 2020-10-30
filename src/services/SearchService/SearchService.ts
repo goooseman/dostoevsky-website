@@ -22,9 +22,21 @@ class SearchService {
       };
     });
   }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  getHelpItems(locale: "ru"): string[] {
+    return [
+      "282",
+      "282 часть 2",
+      "против личности",
+      "против государствa",
+      "экстремизм",
+      "убийство",
+    ];
+  }
 }
 
-interface SearchResult {
+export interface SearchResult {
   text: string;
   link: string;
 }
