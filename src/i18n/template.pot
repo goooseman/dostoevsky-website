@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Tue Oct 27 2020 21:16:30 GMT+0300 (GMT+03:00)\n"
+"POT-Creation-Date: Fri Oct 30 2020 15:01:17 GMT+0300 (GMT+03:00)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -1251,6 +1251,12 @@ msgid ""
 msgstr ""
 
 #: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Если у осужденного нет постоянного места работы, его назначает суд. Как "
+"правило, это самый низкооплачиваемый труд: грузчик, дворник, уборщик."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
 msgid "срок исполнения — от 2 месяцев до 2 лет."
 msgstr ""
 
@@ -1910,6 +1916,10 @@ msgid ""
 msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "раздел «Основной состав», пункт I.4."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid ""
 "Вероятно, в некоторых таблицах эта мера наказания была объединена с другими, "
 "затем статистические формы поменяли"
@@ -2100,6 +2110,12 @@ msgid ""
 msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid ""
+"раздел «Основной состав», пункт III.1.b. и раздел «Дополнительные "
+"характеристики по основному составу», пункт 7."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
@@ -2229,6 +2245,13 @@ msgid ""
 "департамента одним из исходов дела, наряду с обвинением и оправданием, или "
 "дополнительной характеристикой тех случаев, когда человека осудили (всего "
 "осуждено (totalConvicted)), поэтому мы включили её в оба раздела."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid ""
+"Раздел «Основной состав», пункт V и раздел «Дополнительные характеристики по "
+"основному составу», пункт V."
 msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
@@ -2417,6 +2440,12 @@ msgid ""
 "прекращения дел по реабилитирующим обстоятельствам или как дополнительную "
 "характеристику по основному составу, поэтому включили эту категорию в оба "
 "раздела."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid ""
+"раздел «Основной состав», пункт III.1.a. и раздел «Дополнительные "
+"характеристики по основному составу», пункт VII."
 msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:

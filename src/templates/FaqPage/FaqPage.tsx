@@ -12,7 +12,7 @@ import FaqPageHowWasCollected from "./FaqPageHowWasCollected";
 import FaqPageUploadFieldsNParameterTree from "./FaqPageUploadFieldsNParameterTree";
 import FaqPageTooltip from "./FaqPageTooltip";
 
-const faqData = [
+const getFaqData = (t: any) => [
   {
     id: "glossary",
     title: "Глоссарий",
@@ -504,7 +504,11 @@ const faqData = [
                 </li>
                 <li>
                   <T message="подразумевают взимание от 5 до 20% заработной платы осужденного в доход государства;" />
-                  <FaqPageTooltip tip="Если у осужденного нет постоянного места работы, его назначает суд. Как правило, это самый низкооплачиваемый труд: грузчик, дворник, уборщик." />
+                  <FaqPageTooltip
+                    tip={t(
+                      "Если у осужденного нет постоянного места работы, его назначает суд. Как правило, это самый низкооплачиваемый труд: грузчик, дворник, уборщик."
+                    )}
+                  />
                 </li>
                 <li>
                   <T message="срок исполнения — от 2 месяцев до 2 лет." />
@@ -773,6 +777,7 @@ const FaqPage: React.FC = () => {
     setSearchValue(e.target.value);
   };
 
+  const faqData = getFaqData(t);
   const currentFaqItem = faqData.find((d) => d.id == activeMenuItem);
 
   return (
@@ -783,7 +788,7 @@ const FaqPage: React.FC = () => {
             <Input
               type="text"
               value={searchValue}
-              withIcon={require("./assets/search.svg")}
+              icon={require("./assets/search.svg")}
               placeholder={t("поиск по разделу")}
               onChange={handleSearch}
             />

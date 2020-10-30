@@ -1417,6 +1417,14 @@ msgstr ""
 "государства;"
 
 #: src/templates/FaqPage/FaqPage.tsx:
+msgid ""
+"Если у осужденного нет постоянного места работы, его назначает суд. Как "
+"правило, это самый низкооплачиваемый труд: грузчик, дворник, уборщик."
+msgstr ""
+"Если у осужденного нет постоянного места работы, его назначает суд. Как "
+"правило, это самый низкооплачиваемый труд: грузчик, дворник, уборщик."
+
+#: src/templates/FaqPage/FaqPage.tsx:
 msgid "срок исполнения — от 2 месяцев до 2 лет."
 msgstr "срок исполнения — от 2 месяцев до 2 лет."
 
@@ -2211,6 +2219,10 @@ msgstr ""
 "пунктом I.4."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "раздел «Основной состав», пункт I.4."
+msgstr "раздел «Основной состав», пункт I.4."
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid ""
 "Вероятно, в некоторых таблицах эта мера наказания была объединена с другими, "
 "затем статистические формы поменяли"
@@ -2417,6 +2429,14 @@ msgstr ""
 "раздела."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid ""
+"раздел «Основной состав», пункт III.1.b. и раздел «Дополнительные "
+"характеристики по основному составу», пункт 7."
+msgstr ""
+"раздел «Основной состав», пункт III.1.b. и раздел «Дополнительные "
+"характеристики по основному составу», пункт 7."
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
@@ -2562,6 +2582,15 @@ msgstr ""
 "департамента одним из исходов дела, наряду с обвинением и оправданием, или "
 "дополнительной характеристикой тех случаев, когда человека осудили (всего "
 "осуждено (totalConvicted)), поэтому мы включили её в оба раздела."
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid ""
+"Раздел «Основной состав», пункт V и раздел «Дополнительные характеристики по "
+"основному составу», пункт V."
+msgstr ""
+"Раздел «Основной состав», пункт V и раздел «Дополнительные характеристики по "
+"основному составу», пункт V."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
@@ -2776,6 +2805,14 @@ msgstr ""
 "прекращения дел по реабилитирующим обстоятельствам или как дополнительную "
 "характеристику по основному составу, поэтому включили эту категорию в оба "
 "раздела."
+
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid ""
+"раздел «Основной состав», пункт III.1.a. и раздел «Дополнительные "
+"характеристики по основному составу», пункт VII."
+msgstr ""
+"раздел «Основной состав», пункт III.1.a. и раздел «Дополнительные "
+"характеристики по основному составу», пункт VII."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid ""

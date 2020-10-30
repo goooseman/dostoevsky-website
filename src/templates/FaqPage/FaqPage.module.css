@@ -32,17 +32,17 @@
   margin-bottom: 2rem;
 }
 
-.tooltip {
+.content-wrapper .tooltip {
   max-width: 300px;
   padding: 14px 18px;
-  border: 1px solid #000 !important;
-  margin-top: 20px !important;
-  background-color: #eff5f3 !important;
-  color: #000 !important;
-  font-size: 12px !important;
+  border: 1px solid var(--color-border-dark);
+  margin-top: 20px;
+  background-color: var(--color-main-background);
+  color: var(--color-text);
+  font-size: 12px;
   font-weight: normal;
   line-height: 17px;
-  opacity: 1 !important;
+  opacity: 1;
 }
 
 .tooltip-image {
