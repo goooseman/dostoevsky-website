@@ -23,15 +23,15 @@ class SearchService {
             text: `Статья ${r.id}. ${r.text[locale]}`,
             link: `/${r.id}/${year}/`,
           };
-        case "part":
+        case "chapter":
           return {
             text: r.text[locale],
-            link: `/clauses?partId=${r.id}`,
+            link: `/clauses?chapterId=${r.id}`,
           };
         case "section":
           return {
             text: r.text[locale],
-            link: `/clauses?partId=${r.partId}&sectionId=${r.id}`,
+            link: `/clauses?chapterId=${r.chapterId}&sectionId=${r.id}`,
           };
         default:
           throw new Error("Unknown type");
