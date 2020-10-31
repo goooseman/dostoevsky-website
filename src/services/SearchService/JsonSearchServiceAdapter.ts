@@ -1,12 +1,9 @@
 import ukRf from "content/ук-рф.json";
+import { Clause, Part, Section } from "src/types";
 import type {
   SearchResult,
   SearchServiceAdapter,
 } from "./SearchServiceAdapter";
-
-type Part = typeof ukRf[number];
-type Section = Part["children"][number];
-type Clause = Section["children"][number];
 
 class JsonSearchAdapter implements SearchServiceAdapter {
   async getArticlesByText(
