@@ -10,23 +10,23 @@ export interface SearchResultClause {
   type: "clause";
 }
 
-export interface SearchResultPart {
+export interface SearchResultChapter {
   text: {
     ru: string;
   };
   id: string;
-  type: "part";
+  type: "chapter";
 }
 export interface SearchResultSection {
   text: {
     ru: string;
   };
   id: string;
-  partId: string;
+  chapterId: string;
   type: "section";
 }
 
 export type SearchResult =
   | SearchResultClause
-  | SearchResultPart
+  | SearchResultChapter
   | SearchResultSection;

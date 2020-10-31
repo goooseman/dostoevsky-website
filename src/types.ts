@@ -13,6 +13,6 @@ export interface UkRfPart {
   children?: UkRfPart[];
 }
 
-export type Part = typeof ukRf[number];
-export type Section = Part["children"][number];
+export type Chapter = typeof ukRf[number];
+export type Section = Chapter["children"][number];
 export type Clause = Section["children"][number];

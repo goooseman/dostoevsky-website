@@ -91,7 +91,7 @@ describe("parts", () => {
         ru: "Преступления против личности",
       },
       id: "7",
-      type: "part",
+      type: "chapter",
     },
   ];
   it("should return search result for query 'Преступления против личности'", async () => {
@@ -124,7 +124,7 @@ describe("sections", () => {
         ru: "Преступления против жизни и здоровья",
       },
       id: "16",
-      partId: "7",
+      chapterId: "7",
       type: "section",
     },
   ];

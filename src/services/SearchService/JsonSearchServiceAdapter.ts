@@ -1,5 +1,5 @@
 import ukRf from "content/ук-рф.json";
-import { Clause, Part, Section } from "src/types";
+import { Clause, Chapter, Section } from "src/types";
 import type {
   SearchResult,
   SearchServiceAdapter,
@@ -43,19 +43,19 @@ class JsonSearchAdapter implements SearchServiceAdapter {
     };
   }
 
-  private transformPart(part: Part): SearchResult {
+  private transformPart(chapter: Chapter): SearchResult {
     return {
-      text: part.text,
-      id: part.id.toString(),
-      type: "part",
+      text: chapter.text,
+      id: chapter.id.toString(),
+      type: "chapter",
     };
   }
 
-  private transformSection(part: Part, section: Section): SearchResult {
+  private transformSection(chapter: Chapter, section: Section): SearchResult {
     return {
       text: section.text,
       id: section.id.toString(),
-      partId: part.id.toString(),
+      chapterId: chapter.id.toString(),
       type: "section",
     };
   }

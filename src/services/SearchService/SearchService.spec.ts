@@ -34,10 +34,10 @@ const fakeSearchResult281: SearchResult[] = [
 const fakeSearchResultPart7: SearchResult[] = [
   {
     text: {
-      ru: "Part Foo",
+      ru: "Chapter Foo",
     },
     id: "7",
-    type: "part",
+    type: "chapter",
   },
 ];
 
@@ -92,8 +92,8 @@ describe("getAutocompleteItems", () => {
     );
     expect(results).toEqual([
       {
-        text: "Part Foo",
-        link: "/clauses?partId=7",
+        text: "Chapter Foo",
+        link: "/clauses?chapterId=7",
       },
     ]);
   });
@@ -105,7 +105,7 @@ describe("getAutocompleteItems", () => {
           ru: "Section Bar",
         },
         id: "2",
-        partId: "7",
+        chapterId: "7",
         type: "section",
       },
     ]);
@@ -117,7 +117,7 @@ describe("getAutocompleteItems", () => {
     expect(results).toEqual([
       {
         text: "Section Bar",
-        link: "/clauses?partId=7&sectionId=2",
+        link: "/clauses?chapterId=7&sectionId=2",
       },
     ]);
   });
