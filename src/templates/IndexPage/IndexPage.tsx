@@ -5,7 +5,10 @@ import Container from "src/components/ui-kit/Container";
 import { T } from "react-targem";
 import Typography from "src/components/ui-kit/Typography";
 import IndexPageFilter from "./IndexPageFilter";
-import IndexPageAnalythics from "./IndexPageAnalythics";
+import IndexPageAnalytics from "./IndexPageAnalytics";
+import years from "content/years.json";
+
+const yearSelectOptions = years.map((y) => ({ value: y, label: y }));
 
 const IndexPage: React.FC = () => {
   return (
@@ -44,12 +47,12 @@ const IndexPage: React.FC = () => {
         </Container>
       </div>
       <div className={classes.filterBlockWrapper}>
-        <IndexPageFilter />
+        <IndexPageFilter yearSelectOptions={yearSelectOptions} />
       </div>
       <div className={classes.promoWrapper}>
         <Promo />
       </div>
-      <IndexPageAnalythics />
+      <IndexPageAnalytics yearSelectOptions={yearSelectOptions} />
     </>
   );
 };

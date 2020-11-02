@@ -207,11 +207,13 @@ msgstr "Лишение свободы"
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "условное осуждение к лишению свободы"
 msgstr "условное осуждение к лишению свободы"
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "обязательные работы"
 msgstr "обязательные работы"
 
@@ -222,11 +224,13 @@ msgstr "принудительные работы"
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "исправительные работы"
 msgstr "исправительные работы"
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "штраф"
 msgstr "штраф"
 
@@ -927,9 +931,94 @@ msgstr ""
 "обвинительных и оправдательных приговоров, лишений свободы, амнистий и многое "
 "другое."
 
-#: src/templates/IndexPage/IndexPageAnalythics.tsx:
-msgid "Статистика решений суда по всем статьям УК РФ в 2019 году"
-msgstr "Статистика решений суда по всем статьям УК РФ в 2019 году"
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "Статьи УК РФ, по которым осуждали чаще всего в "
+msgstr "Статьи УК РФ, по которым осуждали чаще всего в "
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "осудили человек"
+msgstr "осудили человек"
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "Нарушение ПДД лицом, подвергнутым административному наказанию"
+msgstr "Нарушение ПДД лицом, подвергнутым административному наказанию"
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "Незаконное приобретение и хранение наркотиков"
+msgstr "Незаконное приобретение и хранение наркотиков"
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "Кража"
+msgstr "Кража"
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "Неуплата алиментов"
+msgstr "Неуплата алиментов"
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "Грабёж"
+msgstr "Грабёж"
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "Угроза убийством или причинением тяжкого вреда здоровью"
+msgstr "Угроза убийством или причинением тяжкого вреда здоровью"
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "Умышленное причинение тяжкого вреда здоровью"
+msgstr "Умышленное причинение тяжкого вреда здоровью"
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "Незаконное производство и сбыт наркотиков"
+msgstr "Незаконное производство и сбыт наркотиков"
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "Мошенничество"
+msgstr "Мошенничество"
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "Умышленное причинение легкого вреда здоровью"
+msgstr "Умышленное причинение легкого вреда здоровью"
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "Какие наказания суды чаще всего назначали в "
+msgstr "Какие наказания суды чаще всего назначали в "
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "лишение свободы"
+msgstr "лишение свободы"
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "Аналитика"
+msgstr "Аналитика"
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "Статистика решений суда по всем статьям УК РФ в"
+msgstr "Статистика решений суда по всем статьям УК РФ в"
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "году"
+msgstr "году"
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "По всем статьям УК РФ прошли через суд дела"
+msgstr "По всем статьям УК РФ прошли через суд дела"
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "человек. Из них были осуждены"
+msgstr "человек. Из них были осуждены"
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "человек."
+msgstr "человек."
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "обвиняемых оправданы. По различным основаниям прекращено"
+msgstr "обвиняемых оправданы. По различным основаниям прекращено"
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "дел."
+msgstr "дел."
 
 #: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "№ статьи ук рф или вид преступления"

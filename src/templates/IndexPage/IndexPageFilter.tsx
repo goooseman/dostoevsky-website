@@ -3,10 +3,13 @@ import classes from "./IndexPage.module.css";
 import Container from "src/components/ui-kit/Container";
 import Select from "react-select";
 import ukRf from "content/ук-рф.json";
-import years from "content/years.json";
 import Typography from "src/components/ui-kit/Typography";
 import { T, useLocale } from "react-targem";
 import Button from "src/components/ui-kit/Button";
+
+interface IndexPageFilterProps {
+  yearSelectOptions: { value: number; label: number }[];
+}
 
 const ukSelectOptions: { value: number; label: string }[] = ukRf.reduce(
   (a, c) => {
@@ -27,9 +30,9 @@ const ukSelectOptions: { value: number; label: string }[] = ukRf.reduce(
   [] as { value: number; label: string }[]
 );
 
-const yearSelectOptions = years.reverse().map((y) => ({ value: y, label: y }));
-
-const IndexPageFilter: React.FC = () => {
+const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
+  yearSelectOptions,
+}: IndexPageFilterProps) => {
   const { t } = useLocale();
 
   const [selectedUk, setSelectedUk] = useState(null);

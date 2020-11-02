@@ -1,0 +1,42 @@
+.chart-title {
+  display: flex;
+  height: 100px;
+  flex-direction: column-reverse;
+  margin-left: 10px;
+}
+
+.bar-outer-wrapper {
+  display: flex;
+}
+
+.bar-wrapper {
+  flex-grow: 1;
+  :global {
+    .ct-bar {
+      stroke-width: 33px;
+    }
+    .bar-number {
+      font-weight: 500;
+    }
+    .bar-number-inside {
+      fill: var(--color-text-inverted);
+    }
+    .bar-number-outside {
+      fill: var(--color-text);
+    }
+  }
+}
+
+.bar-titles {
+  display: flex;
+  width: 300px;
+  height: calc(100% - 45px);
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.bar-titles > div {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
