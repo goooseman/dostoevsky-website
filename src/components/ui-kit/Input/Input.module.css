@@ -1,11 +1,18 @@
 .input {
-  padding-bottom: 0.5rem;
+  padding-top: 4px;
+  padding-bottom: 1rem;
   border-top: none;
   border-right: none;
   border-bottom: 2px solid var(--color-border-dark);
   border-left: none;
   background-color: transparent;
   font-size: 16px;
+}
+
+.input.with-icon {
+  padding-left: 35px;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
 }
 
 .input::-webkit-input-placeholder {

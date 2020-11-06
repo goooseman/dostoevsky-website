@@ -108,6 +108,7 @@ class Bar extends PureComponent<BarProps> {
             fullWidth: true,
           } as IChartistStepAxis,
           chartPadding: {
+            right: chartType === "partsByPunishment" ? 50 : 0,
             bottom: areLabelsRotated ? 20 : 0,
           },
           plugins,
@@ -134,6 +135,11 @@ class Bar extends PureComponent<BarProps> {
       ...wrapperProps
     } = this.props;
 
+    const wrapperHeight =
+      chartType === "partsByPunishment" && charts.length
+        ? 60 * charts[0].labels.length + 50
+        : maxLabelsCount * ROW_HEIGHT;
+
     return (
       <ChartWrapper {...wrapperProps} labels={this.getLabels()}>
         {charts.map((c, i) => (
@@ -154,9 +160,7 @@ class Bar extends PureComponent<BarProps> {
                   chartType === "partsByPunishment",
               })}
               style={{
-                height:
-                  maxLabelsCount *
-                  (chartType === "partsByPunishment" ? 38 : ROW_HEIGHT),
+                height: wrapperHeight,
               }}
             ></div>
           </div>
