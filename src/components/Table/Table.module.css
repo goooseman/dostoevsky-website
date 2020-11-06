@@ -14,6 +14,7 @@
 .table-container {
   border-top: 4px solid var(--color-border-dark);
   margin-top: 0.5rem;
+  overflow-x: auto;
 }
 
 .table tr th,
@@ -56,6 +57,10 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 3rem;
+}
+
+.title-container.is-not-margin-top {
+  margin-bottom: 0;
 }
 
 .buttons-container {

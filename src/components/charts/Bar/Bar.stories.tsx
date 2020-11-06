@@ -174,3 +174,33 @@ export const forChronoPage = (): React.ReactNode => (
     chartType="dynamicsPunishment"
   />
 );
+
+const forPartsByPunishmentProps = {
+  charts: [
+    {
+      groups: [
+        {
+          title: "105ч.1",
+          values: [0, 22, 4866],
+        },
+        {
+          title: "105ч.2",
+          values: [35, 7, 1260],
+        },
+      ],
+      labels: [
+        "пожизненное лишение свободы",
+        "условное осуждение к лишению свободы",
+        "лишение свободы",
+      ],
+      tooltipDescription,
+    },
+  ],
+  maxLabelsCount: 3,
+  title: "Виды наказаний по статье с 2009 по 2019 гг.",
+  ...commonProps,
+};
+
+export const partsByPunishment = (): React.ReactNode => (
+  <Bar {...forPartsByPunishmentProps} chartType="partsByPunishment" />
+);
