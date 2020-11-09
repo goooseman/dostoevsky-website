@@ -3,6 +3,7 @@ import React from "react";
 import { IndexQueryQuery } from "../../types/graphql-types";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
+import IndexPage from "src/templates/IndexPage";
 
 interface IndexPageProps {
   data: IndexQueryQuery;
@@ -14,13 +15,14 @@ const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
   return (
     <Layout>
       <Meta site={meta} />
-      <img
+      <IndexPage />
+      {/* <img
         src="https://nizrp.narod.ru/pics/dost5.jpg"
         style={{
           display: "block",
           width: "100%",
-        }}
-      />
+        }} 
+      /> */}
     </Layout>
   );
 };

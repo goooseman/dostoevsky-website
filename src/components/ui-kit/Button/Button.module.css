@@ -33,3 +33,28 @@
 .button-secondary {
   border-color: var(--color-secondary);
 }
+
+.button-third {
+  border-color: var(--color-primary);
+}
+
+.svg-arrow {
+  margin-bottom: -2px;
+  margin-left: 5px;
+}
+
+.svg-arrow path {
+  stroke: var(--color-border-dark);
+}
+
+.svg-inverted path {
+  stroke: var(--color-border-inverted);
+}
+
+.svg-secondary path {
+  stroke: var(--color-secondary);
+}
+
+.svg-third path {
+  stroke: var(--color-primary);
+}
