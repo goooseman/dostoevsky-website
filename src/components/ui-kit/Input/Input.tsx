@@ -7,6 +7,7 @@ interface InputProps {
   value: string;
   placeholder: string;
   icon?: string;
+  className?: string;
   onChange(e: React.SyntheticEvent<HTMLInputElement>): void;
 }
 
@@ -16,10 +17,11 @@ const Input: React.FC<InputProps> = ({
   placeholder = "",
   icon,
   onChange,
+  className = "",
 }: InputProps) => {
   return (
     <input
-      className={cn(classes.input, {
+      className={cn(classes.input, className, {
         [classes.withIcon]: Boolean(icon),
       })}
       style={{ backgroundImage: icon ? `url(${icon})` : "" }}

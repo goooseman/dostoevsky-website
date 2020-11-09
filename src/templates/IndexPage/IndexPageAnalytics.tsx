@@ -5,6 +5,7 @@ import { T, useLocale } from "react-targem";
 import Container from "src/components/ui-kit/Container";
 import Select, { components } from "react-select";
 import CommentsBar from "src/components/charts/CommentsBar";
+import { Link } from "gatsby";
 
 const PEOPLE_COUNT = 500000;
 const CONVICTED = 598214;
@@ -104,36 +105,46 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
 
   return (
     <Container className={classes.analyticsWrapper}>
-      <Typography isUpperCased color="secondary">
-        <T message="Аналитика" />
-      </Typography>
-      <Typography variant="h2" font="serif">
-        <b className={classes.analyticsTitleWrapper}>
-          <T message="Статистика решений суда по всем статьям УК РФ в" />
-          <Select
-            className="select"
-            classNamePrefix="select"
-            components={{ DropdownIndicator }}
-            options={yearSelectOptions}
-            value={selectedYear}
-            isSearchable={false}
-            onChange={(option: any) => setSelectedYear(option)}
-          />
-          <T message="году" />
-        </b>
-      </Typography>
-      <Typography className={classes.analyticsSubtitle}>
-        <T message="По всем статьям УК РФ прошли через суд дела" />{" "}
-        <b>{PEOPLE_COUNT}</b> <T message="человек. Из них были осуждены" />{" "}
-        <b>{CONVICTED}</b> <T message="человек." /> <b>{JUSTIFIED}</b>{" "}
-        <T message="обвиняемых оправданы. По различным основаниям прекращено" />{" "}
-        <b>{TERMINATED}</b> <T message="дел." />
-      </Typography>
-      <div className={classes.analyticsChartsWrapper}>
-        {getAnalyticsCharts(selectedYear, t).map((c, i) => (
-          <CommentsBar key={i} {...c} />
-        ))}
+      <div>
+        <Typography isUpperCased color="secondary">
+          <T message="Аналитика" />
+        </Typography>
+        <Typography variant="h2" font="serif">
+          <b className={classes.analyticsTitleWrapper}>
+            <T message="Статистика решений суда по всем статьям УК РФ в" />
+            <Select
+              className="select"
+              classNamePrefix="select"
+              components={{ DropdownIndicator }}
+              options={yearSelectOptions}
+              value={selectedYear}
+              isSearchable={false}
+              onChange={(option: any) => setSelectedYear(option)}
+            />
+            <T message="году" />
+          </b>
+        </Typography>
+        <Typography className={classes.analyticsSubtitle}>
+          <T message="По всем статьям УК РФ прошли через суд дела" />{" "}
+          <b>{PEOPLE_COUNT}</b> <T message="человек. Из них были осуждены" />{" "}
+          <b>{CONVICTED}</b> <T message="человек." /> <b>{JUSTIFIED}</b>{" "}
+          <T message="обвиняемых оправданы. По различным основаниям прекращено" />{" "}
+          <b>{TERMINATED}</b> <T message="дел." />
+        </Typography>
+        <div className={classes.analyticsChartsWrapper}>
+          {getAnalyticsCharts(selectedYear, t).map((c, i) => (
+            <CommentsBar key={i} {...c} />
+          ))}
+        </div>
       </div>
+      <Link className={classes.analyticsLinkWrapper} to="#">
+        <Typography isUpperCased className={classes.analyticsLink}>
+          <b>
+            <T message="Перейти к материалу" />
+          </b>
+        </Typography>
+        <img src={require("./assets/analytics-arrow.svg")} />
+      </Link>
     </Container>
   );
 };

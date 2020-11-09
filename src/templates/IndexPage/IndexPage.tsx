@@ -6,6 +6,9 @@ import { T } from "react-targem";
 import Typography from "src/components/ui-kit/Typography";
 import IndexPageFilter from "./IndexPageFilter";
 import IndexPageAnalytics from "./IndexPageAnalytics";
+import IndexPageCounters from "./IndexPageCounters";
+import IndexPageMore from "./IndexPageMore";
+import IndexPageSubscription from "./IndexPageSubscription";
 import years from "content/years.json";
 
 const yearSelectOptions = years.map((y) => ({ value: y, label: y }));
@@ -53,6 +56,9 @@ const IndexPage: React.FC = () => {
         <Promo />
       </div>
       <IndexPageAnalytics yearSelectOptions={yearSelectOptions} />
+      <IndexPageCounters />
+      <IndexPageMore />
+      <IndexPageSubscription />
     </>
   );
 };

@@ -3036,6 +3036,22 @@ msgstr "обвиняемых оправданы. По различным осн�
 msgid "дел."
 msgstr "дел."
 
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "Перейти к материалу"
+msgstr "Перейти к материалу"
+
+#: src/templates/IndexPage/IndexPageCounters.tsx:
+msgid "оправдательных приговоров по отношению к общему числу дел"
+msgstr "оправдательных приговоров по отношению к общему числу дел"
+
+#: src/templates/IndexPage/IndexPageCounters.tsx:
+msgid "прекращенных дел по отношению к общему числу дел"
+msgstr "прекращенных дел по отношению к общему числу дел"
+
+#: src/templates/IndexPage/IndexPageCounters.tsx:
+msgid "обстоятельства, исключающие преступность, от общего числа дел"
+msgstr "обстоятельства, исключающие преступность, от общего числа дел"
+
 #: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "№ статьи ук рф или вид преступления"
 msgstr "№ статьи ук рф или вид преступления"
@@ -3056,3 +3072,47 @@ msgstr "Введите год..."
 #: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "Перейти к данным"
 msgstr "Перейти к данным"
+
+#: src/templates/IndexPage/IndexPageFilter.tsx:
+msgid "Подсказка:"
+msgstr "Подсказка:"
+
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "Как изменилось чиcло выявленных преступлений с кражей и судебных решений по ним."
+msgstr "Как изменилось чиcло выявленных преступлений с кражей и судебных решений по ним."
+
+#: src/templates/IndexPage/IndexPageMore.tsx:
+#: src/templates/IndexPage/IndexPageMore.tsx:
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "светлана шуранова"
+msgstr "светлана шуранова"
+
+#: src/templates/IndexPage/IndexPageMore.tsx:
+#: src/templates/IndexPage/IndexPageMore.tsx:
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "14 июня"
+msgstr "14 июня"
+
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "Много дел, мало приговоров"
+msgstr "Много дел, мало приговоров"
+
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "«Экономические» статьи УК РФ"
+msgstr "«Экономические» статьи УК РФ"
+
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "блог"
+msgstr "блог"
+
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "аналитика"
+msgstr "аналитика"
+
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "Больше материалов в разделе аналитика"
+msgstr "Больше материалов в разделе аналитика"
+
+#: src/templates/IndexPage/IndexPageSubscription.tsx:
+msgid "Хотите первыми получать новости и обновления от команды Достоевского?"
+msgstr "Хотите первыми получать новости и обновления от команды Достоевского?"

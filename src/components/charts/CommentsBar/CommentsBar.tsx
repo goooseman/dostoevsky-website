@@ -44,9 +44,6 @@ const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
 
   useEffect(() => {
     for (let i = 0; i < charts.length; i++) {
-      // console.log("SERIES");
-      // console.log(charts[i].series[0]);
-
       const chart = new Chartist.Bar(
         chartRefs[i].current,
         {

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Fri Nov 06 2020 20:16:31 GMT+0300 (GMT+03:00)\n"
+"POT-Creation-Date: Mon Nov 09 2020 16:26:00 GMT+0300 (GMT+03:00)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -2656,6 +2656,22 @@ msgstr ""
 msgid "дел."
 msgstr ""
 
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "Перейти к материалу"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageCounters.tsx:
+msgid "оправдательных приговоров по отношению к общему числу дел"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageCounters.tsx:
+msgid "прекращенных дел по отношению к общему числу дел"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageCounters.tsx:
+msgid "обстоятельства, исключающие преступность, от общего числа дел"
+msgstr ""
+
 #: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "№ статьи ук рф или вид преступления"
 msgstr ""
@@ -2675,4 +2691,48 @@ msgstr ""
 
 #: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "Перейти к данным"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageFilter.tsx:
+msgid "Подсказка:"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "Как изменилось чиcло выявленных преступлений с кражей и судебных решений по ним."
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageMore.tsx:
+#: src/templates/IndexPage/IndexPageMore.tsx:
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "светлана шуранова"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageMore.tsx:
+#: src/templates/IndexPage/IndexPageMore.tsx:
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "14 июня"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "Много дел, мало приговоров"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "«Экономические» статьи УК РФ"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "блог"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "аналитика"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "Больше материалов в разделе аналитика"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageSubscription.tsx:
+msgid "Хотите первыми получать новости и обновления от команды Достоевского?"
 msgstr ""

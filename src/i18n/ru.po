@@ -2663,6 +2663,22 @@ msgstr ""
 msgid "дел."
 msgstr ""
 
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "Перейти к материалу"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageCounters.tsx:
+msgid "оправдательных приговоров по отношению к общему числу дел"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageCounters.tsx:
+msgid "прекращенных дел по отношению к общему числу дел"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageCounters.tsx:
+msgid "обстоятельства, исключающие преступность, от общего числа дел"
+msgstr ""
+
 #: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "№ статьи ук рф или вид преступления"
 msgstr ""
@@ -2682,4 +2698,48 @@ msgstr ""
 
 #: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "Перейти к данным"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageFilter.tsx:
+msgid "Подсказка:"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "Как изменилось чиcло выявленных преступлений с кражей и судебных решений по ним."
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageMore.tsx:
+#: src/templates/IndexPage/IndexPageMore.tsx:
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "светлана шуранова"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageMore.tsx:
+#: src/templates/IndexPage/IndexPageMore.tsx:
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "14 июня"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "Много дел, мало приговоров"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "«Экономические» статьи УК РФ"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "блог"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "аналитика"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "Больше материалов в разделе аналитика"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageSubscription.tsx:
+msgid "Хотите первыми получать новости и обновления от команды Достоевского?"
 msgstr ""
