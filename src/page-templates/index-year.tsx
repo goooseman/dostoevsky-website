@@ -1,12 +1,12 @@
 import { graphql } from "gatsby";
 import React from "react";
-import { IndexQueryQuery } from "../../types/graphql-types";
+import { IndexYearQueryQuery } from "../../types/graphql-types";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
 import IndexPage from "src/templates/IndexPage";
 
 interface IndexPageProps {
-  data: IndexQueryQuery;
+  data: IndexYearQueryQuery;
   location: Location;
 }
 
@@ -29,7 +29,7 @@ const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
 export default Index;
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query IndexYearQuery($year: String!) {
     site {
       meta: siteMetadata {
         title
@@ -37,7 +37,7 @@ export const pageQuery = graphql`
         siteUrl
       }
     }
-    parts: allApiServerData(filter: { year: { eq: "2019" } }) {
+    parts: allApiServerData(filter: { year: { eq: $year } }) {
       edges {
         node {
           part

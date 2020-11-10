@@ -121,6 +121,7 @@
     "develop:semi": "cross-env IS_SEMI_BUILD=true npm run develop",
     "storybook": "start-storybook -p 6006",
     "build": "gatsby build",
+    "build:semi": "cross-env IS_SEMI_BUILD=true npm run build",
     "build:storybook": "build-storybook",
     "test": "jest",
     "lint:check": "npm run lint:prettier:check . && npm run lint:tsc:check && npm run lint:eslint:check . && npm run lint:stylelint:check .",
