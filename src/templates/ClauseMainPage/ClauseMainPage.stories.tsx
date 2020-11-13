@@ -32,6 +32,7 @@ const defaultProps = {
   addDismissalOtherOffences: 24,
   addUnfitToPleadPersons: 0,
   addUnfitToPleadOffences: 1,
+  unfinishedOffence: 2,
 };
 
 export const withGraphs = (): React.ReactNode => (

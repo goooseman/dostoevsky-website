@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import ClausePageLayout from "src/components/ClausePageLayout";
 import Typography from "src/components/ui-kit/Typography";
-import { T } from "react-targem";
+import { T, withLocale, WithLocale } from "react-targem";
 import classes from "./ClauseMainPage.module.css";
 import cn from "clsx";
 import { Counters, Counter } from "src/components/Counters";
@@ -22,7 +22,7 @@ export type ClausePartsPageViewMode =
   | "iframe-table-common-add-by-result"
   | "iframe-by-result";
 
-interface ClauseMainPageProps {
+interface ClauseMainPageProps extends WithLocale {
   clauseNumber: number;
   year: number;
   partsCount: number;
@@ -50,6 +50,7 @@ interface ClauseMainPageProps {
   addDismissalOtherOffences: number; // Доп. квалификация: прекращено по иным основаниям по количеству составов преступлений
   addUnfitToPleadPersons: number; // Доп. квалификация: признано невменяемыми по числу лиц
   addUnfitToPleadOffences: number; // Доп. квалификация: признано невменяемыми по количеству составов преступлений
+  unfinishedOffence: number; // Преступлений признано неоконченными
 }
 
 class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
@@ -64,7 +65,9 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
       totalAcquittal,
       totalDismissal,
       totalCases,
+      unfinishedOffence,
       view,
+      t,
     } = this.props;
 
     if (view === "iframe-table-common-main-by-result") {
@@ -89,25 +92,50 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
         headerChildren={this.renderHeaderChildren()}
       >
         {view === "focus" ? (
-          <Treemap
-            data={[
-              {
-                value: this.props.totalConvicted,
-                label: "прекращено дел в отношении человек",
-              },
-              { value: this.props.totalAcquittal, label: "осуждены" },
-              {
-                value: this.props.totalDismissal,
-                label: "оправданы",
-              },
-              {
-                value: this.props.coerciveMeasures,
-                label: "принудительное лечение",
-              },
-            ]}
-            width={625}
-            height={392}
-          />
+          <>
+            <Counters className={cn(classes.counter)}>
+              <Counter
+                counter={totalConvicted}
+                label={<T message="человек осуждены за год" />}
+              />
+              <Counter
+                counter={totalAcquittal}
+                label={<T message="человек оправданы" />}
+              />
+              <Counter
+                counter={totalDismissal}
+                label={
+                  <T message="человек, в отношении которых дело было прекращено" />
+                }
+              />
+              <Counter
+                counter={unfinishedOffence}
+                label={<T message="преступлений признано неоконченными" />}
+                helpText={t(
+                  "Это может означать как то, что все были оконченными, так и то, что сам состав является формальным и не имеет стадий совершения правонарушения (например, можно готовить покушение убийство, но нельзя готовить покушение на неоднократное участие в несогласованных акциях)."
+                )}
+              />
+            </Counters>
+            <Treemap
+              data={[
+                {
+                  value: this.props.totalDismissal,
+                  label: "прекращено дел в отношении человек",
+                },
+                { value: this.props.totalConvicted, label: "осуждены" },
+                {
+                  value: this.props.totalAcquittal,
+                  label: "оправданы",
+                },
+                {
+                  value: this.props.coerciveMeasures,
+                  label: "принудительное лечение",
+                },
+              ]}
+              width={625}
+              height={392}
+            />
+          </>
         ) : null}
         {view === "table" ? (
           <>
@@ -291,4 +319,4 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
   };
 }
 
-export default ClauseMainPage;
+export default withLocale(ClauseMainPage);

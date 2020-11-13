@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./Counters.module.css";
 import cn from "clsx";
 import Typography from "../ui-kit/Typography";
-import ReactTooltip from "react-tooltip";
+import Tooltip from "../ui-kit/Tooltip";
 
 interface CountersProps {
   children: React.ReactNode;
@@ -20,7 +20,7 @@ export const Counters: React.SFC<CountersProps> = (props: CountersProps) => {
 interface CounterProps {
   counter: number;
   label: React.ReactNode;
-  helpText?: React.ReactNode;
+  helpText?: string;
   withPercent?: boolean;
 }
 
@@ -38,17 +38,10 @@ export const Counter: React.SFC<CounterProps> = (props: CounterProps) => {
         </b>
       </Typography>
       <hr className={cn(classes.counterLine)} />
-      <Typography isUpperCased>
-        <b>{props.label}</b>
+      <Typography>
+        <b className={classes.uppercaseWrapper}>{props.label}</b>
+        {props.helpText ? <Tooltip tip={props.helpText} /> : null}
       </Typography>
-      {props.helpText ? (
-        <img
-          data-tip={props.helpText}
-          className={classes.info}
-          src={require("./assets/info.svg")}
-        />
-      ) : null}
-      <ReactTooltip className={classes.tooltip} place="bottom" effect="solid" />
     </div>
   );
 };

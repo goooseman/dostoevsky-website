@@ -343,6 +343,30 @@ msgid "Разбить по частям"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "человек осуждены за год"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "человек оправданы"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "человек, в отношении которых дело было прекращено"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "преступлений признано неоконченными"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid ""
+"Это может означать как то, что все были оконченными, так и то, что сам состав "
+"является формальным и не имеет стадий совершения правонарушения (например, "
+"можно готовить покушение убийство, но нельзя готовить покушение на "
+"неоднократное участие в несогласованных акциях)."
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "количество человек, чьи дела прошли через суд"
 msgstr ""
 

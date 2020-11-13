@@ -147,6 +147,7 @@ export const query = graphql`
           dismissalRepentance
           dismissalCourtFine
           dismissalOther
+          unfinishedOffence
 
           noCrimeSelfDefence: noCrimeSelf_defence
           noCrimeNecessity

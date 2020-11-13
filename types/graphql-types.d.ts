@@ -3646,7 +3646,7 @@ export type ClauseMainQueryVariables = Exact<{
 
 
 export type ClauseMainQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, parts: { edges: Array<{ node: Pick<Api_Server__Data, 'part'> }> }, clauses: { edges: Array<{ node: (
-        Pick<Api_Server__Data, 'part' | 'year' | 'totalConvicted' | 'coerciveMeasures' | 'primarySuspended' | 'primaryRestrain' | 'addTotalPersons' | 'addTotalOffences' | 'addAcquittalPersons' | 'addAcquittalOffences' | 'addDismissalPersons' | 'addDismissalOffences' | 'addDismissalOtherPersons' | 'addDismissalOtherOffences' | 'addUnfitToPleadPersons' | 'addUnfitToPleadOffences' | 'dismissalAbsenceOfEvent' | 'dismissalAmnesty' | 'dismissalReconciliation' | 'dismissalRepentance' | 'dismissalCourtFine' | 'dismissalOther' | 'noCrimeNecessity' | 'noCrimeOther' | 'exemptionAmnesty' | 'exemptionFromImprisonment' | 'exemptionOther'>
+        Pick<Api_Server__Data, 'part' | 'year' | 'totalConvicted' | 'coerciveMeasures' | 'primarySuspended' | 'primaryRestrain' | 'addTotalPersons' | 'addTotalOffences' | 'addAcquittalPersons' | 'addAcquittalOffences' | 'addDismissalPersons' | 'addDismissalOffences' | 'addDismissalOtherPersons' | 'addDismissalOtherOffences' | 'addUnfitToPleadPersons' | 'addUnfitToPleadOffences' | 'dismissalAbsenceOfEvent' | 'dismissalAmnesty' | 'dismissalReconciliation' | 'dismissalRepentance' | 'dismissalCourtFine' | 'dismissalOther' | 'noCrimeNecessity' | 'noCrimeOther' | 'exemptionAmnesty' | 'exemptionFromImprisonment' | 'exemptionOther' | 'unfinishedOffence'>
         & { totalAcquittal: Api_Server__Data['acquittal'], noCrimeSelfDefence: Api_Server__Data['noCrimeSelf_defence'] }
       ) }> } };
 

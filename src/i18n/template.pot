@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Mon Nov 09 2020 16:26:00 GMT+0300 (GMT+03:00)\n"
+"POT-Creation-Date: Fri Nov 13 2020 23:28:21 GMT+0300 (GMT+03:00)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -333,6 +333,30 @@ msgstr ""
 
 #: src/templates/ClauseFullPage/ClauseFullPage.tsx:
 msgid "Разбить по частям"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "человек осуждены за год"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "человек оправданы"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "человек, в отношении которых дело было прекращено"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "преступлений признано неоконченными"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid ""
+"Это может означать как то, что все были оконченными, так и то, что сам состав "
+"является формальным и не имеет стадий совершения правонарушения (например, "
+"можно готовить покушение убийство, но нельзя готовить покушение на "
+"неоднократное участие в несогласованных акциях)."
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
