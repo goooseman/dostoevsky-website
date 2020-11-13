@@ -10,9 +10,9 @@ import type { I18nText } from "src/types";
 import { getClauseLink } from "src/config/routes";
 import ClausePageHeader from "src/components/ClausePageHeader";
 import { Menu, MenuLink } from "src/components/Menu";
+import Promo from "src/components/Promo";
 import { LinkGetProps } from "@reach/router";
 import { T } from "react-targem";
-import Button from "../ui-kit/Button";
 
 interface ClausePageLayoutProps {
   clauseNumber: number;
@@ -161,23 +161,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
             <div>{children}</div>
           </div>
         </Container>
-        <Container>
-          <div className={classes.footer}>
-            <Typography font="serif" variant="h3" component="h3">
-              <i>
-                <T message="Нужны данные по всем статьям и годам?" />
-              </i>
-            </Typography>
-            <Typography font="serif" variant="h2" component="p">
-              <b>
-                <T message="Полный доступ к датасету" />
-              </b>
-            </Typography>
-            <Button to="/full" className={classes.button}>
-              <T message="Перейти" />
-            </Button>
-          </div>
-        </Container>
+        <Promo />
       </main>
     );
   }

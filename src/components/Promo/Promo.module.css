@@ -1,0 +1,37 @@
+.promo {
+  padding-top: 2rem;
+  background-color: var(--color-secondary-lighter);
+  text-align: center;
+}
+
+.promo h3 {
+  position: relative;
+  display: inline-block;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.promo h3::before,
+.promo h3::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: block;
+  width: 80px;
+  height: 1px;
+  margin: auto 0;
+  background-color: var(--color-border-dark);
+  content: "";
+}
+
+.promo h3::before {
+  left: -164px;
+}
+.promo h3::after {
+  right: -164px;
+}
+
+.promo .button {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}

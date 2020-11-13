@@ -13,6 +13,15 @@ exports.createPages = async ({ actions }) => {
     ukRf.splice(1); // Leave only first 1 clause group
   }
 
+  // Create a separate index for every year, but not first one (the first one is default index)
+  for (let year of years.slice(1)) {
+    createPage({
+      path: `/${year}/`,
+      component: path.resolve(`src/page-templates/index-year.tsx`),
+      context: { year: year.toString() },
+    });
+  }
+
   for (let part of ukRf) {
     for (let section of part.children) {
       for (let chapter of section.children) {

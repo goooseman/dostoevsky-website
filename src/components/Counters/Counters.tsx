@@ -21,6 +21,7 @@ interface CounterProps {
   counter: number;
   label: React.ReactNode;
   helpText?: React.ReactNode;
+  withPercent?: boolean;
 }
 
 export const Counter: React.SFC<CounterProps> = (props: CounterProps) => {
@@ -31,7 +32,10 @@ export const Counter: React.SFC<CounterProps> = (props: CounterProps) => {
         className={cn(classes.counterNumber)}
         color="secondary"
       >
-        <b>{props.counter}</b>
+        <b>
+          {props.counter}
+          {props.withPercent ? " %" : null}
+        </b>
       </Typography>
       <hr className={cn(classes.counterLine)} />
       <Typography isUpperCased>
