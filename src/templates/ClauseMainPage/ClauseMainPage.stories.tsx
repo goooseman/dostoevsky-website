@@ -14,6 +14,8 @@ const defaultProps = {
   total: 36,
   totalCases: 220,
   coerciveMeasures: 1,
+  dismissalAmnesty: 10,
+  noCrimeSelfDefence: 11,
 
   totalConvicted: 19,
   totalAcquittal: 9,
@@ -21,6 +23,9 @@ const defaultProps = {
   nonRehabilitating: 6,
   primarySuspended: 10,
   primaryRestrain: 6,
+  primaryImprisonment: 10,
+  primaryFine: 15,
+  primaryCorrectionalLabour: 25,
 
   addTotalPersons: 17,
   addTotalOffences: 38,
@@ -33,6 +38,12 @@ const defaultProps = {
   addUnfitToPleadPersons: 0,
   addUnfitToPleadOffences: 1,
   unfinishedOffence: 2,
+
+  totalAdd: 100,
+  addDisqualification: 150,
+  addFine: 175,
+  addTitlesWithdraw: 200,
+  addRestrain: 250,
 };
 
 export const withGraphs = (): React.ReactNode => (

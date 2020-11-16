@@ -75,6 +75,8 @@ class ClauseMain extends PureComponent<ClauseMainProps> {
         p.dismissalCourtFine +
         p.dismissalOther +
         p.addDismissalOtherOffences,
+      totalAdd:
+        p.addDisqualification + p.addFine + p.addTitlesWithdraw + p.addRestrain,
     }))[0];
 
     return (
@@ -129,6 +131,9 @@ export const query = graphql`
 
           primarySuspended
           primaryRestrain
+          primaryImprisonment
+          primaryFine
+          primaryCorrectionalLabour
 
           addTotalPersons
           addTotalOffences
@@ -140,6 +145,11 @@ export const query = graphql`
           addDismissalOtherOffences
           addUnfitToPleadPersons
           addUnfitToPleadOffences
+
+          addDisqualification
+          addFine
+          addTitlesWithdraw
+          addRestrain
 
           dismissalAbsenceOfEvent
           dismissalAmnesty

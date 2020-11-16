@@ -28,6 +28,7 @@ interface PercentageBarProps extends React.ComponentProps<typeof ChartWrapper> {
 }
 
 interface PercentageBarMeta {
+  title: string;
   count: string;
   isLast: boolean;
   tooltip: {
@@ -39,6 +40,7 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
   private chartRef = React.createRef<HTMLDivElement>();
 
   public componentDidMount(): void {
+    const { labels: chartLabels } = this.props;
     const series: {
       value: number;
       meta: PercentageBarMeta;
@@ -65,6 +67,7 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
             value: percentage,
             meta: {
               count: v.toString(),
+              title: chartLabels[iV],
               isLast: true,
               tooltip: tooltipDescription,
             },
@@ -150,7 +153,9 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
       metaDeserialized.data.tooltip
     )) {
       lines.push(
-        `${lineKey}: ${lineValue.replace("%%", metaDeserialized.data.count)}`
+        `${lineKey}: ${lineValue
+          .replace("%%", metaDeserialized.data.count)
+          .replace("^^", metaDeserialized.data.title)}`
       );
     }
     return `<span class="chartist-tooltip-meta">${lines.join("<br>")}</span>`;

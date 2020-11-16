@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import classes from "./IndexPage.module.css";
 import Container from "src/components/ui-kit/Container";
 import AsyncSelect from "react-select/async";
 import Select from "react-select";
-import ukRf from "content/ук-рф.json";
 import Typography from "src/components/ui-kit/Typography";
 import { T, useLocale } from "react-targem";
 import Button from "src/components/ui-kit/Button";
@@ -12,25 +11,6 @@ import searchService from "src/services/SearchService";
 interface IndexPageFilterProps {
   yearSelectOptions: { value: number; label: number }[];
 }
-
-// const ukSelectOptions: { value: number; label: string }[] = ukRf.reduce(
-//   (a, c) => {
-//     if (c.children) {
-//       c.children.forEach((l) => {
-//         if (l.children) {
-//           l.children.forEach((ll) => {
-//             a.push({
-//               value: ll.id,
-//               label: `Статья ${ll.id} ${ll.text.ru}`,
-//             });
-//           });
-//         }
-//       });
-//     }
-//     return a;
-//   },
-//   [] as { value: number; label: string }[]
-// );
 
 const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
   yearSelectOptions,

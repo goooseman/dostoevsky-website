@@ -5,6 +5,8 @@ import { Link, GatsbyLinkProps } from "gatsby";
 
 interface SvgArrowProps {
   color: "normal" | "inverted" | "secondary" | "third";
+  verticalArrow: boolean;
+  verticalArrowRotate?: boolean;
 }
 
 interface ButtonProps
@@ -15,12 +17,16 @@ interface ButtonProps
   size: "md" | "lg";
   color: "normal" | "inverted" | "secondary" | "third";
   withArrow?: boolean;
+  verticalArrow?: boolean;
+  verticalArrowRotate?: boolean;
 }
 
 interface LinkProps extends GatsbyLinkProps<{}> {
   size: "md" | "lg";
   color: "normal" | "inverted" | "secondary" | "third";
   withArrow?: boolean;
+  verticalArrow?: boolean;
+  verticalArrowRotate?: boolean;
   to: string;
 }
 
@@ -30,7 +36,11 @@ const isAnchorProps = (props: ButtonComponentProps): props is LinkProps => {
   return props.hasOwnProperty("to");
 };
 
-const SvgArrow: React.FC<SvgArrowProps> = ({ color }: SvgArrowProps) => (
+const SvgArrow: React.FC<SvgArrowProps> = ({
+  color,
+  verticalArrow,
+  verticalArrowRotate,
+}: SvgArrowProps) => (
   <svg
     width="22"
     height="16"
@@ -41,6 +51,8 @@ const SvgArrow: React.FC<SvgArrowProps> = ({ color }: SvgArrowProps) => (
       [classes.svgInverted]: color === "inverted",
       [classes.svgSecondary]: color === "secondary",
       [classes.svgThird]: color === "third",
+      [classes.svgVertical]: verticalArrow === true,
+      [classes.svgVerticalRotate]: verticalArrowRotate === true,
     })}
   >
     <path
@@ -69,6 +81,8 @@ class Button extends PureComponent<ButtonComponentProps> {
         size,
         color,
         withArrow,
+        verticalArrow = false,
+        verticalArrowRotate = false,
         ...otherProps
       } = this.props;
 
@@ -84,7 +98,13 @@ class Button extends PureComponent<ButtonComponentProps> {
           {...otherProps}
         >
           {children}
-          {withArrow ? <SvgArrow color={color} /> : null}
+          {withArrow ? (
+            <SvgArrow
+              color={color}
+              verticalArrow={verticalArrow}
+              verticalArrowRotate={verticalArrowRotate}
+            />
+          ) : null}
         </Link>
       );
     }
@@ -95,6 +115,8 @@ class Button extends PureComponent<ButtonComponentProps> {
       size,
       color,
       withArrow,
+      verticalArrow = false,
+      verticalArrowRotate = false,
       ...otherProps
     } = this.props;
     return (
@@ -108,7 +130,13 @@ class Button extends PureComponent<ButtonComponentProps> {
         {...otherProps}
       >
         {children}
-        {withArrow ? <SvgArrow color={color} /> : null}
+        {withArrow ? (
+          <SvgArrow
+            color={color}
+            verticalArrow={verticalArrow}
+            verticalArrowRotate={verticalArrowRotate}
+          />
+        ) : null}
       </button>
     );
   }

@@ -58,3 +58,11 @@
 .svg-third path {
   stroke: var(--color-primary);
 }
+
+.svg-vertical {
+  transform: rotate(90deg);
+}
+
+.svg-vertical.svg-vertical-rotate {
+  transform: rotate(-90deg);
+}

@@ -5,6 +5,7 @@ enum clauseLinkTypes {
   parts = "parts",
   chronology = "chronology",
   full = "full",
+  focus = "focus",
 }
 
 export const getClauseLink = (

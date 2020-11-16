@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Fri Nov 13 2020 23:28:21 GMT+0300 (GMT+03:00)\n"
+"POT-Creation-Date: Mon Nov 16 2020 22:27:16 GMT+0300 (GMT+03:00)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -336,30 +336,6 @@ msgid "Разбить по частям"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
-msgid "человек осуждены за год"
-msgstr ""
-
-#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
-msgid "человек оправданы"
-msgstr ""
-
-#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
-msgid "человек, в отношении которых дело было прекращено"
-msgstr ""
-
-#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
-msgid "преступлений признано неоконченными"
-msgstr ""
-
-#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
-msgid ""
-"Это может означать как то, что все были оконченными, так и то, что сам состав "
-"является формальным и не имеет стадий совершения правонарушения (например, "
-"можно готовить покушение убийство, но нельзя готовить покушение на "
-"неоднократное участие в несогласованных акциях)."
-msgstr ""
-
-#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "количество человек, чьи дела прошли через суд"
 msgstr ""
 
@@ -480,6 +456,72 @@ msgid "человек были оправданы по дополнительн�
 msgid_plural "человек были оправданы по дополнительному составу"
 msgstr[0] ""
 msgstr[1] ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid ""
+"Дела прекращены за отсутствием состава, события преступления, непричастностью к "
+"преступлению (число лиц)"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "Дела прекращены по иным основаниям (число лиц)"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "Принудительное лечение"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "человек осуждены за год"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "человек оправданы"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "человек, в отношении которых дело было прекращено"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "преступлений признано неоконченными"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid ""
+"Это может означать как то, что все были оконченными, так и то, что сам состав "
+"является формальным и не имеет стадий совершения правонарушения (например, "
+"можно готовить покушение убийство, но нельзя готовить покушение на "
+"неоднократное участие в несогласованных акциях)."
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "Дополнительно"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "дел прекращено по амнистии"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "дел прекращено как необходимая оборона"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "Чем закончились дела по статье "
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "Статистика прекращения дел по статье в "
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "дополнительных наказаний назначено по статье"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "Наказания для подсудимых по статье "
+msgstr ""
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
 msgid "прекращено дел в отношении человек"

@@ -16,6 +16,8 @@ interface ChartWrapperProps {
   onDownloadButtonClick: () => void;
   downloadAreaRef: React.Ref<HTMLDivElement>;
   iframePath: string;
+  isSeparateLabels?: boolean;
+  centerTitle?: boolean;
 }
 
 class ChartWrapper extends PureComponent<
@@ -34,16 +36,28 @@ class ChartWrapper extends PureComponent<
       onDownloadButtonClick,
       downloadAreaRef,
       iframePath,
+      isSeparateLabels = false,
+      centerTitle = false,
     } = this.props;
 
     return (
       <div className={cn(classes.chart)}>
         <div className={cn(classes.twoColumns)}>
           <div className={cn(classes.leftColumn)} ref={downloadAreaRef}>
-            <Typography className={cn(classes.title)} variant="h3" isUpperCased>
+            <Typography
+              className={cn(classes.title, {
+                [classes.center]: centerTitle,
+              })}
+              variant="h3"
+              isUpperCased
+            >
               <b>{title}</b>
             </Typography>
-            <div className={cn(classes.legend)}>
+            <div
+              className={cn(classes.legend, {
+                [classes.flexWrap]: isSeparateLabels,
+              })}
+            >
               {labels?.map((l, i) => (
                 <div key={i} className={cn(classes.legendItem)}>
                   <svg
