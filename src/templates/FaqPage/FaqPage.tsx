@@ -10,7 +10,7 @@ import { useLocale, T } from "react-targem";
 import { Menu, MenuItem } from "src/components/Menu";
 import FaqPageHowWasCollected from "./FaqPageHowWasCollected";
 import FaqPageUploadFieldsNParameterTree from "./FaqPageUploadFieldsNParameterTree";
-import FaqPageTooltip from "./FaqPageTooltip";
+import Tooltip from "src/components/ui-kit/Tooltip";
 
 const getFaqData = (t: any) => [
   {
@@ -504,7 +504,7 @@ const getFaqData = (t: any) => [
                 </li>
                 <li>
                   <T message="подразумевают взимание от 5 до 20% заработной платы осужденного в доход государства;" />
-                  <FaqPageTooltip
+                  <Tooltip
                     tip={t(
                       "Если у осужденного нет постоянного места работы, его назначает суд. Как правило, это самый низкооплачиваемый труд: грузчик, дворник, уборщик."
                     )}

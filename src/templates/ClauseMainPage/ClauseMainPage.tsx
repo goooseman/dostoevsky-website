@@ -12,7 +12,8 @@ import CommonMainResultsTable from "./components/tables/CommonMainResultsTable";
 import CommonAddResultsTable from "./components/tables/CommonAddResultsTable";
 import { Menu, MenuLink } from "src/components/Menu";
 import { getClauseLink } from "src/config/routes";
-import Treemap from "src/components/charts/Treemap";
+
+import ClauseMainPageFocus from "./ClauseMainPageFocus";
 
 export type ClausePartsPageViewMode =
   | "page"
@@ -36,9 +37,15 @@ interface ClauseMainPageProps {
   totalDismissal: number; // Прекращено
   coerciveMeasures: number; // Принудительные меры к невменяемым
 
+  dismissalAmnesty: number; // Прекращено по амнистии
+  noCrimeSelfDefence: number; // Прекращено как необходимая оборона
+
   nonRehabilitating: number; // По нереабилитирующим основаниям (dismissalAmnesty + dismissalReconciliation + dismissalRepentance + dismissalCourtFine + dismissalOther + addDismissalOtherOffences)
   primarySuspended: number; // Условное осуждение к лишению свободы
   primaryRestrain: number; // Ограничение свободы
+  primaryImprisonment: number; //Лишение свободы
+  primaryFine: number; //Штраф
+  primaryCorrectionalLabour: number; //Исправительные работы
 
   addTotalPersons: number; // Доп. квалификация: осуждено по числу лиц
   addTotalOffences: number; // Доп. квалификация: осуждено по количеству составов преступлений
@@ -50,6 +57,13 @@ interface ClauseMainPageProps {
   addDismissalOtherOffences: number; // Доп. квалификация: прекращено по иным основаниям по количеству составов преступлений
   addUnfitToPleadPersons: number; // Доп. квалификация: признано невменяемыми по числу лиц
   addUnfitToPleadOffences: number; // Доп. квалификация: признано невменяемыми по количеству составов преступлений
+  unfinishedOffence: number; // Преступлений признано неоконченными
+
+  totalAdd: number; // Дополнительное наказание: всего
+  addDisqualification: number; // Дополнительное наказание: лишение права занимать определенные должности или заниматься определенной деятельностью
+  addFine: number; // Дополнительное наказание: штраф
+  addTitlesWithdraw: number; // Дополнительное наказание: лишение специального, воинского или почетного звания, классного чина и государственных наград
+  addRestrain: number; // Дополнительное наказание: ограничение свободы
 }
 
 class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
@@ -88,27 +102,7 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
         hasParts={partsCount > 0}
         headerChildren={this.renderHeaderChildren()}
       >
-        {view === "focus" ? (
-          <Treemap
-            data={[
-              {
-                value: this.props.totalConvicted,
-                label: "прекращено дел в отношении человек",
-              },
-              { value: this.props.totalAcquittal, label: "осуждены" },
-              {
-                value: this.props.totalDismissal,
-                label: "оправданы",
-              },
-              {
-                value: this.props.coerciveMeasures,
-                label: "принудительное лечение",
-              },
-            ]}
-            width={625}
-            height={392}
-          />
-        ) : null}
+        {view === "focus" ? <ClauseMainPageFocus {...this.props} /> : null}
         {view === "table" ? (
           <>
             <div className={classes.tableContainer}>

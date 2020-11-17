@@ -140,6 +140,10 @@ body {
   display: flex;
 }
 
+.legend.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .legend svg {
   margin-right: 5px;
 }
@@ -167,6 +171,11 @@ body {
   margin-right: 10px;
   margin-bottom: 30px;
   margin-left: 10px;
+}
+
+.title.center {
+  max-width: 100%;
+  text-align: center;
 }
 
 .two-columns {

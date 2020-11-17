@@ -464,6 +464,72 @@ msgid_plural "человек были оправданы по дополните
 msgstr[0] ""
 msgstr[1] ""
 
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid ""
+"Дела прекращены за отсутствием состава, события преступления, непричастностью к "
+"преступлению (число лиц)"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "Дела прекращены по иным основаниям (число лиц)"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "Принудительное лечение"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "человек осуждены за год"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "человек оправданы"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "человек, в отношении которых дело было прекращено"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "преступлений признано неоконченными"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid ""
+"Это может означать как то, что все были оконченными, так и то, что сам состав "
+"является формальным и не имеет стадий совершения правонарушения (например, "
+"можно готовить покушение убийство, но нельзя готовить покушение на "
+"неоднократное участие в несогласованных акциях)."
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "Дополнительно"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "дел прекращено по амнистии"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "дел прекращено как необходимая оборона"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "Чем закончились дела по статье "
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "Статистика прекращения дел по статье в "
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "дополнительных наказаний назначено по статье"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "Наказания для подсудимых по статье "
+msgstr ""
+
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
 msgid "прекращено дел в отношении человек"
 msgstr ""
