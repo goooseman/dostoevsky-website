@@ -4,9 +4,9 @@ import { action } from "@storybook/addon-actions";
 
 export default { title: "components/ui-kit/Accordion", component: Accordion };
 
-const Container: React.FC<Partial<
-  React.ComponentProps<typeof AccordionNode>
->> = (props: Partial<React.ComponentProps<typeof AccordionNode>>) => (
+const Container: React.FC<
+  Partial<React.ComponentProps<typeof AccordionNode>>
+> = (props: Partial<React.ComponentProps<typeof AccordionNode>>) => (
   <div style={{ width: 500, margin: "50px" }}>
     <Accordion>
       <AccordionNode

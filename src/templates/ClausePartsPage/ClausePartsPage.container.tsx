@@ -13,9 +13,7 @@ interface ClausePartsPageContainerProps {
   parts: Part[];
 }
 
-class ClausePartsPageContainer extends PureComponent<
-  ClausePartsPageContainerProps
-> {
+class ClausePartsPageContainer extends PureComponent<ClausePartsPageContainerProps> {
   render(): React.ReactNode {
     const { clauseNumber, year } = this.props;
     if (this.props.parts.length === 0) {
