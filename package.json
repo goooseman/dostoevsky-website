@@ -28,6 +28,7 @@
     "gatsby-plugin-sharp": "^2.6.22",
     "gatsby-plugin-sitemap": "^2.4.11",
     "gatsby-plugin-typescript": "^2.4.16",
+    "gatsby-react-router-scroll": "^3.2.0",
     "gatsby-remark-copy-linked-files": "^2.3.11",
     "gatsby-remark-images": "^3.3.21",
     "gatsby-remark-responsive-iframe": "^2.4.11",
@@ -95,6 +96,7 @@
     "jest": "^26.1.0",
     "jsdom": "^16.3.0",
     "lint-staged": "^10.2.11",
+    "mitt": "^2.1.0",
     "prettier": "^2.0.5",
     "react-docgen-typescript-loader": "^3.7.2",
     "stylelint": "^13.6.1",
@@ -118,6 +120,7 @@
   "scripts": {
     "postinstall": "patch-package",
     "develop": "gatsby develop",
+    "develop:ram": "NODE_OPTIONS=\"--max-old-space-size=4096\" gatsby develop",
     "develop:semi": "cross-env IS_SEMI_BUILD=true npm run develop",
     "storybook": "start-storybook -p 6006",
     "build": "gatsby build",
