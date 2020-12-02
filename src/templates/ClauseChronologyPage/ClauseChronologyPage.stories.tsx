@@ -12,7 +12,7 @@ const defaultProps = {
   partsCount: 2,
   years: [
     {
-      year: "2019",
+      year: 2019,
       totalConvicted: 500,
 
       primaryImprisonment: 45,
@@ -33,7 +33,7 @@ const defaultProps = {
       dismissalOther: 54,
     },
     {
-      year: "2018",
+      year: 2018,
       totalConvicted: 432,
 
       primaryImprisonment: 45,
@@ -54,7 +54,7 @@ const defaultProps = {
       dismissalOther: 54,
     },
     {
-      year: "2017",
+      year: 2017,
       totalConvicted: 521,
 
       primaryImprisonment: 45,
@@ -75,7 +75,7 @@ const defaultProps = {
       dismissalOther: 54,
     },
     {
-      year: "2016",
+      year: 2016,
       totalConvicted: 390,
 
       primaryImprisonment: 45,
@@ -96,7 +96,7 @@ const defaultProps = {
       dismissalOther: 54,
     },
     {
-      year: "2015",
+      year: 2015,
       totalConvicted: 321,
 
       primaryImprisonment: 45,
@@ -117,7 +117,7 @@ const defaultProps = {
       dismissalOther: 54,
     },
     {
-      year: "2014",
+      year: 2014,
       totalConvicted: 311,
 
       primaryImprisonment: 45,
@@ -138,7 +138,7 @@ const defaultProps = {
       dismissalOther: 54,
     },
     {
-      year: "2013",
+      year: 2013,
       totalConvicted: 290,
 
       primaryImprisonment: 45,
@@ -159,7 +159,7 @@ const defaultProps = {
       dismissalOther: 54,
     },
     {
-      year: "2012",
+      year: 2012,
       totalConvicted: 280,
 
       primaryImprisonment: 45,
@@ -180,7 +180,7 @@ const defaultProps = {
       dismissalOther: 54,
     },
     {
-      year: "2011",
+      year: 2011,
       totalConvicted: 270,
 
       primaryImprisonment: 45,
@@ -201,7 +201,7 @@ const defaultProps = {
       dismissalOther: 54,
     },
     {
-      year: "2010",
+      year: 2010,
       totalConvicted: 250,
 
       primaryImprisonment: 45,
@@ -222,7 +222,7 @@ const defaultProps = {
       dismissalOther: 54,
     },
     {
-      year: "2009",
+      year: 2009,
       totalConvicted: 240,
 
       primaryImprisonment: 45,

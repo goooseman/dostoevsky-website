@@ -14,7 +14,7 @@ const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
   const meta = data.site?.meta;
   let totalConvicted = 0;
   for (const part of data.parts.edges) {
-    totalConvicted += part.node.totalConvicted || 0;
+    totalConvicted += part.node.parameters?.totalConvicted || 0;
   }
   // eslint-disable-next-line no-console
   console.log("Total total convicted", totalConvicted);

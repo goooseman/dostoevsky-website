@@ -6,7 +6,7 @@ import ClauseChronologyPage, {
 } from "src/templates/ClauseChronologyPage";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
-import { accumulateNodes } from "src/utils/objects";
+import { accumulateNodes, NoUndefinedField } from "src/utils/objects";
 
 interface ClauseChronologyProps {
   data: ClauseChronologyQuery;
@@ -25,7 +25,13 @@ class ClauseChronology extends PureComponent<ClauseChronologyProps> {
     const years = accumulateNodes<
       ClauseChronologyQuery["years"]["edges"][number]["node"],
       ClauseChronologyQuery["years"]["edges"][number]
-    >(data.years.edges, "year", ["part"]);
+    >(data.years.edges, "year", ["part"]).map((p) => {
+      const parameters = p.parameters as NoUndefinedField<typeof p.parameters>;
+      return {
+        ...p,
+        ...parameters,
+      };
+    });
 
     return (
       <Layout
