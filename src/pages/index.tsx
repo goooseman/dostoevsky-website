@@ -37,12 +37,14 @@ export const pageQuery = graphql`
         siteUrl
       }
     }
-    parts: allApiServerData(filter: { year: { eq: "2019" } }) {
+    parts: allApiServerData(filter: { year: { eq: 2019 } }) {
       edges {
         node {
           part
-          totalConvicted
-          totalAcquittal: acquittal
+          parameters {
+            totalConvicted
+            totalAcquittal: acquittal
+          }
         }
       }
     }

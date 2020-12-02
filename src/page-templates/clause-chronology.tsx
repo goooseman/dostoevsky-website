@@ -55,7 +55,7 @@ export const query = graphql`
       }
     }
     parts: allApiServerData(
-      filter: { part: { regex: $partRegex }, year: { eq: "2019" } }
+      filter: { part: { regex: $partRegex }, year: { eq: 2019 } }
     ) {
       edges {
         node {
@@ -68,22 +68,24 @@ export const query = graphql`
         node {
           year
           part
-          totalConvicted
-          primaryImprisonment
-          primarySuspended
-          primaryCommunityService
-          primaryForcedLabour
-          primaryCorrectionalLabour
-          primaryFine
-          coerciveMeasures
-          primaryOther
-          totalAcquittal: acquittal
-          dismissalAbsenceOfEvent
-          dismissalAmnesty
-          dismissalRepentance
-          dismissalReconciliation
-          dismissalCourtFine
-          dismissalOther
+          parameters {
+            totalConvicted
+            primaryImprisonment
+            primarySuspended
+            primaryCommunityService
+            primaryForcedLabour
+            primaryCorrectionalLabour
+            primaryFine
+            coerciveMeasures
+            primaryOther
+            totalAcquittal: acquittal
+            dismissalAbsenceOfEvent
+            dismissalAmnesty
+            dismissalRepentance
+            dismissalReconciliation
+            dismissalCourtFine
+            dismissalOther
+          }
         }
       }
     }

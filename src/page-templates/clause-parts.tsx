@@ -59,7 +59,7 @@ class ClauseParts extends PureComponent<ClausePartsProps> {
 }
 
 export const query = graphql`
-  query ClauseParts($partRegex: String!, $year: String!) {
+  query ClauseParts($partRegex: String!, $year: Int!) {
     site {
       meta: siteMetadata {
         title
@@ -74,46 +74,48 @@ export const query = graphql`
         node {
           part
           name
-          totalConvicted
-          totalAcquittal: acquittal
-          dismissalAbsenceOfEvent
-          dismissalAmnesty
-          dismissalReconciliation
-          dismissalRepentance
-          dismissalCourtFine
-          dismissalOther
-          coerciveMeasures
-          primaryLifeSentence
-          primarySuspended
-          primaryArrest
-          primaryRestrain
-          primaryRestrain2009
-          primaryCorrectionalLabour
-          primaryCommunityService
-          primaryForcedLabour
-          primaryFine
-          primaryDisqualification
-          primaryOther
-          primaryMilitaryDisciplinaryUnit
-          primaryRestrictionsInMilitaryService
-          primaryImprisonment
-          unfinishedOffence
-          addTotalPersons
-          addTotalOffences
-          addAcquittalPersons
-          addAcquittalOffences
-          noCrimeSelfDefence: noCrimeSelf_defence
-          noCrimeNecessity
-          noCrimeOther
-          addDisqualification
-          addFine
-          addTitlesWithdraw
-          addRestrain
-          dismissalRepentance2
-          addDismissalPersons
-          addDismissalOffences
-          addDismissalOtherPersons
-          addDismissalOtherOffences
+          parameters {
+            totalConvicted
+            totalAcquittal: acquittal
+            dismissalAbsenceOfEvent
+            dismissalAmnesty
+            dismissalReconciliation
+            dismissalRepentance
+            dismissalCourtFine
+            dismissalOther
+            coerciveMeasures
+            primaryLifeSentence
+            primarySuspended
+            primaryArrest
+            primaryRestrain
+            primaryRestrain2009
+            primaryCorrectionalLabour
+            primaryCommunityService
+            primaryForcedLabour
+            primaryFine
+            primaryDisqualification
+            primaryOther
+            primaryMilitaryDisciplinaryUnit
+            primaryRestrictionsInMilitaryService
+            primaryImprisonment
+            unfinishedOffence
+            addTotalPersons
+            addTotalOffences
+            addAcquittalPersons
+            addAcquittalOffences
+            noCrimeSelfDefence: noCrimeSelf_defence
+            noCrimeNecessity
+            noCrimeOther
+            addDisqualification
+            addFine
+            addTitlesWithdraw
+            addRestrain
+            dismissalRepentance2
+            addDismissalPersons
+            addDismissalOffences
+            addDismissalOtherPersons
+            addDismissalOtherOffences
+          }
         }
       }
     }

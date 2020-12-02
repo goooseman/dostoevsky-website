@@ -18,7 +18,7 @@ exports.createPages = async ({ actions }) => {
     createPage({
       path: `/${year}/`,
       component: path.resolve(`src/page-templates/index-year.tsx`),
-      context: { year: year.toString() },
+      context: { year },
     });
   }
 
@@ -34,7 +34,7 @@ exports.createPages = async ({ actions }) => {
           const contextWithYear = {
             partRegex: `/^${chapter.id}[^\.]/i`,
             clauseRegex: `/^${chapter.id}/i`,
-            year: year.toString(),
+            year: year,
             clauseId: chapter.id,
           };
           const mainPageViewModes = [

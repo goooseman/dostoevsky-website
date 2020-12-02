@@ -29,7 +29,7 @@ const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
 export default Index;
 
 export const pageQuery = graphql`
-  query IndexYearQuery($year: String!) {
+  query IndexYearQuery($year: Int!) {
     site {
       meta: siteMetadata {
         title
@@ -41,8 +41,10 @@ export const pageQuery = graphql`
       edges {
         node {
           part
-          totalConvicted
-          totalAcquittal: acquittal
+          parameters {
+            totalConvicted
+            totalAcquittal: acquittal
+          }
         }
       }
     }

@@ -84,7 +84,7 @@ const dataResponseType = {
   id: 0,
   category: null,
   name: "String",
-  year: "String",
+  year: 0,
   part: "String",
   parameters: {
     acquittal: 0,

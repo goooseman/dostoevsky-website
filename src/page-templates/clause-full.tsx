@@ -34,7 +34,7 @@ class ClauseFull extends PureComponent<ClauseFullProps> {
 }
 
 export const query = graphql`
-  query ClauseFull($partRegex: String!, $year: String!) {
+  query ClauseFull($partRegex: String!, $year: Int!) {
     site {
       meta: siteMetadata {
         title
@@ -48,23 +48,25 @@ export const query = graphql`
       edges {
         node {
           part
-          totalConvicted
-          acquittal
-          addTotalPersons
-          addTotalOffences
-          addAcquittalPersons
-          addAcquittalOffences
-          dismissalAbsenceOfEvent
-          addDismissalPersons
-          addDismissalOffences
-          dismissalOther
-          addDismissalOtherPersons
-          addDismissalOtherOffences
-          dismissalRepentance
-          dismissalCourtFine
-          coerciveMeasures
-          addUnfitToPleadOffences
-          unfinishedOffence
+          parameters {
+            totalConvicted
+            acquittal
+            addTotalPersons
+            addTotalOffences
+            addAcquittalPersons
+            addAcquittalOffences
+            dismissalAbsenceOfEvent
+            addDismissalPersons
+            addDismissalOffences
+            dismissalOther
+            addDismissalOtherPersons
+            addDismissalOtherOffences
+            dismissalRepentance
+            dismissalCourtFine
+            coerciveMeasures
+            addUnfitToPleadOffences
+            unfinishedOffence
+          }
         }
       }
     }

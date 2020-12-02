@@ -99,7 +99,7 @@ class ClauseMain extends PureComponent<ClauseMainProps> {
 }
 
 export const query = graphql`
-  query ClauseMain($partRegex: String!, $year: String!, $clauseRegex: String!) {
+  query ClauseMain($partRegex: String!, $year: Int!, $clauseRegex: String!) {
     site {
       meta: siteMetadata {
         title
@@ -123,49 +123,50 @@ export const query = graphql`
         node {
           part
           year
+          parameters {
+            totalConvicted
+            totalAcquittal: acquittal
 
-          totalConvicted
-          totalAcquittal: acquittal
+            coerciveMeasures
 
-          coerciveMeasures
+            primarySuspended
+            primaryRestrain
+            primaryImprisonment
+            primaryFine
+            primaryCorrectionalLabour
 
-          primarySuspended
-          primaryRestrain
-          primaryImprisonment
-          primaryFine
-          primaryCorrectionalLabour
+            addTotalPersons
+            addTotalOffences
+            addAcquittalPersons
+            addAcquittalOffences
+            addDismissalPersons
+            addDismissalOffences
+            addDismissalOtherPersons
+            addDismissalOtherOffences
+            addUnfitToPleadPersons
+            addUnfitToPleadOffences
 
-          addTotalPersons
-          addTotalOffences
-          addAcquittalPersons
-          addAcquittalOffences
-          addDismissalPersons
-          addDismissalOffences
-          addDismissalOtherPersons
-          addDismissalOtherOffences
-          addUnfitToPleadPersons
-          addUnfitToPleadOffences
+            addDisqualification
+            addFine
+            addTitlesWithdraw
+            addRestrain
 
-          addDisqualification
-          addFine
-          addTitlesWithdraw
-          addRestrain
+            dismissalAbsenceOfEvent
+            dismissalAmnesty
+            dismissalReconciliation
+            dismissalRepentance
+            dismissalCourtFine
+            dismissalOther
+            unfinishedOffence
 
-          dismissalAbsenceOfEvent
-          dismissalAmnesty
-          dismissalReconciliation
-          dismissalRepentance
-          dismissalCourtFine
-          dismissalOther
-          unfinishedOffence
+            noCrimeSelfDefence: noCrimeSelf_defence
+            noCrimeNecessity
+            noCrimeOther
 
-          noCrimeSelfDefence: noCrimeSelf_defence
-          noCrimeNecessity
-          noCrimeOther
-
-          exemptionAmnesty
-          exemptionFromImprisonment
-          exemptionOther
+            exemptionAmnesty
+            exemptionFromImprisonment
+            exemptionOther
+          }
         }
       }
     }
