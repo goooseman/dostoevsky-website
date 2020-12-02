@@ -14,7 +14,7 @@ const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
   const meta = data.site?.meta;
   let totalConvicted = 0;
   for (const part of data.parts.edges) {
-    totalConvicted += part.node.totalConvicted || 0;
+    totalConvicted += part.node.parameters?.totalConvicted || 0;
   }
   // eslint-disable-next-line no-console
   console.log("Total total convicted", totalConvicted);
@@ -29,7 +29,7 @@ const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
 export default Index;
 
 export const pageQuery = graphql`
-  query IndexYearQuery($year: String!) {
+  query IndexYearQuery($year: Int!) {
     site {
       meta: siteMetadata {
         title
@@ -41,8 +41,10 @@ export const pageQuery = graphql`
       edges {
         node {
           part
-          totalConvicted
-          totalAcquittal: acquittal
+          parameters {
+            totalConvicted
+            totalAcquittal: acquittal
+          }
         }
       }
     }

@@ -7,7 +7,7 @@ interface ChronologyConvictedDynamicsProps {
   isIframeMode?: boolean;
   clauseNumber: number;
   years: {
-    year: string;
+    year: number;
 
     primaryImprisonment: number; // Лишение свободы
     primarySuspended: number; // Условное осуждение к лишению свободы
@@ -32,7 +32,7 @@ const ChronologyConvictedDynamics: React.SFC<ChronologyConvictedDynamicsProps> =
     [t("Число человек")]: "%%",
   });
 
-  const labels = years.map((y) => y.year);
+  const labels = years.map((y) => y.year.toString());
 
   const charts = [
     {

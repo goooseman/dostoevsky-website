@@ -7,7 +7,7 @@ interface ChronologyConvictedDynamicsProps {
   isIframeMode?: boolean;
   clauseNumber: number;
   years: {
-    year: string;
+    year: number;
     totalConvicted: number; // Всего осуждено
   }[];
 }
@@ -22,7 +22,7 @@ const ChronologyConvictedDynamics: React.SFC<ChronologyConvictedDynamicsProps> =
     <LineChart
       isIframeMode={isIframeMode}
       title={<T message="Динамика числа осужденных по основному составу" />}
-      labels={years.map((y) => y.year)}
+      labels={years.map((y) => y.year.toString())}
       downloadFilename={`${clauseNumber}-convicted-dynamics`}
       tooltipDescription={{
         Состав: t("{{ clauseNumber }} Основной состав", { clauseNumber }),
