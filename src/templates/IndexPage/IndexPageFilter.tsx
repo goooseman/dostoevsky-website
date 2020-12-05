@@ -99,11 +99,10 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
             size="lg"
             color="third"
             withArrow
-            to={selectedUk && selectedYear ? (selectedUk.value) : null}
+            to={(selectedUk && selectedYear) ? selectedUk.value : null}
           >
             <T message="Перейти к данным" />
           </Button>
-
         </div>
       </div>
       <div className={classes.hintsWrapper}>

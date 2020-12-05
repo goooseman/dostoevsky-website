@@ -12,12 +12,6 @@ body {
   margin: 0;
 }
 
-html,
-body {
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
 main {
   background-color: var(--color-outer-background);
 }
