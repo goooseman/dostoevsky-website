@@ -46,6 +46,7 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .menu-item a.menu-link-active,
