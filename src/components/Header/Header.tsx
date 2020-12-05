@@ -11,23 +11,17 @@ interface HeaderProps {}
 const Header: React.FC<HeaderProps> = () => {
   return (
     <nav className={cn(classes.container)}>
-      <Container>
-        <div className={cn(classes.firstRow)}>
-          <Typography
-            className={cn(classes.logo)}
-            variant="span"
-            color="inverted"
-          >
-            <Link to="/">Достоевский</Link>
-          </Typography>
-        </div>
+      <div className={cn(classes.headerWrapper)}>
+        <Link to="/" className={cn(classes.logo)}>
+          <img src={require("./assets/logo.svg")} alt="Достоевский" />
+        </Link>
         <Menu variant="onBlackBackground">
           <MenuLink to="/clauses">каталог статей ук рф</MenuLink>
           <MenuLink to="/faq">о датасете</MenuLink>
           <MenuLink to="/about">о проекте</MenuLink>
           <MenuLink to="/full">полный датасет</MenuLink>
         </Menu>
-      </Container>
+      </div>
     </nav>
   );
 };

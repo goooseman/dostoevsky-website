@@ -13,10 +13,12 @@
 }
 
 .menu-item {
-  width: 12.5%;
-  flex-grow: 1;
-  border-right: 1px solid var(--color-border-dark);
+  flex: 1;
   text-align: center;
+}
+
+.menu-item:not(:last-child) {
+  border-right: 1px solid var(--color-border-dark);
 }
 
 .menu-item:first-of-type {
