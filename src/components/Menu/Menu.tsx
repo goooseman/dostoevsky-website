@@ -6,7 +6,7 @@ import { Link } from "gatsby";
 
 interface MenuProps {
   children: React.ReactNode;
-  variant: "activeBorderBottom" | "default" | "onBlackBackground";
+  variant: "activeBorderBottom" | "default" | "onBlackBackground" | "tabs";
   className?: string;
 }
 
@@ -20,6 +20,7 @@ export class Menu extends PureComponent<MenuProps> {
           {
             [classes.onBlackBackground]: variant === "onBlackBackground",
             [classes.activeBorderBottom]: variant === "activeBorderBottom",
+            [classes.tabs]: variant === "tabs",
           },
           className
         )}
