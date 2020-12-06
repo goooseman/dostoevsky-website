@@ -64,14 +64,15 @@ interface MenuLinkProps {
 
 export class MenuLink extends PureComponent<MenuLinkProps> {
   render(): React.ReactNode {
-    const { to, children } = this.props;
+    const { to, children, size } = this.props;
     return (
       <li className={cn(classes.menuItem)}>
-        <Typography variant="span" isUpperCased>
+        <Typography variant="span" size={size} isUpperCased>
           <Link
             to={to}
             className={cn(classes.menuLink)}
             activeClassName={cn(classes.menuLinkActive)}
+            size={size}
           >
             <b>{children}</b>
           </Link>

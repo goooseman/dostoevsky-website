@@ -24,4 +24,7 @@ main {
   html {
     font-size: 14px;
   }
+  small {
+    font-size: 12px;
+  }
 }

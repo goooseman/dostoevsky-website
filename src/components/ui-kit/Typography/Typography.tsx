@@ -3,7 +3,7 @@ import classes from "./Typography.module.css";
 import cn from "clsx";
 
 interface TypographyProps {
-  variant: "p" | "h1" | "h2" | "h3" | "label" | "span";
+  variant: "p" | "h1" | "h2" | "h3" | "label" | "span" | "b";
   component?: "p" | "h1" | "h2" | "h3" | "label" | "span";
   font: "sans-serif" | "serif";
   isUpperCased: boolean;
