@@ -13,6 +13,7 @@
   width: 415px;
   margin: 1.5rem auto;
 }
+
 .logo img {
   position: relative;
 
@@ -22,3 +23,19 @@
   width: 415px;
   height: 81px;
 }
+
+@media all and (max-width: 680px){
+  .logo{
+    width: calc(100% - 2rem);
+    margin: 1rem;
+    overflow: hidden;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-border-inverted);
+  }
+  .logo img{
+    width: 100%;
+    height: auto;
+    right: -4px;
+  }
+}
+

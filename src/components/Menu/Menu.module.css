@@ -7,6 +7,7 @@
   list-style: none;
 }
 
+
 .menu-item {
   flex: 1;
   text-align: center;
@@ -19,6 +20,7 @@
 .menu-item:first-of-type {
   border-left: 1px solid var(--color-border-dark);
 }
+
 
 .menu-item .menu-link {
   display: inline-block;
@@ -82,6 +84,12 @@
   color: var(--color-text-inverted);
 }
 
+@media all and (max-width: 680px){
+  .menu.on-black-background .menu-item{
+    border-color: var(--color-border-inverted);
+  }
+}
+
 .menu.tabs .menu-item {
   padding: 0.5rem 1rem;
 }
@@ -89,3 +97,15 @@
   border-right: 1px solid var(--color-border-dark);
 }
 
+@media all and (max-width: 680px){
+  .menu{
+    flex-direction: column;
+    margin: 0 1rem;
+  }
+  .menu-item {
+    border-bottom: 1px solid var(--color-border-inverted) !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    padding: 1rem;
+  }
+}

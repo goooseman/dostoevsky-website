@@ -131,6 +131,12 @@ body {
     }
   }
 }
+@media all and (max-width: 680px) {
+  .chart {
+    padding: 0;
+  }
+
+}
 
 .charts-container {
   display: flex;
@@ -185,6 +191,11 @@ body {
 .two-columns {
   display: flex;
 }
+@media all and (max-width: 680px) {
+  .two-columns {
+    flex-direction: column;
+  }
+}
 
 .left-column {
   flex-grow: 1;
@@ -208,4 +219,9 @@ body {
   min-width: 100px;
   align-self: flex-end;
   margin-bottom: 30px;
+}
+@media all and (max-width: 680px) {
+  .actions {
+    margin-top: -36px;
+  }
 }

@@ -11,6 +11,38 @@
   width: 480px;
 }
 
+.top-block .right-text {
+  position: relative;
+  width: 298px;
+  margin-top: 1.5rem;
+  margin-left: auto;
+  line-height: 24px;
+}
+
+.top-block .right-text::before {
+  position: absolute;
+  top: -15px;
+  left: 0;
+  width: 80px;
+  height: 5px;
+  background-color: var(--color-outer-background);
+  content: "";
+}
+
+@media all and (max-width: 680px){
+  .top-block {
+    flex-direction: column;
+
+  }
+  .top-block .left-text,
+  .top-block .right-text {
+    width: auto;
+    margin-right: 60px;
+    padding: 1rem;
+  }
+
+}
+
 .top-block .images {
   position: relative;
   margin-left: 6rem;
@@ -34,22 +66,29 @@
   left: 80px;
 }
 
-.top-block .right-text {
-  position: relative;
-  width: 298px;
-  margin-top: 1.5rem;
-  margin-left: auto;
-  line-height: 24px;
-}
+@media all and (max-width: 680px){
+  .top-block .images {
+    top: -40px;
+    width: 48px;
+    margin: 0 .8rem 0 auto;
+  }
+  .top-block .images img{
+    width: 100%;
+  }
+  .top-block .images .graph-icon {
+    top: 0;
+    left: 0;
+  }
 
-.top-block .right-text::before {
-  position: absolute;
-  top: -15px;
-  left: 0;
-  width: 80px;
-  height: 5px;
-  background-color: var(--color-outer-background);
-  content: "";
+  .top-block .images .chart-icon {
+    top: 4.5rem;
+    left: 0;
+  }
+
+  .top-block .images .table-icon {
+    left: 0;
+    top: 140px;
+  }
 }
 
 .filter-block-wrapper {
@@ -63,12 +102,20 @@
   margin: 0 auto;
 }
 
+@media all and (max-width: 680px){
+  .analytics-wrapper {
+    padding: 2rem 1rem;
+    flex-direction: column;
+  }
+}
+
 .analytics-title-wrapper {
   display: flex;
   margin-top: 1rem;
   :global {
     .select {
       margin: 0 1rem;
+      display: inline-block;
     }
     .select__control {
       padding-bottom: 0.3rem;
@@ -131,6 +178,13 @@
   margin-top: 6rem;
 }
 
+@media all and (max-width: 680px) {
+  .analytics-charts-wrapper {
+    margin-top: 3rem;
+  }
+
+}
+
 .analytics-link-wrapper {
   display: flex;
   margin-left: 2rem;
@@ -140,6 +194,18 @@
 .analytics-link-wrapper .analytics-link {
   padding: 2rem 0 2rem 1rem;
   border-left: 5px solid var(--color-border);
+}
+
+@media all and (max-width: 680px){
+
+  .analytics-link-wrapper {
+    margin: 1rem 0;
+  }
+
+  .analytics-link-wrapper .analytics-link {
+    padding: 2rem 0 2rem 1rem;
+    border-left: 5px solid var(--color-border);
+  }
 }
 
 .filter-block-wrapper .filter-block {
@@ -201,6 +267,16 @@
   width: 531px;
   padding-left: 1.5rem;
 }
+@media all and (max-width: 680px){
+  .filter-block-wrapper .filter-block > * {
+    padding: 0;
+  }
+
+  .filter-block-wrapper .filter-block .uk-select-wrapper {
+    width: auto;
+    padding-left: 0;
+  }
+}
 
 .filter-block-wrapper .filter-block .select-label {
   position: absolute;
@@ -217,6 +293,12 @@
     }
   }
 }
+@media all and (max-width: 680px) {
+  .filter-block-wrapper .filter-block .year-select-wrapper {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
 
 .filter-block-wrapper .filter-block .button-wrapper {
   display: flex;
@@ -224,14 +306,38 @@
   justify-content: space-around;
 }
 
+
+@media all and (max-width: 680px) {
+  .filter-block-wrapper .filter-block {
+    flex-direction: column;
+    padding: 1rem;
+    margin: 1rem;
+  }
+  .filter-block-wrapper .filter-block .button-wrapper {
+    width: auto;
+  }
+}
+
+
 .hints-wrapper {
   margin: 2rem 2rem 0 2rem;
 }
 
-.hints-wrapper .hints-inner {
-  display: flex;
-  margin-top: 1rem;
+@media all and (max-width: 680px){
+  .hints-wrapper {
+    margin: 1rem;
+  }
+  .hints-wrapper .hints-inner {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .hints-wrapper .hints-inner p {
+    margin: 0.5rem 0;
+  }
+
 }
+
 
 .hints-wrapper .hints-inner > p {
   padding: 2px 12px 3px 12px;
@@ -257,6 +363,12 @@
   margin-top: 5rem;
 }
 
+@media all and (max-width: 680px) {
+  .more-title {
+    margin: 2rem;
+  }
+}
+
 .more-title-inner {
   position: absolute;
   top: -15px;
@@ -270,6 +382,15 @@
   margin: 3rem 4rem 0 4rem;
 }
 
+@media all and (max-width: 680px) {
+
+  .more-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+  }
+
+}
 .more-wrapper .more-item {
   position: relative;
   flex: 1;
@@ -380,6 +501,14 @@
   margin: auto 0;
   background-color: var(--color-border);
   content: "";
+}
+
+@media all and (max-width: 680px) {
+  .subscription .title::before,
+  .subscription .title::after{
+    display: none;
+  }
+
 }
 
 .subscription .title::before {

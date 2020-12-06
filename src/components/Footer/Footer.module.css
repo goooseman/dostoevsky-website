@@ -11,6 +11,13 @@
   justify-content: space-between;
 }
 
+@media all and (max-width: 680px) {
+  .container > div {
+    flex-direction: column;
+    position: relative;
+  }
+}
+
 .left-container {
   display: flex;
   flex-direction: column;
@@ -31,9 +38,36 @@
   align-items: center;
   justify-content: space-between;
 }
+
 .left-container,
-.right-container{
+.right-container {
   flex-basis: 165.5px;
+}
+
+@media all and (max-width: 680px) {
+  .left-container,
+  .right-container {
+    margin: auto;
+    flex-basis: inherit;
+  }
+
+  .left-container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .left-container a {
+    margin: 0 3rem;
+  }
+  .middle-container p{
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    right: 1rem;
+  }
+  .right-container{
+    padding: 3rem 0 4rem;
+  }
 }
 
 .middle-container {
@@ -51,6 +85,7 @@
 .email {
   text-decoration: none;
 }
+
 .email b {
   font-size: 1.125rem;
 }
