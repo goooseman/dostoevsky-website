@@ -166,14 +166,15 @@ body {
 }
 
 .legend-title {
-  font-size: 12px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  vertical-align: middle;
 }
 
 .title {
-  max-width: 700px;
-  margin-right: 10px;
-  margin-bottom: 30px;
-  margin-left: 10px;
+  max-width: 340px;
+  margin: auto auto 30px;
 }
 
 .title.center {

@@ -31,6 +31,10 @@
   align-items: center;
   justify-content: space-between;
 }
+.left-container,
+.right-container{
+  flex-basis: 165.5px;
+}
 
 .middle-container {
   text-align: center;

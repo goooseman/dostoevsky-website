@@ -1,6 +1,7 @@
 .container {
   display: flex;
-  margin-left: -42px;
+  max-width: 640px;
+  margin: auto;
 }
 
 .button {
