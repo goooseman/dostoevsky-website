@@ -134,8 +134,16 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
           {helpItems.map((o: { label: string; value: string }, i: number) => (
             <Button
               key={i}
-              // eslint-disable-next-line @typescript-eslint/no-unused-vars
-              onClick={() => setSelectedUk(o)}
+              onClick={(ev: any) => {
+                if (o.value) {
+                  const event = new Event("input", { bubbles: true });
+                  const inpel = document.querySelector(".select__input input");
+                  inpel?.dispatchEvent(event);
+                  setSelectedUk(o);
+                } else {
+                  ev.preventDefault();
+                }
+              }}
             >
               <Typography size="small" isUpperCased>
                 <b>{o.label}</b>
