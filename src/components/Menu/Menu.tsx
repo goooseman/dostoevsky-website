@@ -61,7 +61,7 @@ export class MenuItem extends PureComponent<MenuItemProps> {
 interface MenuLinkProps {
   children: React.ReactNode;
   to: string;
-  size: "small" | "normal" | undefined;
+  size?: "small" | "normal" | undefined;
 }
 
 export class MenuLink extends PureComponent<MenuLinkProps> {
