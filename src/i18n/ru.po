@@ -499,7 +499,6 @@ msgid "преступлений признано неоконченными"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-#: src/templates/IndexPage/IndexPageCounters.tsx:
 msgid ""
 "Это может означать как то, что все были оконченными, так и то, что сам состав "
 "является формальным и не имеет стадий совершения правонарушения (например, "
