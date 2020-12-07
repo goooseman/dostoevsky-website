@@ -107,12 +107,7 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
               <T message="Перейти к данным" />
             </Button>
           ) : (
-            <Button
-              size="lg"
-              color="third"
-              withArrow
-              disabled
-            >
+            <Button size="lg" color="third" withArrow disabled>
               <T message="Перейти к данным" />
             </Button>
           )}
@@ -126,9 +121,15 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
         </Typography>
         <div className={classes.hintsInner}>
           {searchService.getHelpItems("ru").map((s) => (
-            <Typography key={s} size="small" isUpperCased>
-              <b>{s}</b>
-            </Typography>
+            <Button
+              key={s}
+              // eslint-disable-next-line @typescript-eslint/no-unused-vars
+              onClick={(_e: unknown) => setSelectedUk({ label: s, value: s })}
+            >
+              <Typography size="small" isUpperCased>
+                <b>{s}</b>
+              </Typography>
+            </Button>
           ))}
         </div>
       </div>
