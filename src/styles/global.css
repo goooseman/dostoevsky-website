@@ -20,7 +20,7 @@ main {
   box-sizing: border-box;
 }
 
-@media all and (max-width: 680px){
+@media all and (max-width: 680px) {
   html {
     font-size: 0.9rem;
   }

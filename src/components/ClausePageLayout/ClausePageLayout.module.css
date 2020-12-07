@@ -3,10 +3,9 @@
   background-color: var(--color-main-background);
 }
 
-@media all and (max-width: 680px){
+@media all and (max-width: 680px) {
   .container {
     flex-direction: column;
-
   }
 }
 
@@ -24,7 +23,7 @@
   position: sticky;
   top: 0;
 }
-@media all and (max-width: 680px){
+@media all and (max-width: 680px) {
   .sidebar {
     display: flex;
     width: 100%;
@@ -45,9 +44,6 @@
   border: none;
   cursor: pointer;
   text-align: left;
-}
-
-.sidebar button{
   width: 100%;
 }
 .sidebar button img {

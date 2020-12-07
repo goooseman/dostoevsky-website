@@ -168,9 +168,7 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
     return (
       <>
         <div className={classes.focusMenu}>
-          <Menu
-            variant="tabs"
-            className={cn(classes.tabs)}>
+          <Menu variant="tabs" className={cn(classes.tabs)}>
             <MenuLink to={getClauseLink(clauseNumber, year, "main")}>
               <T message="Основной и дополнительный состав: общие сведения" />
             </MenuLink>
