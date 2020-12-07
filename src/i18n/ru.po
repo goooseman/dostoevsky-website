@@ -479,22 +479,27 @@ msgid "Принудительное лечение"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+#: src/templates/IndexPage/IndexPageCounters.tsx:
 msgid "человек осуждены за год"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+#: src/templates/IndexPage/IndexPageCounters.tsx:
 msgid "человек оправданы"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+#: src/templates/IndexPage/IndexPageCounters.tsx:
 msgid "человек, в отношении которых дело было прекращено"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+#: src/templates/IndexPage/IndexPageCounters.tsx:
 msgid "преступлений признано неоконченными"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+#: src/templates/IndexPage/IndexPageCounters.tsx:
 msgid ""
 "Это может означать как то, что все были оконченными, так и то, что сам состав "
 "является формальным и не имеет стадий совершения правонарушения (например, "
@@ -2733,18 +2738,6 @@ msgstr ""
 msgid "Перейти к материалу"
 msgstr ""
 
-#: src/templates/IndexPage/IndexPageCounters.tsx:
-msgid "оправдательных приговоров по отношению к общему числу дел"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageCounters.tsx:
-msgid "прекращенных дел по отношению к общему числу дел"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageCounters.tsx:
-msgid "обстоятельства, исключающие преступность, от общего числа дел"
-msgstr ""
-
 #: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "№ статьи ук рф или вид преступления"
 msgstr ""
@@ -2762,7 +2755,6 @@ msgstr ""
 msgid "Введите год..."
 msgstr ""
 
-#: src/templates/IndexPage/IndexPageFilter.tsx:
 #: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "Перейти к данным"
 msgstr ""

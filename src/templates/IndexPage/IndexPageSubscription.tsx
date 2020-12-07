@@ -8,7 +8,10 @@ import Input from "src/components/ui-kit/Input";
 
 const IndexPageSubscription = () => {
   const [value, setValue] = useState<string>("");
-
+  const subscribeMe = () => {
+    // TODO: show dialog 'thank you' - ok
+    // TODO: implement me
+  };
   return (
     <Container>
       <div className={classes.subscription}>
@@ -38,7 +41,7 @@ const IndexPageSubscription = () => {
             onChange={(e) => setValue(e.currentTarget.value)}
             placeholder="Ваш E-mail"
           />
-          <Button color="secondary">
+          <Button color="secondary" onClick={(_e: unknown) => subscribeMe()}>
             <img src={require("./assets/button-arrow.svg")} />
           </Button>
         </div>

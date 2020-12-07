@@ -10,19 +10,14 @@ import TextareaAutosize from "react-textarea-autosize";
 import Container from "../ui-kit/Container";
 import { Menu, MenuLink } from "../Menu";
 import Modal, { useModal } from "src/components/ui-kit/Modal";
+import { useState } from "react";
 
 interface FooterProps extends WithLocale {}
 
 const Footer: React.FC<FooterProps> = ({ t }: FooterProps) => {
   const { isShowing, toggle } = useModal();
-  const username = "",
-    email = "";
-  const handleEmailChange = (e: React.SyntheticEvent<HTMLInputElement>) => {
-    setEmail(e.currentTarget.value);
-  };
-  const handleNameChange = (e: React.SyntheticEvent<HTMLInputElement>) => {
-    setUsername(e.currentTarget.value);
-  };
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   return (
     <div className={cn(classes.container)}>
       <Container>
@@ -105,7 +100,7 @@ const Footer: React.FC<FooterProps> = ({ t }: FooterProps) => {
               type="text"
               value={username}
               placeholder="Ваше имя"
-              onChange={handleNameChange}
+              onChange={(e) => setUsername(e.currentTarget.value)}
             />
           </div>
           <div className="modal-line">
@@ -113,7 +108,7 @@ const Footer: React.FC<FooterProps> = ({ t }: FooterProps) => {
               type="email"
               value={email}
               placeholder="Ваш e-mail"
-              onChange={handleEmailChange}
+              onChange={(e) => setEmail(e.currentTarget.value)}
             />
           </div>
           <div className="modal-line">
