@@ -1,7 +1,13 @@
 .container {
   display: flex;
   background-color: var(--color-main-background);
+}
 
+@media all and (max-width: 680px){
+  .container {
+    flex-direction: column;
+
+  }
 }
 
 .sidebar {
@@ -12,10 +18,21 @@
   flex-shrink: 0;
   align-items: flex-start;
   background-color: var(--color-secondary-lighter);
+}
 
-  .sticky {
-    position: sticky;
-    top: 0;
+.sidebar .sticky {
+  position: sticky;
+  top: 0;
+}
+@media all and (max-width: 680px){
+  .sidebar {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .sidebar .sticky {
+    position: inherit;
   }
 }
 

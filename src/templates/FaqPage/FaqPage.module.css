@@ -12,12 +12,25 @@
   margin-left: auto;
 }
 
+@media all and (max-width: 680px) {
+  .search-wrapper input {
+    width: calc(100% - 2rem);
+    margin: auto;
+  }
+}
+
 .faq-menu {
   margin-top: 2rem;
 }
 
 .content-wrapper {
   margin-top: 3rem;
+}
+
+@media all and (max-width: 680px) {
+  .content-wrapper {
+    margin: 3rem 1rem 1rem;
+  }
 }
 
 .content-wrapper p {

@@ -3,3 +3,9 @@
   margin-right: auto;
   margin-left: auto;
 }
+
+@media all and (max-width: 680px) {
+  .container {
+    width: auto;
+  }
+}

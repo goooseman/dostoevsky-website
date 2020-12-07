@@ -23,6 +23,17 @@ export const inPartPage = (): React.ReactNode => (
   </Menu>
 );
 
+export const tabbedContent = (): React.ReactNode => (
+  <div style={{ padding: "1rem" }}>
+    <Menu variant="tabs">
+      <MenuItem onClick={onClick} isActive>
+        Часть 1
+      </MenuItem>
+      <MenuItem onClick={onClick}>Часть 2</MenuItem>
+    </Menu>
+  </div>
+);
+
 export const inTable = (): React.ReactNode => (
   <Menu variant="default">
     <MenuItem onClick={onClick} isActive>

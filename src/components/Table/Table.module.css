@@ -38,6 +38,29 @@
   text-align: left;
 }
 
+@media all and (max-width: 680px) {
+  .table.is-equal-width tr th,
+  .table.is-equal-width tr td {
+    display: block;
+    max-width: inherit;
+    padding: 1rem;
+  }
+  .table.is-equal-width tr th span,
+  .table.is-equal-width tr td span {
+    font-size: 0.8rem;
+  }
+  .table tr th:nth-of-type(1),
+  .table tr td:nth-of-type(1) {
+    padding: 0.35rem;
+    background-color: var(--color-secondary-opaque);
+    text-align: center;
+  }
+  .table tr th:nth-of-type(1) span,
+  .table tr td:nth-of-type(1) span {
+    font-weight: bold;
+  }
+}
+
 .table.is-colored tr th:nth-of-type(even),
 .table.table.is-colored tr td:nth-of-type(even) {
   background-color: var(--color-secondary-opaque);

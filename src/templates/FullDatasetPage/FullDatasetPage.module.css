@@ -3,6 +3,11 @@
   padding-bottom: 3rem;
   background-color: var(--color-main-background);
 }
+@media all and (max-width: 680px) {
+  .container {
+    padding: 3rem 1rem;
+  }
+}
 
 .download-button {
   display: block;
@@ -25,7 +30,6 @@
 
 .full-dataset-select {
   min-width: 135px;
-  font-size: 24px;
   font-size: 16px !important;
 }
 

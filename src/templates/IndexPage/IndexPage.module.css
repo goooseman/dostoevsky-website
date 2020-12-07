@@ -29,18 +29,16 @@
   content: "";
 }
 
-@media all and (max-width: 680px){
+@media all and (max-width: 680px) {
   .top-block {
     flex-direction: column;
-
   }
   .top-block .left-text,
   .top-block .right-text {
     width: auto;
-    margin-right: 60px;
     padding: 1rem;
+    margin-right: 60px;
   }
-
 }
 
 .top-block .images {
@@ -66,13 +64,13 @@
   left: 80px;
 }
 
-@media all and (max-width: 680px){
+@media all and (max-width: 680px) {
   .top-block .images {
     top: -40px;
     width: 48px;
-    margin: 0 .8rem 0 auto;
+    margin: 0 0.8rem 0 auto;
   }
-  .top-block .images img{
+  .top-block .images img {
     width: 100%;
   }
   .top-block .images .graph-icon {
@@ -86,8 +84,8 @@
   }
 
   .top-block .images .table-icon {
-    left: 0;
     top: 140px;
+    left: 0;
   }
 }
 
@@ -102,10 +100,10 @@
   margin: 0 auto;
 }
 
-@media all and (max-width: 680px){
+@media all and (max-width: 680px) {
   .analytics-wrapper {
-    padding: 2rem 1rem;
     flex-direction: column;
+    padding: 2rem 1rem;
   }
 }
 
@@ -114,8 +112,8 @@
   margin-top: 1rem;
   :global {
     .select {
-      margin: 0 1rem;
       display: inline-block;
+      margin: 0 1rem;
     }
     .select__control {
       padding-bottom: 0.3rem;
@@ -182,7 +180,6 @@
   .analytics-charts-wrapper {
     margin-top: 3rem;
   }
-
 }
 
 .analytics-link-wrapper {
@@ -196,8 +193,7 @@
   border-left: 5px solid var(--color-border);
 }
 
-@media all and (max-width: 680px){
-
+@media all and (max-width: 680px) {
   .analytics-link-wrapper {
     margin: 1rem 0;
   }
@@ -267,7 +263,7 @@
   width: 531px;
   padding-left: 1.5rem;
 }
-@media all and (max-width: 680px){
+@media all and (max-width: 680px) {
   .filter-block-wrapper .filter-block > * {
     padding: 0;
   }
@@ -306,7 +302,6 @@
   justify-content: space-around;
 }
 
-
 @media all and (max-width: 680px) {
   .filter-block-wrapper .filter-block {
     flex-direction: column;
@@ -318,26 +313,28 @@
   }
 }
 
-
 .hints-wrapper {
   margin: 2rem 2rem 0 2rem;
 }
 
-@media all and (max-width: 680px){
+.hints-wrapper .hints-inner {
+  display: flex;
+  margin-top: 1rem;
+}
+
+@media all and (max-width: 680px) {
   .hints-wrapper {
     margin: 1rem;
   }
   .hints-wrapper .hints-inner {
     display: flex;
-    justify-content: flex-start;
     flex-wrap: wrap;
+    justify-content: flex-start;
   }
   .hints-wrapper .hints-inner p {
     margin: 0.5rem 0;
   }
-
 }
-
 
 .hints-wrapper .hints-inner > p {
   padding: 2px 12px 3px 12px;
@@ -383,13 +380,11 @@
 }
 
 @media all and (max-width: 680px) {
-
   .more-wrapper {
     display: flex;
     flex-direction: column;
     margin: 1rem;
   }
-
 }
 .more-wrapper .more-item {
   position: relative;
@@ -505,10 +500,9 @@
 
 @media all and (max-width: 680px) {
   .subscription .title::before,
-  .subscription .title::after{
+  .subscription .title::after {
     display: none;
   }
-
 }
 
 .subscription .title::before {

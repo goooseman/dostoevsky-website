@@ -8,6 +8,13 @@
   max-width: 1280px;
   margin: auto;
 }
+
+@media all and (max-width: 680px) {
+  .header-wrapper {
+    width: auto;
+  }
+}
+
 .logo {
   display: flex;
   width: 415px;
@@ -24,18 +31,17 @@
   height: 81px;
 }
 
-@media all and (max-width: 680px){
-  .logo{
-    width: calc(100% - 2rem);
-    margin: 1rem;
+@media all and (max-width: 680px) {
+  .logo {
     overflow: hidden;
+    width: calc(100% - 2rem);
     padding-bottom: 10px;
     border-bottom: 1px solid var(--color-border-inverted);
+    margin: 1rem;
   }
-  .logo img{
+  .logo img {
+    right: -4px;
     width: 100%;
     height: auto;
-    right: -4px;
   }
 }
-
