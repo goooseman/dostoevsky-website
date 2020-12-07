@@ -6,7 +6,7 @@ import { Link } from "gatsby";
 
 interface MenuProps {
   children: React.ReactNode;
-  variant: "activeBorderBottom" | "default" | "onBlackBackground";
+  variant: "activeBorderBottom" | "default" | "onBlackBackground" | "tabs";
   className?: string;
 }
 
@@ -20,6 +20,7 @@ export class Menu extends PureComponent<MenuProps> {
           {
             [classes.onBlackBackground]: variant === "onBlackBackground",
             [classes.activeBorderBottom]: variant === "activeBorderBottom",
+            [classes.tabs]: variant === "tabs",
           },
           className
         )}
@@ -60,14 +61,15 @@ export class MenuItem extends PureComponent<MenuItemProps> {
 interface MenuLinkProps {
   children: React.ReactNode;
   to: string;
+  size?: "small" | "normal" | undefined;
 }
 
 export class MenuLink extends PureComponent<MenuLinkProps> {
   render(): React.ReactNode {
-    const { to, children } = this.props;
+    const { to, children, size } = this.props;
     return (
       <li className={cn(classes.menuItem)}>
-        <Typography variant="span" isUpperCased>
+        <Typography variant="span" size={size} isUpperCased>
           <Link
             to={to}
             className={cn(classes.menuLink)}

@@ -5,6 +5,12 @@
   margin-bottom: 0;
 }
 
+@media all and (max-width: 680px) {
+  .container {
+    padding: 1rem;
+  }
+}
+
 .title {
   position: relative;
   width: 100%;
@@ -12,10 +18,7 @@
 
 .title-button {
   width: 100%;
-  padding-top: 2rem;
-  padding-right: 0;
-  padding-bottom: 2rem;
-  padding-left: 0;
+  padding: 2rem 0;
   border: 0;
   border-bottom: 1px solid var(--color-text);
   background-color: transparent;

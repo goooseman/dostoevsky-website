@@ -6,8 +6,11 @@ body {
       font-family: var(--font-family-sans-serif);
       font-size: var(--font-size-base);
       font-weight: normal;
+      display: none;
     }
-
+    .chartist-tooltip.tooltip-show {
+      display: block;
+    }
     .chartist-tooltip::before {
       border-top-color: var(--color-main-background);
     }
@@ -128,6 +131,11 @@ body {
     }
   }
 }
+@media all and (max-width: 680px) {
+  .chart {
+    padding: 0;
+  }
+}
 
 .charts-container {
   display: flex;
@@ -163,14 +171,15 @@ body {
 }
 
 .legend-title {
-  font-size: 12px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  vertical-align: middle;
 }
 
 .title {
-  max-width: 700px;
-  margin-right: 10px;
-  margin-bottom: 30px;
-  margin-left: 10px;
+  max-width: 340px;
+  margin: auto auto 30px;
 }
 
 .title.center {
@@ -180,6 +189,11 @@ body {
 
 .two-columns {
   display: flex;
+}
+@media all and (max-width: 680px) {
+  .two-columns {
+    flex-direction: column;
+  }
 }
 
 .left-column {
@@ -204,4 +218,9 @@ body {
   min-width: 100px;
   align-self: flex-end;
   margin-bottom: 30px;
+}
+@media all and (max-width: 680px) {
+  .actions {
+    margin-top: -36px;
+  }
 }

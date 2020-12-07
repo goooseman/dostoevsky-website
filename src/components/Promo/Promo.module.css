@@ -30,6 +30,19 @@
 .promo h3::after {
   right: -164px;
 }
+@media all and (max-width: 680px) {
+  .promo h3::before,
+  .promo h3::after {
+    width: 40px;
+  }
+
+  .promo h3::before {
+    left: -54px;
+  }
+  .promo h3::after {
+    right: -54px;
+  }
+}
 
 .promo .button {
   margin-top: 1.5rem;

@@ -3142,6 +3142,7 @@ msgid "Введите год..."
 msgstr "Введите год..."
 
 #: src/templates/IndexPage/IndexPageFilter.tsx:
+#: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "Перейти к данным"
 msgstr "Перейти к данным"
 

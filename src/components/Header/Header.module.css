@@ -4,12 +4,44 @@
   background-color: var(--color-outer-background);
   color: var(--color-text-inverted);
 }
-
-.first-row {
-  margin-bottom: 0.5rem;
+.header-wrapper {
+  max-width: 1280px;
+  margin: auto;
 }
 
-.container .logo {
-  font-size: 48px;
-  text-transform: uppercase;
+@media all and (max-width: 680px) {
+  .header-wrapper {
+    width: auto;
+  }
+}
+
+.logo {
+  display: flex;
+  width: 415px;
+  margin: 1.5rem auto;
+}
+
+.logo img {
+  position: relative;
+
+  /* fix inccorrect logo width */
+  right: -10px;
+  display: block;
+  width: 415px;
+  height: 81px;
+}
+
+@media all and (max-width: 680px) {
+  .logo {
+    overflow: hidden;
+    width: calc(100% - 2rem);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-border-inverted);
+    margin: 1rem;
+  }
+  .logo img {
+    right: -4px;
+    width: 100%;
+    height: auto;
+  }
 }

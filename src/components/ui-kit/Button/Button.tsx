@@ -97,14 +97,16 @@ class Button extends PureComponent<ButtonComponentProps> {
           })}
           {...otherProps}
         >
-          {children}
-          {withArrow ? (
-            <SvgArrow
-              color={color}
-              verticalArrow={verticalArrow}
-              verticalArrowRotate={verticalArrowRotate}
-            />
-          ) : null}
+          <span>
+            {children}
+            {withArrow ? (
+              <SvgArrow
+                color={color}
+                verticalArrow={verticalArrow}
+                verticalArrowRotate={verticalArrowRotate}
+              />
+            ) : null}
+          </span>
         </Link>
       );
     }

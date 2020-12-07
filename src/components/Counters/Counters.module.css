@@ -11,12 +11,40 @@
   flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 1;
-  margin: 3rem 1.5rem;
+  margin: 3rem 1rem;
   text-align: center;
 }
 
 .counter-number {
-  font-size: 70px;
+  font-size: 4.375rem;
+}
+@media all and (max-width: 680px) {
+  .counters {
+    flex-wrap: wrap;
+    margin: 1rem 1.5rem;
+  }
+  .counter-block {
+    max-width: 50%;
+    margin: 1rem;
+    text-align: center;
+  }
+  .counter-block:not(:first-child) {
+    flex: 1;
+  }
+  .counter-block:first-child {
+    width: 60%;
+  }
+  .counter-block p {
+    font-size: 0.9rem;
+  }
+  .counter-block p.counter-number {
+    font-size: 3rem;
+    white-space: nowrap;
+  }
+
+  .counter-block:first-child p.counter-number {
+    font-size: 4.375rem;
+  }
 }
 
 .counter-line {

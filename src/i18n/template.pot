@@ -2,7 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Mon Nov 16 2020 22:27:16 GMT+0300 (GMT+03:00)\n"
+"POT-Creation-Date: Mon Dec 07 2020 11:11:32 GMT+0300 (Москва, стандартное "
+"время)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -2755,6 +2756,7 @@ msgstr ""
 msgid "Введите год..."
 msgstr ""
 
+#: src/templates/IndexPage/IndexPageFilter.tsx:
 #: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "Перейти к данным"
 msgstr ""

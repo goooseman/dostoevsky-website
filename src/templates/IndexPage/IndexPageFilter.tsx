@@ -21,6 +21,7 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
     value: string;
     label: string;
   } | null>(null);
+
   const [selectedYear, setSelectedYear] = useState<{
     value: number;
     label: number;
@@ -33,7 +34,17 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
     }[]
   >([]);
 
-  const [ukOptionsLoading, setUkOptionsLoading] = useState(false);
+  const [, setUkOptionsLoading] = useState(false);
+
+  const helpItems = searchService.getHelpItems("ru");
+  helpItems.forEach(async (h) => {
+    const o = await searchService.getAutocompleteItems(
+      h.label,
+      selectedYear ? selectedYear.value : 2019,
+      "ru"
+    );
+    if (o.length > 0) h.value = o[0].link;
+  });
 
   const loadUkOptions = (value: string) => {
     return new Promise(async (resolve) => {
@@ -95,6 +106,7 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
           />
         </div>
         <div className={classes.buttonWrapper}>
+          {/* ¯\_(ツ)_/¯ */}
           {selectedUk && selectedYear ? (
             <Button
               size="lg"
@@ -105,7 +117,11 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
             >
               <T message="Перейти к данным" />
             </Button>
-          ) : null}
+          ) : (
+            <Button size="lg" color="third" withArrow disabled>
+              <T message="Перейти к данным" />
+            </Button>
+          )}
         </div>
       </div>
       <div className={classes.hintsWrapper}>
@@ -115,10 +131,16 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
           </b>
         </Typography>
         <div className={classes.hintsInner}>
-          {searchService.getHelpItems("ru").map((s) => (
-            <Typography key={s} size="small" isUpperCased>
-              <b>{s}</b>
-            </Typography>
+          {helpItems.map((o: { label: string; value: string }, i: number) => (
+            <Button
+              key={i}
+              // eslint-disable-next-line @typescript-eslint/no-unused-vars
+              onClick={() => setSelectedUk(o)}
+            >
+              <Typography size="small" isUpperCased>
+                <b>{o.label}</b>
+              </Typography>
+            </Button>
           ))}
         </div>
       </div>

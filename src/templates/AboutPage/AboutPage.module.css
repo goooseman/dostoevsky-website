@@ -4,6 +4,12 @@
   background-color: var(--color-main-background);
 }
 
+@media all and (max-width: 680px) {
+  .container {
+    padding: 1rem;
+  }
+}
+
 .sub-title {
   margin-top: 3rem;
   margin-bottom: 2rem;
@@ -19,6 +25,17 @@
 .team-member {
   width: 25%;
   margin-bottom: 2rem;
+}
+
+@media all and (max-width: 680px) {
+  .team-container {
+    justify-content: space-between;
+  }
+
+  .team-member {
+    width: 50%;
+    margin-bottom: 2rem;
+  }
 }
 
 .team-photo-wrapper {

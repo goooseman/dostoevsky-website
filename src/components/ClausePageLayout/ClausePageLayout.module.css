@@ -3,13 +3,36 @@
   background-color: var(--color-main-background);
 }
 
+@media all and (max-width: 680px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
 .sidebar {
   display: flex;
   width: 188px;
   flex-direction: column;
   flex-grow: 0;
   flex-shrink: 0;
+  align-items: flex-start;
   background-color: var(--color-secondary-lighter);
+}
+
+.sidebar .sticky {
+  position: sticky;
+  top: 0;
+}
+@media all and (max-width: 680px) {
+  .sidebar {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .sidebar .sticky {
+    position: inherit;
+  }
 }
 
 .sidebar a,
@@ -21,8 +44,8 @@
   border: none;
   cursor: pointer;
   text-align: left;
+  width: 100%;
 }
-
 .sidebar button img {
   margin-left: 10px;
 }

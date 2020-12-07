@@ -40,14 +40,14 @@ class SearchService {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  getHelpItems(locale: "ru"): string[] {
+  getHelpItems(locale: "ru"): { label: string; value: string }[] {
     return [
-      "282",
-      "282 часть 2",
-      "против личности",
-      "против государствa",
-      "экстремизм",
-      "убийство",
+      { label: "282", value: "" },
+      { label: "282 часть 2", value: "" },
+      { label: "против личности", value: "" },
+      { label: "против государствa", value: "" },
+      { label: "экстремизм", value: "" },
+      { label: "убийство", value: "" },
     ];
   }
 }
