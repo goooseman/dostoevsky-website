@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import classes from "./IndexPage.module.css";
 import Container from "src/components/ui-kit/Container";
 import AsyncSelect from "react-select/async";
@@ -34,17 +34,16 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
     }[]
   >([]);
 
-  const [ukOptionsLoading, setUkOptionsLoading] = useState(false);
+  const [, setUkOptionsLoading] = useState(false);
 
-  // eslint-disable-next-line prefer-const
-  let helpItems: { label: string; value: string }[] = [];
-  searchService.getHelpItems("ru").forEach(async (label) => {
+  const helpItems = searchService.getHelpItems("ru");
+  helpItems.forEach(async (h) => {
     const o = await searchService.getAutocompleteItems(
-      label,
+      h.label,
       selectedYear ? selectedYear.value : 2019,
       "ru"
     );
-    if (o.length > 0) helpItems.push({ label, value: o[0].link });
+    if (o.length > 0) h.value = o[0].link;
   });
 
   const loadUkOptions = (value: string) => {
@@ -80,20 +79,16 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
               <T message="№ статьи ук рф или вид преступления" />
             </b>
           </Typography>
-          {ukOptionsLoading ? (
-            <p>Loading...</p>
-          ) : (
-            <AsyncSelect
-              isSearchable
-              loadOptions={loadUkOptions}
-              options={ukSelectOptions}
-              classNamePrefix="select"
-              placeholder={t("Введите статью...")}
-              noOptionsMessage={() => t("Ничего не найдено")}
-              value={selectedUk}
-              onChange={(option: any) => setSelectedUk(option)}
-            />
-          )}
+          <AsyncSelect
+            isSearchable
+            loadOptions={loadUkOptions}
+            options={ukSelectOptions}
+            classNamePrefix="select"
+            placeholder={t("Введите статью...")}
+            noOptionsMessage={() => t("Ничего не найдено")}
+            value={selectedUk}
+            onChange={(option: any) => setSelectedUk(option)}
+          />
         </div>
         <div className={classes.yearSelectWrapper}>
           <Typography className={classes.selectLabel} isUpperCased size="small">
