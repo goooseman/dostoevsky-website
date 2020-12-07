@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import classes from "./IndexPage.module.css";
 import Container from "src/components/ui-kit/Container";
 import AsyncSelect from "react-select/async";
@@ -21,6 +21,7 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
     value: string;
     label: string;
   } | null>(null);
+
   const [selectedYear, setSelectedYear] = useState<{
     value: number;
     label: number;
@@ -34,6 +35,17 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
   >([]);
 
   const [ukOptionsLoading, setUkOptionsLoading] = useState(false);
+
+  // eslint-disable-next-line prefer-const
+  let helpItems: { label: string; value: string }[] = [];
+  searchService.getHelpItems("ru").forEach(async (label) => {
+    const o = await searchService.getAutocompleteItems(
+      label,
+      selectedYear ? selectedYear.value : 2019,
+      "ru"
+    );
+    if (o.length > 0) helpItems.push({ label, value: o[0].link });
+  });
 
   const loadUkOptions = (value: string) => {
     return new Promise(async (resolve) => {
@@ -68,16 +80,20 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
               <T message="№ статьи ук рф или вид преступления" />
             </b>
           </Typography>
-          <AsyncSelect
-            isSearchable
-            loadOptions={loadUkOptions}
-            options={ukSelectOptions}
-            classNamePrefix="select"
-            placeholder={t("Введите статью...")}
-            noOptionsMessage={() => t("Ничего не найдено")}
-            value={selectedUk}
-            onChange={(option: any) => setSelectedUk(option)}
-          />
+          {ukOptionsLoading ? (
+            <p>Loading...</p>
+          ) : (
+            <AsyncSelect
+              isSearchable
+              loadOptions={loadUkOptions}
+              options={ukSelectOptions}
+              classNamePrefix="select"
+              placeholder={t("Введите статью...")}
+              noOptionsMessage={() => t("Ничего не найдено")}
+              value={selectedUk}
+              onChange={(option: any) => setSelectedUk(option)}
+            />
+          )}
         </div>
         <div className={classes.yearSelectWrapper}>
           <Typography className={classes.selectLabel} isUpperCased size="small">
@@ -120,14 +136,14 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
           </b>
         </Typography>
         <div className={classes.hintsInner}>
-          {searchService.getHelpItems("ru").map((s: string) => (
+          {helpItems.map((o: { label: string; value: string }, i: number) => (
             <Button
-              key={s}
+              key={i}
               // eslint-disable-next-line @typescript-eslint/no-unused-vars
-              onClick={(_e: unknown) => setSelectedUk({ label: s, value: s })}
+              onClick={() => setSelectedUk(o)}
             >
               <Typography size="small" isUpperCased>
-                <b>{s}</b>
+                <b>{o.label}</b>
               </Typography>
             </Button>
           ))}
