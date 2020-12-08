@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require("path");
 const WebpackShellPluginNext = require("webpack-shell-plugin-next");
-const ukRf = require("./content/ук-рф.json");
+let ukRf = require("./content/ук-рф.json");
 const years = require("./content/years.json");
 const { getRouteForClausePage } = require("./gatsby-routing");
 
@@ -10,7 +10,7 @@ exports.createPages = async ({ actions }) => {
   const { createPage } = actions;
   const IS_SEMI_BUILD = Boolean(process.env.IS_SEMI_BUILD);
   if (IS_SEMI_BUILD) {
-    ukRf.splice(1); // Leave only first 1 clause group
+    ukRf = ukRf.slice(3, 4); // Leave only first 1 clause group
   }
 
   // Create a separate index for every year, but not first one (the first one is default index)

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, useEffect } from "react";
 import classes from "./FullDatasetPage.module.css";
 import cn from "clsx";
@@ -12,6 +13,8 @@ import axios from "axios";
 import metricsData from "content/metriсs.json";
 import Table from "src/components/Table";
 import FullDatasetSelect from "./FullDatasetSelect";
+
+import { api_base } from "../../../gatsby-config";
 
 import FullDatasetDownloadModal from "./FullDatasetDownloadModal";
 
@@ -97,12 +100,9 @@ const FullDatasetPage: React.FC = () => {
 
   useEffect(() => {
     (async function () {
-      const filtersResult = await axios.post(
-        "https://ssapi.ovdinfo.org/api/filters",
-        {
-          property: ["year", "part"],
-        }
-      );
+      const filtersResult = await axios.post(api_base + "/filters/", {
+        property: ["year", "part"],
+      });
       const yearsOptionsData = filtersResult.data.year;
       const newYearsOptions = yearsOptionsData.map((y: number) => ({
         value: y.toString(),
@@ -146,7 +146,7 @@ const FullDatasetPage: React.FC = () => {
 
         const dataResult = await axios
           .post(
-            "https://ssapi.ovdinfo.org/api/data",
+            api_base + "/data/",
             {
               filter: {
                 year: (allYearsSelected

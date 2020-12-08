@@ -1,3 +1,5 @@
+export const api_base = "http://135.181.40.124:1337/api";
+
 const dataRequest = {
   breakdown: ["part", "year"],
   filter: {},
@@ -265,7 +267,7 @@ module.exports = {
 
             // The url, this should be the endpoint you are attempting to pull data from
             // url: `https://ssapi.ovdinfo.org/api/data`,
-            url: "http://135.181.40.124:1337/api/data/",
+            url: api_base + "/data/",
             method: "GET",
             verboseOutput: true,
             headers: {

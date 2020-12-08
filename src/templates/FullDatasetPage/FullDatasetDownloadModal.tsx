@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from "react";
 import classes from "./FullDatasetPage.module.css";
 import cn from "clsx";
@@ -50,7 +51,7 @@ const FullDatasetDownloadModal: React.FC<FullDatasetDownloadModalProps> = ({
 
   const handleClickButton = () => {
     if (email) {
-      //FIRE MAILCHIMP
+      // TODO: FIRE MAILCHIMP
     }
     handleDownload();
   };
