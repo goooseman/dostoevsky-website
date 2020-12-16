@@ -12,52 +12,48 @@ interface IndexPageProps {
 
 const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
   const meta = data.site?.meta;
-  let totalConv = 0;
-  let total = 0;
+  let totalConvictedAll = 0;
   let totalDismissal = 0;
-  let totalAcquittal = 0;
+  let totalAcquittalAll = 0;
   let totalNoCrime = 0;
   for (const part of data.parts.edges) {
-    const {
-      totalConvicted,
-      dismissalAmnesty,
-      dismissalReconciliation,
-      dismissalRepentance,
-      dismissalCourtFine,
-      dismissalOther,
-      acquittal,
-      noCrimeSelf_defence,
-      noCrimeNecessity,
-      noCrimeOther,
-    } = part.node.parameters;
-    total +=
-      totalConvicted +
-        dismissalAmnesty +
-        dismissalReconciliation +
-        dismissalRepentance +
-        dismissalCourtFine +
-        dismissalOther +
-        acquittal +
-        noCrimeSelf_defence +
-        noCrimeNecessity +
-        noCrimeOther || 0;
-    totalConv += totalConvicted || 0;
-    totalDismissal +=
-      dismissalAmnesty +
-        dismissalReconciliation +
-        dismissalRepentance +
-        dismissalCourtFine +
-        dismissalOther || 0;
-    totalAcquittal += acquittal || 0;
-    totalNoCrime += noCrimeSelf_defence + noCrimeNecessity + noCrimeOther || 0;
+    if (part.node.parameters) {
+      const {
+        totalConvicted,
+        dismissalAmnesty,
+        dismissalReconciliation,
+        dismissalRepentance,
+        dismissalCourtFine,
+        dismissalOther,
+        totalAcquittal,
+        noCrimeSelfDefence,
+        noCrimeNecessity,
+        noCrimeOther,
+      } = part.node.parameters;
+
+      totalConvictedAll += totalConvicted || 0;
+
+      totalAcquittalAll += totalAcquittal || 0;
+
+      totalDismissal +=
+        (dismissalAmnesty || 0) +
+        (dismissalReconciliation || 0) +
+        (dismissalRepentance || 0) +
+        (dismissalCourtFine || 0) +
+        (dismissalOther || 0);
+
+      totalNoCrime +=
+        (noCrimeSelfDefence || 0) +
+        (noCrimeNecessity || 0) +
+        (noCrimeOther || 0);
+    }
   }
   // eslint-disable-next-line no-console
-  console.log("Total total convicted", totalConv);
+  // console.log("Total total convicted", totalConvictedAll);
   const counters = {
-    total,
-    // totalConvicted: totalConv,
+    totalConvicted: totalConvictedAll,
     totalDismissal,
-    totalAcquittal,
+    totalAcquittal: totalAcquittalAll,
     totalNoCrime,
   };
   return (

@@ -15,8 +15,7 @@ const yearSelectOptions = years.map((y) => ({ value: y, label: y }));
 
 interface IndexPageProps {
   counters: {
-    total: number;
-    // totalConvicted: number;
+    totalConvicted: number;
     totalAcquittal: number;
     totalDismissal: number;
     totalNoCrime: number;
