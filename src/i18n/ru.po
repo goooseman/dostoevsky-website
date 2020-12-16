@@ -2810,3 +2810,7 @@ msgstr ""
 #: src/templates/IndexPage/IndexPageSubscription.tsx:
 msgid "Хотите первыми получать новости и обновления от команды Достоевского?"
 msgstr ""
+
+#: src/templates/IndexPage/IndexPageSubscription.tsx:
+msgid "Спасибо, что подписались на нашу рассылку!"
+msgstr ""

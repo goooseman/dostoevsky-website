@@ -14,8 +14,6 @@ import { useState } from "react";
 
 interface FooterProps extends WithLocale {}
 
-const mailchimpId = "";
-
 const Footer: React.FC<FooterProps> = ({ t }: FooterProps) => {
   const { isShowing, toggle } = useModal();
   const [username, setUsername] = useState("");
@@ -97,37 +95,30 @@ const Footer: React.FC<FooterProps> = ({ t }: FooterProps) => {
         isCentered
       >
         <div className="modal-centered">
-          <form
-            action="http://mailchimp.us8.list-manage.com/subscribe/post"
-            method="POST"
-          >
-            <input type="hidden" name="u" value="a123cd45678ef90g7h1j7k9lm" />
-            <input type="hidden" name="id" value="ab2c468d10" />
-            <div className="modal-line">
-              <Input
-                type="text"
-                value={username}
-                placeholder="Ваше имя"
-                onChange={(e) => setUsername(e.currentTarget.value)}
-              />
-            </div>
-            <div className="modal-line">
-              <Input
-                type="email"
-                value={email}
-                placeholder="Ваш e-mail"
-                onChange={(e) => setEmail(e.currentTarget.value)}
-              />
-            </div>
-            <div className="modal-line">
-              <TextareaAutosize name="message" />
-            </div>
-            <div className="modal-line">
-              <Button type="submit" color="secondary">
-                Отправить
-              </Button>
-            </div>
-          </form>
+          <div className="modal-line">
+            <Input
+              type="text"
+              value={username}
+              placeholder="Ваше имя"
+              onChange={(e) => setUsername(e.currentTarget.value)}
+            />
+          </div>
+          <div className="modal-line">
+            <Input
+              type="email"
+              value={email}
+              placeholder="Ваш e-mail"
+              onChange={(e) => setEmail(e.currentTarget.value)}
+            />
+          </div>
+          <div className="modal-line">
+            <TextareaAutosize name="message" />
+          </div>
+          <div className="modal-line">
+            <Button type="submit" color="secondary">
+              Отправить
+            </Button>
+          </div>
         </div>
       </Modal>
     </div>
