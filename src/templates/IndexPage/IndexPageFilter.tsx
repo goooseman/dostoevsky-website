@@ -120,7 +120,7 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
           </b>
         </Typography>
         <div className={classes.hintsInner}>
-          {searchService.getHelpItems("ru").map((s) => (
+          {searchService.getHelpItems("ru").map((s: string) => (
             <Button
               key={s}
               // eslint-disable-next-line @typescript-eslint/no-unused-vars

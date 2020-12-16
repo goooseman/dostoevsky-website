@@ -62,7 +62,7 @@
   font-size: 1.875rem;
 }
 
-@media all and (max-width: 680px){
+@media all and (max-width: 680px) {
   .h1 {
     font-size: 1.3rem;
   }
@@ -78,13 +78,13 @@
 }
 
 .h3 {
-font-size: 1.3rem;
+  font-size: 1.3rem;
 }
 
 @media all and (max-width: 680px) {
   .h3 {
-  font-size: 0.9rem;
-}
+    font-size: 0.9rem;
+  }
 }
 .is-line-height-disabled {
   line-height: 1;

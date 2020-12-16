@@ -20,8 +20,8 @@
 }
 @media all and (max-width: 680px) {
   .counters {
-    margin: 1rem 1.5rem;
     flex-wrap: wrap;
+    margin: 1rem 1.5rem;
   }
   .counter-block {
     max-width: initial;
@@ -36,7 +36,7 @@
   .counter-block:first-child {
     max-width: 60%;
   }
-  .counter-block p{
+  .counter-block p {
     font-size: 0.9rem;
   }
   .counter-block p.counter-number {
@@ -44,7 +44,7 @@
     white-space: nowrap;
   }
 
-  .counter-block:first-child p.counter-number{
+  .counter-block:first-child p.counter-number {
     font-size: 4.375rem;
   }
 }
