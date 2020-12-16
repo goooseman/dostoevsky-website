@@ -45,6 +45,7 @@
   cursor: pointer;
   text-align: left;
   width: 100%;
+  background-color: var(--color-secondary);
 }
 .sidebar button img {
   margin-left: 10px;
@@ -52,10 +53,6 @@
 
 .sidebar button.active img {
   margin-left: 20px;
-}
-
-.sidebar button {
-  background-color: var(--color-secondary);
 }
 
 .sidebar a span {

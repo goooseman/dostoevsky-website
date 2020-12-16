@@ -24,15 +24,16 @@
     margin: 1rem 1.5rem;
   }
   .counter-block {
-    max-width: 50%;
+    max-width: initial;
     margin: 1rem;
     text-align: center;
+    flex-basis: inherit;
   }
   .counter-block:not(:first-child) {
     flex: 1;
   }
   .counter-block:first-child {
-    width: 60%;
+    max-width: 60%;
   }
   .counter-block p {
     font-size: 0.9rem;

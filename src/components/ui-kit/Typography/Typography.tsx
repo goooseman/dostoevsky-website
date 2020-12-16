@@ -9,7 +9,7 @@ interface TypographyProps {
   isUpperCased: boolean;
   gutterBottom: boolean;
   isLineHeightDisabled: boolean;
-  size: "small" | "normal";
+  size?: "small" | "normal";
   color: "normal" | "inverted" | "muted" | "secondary";
   children: React.ReactNode;
   className?: string;
