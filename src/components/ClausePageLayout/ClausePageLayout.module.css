@@ -1,6 +1,7 @@
 .container {
   display: flex;
   background-color: var(--color-main-background);
+
 }
 
 .sidebar {
@@ -9,7 +10,13 @@
   flex-direction: column;
   flex-grow: 0;
   flex-shrink: 0;
+  align-items: flex-start;
   background-color: var(--color-secondary-lighter);
+
+  .sticky {
+    position: sticky;
+    top: 0;
+  }
 }
 
 .sidebar a,
@@ -23,6 +30,9 @@
   text-align: left;
 }
 
+.sidebar button{
+  width: 100%;
+}
 .sidebar button img {
   margin-left: 10px;
 }

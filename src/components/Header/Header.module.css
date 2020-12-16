@@ -4,12 +4,21 @@
   background-color: var(--color-outer-background);
   color: var(--color-text-inverted);
 }
-
-.first-row {
-  margin-bottom: 0.5rem;
+.header-wrapper {
+  max-width: 1280px;
+  margin: auto;
 }
+.logo {
+  display: flex;
+  width: 415px;
+  margin: 1.5rem auto;
+}
+.logo img {
+  position: relative;
 
-.container .logo {
-  font-size: 48px;
-  text-transform: uppercase;
+  /* fix inccorrect logo width */
+  right: -10px;
+  display: block;
+  width: 415px;
+  height: 81px;
 }

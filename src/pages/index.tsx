@@ -14,7 +14,7 @@ const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
   const meta = data.site?.meta;
   let totalConvicted = 0;
   for (const part of data.parts.edges) {
-    totalConvicted += part.node.totalConvicted || 0;
+    totalConvicted += part.node.parameters?.totalConvicted || 0;
   }
   // eslint-disable-next-line no-console
   console.log("Total total convicted", totalConvicted);
@@ -37,12 +37,14 @@ export const pageQuery = graphql`
         siteUrl
       }
     }
-    parts: allApiServerData(filter: { year: { eq: "2019" } }) {
+    parts: allApiServerData(filter: { year: { eq: 2019 } }) {
       edges {
         node {
           part
-          totalConvicted
-          totalAcquittal: acquittal
+          parameters {
+            totalConvicted
+            totalAcquittal: acquittal
+          }
         }
       }
     }

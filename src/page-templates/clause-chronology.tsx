@@ -6,7 +6,7 @@ import ClauseChronologyPage, {
 } from "src/templates/ClauseChronologyPage";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
-import { accumulateNodes } from "src/utils/objects";
+import { accumulateNodes, NoUndefinedField } from "src/utils/objects";
 
 interface ClauseChronologyProps {
   data: ClauseChronologyQuery;
@@ -25,7 +25,13 @@ class ClauseChronology extends PureComponent<ClauseChronologyProps> {
     const years = accumulateNodes<
       ClauseChronologyQuery["years"]["edges"][number]["node"],
       ClauseChronologyQuery["years"]["edges"][number]
-    >(data.years.edges, "year", ["part"]);
+    >(data.years.edges, "year", ["part"]).map((p) => {
+      const parameters = p.parameters as NoUndefinedField<typeof p.parameters>;
+      return {
+        ...p,
+        ...parameters,
+      };
+    });
 
     return (
       <Layout
@@ -55,7 +61,7 @@ export const query = graphql`
       }
     }
     parts: allApiServerData(
-      filter: { part: { regex: $partRegex }, year: { eq: "2019" } }
+      filter: { part: { regex: $partRegex }, year: { eq: 2019 } }
     ) {
       edges {
         node {
@@ -68,22 +74,24 @@ export const query = graphql`
         node {
           year
           part
-          totalConvicted
-          primaryImprisonment
-          primarySuspended
-          primaryCommunityService
-          primaryForcedLabour
-          primaryCorrectionalLabour
-          primaryFine
-          coerciveMeasures
-          primaryOther
-          totalAcquittal: acquittal
-          dismissalAbsenceOfEvent
-          dismissalAmnesty
-          dismissalRepentance
-          dismissalReconciliation
-          dismissalCourtFine
-          dismissalOther
+          parameters {
+            totalConvicted
+            primaryImprisonment
+            primarySuspended
+            primaryCommunityService
+            primaryForcedLabour
+            primaryCorrectionalLabour
+            primaryFine
+            coerciveMeasures
+            primaryOther
+            totalAcquittal: acquittal
+            dismissalAbsenceOfEvent
+            dismissalAmnesty
+            dismissalRepentance
+            dismissalReconciliation
+            dismissalCourtFine
+            dismissalOther
+          }
         }
       }
     }

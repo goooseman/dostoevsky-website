@@ -95,6 +95,7 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
           />
         </div>
         <div className={classes.buttonWrapper}>
+          {/* ¯\_(ツ)_/¯ */}
           {selectedUk && selectedYear ? (
             <Button
               size="lg"
@@ -105,7 +106,16 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
             >
               <T message="Перейти к данным" />
             </Button>
-          ) : null}
+          ) : (
+            <Button
+              size="lg"
+              color="third"
+              withArrow
+              disabled
+            >
+              <T message="Перейти к данным" />
+            </Button>
+          )}
         </div>
       </div>
       <div className={classes.hintsWrapper}>

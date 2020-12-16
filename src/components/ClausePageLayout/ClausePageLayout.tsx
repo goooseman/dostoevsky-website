@@ -48,53 +48,55 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
       <main>
         <Container className={cn(classes.container)}>
           <div className={cn(classes.sidebar)}>
-            <button
-              onClick={onCatalogueSwitch}
-              className={cn({ [classes.active]: isCatalogueOpened })}
-            >
-              <Typography size="small" color="inverted" variant="span">
-                статья в каталоге
-              </Typography>
-              <img src={require("./assets/arrow-right.svg")} />
-            </button>
+            <div className={cn(classes.sticky)}>
+              <button
+                onClick={onCatalogueSwitch}
+                className={cn({ [classes.active]: isCatalogueOpened })}
+              >
+                <Typography size="small" color="inverted" variant="span">
+                  статья в каталоге
+                </Typography>
+                <img src={require("./assets/arrow-right.svg")} />
+              </button>
 
-            <Link
-              to={getClauseLink(clauseNumber, year, "main")}
-              getProps={this.getMainLinkProps}
-            >
-              <Typography size="small" variant="span">
-                основной и дополнительный составы
-              </Typography>
-            </Link>
-            {hasParts ? (
               <Link
-                to={getClauseLink(clauseNumber, year, "parts")}
+                to={getClauseLink(clauseNumber, year, "main")}
+                getProps={this.getMainLinkProps}
+              >
+                <Typography size="small" variant="span">
+                  основной и дополнительный составы
+                </Typography>
+              </Link>
+              {hasParts ? (
+                <Link
+                  to={getClauseLink(clauseNumber, year, "parts")}
+                  partiallyActive
+                  activeClassName={cn(classes.itemActive)}
+                >
+                  <Typography size="small" variant="span">
+                    части
+                  </Typography>
+                </Link>
+              ) : null}
+
+              <Link
+                to={getClauseLink(clauseNumber, year, "chronology")}
                 partiallyActive
                 activeClassName={cn(classes.itemActive)}
               >
                 <Typography size="small" variant="span">
-                  части
+                  хронология
                 </Typography>
               </Link>
-            ) : null}
-
-            <Link
-              to={getClauseLink(clauseNumber, year, "chronology")}
-              partiallyActive
-              activeClassName={cn(classes.itemActive)}
-            >
-              <Typography size="small" variant="span">
-                хронология
-              </Typography>
-            </Link>
-            <Link
-              to={getClauseLink(clauseNumber, year, "full")}
-              activeClassName={cn(classes.itemActive)}
-            >
-              <Typography size="small" variant="span">
-                полная статистика
-              </Typography>
-            </Link>
+              <Link
+                to={getClauseLink(clauseNumber, year, "full")}
+                activeClassName={cn(classes.itemActive)}
+              >
+                <Typography size="small" variant="span">
+                  полная статистика
+                </Typography>
+              </Link>
+            </div>
           </div>
           <div className={cn(classes.pageContainer)}>
             {isCatalogueOpened ? (

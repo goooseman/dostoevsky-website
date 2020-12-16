@@ -4,7 +4,7 @@ import { useLocale, T } from "react-targem";
 import { getClauseLink } from "src/config/routes";
 
 interface Year {
-  year: string;
+  year: number;
   totalConvicted: number; // Всего осуждено
 
   primaryImprisonment: number; // Лишение свободы
@@ -46,7 +46,7 @@ const ClauseChronologyByPunishmentTable: React.FC<ClauseChronologyByPunishmentTa
         { title: t("Условное к иным мерам"), key: "9" },
       ],
       rows: years.map((y) => ({
-        key: y.year,
+        key: y.year.toString(),
         values: [
           { key: "1", value: y.year },
           { key: "2", value: y.primaryImprisonment },

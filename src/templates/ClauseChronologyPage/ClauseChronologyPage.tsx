@@ -17,7 +17,7 @@ export type ClauseChronologyPageViewMode =
   | "iframe-table-chronology-by-punishment";
 
 interface Year {
-  year: string;
+  year: number;
   totalConvicted: number; // Всего осуждено
 
   primaryImprisonment: number; // Лишение свободы

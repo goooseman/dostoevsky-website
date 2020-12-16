@@ -12,12 +12,6 @@ body {
   margin: 0;
 }
 
-html,
-body {
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
 main {
   background-color: var(--color-outer-background);
 }
@@ -29,5 +23,8 @@ main {
 @media screen and (--viewport-sm-max) {
   html {
     font-size: 14px;
+  }
+  small {
+    font-size: 12px;
   }
 }
