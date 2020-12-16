@@ -1,4 +1,6 @@
-export const api_base = "http://135.181.40.124:1337/api";
+const api_base = "http://135.181.40.124:1337/api";
+
+module.exports = { api_base };
 
 const dataRequest = {
   breakdown: ["part", "year"],
@@ -232,7 +234,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: "",
+        trackingId: "TEST_GA_TRACKING_ID",
       },
     },
     {
@@ -260,7 +262,7 @@ module.exports = {
         localSave: true,
         path: `${__dirname}/content/api-`,
 
-        verboseOutput: false,
+        verboseOutput: true,
         entitiesArray: [
           {
             name: "data",
@@ -272,7 +274,7 @@ module.exports = {
             verboseOutput: true,
             headers: {
               "Content-Type": "application/json",
-              Authorization: "Token 9498350ad92cc780f033b44e7b6f00ba670cd75f",
+              Authorization: "Token 4137acbc9dcdc269b0fdeafc8b4b820f035d7f2f",
             },
             // Request body
             data: dataRequest,

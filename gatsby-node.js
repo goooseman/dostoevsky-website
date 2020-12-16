@@ -101,6 +101,7 @@ exports.createPages = async ({ actions }) => {
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
+    node: { fs: "empty" },
     resolve: {
       alias: {
         src: path.resolve(__dirname, "src/"),

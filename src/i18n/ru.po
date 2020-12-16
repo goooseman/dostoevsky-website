@@ -479,22 +479,18 @@ msgid "Принудительное лечение"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-#: src/templates/IndexPage/IndexPageCounters.tsx:
 msgid "человек осуждены за год"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-#: src/templates/IndexPage/IndexPageCounters.tsx:
 msgid "человек оправданы"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-#: src/templates/IndexPage/IndexPageCounters.tsx:
 msgid "человек, в отношении которых дело было прекращено"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-#: src/templates/IndexPage/IndexPageCounters.tsx:
 msgid "преступлений признано неоконченными"
 msgstr ""
 
@@ -2735,6 +2731,18 @@ msgstr ""
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "Перейти к материалу"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageCounters.tsx:
+msgid "оправдательных приговоров по отношению к общему числу дел"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageCounters.tsx:
+msgid "прекращённых дел по отношению к общему числу дел"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageCounters.tsx:
+msgid "обстоятельства, исключающие преступность, от общего числа дел"
 msgstr ""
 
 #: src/templates/IndexPage/IndexPageFilter.tsx:

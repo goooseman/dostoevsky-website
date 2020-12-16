@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Tue Dec 08 2020 02:30:48 GMT+0300 (Moscow Standard Time)\n"
+"POT-Creation-Date: Wed Dec 16 2020 09:55:11 GMT+0300 (Moscow Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -472,22 +472,18 @@ msgid "Принудительное лечение"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-#: src/templates/IndexPage/IndexPageCounters.tsx:
 msgid "человек осуждены за год"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-#: src/templates/IndexPage/IndexPageCounters.tsx:
 msgid "человек оправданы"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-#: src/templates/IndexPage/IndexPageCounters.tsx:
 msgid "человек, в отношении которых дело было прекращено"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-#: src/templates/IndexPage/IndexPageCounters.tsx:
 msgid "преступлений признано неоконченными"
 msgstr ""
 
@@ -2728,6 +2724,18 @@ msgstr ""
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "Перейти к материалу"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageCounters.tsx:
+msgid "оправдательных приговоров по отношению к общему числу дел"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageCounters.tsx:
+msgid "прекращённых дел по отношению к общему числу дел"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageCounters.tsx:
+msgid "обстоятельства, исключающие преступность, от общего числа дел"
 msgstr ""
 
 #: src/templates/IndexPage/IndexPageFilter.tsx:

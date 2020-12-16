@@ -506,22 +506,18 @@ msgid "Принудительное лечение"
 msgstr "Принудительное лечение"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-#: src/templates/IndexPage/IndexPageCounters.tsx:
 msgid "человек осуждены за год"
 msgstr "человек осуждены за год"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-#: src/templates/IndexPage/IndexPageCounters.tsx:
 msgid "человек оправданы"
 msgstr "человек оправданы"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-#: src/templates/IndexPage/IndexPageCounters.tsx:
 msgid "человек, в отношении которых дело было прекращено"
 msgstr "человек, в отношении которых дело было прекращено"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-#: src/templates/IndexPage/IndexPageCounters.tsx:
 msgid "преступлений признано неоконченными"
 msgstr "преступлений признано неоконченными"
 
@@ -3115,6 +3111,18 @@ msgstr "дел."
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "Перейти к материалу"
 msgstr "Перейти к материалу"
+
+#: src/templates/IndexPage/IndexPageCounters.tsx:
+msgid "оправдательных приговоров по отношению к общему числу дел"
+msgstr "оправдательных приговоров по отношению к общему числу дел"
+
+#: src/templates/IndexPage/IndexPageCounters.tsx:
+msgid "прекращённых дел по отношению к общему числу дел"
+msgstr "прекращённых дел по отношению к общему числу дел"
+
+#: src/templates/IndexPage/IndexPageCounters.tsx:
+msgid "обстоятельства, исключающие преступность, от общего числа дел"
+msgstr "обстоятельства, исключающие преступность, от общего числа дел"
 
 #: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "№ статьи ук рф или вид преступления"

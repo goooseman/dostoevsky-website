@@ -1,30 +1,44 @@
+/* eslint-disable prettier/prettier */
 import React from "react";
 import classes from "./IndexPage.module.css";
 import { Counters, Counter } from "src/components/Counters";
 import { T } from "react-targem";
 import Container from "src/components/ui-kit/Container";
 
-const IndexPageCounters = () => {
+interface IndexPageCountersProps {
+  counters: {
+    total: number;
+    totalAcquittal: number;
+    totalDismissal: number;
+    totalNoCrime: number;
+  };
+}
+
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+const IndexPageCounters = (props: IndexPageCountersProps) => {
+  const {
+    total,
+    totalDismissal,
+    totalNoCrime,
+    totalAcquittal,
+  } = props.counters;
   return (
     <Container>
       <Counters className={classes.counter}>
         <Counter
-          withPercent
-          counter={140}
+          counter={(totalAcquittal * 100) / total}
           label={
             <T message="оправдательных приговоров по отношению к общему числу дел" />
           }
         />
         <Counter
-          withPercent
-          counter={140}
+          counter={(totalDismissal * 100) / total}
           label={
-            <T message="прекращенных дел по отношению к общему числу дел" />
+            <T message="прекращённых дел по отношению к общему числу дел" />
           }
         />
         <Counter
-          withPercent
-          counter={140}
+          counter={(totalNoCrime * 100) / total}
           label={
             <T message="обстоятельства, исключающие преступность, от общего числа дел" />
           }

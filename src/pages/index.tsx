@@ -12,16 +12,58 @@ interface IndexPageProps {
 
 const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
   const meta = data.site?.meta;
-  let totalConvicted = 0;
+  let totalConv = 0;
+  let total = 0;
+  let totalDismissal = 0;
+  let totalAcquittal = 0;
+  let totalNoCrime = 0;
   for (const part of data.parts.edges) {
-    totalConvicted += part.node.parameters?.totalConvicted || 0;
+    const {
+      totalConvicted,
+      dismissalAmnesty,
+      dismissalReconciliation,
+      dismissalRepentance,
+      dismissalCourtFine,
+      dismissalOther,
+      acquittal,
+      noCrimeSelf_defence,
+      noCrimeNecessity,
+      noCrimeOther,
+    } = part.node.parameters;
+    total +=
+      totalConvicted +
+        dismissalAmnesty +
+        dismissalReconciliation +
+        dismissalRepentance +
+        dismissalCourtFine +
+        dismissalOther +
+        acquittal +
+        noCrimeSelf_defence +
+        noCrimeNecessity +
+        noCrimeOther || 0;
+    totalConv += totalConvicted || 0;
+    totalDismissal +=
+      dismissalAmnesty +
+        dismissalReconciliation +
+        dismissalRepentance +
+        dismissalCourtFine +
+        dismissalOther || 0;
+    totalAcquittal += acquittal || 0;
+    totalNoCrime += noCrimeSelf_defence + noCrimeNecessity + noCrimeOther || 0;
   }
   // eslint-disable-next-line no-console
-  console.log("Total total convicted", totalConvicted);
+  console.log("Total total convicted", totalConv);
+  const counters = {
+    total,
+    // totalConvicted: totalConv,
+    totalDismissal,
+    totalAcquittal,
+    totalNoCrime,
+  };
   return (
     <Layout>
       <Meta site={meta} />
-      <IndexPage />
+      <IndexPage counters={counters} />
     </Layout>
   );
 };
@@ -44,6 +86,19 @@ export const pageQuery = graphql`
           parameters {
             totalConvicted
             totalAcquittal: acquittal
+
+            dismissalAbsenceOfEvent
+            dismissalAmnesty
+            dismissalReconciliation
+            dismissalRepentance
+            dismissalRepentance2
+            dismissalCourtFine
+            dismissalOther
+            unfinishedOffence
+
+            noCrimeSelfDefence: noCrimeSelf_defence
+            noCrimeNecessity
+            noCrimeOther
           }
         }
       }
