@@ -33,8 +33,7 @@ export const Counter: React.FC<CounterProps> = (props: CounterProps) => {
         color="secondary"
       >
         <b>
-          {props.counter}
-          {props.withPercent ? " %" : null}
+          {props.counter} {props.withPercent ? " %" : null}
         </b>
       </Typography>
       <hr className={cn(classes.counterLine)} />

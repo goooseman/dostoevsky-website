@@ -20,6 +20,7 @@ const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
     if (part.node.parameters) {
       const {
         totalConvicted,
+        dismissalAbsenceOfEvent,
         dismissalAmnesty,
         dismissalReconciliation,
         dismissalRepentance,
@@ -36,6 +37,7 @@ const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
       totalAcquittalAll += totalAcquittal || 0;
 
       totalDismissal +=
+        (dismissalAbsenceOfEvent || 0) +
         (dismissalAmnesty || 0) +
         (dismissalReconciliation || 0) +
         (dismissalRepentance || 0) +

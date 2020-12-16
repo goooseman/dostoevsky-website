@@ -16,7 +16,7 @@
 }
 
 .counter-number {
-  font-size: 4.375rem;
+  font-size: 2.5em;
 }
 @media all and (max-width: 680px) {
   .counters {
@@ -43,7 +43,7 @@
   }
 
   .counter-block:first-child p.counter-number {
-    font-size: 4.375rem;
+    /* font-size: 4.375rem; */
   }
 }
 

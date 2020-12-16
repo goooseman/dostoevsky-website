@@ -28,21 +28,25 @@ const IndexPageCounters = (props: IndexPageCountersProps) => {
     <Container>
       <Counters className={classes.counter}>
         <Counter
-          counter={Math.floor((totalAcquittal * 100) / totalConvicted)}
+          counter={
+            Math.floor((totalAcquittal * 100000) / totalConvicted) / 1000
+          }
           withPercent={true}
           label={
             <T message="оправдательных приговоров по отношению к общему числу дел" />
           }
         />
         <Counter
-          counter={Math.floor((totalDismissal * 100) / totalConvicted)}
+          counter={
+            Math.floor((totalDismissal * 100000) / totalConvicted) / 1000
+          }
           withPercent={true}
           label={
             <T message="прекращённых дел по отношению к общему числу дел" />
           }
         />
         <Counter
-          counter={Math.floor((totalNoCrime * 100) / totalConvicted)}
+          counter={Math.floor((totalNoCrime * 100000) / totalConvicted) / 1000}
           withPercent={true}
           label={
             <T message="обстоятельства, исключающие преступность, от общего числа дел" />
