@@ -50,7 +50,7 @@
   border-color: var(--color-primary);
 }
 
-.button-dark{
+.button-dark {
   border-color: var(--color-border-dark);
   background: var(--color-border-dark);
   color: var(--color-text-inverted);

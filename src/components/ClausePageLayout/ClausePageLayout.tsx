@@ -53,7 +53,12 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
                 onClick={onCatalogueSwitch}
                 className={cn({ [classes.active]: isCatalogueOpened })}
               >
-                <Typography size="small" color="inverted" variant="span" isUpperCased>
+                <Typography
+                  size="small"
+                  color="inverted"
+                  variant="span"
+                  isUpperCased
+                >
                   статья в каталоге
                 </Typography>
                 <img src={require("./assets/arrow-right.svg")} />

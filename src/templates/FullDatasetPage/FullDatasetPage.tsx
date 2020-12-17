@@ -14,7 +14,8 @@ import metricsData from "content/metriсs.json";
 import Table from "src/components/Table";
 import FullDatasetSelect from "./FullDatasetSelect";
 
-import { api_base } from "../../../gatsby-config";
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { api_base } = require("../../../gatsby-config.js");
 
 import FullDatasetDownloadModal from "./FullDatasetDownloadModal";
 

@@ -77,7 +77,7 @@
   background-color: var(--color-primary);
 }
 
-.sidebar .item-active > span > small::after{
+.sidebar .item-active > span > small::after {
   content: " ";
 }
 
