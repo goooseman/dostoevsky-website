@@ -106,22 +106,15 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
           />
         </div>
         <div className={classes.buttonWrapper}>
-          {/* ¯\_(ツ)_/¯ */}
-          {selectedUk && selectedYear ? (
-            <Button
-              size="lg"
-              color="third"
-              withArrow
-              /* @ts-ignore */
-              to={selectedUk.value}
-            >
-              <T message="Перейти к данным" />
-            </Button>
-          ) : (
-            <Button size="lg" color="third" withArrow disabled>
-              <T message="Перейти к данным" />
-            </Button>
-          )}
+          <Button
+            size="lg"
+            color="third"
+            withArrow
+            /* @ts-ignore */
+            to={selectedUk && selectedYear ? selectedUk.value : "/full"}
+          >
+            <T message="Перейти к данным" />
+          </Button>
         </div>
       </div>
       <div className={classes.hintsWrapper}>
@@ -133,22 +126,18 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
         <div className={classes.hintsInner}>
           {helpItems.map((o: { label: string; value: string }, i: number) => (
             <Button
+              key={i}
               size="sm"
               color="dark"
-              key={i}
-              onClick={(ev: any) => {
-                if (o.value) {
-                  const event = new Event("input", { bubbles: true });
-                  const inpel = document.querySelector(".select__input input");
-                  inpel?.dispatchEvent(event);
-                  setSelectedUk(o);
-                } else {
-                  ev.preventDefault();
-                }
-              }}
+              onClick={(ev: any) => setSelectedUk(o)}
             >
-              <Typography size="small" color="inverted" isUpperCased>
-                <b>{o.label}</b>
+              <Typography
+                size="small"
+                color="inverted"
+                isUpperCased
+                className="nobreak"
+              >
+                {o.label}
               </Typography>
             </Button>
           ))}
