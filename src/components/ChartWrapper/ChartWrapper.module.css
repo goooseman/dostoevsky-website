@@ -178,7 +178,6 @@ body {
 }
 
 .title {
-  max-width: 340px;
   margin: auto auto 30px;
 }
 
@@ -193,6 +192,10 @@ body {
 @media all and (max-width: 680px) {
   .two-columns {
     flex-direction: column;
+  }
+  .title {
+    max-width: 340px;
+    margin: auto auto 30px;
   }
 }
 

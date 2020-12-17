@@ -321,7 +321,9 @@
   display: flex;
   margin-top: 1rem;
 }
-
+.hints-wrapper .hints-inner button{
+  margin-right: .25rem;
+}
 @media all and (max-width: 680px) {
   .hints-wrapper {
     margin: 1rem;
@@ -522,10 +524,17 @@
 }
 
 .subscription .bottom-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 2rem;
 }
 
 .subscription .bottom-input .subscription-input {
   border-width: 5px;
   margin-right: 1rem;
+}
+
+.subscription .bottom-input button {
+  margin-bottom: 5px;
 }

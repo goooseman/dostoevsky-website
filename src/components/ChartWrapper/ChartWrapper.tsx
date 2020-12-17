@@ -45,6 +45,7 @@ class ChartWrapper extends PureComponent<
         <div className={cn(classes.twoColumns)}>
           <div className={cn(classes.leftColumn)} ref={downloadAreaRef}>
             <Typography
+              font="sans-serif"
               className={cn(classes.title, {
                 [classes.center]: centerTitle,
               })}

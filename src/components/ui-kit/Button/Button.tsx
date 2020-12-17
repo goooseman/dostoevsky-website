@@ -15,15 +15,15 @@ interface ButtonProps
     HTMLButtonElement
   > {
   size: "md" | "lg";
-  color: "normal" | "inverted" | "secondary" | "third";
+  color: "normal" | "inverted" | "secondary" | "third" | "dark";
   withArrow?: boolean;
   verticalArrow?: boolean;
   verticalArrowRotate?: boolean;
 }
 
 interface LinkProps extends GatsbyLinkProps<{}> {
-  size: "md" | "lg";
-  color: "normal" | "inverted" | "secondary" | "third";
+  size: "sm" | "md" | "lg";
+  color: "normal" | "inverted" | "secondary" | "third" | "dark";
   withArrow?: boolean;
   verticalArrow?: boolean;
   verticalArrowRotate?: boolean;
@@ -91,6 +91,7 @@ class Button extends PureComponent<ButtonComponentProps> {
         <Link
           className={cn(className, classes.button, {
             [classes.buttonLg]: size === "lg",
+            [classes.buttonSm]: size === "sm",
             [classes.buttonInverted]: color === "inverted",
             [classes.buttonSecondary]: color === "secondary",
             [classes.buttonThird]: color === "third",
@@ -125,9 +126,11 @@ class Button extends PureComponent<ButtonComponentProps> {
       <button
         className={cn(className, classes.button, {
           [classes.buttonLg]: size === "lg",
+          [classes.buttonSm]: size === "sm",
           [classes.buttonInverted]: color === "inverted",
           [classes.buttonSecondary]: color === "secondary",
           [classes.buttonThird]: color === "third",
+          [classes.buttonDark]: color === "dark",
         })}
         {...otherProps}
       >
