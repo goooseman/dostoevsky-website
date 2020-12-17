@@ -11,6 +11,7 @@ import Container from "../ui-kit/Container";
 import { Menu, MenuLink } from "../Menu";
 import Modal, { useModal } from "src/components/ui-kit/Modal";
 import { useState } from "react";
+import axios, { AxiosResponse } from "axios";
 
 interface FooterProps extends WithLocale {}
 
@@ -18,6 +19,21 @@ const Footer: React.FC<FooterProps> = ({ t }: FooterProps) => {
   const { isShowing, toggle } = useModal();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const sendFeedback = () => {
+    if (email && message) {
+      axios({
+        method: "post",
+        url: "/feedback/",
+        responseType: "text",
+        data: { username, email, message },
+      })
+        // eslint-disable-next-line no-console
+        .then((r: AxiosResponse) => console.log(r))
+        .catch(console.error);
+    }
+  };
+
   return (
     <div className={cn(classes.container)}>
       <Container>
@@ -53,11 +69,11 @@ const Footer: React.FC<FooterProps> = ({ t }: FooterProps) => {
           </Typography>
         </div>
         <div className={cn(classes.rightContainer)}>
-          <Button color="inverted" onClick={() => toggle()}>
-            <Typography variant="span" color="inverted">
-              напишите нам
-            </Typography>
-          </Button>
+          {/*<Button color="inverted" onClick={() => toggle()}> */}
+          <Typography variant="span" color="inverted">
+            напишите нам
+          </Typography>
+          {/*</Button> */}
           <div className={classes.socialMediaLinksContainer}>
             <a href="https://telegram.com" target="_blank" rel="noreferrer">
               <img
@@ -112,10 +128,13 @@ const Footer: React.FC<FooterProps> = ({ t }: FooterProps) => {
             />
           </div>
           <div className="modal-line">
-            <TextareaAutosize name="message" />
+            <TextareaAutosize
+              name="message"
+              onChange={(e) => setMessage(e.currentTarget.value)}
+            />
           </div>
           <div className="modal-line">
-            <Button type="submit" color="secondary">
+            <Button onClick={() => sendFeedback()} color="secondary">
               Отправить
             </Button>
           </div>
