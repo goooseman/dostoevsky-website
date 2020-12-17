@@ -3798,12 +3798,12 @@ export type ClausePartsQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetada
         )> }
       ) }> } };
 
-export type IndexYearQueryQueryVariables = Exact<{
+export type IndexYearQueryVariables = Exact<{
   year: Scalars['Int'];
 }>;
 
 
-export type IndexYearQueryQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, parts: { edges: Array<{ node: (
+export type IndexYearQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, parts: { edges: Array<{ node: (
         Pick<Api_Server__Data, 'part'>
         & { parameters?: Maybe<(
           Pick<Api_Server__DataParameters, 'totalConvicted' | 'dismissalAbsenceOfEvent' | 'dismissalAmnesty' | 'dismissalReconciliation' | 'dismissalRepentance' | 'dismissalRepentance2' | 'dismissalCourtFine' | 'dismissalOther' | 'unfinishedOffence' | 'noCrimeNecessity' | 'noCrimeOther'>
@@ -3831,10 +3831,10 @@ export type FullDatasetPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type FullDatasetPageQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }> };
 
-export type IndexQueryQueryVariables = Exact<{ [key: string]: never; }>;
+export type IndexQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type IndexQueryQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, parts: { edges: Array<{ node: (
+export type IndexQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, parts: { edges: Array<{ node: (
         Pick<Api_Server__Data, 'part'>
         & { parameters?: Maybe<(
           Pick<Api_Server__DataParameters, 'totalConvicted' | 'dismissalAbsenceOfEvent' | 'dismissalAmnesty' | 'dismissalReconciliation' | 'dismissalRepentance' | 'dismissalRepentance2' | 'dismissalCourtFine' | 'dismissalOther' | 'unfinishedOffence' | 'noCrimeNecessity' | 'noCrimeOther'>

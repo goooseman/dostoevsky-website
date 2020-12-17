@@ -10,10 +10,12 @@ import IndexPageCounters from "./IndexPageCounters";
 import IndexPageMore from "./IndexPageMore";
 import IndexPageSubscription from "./IndexPageSubscription";
 import years from "content/years.json";
+import { Article } from "../ArticleFullPage/ArticleFullPage";
 
 const yearSelectOptions = years.map((y) => ({ value: y, label: y }));
 
 interface IndexPageProps {
+  articles: Array<Partial<Article>>;
   counters: {
     totalConvicted: number;
     totalAcquittal: number;
@@ -23,6 +25,9 @@ interface IndexPageProps {
 }
 
 export class IndexPage extends PureComponent<IndexPageProps> {
+  constructor(props: IndexPageProps) {
+    super(props);
+  }
   render(): React.ReactNode {
     return (
       <>
@@ -67,7 +72,7 @@ export class IndexPage extends PureComponent<IndexPageProps> {
         </div>
         <IndexPageAnalytics yearSelectOptions={yearSelectOptions} />
         <IndexPageCounters counters={this.props.counters} />
-        <IndexPageMore />
+        <IndexPageMore articles={this.props.articles} />
         <IndexPageSubscription />
       </>
     );

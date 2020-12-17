@@ -1,17 +1,20 @@
 import { graphql } from "gatsby";
 import React from "react";
-import { IndexQueryQuery } from "../../types/graphql-types";
+import { IndexQuery } from "../../types/graphql-types";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
 import IndexPage from "src/templates/IndexPage";
+import { Article } from "src/templates/ArticleFullPage/ArticleFullPage";
 
 interface IndexPageProps {
-  data: IndexQueryQuery;
+  data: IndexQuery;
   location: Location;
 }
 
 const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
+  // common site props
   const meta = data.site?.meta;
+  // counters props
   let totalConvictedAll = 0;
   let totalDismissal = 0;
   let totalAcquittalAll = 0;
@@ -50,18 +53,21 @@ const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
         (noCrimeOther || 0);
     }
   }
-  // eslint-disable-next-line no-console
-  // console.log("Total total convicted", totalConvictedAll);
   const counters = {
     totalConvicted: totalConvictedAll,
     totalDismissal,
     totalAcquittal: totalAcquittalAll,
     totalNoCrime,
   };
+  // article
+  const articles: Partial<Article>[] = data.allMarkdownRemark?.edges.map(
+    (a: { node: { frontmatter: Partial<Article> } }) => a.node.frontmatter
+  );
+
   return (
     <Layout>
       <Meta site={meta} />
-      <IndexPage counters={counters} />
+      <IndexPage counters={counters} articles={articles} />
     </Layout>
   );
 };
@@ -69,12 +75,29 @@ const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
 export default Index;
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query Index {
     site {
       meta: siteMetadata {
         title
         description
         siteUrl
+      }
+    }
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      limit: 6
+    ) {
+      edges {
+        node {
+          frontmatter {
+            slug
+            title
+            author
+            teaser
+            date
+            type
+          }
+        }
       }
     }
     parts: allApiServerData(filter: { year: { eq: 2019 } }) {

@@ -1,13 +1,14 @@
 /* eslint-disable no-console */
 import { graphql } from "gatsby";
 import React from "react";
-import { IndexYearQueryQuery } from "../../types/graphql-types";
+import { IndexYearQuery } from "../../types/graphql-types";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
 import IndexPage from "src/templates/IndexPage";
+import { Article } from "src/templates/ArticleFullPage/ArticleFullPage";
 
 interface IndexPageProps {
-  data: IndexYearQueryQuery;
+  data: IndexYearQuery;
   location: Location;
 }
 
@@ -56,10 +57,13 @@ const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
     totalAcquittal: totalAcquittalAll,
     totalNoCrime,
   };
+  const articles: Partial<Article>[] = data.allMarkdownRemark?.edges.map(
+    (a: { node: { frontmatter: Partial<Article> } }) => a.node.frontmatter
+  );
   return (
     <Layout>
       <Meta site={meta} />
-      <IndexPage counters={counters} />
+      <IndexPage counters={counters} articles={articles} />
     </Layout>
   );
 };
@@ -67,12 +71,29 @@ const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
 export default Index;
 
 export const pageQuery = graphql`
-  query IndexYearQuery($year: Int!) {
+  query IndexYear($year: Int!) {
     site {
       meta: siteMetadata {
         title
         description
         siteUrl
+      }
+    }
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      limit: 6
+    ) {
+      edges {
+        node {
+          frontmatter {
+            slug
+            title
+            author
+            date
+            type
+            teaser
+          }
+        }
       }
     }
     parts: allApiServerData(filter: { year: { eq: $year } }) {

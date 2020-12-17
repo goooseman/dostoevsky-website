@@ -184,6 +184,13 @@ module.exports = {
   plugins: [
     "gatsby-plugin-postcss",
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/posts/`,
+        name: `articles`,
+      },
+    },
+    {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [

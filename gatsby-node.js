@@ -1,18 +1,58 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require("path");
 const WebpackShellPluginNext = require("webpack-shell-plugin-next");
-let ukRf = require("./content/ук-рф.json");
-const years = require("./content/years.json");
-const { getRouteForClausePage } = require("./gatsby-routing");
+//let ukRf = require("./content/ук-рф.json");
+//const years = require("./content/years.json");
+//const { getRouteForClausePage } = require("./gatsby-routing");
 
-exports.createPages = async ({ actions }) => {
+exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
   const IS_SEMI_BUILD = Boolean(process.env.IS_SEMI_BUILD);
   if (IS_SEMI_BUILD) {
-    ukRf = ukRf.slice(3, 4); // Leave only first 1 clause group
+    //  ukRf = ukRf.slice(3, 4); // Leave only first 1 clause group
   }
 
+  const result = await graphql(`
+    {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            html
+            frontmatter {
+              slug
+              type
+              title
+              teaser
+              date
+              author
+            }
+          }
+        }
+      }
+    }
+  `);
+  if (result.errors) {
+    console.log(result.errors);
+  } else {
+    // console.log("got articles");
+    // console.debug(result.data);
+    result.data.allMarkdownRemark?.edges.forEach(
+      async ({ node }) =>
+        await createPage({
+          path: node.frontmatter.slug,
+          component: require.resolve("./src/page-templates/article-full.tsx"),
+          context: {
+            article: { ...node.frontmatter, html: node.html },
+            slug: node.frontmatter.slug,
+          },
+        })
+    );
+  }
+  /*
   // Create a separate index for every year, but not first one (the first one is default index)
   for (let year of years.slice(1)) {
     createPage({
@@ -96,7 +136,7 @@ exports.createPages = async ({ actions }) => {
         }
       }
     }
-  }
+  }*/
 };
 
 exports.onCreateWebpackConfig = ({ actions }) => {
