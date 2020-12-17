@@ -1,6 +1,7 @@
 .counters {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  margin: 0 5rem;
   background-color: var(--color-secondary-opaque);
   border-radius: var(--border-radius);
 }

@@ -133,6 +133,8 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
         <div className={classes.hintsInner}>
           {helpItems.map((o: { label: string; value: string }, i: number) => (
             <Button
+              size="sm"
+              color="dark"
               key={i}
               onClick={(ev: any) => {
                 if (o.value) {
@@ -145,7 +147,7 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
                 }
               }}
             >
-              <Typography size="small" isUpperCased>
+              <Typography size="small" color="inverted" isUpperCased>
                 <b>{o.label}</b>
               </Typography>
             </Button>
