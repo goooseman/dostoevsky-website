@@ -68,9 +68,9 @@ const IndexPageSubscription = () => {
         size="sm"
         isCentered
       >
-        <p>
+        <Typography font="serif" variant="h3" component="p" isCentered>
           <T message="Спасибо, что подписались на нашу рассылку!" />
-        </p>
+        </Typography>
       </Modal>
     </Container>
   );

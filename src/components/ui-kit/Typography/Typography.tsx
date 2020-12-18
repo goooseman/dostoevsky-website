@@ -7,6 +7,7 @@ interface TypographyProps {
   component?: "p" | "h1" | "h2" | "h3" | "label" | "span";
   font: "sans-serif" | "serif";
   isUpperCased: boolean;
+  isCentered: boolean;
   gutterBottom: boolean;
   isLineHeightDisabled: boolean;
   size?: "small" | "normal";
@@ -28,6 +29,7 @@ class Typography extends PureComponent<TypographyProps> {
     isLineHeightDisabled: false,
     font: "sans-serif",
     isUpperCased: false,
+    isCentered: false,
   };
 
   render(): React.ReactNode {
@@ -47,6 +49,7 @@ class Typography extends PureComponent<TypographyProps> {
       color,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       isUpperCased,
+      isCentered,
       ...otherProps
     } = this.props;
     const Component = component || variant;
@@ -67,6 +70,7 @@ class Typography extends PureComponent<TypographyProps> {
       isLineHeightDisabled,
       font,
       isUpperCased,
+      isCentered,
     } = this.props;
     return cn(
       classes.common,
@@ -74,6 +78,7 @@ class Typography extends PureComponent<TypographyProps> {
         [classes.h1]: variant === "h1",
         [classes.h2]: variant === "h2",
         [classes.h3]: variant === "h3",
+        [classes.link]: variant === "link",
         [classes.colorInverted]: color === "inverted",
         [classes.colorMuted]: color === "muted",
         [classes.colorSecondary]: color === "secondary",
@@ -82,6 +87,7 @@ class Typography extends PureComponent<TypographyProps> {
         [classes.sansSerif]: font === "sans-serif",
         [classes.serif]: font === "serif",
         [classes.isUppercased]: isUpperCased,
+        [classes.isCentered]: isCentered,
       },
       className
     );
