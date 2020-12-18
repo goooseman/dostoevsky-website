@@ -1,5 +1,75 @@
-.container {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+.blog-container {
   background-color: var(--color-main-background);
+  overflow: hidden;
+}
+
+.blog-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 580px;
+  text-align: center;
+  padding-bottom: 1rem;
+
+  /* уедет в пропсы */
+  background-image: url("src/templates/ArticleFullPage/assets/statHeader.svg");
+  background-size: cover;
+}
+
+.blog-header__inner {
+  max-width: 900px;
+  margin: auto;
+}
+
+.blog-header__title {
+  font-size: 3.75rem;
+  font-weight: 600;
+}
+
+.blog-header__lnk {
+  color: var(--color-secondary);
+  text-decoration: none;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--color-secondary);
+}
+
+.blog-header__share {
+  margin: 4rem auto 0;
+}
+
+.blog-header__social {
+  display: flex;
+  direction: row;
+  margin: 1rem auto;
+  justify-content: space-between;
+  max-width: 232px;
+}
+
+.blog-header__social a {
+  border: 1px solid var(--color-text);
+  width: 58px;
+  height: 58px;
+  border-radius: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media all and (max-width: 680px) {
+  .blog-header {
+    min-height: auto;
+  }
+  .blog-header__title {
+    font-size: 1.3rem;
+  }
+  .blog-header__share {
+    margin-top: 4rem;
+  }
+}
+
+/* ===================================== */
+
+.blog-article {
+  max-width: 624px;
+  margin: 1rem auto;
 }

@@ -25,6 +25,10 @@
   text-transform: uppercase;
 }
 
+.is-centered {
+  text-align: center;
+}
+
 .common.gutter-bottom {
   margin-bottom: 0.7rem;
 }
@@ -63,7 +67,8 @@
 }
 
 @media all and (max-width: 680px) {
-  .h1 {
+  .h1,
+  .h1.huge {
     font-size: 1.3rem;
   }
 }
