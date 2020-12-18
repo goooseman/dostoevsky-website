@@ -57,8 +57,12 @@ const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
     totalAcquittal: totalAcquittalAll,
     totalNoCrime,
   };
-  const articles: Partial<Article>[] = data.allMarkdownRemark?.edges.map(
-    (a: { node: { frontmatter: Partial<Article> } }) => a.node.frontmatter
+  // articles preview
+  const articles: Partial<Article>[] = (data.allMarkdownRemark?.edges).map(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (a: any) => ({
+      ...a.frontmatter,
+    })
   );
   return (
     <Layout>
@@ -81,7 +85,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 6
+      limit: 3
     ) {
       edges {
         node {

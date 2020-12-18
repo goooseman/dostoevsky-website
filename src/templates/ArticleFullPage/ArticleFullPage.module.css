@@ -10,9 +10,6 @@
   min-height: 580px;
   text-align: center;
   padding-bottom: 1rem;
-
-  /* уедет в пропсы */
-  background-image: url("src/templates/ArticleFullPage/assets/statHeader.svg");
   background-size: cover;
 }
 

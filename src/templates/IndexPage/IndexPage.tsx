@@ -15,7 +15,7 @@ import { Article } from "../ArticleFullPage/ArticleFullPage";
 const yearSelectOptions = years.map((y) => ({ value: y, label: y }));
 
 interface IndexPageProps {
-  articles: Array<Partial<Article>>;
+  articles: Partial<Article>[];
   counters: {
     totalConvicted: number;
     totalAcquittal: number;

@@ -59,9 +59,12 @@ const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
     totalAcquittal: totalAcquittalAll,
     totalNoCrime,
   };
-  // article
-  const articles: Partial<Article>[] = data.allMarkdownRemark?.edges.map(
-    (a: { node: { frontmatter: Partial<Article> } }) => a.node.frontmatter
+  // articles preview
+  const articles: Partial<Article>[] = (data.allMarkdownRemark?.edges).map(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (a: any) => ({
+      ...a.frontmatter,
+    })
   );
 
   return (

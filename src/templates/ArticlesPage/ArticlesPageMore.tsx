@@ -1,11 +1,12 @@
 import React from "react";
-import classes from "./IndexPage.module.css";
-import cn from "clsx";
-import Typography from "src/components/ui-kit/Typography";
-import { T, useLocale } from "react-targem";
-import Container from "src/components/ui-kit/Container";
 import { Link } from "gatsby";
+import cn from "clsx";
+import { useLocale } from "react-targem";
+
+import Typography from "src/components/ui-kit/Typography";
+import Container from "src/components/ui-kit/Container";
 import type { Article } from "../ArticleFullPage/ArticleFullPage";
+import classes from "./ArticlesPage.module.css";
 
 const getTypeString = (type: string, t: (s: string) => string) => {
   switch (type) {
@@ -18,28 +19,18 @@ const getTypeString = (type: string, t: (s: string) => string) => {
   }
 };
 
-interface IndexPageMoreProps {
-  articles: Partial<Article>[];
+interface FeedPageMoreProps {
+  articles: Array<Article>;
 }
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-const IndexPageMore = (props: IndexPageMoreProps) => {
+const ArticlesFeedPageMore = (props: FeedPageMoreProps) => {
   const { t } = useLocale();
   const { articles } = props;
   return (
     <Container>
-      <div className={classes.moreTitle}>
-        <div className={classes.moreTitleInner}>
-          <Typography isUpperCased>
-            <b>
-              <T message="Больше материалов в разделе аналитика" />
-            </b>
-          </Typography>
-        </div>
-      </div>
-
       <div className={classes.moreWrapper}>
-        {articles.map((d: Partial<Article>, i) => {
+        {articles.map((d: Article, i) => {
           const type = getTypeString(d.type || "", t);
           return (
             <div
@@ -49,7 +40,7 @@ const IndexPageMore = (props: IndexPageMoreProps) => {
                 [classes.moreItemAnalytics]: d.type === "analytics",
               })}
               style={{
-                backgroundImage: `url(${require(`./assets/${
+                backgroundImage: `url(${require(`src/templates/ArticleFullPage/assets/${
                   d.type || "blog"
                 }-head.svg`)})`,
               }}
@@ -93,4 +84,4 @@ const IndexPageMore = (props: IndexPageMoreProps) => {
   );
 };
 
-export default IndexPageMore;
+export default ArticlesFeedPageMore;

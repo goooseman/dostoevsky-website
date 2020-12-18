@@ -129,7 +129,7 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
               key={i}
               size="sm"
               color="dark"
-              onClick={(ev: any) => setSelectedUk(o)}
+              onClick={() => setSelectedUk(o)}
             >
               <Typography
                 size="small"
