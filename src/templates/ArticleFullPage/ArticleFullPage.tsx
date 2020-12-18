@@ -25,7 +25,11 @@ const ArticleFullPage = (props: ArticleFullPageProps): JSX.Element => {
   const { article } = props;
   return (
     <section className={cn(classes.blogContainer)}>
-      {/*TODO: вынести в отдельный компонент BlogArticleHeader*/}
+      {/*
+      TODO: вынести в отдельный компонент BlogArticleHeader
+      TODO: стили для ссылок в теле статьи
+      T
+      */}
       <header className={cn(classes.blogHeader)}>
         <Container>
           <div className={cn(classes.blogHeader__inner)}>
@@ -88,9 +92,12 @@ const ArticleFullPage = (props: ArticleFullPageProps): JSX.Element => {
         </Container>
       </header>
       <article className={cn(classes.blogArticle)}>
-        <div className={cn(classes.articleTitle)}>
+        <div className={cn(classes.articleBody)}>
           <Typography>
-            <T message={article.title} />
+            <div
+              className="blog-post-content"
+              dangerouslySetInnerHTML={{ __html: article.html }}
+            ></div>
           </Typography>
         </div>
         <div className={cn(classes.articleAuthor)}>
@@ -101,14 +108,6 @@ const ArticleFullPage = (props: ArticleFullPageProps): JSX.Element => {
         <div className={cn(classes.articleDate)}>
           <Typography>
             <T message={article.date} />
-          </Typography>
-        </div>
-        <div className={cn(classes.articleBody)}>
-          <Typography>
-            <div
-              className="blog-post-content"
-              dangerouslySetInnerHTML={{ __html: article.html }}
-            ></div>
           </Typography>
         </div>
       </article>
