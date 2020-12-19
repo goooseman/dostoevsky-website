@@ -1,6 +1,9 @@
 const api_base = "https://api.dostoevsky.io/api";
-
-module.exports = { api_base };
+const api_token = "4137acbc9dcdc269b0fdeafc8b4b820f035d7f2f";
+const headers = {
+  "Content-Type": "application/json",
+  Authorization: "Token " + api_token,
+};
 
 const dataRequest = {
   breakdown: ["part", "year"],
@@ -179,6 +182,11 @@ module.exports = {
     title: "Dostoevsky",
     description: "SEO description of dostoevsky",
     siteUrl: process.env.SITE_URL,
+    api: {
+      base: api_base,
+      token: api_token,
+      headers,
+    },
   },
   pathPrefix: "/",
   plugins: [
@@ -279,10 +287,7 @@ module.exports = {
             url: api_base + "/data/",
             method: "GET",
             verboseOutput: true,
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: "Token 4137acbc9dcdc269b0fdeafc8b4b820f035d7f2f",
-            },
+            headers,
             // Request body
             data: dataRequest,
 
