@@ -137,7 +137,10 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
           ))}
         </div>
       </div>
-      <Link className={classes.analyticsLinkWrapper} to="#">
+      <Link
+        className={classes.analyticsLinkWrapper}
+        to={`/stats-${selectedYear.value}`}
+      >
         <Typography isUpperCased className={classes.analyticsLink}>
           <b>
             <T message="Перейти к материалу" />
