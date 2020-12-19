@@ -32,6 +32,7 @@ const IndexPageCounters = (props: IndexPageCountersProps) => {
             Math.floor((totalAcquittal * 100000) / totalConvicted) / 1000
           }
           withPercent={true}
+          helpText={"число оправдательных приговоров × 100 / общее число дел"}
           label={
             <T message="оправдательных приговоров по отношению к общему числу дел" />
           }
@@ -41,6 +42,9 @@ const IndexPageCounters = (props: IndexPageCountersProps) => {
             Math.floor((totalDismissal * 100000) / totalConvicted) / 1000
           }
           withPercent={true}
+          helpText={
+            "число прекращенных дел (Прекращено по амнистии + Прекращено за примирением с потерпевшим + Прекращено в связи с деятельным раскаянием + Прекращено судебный штраф + Прекращено по другим основаниям) × 100 / общее число дел"
+          }
           label={
             <T message="прекращённых дел по отношению к общему числу дел" />
           }
@@ -48,6 +52,9 @@ const IndexPageCounters = (props: IndexPageCountersProps) => {
         <Counter
           counter={Math.floor((totalNoCrime * 100000) / totalConvicted) / 1000}
           withPercent={true}
+          helpText={
+            "(Обстоятельства, исключающие преступность: необходимая оборона + Обстоятельства, исключающие преступность: крайняя необходимость + Обстоятельства, исключающие преступность, предусмотренные статьями 38, 40 - 42 УК РФ) × 100 / общее число дел"
+          }
           label={
             <T message="обстоятельства, исключающие преступность, от общего числа дел" />
           }
