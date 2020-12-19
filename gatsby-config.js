@@ -1,4 +1,4 @@
-const api_base = "http://135.181.40.124:1337/api";
+const api_base = "https://api.dostoevsky.io/api/";
 
 module.exports = { api_base };
 

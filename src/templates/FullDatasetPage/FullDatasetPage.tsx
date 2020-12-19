@@ -101,7 +101,9 @@ const FullDatasetPage: React.FC = () => {
 
   useEffect(() => {
     (async function () {
-      const filtersResult = await axios.post(api_base + "/filters/", {
+      const api_old = "http://135.181.40.124:1337api/";
+      // FIXME: old -> base
+      const filtersResult = await axios.post(api_old + "/filters/", {
         property: ["year", "part"],
       });
       const yearsOptionsData = filtersResult.data.year;
