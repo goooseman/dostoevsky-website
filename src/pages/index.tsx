@@ -62,9 +62,7 @@ const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
   // articles preview
   const articles: Partial<Article>[] = (data.allMarkdownRemark?.edges).map(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (a: any) => ({
-      ...a.frontmatter,
-    })
+    (a: any) => a.node.frontmatter
   );
 
   return (
