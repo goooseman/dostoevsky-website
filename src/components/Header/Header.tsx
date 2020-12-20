@@ -8,16 +8,10 @@ import Typography from "../ui-kit/Typography";
 interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = () => {
-  // function getInitialState() {
-  //   return {
-  //     menuHolder: cn(classes.mobileMenuHolder)}
-  // }
-  // function addClass(){
-  //   this.setState({menuHolder: cn(classes.isActive)})
-  // }
-  // function removeClass(){
-  //   this.setState({menuHolder: ''})
-  // }
+  const [menuActive, setMenuActive] = useState(false);
+  function toggleMenu() {
+    setMenuActive(!menuActive);
+  }
   return (
     <nav className={cn(classes.container)}>
       <div className={cn(classes.headerWrapper)}>
@@ -31,11 +25,16 @@ const Header: React.FC<HeaderProps> = () => {
               <T message="RU" />
             </Typography>
           </Link>
-          <div>
+          <div className="test" onClick={toggleMenu}>
             <img src={require("./assets/hamburger.svg")} alt="Menu" />
           </div>
         </div>
-        <div className={cn(classes.mobileMenuHolder, classes.isActive)}>
+        <div
+          className={cn({
+            [cn(classes.mobileMenuHolder)]: true,
+            [cn(classes.isActive)]: menuActive,
+          })}
+        >
           <div className={cn(classes.mobileMenuHolder__header)}>
             <div>
               <Link to="/">
@@ -45,12 +44,7 @@ const Header: React.FC<HeaderProps> = () => {
                 />
               </Link>
             </div>
-            <div
-              className={cn(classes.mobileMenu__close)}
-              onClick={() => {
-                this.removeClass();
-              }}
-            >
+            <div className={cn(classes.mobileMenu__close)} onClick={toggleMenu}>
               <img src={require("./assets/close.svg")} alt="Menu" />
             </div>
           </div>
@@ -59,7 +53,7 @@ const Header: React.FC<HeaderProps> = () => {
               <MenuLink to="/clauses" size="normal">
                 каталог статей ук рф
               </MenuLink>
-              <MenuLink to="/analytics" size="normal">
+              <MenuLink to="/articles" size="normal">
                 Аналитика
               </MenuLink>
               <MenuLink to="/faq" size="normal">

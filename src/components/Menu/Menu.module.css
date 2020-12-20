@@ -83,6 +83,8 @@
 @media all and (max-width: 680px) {
   .menu.on-black-background .menu-item {
     border-color: var(--color-border-inverted);
+    text-align: left;
+    padding: 1.5rem 1rem 1.5rem 3.2rem;
   }
 }
 

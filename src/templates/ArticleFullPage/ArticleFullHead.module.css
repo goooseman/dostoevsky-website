@@ -4,7 +4,7 @@
   justify-content: center;
   text-align: center;
   padding-bottom: 1rem;
-  background-size: contain;
+  background-size: cover;
 }
 
 .blog-header__inner {
