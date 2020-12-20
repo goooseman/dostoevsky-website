@@ -4,6 +4,7 @@ import Container from "src/components/ui-kit/Container";
 import { T, useLocale } from "react-targem";
 import Typography from "src/components/ui-kit/Typography";
 import classes from "./ArticlesPage.module.css";
+import cn from "clsx";
 // import { Article } from "../ArticleFullPage/ArticleFullPage";
 
 interface ArticlesFeedPageFilterProps {
@@ -19,7 +20,7 @@ export const ArticlesFeedPageFilter = () => {
   const tags = ["blog", "analytics", "2019", "2018", "2017"];
   return (
     <Container>
-      <div className={classes.tags}>
+      <div className={cn(classes.tags)}>
         {tags.map((o: string, i: number) => (
           <Button
             key={i}
