@@ -1,0 +1,58 @@
+.pill-button {
+  display: inline-block;
+  min-width: 3rem;
+  padding: 0.2rem 0.5rem 0.175rem 0.5rem;
+  border: 2px solid;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  outline: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  background: transparent;
+  font-family: var(--font-family-sans-serif);
+  transition: 0.25s ease-in-out background-color;
+  margin: 0.2rem;
+  line-height: 1.1em;
+}
+
+.pill-button-black {
+  border-color: var(--color-border-dark);
+  background: var(--color-border-dark);
+  color: var(--color-text-inverted);
+}
+
+.pill-button-black:hover {
+  background: var(--color-text-inverted);
+  color: var(--color-border-dark);
+}
+
+.pill-button-secondary {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+.pill-button-secondary:hover {
+  background: var(--color-secondary);
+  color: var(--color-text-inverted);
+}
+
+.pill-button-primary {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.pill-button-primary:hover {
+  background: var(--color-primary);
+  color: var(--color-text-inverted);
+}
+
+.pill-button-transparent {
+  border-color: var(--color-border-dark);
+  color: var(--color-border-dark);
+}
+
+.pill-button-transparent:hover {
+  background: var(--color-border-dark);
+  color: var(--color-text-inverted);
+}
