@@ -9,7 +9,7 @@
 
 .blog-header__inner {
   width: 960px;
-  background: rgba(239,245,243,.5);
+  background: rgba(239, 245, 243, 0.5);
   -webkit-backdrop-filter: blur(17.9723px);
   backdrop-filter: blur(17.9723px);
   min-height: 480px;
