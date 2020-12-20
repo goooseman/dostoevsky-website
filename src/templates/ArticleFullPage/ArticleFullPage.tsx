@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React from "react";
+import React, { useEffect } from "react";
 import classes from "./ArticleFullPage.module.css";
 import cn from "clsx";
 import Typography from "src/components/ui-kit/Typography";
@@ -22,6 +22,19 @@ export interface ArticleFullPageProps {
 
 const ArticleFullPage = (props: ArticleFullPageProps): JSX.Element => {
   const { article } = props;
+
+  useEffect(() => {
+    // eslint-disable-next-line no-console
+    console.log("using effect-hook to embed flourish!");
+    const script = document.createElement("script");
+    script.async = true;
+    script.defer = true;
+    script.src = "https://public.flourish.studio/resources/embed.js";
+    document
+      .querySelectorAll("div.flourish-embed")
+      .forEach((el) => el.appendChild(script));
+  }, []);
+
   return (
     <section className={cn(classes.blogContainer)}>
       <ArticleFullHead article={article} />

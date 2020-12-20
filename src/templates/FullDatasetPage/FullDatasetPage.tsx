@@ -13,11 +13,11 @@ import axios from "axios";
 import metricsData from "content/metriсs.json";
 import Table from "src/components/Table";
 import FullDatasetSelect from "./FullDatasetSelect";
+import FullDatasetDownloadModal from "./FullDatasetDownloadModal";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { api_base } = require("../../../gatsby-config.js");
-
-import FullDatasetDownloadModal from "./FullDatasetDownloadModal";
+const { api } = require("../../../gatsby-config").siteMetadata;
+const { base, headers, token } = api;
 
 const BREAKDOWN_OPTIONS = [
   { value: "year", label: "Год" },
@@ -101,10 +101,10 @@ const FullDatasetPage: React.FC = () => {
 
   useEffect(() => {
     (async function () {
-      const api_old = "http://135.181.40.124:1337/api";
-      // FIXME: old -> base
-      const filtersResult = await axios.post(api_old + "/filters/", {
-        property: ["year", "part"],
+      const filtersResult = await axios.get(base + "/filters/", {
+        headers: {
+          Authorization: "Token " + token,
+        },
       });
       const yearsOptionsData = filtersResult.data.year;
       const newYearsOptions = yearsOptionsData.map((y: number) => ({
@@ -149,7 +149,7 @@ const FullDatasetPage: React.FC = () => {
 
         const dataResult = await axios
           .post(
-            api_base + "/data/",
+            base + "/data/",
             {
               filter: {
                 year: (allYearsSelected
@@ -176,9 +176,7 @@ const FullDatasetPage: React.FC = () => {
                 : [],
             },
             {
-              headers: {
-                "Content-Type": "application/json",
-              },
+              headers,
             }
           )
           .catch(() => {

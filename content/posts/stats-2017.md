@@ -34,12 +34,11 @@ image:
 
 Статьи УК, по которым чаще всего осуждали в 2017 году
 
-<https://app.flourish.studio/visualisation/3805117/>![](https://lh6.googleusercontent.com/PfbVm-W5iHbdW6fCA52KKHZerCk8fsAAplsMl1TVH9vXpE8GlZ6FMebFNqgOiDnFZOJ3woZvRfR47A3VZfPfd_jFOncXloy8EAnH67YPqr-EG0tzssyv-nI-PKWd7RJ_BS2VW8vD)
+<div class="flourish-embed" data-src="visualisation/3805117" data-url="https://flo.uri.sh/visualisation/3805117/embed" aria-label=""></div>
 
 Какие наказания чаще всего назначали в 2017 году
 
-<https://app.flourish.studio/visualisation/3805166>\
-![](https://lh3.googleusercontent.com/jy2X8kwHwAl69qclhQzuJWmPEUL_0s-_rmvRBsk3ZpilD5iN7nsxxsmLA_kOBh2ZoeshMMvWtJVahHS2Pr1_BsmfSHqsecU7XP_986-9bv8eoiUtEFG4Ti1qwNOvTkug1jOvvXWk)
+<div class="flourish-embed" data-src="visualisation/3805166" data-url="https://flo.uri.sh/visualisation/3805166/embed" aria-label=""></div>
 
 ## ИЗМЕНЕНИЯ В ЗАКОНОДАТЕЛЬСТВЕ 
 

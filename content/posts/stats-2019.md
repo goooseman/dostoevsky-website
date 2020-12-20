@@ -34,17 +34,15 @@ image:
 
 Статьи УК, по которым чаще всего осуждали в 2019 году
 
-<https://public.flourish.studio/visualisation/3798727/>
+<div class="flourish-embed" data-src="visualisation/3798727" data-url="https://flo.uri.sh/visualisation/3798727/embed" aria-label=""></div>
 
-Статьи УК, по которым чаще всего оправдывали в 2019 году ![](https://lh3.googleusercontent.com/MLCK2ENU4qEl1PK9wt-DAq7GarvVg4nB8G710XnPDw-6oI_njobLk7DLWIZQCg5rjrbMJS6YqcrwLnSXdwIk7CQELigJ3tG59OupaZgOZXjcMHrxZPO4RsNOoezHeVciFqahJoiX)
+Статьи УК, по которым чаще всего оправдывали в 2019 году
 
-<https://app.flourish.studio/visualisation/3146433>
+<div class="flourish-embed" data-src="visualisation/3146433" data-url="https://flo.uri.sh/visualisation/3146433/embed" aria-label=""></div>
 
-Какие наказания чаще всего назначали в 2019 году ![](https://lh4.googleusercontent.com/uuzFzdgZj57jOFnlLR2Ic0wWXsmjbG-MapRhkAwKs8eBnJ_8skzhp1hfwo49dgKUH8qYOsTcSbkIZWq3vxR_Z6_GQVkhrgMSS0EvI65fpvtZHSrpnEHcOSEfTwOmvESa4a4NM6B8)
+Какие наказания чаще всего назначали в 2019 году
 
-<https://public.flourish.studio/visualisation/3800595>
-
-![](https://lh6.googleusercontent.com/uyKfbIRn0vpTH9bPe2jzPO-P1ovMEFBOmsoYdHaxMKDJwIvaIEMyJBZhweWJVF3IBKaVE-qGEcFuJHLmI_cSgQNyWudtvFJZiQURApJ6Q4KwAS_y5SXCgfjGSH_KZesSNCJ9xMoS)
+<div class="flourish-embed" data-src="visualisation/3800595" data-url="https://flo.uri.sh/visualisation/3800595/embed" aria-label=""></div>
 
 ## ИЗМЕНЕНИЯ В ЗАКОНОДАТЕЛЬСТВЕ
 

@@ -34,17 +34,15 @@ X % освобожденных от наказания от всех осужд�
 
 Статьи УК, по которым чаще всего осуждали в 2018 году
 
-<https://app.flourish.studio/visualisation/3798596/>\
-![](https://lh5.googleusercontent.com/KTJlyKq2kJ88bQJjEvJLiL6h1kus9Ua7BD9iSd94V2I7piaL5rYtP9X-bVR-Z4M3ed_2vM15DUEvgtg7EpkPT9pCINM7sgxn1cB-t-yGdC29jxhaottVDZ_PSQwHDpNNfle6yFz7)
+<div class="flourish-embed" data-src="visualisation/3798596" data-url="https://flo.uri.sh/visualisation/3798596/embed" aria-label=""></div>
 
 Какие наказания чаще всего назначали в 2018 году
 
-<https://app.flourish.studio/visualisation/3798659/>\
-![](https://lh6.googleusercontent.com/5LNS_uYvMeqWHbDF3AHKn9YQFsIc9eIvdwJU18I98RtYHhpsxUMkkOKxK63KD2WXh_vdj7JccHnYZBd93MMk_jJRsijorkkNltU8caa6fK2Azk87W20xeEJPR9NXLMzdHMMQr0Ct)
+<div class="flourish-embed" data-src="visualisation/3798659" data-url="https://flo.uri.sh/visualisation/3798659/embed" aria-label=""></div>
 
 Статьи УК, по которым чаще всего оправдывали в 2018 году
 
-<https://app.flourish.studio/visualisation/3800976>![](https://lh5.googleusercontent.com/wbqSt0jb6BGId-gnDRMVbSUmPqlNxlaGYR2tFaHUbs6h5h0qeLAELuHkfFLLxhHGqZbw7E9ofQTP1rPvxWGIJPta7HX2m0cWqLAif4Yqcx3y6Bu2KvfBrPPSXu1hVIR1_2dgTO9w)
+<div class="flourish-embed" data-src="visualisation/3800976" data-url="https://flo.uri.sh/visualisation/3800976/embed" aria-label=""></div>
 
 ## ИЗМЕНЕНИЯ В ЗАКОНОДАТЕЛЬСТВЕ
 
@@ -118,7 +116,7 @@ X % освобожденных от наказания от всех осужд�
 
 В марте правоохранительные органы задержали девять человек по делу о создании экстремистской организации «Новое величие». В августе, после продления ареста, в Москве прошел несогласованный митинг «Марш матерей» в поддержку обвиняемых. В СМИ широко обсуждалась необоснованность обвинений и жестокость следствия [29]. Правозащитная организация «Мемориал» признала обвиняемых по делу политзаключёнными. В августе 2020 года обвиняемые были приговорены к срокам до 7 лет колонии [30].
 
-Над материалом работали: [Мелания Маслова](https://docs.google.com/document/d/1Fh-0bavPrc2izkvOXQEkxhK2Bo5mRJFL0T7Su5N5Byc/edit#heading=h.jd5ixqozybvf), Оксана Половинкина, Денис Шедов.
+Над материалом работали: Мелания Маслова, Оксана Половинкина, Денис Шедов.
 
 ---
 
