@@ -17,7 +17,10 @@ const ArticleFullHead = (props: ArticleFullPageProps): JSX.Element => {
   return (
     <header
       className={cn(classes.blogHeader)}
-      style={{backgroundImage: `url(${require(`./assets/${article.type}-head.svg`)})`,}}>
+      style={{
+        backgroundImage: `url(${require(`./assets/${article.type}-head.svg`)})`,
+      }}
+    >
       <Container>
         <div className={cn(classes.blogHeader__inner)}>
           <Link to="/" className={cn(classes.blogHeader__lnk)}>

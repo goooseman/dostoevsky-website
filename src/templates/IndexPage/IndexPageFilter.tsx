@@ -7,6 +7,7 @@ import Typography from "src/components/ui-kit/Typography";
 import { T, useLocale } from "react-targem";
 import Button from "src/components/ui-kit/Button";
 import searchService from "src/services/SearchService";
+import PillButton from "src/components/ui-kit/PillButton";
 
 interface IndexPageFilterProps {
   yearSelectOptions: { value: number; label: number }[];
@@ -125,22 +126,12 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
         </Typography>
         <div className={classes.hintsInner}>
           {helpItems.map((o: { label: string; value: string }, i: number) => (
-            <Button
+            <PillButton
               key={i}
-              // size="sm"
-              // color="dark"
-              to=""
-              onClick={() => setSelectedUk(o)}
-            >
-              <Typography
-                size="small"
-                color="inverted"
-                isUpperCased
-                className="nobreak"
-              >
-                {o.label}
-              </Typography>
-            </Button>
+              handleClick={() => setSelectedUk(o)}
+              value={o.label}
+              variant="black"
+            />
           ))}
         </div>
       </div>
