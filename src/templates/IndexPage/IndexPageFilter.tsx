@@ -127,8 +127,9 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
           {helpItems.map((o: { label: string; value: string }, i: number) => (
             <Button
               key={i}
-              size="sm"
-              color="dark"
+              // size="sm"
+              // color="dark"
+              to=""
               onClick={() => setSelectedUk(o)}
             >
               <Typography
