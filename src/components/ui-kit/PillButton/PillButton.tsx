@@ -1,33 +1,28 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import classes from "./PillButton.module.css";
 import cn from "clsx";
 
 interface PillButtonProps {
   id?: string;
-  handleChange?: (e: any) => void;
-  handleClick?: (e: any) => void;
+  onChange?: (e: any) => void;
+  onClick?: (e: any) => void;
   value: string;
-  variant:
-    | "black"
-    | "primary"
-    | "secondary"
-    | "transparent"
-    | "blog"
-    | "analytics";
+  variant?: string;
 }
 
 const PillButton: React.FC<PillButtonProps> = ({
   id,
-  handleChange,
-  handleClick,
+  onClick,
+  onChange,
   value,
   variant = "black",
 }: PillButtonProps) => {
   return (
     <button
       id={id}
-      onClick={handleClick}
-      onChange={handleChange}
+      onClick={onClick}
+      onChange={onChange}
       className={cn(classes.pillButton, {
         [classes.pillButtonBlack]: variant === "black",
         [classes.pillButtonPrimary]:

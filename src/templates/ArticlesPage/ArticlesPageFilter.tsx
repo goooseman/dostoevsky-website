@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import Button from "src/components/ui-kit/Button";
 import Container from "src/components/ui-kit/Container";
-import { T, useLocale } from "react-targem";
-import Typography from "src/components/ui-kit/Typography";
+import { useLocale } from "react-targem";
 import classes from "./ArticlesPage.module.css";
 import cn from "clsx";
 import PillButton from "src/components/ui-kit/PillButton";
@@ -27,7 +25,7 @@ export const ArticlesFeedPageFilter = () => {
             key={i}
             value={t(o)}
             variant={o}
-            handleClick={() => setArticlesFilter(o)}
+            onClick={() => setArticlesFilter(o)}
           />
         ))}
       </div>

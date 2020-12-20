@@ -4,7 +4,7 @@ import cn from "clsx";
 import { Link, GatsbyLinkProps } from "gatsby";
 
 interface SvgArrowProps {
-  color: "normal" | "inverted" | "secondary" | "third";
+  color: "normal" | "inverted" | "secondary" | "third" | "dark";
   verticalArrow: boolean;
   verticalArrowRotate?: boolean;
 }
@@ -14,7 +14,7 @@ interface ButtonProps
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
-  size: "md" | "lg";
+  size: "md" | "lg" | "sm";
   color: "normal" | "inverted" | "secondary" | "third" | "dark";
   withArrow?: boolean;
   verticalArrow?: boolean;

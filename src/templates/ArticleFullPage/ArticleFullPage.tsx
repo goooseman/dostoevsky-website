@@ -24,8 +24,6 @@ const ArticleFullPage = (props: ArticleFullPageProps): JSX.Element => {
   const { article } = props;
 
   useEffect(() => {
-    // eslint-disable-next-line no-console
-    console.log("using effect-hook to embed flourish!");
     const script = document.createElement("script");
     script.async = true;
     script.defer = true;

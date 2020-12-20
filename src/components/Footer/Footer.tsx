@@ -95,10 +95,7 @@ const Footer: React.FC<FooterProps> = ({ t }: FooterProps) => {
             </a>
           </div>
           <div>
-            <Link
-              href="mailto:info@dostoevsky.io"
-              className={cn(classes.email)}
-            >
+            <Link to="mailto:info@dostoevsky.io" className={cn(classes.email)}>
               <Typography variant="b" color="inverted">
                 info@dostoevsky.io
               </Typography>

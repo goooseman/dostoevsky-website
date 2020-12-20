@@ -1,5 +1,5 @@
 import React from "react";
-import PillButton from "./Button";
+import PillButton from "../Button";
 import { render, fireEvent } from "__utils__/render";
 
 it("should contain passed text", () => {
