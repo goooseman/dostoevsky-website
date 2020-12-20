@@ -1,5 +1,6 @@
 ---
-slug: "element-of-a-crime"
+slug: "/articles/
+element-of-a-crime"
 date: "17 ноября"
 title: "Что такое основной и дополнительный составы"
 author: "Денис Шедов"

@@ -29,7 +29,7 @@ const ArticlesFeedPageMore = (props: FeedPageMoreProps) => {
   const { articles } = props;
   return (
     <Container>
-      <div className={classes.moreWrapper}>
+      <div className={classes.articlesPageMore}>
         {articles.map((d: Article, i) => {
           const type = getTypeString(d.type || "", t);
           return (
@@ -40,9 +40,9 @@ const ArticlesFeedPageMore = (props: FeedPageMoreProps) => {
                 [classes.moreItemAnalytics]: d.type === "analytics",
               })}
               style={{
-                backgroundImage: `url(${require(`src/templates/ArticleFullPage/assets/${
+                backgroundImage: `url(${require(`./assets/${
                   d.type || "blog"
-                }-head.svg`)})`,
+                }-square.svg`)})`,
               }}
             >
               {type ? (
