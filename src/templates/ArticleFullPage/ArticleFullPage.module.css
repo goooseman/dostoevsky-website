@@ -37,13 +37,13 @@
 }
 
 @media all and (max-width: 680px) {
-  .blog-article{
+  .blog-article {
     margin: 0 1rem;
   }
   .blog-article a {
     word-wrap: break-word;
   }
-  .blog-article img{
+  .blog-article img {
     margin: 1rem -1rem;
     width: calc(100% + 2rem);
   }
