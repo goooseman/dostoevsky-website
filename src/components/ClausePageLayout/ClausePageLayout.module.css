@@ -3,7 +3,7 @@
   background-color: var(--color-main-background);
 }
 
-@media all and (max-width: 680px) {
+@media all and (max-width: 940px) {
   .container {
     flex-direction: column;
   }
@@ -23,7 +23,7 @@
   position: sticky;
   top: 0;
 }
-@media all and (max-width: 680px) {
+@media all and (max-width: 920px) {
   .sidebar {
     display: flex;
     width: 100%;
@@ -102,10 +102,13 @@
 .page-container {
   position: relative;
   flex-grow: 1;
-  padding-top: 45px;
-  padding-right: 110px;
-  padding-bottom: 45px;
-  padding-left: 30px;
+  padding: 45px;
+}
+
+@media all and (max-width: 920px) {
+  .page-container {
+    padding: 1rem;
+  }
 }
 
 .header-container {
@@ -120,6 +123,14 @@
   border-bottom: 4px solid var(--color-border-dark);
   margin-right: -20px;
   margin-left: -20px;
+}
+
+@media all and (max-width: 680px) {
+  .header {
+    flex-direction: column;
+    margin-bottom: 4rem;
+    text-align: center;
+  }
 }
 
 .header > * {
@@ -146,6 +157,12 @@
 
 .doc-link {
   align-self: flex-start;
+}
+
+@media all and (max-width: 680px) {
+  .doc-link {
+    align-self: center;
+  }
 }
 
 .floating-catalogue-container {
