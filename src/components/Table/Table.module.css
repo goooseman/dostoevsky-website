@@ -6,6 +6,11 @@
 .container {
   padding-left: 70px;
 }
+@media all and (max-width: 940px) {
+  .container {
+    padding-left: 0;
+  }
+}
 
 .container.is-not-padded-left {
   padding-left: 0;
