@@ -18,7 +18,7 @@ export const ArticlesFeedPageFilter = () => {
   const [articlesFilter, setArticlesFilter] = useState("");
 
   // TODO: get tags list from somewhere
-  const tags = ["blog", "analytics"];
+  const tags = ["all", "blog", "analytics"];
   return (
     <Container>
       <div className={cn(classes.tags)}>
@@ -26,7 +26,7 @@ export const ArticlesFeedPageFilter = () => {
           <PillButton
             key={i}
             value={t(o)}
-            variant="secondary"
+            variant={o}
             handleClick={() => setArticlesFilter(o)}
           />
         ))}

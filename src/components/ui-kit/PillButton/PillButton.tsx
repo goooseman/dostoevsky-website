@@ -7,7 +7,13 @@ interface PillButtonProps {
   handleChange?: (e: any) => void;
   handleClick?: (e: any) => void;
   value: string;
-  variant: "black" | "primary" | "secondary" | "transparent";
+  variant:
+    | "black"
+    | "primary"
+    | "secondary"
+    | "transparent"
+    | "blog"
+    | "analytics";
 }
 
 const PillButton: React.FC<PillButtonProps> = ({
@@ -24,8 +30,10 @@ const PillButton: React.FC<PillButtonProps> = ({
       onChange={handleChange}
       className={cn(classes.pillButton, {
         [classes.pillButtonBlack]: variant === "black",
-        [classes.pillButtonPrimary]: variant === "primary",
-        [classes.pillButtonSecondary]: variant === "secondary",
+        [classes.pillButtonPrimary]:
+          variant === "primary" || variant === "analytics",
+        [classes.pillButtonSecondary]:
+          variant === "secondary" || variant === "blog",
         [classes.pillButtonTransparent]: variant === "transparent",
       })}
     >
