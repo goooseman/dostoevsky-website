@@ -7,6 +7,7 @@ import Typography from "src/components/ui-kit/Typography";
 import { T, useLocale } from "react-targem";
 import Button from "src/components/ui-kit/Button";
 import searchService from "src/services/SearchService";
+import PillButton from "src/components/ui-kit/PillButton";
 
 interface IndexPageFilterProps {
   yearSelectOptions: { value: number; label: number }[];
@@ -106,22 +107,15 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
           />
         </div>
         <div className={classes.buttonWrapper}>
-          {/* ¯\_(ツ)_/¯ */}
-          {selectedUk && selectedYear ? (
-            <Button
-              size="lg"
-              color="third"
-              withArrow
-              /* @ts-ignore */
-              to={selectedUk.value}
-            >
-              <T message="Перейти к данным" />
-            </Button>
-          ) : (
-            <Button size="lg" color="third" withArrow disabled>
-              <T message="Перейти к данным" />
-            </Button>
-          )}
+          <Button
+            size="lg"
+            color="third"
+            withArrow
+            /* @ts-ignore */
+            to={selectedUk && selectedYear ? selectedUk.value : "/full"}
+          >
+            <T message="Перейти к данным" />
+          </Button>
         </div>
       </div>
       <div className={classes.hintsWrapper}>
@@ -132,15 +126,12 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
         </Typography>
         <div className={classes.hintsInner}>
           {helpItems.map((o: { label: string; value: string }, i: number) => (
-            <Button
+            <PillButton
               key={i}
-              // eslint-disable-next-line @typescript-eslint/no-unused-vars
               onClick={() => setSelectedUk(o)}
-            >
-              <Typography size="small" isUpperCased>
-                <b>{o.label}</b>
-              </Typography>
-            </Button>
+              value={o.label}
+              variant="black"
+            />
           ))}
         </div>
       </div>

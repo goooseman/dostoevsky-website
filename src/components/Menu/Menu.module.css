@@ -6,7 +6,6 @@
   margin: 0;
   list-style: none;
 }
-
 .menu-item {
   flex: 1;
   text-align: center;
@@ -26,7 +25,8 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
-  white-space: nowrap;
+
+  /* white-space: nowrap; */
 }
 
 .menu-item a.menu-link-active,
@@ -84,6 +84,8 @@
 @media all and (max-width: 680px) {
   .menu.on-black-background .menu-item {
     border-color: var(--color-border-inverted);
+    text-align: left;
+    padding: 1.5rem 1rem 1.5rem 3.2rem;
   }
 }
 

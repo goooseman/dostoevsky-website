@@ -1,3 +1,10 @@
+const api_base = "https://api.dostoevsky.io/api";
+const api_token = "4137acbc9dcdc269b0fdeafc8b4b820f035d7f2f";
+const headers = {
+  "Content-Type": "application/json",
+  Authorization: "Token " + api_token,
+};
+
 const dataRequest = {
   breakdown: ["part", "year"],
   filter: {},
@@ -175,10 +182,22 @@ module.exports = {
     title: "Dostoevsky",
     description: "SEO description of dostoevsky",
     siteUrl: process.env.SITE_URL,
+    api: {
+      base: api_base,
+      token: api_token,
+      headers,
+    },
   },
   pathPrefix: "/",
   plugins: [
     "gatsby-plugin-postcss",
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/posts/`,
+        name: `articles`,
+      },
+    },
     {
       resolve: "gatsby-transformer-remark",
       options: {
@@ -230,7 +249,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: "",
+        trackingId: "TEST_GA_TRACKING_ID",
       },
     },
     {
@@ -258,20 +277,17 @@ module.exports = {
         localSave: true,
         path: `${__dirname}/content/api-`,
 
-        verboseOutput: false,
+        verboseOutput: true,
         entitiesArray: [
           {
             name: "data",
 
             // The url, this should be the endpoint you are attempting to pull data from
             // url: `https://ssapi.ovdinfo.org/api/data`,
-            url: "http://135.181.40.124:1337/api/data/",
+            url: api_base + "/data/",
             method: "GET",
             verboseOutput: true,
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: "Token 9498350ad92cc780f033b44e7b6f00ba670cd75f",
-            },
+            headers,
             // Request body
             data: dataRequest,
 

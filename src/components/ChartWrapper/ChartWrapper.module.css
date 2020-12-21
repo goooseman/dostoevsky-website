@@ -140,8 +140,26 @@ body {
 .charts-container {
   display: flex;
 }
+@media all and (max-width: 1170px) {
+  .charts-container {
+    width: 100%;
+    margin: auto;
+    flex-direction: column;
+  }
+  .charts-container > div {
+    width: 240px !important;
+    margin: auto;
+  }
+}
+
 .charts-container > div {
   width: 100%;
+}
+@media all and (max-width: 800px) {
+  .charts-container > div {
+    width: 240px !important;
+    margin: auto;
+  }
 }
 
 .legend {
@@ -177,8 +195,16 @@ body {
   vertical-align: middle;
 }
 
+@media all and (max-width: 680px) {
+  .legend {
+    flex-direction: column;
+  }
+  .legend-item {
+    align-items: flex-start;
+  }
+}
+
 .title {
-  max-width: 340px;
   margin: auto auto 30px;
 }
 
@@ -193,6 +219,13 @@ body {
 @media all and (max-width: 680px) {
   .two-columns {
     flex-direction: column;
+  }
+  .title {
+    max-width: 340px;
+    margin: auto auto 30px;
+  }
+  .charts-container {
+    width: 100% !important;
   }
 }
 

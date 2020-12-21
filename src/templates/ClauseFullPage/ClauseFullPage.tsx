@@ -128,7 +128,7 @@ class ClauseFullPage extends PureComponent<
   ClauseFullPageProps,
   ClauseFullPageState
 > {
-  constructor(props: any) {
+  constructor(props: ClauseFullPageProps) {
     super(props);
     this.state = {
       selected: {},

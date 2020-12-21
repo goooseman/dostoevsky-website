@@ -9,7 +9,7 @@ interface CountersProps {
   className?: string;
 }
 
-export const Counters: React.SFC<CountersProps> = (props: CountersProps) => {
+export const Counters: React.FC<CountersProps> = (props: CountersProps) => {
   return (
     <div className={cn(classes.counters, props.className)}>
       {props.children}
@@ -24,7 +24,7 @@ interface CounterProps {
   withPercent?: boolean;
 }
 
-export const Counter: React.SFC<CounterProps> = (props: CounterProps) => {
+export const Counter: React.FC<CounterProps> = (props: CounterProps) => {
   return (
     <div className={cn(classes.counterBlock)}>
       <Typography
@@ -33,8 +33,7 @@ export const Counter: React.SFC<CounterProps> = (props: CounterProps) => {
         color="secondary"
       >
         <b>
-          {props.counter}
-          {props.withPercent ? " %" : null}
+          {props.counter} {props.withPercent ? " %" : null}
         </b>
       </Typography>
       <hr className={cn(classes.counterLine)} />

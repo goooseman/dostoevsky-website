@@ -70,6 +70,10 @@ msgstr "Логотип OI"
 msgid "D4S logo"
 msgstr "Логотип D4S"
 
+#: src/components/Header/Header.tsx:
+msgid "RU"
+msgstr ""
+
 #: src/components/Promo/Promo.tsx:
 msgid "Нужны данные по всем статьям и годам?"
 msgstr ""
@@ -130,6 +134,20 @@ msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Команда"
+msgstr ""
+
+#: src/templates/ArticleFullPage/ArticleFullHead.tsx:
+msgid "Поделиться:"
+msgstr ""
+
+#: src/templates/ArticlesPage/ArticlesPageMore.tsx:
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "блог"
+msgstr ""
+
+#: src/templates/ArticlesPage/ArticlesPageMore.tsx:
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "аналитика"
 msgstr ""
 
 #: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:
@@ -2738,7 +2756,7 @@ msgid "оправдательных приговоров по отношению
 msgstr ""
 
 #: src/templates/IndexPage/IndexPageCounters.tsx:
-msgid "прекращенных дел по отношению к общему числу дел"
+msgid "прекращённых дел по отношению к общему числу дел"
 msgstr ""
 
 #: src/templates/IndexPage/IndexPageCounters.tsx:
@@ -2763,7 +2781,6 @@ msgid "Введите год..."
 msgstr ""
 
 #: src/templates/IndexPage/IndexPageFilter.tsx:
-#: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "Перейти к данным"
 msgstr ""
 
@@ -2772,41 +2789,13 @@ msgid "Подсказка:"
 msgstr ""
 
 #: src/templates/IndexPage/IndexPageMore.tsx:
-msgid "Как изменилось чиcло выявленных преступлений с кражей и судебных решений по ним."
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageMore.tsx:
-#: src/templates/IndexPage/IndexPageMore.tsx:
-#: src/templates/IndexPage/IndexPageMore.tsx:
-msgid "светлана шуранова"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageMore.tsx:
-#: src/templates/IndexPage/IndexPageMore.tsx:
-#: src/templates/IndexPage/IndexPageMore.tsx:
-msgid "14 июня"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageMore.tsx:
-msgid "Много дел, мало приговоров"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageMore.tsx:
-msgid "«Экономические» статьи УК РФ"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageMore.tsx:
-msgid "блог"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageMore.tsx:
-msgid "аналитика"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageMore.tsx:
 msgid "Больше материалов в разделе аналитика"
 msgstr ""
 
 #: src/templates/IndexPage/IndexPageSubscription.tsx:
 msgid "Хотите первыми получать новости и обновления от команды Достоевского?"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageSubscription.tsx:
+msgid "Спасибо, что подписались на нашу рассылку!"
 msgstr ""

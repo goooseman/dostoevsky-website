@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, useEffect } from "react";
 import classes from "./FullDatasetPage.module.css";
 import cn from "clsx";
@@ -12,8 +13,11 @@ import axios from "axios";
 import metricsData from "content/metriсs.json";
 import Table from "src/components/Table";
 import FullDatasetSelect from "./FullDatasetSelect";
-
 import FullDatasetDownloadModal from "./FullDatasetDownloadModal";
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { api } = require("../../../gatsby-config").siteMetadata;
+const { base, headers, token } = api;
 
 const BREAKDOWN_OPTIONS = [
   { value: "year", label: "Год" },
@@ -97,12 +101,11 @@ const FullDatasetPage: React.FC = () => {
 
   useEffect(() => {
     (async function () {
-      const filtersResult = await axios.post(
-        "https://ssapi.ovdinfo.org/api/filters",
-        {
-          property: ["year", "part"],
-        }
-      );
+      const filtersResult = await axios.get(base + "/filters/", {
+        headers: {
+          Authorization: "Token " + token,
+        },
+      });
       const yearsOptionsData = filtersResult.data.year;
       const newYearsOptions = yearsOptionsData.map((y: number) => ({
         value: y.toString(),
@@ -146,7 +149,7 @@ const FullDatasetPage: React.FC = () => {
 
         const dataResult = await axios
           .post(
-            "https://ssapi.ovdinfo.org/api/data",
+            base + "/data/",
             {
               filter: {
                 year: (allYearsSelected
@@ -173,9 +176,7 @@ const FullDatasetPage: React.FC = () => {
                 : [],
             },
             {
-              headers: {
-                "Content-Type": "application/json",
-              },
+              headers,
             }
           )
           .catch(() => {

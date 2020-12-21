@@ -33,6 +33,9 @@
 .button-lg {
   padding: 1.1rem 1.5rem 1rem 1.5rem;
 }
+.button-sm {
+  padding: 0.1rem 0.5rem;
+}
 
 .button-inverted {
   border-color: var(--color-border-inverted);
@@ -45,6 +48,12 @@
 
 .button-third {
   border-color: var(--color-primary);
+}
+
+.button-dark {
+  border-color: var(--color-border-dark);
+  background: var(--color-border-dark);
+  color: var(--color-text-inverted);
 }
 
 .svg-arrow {

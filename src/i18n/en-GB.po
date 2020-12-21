@@ -69,6 +69,10 @@ msgstr "OI logo"
 msgid "D4S logo"
 msgstr "D4S logo"
 
+#: src/components/Header/Header.tsx:
+msgid "RU"
+msgstr "RU"
+
 #: src/components/Promo/Promo.tsx:
 msgid "Нужны данные по всем статьям и годам?"
 msgstr "Нужны данные по всем статьям и годам?"
@@ -142,6 +146,20 @@ msgstr ""
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Команда"
 msgstr "Команда"
+
+#: src/templates/ArticleFullPage/ArticleFullHead.tsx:
+msgid "Поделиться:"
+msgstr "Поделиться:"
+
+#: src/templates/ArticlesPage/ArticlesPageMore.tsx:
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "блог"
+msgstr "блог"
+
+#: src/templates/ArticlesPage/ArticlesPageMore.tsx:
+#: src/templates/IndexPage/IndexPageMore.tsx:
+msgid "аналитика"
+msgstr "аналитика"
 
 #: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:
 msgid "Хронология"
@@ -3117,8 +3135,8 @@ msgid "оправдательных приговоров по отношению
 msgstr "оправдательных приговоров по отношению к общему числу дел"
 
 #: src/templates/IndexPage/IndexPageCounters.tsx:
-msgid "прекращенных дел по отношению к общему числу дел"
-msgstr "прекращенных дел по отношению к общему числу дел"
+msgid "прекращённых дел по отношению к общему числу дел"
+msgstr "прекращённых дел по отношению к общему числу дел"
 
 #: src/templates/IndexPage/IndexPageCounters.tsx:
 msgid "обстоятельства, исключающие преступность, от общего числа дел"
@@ -3142,7 +3160,6 @@ msgid "Введите год..."
 msgstr "Введите год..."
 
 #: src/templates/IndexPage/IndexPageFilter.tsx:
-#: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "Перейти к данным"
 msgstr "Перейти к данным"
 
@@ -3151,41 +3168,13 @@ msgid "Подсказка:"
 msgstr "Подсказка:"
 
 #: src/templates/IndexPage/IndexPageMore.tsx:
-msgid "Как изменилось чиcло выявленных преступлений с кражей и судебных решений по ним."
-msgstr "Как изменилось чиcло выявленных преступлений с кражей и судебных решений по ним."
-
-#: src/templates/IndexPage/IndexPageMore.tsx:
-#: src/templates/IndexPage/IndexPageMore.tsx:
-#: src/templates/IndexPage/IndexPageMore.tsx:
-msgid "светлана шуранова"
-msgstr "светлана шуранова"
-
-#: src/templates/IndexPage/IndexPageMore.tsx:
-#: src/templates/IndexPage/IndexPageMore.tsx:
-#: src/templates/IndexPage/IndexPageMore.tsx:
-msgid "14 июня"
-msgstr "14 июня"
-
-#: src/templates/IndexPage/IndexPageMore.tsx:
-msgid "Много дел, мало приговоров"
-msgstr "Много дел, мало приговоров"
-
-#: src/templates/IndexPage/IndexPageMore.tsx:
-msgid "«Экономические» статьи УК РФ"
-msgstr "«Экономические» статьи УК РФ"
-
-#: src/templates/IndexPage/IndexPageMore.tsx:
-msgid "блог"
-msgstr "блог"
-
-#: src/templates/IndexPage/IndexPageMore.tsx:
-msgid "аналитика"
-msgstr "аналитика"
-
-#: src/templates/IndexPage/IndexPageMore.tsx:
 msgid "Больше материалов в разделе аналитика"
 msgstr "Больше материалов в разделе аналитика"
 
 #: src/templates/IndexPage/IndexPageSubscription.tsx:
 msgid "Хотите первыми получать новости и обновления от команды Достоевского?"
 msgstr "Хотите первыми получать новости и обновления от команды Достоевского?"
+
+#: src/templates/IndexPage/IndexPageSubscription.tsx:
+msgid "Спасибо, что подписались на нашу рассылку!"
+msgstr "Спасибо, что подписались на нашу рассылку!"

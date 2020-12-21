@@ -13,7 +13,7 @@
 }
 
 .sans-serif b {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .serif {
@@ -23,6 +23,10 @@
 .is-uppercased {
   font-variant: small-caps;
   text-transform: uppercase;
+}
+
+.is-centered {
+  text-align: center;
 }
 
 .common.gutter-bottom {
@@ -63,7 +67,8 @@
 }
 
 @media all and (max-width: 680px) {
-  .h1 {
+  .h1,
+  .h1.huge {
     font-size: 1.3rem;
   }
 }

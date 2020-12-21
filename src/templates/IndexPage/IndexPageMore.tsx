@@ -5,35 +5,7 @@ import Typography from "src/components/ui-kit/Typography";
 import { T, useLocale } from "react-targem";
 import Container from "src/components/ui-kit/Container";
 import { Link } from "gatsby";
-
-const getDataMock = (t: (s: string) => string) => [
-  {
-    type: "blog",
-    title: t(
-      "Как изменилось чиcло выявленных преступлений с кражей и судебных решений по ним."
-    ),
-    description:
-      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.",
-    author: t("светлана шуранова"),
-    date: t("14 июня"),
-  },
-  {
-    type: "blog",
-    title: t("Много дел, мало приговоров"),
-    description:
-      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.",
-    author: t("светлана шуранова"),
-    date: t("14 июня"),
-  },
-  {
-    type: "analytics",
-    title: t("«Экономические» статьи УК РФ"),
-    description:
-      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-    author: t("светлана шуранова"),
-    date: t("14 июня"),
-  },
-];
+import type { Article } from "../ArticleFullPage/ArticleFullPage";
 
 const getTypeString = (type: string, t: (s: string) => string) => {
   switch (type) {
@@ -46,9 +18,14 @@ const getTypeString = (type: string, t: (s: string) => string) => {
   }
 };
 
-const IndexPageMore = () => {
-  const { t } = useLocale();
+interface IndexPageMoreProps {
+  articles: Partial<Article>[];
+}
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+const IndexPageMore = (props: IndexPageMoreProps) => {
+  const { t } = useLocale();
+  const { articles } = props;
   return (
     <Container>
       <div className={classes.moreTitle}>
@@ -62,8 +39,8 @@ const IndexPageMore = () => {
       </div>
 
       <div className={classes.moreWrapper}>
-        {getDataMock(t).map((d, i) => {
-          const type = getTypeString(d.type, t);
+        {articles.map((d: Partial<Article>, i) => {
+          const type = getTypeString(d.type || "", t);
           return (
             <div
               key={i}
@@ -72,10 +49,9 @@ const IndexPageMore = () => {
                 [classes.moreItemAnalytics]: d.type === "analytics",
               })}
               style={{
-                backgroundImage:
-                  "url(" +
-                  require(`./assets/more-${d.type}-background.svg`) +
-                  ")",
+                backgroundImage: `url(${require(`./assets/${
+                  d.type || "blog"
+                }-head.svg`)})`,
               }}
             >
               {type ? (
@@ -88,23 +64,23 @@ const IndexPageMore = () => {
                   {type}
                 </Typography>
               ) : null}
-              <Link className={classes.moreItemInner} to="#">
+              <Link className={classes.moreItemInner} to={d.slug || "#"}>
                 <Typography variant="h2" font="serif">
-                  <b>{d.title}</b>
+                  <b>{d.title || ""}</b>
                 </Typography>
                 <Typography className={classes.moreItemDescription}>
-                  {d.description}
+                  {d.teaser || ""}
                 </Typography>
                 <div className={classes.moreItemBottom}>
                   <Typography size="small" isUpperCased>
-                    <b>{d.author}</b>
+                    <b>{d.author || ""}</b>
                   </Typography>
                   <Typography
                     size="small"
                     isUpperCased
                     className={classes.moreItemDate}
                   >
-                    <b>{d.date}</b>
+                    <b>{d.date || ""}</b>
                   </Typography>
                 </div>
               </Link>

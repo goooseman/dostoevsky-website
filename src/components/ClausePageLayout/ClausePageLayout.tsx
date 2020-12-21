@@ -53,7 +53,12 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
                 onClick={onCatalogueSwitch}
                 className={cn({ [classes.active]: isCatalogueOpened })}
               >
-                <Typography size="small" color="inverted" variant="span">
+                <Typography
+                  size="small"
+                  color="inverted"
+                  variant="span"
+                  isUpperCased
+                >
                   статья в каталоге
                 </Typography>
                 <img src={require("./assets/arrow-right.svg")} />
@@ -63,7 +68,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
                 to={getClauseLink(clauseNumber, year, "main")}
                 getProps={this.getMainLinkProps}
               >
-                <Typography size="small" variant="span">
+                <Typography size="small" variant="span" isUpperCased>
                   основной и дополнительный составы
                 </Typography>
               </Link>
@@ -73,7 +78,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
                   partiallyActive
                   activeClassName={cn(classes.itemActive)}
                 >
-                  <Typography size="small" variant="span">
+                  <Typography size="small" variant="span" isUpperCased>
                     части
                   </Typography>
                 </Link>
@@ -84,7 +89,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
                 partiallyActive
                 activeClassName={cn(classes.itemActive)}
               >
-                <Typography size="small" variant="span">
+                <Typography size="small" variant="span" isUpperCased>
                   хронология
                 </Typography>
               </Link>
@@ -92,7 +97,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
                 to={getClauseLink(clauseNumber, year, "full")}
                 activeClassName={cn(classes.itemActive)}
               >
-                <Typography size="small" variant="span">
+                <Typography size="small" variant="span" isUpperCased>
                   полная статистика
                 </Typography>
               </Link>

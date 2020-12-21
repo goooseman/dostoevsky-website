@@ -1,6 +1,6 @@
 .counters {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   background-color: var(--color-secondary-opaque);
   border-radius: var(--border-radius);
 }
@@ -16,7 +16,7 @@
 }
 
 .counter-number {
-  font-size: 4.375rem;
+  font-size: 2.5em;
 }
 @media all and (max-width: 680px) {
   .counters {
@@ -24,15 +24,16 @@
     margin: 1rem 1.5rem;
   }
   .counter-block {
-    max-width: 50%;
+    max-width: initial;
     margin: 1rem;
     text-align: center;
+    flex-basis: inherit;
   }
   .counter-block:not(:first-child) {
     flex: 1;
   }
   .counter-block:first-child {
-    width: 60%;
+    max-width: 60%;
   }
   .counter-block p {
     font-size: 0.9rem;
@@ -43,7 +44,7 @@
   }
 
   .counter-block:first-child p.counter-number {
-    font-size: 4.375rem;
+    /* font-size: 4.375rem; */
   }
 }
 

@@ -3,7 +3,7 @@
   background-color: var(--color-main-background);
 }
 
-@media all and (max-width: 680px) {
+@media all and (max-width: 940px) {
   .container {
     flex-direction: column;
   }
@@ -23,7 +23,7 @@
   position: sticky;
   top: 0;
 }
-@media all and (max-width: 680px) {
+@media all and (max-width: 920px) {
   .sidebar {
     display: flex;
     width: 100%;
@@ -45,6 +45,7 @@
   cursor: pointer;
   text-align: left;
   width: 100%;
+  background-color: var(--color-secondary);
 }
 .sidebar button img {
   margin-left: 10px;
@@ -52,10 +53,6 @@
 
 .sidebar button.active img {
   margin-left: 20px;
-}
-
-.sidebar button {
-  background-color: var(--color-secondary);
 }
 
 .sidebar a span {
@@ -75,17 +72,43 @@
   background-color: var(--color-main-background);
 }
 
-.sidebar .item-active > span {
+.sidebar .item-active > span > small,
+.sidebar .item-active > span > small::before {
   background-color: var(--color-primary);
+}
+
+.sidebar .item-active > span > small::after {
+  content: " ";
+}
+
+.sidebar .item-active > span > small {
+  position: relative;
+  line-height: 1;
+  display: inline;
+  white-space: pre-wrap;
+  border: solid var(--color-primary);
+  border-width: 0.25em 0;
+  padding: 2px 0;
+}
+.sidebar .item-active > span > small::before {
+  content: "";
+  position: absolute;
+  top: -0.25em;
+  right: 100%;
+  bottom: -0.25em;
+  width: 0.25em;
 }
 
 .page-container {
   position: relative;
   flex-grow: 1;
-  padding-top: 45px;
-  padding-right: 110px;
-  padding-bottom: 45px;
-  padding-left: 30px;
+  padding: 45px;
+}
+
+@media all and (max-width: 920px) {
+  .page-container {
+    padding: 1rem;
+  }
 }
 
 .header-container {
@@ -100,6 +123,14 @@
   border-bottom: 4px solid var(--color-border-dark);
   margin-right: -20px;
   margin-left: -20px;
+}
+
+@media all and (max-width: 680px) {
+  .header {
+    flex-direction: column;
+    margin-bottom: 4rem;
+    text-align: center;
+  }
 }
 
 .header > * {
@@ -126,6 +157,12 @@
 
 .doc-link {
   align-self: flex-start;
+}
+
+@media all and (max-width: 680px) {
+  .doc-link {
+    align-self: center;
+  }
 }
 
 .floating-catalogue-container {
