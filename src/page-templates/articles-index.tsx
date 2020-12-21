@@ -16,8 +16,8 @@ const ArticlesIndex: React.FC<ArticlesPageProps> = ({
   data,
 }: ArticlesPageProps) => {
   const meta = data.site?.meta;
-  const articles: Article[] = data.allMarkdownRemark?.edges.map(
-    (a: { node: { frontmatter: Article } }) => a.node.frontmatter
+  const articles: any[] = data.allMarkdownRemark?.edges.map(
+    (a) => a.node.frontmatter
   );
   return (
     <Layout>

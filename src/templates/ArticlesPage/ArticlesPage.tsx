@@ -1,12 +1,12 @@
 import React from "react";
 
 import Container from "src/components/ui-kit/Container";
-import { Article } from "../ArticleFullPage/ArticleFullPage";
+// import { Article } from "../ArticleFullPage/ArticleFullPage";
 import ArticlesPageMore from "./ArticlesPageMore";
 import ArticlesPageFilter from "./ArticlesPageFilter";
 
 interface ArticlesPageProps {
-  articles: Array<Article>;
+  articles: Array<any>;
 }
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types

@@ -4,7 +4,6 @@ import React from "react";
 import { ArticlesPageQuery } from "../../types/graphql-types";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
-import { Article } from "src/templates/ArticleFullPage/ArticleFullPage";
 import ArticlesPage from "src/templates/ArticlesPage/ArticlesPage";
 
 interface ArticlesPageProps {
@@ -16,9 +15,11 @@ const ArticlesIndex: React.FC<ArticlesPageProps> = ({
   data,
 }: ArticlesPageProps) => {
   const meta = data.site?.meta;
-  const articles: Article[] = data.allMarkdownRemark?.edges.map(
-    (a: { node: { frontmatter: Article } }) => a.node.frontmatter
-  );
+  const all = data.allMarkdownRemark || [];
+  const articles = all.edges.map(({ node }) => {
+    const a = { ...node.frontmatter };
+    return a;
+  });
   return (
     <Layout>
       <Meta site={meta} />
