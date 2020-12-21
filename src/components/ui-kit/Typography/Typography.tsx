@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { PureComponent } from "react";
 import classes from "./Typography.module.css";
 import cn from "clsx";
 
 interface TypographyProps {
-  variant: "p" | "h1" | "h2" | "h3" | "label" | "span" | "b";
+  variant: "p" | "h1" | "h2" | "h3" | "label" | "span" | "b" | "link";
   component?: "p" | "h1" | "h2" | "h3" | "label" | "span";
   font: "sans-serif" | "serif";
   isUpperCased: boolean;
@@ -39,15 +40,10 @@ class Typography extends PureComponent<TypographyProps> {
       children,
       style,
       size,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       font,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       isLineHeightDisabled,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       gutterBottom,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       color,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       isUpperCased,
       isCentered,
       ...otherProps

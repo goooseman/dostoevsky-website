@@ -13,7 +13,7 @@ interface ArticlesFeedPageFilterProps {
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const ArticlesFeedPageFilter = () => {
   const { t } = useLocale();
-  const [articlesFilter, setArticlesFilter] = useState("");
+  const [, setArticlesFilter] = useState("");
 
   // TODO: get tags list from somewhere
   const tags = ["all", "blog", "analytics"];

@@ -128,7 +128,7 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
           {helpItems.map((o: { label: string; value: string }, i: number) => (
             <PillButton
               key={i}
-              handleClick={() => setSelectedUk(o)}
+              onClick={() => setSelectedUk(o)}
               value={o.label}
               variant="black"
             />

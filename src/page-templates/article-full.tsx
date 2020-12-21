@@ -5,7 +5,6 @@ import { ArticleFullQuery } from "../../types/graphql-types";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
 import ArticleFullPage from "src/templates/ArticleFullPage";
-import { Article } from "src/templates/ArticleFullPage";
 import NoPage from "src/templates/NoPage";
 
 interface ArticleFullPageProps {
@@ -17,11 +16,12 @@ const ArticleFull: React.FC<ArticleFullPageProps> = ({
   data,
 }: ArticleFullPageProps) => {
   const meta = data.site?.meta;
-  const article: Article = {
-    ...data.markdownRemark?.frontmatter,
-    html: data.markdownRemark?.html,
-  };
-  if (article) {
+  const node = data.markdownRemark;
+  if (node) {
+    const article: any = {
+      ...node.frontmatter,
+      html: node.html || "",
+    };
     return (
       <Layout>
         <Meta site={meta} />
