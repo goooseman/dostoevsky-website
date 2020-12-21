@@ -40,7 +40,7 @@ exports.createPages = async ({ actions, graphql }) => {
   } else {
     // console.log("got articles");
     // console.debug(result.data);
-    result.data.allMarkdownRemark?.edges.forEach(
+    result.data.allMarkdownRemark.edges.forEach(
       async ({ node }) =>
         await createPage({
           path: node.frontmatter.slug,
