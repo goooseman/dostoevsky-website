@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Mon Dec 21 2020 02:34:14 GMT+0300 (Moscow Standard Time)\n"
+"POT-Creation-Date: Thu Dec 24 2020 18:36:57 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -107,6 +107,70 @@ msgstr ""
 #: src/components/Table/components/TableRow/TableRow.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
 msgid "Plus icon"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Саша Беспалова"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "арт-директор, дизайнер"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Катя Боровикова"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "backend-разработчик аналитик"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Катя Голенкова"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "менеджер спецпроектов"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Александр Гусман"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Технический директор"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Григорий Охотин"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Консультант"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Оксана Половинкина"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Редактор"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Денис Шедов"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Юрист и аналитик ОВД-Инфо"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Света шуранова"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Продюсер"
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:

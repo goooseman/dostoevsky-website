@@ -10,41 +10,52 @@ interface AboutPageProps {}
 
 const teamMembers = [
   {
-    name: "Беспалова Саша",
-    position: "Дизайнер",
-    photoName: "bespalova-sasha.png",
+    name: <T message="Саша Беспалова" />,
+    position: <T message="арт-директор, дизайнер" />,
+    photoSrc: require("./assets/sasha_purple.png"),
+    photoSrc2x: require("./assets/sasha_purple_2x.png"),
   },
   {
-    name: "Боровикова Катя",
-    position: "python-разработчик, дата-аналитик",
+    name: <T message="Катя Боровикова" />,
+    position: <T message="backend-разработчик аналитик" />,
+    photoSrc: require("./assets/borovik.png"),
+    photoSrc2x: require("./assets/borovik_2x.png"),
   },
   {
-    name: "Голенкова Катя",
-    position: "pr",
+    name: <T message="Катя Голенкова" />,
+    position: <T message="менеджер спецпроектов" />,
+    photoSrc: require("./assets/golenkova.png"),
+    photoSrc2x: require("./assets/golenkova_2x.png"),
   },
   {
-    name: "Гусев Саша",
-    position: "разработчик, сисадмин",
+    name: <T message="Александр Гусман" />,
+    position: <T message="Технический директор" />,
+    photoSrc: require("./assets/goooseman.png"),
+    photoSrc2x: require("./assets/goooseman_2x.png"),
   },
   {
-    name: "Линделл Дада",
-    position: "дата-аналитик",
+    name: <T message="Григорий Охотин" />,
+    position: <T message="Консультант" />,
+    photoSrc: require("./assets/okhotin.png"),
+    photoSrc2x: require("./assets/okhotin_2x.png"),
   },
   {
-    name: "Охотин Гриша",
-    position: "куратор",
+    name: <T message="Оксана Половинкина" />,
+    position: <T message="Редактор" />,
+    photoSrc: require("./assets/polovonkina.png"),
+    photoSrc2x: require("./assets/polovonkina_2x.png"),
   },
   {
-    name: "Шедов Денис",
-    position: "юрист, дата-аналитик",
+    name: <T message="Денис Шедов" />,
+    position: <T message="Юрист и аналитик ОВД-Инфо" />,
+    photoSrc: require("./assets/shedov.png"),
+    photoSrc2x: require("./assets/shedov_2x.png"),
   },
   {
-    name: "Шуранова Света",
-    position: "куратор",
-  },
-  {
-    name: "Чертова Аня",
-    position: "дата-аналитик",
+    name: <T message="Света шуранова" />,
+    position: <T message="Продюсер" />,
+    photoSrc: require("./assets/shuranova.png"),
+    photoSrc2x: require("./assets/shuranova_2x.png"),
   },
 ];
 
@@ -74,13 +85,14 @@ class AboutPage extends PureComponent<AboutPageProps> {
                 <T message="Команда" />
               </Typography>
               <div className={cn(classes.teamContainer)}>
-                {teamMembers.map((t) => (
-                  <div key={t.name} className={cn(classes.teamMember)}>
+                {teamMembers.map((t, i) => (
+                  <div key={i} className={cn(classes.teamMember)}>
                     <div className={cn(classes.teamPhotoWrapper)}>
-                      {t.photoName && (
+                      {t.photoSrc && (
                         <img
                           className={cn(classes.teamPhoto)}
-                          src={require(`./assets/${t.photoName}`)}
+                          src={t.photoSrc}
+                          srcSet={`${t.photoSrc2x} 2x`}
                         />
                       )}
                     </div>
@@ -89,14 +101,14 @@ class AboutPage extends PureComponent<AboutPageProps> {
                       variant="h3"
                       font="serif"
                     >
-                      <T message={t.name} />
+                      {t.name}
                     </Typography>
                     <Typography
                       className={cn(classes.teamMemberPosition)}
                       size="small"
                       isUpperCased
                     >
-                      <T message={t.position} />
+                      {t.position}
                     </Typography>
                   </div>
                 ))}

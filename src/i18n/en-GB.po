@@ -116,6 +116,70 @@ msgid "Plus icon"
 msgstr "Plus icon"
 
 #: src/templates/AboutPage/AboutPage.tsx:
+msgid "Саша Беспалова"
+msgstr "Саша Беспалова"
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "арт-директор, дизайнер"
+msgstr "арт-директор, дизайнер"
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Катя Боровикова"
+msgstr "Катя Боровикова"
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "backend-разработчик аналитик"
+msgstr "backend-разработчик аналитик"
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Катя Голенкова"
+msgstr "Катя Голенкова"
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "менеджер спецпроектов"
+msgstr "менеджер спецпроектов"
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Александр Гусман"
+msgstr "Александр Гусман"
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Технический директор"
+msgstr "Технический директор"
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Григорий Охотин"
+msgstr "Григорий Охотин"
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Консультант"
+msgstr "Консультант"
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Оксана Половинкина"
+msgstr "Оксана Половинкина"
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Редактор"
+msgstr "Редактор"
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Денис Шедов"
+msgstr "Денис Шедов"
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Юрист и аналитик ОВД-Инфо"
+msgstr "Юрист и аналитик ОВД-Инфо"
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Света шуранова"
+msgstr "Света шуранова"
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Продюсер"
+msgstr "Продюсер"
+
+#: src/templates/AboutPage/AboutPage.tsx:
 msgid ""
 "В 2018 году по статье “Возбуждение ненависти либо вражды, а равно\n"
 "                    унижение человеческого достоинства” в судах рассмотрели 531 "

@@ -117,6 +117,70 @@ msgid "Plus icon"
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
+msgid "Саша Беспалова"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "арт-директор, дизайнер"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Катя Боровикова"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "backend-разработчик аналитик"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Катя Голенкова"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "менеджер спецпроектов"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Александр Гусман"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Технический директор"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Григорий Охотин"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Консультант"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Оксана Половинкина"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Редактор"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Денис Шедов"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Юрист и аналитик ОВД-Инфо"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Света шуранова"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Продюсер"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
 msgid ""
 "В 2018 году по статье “Возбуждение ненависти либо вражды, а равно\n"
 "                    унижение человеческого достоинства” в судах рассмотрели 531 "
