@@ -17,7 +17,7 @@ import FullDatasetDownloadModal from "./FullDatasetDownloadModal";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { api } = require("../../../gatsby-config").siteMetadata;
-const { base, headers, token } = api;
+const { base, token } = api;
 
 const BREAKDOWN_OPTIONS = [
   { value: "year", label: "Год" },
@@ -53,7 +53,7 @@ const createTableData = (
           { key: "name", value: r.name },
           ...parseMetrics.map((m: { key: any }) => ({
             key: m.key,
-            value: r[m.key] || 0,
+            value: r.parameters[m.key] || 0,
           })),
         ],
       };
@@ -75,6 +75,12 @@ const createTableData = (
     ],
   };
   return [tableData];
+};
+
+const AUTH_AXIOS_OPTIONS = {
+  headers: {
+    Authorization: "Token " + token,
+  },
 };
 
 const FullDatasetPage: React.FC = () => {
@@ -101,11 +107,10 @@ const FullDatasetPage: React.FC = () => {
 
   useEffect(() => {
     (async function () {
-      const filtersResult = await axios.get(base + "/filters/", {
-        headers: {
-          Authorization: "Token " + token,
-        },
-      });
+      const filtersResult = await axios.get(
+        base + "/filters/",
+        AUTH_AXIOS_OPTIONS
+      );
       const yearsOptionsData = filtersResult.data.year;
       const newYearsOptions = yearsOptionsData.map((y: number) => ({
         value: y.toString(),
@@ -148,9 +153,8 @@ const FullDatasetPage: React.FC = () => {
         );
 
         const dataResult = await axios
-          .post(
-            base + "/data/",
-            {
+          .get(base + "/data/", {
+            params: {
               filter: {
                 year: (allYearsSelected
                   ? yearsOptions.filter(
@@ -175,10 +179,8 @@ const FullDatasetPage: React.FC = () => {
                 ? breakdownValue.map((b: OptionTypeBase) => b.value)
                 : [],
             },
-            {
-              headers,
-            }
-          )
+            ...AUTH_AXIOS_OPTIONS,
+          })
           .catch(() => {
             setDataset(null);
             setShowError(true);
