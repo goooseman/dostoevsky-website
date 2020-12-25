@@ -4,10 +4,11 @@ import cn from "clsx";
 import Container from "src/components/ui-kit/Container";
 import Typography from "src/components/ui-kit/Typography";
 import SinglePageLayout from "src/components/SinglePageLayout";
-import { T } from "react-targem";
+import { T, withLocale, WithLocale } from "react-targem";
 import Separator from "src/components/ui-kit/Separator";
+import Tooltip from "src/components/ui-kit/Tooltip";
 
-interface AboutPageProps {}
+interface AboutPageProps extends WithLocale {}
 
 const teamMembers = [
   {
@@ -62,6 +63,7 @@ const teamMembers = [
 
 class AboutPage extends PureComponent<AboutPageProps> {
   render(): React.ReactNode {
+    const { t } = this.props;
     return (
       <main className={cn(classes.container)}>
         <Container isThin>
@@ -81,7 +83,7 @@ class AboutPage extends PureComponent<AboutPageProps> {
               </Typography>
               <Typography gutterTop gutterBottom>
                 <T message="Мы взяли уголовную статистику, очистили от задвоений, привели к единому виду и сформировали полную базу данных, дополнив её аналитическими статьями и инфографикой. Всё это можно скачать с сайта и использовать по лицензии Creative Commons 4.0. " />
-                {/* TODO I */}
+                <Tooltip tip={t("Foo")} />
               </Typography>
               <Typography gutterTop isUpperCased variant="h3">
                 <T message="Зачем обрабатывать данные об уголовных делах?" />
@@ -94,7 +96,7 @@ class AboutPage extends PureComponent<AboutPageProps> {
               </Typography>
               <Typography>
                 <T message="Главное в Достоевском — простая в использовании база уголовной статистики в России с 2009 до 2019 года." />
-                {/* TODO i */}
+                <Tooltip tip={t("Foo")} />
                 <T message="В каталоге у каждой статьи Уголовного кодекса — отдельная страница с таблицами и инфографикой по хронологии применения, составам преступлений и видам приговоров. Если вам необходимы данные по другим параметрам — году, типу наказания, количеству рассмотренных дел — можно воспользоваться доступом ко всему датасету." />
               </Typography>
               <Typography gutterBottom>
@@ -208,4 +210,4 @@ class AboutPage extends PureComponent<AboutPageProps> {
   }
 }
 
-export default AboutPage;
+export default withLocale(AboutPage);

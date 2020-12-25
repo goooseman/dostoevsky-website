@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Fri Dec 25 2020 13:18:51 GMT+0200 (Israel Standard Time)\n"
+"POT-Creation-Date: Fri Dec 25 2020 14:42:58 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -207,6 +207,11 @@ msgid ""
 "сформировали полную базу данных, дополнив её аналитическими статьями и "
 "инфографикой. Всё это можно скачать с сайта и использовать по лицензии Creative "
 "Commons 4.0. "
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Foo"
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:

@@ -217,6 +217,11 @@ msgid ""
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Foo"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
 msgid "Зачем обрабатывать данные об уголовных делах?"
 msgstr ""
 

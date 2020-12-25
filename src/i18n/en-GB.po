@@ -228,6 +228,11 @@ msgstr ""
 "Commons 4.0. "
 
 #: src/templates/AboutPage/AboutPage.tsx:
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Foo"
+msgstr "Foo"
+
+#: src/templates/AboutPage/AboutPage.tsx:
 msgid "Зачем обрабатывать данные об уголовных делах?"
 msgstr "Зачем обрабатывать данные об уголовных делах?"
 
