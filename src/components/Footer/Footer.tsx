@@ -3,7 +3,6 @@ import cn from "clsx";
 import classes from "./Footer.module.css";
 import { withLocale, WithLocale } from "react-targem";
 import Typography from "src/components/ui-kit/Typography";
-import { Link } from "gatsby";
 import Button from "../ui-kit/Button";
 import Input from "../ui-kit/Input";
 import TextareaAutosize from "react-textarea-autosize";
@@ -95,11 +94,11 @@ const Footer: React.FC<FooterProps> = ({ t }: FooterProps) => {
             </a>
           </div>
           <div>
-            <Link to="mailto:info@dostoevsky.io" className={cn(classes.email)}>
-              <Typography variant="b" color="inverted">
+            <Typography variant="b" color="inverted">
+              <a href="mailto:info@dostoevsky.io" className={cn(classes.email)}>
                 info@dostoevsky.io
-              </Typography>
-            </Link>
+              </a>
+            </Typography>
           </div>
         </div>
       </Container>
