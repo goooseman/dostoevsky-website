@@ -73,19 +73,13 @@
 @media all and (max-width: 680px) {
   .h1,
   .h1.huge {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 }
 
 .h2 {
   font-size: 1.5rem;
 }
-@media all and (max-width: 680px) {
-  .h3 {
-    font-size: 1.2rem;
-  }
-}
-
 .h3 {
   font-weight: 500;
   font-size: 1.3rem;
@@ -93,7 +87,7 @@
 
 @media all and (max-width: 680px) {
   .h3 {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
 }
 .is-line-height-disabled {
