@@ -8,20 +8,18 @@ import Container from "src/components/ui-kit/Container";
 import type { Article } from "../ArticleFullPage/ArticleFullPage";
 import classes from "./ArticlesPage.module.css";
 
-const getTypeString = (type: string, t: (s: string) => string) => {
-  switch (type) {
-    case "blog":
-      return t("блог");
-    case "analytics":
-      return t("аналитика");
-    default:
-      return null;
-  }
-};
-
 interface FeedPageMoreProps {
   articles: Array<Article>;
 }
+
+const getArticleBackground = (type: Article["type"]) => {
+  switch (type) {
+    case "Аналитика":
+      return require("./assets/analytics-square.svg");
+    case "Блог":
+      return require("./assets/blog-square.svg");
+  }
+};
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const ArticlesFeedPageMore = (props: FeedPageMoreProps) => {
@@ -31,7 +29,7 @@ const ArticlesFeedPageMore = (props: FeedPageMoreProps) => {
     <Container>
       <div className={classes.articlesPageMore}>
         {articles.map((d: Article, i) => {
-          const type = getTypeString(d.type || "", t);
+          const type = t(d.type);
           return (
             <div
               key={i}
@@ -40,9 +38,7 @@ const ArticlesFeedPageMore = (props: FeedPageMoreProps) => {
                 [classes.moreItemAnalytics]: d.type === "analytics",
               })}
               style={{
-                backgroundImage: `url(${require(`./assets/${
-                  d.type || "blog"
-                }-square.svg`)})`,
+                backgroundImage: `url(${getArticleBackground(d.type)})`,
               }}
             >
               {type ? (

@@ -434,16 +434,6 @@ msgstr ""
 msgid "Поделиться:"
 msgstr "Поделиться:"
 
-#: src/templates/ArticlesPage/ArticlesPageMore.tsx:
-#: src/templates/IndexPage/IndexPageMore.tsx:
-msgid "блог"
-msgstr "блог"
-
-#: src/templates/ArticlesPage/ArticlesPageMore.tsx:
-#: src/templates/IndexPage/IndexPageMore.tsx:
-msgid "аналитика"
-msgstr "аналитика"
-
 #: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:
 msgid "Хронология"
 msgstr "Хронология"

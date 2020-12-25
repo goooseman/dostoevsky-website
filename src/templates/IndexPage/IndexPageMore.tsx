@@ -6,18 +6,6 @@ import { T, useLocale } from "react-targem";
 import Container from "src/components/ui-kit/Container";
 import { Link } from "gatsby";
 import type { Article } from "../ArticleFullPage/ArticleFullPage";
-
-const getTypeString = (type: string, t: (s: string) => string) => {
-  switch (type) {
-    case "blog":
-      return t("блог");
-    case "analytics":
-      return t("аналитика");
-    default:
-      return null;
-  }
-};
-
 interface IndexPageMoreProps {
   articles: Partial<Article>[];
 }
@@ -40,7 +28,7 @@ const IndexPageMore = (props: IndexPageMoreProps) => {
 
       <div className={classes.moreWrapper}>
         {articles.map((d: Partial<Article>, i) => {
-          const type = getTypeString(d.type || "", t);
+          const type = t(d.type || "");
           return (
             <div
               key={i}

@@ -12,13 +12,22 @@ export interface ArticleFullPageProps {
   article: Article;
 }
 
+const getArticleBackground = (type: Article["type"]) => {
+  switch (type) {
+    case "Аналитика":
+      return require("./assets/analytics-head.svg");
+    case "Блог":
+      return require("./assets/blog-head.svg");
+  }
+};
+
 const ArticleFullHead = (props: ArticleFullPageProps): JSX.Element => {
   const { article } = props;
   return (
     <header
       className={cn(classes.blogHeader)}
       style={{
-        backgroundImage: `url(${require(`./assets/${article.type}-head.svg`)})`,
+        backgroundImage: `url(${getArticleBackground(article.type)})`,
       }}
     >
       <Container>

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import Container from "src/components/ui-kit/Container";
 import { useLocale } from "react-targem";
-import classes from "./ArticlesPage.module.css";
+import classes from "./ArticlesPageFilter.module.css";
 import cn from "clsx";
 import PillButton from "src/components/ui-kit/PillButton";
-// import { Article } from "../ArticleFullPage/ArticleFullPage";
 
 interface ArticlesFeedPageFilterProps {
   tags?: Array<string>;
