@@ -24,7 +24,7 @@ exports.createPages = async ({ actions, graphql }) => {
             html
             frontmatter {
               slug
-              type
+              tag
               title
               teaser
               date

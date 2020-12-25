@@ -5,6 +5,7 @@ import { ArticlesPageQuery } from "../../types/graphql-types";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
 import ArticlesPage from "src/templates/ArticlesPage/ArticlesPage";
+import type { Article } from "src/templates/ArticleFullPage/ArticleFullPage";
 
 interface ArticlesPageProps {
   data: ArticlesPageQuery;
@@ -23,7 +24,7 @@ const ArticlesIndex: React.FC<ArticlesPageProps> = ({
   return (
     <Layout>
       <Meta site={meta} />
-      <ArticlesPage articles={articles} />
+      <ArticlesPage articles={articles as Article[]} />
     </Layout>
   );
 };

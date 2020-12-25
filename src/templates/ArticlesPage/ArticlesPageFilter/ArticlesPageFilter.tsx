@@ -4,18 +4,27 @@ import { useLocale } from "react-targem";
 import classes from "./ArticlesPageFilter.module.css";
 import cn from "clsx";
 import PillButton from "src/components/ui-kit/PillButton";
+import { graphql, useStaticQuery } from "gatsby";
 
 interface ArticlesFeedPageFilterProps {
   tags?: Array<string>;
 }
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export const ArticlesFeedPageFilter = () => {
+export const ArticlesFeedPageFilter: React.FC = () => {
   const { t } = useLocale();
   const [, setArticlesFilter] = useState("");
+  const data = useStaticQuery(
+    graphql`
+      query BlogTags {
+        allMarkdownRemark {
+          distinct(field: frontmatter___tag)
+        }
+      }
+    `
+  );
 
-  // TODO: get tags list from somewhere
-  const tags = ["all", "blog", "analytics"];
+  const tags = data.allMarkdownRemark.distinct;
+
   return (
     <Container>
       <div className={cn(classes.tags)}>

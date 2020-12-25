@@ -12,7 +12,7 @@ export interface Article {
   author: string;
   date: string;
   slug: string;
-  tag: string;
+  tag: "Аналитика" | "Блог";
   teaser: string;
 }
 
