@@ -13,7 +13,7 @@
 }
 
 .sans-serif b {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .serif {
@@ -30,7 +30,11 @@
 }
 
 .common.gutter-bottom {
-  margin-bottom: 0.7rem;
+  margin-bottom: 1.5rem;
+}
+
+.common.gutter-top {
+  margin-top: 1.5rem;
 }
 
 .common.color-inverted {
@@ -83,6 +87,7 @@
 }
 
 .h3 {
+  font-weight: 500;
   font-size: 1.3rem;
 }
 

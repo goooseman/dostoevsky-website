@@ -10,13 +10,6 @@
   }
 }
 
-.sub-title {
-  margin-top: 3rem;
-  margin-bottom: 2rem;
-  font-size: 1.875rem;
-  font-weight: 600;
-}
-
 .team-container {
   display: flex;
   flex-wrap: wrap;

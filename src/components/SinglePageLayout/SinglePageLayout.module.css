@@ -1,8 +1,10 @@
 .container {
   background-color: var(--color-main-background);
+  padding-top: 3rem;
 }
 
 .page-title {
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   font-weight: 600;
+  text-align: center;
 }

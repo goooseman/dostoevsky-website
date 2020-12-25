@@ -4,6 +4,11 @@
   padding: 0 1rem;
 }
 
+.is-thin {
+  max-width: 625px;
+  margin: auto;
+}
+
 @media all and (max-width: 680px) {
   .container {
     width: auto;

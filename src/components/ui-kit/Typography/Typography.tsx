@@ -10,6 +10,7 @@ interface TypographyProps {
   isUpperCased: boolean;
   isCentered: boolean;
   gutterBottom: boolean;
+  gutterTop: boolean;
   isLineHeightDisabled: boolean;
   size?: "small" | "normal";
   color: "normal" | "inverted" | "muted" | "secondary";
@@ -26,6 +27,7 @@ class Typography extends PureComponent<TypographyProps> {
     variant: "p",
     color: "normal",
     gutterBottom: false,
+    gutterTop: false,
     size: "normal",
     isLineHeightDisabled: false,
     font: "sans-serif",
@@ -46,6 +48,7 @@ class Typography extends PureComponent<TypographyProps> {
       color,
       isUpperCased,
       isCentered,
+      gutterTop,
       ...otherProps
     } = this.props;
     const Component = component || variant;
@@ -67,6 +70,7 @@ class Typography extends PureComponent<TypographyProps> {
       font,
       isUpperCased,
       isCentered,
+      gutterTop,
     } = this.props;
     return cn(
       classes.common,
@@ -80,6 +84,7 @@ class Typography extends PureComponent<TypographyProps> {
         [classes.colorSecondary]: color === "secondary",
         [classes.isLineHeightDisabled]: isLineHeightDisabled,
         [classes.gutterBottom]: gutterBottom,
+        [classes.gutterTop]: gutterTop,
         [classes.sansSerif]: font === "sans-serif",
         [classes.serif]: font === "serif",
         [classes.isUppercased]: isUpperCased,
