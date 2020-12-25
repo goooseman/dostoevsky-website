@@ -83,7 +83,7 @@ class AboutPage extends PureComponent<AboutPageProps> {
               </Typography>
               <Typography gutterTop gutterBottom>
                 <T message="Мы взяли уголовную статистику, очистили от задвоений, привели к единому виду и сформировали полную базу данных, дополнив её аналитическими статьями и инфографикой. Всё это можно скачать с сайта и использовать по лицензии Creative Commons 4.0. " />
-                <Tooltip tip={t("Тут нужен текст")} />
+                <Tooltip isInversed tip={t("Тут нужен текст")} />
               </Typography>
               <Typography gutterTop isUpperCased variant="h3">
                 <T message="Зачем обрабатывать данные об уголовных делах?" />
@@ -98,7 +98,7 @@ class AboutPage extends PureComponent<AboutPageProps> {
                 <T message="Главное в Достоевском — простая в использовании база уголовной статистики в России" />{" "}
                 <Typography variant="span" isNonBreakable>
                   <T message="с 2009 до 2019 года." />
-                  <Tooltip tip={t("Тут нужен текст")} />
+                  <Tooltip isInversed tip={t("Тут нужен текст")} />
                 </Typography>
                 <T message="В каталоге у каждой статьи Уголовного кодекса — отдельная страница с таблицами и инфографикой по хронологии применения, составам преступлений и видам приговоров. Если вам необходимы данные по другим параметрам — году, типу наказания, количеству рассмотренных дел — можно воспользоваться доступом ко всему датасету." />
               </Typography>

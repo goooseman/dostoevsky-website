@@ -4,15 +4,20 @@ import ReactTooltip from "react-tooltip";
 
 interface TooltipProps {
   tip: string;
+  isInversed?: boolean;
 }
 
-const Tooltip: React.FC<TooltipProps> = ({ tip }: TooltipProps) => {
+const Tooltip: React.FC<TooltipProps> = ({ tip, isInversed }: TooltipProps) => {
   return (
     <span className={classes.tooltipWrapper}>
       <img
         className={classes.tooltipImage}
         data-tip={tip}
-        src={require("./assets/info.png")}
+        src={
+          isInversed
+            ? require("./assets/info-inverse.svg")
+            : require("./assets/info.svg")
+        }
       />
       <ReactTooltip className={classes.tooltip} place="bottom" effect="solid" />
     </span>
