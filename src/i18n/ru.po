@@ -243,7 +243,11 @@ msgstr ""
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid ""
 "Главное в Достоевском — простая в использовании база уголовной статистики в "
-"России с 2009 до 2019 года."
+"России"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "с 2009 до 2019 года."
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:

@@ -12,6 +12,7 @@ interface TypographyProps {
   gutterBottom: boolean;
   gutterTop: boolean;
   isLineHeightDisabled: boolean;
+  isNonBreakable: boolean;
   size?: "small" | "normal";
   color: "normal" | "inverted" | "muted" | "secondary";
   children: React.ReactNode;
@@ -28,6 +29,7 @@ class Typography extends PureComponent<TypographyProps> {
     color: "normal",
     gutterBottom: false,
     gutterTop: false,
+    isNonBreakable: false,
     size: "normal",
     isLineHeightDisabled: false,
     font: "sans-serif",
@@ -49,6 +51,7 @@ class Typography extends PureComponent<TypographyProps> {
       isUpperCased,
       isCentered,
       gutterTop,
+      isNonBreakable,
       ...otherProps
     } = this.props;
     const Component = component || variant;
@@ -71,6 +74,7 @@ class Typography extends PureComponent<TypographyProps> {
       isUpperCased,
       isCentered,
       gutterTop,
+      isNonBreakable,
     } = this.props;
     return cn(
       classes.common,
@@ -89,6 +93,7 @@ class Typography extends PureComponent<TypographyProps> {
         [classes.serif]: font === "serif",
         [classes.isUppercased]: isUpperCased,
         [classes.isCentered]: isCentered,
+        [classes.isNonBreakable]: isNonBreakable,
       },
       className
     );

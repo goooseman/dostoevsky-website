@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Fri Dec 25 2020 14:42:58 GMT+0200 (Israel Standard Time)\n"
+"POT-Creation-Date: Fri Dec 25 2020 14:43:30 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -236,7 +236,11 @@ msgstr ""
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid ""
 "Главное в Достоевском — простая в использовании база уголовной статистики в "
-"России с 2009 до 2019 года."
+"России"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "с 2009 до 2019 года."
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:

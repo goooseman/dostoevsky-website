@@ -93,3 +93,7 @@
 .is-line-height-disabled {
   line-height: 1;
 }
+
+.is-non-breakable {
+  white-space: nowrap;
+}
