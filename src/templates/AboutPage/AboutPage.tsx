@@ -5,6 +5,7 @@ import Container from "src/components/ui-kit/Container";
 import Typography from "src/components/ui-kit/Typography";
 import SinglePageLayout from "src/components/SinglePageLayout";
 import { T } from "react-targem";
+import Separator from "src/components/ui-kit/Separator";
 
 interface AboutPageProps {}
 
@@ -141,6 +142,7 @@ class AboutPage extends PureComponent<AboutPageProps> {
             </>
           </SinglePageLayout>
         </Container>
+        <Separator />
         <Container>
           <SinglePageLayout title={<T message="Команда" />}>
             <div className={cn(classes.teamContainer)}>
