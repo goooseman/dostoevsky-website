@@ -89,7 +89,9 @@ class ClauseMain extends PureComponent<ClauseMainProps> {
     return (
       <Layout
         hasPageLayout={
-          pageContext.view === "page" || pageContext.view === "table"
+          pageContext.view === "page" ||
+          pageContext.view === "focus" ||
+          pageContext.view === "table"
         }
       >
         <Meta site={data.site?.meta} />
