@@ -218,7 +218,7 @@ msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
 #: src/templates/AboutPage/AboutPage.tsx:
-msgid "Foo"
+msgid "Тут нужен текст"
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
