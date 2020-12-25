@@ -49,7 +49,7 @@ const Footer: React.FC<FooterProps> = ({ t }: FooterProps) => {
             <MenuLink to="/clauses" size="small">
               каталог статей ук рф
             </MenuLink>
-            <MenuLink to="/analytics" size="small">
+            <MenuLink to="/articles" size="small">
               Аналитика
             </MenuLink>
             <MenuLink to="/faq" size="small">
