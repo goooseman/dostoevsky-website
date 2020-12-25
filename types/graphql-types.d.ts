@@ -3885,7 +3885,7 @@ export type ArticlesPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type ArticlesPageQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, allMarkdownRemark: { edges: Array<{ node: (
         Pick<MarkdownRemark, 'html'>
-        & { frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'slug' | 'title' | 'author' | 'date' | 'type' | 'teaser'>> }
+        & { frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'slug' | 'title' | 'author' | 'date' | 'tag' | 'teaser'>> }
       ) }> } };
 
 export type ClausesQueryQueryVariables = Exact<{ [key: string]: never; }>;

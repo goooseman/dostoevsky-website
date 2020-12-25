@@ -12,7 +12,7 @@ export interface ArticleFullPageProps {
   article: Article;
 }
 
-const getArticleBackground = (type: Article["type"]) => {
+const getArticleBackground = (type: Article["tag"]) => {
   switch (type) {
     case "Аналитика":
       return require("./assets/analytics-head.svg");
@@ -27,7 +27,7 @@ const ArticleFullHead = (props: ArticleFullPageProps): JSX.Element => {
     <header
       className={cn(classes.blogHeader)}
       style={{
-        backgroundImage: `url(${getArticleBackground(article.type)})`,
+        backgroundImage: `url(${getArticleBackground(article.tag)})`,
       }}
     >
       <Container>
@@ -39,7 +39,7 @@ const ArticleFullHead = (props: ArticleFullPageProps): JSX.Element => {
               color="secondary"
               isUpperCased
             >
-              <T message={article.type === "blog" ? "Блог" : "Аналитика"} />
+              <T message={article.tag} />
             </Typography>
           </Link>
           <Typography

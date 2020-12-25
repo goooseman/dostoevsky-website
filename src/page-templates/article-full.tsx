@@ -51,7 +51,7 @@ export const pageQuery = graphql`
         author
         date
         teaser
-        type
+        tag
       }
     }
   }

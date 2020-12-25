@@ -12,7 +12,7 @@ export interface Article {
   author: string;
   date: string;
   slug: string;
-  type: string;
+  tag: string;
   teaser: string;
 }
 

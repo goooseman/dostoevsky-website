@@ -12,7 +12,7 @@ interface FeedPageMoreProps {
   articles: Array<Article>;
 }
 
-const getArticleBackground = (type: Article["type"]) => {
+const getArticleBackground = (type?: Article["tag"]) => {
   switch (type) {
     case "Аналитика":
       return require("./assets/analytics-square.svg");
@@ -29,16 +29,16 @@ const ArticlesFeedPageMore = (props: FeedPageMoreProps) => {
     <Container>
       <div className={classes.articlesPageMore}>
         {articles.map((d: Article, i) => {
-          const type = t(d.type);
+          const type = t(d.tag);
           return (
             <div
               key={i}
               className={cn(classes.moreItem, {
-                [classes.moreItemBlog]: d.type === "blog",
-                [classes.moreItemAnalytics]: d.type === "analytics",
+                [classes.moreItemBlog]: d.tag === "Блог",
+                [classes.moreItemAnalytics]: d.tag === "Аналитика",
               })}
               style={{
-                backgroundImage: `url(${getArticleBackground(d.type)})`,
+                backgroundImage: `url(${getArticleBackground(d.tag)})`,
               }}
             >
               {type ? (

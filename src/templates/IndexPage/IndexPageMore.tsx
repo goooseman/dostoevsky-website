@@ -10,6 +10,15 @@ interface IndexPageMoreProps {
   articles: Partial<Article>[];
 }
 
+const getArticleBackground = (type?: Article["tag"]) => {
+  switch (type) {
+    case "Аналитика":
+      return require("./assets/analytics-head.svg");
+    case "Блог":
+      return require("./assets/blog-head.svg");
+  }
+};
+
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const IndexPageMore = (props: IndexPageMoreProps) => {
   const { t } = useLocale();
@@ -28,18 +37,16 @@ const IndexPageMore = (props: IndexPageMoreProps) => {
 
       <div className={classes.moreWrapper}>
         {articles.map((d: Partial<Article>, i) => {
-          const type = t(d.type || "");
+          const type = t(d.tag || "");
           return (
             <div
               key={i}
               className={cn(classes.moreItem, {
-                [classes.moreItemBlog]: d.type === "blog",
-                [classes.moreItemAnalytics]: d.type === "analytics",
+                [classes.moreItemBlog]: d.tag === "Блог",
+                [classes.moreItemAnalytics]: d.tag === "Аналитика",
               })}
               style={{
-                backgroundImage: `url(${require(`./assets/${
-                  d.type || "blog"
-                }-head.svg`)})`,
+                backgroundImage: `url(${getArticleBackground(d.tag)})`,
               }}
             >
               {type ? (
