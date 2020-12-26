@@ -19,7 +19,10 @@ export const ArticlesPage: React.FC<ArticlesPageProps> = ({
   >();
 
   const filteredArticles = useMemo(() => {
-    return articles.filter((a) => a.tag !== articlesFilter);
+    if (!articlesFilter) {
+      return articles;
+    }
+    return articles.filter((a) => a.tag === articlesFilter);
   }, [articles, articlesFilter]);
 
   const handleFilterChange = (newFilter?: ArticleTag) => {

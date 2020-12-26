@@ -47,7 +47,7 @@ export const ArticlesFeedPageFilter: React.FC<ArticlesFeedPageFilterProps> = ({
       <div className={cn(classes.tags)}>
         <PillButton
           value={t("Все")}
-          isActive={!Boolean(currentFilter)}
+          isActive={Boolean(currentFilter)}
           variant="black"
           onClick={() => onFilterChange()}
         />
