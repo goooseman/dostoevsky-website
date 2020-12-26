@@ -117,7 +117,8 @@
   "main": "n/a",
   "scripts": {
     "postinstall": "patch-package",
-    "develop": "cross-env NODE_OPTIONS=\"--max-old-space-size=6144\" gatsby develop",
+    "develop": "gatsby develop",
+    "develop:ram": "cross-env NODE_OPTIONS=\"--max-old-space-size=6144\" npm run develop",
     "develop:semi": "cross-env IS_SEMI_BUILD=true npm run develop",
     "develop:blog": "cross-env IS_SEMI_BUILD=true IS_BLOG_BUILD=true npm run develop",
     "storybook": "start-storybook -p 6006",
