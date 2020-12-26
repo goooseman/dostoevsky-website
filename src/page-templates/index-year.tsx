@@ -50,7 +50,7 @@ const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
     }
   }
   // eslint-disable-next-line no-console
-  console.log("Total total convicted", totalConvicted);
+  // console.log("Total total convicted", totalConvicted);
   const counters = {
     totalConvicted,
     totalDismissal,
