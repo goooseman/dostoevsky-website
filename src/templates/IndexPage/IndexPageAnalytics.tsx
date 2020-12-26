@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import classes from "./IndexPage.module.css";
 import Typography from "src/components/ui-kit/Typography";
 import { T, useLocale } from "react-targem";
+import { Redirect } from "@reach/router";
 import Container from "src/components/ui-kit/Container";
 import Select, { components } from "react-select";
 import CommentsBar from "src/components/charts/CommentsBar";
@@ -84,8 +85,13 @@ const getAnalyticsCharts = (
   },
 ];
 
+interface YearOption {
+  value: number;
+  label: number;
+}
+
 interface IndexPageAnalyticsProps {
-  yearSelectOptions: { value: number; label: number }[];
+  yearSelectOptions: YearOption[];
 }
 
 const DropdownIndicator = (props: object) => {
@@ -102,9 +108,19 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
 }: IndexPageAnalyticsProps) => {
   const { t } = useLocale();
   const [selectedYear, setSelectedYear] = useState(yearSelectOptions[0]);
+  const [redirectTo, setRedirectTo] = useState<string | undefined>();
+
+  const handleYearChange = (option: YearOption) => {
+    setSelectedYear(option);
+    if (option.value === yearSelectOptions[0].value) {
+      return setRedirectTo(`/`);
+    }
+    setRedirectTo(`/${option.value}`);
+  };
 
   return (
     <Container className={classes.analyticsWrapper}>
+      {redirectTo ? <Redirect to={redirectTo} /> : null}
       <div>
         <Typography isUpperCased color="secondary">
           <T message="Аналитика" />
@@ -119,7 +135,9 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
               options={yearSelectOptions}
               value={selectedYear}
               isSearchable={false}
-              onChange={(option: any) => setSelectedYear(option)}
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
+              onChange={handleYearChange}
             />
             <T message="году" />
           </b>
