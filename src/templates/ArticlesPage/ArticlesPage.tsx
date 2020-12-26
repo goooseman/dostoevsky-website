@@ -22,11 +22,20 @@ export const ArticlesPage: React.FC<ArticlesPageProps> = ({
     return articles.filter((a) => a.tag !== articlesFilter);
   }, [articles, articlesFilter]);
 
+  const handleFilterChange = (newFilter?: ArticleTag) => {
+    setArticlesFilter((oldFilter?: ArticleTag) => {
+      if (oldFilter === newFilter) {
+        return undefined;
+      }
+      return newFilter;
+    });
+  };
+
   return (
     <Container>
       <ArticlesPageFilter
         currentFilter={articlesFilter}
-        onFilterChange={setArticlesFilter}
+        onFilterChange={handleFilterChange}
       />
       <ArticlesPageMore articles={filteredArticles} />
     </Container>
