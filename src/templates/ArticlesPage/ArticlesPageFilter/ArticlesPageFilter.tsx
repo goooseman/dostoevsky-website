@@ -1,18 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
 import Container from "src/components/ui-kit/Container";
 import { useLocale } from "react-targem";
 import classes from "./ArticlesPageFilter.module.css";
 import cn from "clsx";
-import PillButton from "src/components/ui-kit/PillButton";
+import PillButton, {
+  PillButtonVariant,
+} from "src/components/ui-kit/PillButton";
 import { graphql, useStaticQuery } from "gatsby";
+import { ArticleTag } from "src/types";
 
 interface ArticlesFeedPageFilterProps {
-  tags?: Array<string>;
+  onFilterChange: (tagName?: ArticleTag) => void;
 }
 
-export const ArticlesFeedPageFilter: React.FC = () => {
+const getPillButtonVariant = (tag: ArticleTag): PillButtonVariant => {
+  switch (tag) {
+    case "Аналитика":
+      return "analytics";
+    case "Блог":
+      return "blog";
+    default:
+      return "black";
+  }
+};
+
+export const ArticlesFeedPageFilter: React.FC<ArticlesFeedPageFilterProps> = ({
+  onFilterChange,
+}: ArticlesFeedPageFilterProps) => {
   const { t } = useLocale();
-  const [, setArticlesFilter] = useState("");
   const data = useStaticQuery(
     graphql`
       query BlogTags {
@@ -28,12 +43,17 @@ export const ArticlesFeedPageFilter: React.FC = () => {
   return (
     <Container>
       <div className={cn(classes.tags)}>
-        {tags.map((o: string, i: number) => (
+        <PillButton
+          value={t("Все")}
+          variant="black"
+          onClick={() => onFilterChange()}
+        />
+        {tags.map((o: ArticleTag) => (
           <PillButton
-            key={i}
+            key={o}
             value={t(o)}
-            variant={o}
-            onClick={() => setArticlesFilter(o)}
+            variant={getPillButtonVariant(o)}
+            onClick={() => onFilterChange(o)}
           />
         ))}
       </div>

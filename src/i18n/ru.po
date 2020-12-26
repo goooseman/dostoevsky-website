@@ -374,6 +374,10 @@ msgstr ""
 msgid "Поделиться:"
 msgstr ""
 
+#: src/templates/ArticlesPage/ArticlesPageFilter/ArticlesPageFilter.tsx:
+msgid "Все"
+msgstr ""
+
 #: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:
 msgid "Хронология"
 msgstr ""

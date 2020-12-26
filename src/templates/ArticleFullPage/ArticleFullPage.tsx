@@ -5,14 +5,14 @@ import cn from "clsx";
 import Typography from "src/components/ui-kit/Typography";
 import { T } from "react-targem";
 import ArticleFullHead from "./ArticleFullHead";
-
+import { ArticleTag } from "src/types";
 export interface Article {
   html?: string;
   title: string;
   author: string;
   date: string;
   slug: string;
-  tag: "Аналитика" | "Блог";
+  tag: ArticleTag;
   teaser: string;
 }
 

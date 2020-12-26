@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Fri Dec 25 2020 15:35:49 GMT+0200 (Israel Standard Time)\n"
+"POT-Creation-Date: Sat Dec 26 2020 20:20:56 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -365,6 +365,10 @@ msgstr ""
 
 #: src/templates/ArticleFullPage/ArticleFullHead.tsx:
 msgid "Поделиться:"
+msgstr ""
+
+#: src/templates/ArticlesPage/ArticlesPageFilter/ArticlesPageFilter.tsx:
+msgid "Все"
 msgstr ""
 
 #: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:

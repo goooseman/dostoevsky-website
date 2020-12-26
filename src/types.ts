@@ -16,3 +16,5 @@ export interface UkRfPart {
 export type Chapter = typeof ukRf[number];
 export type Section = Chapter["children"][number];
 export type Clause = Section["children"][number];
+
+export type ArticleTag = "Аналитика" | "Блог";

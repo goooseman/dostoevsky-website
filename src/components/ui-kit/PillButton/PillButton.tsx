@@ -3,12 +3,20 @@ import React from "react";
 import classes from "./PillButton.module.css";
 import cn from "clsx";
 
+export type PillButtonVariant =
+  | "black"
+  | "analytics"
+  | "secondary"
+  | "primary"
+  | "blog"
+  | "transparent";
+
 interface PillButtonProps {
   id?: string;
   onChange?: (e: any) => void;
   onClick?: (e: any) => void;
   value: string;
-  variant?: string;
+  variant?: PillButtonVariant;
 }
 
 const PillButton: React.FC<PillButtonProps> = ({
