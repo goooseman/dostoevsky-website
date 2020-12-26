@@ -10,6 +10,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { ArticleTag } from "src/types";
 
 interface ArticlesFeedPageFilterProps {
+  currentFilter?: ArticleTag;
   onFilterChange: (tagName?: ArticleTag) => void;
 }
 
@@ -26,6 +27,7 @@ const getPillButtonVariant = (tag: ArticleTag): PillButtonVariant => {
 
 export const ArticlesFeedPageFilter: React.FC<ArticlesFeedPageFilterProps> = ({
   onFilterChange,
+  currentFilter,
 }: ArticlesFeedPageFilterProps) => {
   const { t } = useLocale();
   const data = useStaticQuery(
@@ -45,6 +47,7 @@ export const ArticlesFeedPageFilter: React.FC<ArticlesFeedPageFilterProps> = ({
       <div className={cn(classes.tags)}>
         <PillButton
           value={t("Все")}
+          isActive={!Boolean(currentFilter)}
           variant="black"
           onClick={() => onFilterChange()}
         />
@@ -52,6 +55,7 @@ export const ArticlesFeedPageFilter: React.FC<ArticlesFeedPageFilterProps> = ({
           <PillButton
             key={o}
             value={t(o)}
+            isActive={o === currentFilter}
             variant={getPillButtonVariant(o)}
             onClick={() => onFilterChange(o)}
           />

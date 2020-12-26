@@ -24,7 +24,10 @@ export const ArticlesPage: React.FC<ArticlesPageProps> = ({
 
   return (
     <Container>
-      <ArticlesPageFilter onFilterChange={setArticlesFilter} />
+      <ArticlesPageFilter
+        currentFilter={articlesFilter}
+        onFilterChange={setArticlesFilter}
+      />
       <ArticlesPageMore articles={filteredArticles} />
     </Container>
   );

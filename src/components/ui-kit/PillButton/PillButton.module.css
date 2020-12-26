@@ -23,7 +23,8 @@
   color: var(--color-text-inverted);
 }
 
-.pill-button-black:hover {
+.pill-button-black:hover,
+.pill-button-black.is-active {
   background: var(--color-text-inverted);
   color: var(--color-border-dark);
 }
@@ -32,7 +33,8 @@
   border-color: var(--color-secondary);
   color: var(--color-secondary);
 }
-.pill-button-secondary:hover {
+.pill-button-secondary:hover,
+.pill-button-secondary.is-active {
   background: var(--color-secondary);
   color: var(--color-text-inverted);
 }
@@ -42,7 +44,8 @@
   color: var(--color-primary);
 }
 
-.pill-button-primary:hover {
+.pill-button-primary:hover,
+.pill-button-primary.is-active {
   background: var(--color-primary);
   color: var(--color-text-inverted);
 }
@@ -52,7 +55,8 @@
   color: var(--color-border-dark);
 }
 
-.pill-button-transparent:hover {
+.pill-button-transparent:hover,
+.pill-button-transparent.is-active {
   background: var(--color-border-dark);
   color: var(--color-text-inverted);
 }

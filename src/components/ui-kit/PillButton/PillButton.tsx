@@ -17,6 +17,7 @@ interface PillButtonProps {
   onClick?: (e: any) => void;
   value: string;
   variant?: PillButtonVariant;
+  isActive?: boolean;
 }
 
 const PillButton: React.FC<PillButtonProps> = ({
@@ -24,6 +25,7 @@ const PillButton: React.FC<PillButtonProps> = ({
   onClick,
   onChange,
   value,
+  isActive,
   variant = "black",
 }: PillButtonProps) => {
   return (
@@ -38,6 +40,7 @@ const PillButton: React.FC<PillButtonProps> = ({
         [classes.pillButtonSecondary]:
           variant === "secondary" || variant === "blog",
         [classes.pillButtonTransparent]: variant === "transparent",
+        [classes.isActive]: isActive,
       })}
     >
       {value}
