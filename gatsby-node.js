@@ -95,7 +95,7 @@ exports.createPages = async ({ actions, graphql }) => {
             const partsPageViewModes = [
               "page",
               "table",
-              "iframe-parts",
+              // "iframe-parts",
               // "iframe-parts-by-result",
               // "iframe-parts-by-punishment",
               // "iframe-table-parts",
