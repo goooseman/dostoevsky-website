@@ -79,7 +79,7 @@ exports.createPages = async ({ actions, graphql }) => {
             };
             const mainPageViewModes = [
               "page",
-              // "table",
+              "table",
               "focus",
               // "iframe-table-common-main-by-result",
               // "iframe-table-common-add-by-result",
@@ -94,7 +94,7 @@ exports.createPages = async ({ actions, graphql }) => {
             }
             const partsPageViewModes = [
               "page",
-              // "table",
+              "table",
               // "iframe-parts",
               // "iframe-parts-by-result",
               // "iframe-parts-by-punishment",
@@ -116,7 +116,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
           const chronoPageViewModes = [
             "page",
-            // "table",
+            "table",
             // "iframe-convicted-dynamics",
             // "iframe-punishment-dynamics",
             // "iframe-table-chronology-by-result",
