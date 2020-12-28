@@ -81,9 +81,9 @@ exports.createPages = async ({ actions, graphql }) => {
               "page",
               "table",
               "focus",
-              // "iframe-table-common-main-by-result",
-              // "iframe-table-common-add-by-result",
-              // "iframe-by-result",
+              "iframe-table-common-main-by-result",
+              "iframe-table-common-add-by-result",
+              "iframe-by-result",
             ];
             for (const view of mainPageViewModes) {
               createPage({
@@ -96,9 +96,9 @@ exports.createPages = async ({ actions, graphql }) => {
               "page",
               "table",
               "iframe-parts",
-              // "iframe-parts-by-result",
-              // "iframe-parts-by-punishment",
-              // "iframe-table-parts",
+              "iframe-parts-by-result",
+              "iframe-parts-by-punishment",
+              "iframe-table-parts",
             ];
             for (const view of partsPageViewModes) {
               createPage({
@@ -117,10 +117,10 @@ exports.createPages = async ({ actions, graphql }) => {
           const chronoPageViewModes = [
             "page",
             "table",
-            // "iframe-convicted-dynamics",
-            // "iframe-punishment-dynamics",
-            // "iframe-table-chronology-by-result",
-            // "iframe-table-chronology-by-punishment",
+            "iframe-convicted-dynamics",
+            "iframe-punishment-dynamics",
+            "iframe-table-chronology-by-result",
+            "iframe-table-chronology-by-punishment",
           ];
           for (const view of chronoPageViewModes) {
             createPage({
