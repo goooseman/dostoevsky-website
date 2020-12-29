@@ -81,8 +81,8 @@ exports.createPages = async ({ actions, graphql }) => {
               "page",
               "table",
               "focus",
-              "iframe-table-common-main-by-result",
-              "iframe-table-common-add-by-result",
+              // "iframe-table-common-main-by-result",
+              // "iframe-table-common-add-by-result",
               "iframe-by-result",
             ];
             for (const view of mainPageViewModes) {
