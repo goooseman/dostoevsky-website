@@ -37,3 +37,8 @@ export interface CountersByPunishment {
   /** Условное осуждение к иным мерам */
   primaryOther: number;
 }
+
+export interface SelectOption {
+  label: string;
+  value: string;
+}

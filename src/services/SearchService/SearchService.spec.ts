@@ -52,7 +52,11 @@ const mockGetArticlesByTextResponse = (response: SearchResult[]) => {
 describe("getAutocompleteItems", () => {
   it("should return autocomplete results for '282'", async () => {
     mockGetArticlesByTextResponse(fakeSearchResult282);
-    const results = await searchService.getAutocompleteItems("282", 2019, "ru");
+    const results = await searchService.getAutocompleteItems(
+      "282",
+      "2019",
+      "ru"
+    );
     expect(results).toEqual([
       {
         text: "Статья 282. Foo",
@@ -63,7 +67,11 @@ describe("getAutocompleteItems", () => {
 
   it("should return autocomplete results for '282' for different year", async () => {
     mockGetArticlesByTextResponse(fakeSearchResult282);
-    const results = await searchService.getAutocompleteItems("282", 2018, "ru");
+    const results = await searchService.getAutocompleteItems(
+      "282",
+      "2018",
+      "ru"
+    );
     expect(results).toEqual([
       {
         text: "Статья 282. Foo",
@@ -74,7 +82,11 @@ describe("getAutocompleteItems", () => {
 
   it("should return autocomplete results for '281'", async () => {
     mockGetArticlesByTextResponse(fakeSearchResult281);
-    const results = await searchService.getAutocompleteItems("281", 2019, "ru");
+    const results = await searchService.getAutocompleteItems(
+      "281",
+      "2019",
+      "ru"
+    );
     expect(results).toEqual([
       {
         text: "Статья 281. Bar",
@@ -87,7 +99,7 @@ describe("getAutocompleteItems", () => {
     mockGetArticlesByTextResponse(fakeSearchResultPart7);
     const results = await searchService.getAutocompleteItems(
       "Преступления против личности",
-      2019,
+      "2019",
       "ru"
     );
     expect(results).toEqual([
@@ -111,7 +123,7 @@ describe("getAutocompleteItems", () => {
     ]);
     const results = await searchService.getAutocompleteItems(
       "преступления против жизни",
-      2019,
+      "2019",
       "ru"
     );
     expect(results).toEqual([

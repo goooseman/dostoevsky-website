@@ -6,18 +6,18 @@ import Container from "src/components/ui-kit/Container";
 import Select, { components } from "react-select";
 import CommentsBar from "src/components/charts/CommentsBar";
 import { Link, navigate } from "gatsby";
-import { CountersByPunishment } from "src/types";
+import { CountersByPunishment, SelectOption } from "src/types";
 import { IndexTopClause } from "src/utils/index-page";
 
 const getAnalyticsCharts = (
-  selectedYear: { value: number; label: number },
+  selectedYear: string,
   counters: CountersByPunishment,
   topCounters: IndexTopClause[],
   t: (s: string) => string
 ) => [
   {
     title: t(
-      `Статьи УК РФ, по которым осуждали чаще всего в ${selectedYear.value} году`
+      `Статьи УК РФ, по которым осуждали чаще всего в ${selectedYear} году`
     ),
     charts: [
       {
@@ -33,7 +33,7 @@ const getAnalyticsCharts = (
   },
   {
     title: t(
-      `Какие наказания суды чаще всего назначали в ${selectedYear.value} году`
+      `Какие наказания суды чаще всего назначали в ${selectedYear} году`
     ),
     charts: [
       {
@@ -76,14 +76,9 @@ const getAnalyticsCharts = (
   },
 ];
 
-interface YearOption {
-  value: number;
-  label: number;
-}
-
 interface IndexPageAnalyticsProps {
-  yearSelectOptions: YearOption[];
-  defaultYearSelectOption: YearOption;
+  yearSelectOptions: SelectOption[];
+  defaultYearSelectOption: SelectOption;
   counters: {
     totalConvicted: number;
     totalAcquittal: number;
@@ -116,11 +111,11 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
   topClauses,
 }: IndexPageAnalyticsProps) => {
   const { t } = useLocale();
-  const [selectedYear, setSelectedYear] = useState<YearOption>(
+  const [selectedYear, setSelectedYear] = useState<SelectOption>(
     defaultYearSelectOption
   );
 
-  const handleYearChange = (option: YearOption) => {
+  const handleYearChange = (option: SelectOption) => {
     setSelectedYear(option);
     if (option.value === yearSelectOptions[0].value) {
       return navigate(`/`);
@@ -176,7 +171,7 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
         </Typography>
         <div className={classes.analyticsChartsWrapper}>
           {getAnalyticsCharts(
-            selectedYear,
+            selectedYear.label,
             counters.totalByPunishment,
             topClauses,
             t

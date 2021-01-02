@@ -2,31 +2,30 @@ import React, { useState } from "react";
 import classes from "./IndexPage.module.css";
 import Container from "src/components/ui-kit/Container";
 import AsyncSelect from "react-select/async";
-import Select from "react-select";
+import Select, { ValueType } from "react-select";
 import Typography from "src/components/ui-kit/Typography";
 import { T, useLocale } from "react-targem";
 import Button from "src/components/ui-kit/Button";
 import searchService from "src/services/SearchService";
 import PillButton from "src/components/ui-kit/PillButton";
+import { SelectOption } from "src/types";
 
 interface IndexPageFilterProps {
-  yearSelectOptions: { value: number; label: number }[];
+  yearSelectOptions: SelectOption[];
+  defaultYearSelectOption: SelectOption;
 }
 
 const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
   yearSelectOptions,
+  defaultYearSelectOption,
 }: IndexPageFilterProps) => {
   const { t } = useLocale();
 
-  const [selectedUk, setSelectedUk] = useState<{
-    value: string;
-    label: string;
-  } | null>(null);
+  const [selectedUk, setSelectedUk] = useState<SelectOption>();
 
-  const [selectedYear, setSelectedYear] = useState<{
-    value: number;
-    label: number;
-  } | null>(yearSelectOptions[0]);
+  const [selectedYear, setSelectedYear] = useState<SelectOption>(
+    defaultYearSelectOption
+  );
 
   const [ukSelectOptions, setUkSelectOptions] = useState<
     {
@@ -41,7 +40,7 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
   helpItems.forEach(async (h) => {
     const o = await searchService.getAutocompleteItems(
       h.label,
-      selectedYear ? selectedYear.value : 2019,
+      selectedYear ? selectedYear.value : "2019",
       "ru"
     );
     if (o.length > 0) h.value = o[0].link;
@@ -88,7 +87,9 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
             placeholder={t("Введите статью...")}
             noOptionsMessage={() => t("Ничего не найдено")}
             value={selectedUk}
-            onChange={(option: any) => setSelectedUk(option)}
+            onChange={(option: ValueType<SelectOption>) =>
+              option && setSelectedUk(option as SelectOption)
+            }
           />
         </div>
         <div className={classes.yearSelectWrapper}>
@@ -103,7 +104,9 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
             placeholder={t("Введите год...")}
             noOptionsMessage={() => t("Ничего не найдено")}
             value={selectedYear}
-            onChange={(option: any) => setSelectedYear(option)}
+            onChange={(option: ValueType<SelectOption>) =>
+              option && setSelectedYear(option as SelectOption)
+            }
           />
         </div>
         <div className={classes.buttonWrapper}>

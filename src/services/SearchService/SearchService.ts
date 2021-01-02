@@ -9,7 +9,7 @@ class SearchService {
 
   async getAutocompleteItems(
     queryString: string,
-    year: number,
+    year: string,
     locale: "ru"
   ): Promise<SearchResult[]> {
     const results = await this.searchServiceAdaper.getArticlesByText(
