@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import classes from "./IndexPage.module.css";
 import Typography from "src/components/ui-kit/Typography";
 import { T, useLocale } from "react-targem";
-import { Redirect } from "@reach/router";
 import Container from "src/components/ui-kit/Container";
 import Select, { components } from "react-select";
 import CommentsBar from "src/components/charts/CommentsBar";
-import { Link } from "gatsby";
+import { Link, navigate } from "gatsby";
 
 const PEOPLE_COUNT = 500000;
 const CONVICTED = 598214;
@@ -92,6 +91,7 @@ interface YearOption {
 
 interface IndexPageAnalyticsProps {
   yearSelectOptions: YearOption[];
+  defaultYearSelectOption: YearOption;
 }
 
 const DropdownIndicator = (props: object) => {
@@ -105,22 +105,23 @@ const DropdownIndicator = (props: object) => {
 
 const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
   yearSelectOptions,
+  defaultYearSelectOption,
 }: IndexPageAnalyticsProps) => {
   const { t } = useLocale();
-  const [selectedYear, setSelectedYear] = useState(yearSelectOptions[0]);
-  const [redirectTo, setRedirectTo] = useState<string | undefined>();
+  const [selectedYear, setSelectedYear] = useState<YearOption>(
+    defaultYearSelectOption
+  );
 
   const handleYearChange = (option: YearOption) => {
     setSelectedYear(option);
     if (option.value === yearSelectOptions[0].value) {
-      return setRedirectTo(`/`);
+      return navigate(`/`);
     }
-    setRedirectTo(`/${option.value}`);
+    navigate(`/${option.value}/`);
   };
 
   return (
     <Container className={classes.analyticsWrapper}>
-      {redirectTo ? <Redirect to={redirectTo} /> : null}
       <div>
         <Typography isUpperCased color="secondary">
           <T message="Аналитика" />

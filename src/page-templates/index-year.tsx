@@ -10,9 +10,15 @@ import { Article } from "src/templates/ArticleFullPage/ArticleFullPage";
 interface IndexPageProps {
   data: IndexYearQuery;
   location: Location;
+  pageContext: {
+    year: number;
+  };
 }
 
-const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
+const Index: React.FC<IndexPageProps> = ({
+  data,
+  pageContext,
+}: IndexPageProps) => {
   const meta = data.site?.meta;
   let totalConvicted = 0;
   let totalDismissal = 0;
@@ -67,7 +73,11 @@ const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
   return (
     <Layout>
       <Meta site={meta} />
-      <IndexPage counters={counters} articles={articles} />
+      <IndexPage
+        counters={counters}
+        articles={articles}
+        currentSelectedYear={pageContext.year}
+      />
     </Layout>
   );
 };

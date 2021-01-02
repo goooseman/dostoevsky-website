@@ -16,6 +16,7 @@ const yearSelectOptions = years.map((y) => ({ value: y, label: y }));
 
 interface IndexPageProps {
   articles: Partial<Article>[];
+  currentSelectedYear: number;
   counters: {
     totalConvicted: number;
     totalAcquittal: number;
@@ -29,6 +30,7 @@ export class IndexPage extends PureComponent<IndexPageProps> {
     super(props);
   }
   render(): React.ReactNode {
+    const { currentSelectedYear } = this.props;
     return (
       <>
         <div className={classes.topBlockWrapper}>
@@ -70,7 +72,13 @@ export class IndexPage extends PureComponent<IndexPageProps> {
         <div className={classes.promoWrapper}>
           <Promo />
         </div>
-        <IndexPageAnalytics yearSelectOptions={yearSelectOptions} />
+        <IndexPageAnalytics
+          yearSelectOptions={yearSelectOptions}
+          defaultYearSelectOption={{
+            value: currentSelectedYear,
+            label: currentSelectedYear,
+          }}
+        />
         <IndexPageCounters counters={this.props.counters} />
         <IndexPageMore articles={this.props.articles} />
         <IndexPageSubscription />

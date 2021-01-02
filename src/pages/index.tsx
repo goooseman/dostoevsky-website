@@ -68,7 +68,12 @@ const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
   return (
     <Layout>
       <Meta site={meta} />
-      <IndexPage counters={counters} articles={articles} />
+      <IndexPage
+        counters={counters}
+        articles={articles}
+        /* if you change this, change year in the grapql query */
+        currentSelectedYear={2019}
+      />
     </Layout>
   );
 };
