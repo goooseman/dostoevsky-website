@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Sat Jan 02 2021 23:44:30 GMT+0200 (Israel Standard Time)\n"
+"POT-Creation-Date: Sat Jan 02 2021 23:50:27 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -633,8 +633,10 @@ msgstr[1] ""
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "человек"
-msgid_plural "человек"
+msgid_plural "человека"
 msgstr[0] ""
 msgstr[1] ""
 
@@ -2953,16 +2955,8 @@ msgid "По всем статьям УК РФ прошли через суд д�
 msgstr ""
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "человека. Из них были осуждены"
-msgid_plural "человек. Из них были осуждены"
-msgstr[0] ""
-msgstr[1] ""
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "человека"
-msgid_plural "человек"
-msgstr[0] ""
-msgstr[1] ""
+msgid "Из них были осуждены"
+msgstr ""
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "обвиняемый оправдан"

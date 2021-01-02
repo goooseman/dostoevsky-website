@@ -640,10 +640,13 @@ msgstr[1] ""
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "человек"
-msgid_plural "человек"
-msgstr[0] ""
-msgstr[1] ""
+msgid_plural "человека"
+msgstr[0] "человек"
+msgstr[1] "человека"
+msgstr[2] "человек"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "Из них"
@@ -2960,22 +2963,15 @@ msgid "По всем статьям УК РФ прошли через суд д�
 msgstr ""
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "человека. Из них были осуждены"
-msgid_plural "человек. Из них были осуждены"
-msgstr[0] ""
-msgstr[1] ""
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "человека"
-msgid_plural "человек"
-msgstr[0] ""
-msgstr[1] ""
+msgid "Из них были осуждены"
+msgstr ""
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "обвиняемый оправдан"
 msgid_plural "обвиняемых оправданы"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "обвиняемый оправдан"
+msgstr[1] "обвиняемых оправдано"
+msgstr[2] "обвиняемых оправдано"
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "По различным основаниям прекращено"
@@ -2984,8 +2980,9 @@ msgstr ""
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "дел"
 msgid_plural "дело"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "дело"
+msgstr[1] "дела"
+msgstr[2] "дел"
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "Перейти к материалу"

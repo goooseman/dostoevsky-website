@@ -710,10 +710,12 @@ msgstr[1] "В {{ year }} году по данной статье были осу
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "человек"
-msgid_plural "человек"
+msgid_plural "человека"
 msgstr[0] "человек"
-msgstr[1] "человек"
+msgstr[1] "человека"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "Из них"
@@ -3388,16 +3390,8 @@ msgid "По всем статьям УК РФ прошли через суд д�
 msgstr "По всем статьям УК РФ прошли через суд дела"
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "человека. Из них были осуждены"
-msgid_plural "человек. Из них были осуждены"
-msgstr[0] "человека. Из них были осуждены"
-msgstr[1] "человек. Из них были осуждены"
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "человека"
-msgid_plural "человек"
-msgstr[0] "человека"
-msgstr[1] "человек"
+msgid "Из них были осуждены"
+msgstr "Из них были осуждены"
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "обвиняемый оправдан"

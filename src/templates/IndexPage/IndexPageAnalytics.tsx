@@ -148,15 +148,12 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
         <Typography className={classes.analyticsSubtitle}>
           <T message="По всем статьям УК РФ прошли через суд дела" />{" "}
           <b>{total}</b>{" "}
+          <T messagePlural="человека" message="человек" count={total} />
+          {". "}
+          <T message="Из них были осуждены" /> <b>{totalConvicted}</b>{" "}
           <T
-            messagePlural="человек. Из них были осуждены"
-            message="человека. Из них были осуждены"
-            count={total}
-          />{" "}
-          <b>{totalConvicted}</b>{" "}
-          <T
-            messagePlural="человек"
-            message="человека"
+            messagePlural="человека"
+            message="человек"
             count={totalConvicted}
           />
           {". "}
