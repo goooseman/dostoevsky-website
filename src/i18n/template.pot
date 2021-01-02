@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Sat Jan 02 2021 23:50:27 GMT+0200 (Israel Standard Time)\n"
+"POT-Creation-Date: Sun Jan 03 2021 00:41:07 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -444,6 +444,7 @@ msgstr ""
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "принудительные работы"
 msgstr ""
 
@@ -966,6 +967,7 @@ msgstr ""
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "Условное осуждение к иным мерам"
 msgstr ""
 
@@ -2936,6 +2938,10 @@ msgstr ""
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "лишение свободы"
+msgstr ""
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "принудительные меры к невменяемым"
 msgstr ""
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:

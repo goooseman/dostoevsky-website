@@ -2,19 +2,11 @@ import React from "react";
 import Table from "src/components/Table";
 import { useLocale, T } from "react-targem";
 import { getClauseLink } from "src/config/routes";
+import { CountersByPunishment } from "src/types";
 
-interface Year {
+interface Year extends CountersByPunishment {
   year: number;
   totalConvicted: number; // Всего осуждено
-
-  primaryImprisonment: number; // Лишение свободы
-  primarySuspended: number; // Условное осуждение к лишению свободы
-  primaryCommunityService: number; // Обязательные работы
-  primaryForcedLabour: number; // Принудительные работы
-  primaryCorrectionalLabour: number; // Исправительные работы
-  primaryFine: number; // Штраф
-  coerciveMeasures: number; // Принудительные меры к невменяемым
-  primaryOther: number; // Условное осуждение к иным мерам
 }
 
 interface ClauseChronologyByPunishmentTableProps {

@@ -516,6 +516,7 @@ msgstr "обязательные работы"
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "принудительные работы"
 msgstr "принудительные работы"
 
@@ -1073,6 +1074,7 @@ msgstr ""
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "Условное осуждение к иным мерам"
 msgstr "Условное осуждение к иным мерам"
 
@@ -3372,6 +3374,10 @@ msgstr "Какие наказания суды чаще всего назнач�
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "лишение свободы"
 msgstr "лишение свободы"
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "принудительные меры к невменяемым"
+msgstr "принудительные меры к невменяемым"
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "Аналитика"

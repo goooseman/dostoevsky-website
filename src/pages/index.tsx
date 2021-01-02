@@ -5,6 +5,7 @@ import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
 import IndexPage from "src/templates/IndexPage";
 import { Article } from "src/templates/ArticleFullPage/ArticleFullPage";
+import { getIndexCountersFromData } from "src/utils/index-page";
 
 interface IndexPageProps {
   data: IndexQuery;
@@ -14,53 +15,7 @@ interface IndexPageProps {
 const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
   // common site props
   const meta = data.site?.meta;
-  // counters props
-  let totalConvictedAll = 0;
-  let totalDismissal = 0;
-  let totalAcquittalAll = 0;
-  let totalNoCrime = 0;
-  for (const part of data.parts.edges) {
-    if (part.node.parameters) {
-      const {
-        totalConvicted,
-        dismissalAbsenceOfEvent,
-        dismissalAmnesty,
-        dismissalReconciliation,
-        dismissalRepentance,
-        dismissalCourtFine,
-        dismissalOther,
-        totalAcquittal,
-        noCrimeSelfDefence,
-        noCrimeNecessity,
-        noCrimeOther,
-      } = part.node.parameters;
 
-      totalConvictedAll += totalConvicted || 0;
-
-      totalAcquittalAll += totalAcquittal || 0;
-
-      totalDismissal +=
-        (dismissalAbsenceOfEvent || 0) +
-        (dismissalAmnesty || 0) +
-        (dismissalReconciliation || 0) +
-        (dismissalRepentance || 0) +
-        (dismissalCourtFine || 0) +
-        (dismissalOther || 0);
-
-      totalNoCrime +=
-        (noCrimeSelfDefence || 0) +
-        (noCrimeNecessity || 0) +
-        (noCrimeOther || 0);
-    }
-  }
-  const counters = {
-    totalConvicted: totalConvictedAll,
-    totalDismissal,
-    totalAcquittal: totalAcquittalAll,
-    totalNoCrime,
-    total:
-      totalAcquittalAll + totalConvictedAll + totalDismissal + totalNoCrime,
-  };
   // articles preview
   const articles: Partial<Article>[] = (data.allMarkdownRemark?.edges).map(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -71,7 +26,7 @@ const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
     <Layout>
       <Meta site={meta} />
       <IndexPage
-        counters={counters}
+        counters={getIndexCountersFromData(data)}
         articles={articles}
         /* if you change this, change year in the grapql query */
         currentSelectedYear={2019}
@@ -128,6 +83,15 @@ export const pageQuery = graphql`
             noCrimeSelfDefence: noCrimeSelf_defence
             noCrimeNecessity
             noCrimeOther
+
+            primaryImprisonment
+            primarySuspended
+            primaryCommunityService
+            primaryForcedLabour
+            primaryCorrectionalLabour
+            primaryFine
+            coerciveMeasures
+            primaryOther
           }
         }
       }

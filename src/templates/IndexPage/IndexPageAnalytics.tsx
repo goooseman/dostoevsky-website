@@ -6,9 +6,11 @@ import Container from "src/components/ui-kit/Container";
 import Select, { components } from "react-select";
 import CommentsBar from "src/components/charts/CommentsBar";
 import { Link, navigate } from "gatsby";
+import { CountersByPunishment } from "src/types";
 
 const getAnalyticsCharts = (
   selectedYear: { value: number; label: number },
+  counters: CountersByPunishment,
   t: (s: string) => string
 ) => [
   {
@@ -67,12 +69,36 @@ const getAnalyticsCharts = (
         title: t("осудили человек"),
         series: [
           [
-            { value: 172914, title: t("лишение свободы") },
-            { value: 157051, title: t("условное осуждение к лишению свободы") },
-            { value: 100807, title: t("обязательные работы") },
-            { value: 75200, title: t("штраф") },
-            { value: 51684, title: t("исправительные работы") },
-          ],
+            {
+              value: counters.primaryImprisonment,
+              title: t("лишение свободы"),
+            },
+            {
+              value: counters.primarySuspended,
+              title: t("условное осуждение к лишению свободы"),
+            },
+            {
+              value: counters.primaryCommunityService,
+              title: t("обязательные работы"),
+            },
+            {
+              value: counters.primaryForcedLabour,
+              title: t("принудительные работы"),
+            },
+            {
+              value: counters.coerciveMeasures,
+              title: t("исправительные работы"),
+            },
+            { value: counters.primaryFine, title: t("штраф") },
+            {
+              title: t("принудительные меры к невменяемым"),
+              value: counters.coerciveMeasures,
+            },
+            {
+              title: t("Условное осуждение к иным мерам"),
+              value: counters.primaryOther,
+            },
+          ].sort((n1, n2) => n2.value - n1.value),
         ],
       },
     ],
@@ -92,6 +118,7 @@ interface IndexPageAnalyticsProps {
     totalAcquittal: number;
     totalDismissal: number;
     total: number;
+    totalByPunishment: CountersByPunishment;
   };
 }
 
@@ -107,7 +134,13 @@ const DropdownIndicator = (props: object) => {
 const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
   yearSelectOptions,
   defaultYearSelectOption,
-  counters: { total, totalAcquittal, totalConvicted, totalDismissal },
+  counters: {
+    total,
+    totalAcquittal,
+    totalConvicted,
+    totalDismissal,
+    ...counters
+  },
 }: IndexPageAnalyticsProps) => {
   const { t } = useLocale();
   const [selectedYear, setSelectedYear] = useState<YearOption>(
@@ -169,9 +202,11 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
           <T message="дел" messagePlural="дело" count={totalDismissal} />.
         </Typography>
         <div className={classes.analyticsChartsWrapper}>
-          {getAnalyticsCharts(selectedYear, t).map((c, i) => (
-            <CommentsBar key={i} {...c} />
-          ))}
+          {getAnalyticsCharts(selectedYear, counters.totalByPunishment, t).map(
+            (c, i) => (
+              <CommentsBar key={i} {...c} />
+            )
+          )}
         </div>
       </div>
       <Link
