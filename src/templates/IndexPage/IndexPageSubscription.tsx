@@ -15,16 +15,13 @@ const url = "https://dostoevsky.us2.list-manage.com/subscribe/post";
 const IndexPageSubscription = () => {
   const [value, setValue] = useState<string>("");
   const [flag, setFlag] = useState<boolean>(false);
-  const handleClick = () => {
+  const handleClick = async () => {
     const params = new URLSearchParams();
     params.append("u", "f077fefd24ca7afab1bd50ad9");
     params.append("id", "9cf06a72fd");
     params.append("email", value);
-    console.log(value);
     const headers = { "Content-Type": "application/x-www-form-urlencoded" };
-    axios({ method: "post", url, headers, params })
-      .then(console.log)
-      .catch(console.error);
+    await axios({ method: "post", url, headers, params });
     setFlag(true);
   };
   return (

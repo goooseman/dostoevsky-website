@@ -3,35 +3,32 @@ import cn from "clsx";
 import classes from "./Footer.module.css";
 import { withLocale, WithLocale } from "react-targem";
 import Typography from "src/components/ui-kit/Typography";
-import Button from "../ui-kit/Button";
-import Input from "../ui-kit/Input";
-import TextareaAutosize from "react-textarea-autosize";
+// import Button from "../ui-kit/Button";
+// import Input from "../ui-kit/Input";
+// import TextareaAutosize from "react-textarea-autosize";
 import Container from "../ui-kit/Container";
 import { Menu, MenuLink } from "../Menu";
-import Modal, { useModal } from "src/components/ui-kit/Modal";
-import { useState } from "react";
-import axios, { AxiosResponse } from "axios";
+// import Modal, { useModal } from "src/components/ui-kit/Modal";
+// import { useState } from "react";
+// import axios from "axios";
 
 interface FooterProps extends WithLocale {}
 
 const Footer: React.FC<FooterProps> = ({ t }: FooterProps) => {
-  const { isShowing, toggle } = useModal();
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const sendFeedback = () => {
-    if (email && message) {
-      axios({
-        method: "post",
-        url: "/feedback/",
-        responseType: "text",
-        data: { username, email, message },
-      })
-        // eslint-disable-next-line no-console
-        .then((r: AxiosResponse) => console.log(r))
-        .catch(console.error);
-    }
-  };
+  // const { isShowing, toggle } = useModal();
+  // const [username, setUsername] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [message, setMessage] = useState("");
+  // const sendFeedback = async () => {
+  //   if (email && message) {
+  //     await axios({
+  //       method: "post",
+  //       url: "/feedback/",
+  //       responseType: "text",
+  //       data: { username, email, message },
+  //     });
+  //   }
+  // };
 
   return (
     <div className={cn(classes.container)}>
@@ -102,7 +99,7 @@ const Footer: React.FC<FooterProps> = ({ t }: FooterProps) => {
           </div>
         </div>
       </Container>
-      <Modal
+      {/* <Modal
         isShowing={isShowing}
         onHideButtonClick={toggle}
         title={"Напишите нам"}
@@ -138,7 +135,7 @@ const Footer: React.FC<FooterProps> = ({ t }: FooterProps) => {
             </Button>
           </div>
         </div>
-      </Modal>
+      </Modal> */}
     </div>
   );
 };
