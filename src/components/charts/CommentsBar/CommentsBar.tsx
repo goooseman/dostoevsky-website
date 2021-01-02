@@ -37,6 +37,9 @@ const createChartRefs = (charts: Chart[]) => {
   return chartRefs;
 };
 
+/** "Угроза убийством или причинением тяжкого вреда здоровью (включая ст. 119 старой редакции УК РФ)" => "Угроза убийством или причинением тяжкого вреда здоровью " */
+const removeTextInBrackets = (str: string): string => str.replace(/\(.+\)/, "");
+
 const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
   const { charts } = props;
 
@@ -50,7 +53,10 @@ const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
           labels: [], //chartLabels,
           series: charts[i].series.map((s) =>
             s
-              .map((s) => ({ value: s.value, meta: { title: s.title } }))
+              .map((s) => ({
+                value: s.value,
+                meta: { title: "Foo" },
+              }))
               .sort((a, b) => a.value - b.value)
           ), //series,
         },
@@ -143,6 +149,7 @@ const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
       {...props}
       labels={getLabels()}
       downloadFilename={props.title}
+      /* TODO */
       iframePath="/"
     >
       {charts.map((c, i) => (
@@ -159,9 +166,11 @@ const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
           <div className={classes.barTitles}>
             {charts[i].series[0]
               .sort((a, b) => a.value - b.value)
-              .map((s, j) => (
-                <div key={j}>
-                  <span>{s.title}</span>
+              .map((s) => (
+                <div key={s.title}>
+                  <span className={cn(classes.barTitle)} title={s.title}>
+                    {removeTextInBrackets(s.title)}
+                  </span>
                 </div>
               ))}
           </div>

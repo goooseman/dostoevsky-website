@@ -29,10 +29,17 @@
 
 .bar-titles {
   display: flex;
-  width: 300px;
+  width: 380px;
+  margin-right: -100px;
   height: calc(100% - 45px);
   flex-direction: column;
   margin-top: 15px;
+}
+
+.bar-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .bar-titles > div {
