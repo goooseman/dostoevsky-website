@@ -22,6 +22,7 @@ interface IndexPageProps {
     totalAcquittal: number;
     totalDismissal: number;
     totalNoCrime: number;
+    total: number;
   };
 }
 
@@ -30,7 +31,7 @@ export class IndexPage extends PureComponent<IndexPageProps> {
     super(props);
   }
   render(): React.ReactNode {
-    const { currentSelectedYear } = this.props;
+    const { currentSelectedYear, counters, articles } = this.props;
     return (
       <>
         <div className={classes.topBlockWrapper}>
@@ -78,9 +79,10 @@ export class IndexPage extends PureComponent<IndexPageProps> {
             value: currentSelectedYear,
             label: currentSelectedYear,
           }}
+          counters={counters}
         />
-        <IndexPageCounters counters={this.props.counters} />
-        <IndexPageMore articles={this.props.articles} />
+        <IndexPageCounters counters={counters} />
+        <IndexPageMore articles={articles} />
         <IndexPageSubscription />
       </>
     );

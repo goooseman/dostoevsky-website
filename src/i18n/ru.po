@@ -2960,20 +2960,32 @@ msgid "По всем статьям УК РФ прошли через суд д�
 msgstr ""
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "человек. Из них были осуждены"
+msgid "человека. Из них были осуждены"
+msgid_plural "человек. Из них были осуждены"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "человека"
+msgid_plural "человек"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "обвиняемый оправдан"
+msgid_plural "обвиняемых оправданы"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "По различным основаниям прекращено"
 msgstr ""
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "человек."
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "обвиняемых оправданы. По различным основаниям прекращено"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "дел."
-msgstr ""
+msgid "дел"
+msgid_plural "дело"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "Перейти к материалу"

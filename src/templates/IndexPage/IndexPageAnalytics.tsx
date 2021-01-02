@@ -7,11 +7,6 @@ import Select, { components } from "react-select";
 import CommentsBar from "src/components/charts/CommentsBar";
 import { Link, navigate } from "gatsby";
 
-const PEOPLE_COUNT = 500000;
-const CONVICTED = 598214;
-const JUSTIFIED = 1523;
-const TERMINATED = 186415;
-
 const getAnalyticsCharts = (
   selectedYear: { value: number; label: number },
   t: (s: string) => string
@@ -92,6 +87,12 @@ interface YearOption {
 interface IndexPageAnalyticsProps {
   yearSelectOptions: YearOption[];
   defaultYearSelectOption: YearOption;
+  counters: {
+    totalConvicted: number;
+    totalAcquittal: number;
+    totalDismissal: number;
+    total: number;
+  };
 }
 
 const DropdownIndicator = (props: object) => {
@@ -106,6 +107,7 @@ const DropdownIndicator = (props: object) => {
 const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
   yearSelectOptions,
   defaultYearSelectOption,
+  counters: { total, totalAcquittal, totalConvicted, totalDismissal },
 }: IndexPageAnalyticsProps) => {
   const { t } = useLocale();
   const [selectedYear, setSelectedYear] = useState<YearOption>(
@@ -145,10 +147,29 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
         </Typography>
         <Typography className={classes.analyticsSubtitle}>
           <T message="По всем статьям УК РФ прошли через суд дела" />{" "}
-          <b>{PEOPLE_COUNT}</b> <T message="человек. Из них были осуждены" />{" "}
-          <b>{CONVICTED}</b> <T message="человек." /> <b>{JUSTIFIED}</b>{" "}
-          <T message="обвиняемых оправданы. По различным основаниям прекращено" />{" "}
-          <b>{TERMINATED}</b> <T message="дел." />
+          <b>{total}</b>{" "}
+          <T
+            messagePlural="человек. Из них были осуждены"
+            message="человека. Из них были осуждены"
+            count={total}
+          />{" "}
+          <b>{totalConvicted}</b>{" "}
+          <T
+            messagePlural="человек"
+            message="человека"
+            count={totalConvicted}
+          />
+          {". "}
+          <b>{totalAcquittal}</b>{" "}
+          <T
+            messagePlural="обвиняемых оправданы"
+            message="обвиняемый оправдан"
+            count={totalAcquittal}
+          />
+          {". "}
+          <T message="По различным основаниям прекращено" />{" "}
+          <b>{totalDismissal}</b>{" "}
+          <T message="дел" messagePlural="дело" count={totalDismissal} />.
         </Typography>
         <div className={classes.analyticsChartsWrapper}>
           {getAnalyticsCharts(selectedYear, t).map((c, i) => (

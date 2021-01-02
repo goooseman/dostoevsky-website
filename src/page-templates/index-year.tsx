@@ -61,6 +61,7 @@ const Index: React.FC<IndexPageProps> = ({
     totalDismissal,
     totalAcquittal: totalAcquittalAll,
     totalNoCrime,
+    total: totalAcquittalAll + totalConvicted + totalDismissal + totalNoCrime,
   };
   // articles preview
   const articles: Partial<Article>[] = (data.allMarkdownRemark?.edges).map(

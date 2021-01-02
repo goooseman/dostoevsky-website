@@ -23,7 +23,6 @@ const IndexPageCounters = (props: IndexPageCountersProps) => {
     totalDismissal,
     totalNoCrime,
   } = props.counters;
-  console.debug(props.counters);
   return (
     <Container>
       <Counters className={classes.counter}>
