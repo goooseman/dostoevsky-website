@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Sun Jan 03 2021 00:41:07 GMT+0200 (Israel Standard Time)\n"
+"POT-Creation-Date: Sun Jan 03 2021 01:19:42 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -2890,46 +2890,6 @@ msgstr ""
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "осудили человек"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Нарушение ПДД лицом, подвергнутым административному наказанию"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Незаконное приобретение и хранение наркотиков"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Кража"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Неуплата алиментов"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Грабёж"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Угроза убийством или причинением тяжкого вреда здоровью"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Умышленное причинение тяжкого вреда здоровью"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Незаконное производство и сбыт наркотиков"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Мошенничество"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Умышленное причинение легкого вреда здоровью"
 msgstr ""
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:

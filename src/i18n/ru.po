@@ -2901,46 +2901,6 @@ msgid "осудили человек"
 msgstr ""
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Нарушение ПДД лицом, подвергнутым административному наказанию"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Незаконное приобретение и хранение наркотиков"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Кража"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Неуплата алиментов"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Грабёж"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Угроза убийством или причинением тяжкого вреда здоровью"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Умышленное причинение тяжкого вреда здоровью"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Незаконное производство и сбыт наркотиков"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Мошенничество"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Умышленное причинение легкого вреда здоровью"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "Какие наказания суды чаще всего назначали в "
 msgstr ""
 

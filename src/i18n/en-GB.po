@@ -3328,46 +3328,6 @@ msgid "осудили человек"
 msgstr "осудили человек"
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Нарушение ПДД лицом, подвергнутым административному наказанию"
-msgstr "Нарушение ПДД лицом, подвергнутым административному наказанию"
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Незаконное приобретение и хранение наркотиков"
-msgstr "Незаконное приобретение и хранение наркотиков"
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Кража"
-msgstr "Кража"
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Неуплата алиментов"
-msgstr "Неуплата алиментов"
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Грабёж"
-msgstr "Грабёж"
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Угроза убийством или причинением тяжкого вреда здоровью"
-msgstr "Угроза убийством или причинением тяжкого вреда здоровью"
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Умышленное причинение тяжкого вреда здоровью"
-msgstr "Умышленное причинение тяжкого вреда здоровью"
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Незаконное производство и сбыт наркотиков"
-msgstr "Незаконное производство и сбыт наркотиков"
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Мошенничество"
-msgstr "Мошенничество"
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Умышленное причинение легкого вреда здоровью"
-msgstr "Умышленное причинение легкого вреда здоровью"
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "Какие наказания суды чаще всего назначали в "
 msgstr "Какие наказания суды чаще всего назначали в "
 

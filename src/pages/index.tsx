@@ -5,7 +5,10 @@ import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
 import IndexPage from "src/templates/IndexPage";
 import { Article } from "src/templates/ArticleFullPage/ArticleFullPage";
-import { getIndexCountersFromData } from "src/utils/index-page";
+import {
+  getIndexCountersFromData,
+  getIndexTopClausesByConvictedFromData,
+} from "src/utils/index-page";
 
 interface IndexPageProps {
   data: IndexQuery;
@@ -27,6 +30,7 @@ const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
       <Meta site={meta} />
       <IndexPage
         counters={getIndexCountersFromData(data)}
+        topClauses={getIndexTopClausesByConvictedFromData(data)}
         articles={articles}
         /* if you change this, change year in the grapql query */
         currentSelectedYear={2019}
@@ -66,6 +70,7 @@ export const pageQuery = graphql`
     parts: allApiServerData(filter: { year: { eq: 2019 } }) {
       edges {
         node {
+          name
           part
           parameters {
             totalConvicted

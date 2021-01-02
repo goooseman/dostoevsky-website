@@ -7,10 +7,12 @@ import Select, { components } from "react-select";
 import CommentsBar from "src/components/charts/CommentsBar";
 import { Link, navigate } from "gatsby";
 import { CountersByPunishment } from "src/types";
+import { IndexTopClause } from "src/utils/index-page";
 
 const getAnalyticsCharts = (
   selectedYear: { value: number; label: number },
   counters: CountersByPunishment,
+  topCounters: IndexTopClause[],
   t: (s: string) => string
 ) => [
   {
@@ -20,42 +22,11 @@ const getAnalyticsCharts = (
     charts: [
       {
         title: t("осудили человек"),
-        // color: "b",
         series: [
-          [
-            {
-              value: 59543,
-              title: t(
-                "Нарушение ПДД лицом, подвергнутым административному наказанию"
-              ),
-            },
-            {
-              value: 59018,
-              title: t("Незаконное приобретение и хранение наркотиков"),
-            },
-            { value: 150495, title: t("Кража") },
-            { value: 46884, title: t("Неуплата алиментов") },
-            { value: 23281, title: t("Грабёж") },
-            {
-              value: 18830,
-              title: t(
-                "Угроза убийством или причинением тяжкого вреда здоровью"
-              ),
-            },
-            {
-              value: 18775,
-              title: t("Умышленное причинение тяжкого вреда здоровью"),
-            },
-            {
-              value: 17044,
-              title: t("Незаконное производство и сбыт наркотиков"),
-            },
-            { value: 16258, title: t("Мошенничество") },
-            {
-              value: 12044,
-              title: t("Умышленное причинение легкого вреда здоровью"),
-            },
-          ],
+          topCounters.map((s) => ({
+            title: s.title,
+            value: s.totalConvicted,
+          })),
         ],
       },
     ],
@@ -120,6 +91,7 @@ interface IndexPageAnalyticsProps {
     total: number;
     totalByPunishment: CountersByPunishment;
   };
+  topClauses: IndexTopClause[];
 }
 
 const DropdownIndicator = (props: object) => {
@@ -141,6 +113,7 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
     totalDismissal,
     ...counters
   },
+  topClauses,
 }: IndexPageAnalyticsProps) => {
   const { t } = useLocale();
   const [selectedYear, setSelectedYear] = useState<YearOption>(
@@ -202,11 +175,14 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
           <T message="дел" messagePlural="дело" count={totalDismissal} />.
         </Typography>
         <div className={classes.analyticsChartsWrapper}>
-          {getAnalyticsCharts(selectedYear, counters.totalByPunishment, t).map(
-            (c, i) => (
-              <CommentsBar key={i} {...c} />
-            )
-          )}
+          {getAnalyticsCharts(
+            selectedYear,
+            counters.totalByPunishment,
+            topClauses,
+            t
+          ).map((c) => (
+            <CommentsBar key={c.title} {...c} />
+          ))}
         </div>
       </div>
       <Link

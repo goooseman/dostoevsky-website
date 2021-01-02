@@ -11,7 +11,7 @@ import IndexPageMore from "./IndexPageMore";
 import IndexPageSubscription from "./IndexPageSubscription";
 import years from "content/years.json";
 import { Article } from "../ArticleFullPage/ArticleFullPage";
-import { IndexCounters } from "src/utils/index-page";
+import { IndexCounters, IndexTopClause } from "src/utils/index-page";
 
 const yearSelectOptions = years.map((y) => ({ value: y, label: y }));
 
@@ -19,6 +19,7 @@ interface IndexPageProps {
   articles: Partial<Article>[];
   currentSelectedYear: number;
   counters: IndexCounters;
+  topClauses: IndexTopClause[];
 }
 
 export class IndexPage extends PureComponent<IndexPageProps> {
@@ -26,7 +27,7 @@ export class IndexPage extends PureComponent<IndexPageProps> {
     super(props);
   }
   render(): React.ReactNode {
-    const { currentSelectedYear, counters, articles } = this.props;
+    const { currentSelectedYear, counters, articles, topClauses } = this.props;
     return (
       <>
         <div className={classes.topBlockWrapper}>
@@ -69,6 +70,7 @@ export class IndexPage extends PureComponent<IndexPageProps> {
           <Promo />
         </div>
         <IndexPageAnalytics
+          topClauses={topClauses}
           yearSelectOptions={yearSelectOptions}
           defaultYearSelectOption={{
             value: currentSelectedYear,

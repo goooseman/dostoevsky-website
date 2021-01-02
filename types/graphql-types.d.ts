@@ -3879,7 +3879,7 @@ export type IndexYearQueryVariables = Exact<{
 
 
 export type IndexYearQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, allMarkdownRemark: { edges: Array<{ node: { frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'slug' | 'title' | 'author' | 'date' | 'tag' | 'teaser'>> } }> }, parts: { edges: Array<{ node: (
-        Pick<Api_Server__Data, 'part'>
+        Pick<Api_Server__Data, 'name' | 'part'>
         & { parameters?: Maybe<(
           Pick<Api_Server__DataParameters, 'totalConvicted' | 'dismissalAbsenceOfEvent' | 'dismissalAmnesty' | 'dismissalReconciliation' | 'dismissalRepentance' | 'dismissalRepentance2' | 'dismissalCourtFine' | 'dismissalOther' | 'unfinishedOffence' | 'noCrimeNecessity' | 'noCrimeOther' | 'primaryImprisonment' | 'primarySuspended' | 'primaryCommunityService' | 'primaryForcedLabour' | 'primaryCorrectionalLabour' | 'primaryFine' | 'coerciveMeasures' | 'primaryOther'>
           & { totalAcquittal: Api_Server__DataParameters['acquittal'], noCrimeSelfDefence: Api_Server__DataParameters['noCrimeSelf_defence'] }
@@ -3923,7 +3923,7 @@ export type IndexQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type IndexQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, allMarkdownRemark: { edges: Array<{ node: { frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'slug' | 'title' | 'author' | 'teaser' | 'date' | 'tag'>> } }> }, parts: { edges: Array<{ node: (
-        Pick<Api_Server__Data, 'part'>
+        Pick<Api_Server__Data, 'name' | 'part'>
         & { parameters?: Maybe<(
           Pick<Api_Server__DataParameters, 'totalConvicted' | 'dismissalAbsenceOfEvent' | 'dismissalAmnesty' | 'dismissalReconciliation' | 'dismissalRepentance' | 'dismissalRepentance2' | 'dismissalCourtFine' | 'dismissalOther' | 'unfinishedOffence' | 'noCrimeNecessity' | 'noCrimeOther' | 'primaryImprisonment' | 'primarySuspended' | 'primaryCommunityService' | 'primaryForcedLabour' | 'primaryCorrectionalLabour' | 'primaryFine' | 'coerciveMeasures' | 'primaryOther'>
           & { totalAcquittal: Api_Server__DataParameters['acquittal'], noCrimeSelfDefence: Api_Server__DataParameters['noCrimeSelf_defence'] }

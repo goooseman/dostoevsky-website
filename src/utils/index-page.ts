@@ -10,6 +10,12 @@ export interface IndexCounters {
   totalByPunishment: CountersByPunishment;
 }
 
+export interface IndexTopClause {
+  title: string;
+  /** Всего осуждено */
+  totalConvicted: number;
+}
+
 export const getIndexCountersFromData = (data: IndexQuery): IndexCounters => {
   let totalConvictedAll = 0;
   let totalDismissal = 0;
@@ -88,4 +94,21 @@ export const getIndexCountersFromData = (data: IndexQuery): IndexCounters => {
       totalAcquittalAll + totalConvictedAll + totalDismissal + totalNoCrime,
     totalByPunishment,
   };
+};
+
+export const getIndexTopClausesByConvictedFromData = (
+  data: IndexQuery
+): IndexTopClause[] => {
+  const topClauses: IndexTopClause[] = data.parts.edges
+    .sort(
+      (e1, e2) =>
+        (e2.node.parameters?.totalConvicted || 0) -
+        (e1.node.parameters?.totalConvicted || 0)
+    )
+    .slice(0, 10)
+    .map((e) => ({
+      totalConvicted: e.node.parameters?.totalConvicted || 0,
+      title: e.node.name || "",
+    }));
+  return topClauses;
 };
