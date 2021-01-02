@@ -96,6 +96,11 @@ require("dotenv").config({
 });
 
 module.exports = {
+  flags: {
+    PRESERVE_WEBPACK_CACHE: true,
+    FAST_DEV: true,
+    QUERY_ON_DEMAND: true,
+  },
   siteMetadata: {
     title: "Dostoevsky",
     description: "SEO description of dostoevsky",
