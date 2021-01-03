@@ -9,5 +9,7 @@
   },
   "cssModules.camelCase": true,
   "typescript.tsdk": "node_modules/typescript/lib",
-  "css.validate": false // https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint
+  "css.validate": false, // https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint
+  "git.inputValidationLength": 100,
+  "git.inputValidationSubjectLength": 100
 }
