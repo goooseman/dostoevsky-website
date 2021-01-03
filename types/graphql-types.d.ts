@@ -3003,6 +3003,7 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___entitiesArray___url'
   | 'pluginCreator___pluginOptions___entitiesArray___method'
   | 'pluginCreator___pluginOptions___entitiesArray___verboseOutput'
+  | 'pluginCreator___pluginOptions___rules'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
@@ -3241,6 +3242,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___entitiesArray___schemaType___name'
   | 'pluginOptions___entitiesArray___schemaType___year'
   | 'pluginOptions___entitiesArray___schemaType___part'
+  | 'pluginOptions___rules'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
   | 'browserAPIs'
@@ -3383,6 +3385,7 @@ export type SitePluginPluginOptions = {
   localSave?: Maybe<Scalars['Boolean']>;
   verboseOutput?: Maybe<Scalars['Boolean']>;
   entitiesArray?: Maybe<Array<Maybe<SitePluginPluginOptionsEntitiesArray>>>;
+  rules?: Maybe<Array<Maybe<Scalars['String']>>>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
@@ -3620,6 +3623,7 @@ export type SitePluginPluginOptionsFilterInput = {
   localSave?: Maybe<BooleanQueryOperatorInput>;
   verboseOutput?: Maybe<BooleanQueryOperatorInput>;
   entitiesArray?: Maybe<SitePluginPluginOptionsEntitiesArrayFilterListInput>;
+  rules?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
 

@@ -221,5 +221,15 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-force-file-loader`,
+      options: {
+        rules: [
+          "fonts" /* Matches Gatsby default rules for fonts */,
+          "images" /* Matches Gatsby default rules for images */,
+          "media" /* Matches Gatsby default rules for media (video/audio) */,
+        ],
+      },
+    },
   ],
 };
