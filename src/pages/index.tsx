@@ -9,13 +9,20 @@ import {
   getIndexCountersFromData,
   getIndexTopClausesByConvictedFromData,
 } from "src/utils/index-page";
+import { IndexPageViews } from "src/config/routes";
 
 interface IndexPageProps {
   data: IndexQuery;
   location: Location;
+  pageContext: {
+    view: IndexPageViews;
+  };
 }
 
-const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
+const Index: React.FC<IndexPageProps> = ({
+  data,
+  pageContext,
+}: IndexPageProps) => {
   // common site props
   const meta = data.site?.meta;
 
@@ -26,7 +33,7 @@ const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
   );
 
   return (
-    <Layout>
+    <Layout hasPageLayout={pageContext.view === "page"}>
       <Meta site={meta} />
       <IndexPage
         counters={getIndexCountersFromData(data)}
@@ -34,6 +41,7 @@ const Index: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
         articles={articles}
         /* if you change this, change year in the grapql query */
         currentSelectedYear={2019}
+        view={pageContext.view}
       />
     </Layout>
   );

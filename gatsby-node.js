@@ -4,7 +4,10 @@ const path = require("path");
 const WebpackShellPluginNext = require("webpack-shell-plugin-next");
 let ukRf = require("./content/ук-рф.json");
 const years = require("./content/years.json");
-const { getRouteForClausePage } = require("./gatsby-routing");
+const {
+  getRouteForClausePage,
+  getRouteForIndexPage,
+} = require("./gatsby-routing");
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
@@ -54,12 +57,23 @@ exports.createPages = async ({ actions, graphql }) => {
   }
   if (!Boolean(process.env.IS_BLOG_BUILD)) {
     // Create a separate index for every year, but not first one (the first one is default index)
-    for (let year of years.slice(1)) {
-      createPage({
-        path: `/${year}/`,
-        component: path.resolve(`src/page-templates/index-year.tsx`),
-        context: { year },
-      });
+    for (let year of years) {
+      const indexPageViewModes = [
+        "page",
+        "iframe-top-clauses",
+        "iframe-by-punishment",
+      ];
+      for (view of indexPageViewModes) {
+        if (year === years[0] && view === "page") {
+          // do not build "/" page once again, it is build from src/pages/index already
+          continue;
+        }
+        createPage({
+          path: getRouteForIndexPage(year, view),
+          component: path.resolve(`src/page-templates/index-year.tsx`),
+          context: { year, view },
+        });
+      }
     }
 
     for (let part of ukRf) {

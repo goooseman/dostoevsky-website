@@ -8,6 +8,7 @@ import CommentsBar from "src/components/charts/CommentsBar";
 import { Link, navigate } from "gatsby";
 import { CountersByPunishment, SelectOption } from "src/types";
 import { IndexTopClause } from "src/utils/index-page";
+import { getIndexLink, IndexPageViews } from "src/config/routes";
 
 const getAnalyticsCharts = (
   selectedYear: string,
@@ -19,6 +20,7 @@ const getAnalyticsCharts = (
     title: t(
       `Статьи УК РФ, по которым осуждали чаще всего в ${selectedYear} году`
     ),
+    iframePath: getIndexLink(selectedYear, "iframe-top-clauses"),
     charts: [
       {
         title: t("осудили человек"),
@@ -35,6 +37,7 @@ const getAnalyticsCharts = (
     title: t(
       `Какие наказания суды чаще всего назначали в ${selectedYear} году`
     ),
+    iframePath: getIndexLink(selectedYear, "iframe-by-punishment"),
     charts: [
       {
         title: t("осудили человек"),
@@ -79,6 +82,7 @@ const getAnalyticsCharts = (
 interface IndexPageAnalyticsProps {
   yearSelectOptions: SelectOption[];
   defaultYearSelectOption: SelectOption;
+  view: IndexPageViews;
   counters: {
     totalConvicted: number;
     totalAcquittal: number;
@@ -101,6 +105,7 @@ const DropdownIndicator = (props: object) => {
 const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
   yearSelectOptions,
   defaultYearSelectOption,
+  view,
   counters: {
     total,
     totalAcquittal,
@@ -117,11 +122,23 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
 
   const handleYearChange = (option: SelectOption) => {
     setSelectedYear(option);
-    if (option.value === yearSelectOptions[0].value) {
-      return navigate(`/`);
-    }
-    navigate(`/${option.value}/`);
+    navigate(getIndexLink(option.value, "page"));
   };
+
+  const charts = getAnalyticsCharts(
+    selectedYear.label,
+    counters.totalByPunishment,
+    topClauses,
+    t
+  );
+
+  if (view === "iframe-top-clauses") {
+    return <CommentsBar {...charts[0]} />;
+  }
+
+  if (view === "iframe-by-punishment") {
+    return <CommentsBar {...charts[1]} />;
+  }
 
   return (
     <Container className={classes.analyticsWrapper}>
@@ -170,12 +187,7 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
           <T message="дел" messagePlural="дело" count={totalDismissal} />.
         </Typography>
         <div className={classes.analyticsChartsWrapper}>
-          {getAnalyticsCharts(
-            selectedYear.label,
-            counters.totalByPunishment,
-            topClauses,
-            t
-          ).map((c) => (
+          {charts.map((c) => (
             <CommentsBar key={c.title} {...c} />
           ))}
         </div>

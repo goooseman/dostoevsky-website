@@ -12,6 +12,18 @@ const getRouteForClausePage = (clauseId, year, page, view) => {
   return route;
 };
 
+const getRouteForIndexPage = (year, view) => {
+  let route = `/`;
+  if (year !== "2019") {
+    route += `${year}/`;
+  }
+  if (view !== "page") {
+    route += `${view}/`;
+  }
+  return route;
+};
+
 module.exports = {
   getRouteForClausePage,
+  getRouteForIndexPage,
 };

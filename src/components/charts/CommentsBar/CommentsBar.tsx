@@ -18,6 +18,7 @@ interface Chart {
 
 interface CommentsBarProps {
   title: string;
+  iframePath: string;
   charts: Chart[];
 }
 
@@ -149,8 +150,7 @@ const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
       {...props}
       labels={getLabels()}
       downloadFilename={props.title}
-      /* TODO */
-      iframePath="/"
+      iframePath={props.iframePath}
     >
       {charts.map((c, i) => (
         <div key={i} className={classes.barOuterWrapper}>

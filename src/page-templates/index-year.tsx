@@ -10,12 +10,14 @@ import {
   getIndexCountersFromData,
   getIndexTopClausesByConvictedFromData,
 } from "src/utils/index-page";
+import { IndexPageViews } from "src/config/routes";
 
 interface IndexPageProps {
   data: IndexYearQuery;
   location: Location;
   pageContext: {
     year: number;
+    view: IndexPageViews;
   };
 }
 
@@ -32,13 +34,14 @@ const Index: React.FC<IndexPageProps> = ({
     })
   );
   return (
-    <Layout>
+    <Layout hasPageLayout={pageContext.view === "page"}>
       <Meta site={meta} />
       <IndexPage
         counters={getIndexCountersFromData(data)}
         topClauses={getIndexTopClausesByConvictedFromData(data)}
         articles={articles}
         currentSelectedYear={pageContext.year}
+        view={pageContext.view}
       />
     </Layout>
   );
