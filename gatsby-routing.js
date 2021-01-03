@@ -14,7 +14,7 @@ const getRouteForClausePage = (clauseId, year, page, view) => {
 
 const getRouteForIndexPage = (year, view) => {
   let route = `/`;
-  if (year !== "2019") {
+  if (year.toString() !== "2019") {
     route += `${year}/`;
   }
   if (view !== "page") {

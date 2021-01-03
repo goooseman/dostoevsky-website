@@ -64,10 +64,6 @@ exports.createPages = async ({ actions, graphql }) => {
         "iframe-by-punishment",
       ];
       for (view of indexPageViewModes) {
-        if (year === years[0] && view === "page") {
-          // do not build "/" page once again, it is build from src/pages/index already
-          continue;
-        }
         createPage({
           path: getRouteForIndexPage(year, view),
           component: path.resolve(`src/page-templates/index-year.tsx`),
