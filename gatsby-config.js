@@ -231,5 +231,6 @@ module.exports = {
         ],
       },
     },
+    "gatsby-plugin-uninline-styles",
   ],
 };
