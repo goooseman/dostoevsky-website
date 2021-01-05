@@ -47,7 +47,7 @@ class JsonSearchAdapter implements SearchServiceAdapter {
           results.push(this.transformSection(part, section));
         }
         for (const clause of section.children) {
-          if (clause.id.toString() === query.trim()) {
+          if (queryRegexp.test(clause.id.toString())) {
             results.push(this.transformClause(clause));
             continue;
           }

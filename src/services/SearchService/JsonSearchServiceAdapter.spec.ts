@@ -7,23 +7,21 @@ beforeEach(() => {
 });
 
 describe("clauses", () => {
-  const clause282Response = [
-    {
-      text: {
-        ru:
-          "Возбуждение ненависти либо вражды, а равно унижение человеческого достоинства",
-      },
-      id: "282",
-      type: "clause",
+  const clause282 = {
+    text: {
+      ru:
+        "Возбуждение ненависти либо вражды, а равно унижение человеческого достоинства",
     },
-  ];
+    id: "282",
+    type: "clause",
+  };
 
   it("should return search result for article 282", async () => {
     const results = await jsonSearchServiceAdapter.getArticlesByText(
       "282",
       "ru"
     );
-    expect(results).toEqual(clause282Response);
+    expect(results).toContainEqual(clause282);
   });
 
   it("should return search result for 'Возбуждение ненависти'", async () => {
@@ -31,7 +29,21 @@ describe("clauses", () => {
       "Возбуждение ненависти",
       "ru"
     );
-    expect(results).toEqual(clause282Response);
+    expect(results).toContainEqual(clause282);
+  });
+
+  const clause282And1 = {
+    id: "282.1",
+    text: { ru: "Организация экстремистского сообщества" },
+    type: "clause",
+  };
+
+  it("should also find 282.1 search result for '282'", async () => {
+    const results = await jsonSearchServiceAdapter.getArticlesByText(
+      "282",
+      "ru"
+    );
+    expect(results).toContainEqual(clause282And1);
   });
 
   const clause281Response = [
@@ -44,20 +56,12 @@ describe("clauses", () => {
     },
   ];
 
-  const clause280 = {
-    id: "280",
-    text: {
-      ru: "Публичные призывы к осуществлению экстремистской деятельности",
-    },
-    type: "clause",
-  };
-
   it("should return search result for article 281", async () => {
     const results = await jsonSearchServiceAdapter.getArticlesByText(
       "281",
       "ru"
     );
-    expect(results).toEqual(clause281Response);
+    expect(results).toContainEqual(clause281Response[0]);
   });
 
   it("should return search result for query '281 '", async () => {
@@ -91,6 +95,14 @@ describe("clauses", () => {
     );
     expect(results).toEqual(clause281Response);
   });
+
+  const clause280 = {
+    id: "280",
+    text: {
+      ru: "Публичные призывы к осуществлению экстремистской деятельности",
+    },
+    type: "clause",
+  };
 
   it("should return search result for query 'экстремизм'", async () => {
     const results = await jsonSearchServiceAdapter.getArticlesByText(
