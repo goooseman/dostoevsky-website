@@ -139,12 +139,12 @@ describe("getHelpItems", () => {
   it("should return default help items", () => {
     const result = searchService.getHelpItems("ru");
     expect(result).toEqual([
-      { label: "282", value: "" },
-      { label: "282 часть 2", value: "" },
-      { label: "против личности", value: "" },
-      { label: "против государствa", value: "" },
-      { label: "экстремизм", value: "" },
-      { label: "убийство", value: "" },
+      "282",
+      "282 часть 2",
+      "против личности",
+      "против государства",
+      "экстремизм",
+      "убийство",
     ]);
   });
 });
