@@ -111,6 +111,13 @@ describe("parts", () => {
       type: "chapter",
     },
   ];
+
+  const part10 = {
+    id: "10",
+    text: { ru: "Преступления против государственной власти" },
+    type: "chapter",
+  };
+
   it("should return search result for query 'Преступления против личности'", async () => {
     const results = await jsonSearchServiceAdapter.getArticlesByText(
       "Преступления против личности",
@@ -139,6 +146,14 @@ describe("parts", () => {
       "ru"
     );
     expect(results).toContainEqual(part7Response[0]);
+  });
+
+  it("should return search result for query 'против государства'", async () => {
+    const results = await jsonSearchServiceAdapter.getArticlesByText(
+      "против государства",
+      "ru"
+    );
+    expect(results).toContainEqual(part10);
   });
 });
 

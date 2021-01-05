@@ -11,6 +11,8 @@ const getQeuryWithWildcardWhitespaces = (query: string) =>
 const getQueryWithDictionaryReplaces = (query: string): string => {
   const dict = {
     экстремизм: "экстре",
+    государства: "государст",
+    государство: "государст",
   };
   // (экстремизм|foo)
   const replaceRegexp = new RegExp(`(${Object.keys(dict).join("|")})`, "g");
