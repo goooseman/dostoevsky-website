@@ -67,7 +67,11 @@ const IndexPageMore = (props: IndexPageMoreProps) => {
                   {d.teaser || ""}
                 </Typography>
                 <div className={classes.moreItemBottom}>
-                  <Typography size="small" isUpperCased>
+                  <Typography
+                    className={classes.moreItemAuthor}
+                    size="small"
+                    isUpperCased
+                  >
                     <b>{d.author || ""}</b>
                   </Typography>
                   <Typography

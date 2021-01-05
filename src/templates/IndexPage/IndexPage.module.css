@@ -395,7 +395,7 @@
 }
 
 .more-wrapper .more-item {
-  flex-basis: calc(25% - 2rem);
+  flex-basis: calc(33% - 2rem);
   margin-bottom: 1rem;
   position: relative;
   padding: 0 1rem;
@@ -460,6 +460,10 @@
   padding-top: 1rem;
   border-top: 3px solid;
   margin: 0 0.5rem 0.5rem 0.5rem;
+}
+
+.more-item-author {
+  margin-right: 0.5rem;
 }
 
 .more-wrapper .more-item .more-item-bottom .more-item-date {
