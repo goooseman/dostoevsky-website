@@ -8,6 +8,22 @@ import type {
 const getQeuryWithWildcardWhitespaces = (query: string) =>
   `${query.replace(" ", ".+")}`;
 
+const getQueryWithDictionaryReplaces = (query: string): string => {
+  const dict = {
+    экстремизм: "экстре",
+  };
+  // (экстремизм|foo)
+  const replaceRegexp = new RegExp(`(${Object.keys(dict).join("|")})`, "g");
+  const stringsToReplace = query.match(replaceRegexp) as (keyof typeof dict)[];
+  if (!stringsToReplace || stringsToReplace.length === 0) {
+    return query;
+  }
+  for (const s of stringsToReplace) {
+    query = query.replace(s, dict[s]);
+  }
+  return query;
+};
+
 class JsonSearchAdapter implements SearchServiceAdapter {
   async getArticlesByText(
     query: string,
@@ -15,7 +31,9 @@ class JsonSearchAdapter implements SearchServiceAdapter {
   ): Promise<SearchResult[]> {
     const results: SearchResult[] = [];
     const queryRegexp = new RegExp(
-      getQeuryWithWildcardWhitespaces(query.trim()),
+      getQueryWithDictionaryReplaces(
+        getQeuryWithWildcardWhitespaces(query.trim())
+      ),
       "i"
     );
     for (const part of ukRf) {
