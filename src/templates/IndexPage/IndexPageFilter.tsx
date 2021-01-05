@@ -22,6 +22,7 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
   const { t } = useLocale();
 
   const selectRef = useRef<AsyncSelect<SelectOption> | null>(null);
+  const selectContainerRef = useRef<HTMLDivElement | null>(null);
 
   const [selectedUk, setSelectedUk] = useState<SelectOption>();
 
@@ -36,6 +37,11 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
     // @ts-ignore
     selectRef.current.handleInputChange(searchQuery);
     /* eslint-enable @typescript-eslint/ban-ts-comment */
+    if (!selectContainerRef.current) {
+      return;
+    }
+    // yeah, a little bit hacky and I hope another input will never be added in this div
+    selectContainerRef.current.querySelector("input")?.focus();
   };
 
   const [selectedYear, setSelectedYear] = useState<SelectOption>(
@@ -80,7 +86,7 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
   return (
     <Container>
       <div className={classes.filterBlock}>
-        <div className={classes.ukSelectWrapper}>
+        <div className={classes.ukSelectWrapper} ref={selectContainerRef}>
           <Typography className={classes.selectLabel} isUpperCased size="small">
             <b>
               <T message="№ статьи ук рф или вид преступления" />
