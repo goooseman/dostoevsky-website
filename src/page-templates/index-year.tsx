@@ -26,13 +26,13 @@ const Index: React.FC<IndexPageProps> = ({
   pageContext,
 }: IndexPageProps) => {
   const meta = data.site?.meta;
-  // articles preview
+
   const articles: Partial<Article>[] = (data.allMarkdownRemark?.edges).map(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (a: any) => ({
-      ...a.frontmatter,
+    (a) => ({
+      ...a.node.frontmatter,
     })
   );
+
   return (
     <Layout hasPageLayout={pageContext.view === "page"}>
       <Meta site={meta} />
