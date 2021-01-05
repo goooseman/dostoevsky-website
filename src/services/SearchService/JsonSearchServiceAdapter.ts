@@ -5,13 +5,19 @@ import type {
   SearchServiceAdapter,
 } from "./SearchServiceAdapter";
 
+const getQeuryWithWildcardWhitespaces = (query: string) =>
+  `${query.replace(" ", ".+")}`;
+
 class JsonSearchAdapter implements SearchServiceAdapter {
   async getArticlesByText(
     query: string,
     locale: "ru"
   ): Promise<SearchResult[]> {
     const results: SearchResult[] = [];
-    const queryRegexp = new RegExp(query.trim(), "i");
+    const queryRegexp = new RegExp(
+      getQeuryWithWildcardWhitespaces(query.trim()),
+      "i"
+    );
     for (const part of ukRf) {
       if (queryRegexp.test(part.text[locale])) {
         results.push(this.transformPart(part));

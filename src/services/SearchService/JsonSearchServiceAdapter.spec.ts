@@ -115,6 +115,14 @@ describe("parts", () => {
     );
     expect(results).toEqual(part7Response);
   });
+
+  it("should return search result for query 'преступления личности'", async () => {
+    const results = await jsonSearchServiceAdapter.getArticlesByText(
+      "преступления личности",
+      "ru"
+    );
+    expect(results).toContainEqual(part7Response[0]);
+  });
 });
 
 describe("sections", () => {
