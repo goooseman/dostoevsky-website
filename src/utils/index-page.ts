@@ -1,5 +1,5 @@
 import { CountersByPunishment } from "src/types";
-import { IndexQuery } from "types/graphql-types";
+import { IndexYearQuery } from "types/graphql-types";
 
 export interface IndexCounters {
   totalConvicted: number;
@@ -16,7 +16,9 @@ export interface IndexTopClause {
   totalConvicted: number;
 }
 
-export const getIndexCountersFromData = (data: IndexQuery): IndexCounters => {
+export const getIndexCountersFromData = (
+  data: IndexYearQuery
+): IndexCounters => {
   let totalConvictedAll = 0;
   let totalDismissal = 0;
   let totalAcquittalAll = 0;
@@ -97,7 +99,7 @@ export const getIndexCountersFromData = (data: IndexQuery): IndexCounters => {
 };
 
 export const getIndexTopClausesByConvictedFromData = (
-  data: IndexQuery
+  data: IndexYearQuery
 ): IndexTopClause[] => {
   const topClauses: IndexTopClause[] = data.parts.edges
     .sort(
