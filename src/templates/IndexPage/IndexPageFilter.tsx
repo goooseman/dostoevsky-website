@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import classes from "./IndexPage.module.css";
 import Container from "src/components/ui-kit/Container";
 import AsyncSelect from "react-select/async";
@@ -21,7 +21,22 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
 }: IndexPageFilterProps) => {
   const { t } = useLocale();
 
+  const selectRef = useRef<AsyncSelect<SelectOption> | null>(null);
+
   const [selectedUk, setSelectedUk] = useState<SelectOption>();
+
+  const handleHelperClick = (searchQuery: string) => () => {
+    /* eslint-disable @typescript-eslint/ban-ts-comment */
+    // @ts-ignore
+    selectRef.current.state.inputValue = searchQuery;
+    // @ts-ignore
+    selectRef.current.select.state.inputValue = searchQuery;
+    // @ts-ignore
+    selectRef.current.select.state.menuIsOpen = true;
+    // @ts-ignore
+    selectRef.current.handleInputChange(searchQuery);
+    /* eslint-enable @typescript-eslint/ban-ts-comment */
+  };
 
   const [selectedYear, setSelectedYear] = useState<SelectOption>(
     defaultYearSelectOption
@@ -37,14 +52,6 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
   const [, setUkOptionsLoading] = useState(false);
 
   const helpItems = searchService.getHelpItems("ru");
-  helpItems.forEach(async (h) => {
-    const o = await searchService.getAutocompleteItems(
-      h.label,
-      selectedYear ? selectedYear.value : "2019",
-      "ru"
-    );
-    if (o.length > 0) h.value = o[0].link;
-  });
 
   const loadUkOptions = (value: string) => {
     return new Promise(async (resolve) => {
@@ -80,6 +87,7 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
             </b>
           </Typography>
           <AsyncSelect
+            ref={selectRef}
             isSearchable
             loadOptions={loadUkOptions}
             options={ukSelectOptions}
@@ -128,11 +136,11 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
           </b>
         </Typography>
         <div className={classes.hintsInner}>
-          {helpItems.map((o: { label: string; value: string }, i: number) => (
+          {helpItems.map((o: string) => (
             <PillButton
-              key={i}
-              onClick={() => setSelectedUk(o)}
-              value={o.label}
+              key={o}
+              onClick={handleHelperClick(o)}
+              value={o}
               variant="black"
             />
           ))}
