@@ -3,6 +3,7 @@ import classes from "./Menu.module.css";
 import cn from "clsx";
 import Typography from "src/components/ui-kit/Typography/Typography";
 import { Link } from "gatsby";
+import { Location, WindowLocation } from "@reach/router";
 
 interface MenuProps {
   children: React.ReactNode;
@@ -62,23 +63,45 @@ interface MenuLinkProps {
   children: React.ReactNode;
   to: string;
   size?: "small" | "normal" | undefined;
+  partiallyActive?: boolean;
+  activeUrls?: string[];
 }
 
 export class MenuLink extends PureComponent<MenuLinkProps> {
   render(): React.ReactNode {
-    const { to, children, size } = this.props;
+    const { to, children, size, partiallyActive } = this.props;
     return (
-      <li className={cn(classes.menuItem)}>
-        <Typography variant="span" size={size} isUpperCased>
-          <Link
-            to={to}
-            className={cn(classes.menuLink)}
-            activeClassName={cn(classes.menuLinkActive)}
-          >
-            <b>{children}</b>
-          </Link>
-        </Typography>
-      </li>
+      <Location>
+        {({ location }) => (
+          <li className={cn(classes.menuItem)}>
+            <Typography variant="span" size={size} isUpperCased>
+              <Link
+                partiallyActive={partiallyActive}
+                to={to}
+                className={cn(classes.menuLink, {
+                  [classes.menuLinkActive]: this.isActiveByUrl(location),
+                })}
+                activeClassName={cn(classes.menuLinkActive)}
+              >
+                <b>{children}</b>
+              </Link>
+            </Typography>
+          </li>
+        )}
+      </Location>
     );
   }
+
+  private isActiveByUrl = (location: WindowLocation): boolean => {
+    const { activeUrls } = this.props;
+    if (!activeUrls) {
+      return false;
+    }
+    for (const url of activeUrls) {
+      if (location.pathname.includes(url)) {
+        return true;
+      }
+    }
+    return false;
+  };
 }

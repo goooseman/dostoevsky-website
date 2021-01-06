@@ -26,6 +26,8 @@ interface ClausePageLayoutProps {
   title: React.ReactNode;
   headerChildren?: React.ReactNode;
   pageType: "main" | "parts" | "chronology" | "full";
+  chartsLink?: string;
+  tableLink?: string;
 }
 
 class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
@@ -42,6 +44,8 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
       headerChildren,
       pageType,
       hasParts,
+      chartsLink,
+      tableLink,
     } = this.props;
 
     return (
@@ -157,11 +161,16 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
                 {headerChildren}
               </ClausePageHeader>
               <Menu variant="activeBorderBottom" className={cn(classes.menu)}>
-                <MenuLink to={getClauseLink(clauseNumber, year, pageType)}>
+                <MenuLink
+                  to={chartsLink || getClauseLink(clauseNumber, year, pageType)}
+                >
                   <T message="ЧАРТЫ" />
                 </MenuLink>
                 <MenuLink
-                  to={getClauseLink(clauseNumber, year, pageType, "table")}
+                  to={
+                    tableLink ||
+                    getClauseLink(clauseNumber, year, pageType, "table")
+                  }
                 >
                   <T message="ТАБЛИЦА" />
                 </MenuLink>

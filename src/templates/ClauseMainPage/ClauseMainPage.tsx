@@ -101,6 +101,11 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
         pageType="main"
         hasParts={partsCount > 0}
         headerChildren={this.renderHeaderChildren()}
+        chartsLink={
+          view === "focus"
+            ? getClauseLink(clauseNumber, year, "focus")
+            : undefined
+        }
       >
         {view === "focus" ? <ClauseMainPageFocus {...this.props} /> : null}
         {view === "table" ? (
@@ -169,10 +174,16 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
       <>
         <div className={classes.focusMenu}>
           <Menu variant="tabs" className={cn(classes.tabs)}>
-            <MenuLink to={getClauseLink(clauseNumber, year, "main")}>
+            <MenuLink
+              activeUrls={[getClauseLink(clauseNumber, year, "main", "table")]}
+              to={getClauseLink(clauseNumber, year, "main")}
+            >
               <T message="Основной и дополнительный состав: общие сведения" />
             </MenuLink>
-            <MenuLink to={getClauseLink(clauseNumber, year, "main", "focus")}>
+            <MenuLink
+              partiallyActive
+              to={getClauseLink(clauseNumber, year, "main", "focus")}
+            >
               <T message="Основной состав: в фокусе" />
             </MenuLink>
           </Menu>
