@@ -28,7 +28,7 @@ const Meta: React.FC<Props> = ({ site, title }: Props) => {
         },
         {
           property: "og:url",
-          content: `${siteUrl}/profile`,
+          content: `${siteUrl}`,
         },
       ]}
     />

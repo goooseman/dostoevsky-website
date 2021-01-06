@@ -18,9 +18,9 @@ const EmbedModal: React.FC<EmbedModalProps> = ({
 }: EmbedModalProps) => {
   const { isShowing, toggle } = useModal();
   const { isCopied, copy } = useCopyToClipboard(3000);
-  const { siteUrl } = useSiteMetadata();
+  const { embedsUrl } = useSiteMetadata();
 
-  const iframeCode = `<iframe width="750" src="${siteUrl}${iframePath}" frameborder="0" allowfullscreen></iframe>`;
+  const iframeCode = `<iframe width="750" src="${embedsUrl}${iframePath}" frameborder="0" allowfullscreen></iframe>`;
 
   return (
     <>

@@ -2295,8 +2295,6 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   flags?: Maybe<SiteFlagsFilterInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
@@ -2458,8 +2456,6 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
-  port?: Maybe<Scalars['Int']>;
-  host?: Maybe<Scalars['String']>;
   flags?: Maybe<SiteFlags>;
   pathPrefix?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
@@ -2663,12 +2659,11 @@ export type SiteFieldsEnum =
   | 'siteMetadata___title'
   | 'siteMetadata___description'
   | 'siteMetadata___siteUrl'
+  | 'siteMetadata___embedsUrl'
   | 'siteMetadata___api___base'
   | 'siteMetadata___api___token'
   | 'siteMetadata___api___headers___Content_Type'
   | 'siteMetadata___api___headers___Authorization'
-  | 'port'
-  | 'host'
   | 'flags___PRESERVE_WEBPACK_CACHE'
   | 'flags___FAST_DEV'
   | 'flags___QUERY_ON_DEMAND'
@@ -2764,8 +2759,6 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   flags?: Maybe<SiteFlagsFilterInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
@@ -2839,9 +2832,6 @@ export type SitePageContext = {
   slug?: Maybe<Scalars['String']>;
   year?: Maybe<Scalars['Int']>;
   view?: Maybe<Scalars['String']>;
-  partRegex?: Maybe<Scalars['String']>;
-  clauseRegex?: Maybe<Scalars['String']>;
-  clauseId?: Maybe<Scalars['Float']>;
 };
 
 export type SitePageContextArticle = {
@@ -2869,9 +2859,6 @@ export type SitePageContextFilterInput = {
   slug?: Maybe<StringQueryOperatorInput>;
   year?: Maybe<IntQueryOperatorInput>;
   view?: Maybe<StringQueryOperatorInput>;
-  partRegex?: Maybe<StringQueryOperatorInput>;
-  clauseRegex?: Maybe<StringQueryOperatorInput>;
-  clauseId?: Maybe<FloatQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -2983,9 +2970,6 @@ export type SitePageFieldsEnum =
   | 'context___slug'
   | 'context___year'
   | 'context___view'
-  | 'context___partRegex'
-  | 'context___clauseRegex'
-  | 'context___clauseId'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'
@@ -3868,6 +3852,7 @@ export type SiteSiteMetadata = {
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   siteUrl?: Maybe<Scalars['String']>;
+  embedsUrl?: Maybe<Scalars['String']>;
   api?: Maybe<SiteSiteMetadataApi>;
 };
 
@@ -3897,6 +3882,7 @@ export type SiteSiteMetadataFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
   siteUrl?: Maybe<StringQueryOperatorInput>;
+  embedsUrl?: Maybe<StringQueryOperatorInput>;
   api?: Maybe<SiteSiteMetadataApiFilterInput>;
 };
 
@@ -3934,7 +3920,7 @@ export type WebPOptions = {
 export type SiteMetadataQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type SiteMetadataQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }> };
+export type SiteMetadataQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl' | 'embedsUrl'>> }> };
 
 export type ArticleFullQueryVariables = Exact<{
   slug?: Maybe<Scalars['String']>;

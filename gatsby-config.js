@@ -92,7 +92,7 @@ const dataResponseType = {
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env.${process.env.ENV || process.env.NODE_ENV}`,
 });
 
 module.exports = {
@@ -105,6 +105,7 @@ module.exports = {
     title: "Dostoevsky",
     description: "SEO description of dostoevsky",
     siteUrl: process.env.SITE_URL,
+    embedsUrl: process.env.EMBEDS_URL,
     api: {
       base: api_base,
       token: api_token,
