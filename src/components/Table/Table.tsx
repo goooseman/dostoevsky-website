@@ -86,9 +86,7 @@ class Table extends PureComponent<TableProps> {
               <MenuItem
                 key={i}
                 isActive={i === activeTableIndex}
-                onClick={
-                  onTableTitleClick ? () => onTableTitleClick(i) : () => false
-                }
+                onClick={onTableTitleClick && onTableTitleClick(i)}
               >
                 {t.title}
               </MenuItem>

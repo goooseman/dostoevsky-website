@@ -34,7 +34,7 @@ export class Menu extends PureComponent<MenuProps> {
 interface MenuItemProps {
   children: React.ReactNode;
   isActive: boolean;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export class MenuItem extends PureComponent<MenuItemProps> {
