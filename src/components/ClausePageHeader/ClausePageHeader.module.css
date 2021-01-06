@@ -37,6 +37,14 @@
   align-items: flex-start;
 }
 
+.year-select-indicator-overlay {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+}
+
 .year-select-value-container-label {
   margin-left: 3px;
 }

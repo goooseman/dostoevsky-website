@@ -3,8 +3,19 @@ import classes from "./ClausePageHeader.module.css";
 import cn from "clsx";
 import Typography from "src/components/ui-kit/Typography";
 import { withLocale, WithLocale, T } from "react-targem";
-import Select, { components } from "react-select";
+import Select, {
+  components,
+  ControlProps,
+  IndicatorContainerProps,
+  IndicatorProps,
+  MenuProps,
+  OptionTypeBase,
+  SingleValueProps,
+  OptionProps,
+  ValueContainerProps,
+} from "react-select";
 import { getClauseLink } from "src/config/routes";
+import { MenuListComponentProps } from "react-select/src/components/Menu";
 
 interface ClausePageHeaderProps extends WithLocale {
   title: React.ReactNode;
@@ -60,9 +71,8 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
     }));
   };
 
-  private renderControl = (props: object) => {
+  private renderControl = (props: ControlProps<OptionTypeBase>) => {
     return (
-      /* @ts-ignore */
       <components.Control
         {...props}
         className={cn(classes.yearSelectControl)}
@@ -70,9 +80,10 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
     );
   };
 
-  private renderValueContainer = (props: { children: React.ReactNode }) => {
+  private renderValueContainer = (
+    props: ValueContainerProps<OptionTypeBase>
+  ) => {
     return (
-      /* @ts-ignore */
       <components.ValueContainer
         {...props}
         className={cn(classes.yearSelectValueContainer)}
@@ -87,9 +98,10 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
     );
   };
 
-  private renderIndicatorsContainer = (props: object) => {
+  private renderIndicatorsContainer = (
+    props: IndicatorContainerProps<OptionTypeBase>
+  ) => {
     return (
-      /* @ts-ignore */
       <components.IndicatorsContainer
         {...props}
         className={cn(classes.yearSelectIndicatorsContainer)}
@@ -97,18 +109,19 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
     );
   };
 
-  private renderDropdownIndicator = (props: object) => {
+  private renderDropdownIndicator = (props: IndicatorProps<OptionTypeBase>) => {
     const { t } = this.props;
     return (
-      /* @ts-ignore */
       <components.DropdownIndicator {...props}>
-        <img src={require("./assets/down.svg")} alt={t("Down arrow")} />
+        <>
+          <div className={cn(classes.yearSelectIndicatorOverlay)}></div>
+          <img src={require("./assets/down.svg")} alt={t("Down arrow")} />
+        </>
       </components.DropdownIndicator>
     );
   };
 
-  private renderSingleValue = (props: { children: React.ReactNode }) => (
-    /* @ts-ignore */
+  private renderSingleValue = (props: SingleValueProps<OptionTypeBase>) => (
     <components.SingleValue
       {...props}
       className={cn(classes.yearSelectSingleValue)}
@@ -117,18 +130,16 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
     </components.SingleValue>
   );
 
-  private renderMenu = (props: { children: React.ReactElement }) => {
+  private renderMenu = (props: MenuProps<OptionTypeBase>) => {
     return (
-      /* @ts-ignore */
       <components.Menu {...props} className={cn(classes.yearSelectMenu)}>
         {props.children}
       </components.Menu>
     );
   };
 
-  private renderMenuList = (props: { children: React.ReactNode }) => {
+  private renderMenuList = (props: MenuListComponentProps<OptionTypeBase>) => {
     return (
-      /* @ts-ignore */
       <components.MenuList
         {...props}
         className={cn(classes.yearSelectMenuList)}
@@ -138,15 +149,16 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
     );
   };
 
-  private renderOption = (props: any) => {
+  private renderOption = (props: OptionProps<OptionTypeBase>) => {
     const { clauseNumber, pageType } = this.props;
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    const value = props.value;
     return (
       <components.Option {...props} className={cn(classes.yearSelectOption)}>
         <Typography component="span">
-          <a
-            href={getClauseLink(clauseNumber.toString(), props.value, pageType)}
-          >
-            {props.value}
+          <a href={getClauseLink(clauseNumber.toString(), value, pageType)}>
+            {value}
           </a>
         </Typography>
       </components.Option>
@@ -155,6 +167,5 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   private handleChange = () => {};
-  // private handleChange = (data: { value: string }) => {};
 }
 export default withLocale(ClausePageHeader);
