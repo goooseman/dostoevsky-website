@@ -348,7 +348,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
             ],
           },
           {
-            key: "27",
+            key: "27.2",
             values: [
               { key: "title", value: t("Условное осуждение к иным мерам") },
               {
@@ -358,14 +358,14 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
             ],
           },
           {
-            key: "25",
+            key: "25.2",
             values: [
               { key: "title", value: t("Прекращено (основной состав)") },
             ],
             isAccordion: true,
           },
           {
-            key: "26",
+            key: "26.2",
             values: [
               {
                 key: "title",
@@ -518,12 +518,12 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
             ],
           },
           {
-            key: "37",
+            key: "38",
             values: [{ key: "title", value: t("Дополнительное наказание") }],
             isAccordion: true,
           },
           {
-            key: "38",
+            key: "39",
             values: [
               {
                 key: "title",
@@ -538,14 +538,14 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
             ],
           },
           {
-            key: "39",
+            key: "40",
             values: [
               { key: "title", value: t("Штраф") },
               { key: "main", value: p.addFine },
             ],
           },
           {
-            key: "40",
+            key: "41",
             values: [
               {
                 key: "title",
@@ -557,14 +557,14 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
             ],
           },
           {
-            key: "41",
+            key: "42",
             values: [
               { key: "title", value: t("Ограничение свободы") },
               { key: "main", value: p.addRestrain },
             ],
           },
           {
-            key: "42",
+            key: "43",
             values: [
               {
                 key: "title",
@@ -576,14 +576,14 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
             isAccordion: true,
           },
           {
-            key: "43",
+            key: "44",
             values: [
               { key: "title", value: t("необходимая оборона (ст. 37 УК РФ)") },
               { key: "main", value: p.noCrimeSelfDefence },
             ],
           },
           {
-            key: "44",
+            key: "45",
             values: [
               {
                 key: "title",
@@ -593,7 +593,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
             ],
           },
           {
-            key: "45",
+            key: "46",
             values: [
               {
                 key: "title",

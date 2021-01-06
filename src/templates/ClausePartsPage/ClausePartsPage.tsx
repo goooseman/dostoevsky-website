@@ -133,7 +133,7 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
   private getPartText = (part: Part, partIndex: number, partsCount: number) => {
     const { year, clauseNumber } = this.props;
     return (
-      <>
+      <span key={`${clauseNumber}-${partIndex}`}>
         {partIndex === 1 ? (
           <T
             message="В {{ year }} году по части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному составу {{ count }} человек"
@@ -199,7 +199,7 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
             <br />
           </>
         ) : null}
-      </>
+      </span>
     );
   };
 
