@@ -28,21 +28,25 @@ class ClauseParts extends PureComponent<ClausePartsProps> {
     const parts: ClausePartsPageParts = distinctNodes<
       ClausePartsQuery["parts"]["edges"][number]["node"],
       ClausePartsQuery["parts"]["edges"][number]
-    >(data.parts.edges, "part").map((p) => {
-      const parameters = p.parameters as NoUndefinedField<typeof p.parameters>;
-      return {
-        ...p,
-        ...parameters,
-        totalDismissal:
-          parameters.dismissalAbsenceOfEvent +
-          parameters.dismissalAmnesty +
-          parameters.dismissalReconciliation +
-          parameters.dismissalRepentance +
-          parameters.dismissalCourtFine +
-          parameters.dismissalOther +
-          parameters.coerciveMeasures,
-      };
-    });
+    >(data.parts.edges, "part")
+      .map((p) => {
+        const parameters = p.parameters as NoUndefinedField<
+          typeof p.parameters
+        >;
+        return {
+          ...p,
+          ...parameters,
+          totalDismissal:
+            parameters.dismissalAbsenceOfEvent +
+            parameters.dismissalAmnesty +
+            parameters.dismissalReconciliation +
+            parameters.dismissalRepentance +
+            parameters.dismissalCourtFine +
+            parameters.dismissalOther +
+            parameters.coerciveMeasures,
+        };
+      })
+      .reverse();
 
     return (
       <Layout
