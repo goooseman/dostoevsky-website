@@ -12,6 +12,9 @@ const {
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
   const IS_SEMI_BUILD = Boolean(process.env.IS_SEMI_BUILD);
+  const IS_WITHOUT_EMBED = Boolean(process.env.IS_WITHOUT_EMBED);
+  const IS_ONLY_EMBED = Boolean(process.env.IS_ONLY_EMBED);
+
   if (IS_SEMI_BUILD) {
     ukRf = ukRf.slice(3, 4); // Leave only first 1 clause group
   }
@@ -59,11 +62,14 @@ exports.createPages = async ({ actions, graphql }) => {
     // Create a separate index for every year, but not first one (the first one is default index)
     for (let year of years) {
       const indexPageViewModes = [
-        "page",
-        "iframe-top-clauses",
-        "iframe-by-punishment",
+        IS_ONLY_EMBED ? undefined : "page",
+        IS_WITHOUT_EMBED ? undefined : "iframe-top-clauses",
+        IS_WITHOUT_EMBED ? undefined : "iframe-by-punishment",
       ];
       for (view of indexPageViewModes) {
+        if (view === undefined) {
+          return;
+        }
         createPage({
           path: getRouteForIndexPage(year, view),
           component: path.resolve(`src/page-templates/index-year.tsx`),
@@ -88,14 +94,21 @@ exports.createPages = async ({ actions, graphql }) => {
               clauseId: chapter.id,
             };
             const mainPageViewModes = [
-              "page",
-              "table",
-              "focus",
-              "iframe-table-common-main-by-result",
-              "iframe-table-common-add-by-result",
-              "iframe-by-result",
+              IS_ONLY_EMBED ? undefined : "page",
+              IS_ONLY_EMBED ? undefined : "table",
+              IS_ONLY_EMBED ? undefined : "focus",
+              IS_WITHOUT_EMBED
+                ? undefined
+                : "iframe-table-common-main-by-result",
+              IS_WITHOUT_EMBED
+                ? undefined
+                : "iframe-table-common-add-by-result",
+              IS_WITHOUT_EMBED ? undefined : "iframe-by-result",
             ];
             for (const view of mainPageViewModes) {
+              if (view === undefined) {
+                return;
+              }
               createPage({
                 path: getRouteForClausePage(chapter.id, year, "main", view),
                 component: path.resolve(`src/page-templates/clause-main.tsx`),
@@ -103,14 +116,17 @@ exports.createPages = async ({ actions, graphql }) => {
               });
             }
             const partsPageViewModes = [
-              "page",
-              "table",
-              "iframe-parts",
-              "iframe-parts-by-result",
-              "iframe-parts-by-punishment",
-              "iframe-table-parts",
+              IS_ONLY_EMBED ? undefined : "page",
+              IS_ONLY_EMBED ? undefined : "table",
+              IS_WITHOUT_EMBED ? undefined : "iframe-parts",
+              IS_WITHOUT_EMBED ? undefined : "iframe-parts-by-result",
+              IS_WITHOUT_EMBED ? undefined : "iframe-parts-by-punishment",
+              IS_WITHOUT_EMBED ? undefined : "iframe-table-parts",
             ];
             for (const view of partsPageViewModes) {
+              if (view === undefined) {
+                return;
+              }
               createPage({
                 path: getRouteForClausePage(chapter.id, year, "parts", view),
                 component: path.resolve(`src/page-templates/clause-parts.tsx`),
@@ -125,14 +141,19 @@ exports.createPages = async ({ actions, graphql }) => {
           }
 
           const chronoPageViewModes = [
-            "page",
-            "table",
-            "iframe-convicted-dynamics",
-            "iframe-punishment-dynamics",
-            "iframe-table-chronology-by-result",
-            "iframe-table-chronology-by-punishment",
+            IS_ONLY_EMBED ? undefined : "page",
+            IS_ONLY_EMBED ? undefined : "table",
+            IS_WITHOUT_EMBED ? undefined : "iframe-convicted-dynamics",
+            IS_WITHOUT_EMBED ? undefined : "iframe-punishment-dynamics",
+            IS_WITHOUT_EMBED ? undefined : "iframe-table-chronology-by-result",
+            IS_WITHOUT_EMBED
+              ? undefined
+              : "iframe-table-chronology-by-punishment",
           ];
           for (const view of chronoPageViewModes) {
+            if (view === undefined) {
+              return;
+            }
             createPage({
               path: getRouteForClausePage(
                 chapter.id,
