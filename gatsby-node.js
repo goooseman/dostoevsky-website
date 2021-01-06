@@ -83,15 +83,13 @@ exports.createPages = async ({ actions, graphql }) => {
         for (let chapter of section.children) {
           const context = {
             partRegex: `/^${chapter.id}[^\.]/i`,
-            clauseRegex: `/^${chapter.id}/i`,
+            clauseRegex: `/^${chapter.id}[^\.]/i`,
             clauseId: chapter.id,
           };
           for (let year of years) {
             const contextWithYear = {
-              partRegex: `/^${chapter.id}[^\.]/i`,
-              clauseRegex: `/^${chapter.id}/i`,
+              ...context,
               year: year,
-              clauseId: chapter.id,
             };
             const mainPageViewModes = [
               IS_ONLY_EMBED ? undefined : "page",

@@ -24,4 +24,16 @@ describe("accumulateNodes", () => {
       { key: "2", count: 1, part: "2012ч2" },
     ]);
   });
+
+  it("should also accumulate keys specified in the nested parameters object", () => {
+    const arr = [
+      { node: { key: "1", parameters: { count: 1 } } },
+      { node: { key: "1", parameters: { count: 10 } } },
+      { node: { key: "2", parameters: { count: 1 } } },
+    ];
+    expect(accumulateNodes(arr, "key", [])).toEqual([
+      { key: "1", parameters: { count: 11 } },
+      { key: "2", parameters: { count: 1 } },
+    ]);
+  });
 });

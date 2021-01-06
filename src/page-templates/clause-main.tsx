@@ -23,11 +23,12 @@ class ClauseMain extends PureComponent<ClauseMainProps> {
   render(): React.ReactNode {
     const { data, pageContext } = this.props;
 
-    const props = accumulateNodes<
+    const accumulatedClauses = accumulateNodes<
       ClauseMainQuery["clauses"]["edges"][number]["node"],
       ClauseMainQuery["clauses"]["edges"][number]
-    >(data.clauses.edges, "part", ["year"]).map((p) => {
+    >(data.clauses.edges, "year", []).map((p) => {
       const parameters = p.parameters as NoUndefinedField<typeof p.parameters>;
+
       return {
         ...p,
         ...parameters,
@@ -84,7 +85,9 @@ class ClauseMain extends PureComponent<ClauseMainProps> {
           parameters.addTitlesWithdraw +
           parameters.addRestrain,
       };
-    })[0];
+    });
+
+    const props = accumulatedClauses[0];
 
     return (
       <Layout

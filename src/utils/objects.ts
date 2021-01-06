@@ -43,6 +43,13 @@ export const accumulateNodes = <N extends Object, O extends { node: N }>(
       if (key === keyToAccumulate || keysToIgnore.includes(key as keyof N)) {
         continue;
       }
+      if (typeof item.node[key] === "object" && item.node[key] !== null) {
+        for (const secondKey of Object.keys(item.node[key])) {
+          savedItem[key][secondKey] =
+            item.node[key][secondKey] + savedItem[key][secondKey];
+        }
+        continue;
+      }
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       savedItem[key] = item.node[key] + savedItem[key];
