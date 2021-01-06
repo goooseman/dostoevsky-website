@@ -47,125 +47,127 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
     return (
       <main>
         <Container className={cn(classes.container)}>
-          <div className={cn(classes.sidebar)}>
-            <div className={cn(classes.sticky)}>
-              <button
-                onClick={onCatalogueSwitch}
-                className={cn({ [classes.active]: isCatalogueOpened })}
-              >
-                <Typography
-                  size="small"
-                  color="inverted"
-                  variant="span"
-                  isUpperCased
+          <div className={cn(classes.innerContainer)}>
+            <div className={cn(classes.sidebar)}>
+              <div className={cn(classes.sticky)}>
+                <button
+                  onClick={onCatalogueSwitch}
+                  className={cn({ [classes.active]: isCatalogueOpened })}
                 >
-                  статья в каталоге
-                </Typography>
-                <img src={require("./assets/arrow-right.svg")} />
-              </button>
+                  <Typography
+                    size="small"
+                    color="inverted"
+                    variant="span"
+                    isUpperCased
+                  >
+                    статья в каталоге
+                  </Typography>
+                  <img src={require("./assets/arrow-right.svg")} />
+                </button>
 
-              <Link
-                to={getClauseLink(clauseNumber, year, "main")}
-                getProps={this.getMainLinkProps}
-              >
-                <Typography size="small" variant="span" isUpperCased>
-                  основной и дополнительный составы
-                </Typography>
-              </Link>
-              {hasParts ? (
                 <Link
-                  to={getClauseLink(clauseNumber, year, "parts")}
+                  to={getClauseLink(clauseNumber, year, "main")}
+                  getProps={this.getMainLinkProps}
+                >
+                  <Typography size="small" variant="span" isUpperCased>
+                    основной и дополнительный составы
+                  </Typography>
+                </Link>
+                {hasParts ? (
+                  <Link
+                    to={getClauseLink(clauseNumber, year, "parts")}
+                    partiallyActive
+                    activeClassName={cn(classes.itemActive)}
+                  >
+                    <Typography size="small" variant="span" isUpperCased>
+                      части
+                    </Typography>
+                  </Link>
+                ) : null}
+
+                <Link
+                  to={getClauseLink(clauseNumber, year, "chronology")}
                   partiallyActive
                   activeClassName={cn(classes.itemActive)}
                 >
                   <Typography size="small" variant="span" isUpperCased>
-                    части
+                    хронология
                   </Typography>
                 </Link>
-              ) : null}
-
-              <Link
-                to={getClauseLink(clauseNumber, year, "chronology")}
-                partiallyActive
-                activeClassName={cn(classes.itemActive)}
-              >
-                <Typography size="small" variant="span" isUpperCased>
-                  хронология
-                </Typography>
-              </Link>
-              <Link
-                to={getClauseLink(clauseNumber, year, "full")}
-                activeClassName={cn(classes.itemActive)}
-              >
-                <Typography size="small" variant="span" isUpperCased>
-                  полная статистика
-                </Typography>
-              </Link>
-            </div>
-          </div>
-          <div className={cn(classes.pageContainer)}>
-            {isCatalogueOpened ? (
-              <div className={cn(classes.floatingCatalogueContainer)}>
-                <ClausePageCatalogue
-                  onClose={onCatalogueSwitch}
-                  year={year || 2019}
-                  clauseId={clauseNumber}
-                />
-              </div>
-            ) : null}
-            <div className={cn(classes.headerContainer)}>
-              <div className={cn(classes.header)}>
-                <Typography
-                  isLineHeightDisabled
-                  variant="h1"
-                  font="serif"
-                  className={cn(classes.title)}
+                <Link
+                  to={getClauseLink(clauseNumber, year, "full")}
+                  activeClassName={cn(classes.itemActive)}
                 >
-                  статья{" "}
+                  <Typography size="small" variant="span" isUpperCased>
+                    полная статистика
+                  </Typography>
+                </Link>
+              </div>
+            </div>
+            <div className={cn(classes.pageContainer)}>
+              {isCatalogueOpened ? (
+                <div className={cn(classes.floatingCatalogueContainer)}>
+                  <ClausePageCatalogue
+                    onClose={onCatalogueSwitch}
+                    year={year || 2019}
+                    clauseId={clauseNumber}
+                  />
+                </div>
+              ) : null}
+              <div className={cn(classes.headerContainer)}>
+                <div className={cn(classes.header)}>
                   <Typography
                     isLineHeightDisabled
-                    component="span"
+                    variant="h1"
                     font="serif"
-                    className={cn(classes.clauseNumber)}
+                    className={cn(classes.title)}
                   >
-                    {clauseNumber}
+                    статья{" "}
+                    <Typography
+                      isLineHeightDisabled
+                      component="span"
+                      font="serif"
+                      className={cn(classes.clauseNumber)}
+                    >
+                      {clauseNumber}
+                    </Typography>
                   </Typography>
-                </Typography>
 
-                <Typography
-                  variant="h3"
-                  component="h2"
-                  className={cn(classes.subtitle)}
-                >
-                  {clauseText.ru}
-                </Typography>
+                  <Typography
+                    variant="h3"
+                    component="h2"
+                    className={cn(classes.subtitle)}
+                  >
+                    {clauseText.ru}
+                  </Typography>
 
-                <Typography className={cn(classes.docLink)}>
-                  <OutboundLink target="_blank" href={clauseOutsideLink}>
-                    КонсультантПлюс
-                  </OutboundLink>
-                </Typography>
+                  <Typography className={cn(classes.docLink)}>
+                    <OutboundLink target="_blank" href={clauseOutsideLink}>
+                      КонсультантПлюс
+                    </OutboundLink>
+                  </Typography>
+                </div>
               </div>
-            </div>
-            <ClausePageHeader
-              title={title}
-              year={year}
-              clauseNumber={clauseNumber}
-              pageType={pageType}
-            >
-              {headerChildren}
-            </ClausePageHeader>
-            <Menu variant="activeBorderBottom" className={cn(classes.menu)}>
-              <MenuLink to={getClauseLink(clauseNumber, year, pageType)}>
-                <T message="ЧАРТЫ" />
-              </MenuLink>
-              <MenuLink
-                to={getClauseLink(clauseNumber, year, pageType, "table")}
+              <ClausePageHeader
+                title={title}
+                year={year}
+                clauseNumber={clauseNumber}
+                pageType={pageType}
               >
-                <T message="ТАБЛИЦА" />
-              </MenuLink>
-            </Menu>
-            <div>{children}</div>
+                {headerChildren}
+              </ClausePageHeader>
+              <Menu variant="activeBorderBottom" className={cn(classes.menu)}>
+                <MenuLink to={getClauseLink(clauseNumber, year, pageType)}>
+                  <T message="ЧАРТЫ" />
+                </MenuLink>
+                <MenuLink
+                  to={getClauseLink(clauseNumber, year, pageType, "table")}
+                >
+                  <T message="ТАБЛИЦА" />
+                </MenuLink>
+              </Menu>
+              <div>{children}</div>
+            </div>
           </div>
         </Container>
         <Promo />

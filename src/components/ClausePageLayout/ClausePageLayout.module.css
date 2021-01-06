@@ -1,6 +1,10 @@
 .container {
   display: flex;
+}
+
+.inner-container {
   background-color: var(--color-main-background);
+  display: flex;
 }
 
 @media all and (max-width: 940px) {
