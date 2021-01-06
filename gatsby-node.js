@@ -68,7 +68,7 @@ exports.createPages = async ({ actions, graphql }) => {
       ];
       for (view of indexPageViewModes) {
         if (view === undefined) {
-          return;
+          continue;
         }
         createPage({
           path: getRouteForIndexPage(year, view),
@@ -107,7 +107,7 @@ exports.createPages = async ({ actions, graphql }) => {
             ];
             for (const view of mainPageViewModes) {
               if (view === undefined) {
-                return;
+                continue;
               }
               createPage({
                 path: getRouteForClausePage(chapter.id, year, "main", view),
@@ -125,7 +125,7 @@ exports.createPages = async ({ actions, graphql }) => {
             ];
             for (const view of partsPageViewModes) {
               if (view === undefined) {
-                return;
+                continue;
               }
               createPage({
                 path: getRouteForClausePage(chapter.id, year, "parts", view),
@@ -152,7 +152,7 @@ exports.createPages = async ({ actions, graphql }) => {
           ];
           for (const view of chronoPageViewModes) {
             if (view === undefined) {
-              return;
+              continue;
             }
             createPage({
               path: getRouteForClausePage(
