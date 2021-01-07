@@ -9,6 +9,9 @@
 .menu-item {
   flex: 1;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .menu-item:not(:last-child) {
