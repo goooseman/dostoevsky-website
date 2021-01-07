@@ -46,6 +46,7 @@ const Treemap: React.FC<TreemapProps> = ({
   const chartData = new TreemapData({
     data: data
       .sort((a, b) => b.value - a.value)
+      .filter((t) => t.value !== 0)
       .map((t, i) => ({
         ...t,
         color: TREEMAP_COLORS[i],
