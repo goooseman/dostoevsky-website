@@ -19,53 +19,53 @@
   text-align: center;
 }
 
-.full-dataset-select-wrapper {
+.container .full-dataset-select-wrapper {
   margin-top: 2rem;
 }
 
-.full-dataset-select-wrapper label {
+.container .full-dataset-select-wrapper label {
   margin-bottom: 1rem;
   font-weight: 600;
 }
 
-.full-dataset-select {
+.container .full-dataset-select {
   min-width: 135px;
-  font-size: 16px !important;
+  font-size: 16px;
 }
 
-.full-dataset-select-control {
-  border-width: 2px !important;
-  border-color: var(--color-border-dark) !important;
-  border-top: none !important;
-  border-right: none !important;
-  border-left: none !important;
-  background-color: transparent !important;
-  border-radius: 0 !important;
-  cursor: pointer !important;
+.container .full-dataset-select-control {
+  border-width: 2px;
+  border-color: var(--color-border-dark);
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  background-color: transparent;
+  border-radius: 0;
+  cursor: pointer;
 }
 
-.full-dataset-select-value-container {
-  display: block !important;
+.container .full-dataset-select-value-container {
+  display: block;
 }
 
-.full-dataset-select-indicators-container {
+.container .full-dataset-select-indicators-container {
   align-items: flex-start;
 }
 
-.full-dataset-select-single-value {
-  position: initial !important;
-  margin-top: -5px !important;
-  transform: initial !important;
+.container .full-dataset-select-single-value {
+  position: initial;
+  margin-top: -5px;
+  transform: initial;
 }
 
-.full-dataset-select-menu {
+.container .full-dataset-select-menu {
   border: 2px solid var(--color-border-dark);
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25) !important;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.full-dataset-select-menu-list {
-  max-height: 335px !important;
-  padding-top: 2px !important;
+.container .full-dataset-select-menu-list {
+  max-height: 335px;
+  padding-top: 2px;
 }
 
 .container .full-dataset-select-option {
@@ -81,30 +81,30 @@
   white-space: nowrap;
 }
 
-.full-dataset-select-option:hover {
-  background-color: var(--color-primary) !important;
+.container .full-dataset-select-option:hover {
+  background-color: var(--color-primary);
 }
 
-.full-dataset-select-option span {
+.container .full-dataset-select-option span {
   width: 100%;
 }
 
-.full-dataset-select-option a {
+.container .full-dataset-select-option a {
   display: inline-block;
   width: 100%;
   padding: 0 0.5rem;
 }
 
-.full-dataset-download-modal-wrapper {
+.container .full-dataset-download-modal-wrapper {
   text-align: center;
 }
 
-.full-dataset-download-modal-wrapper input {
+.container .full-dataset-download-modal-wrapper input {
   width: 90%;
   margin: 2rem auto;
 }
 
-.full-dataset-download-modal-wrapper button {
+.container .full-dataset-download-modal-wrapper button {
   display: block;
   margin: 2rem auto 0 auto;
 }
