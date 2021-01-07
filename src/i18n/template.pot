@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Sun Jan 03 2021 01:19:42 GMT+0200 (Israel Standard Time)\n"
+"POT-Creation-Date: Fri Jan 08 2021 00:47:52 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -210,8 +210,10 @@ msgid ""
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
-#: src/templates/AboutPage/AboutPage.tsx:
-msgid "Тут нужен текст"
+msgid ""
+"Это означает, что при указании авторства вы можете свободно копировать и "
+"распространять эти материалы, а также создавать производные материалы на их "
+"основе в любых целях, включая коммерческие."
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
@@ -241,6 +243,12 @@ msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "с 2009 до 2019 года."
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid ""
+"База будет пополняться ежегодно по мере публикации данных Судебным "
+"департаментом."
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:

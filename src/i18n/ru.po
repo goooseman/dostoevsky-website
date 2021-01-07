@@ -217,8 +217,10 @@ msgid ""
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
-#: src/templates/AboutPage/AboutPage.tsx:
-msgid "Тут нужен текст"
+msgid ""
+"Это означает, что при указании авторства вы можете свободно копировать и "
+"распространять эти материалы, а также создавать производные материалы на их "
+"основе в любых целях, включая коммерческие."
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
@@ -248,6 +250,12 @@ msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "с 2009 до 2019 года."
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid ""
+"База будет пополняться ежегодно по мере публикации данных Судебным "
+"департаментом."
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
