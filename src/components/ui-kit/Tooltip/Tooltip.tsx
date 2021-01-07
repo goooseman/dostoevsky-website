@@ -19,7 +19,12 @@ const Tooltip: React.FC<TooltipProps> = ({ tip, isInversed }: TooltipProps) => {
             : require("./assets/info.svg")
         }
       />
-      <ReactTooltip className={classes.tooltip} place="bottom" effect="solid" />
+      <ReactTooltip
+        wrapper="span"
+        className={classes.tooltip}
+        place="bottom"
+        effect="solid"
+      />
     </span>
   );
 };
