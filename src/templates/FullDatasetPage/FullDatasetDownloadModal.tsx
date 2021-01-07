@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from "react";
-import classes from "./FullDatasetPage.module.css";
+import classes from "./FullDatasetDownloadModal.module.css";
 import cn from "clsx";
 import Modal from "src/components/ui-kit/Modal";
 import { getCsv } from "src/utils/csv";
@@ -65,7 +65,9 @@ const FullDatasetDownloadModal: React.FC<FullDatasetDownloadModalProps> = ({
     >
       <div className={cn(classes.fullDatasetDownloadModalWrapper)}>
         <Typography font="serif">
-          <T message="Если вы оставите свой email, мы будем время от времени присылать вам что-нибудь полезное!" />
+          <i>
+            <T message="Если вы оставите свой email, мы будем время от времени присылать вам что-нибудь полезное!" />
+          </i>
         </Typography>
         <Input
           type="email"

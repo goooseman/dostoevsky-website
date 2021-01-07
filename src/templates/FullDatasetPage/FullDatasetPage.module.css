@@ -19,15 +19,6 @@
   text-align: center;
 }
 
-.container .full-dataset-select-wrapper {
-  margin-top: 2rem;
-}
-
-.container .full-dataset-select-wrapper label {
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
-
 .container .full-dataset-select {
   min-width: 135px;
   font-size: 16px;
@@ -93,18 +84,4 @@
   display: inline-block;
   width: 100%;
   padding: 0 0.5rem;
-}
-
-.container .full-dataset-download-modal-wrapper {
-  text-align: center;
-}
-
-.container .full-dataset-download-modal-wrapper input {
-  width: 90%;
-  margin: 2rem auto;
-}
-
-.container .full-dataset-download-modal-wrapper button {
-  display: block;
-  margin: 2rem auto 0 auto;
 }

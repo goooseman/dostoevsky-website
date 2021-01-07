@@ -1,0 +1,22 @@
+.full-dataset-select-wrapper {
+  margin-top: 2rem;
+}
+
+.full-dataset-select-wrapper label {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.full-dataset-download-modal-wrapper {
+  text-align: center;
+}
+
+.full-dataset-download-modal-wrapper input {
+  width: 90%;
+  margin: 2rem auto;
+}
+
+.full-dataset-download-modal-wrapper button {
+  display: block;
+  margin: 2rem auto 0 auto;
+}
