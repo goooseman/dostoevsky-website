@@ -18,7 +18,7 @@ export const getCsv = (
     result += titleRow;
   }
   for (const row of table.rows) {
-    result += getCsvRow(row.values.map((v) => v.value.toString()));
+    result += getCsvRow(row.values.map((v) => v.value?.toString() || ""));
   }
   return result;
 };
