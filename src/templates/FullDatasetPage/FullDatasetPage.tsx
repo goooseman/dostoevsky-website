@@ -53,7 +53,7 @@ const createTableData = (
           { key: "name", value: r.name },
           ...parseMetrics.map((m: { key: any }) => ({
             key: m.key,
-            value: r.parameters[m.key] || 0,
+            value: r[m.key] || 0,
           })),
         ],
       };
@@ -155,31 +155,36 @@ const FullDatasetPage: React.FC = () => {
         );
 
         const dataResult = await axios
-          .get(base + "/data/", {
+          .get(base + "/aggregated_data/", {
             params: {
-              filter: {
-                year: (allYearsSelected
-                  ? yearsOptions.filter(
-                      (y: OptionTypeBase) => y.value !== "all-years"
-                    )
-                  : yearsValue
-                ).map((y: OptionTypeBase) => Number(y.value)),
-                part: (allPartsSelected
-                  ? partsOptions.filter(
-                      (p: OptionTypeBase) => p.value !== "all-parts"
-                    )
-                  : partsValue
-                ).map((p: OptionTypeBase) => p.value),
-              },
+              year: (allYearsSelected
+                ? yearsOptions.filter(
+                    (y: OptionTypeBase) => y.value !== "all-years"
+                  )
+                : yearsValue
+              )
+                .map((m: OptionTypeBase) => m.value)
+                .join(","),
               param: (allMetricsSelected
                 ? METRICS_OPTIONS.filter(
                     (m: OptionTypeBase) => m.value !== "all-metrics"
                   )
                 : metricsValue
-              ).map((m: OptionTypeBase) => m.value),
+              )
+                .map((m: OptionTypeBase) => m.value)
+                .concat("name")
+                .join(","),
+              part: (allPartsSelected
+                ? partsOptions.filter(
+                    (p: OptionTypeBase) => p.value !== "all-parts"
+                  )
+                : partsValue
+              )
+                .map((p: OptionTypeBase) => p.value)
+                .join(","),
               breakdown: breakdownValue
-                ? breakdownValue.map((b: OptionTypeBase) => b.value)
-                : [],
+                ? breakdownValue.map((b: OptionTypeBase) => b.value).join(",")
+                : undefined,
             },
             ...AUTH_AXIOS_OPTIONS,
           })
