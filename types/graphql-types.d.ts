@@ -2671,7 +2671,7 @@ export type SiteFieldsEnum =
   | 'port'
   | 'host'
   | 'flags___PRESERVE_WEBPACK_CACHE'
-  | 'flags___FAST_DEV'
+  | 'flags___PRESERVE_FILE_DOWNLOAD_CACHE'
   | 'flags___QUERY_ON_DEMAND'
   | 'pathPrefix'
   | 'polyfill'
@@ -2778,13 +2778,13 @@ export type SiteFilterInput = {
 
 export type SiteFlags = {
   PRESERVE_WEBPACK_CACHE?: Maybe<Scalars['Boolean']>;
-  FAST_DEV?: Maybe<Scalars['Boolean']>;
+  PRESERVE_FILE_DOWNLOAD_CACHE?: Maybe<Scalars['Boolean']>;
   QUERY_ON_DEMAND?: Maybe<Scalars['Boolean']>;
 };
 
 export type SiteFlagsFilterInput = {
   PRESERVE_WEBPACK_CACHE?: Maybe<BooleanQueryOperatorInput>;
-  FAST_DEV?: Maybe<BooleanQueryOperatorInput>;
+  PRESERVE_FILE_DOWNLOAD_CACHE?: Maybe<BooleanQueryOperatorInput>;
   QUERY_ON_DEMAND?: Maybe<BooleanQueryOperatorInput>;
 };
 
