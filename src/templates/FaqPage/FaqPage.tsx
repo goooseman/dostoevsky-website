@@ -767,15 +767,15 @@ const getFaqData = (t: any) => [
 const FaqPage: React.FC = () => {
   const { t } = useLocale();
   const [activeMenuItem, setActiveMenuItem] = useState("glossary");
-  const [searchValue, setSearchValue] = useState("");
+  // const [searchValue, setSearchValue] = useState("");
 
   const handleClickMenuItem = (menuItemId: string) => {
     setActiveMenuItem(menuItemId);
   };
 
-  const handleSearch = (e: any) => {
-    setSearchValue(e.target.value);
-  };
+  // const handleSearch = (e: any) => {
+  //   setSearchValue(e.target.value);
+  // };
 
   const faqData = getFaqData(t);
   const currentFaqItem = faqData.find((d) => d.id == activeMenuItem);
@@ -784,7 +784,7 @@ const FaqPage: React.FC = () => {
     <main className={cn(classes.container)}>
       <Container>
         <SinglePageLayout>
-          <div className={cn(classes.searchWrapper)}>
+          {/* <div className={cn(classes.searchWrapper)}>
             <Input
               type="text"
               value={searchValue}
@@ -792,7 +792,7 @@ const FaqPage: React.FC = () => {
               placeholder={t("поиск по разделу")}
               onChange={handleSearch}
             />
-          </div>
+          </div> */}
           <Menu variant="default" className={cn(classes.faqMenu)}>
             {faqData.map((f) => (
               <MenuItem

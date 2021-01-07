@@ -1837,10 +1837,6 @@ msgid ""
 "пяти лет."
 msgstr ""
 
-#: src/templates/FaqPage/FaqPage.tsx:
-msgid "поиск по разделу"
-msgstr ""
-
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "статья"
 msgstr ""

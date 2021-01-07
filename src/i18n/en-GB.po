@@ -2101,10 +2101,6 @@ msgstr ""
 "осужденного. Иногда суд может назначить штраф с рассрочкой выплаты на срок до "
 "пяти лет."
 
-#: src/templates/FaqPage/FaqPage.tsx:
-msgid "поиск по разделу"
-msgstr "поиск по разделу"
-
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "статья"
 msgstr "статья"
