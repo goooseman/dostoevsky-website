@@ -18,6 +18,7 @@ main {
 
 * {
   box-sizing: border-box;
+  outline-offset: 5px;
 }
 
 @media all and (max-width: 680px) {
