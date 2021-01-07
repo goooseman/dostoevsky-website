@@ -157,7 +157,10 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
     return (
       <components.Option {...props} className={cn(classes.yearSelectOption)}>
         <Typography component="span">
-          <a href={getClauseLink(clauseNumber.toString(), value, pageType)}>
+          <a
+            className={cn(classes.yearSelectOptionLink)}
+            href={getClauseLink(clauseNumber.toString(), value, pageType)}
+          >
             {value}
           </a>
         </Typography>
