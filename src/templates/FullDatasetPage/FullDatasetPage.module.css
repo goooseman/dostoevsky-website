@@ -64,19 +64,18 @@
 }
 
 .full-dataset-select-menu-list {
-  max-height: 150px !important;
+  max-height: 335px !important;
   padding-top: 2px !important;
 }
 
-.full-dataset-select-option {
-  display: flex !important;
+.container .full-dataset-select-option {
+  display: flex;
   overflow: hidden;
   width: 100%;
   align-items: center;
-  padding: 0 !important;
+  padding: 0.4rem 1rem; /* also in src/components/ClausePageHeader/ClausePageHeader.module.css */
   border: none;
-  background-color: transparent !important;
-  color: #f5f5f5;
+  background-color: transparent;
   cursor: pointer;
   text-overflow: ellipsis;
   white-space: nowrap;

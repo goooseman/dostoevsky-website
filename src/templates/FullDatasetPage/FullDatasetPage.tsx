@@ -112,10 +112,12 @@ const FullDatasetPage: React.FC = () => {
         AUTH_AXIOS_OPTIONS
       );
       const yearsOptionsData = filtersResult.data.year;
-      const newYearsOptions = yearsOptionsData.map((y: number) => ({
-        value: y.toString(),
-        label: y.toString(),
-      }));
+      const newYearsOptions = yearsOptionsData
+        .sort((y1: number, y2: number) => y2 - y1)
+        .map((y: number) => ({
+          value: y.toString(),
+          label: y.toString(),
+        }));
       newYearsOptions.unshift({ value: "all-years", label: "Выбрать все" });
       setYearsOptions(newYearsOptions);
 

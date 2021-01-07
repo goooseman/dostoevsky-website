@@ -81,7 +81,7 @@
 }
 
 .container .year-select-option-link {
-  padding: 0.4rem 0.8rem;
+  padding: 0.4rem 0.8rem; /* also in src/templates/FullDatasetPage/FullDatasetPage.module.css */
 }
 
 .container .year-select-option:hover {
