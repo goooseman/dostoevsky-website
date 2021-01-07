@@ -36,10 +36,7 @@ class TableContainer extends PureComponent<
     const { tables } = this.props;
     const { activeTableIndex } = this.state;
     const csvContent = getCsv(tables, activeTableIndex);
-    const blob = new Blob([
-      new Uint8Array(iconv.encode(csvContent, "utf16-le", { addBOM: true })),
-    ]);
-    saveAs(blob, `${this.props.downloadFilename}.csv`);
+    saveAs(csvContent, `${this.props.downloadFilename}.csv`);
   };
 
   private hanldeTableTitleClick = (index: number) => () => {

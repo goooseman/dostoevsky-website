@@ -38,10 +38,7 @@ const FullDatasetDownloadModal: React.FC<FullDatasetDownloadModalProps> = ({
   const handleDownload = () => {
     if (loadingDataset || !tables) return false;
     const csvContent = getCsv(tables, 0);
-    const blob = new Blob([
-      new Uint8Array(iconv.encode(csvContent, "utf16-le", { addBOM: true })),
-    ]);
-    saveAs(blob, `dataset.csv`);
+    saveAs(csvContent, `dataset.csv`);
     toggle();
   };
 

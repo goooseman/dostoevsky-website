@@ -8,7 +8,6 @@ import classes from "./ClauseFullPage.module.css";
 import cn from "clsx";
 import { getCsv } from "src/utils/csv";
 import { saveAs } from "file-saver";
-import iconv from "iconv-lite";
 
 const accordionData = [
   {
@@ -299,10 +298,10 @@ class ClauseFullPage extends PureComponent<
     }
 
     const csvContent = getCsv([table], 0);
-    const blob = new Blob([
-      new Uint8Array(iconv.encode(csvContent, "utf16-le", { addBOM: true })),
-    ]);
-    saveAs(blob, `Полная статистика по статье №${clauseNumber} за ${year}.csv`);
+    saveAs(
+      csvContent,
+      `Полная статистика по статье №${clauseNumber} за ${year}.csv`
+    );
   }
 
   render(): React.ReactNode {
