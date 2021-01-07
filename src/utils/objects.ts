@@ -20,7 +20,10 @@ export const distinctNodes = <N extends Object, O extends { node: N }>(
   return result as NoUndefinedField<N>[];
 };
 
-export const accumulateNodes = <N extends Object, O extends { node: N }>(
+export const accumulateNodes = <
+  N extends { [key: string]: number | string | object | undefined | null },
+  O extends { node: N }
+>(
   objects: O[],
   keyToAccumulate: keyof N,
   keysToIgnore: (keyof N)[]
@@ -44,8 +47,12 @@ export const accumulateNodes = <N extends Object, O extends { node: N }>(
         continue;
       }
       if (typeof item.node[key] === "object" && item.node[key] !== null) {
-        for (const secondKey of Object.keys(item.node[key])) {
+        for (const secondKey of Object.keys(item.node[key] as object)) {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
           savedItem[key][secondKey] =
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
             item.node[key][secondKey] + savedItem[key][secondKey];
         }
         continue;
