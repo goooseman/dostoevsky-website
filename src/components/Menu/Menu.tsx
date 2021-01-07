@@ -64,7 +64,7 @@ interface MenuLinkProps {
   to: string;
   size?: "small" | "normal" | undefined;
   partiallyActive?: boolean;
-  activeUrls?: string[];
+  activeUrls?: (RegExp | string)[];
 }
 
 export class MenuLink extends PureComponent<MenuLinkProps> {
@@ -98,7 +98,7 @@ export class MenuLink extends PureComponent<MenuLinkProps> {
       return false;
     }
     for (const url of activeUrls) {
-      if (location.pathname.includes(url)) {
+      if (location.pathname.match(url)) {
         return true;
       }
     }
