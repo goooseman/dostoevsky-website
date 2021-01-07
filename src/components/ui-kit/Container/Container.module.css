@@ -2,7 +2,6 @@
   max-width: 100%;
   width: 1280px;
   margin: auto;
-  padding: 0 1rem;
 }
 
 .is-thin {
@@ -10,7 +9,20 @@
   margin: auto;
 }
 
-@media all and (max-width: 680px) {
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 1080px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    width: 740px;
+  }
+}
+
+@media screen and (max-width: 680px) {
   .container {
     width: auto;
   }
