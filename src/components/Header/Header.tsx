@@ -50,10 +50,10 @@ const Header: React.FC<HeaderProps> = () => {
           </div>
           <div className={cn(classes.mobileMenu__listener)}>
             <Menu variant="onBlackBackground">
-              <MenuLink activeUrls={[/\d\d\d/]} to="/clauses" size="normal">
+              <MenuLink activeUrls={[/^\/\d\d\d/]} to="/clauses" size="normal">
                 каталог статей ук рф
               </MenuLink>
-              <MenuLink to="/articles" size="normal">
+              <MenuLink partiallyActive to="/articles" size="normal">
                 Аналитика
               </MenuLink>
               <MenuLink to="/faq" size="normal">
