@@ -2844,6 +2844,7 @@ export type SiteFieldsEnum =
   | 'flags___PRESERVE_WEBPACK_CACHE'
   | 'flags___PRESERVE_FILE_DOWNLOAD_CACHE'
   | 'flags___QUERY_ON_DEMAND'
+  | 'flags___FAST_REFRESH'
   | 'pathPrefix'
   | 'polyfill'
   | 'id'
@@ -2951,12 +2952,14 @@ export type SiteFlags = {
   PRESERVE_WEBPACK_CACHE?: Maybe<Scalars['Boolean']>;
   PRESERVE_FILE_DOWNLOAD_CACHE?: Maybe<Scalars['Boolean']>;
   QUERY_ON_DEMAND?: Maybe<Scalars['Boolean']>;
+  FAST_REFRESH?: Maybe<Scalars['Boolean']>;
 };
 
 export type SiteFlagsFilterInput = {
   PRESERVE_WEBPACK_CACHE?: Maybe<BooleanQueryOperatorInput>;
   PRESERVE_FILE_DOWNLOAD_CACHE?: Maybe<BooleanQueryOperatorInput>;
   QUERY_ON_DEMAND?: Maybe<BooleanQueryOperatorInput>;
+  FAST_REFRESH?: Maybe<BooleanQueryOperatorInput>;
 };
 
 export type SiteGroupConnection = {
