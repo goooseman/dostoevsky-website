@@ -119,6 +119,10 @@ msgstr "Open hidden content"
 msgid "Plus icon"
 msgstr "Plus icon"
 
+#: src/components/ui-kit/Loading/Loading.tsx:
+msgid "Loading"
+msgstr "Loading"
+
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Саша Беспалова"
 msgstr "Саша Беспалова"
@@ -3304,6 +3308,11 @@ msgid ""
 msgstr ""
 "При использовании данных, пожалуйста, указывайте ссылку на Достоевский и "
 "делитесь с нами своими материалами."
+
+#: src/templates/FullDatasetPage/FullDatasetPage.tsx:
+#: src/templates/FullDatasetPage/FullDatasetPage.tsx:
+msgid "Полный датасет"
+msgstr "Полный датасет"
 
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 msgid "Произошла ошибка. Пожалуйста, измените параметры поиска."

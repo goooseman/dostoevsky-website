@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin 4s linear infinite;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.has-vertical-margin {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.image {
+  height: 100px;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

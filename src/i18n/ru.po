@@ -120,6 +120,10 @@ msgstr ""
 msgid "Plus icon"
 msgstr ""
 
+#: src/components/ui-kit/Loading/Loading.tsx:
+msgid "Loading"
+msgstr ""
+
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Саша Беспалова"
 msgstr ""
@@ -2876,6 +2880,11 @@ msgstr ""
 msgid ""
 "При использовании данных, пожалуйста, указывайте ссылку на Достоевский и "
 "делитесь с нами своими материалами."
+msgstr ""
+
+#: src/templates/FullDatasetPage/FullDatasetPage.tsx:
+#: src/templates/FullDatasetPage/FullDatasetPage.tsx:
+msgid "Полный датасет"
 msgstr ""
 
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:

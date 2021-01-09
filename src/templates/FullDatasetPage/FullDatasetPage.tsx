@@ -14,6 +14,7 @@ import metricsData from "content/metriсs.json";
 import Table from "src/components/Table";
 import FullDatasetSelect from "./FullDatasetSelect";
 import FullDatasetDownloadModal from "./FullDatasetDownloadModal";
+import Loading from "src/components/ui-kit/Loading";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { api } = require("../../../gatsby-config").siteMetadata;
@@ -276,10 +277,22 @@ const FullDatasetPage: React.FC = () => {
 
   const tables = createTableData(dataset, metricsValue);
 
+  if (yearsOptions.length === 0) {
+    return (
+      <main className={cn(classes.container)}>
+        <Container>
+          <SinglePageLayout title={<T message="Полный датасет" />}>
+            <Loading hasVerticalMargin />
+          </SinglePageLayout>
+        </Container>
+      </main>
+    );
+  }
+
   return (
     <main className={cn(classes.container)}>
       <Container>
-        <SinglePageLayout title="Полный датасет">
+        <SinglePageLayout title={<T message="Полный датасет" />}>
           <FullDatasetSelect
             label="год"
             options={yearsOptions}
