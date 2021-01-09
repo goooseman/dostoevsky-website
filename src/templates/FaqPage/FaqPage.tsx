@@ -4,15 +4,14 @@ import cn from "clsx";
 import Container from "src/components/ui-kit/Container";
 import Typography from "src/components/ui-kit/Typography";
 import Accordion, { AccordionNode } from "src/components/ui-kit/Accordion";
-import Input from "src/components/ui-kit/Input";
 import SinglePageLayout from "src/components/SinglePageLayout";
-import { useLocale, T } from "react-targem";
+import { useLocale, T, WithLocale } from "react-targem";
 import { Menu, MenuItem } from "src/components/Menu";
 import FaqPageHowWasCollected from "./FaqPageHowWasCollected";
 import FaqPageUploadFieldsNParameterTree from "./FaqPageUploadFieldsNParameterTree";
 import Tooltip from "src/components/ui-kit/Tooltip";
 
-const getFaqData = (t: any) => [
+const getFaqData = (t: WithLocale["t"]) => [
   {
     id: "glossary",
     title: "Глоссарий",
@@ -30,18 +29,25 @@ const getFaqData = (t: any) => [
                 <T message="Амнистия:" />
               </b>
               <br />
-              <ul>
-                <li>
-                  <T message="выносится Государственной Думой в отношении индивидуально неопределенного круга лиц — амнистированные не перечисляются поименно;" />
-                </li>
-                <li>
-                  <T message="возможна уже с момента возбуждения уголовного дела;" />
-                </li>
-                <li>
-                  <T message="не принимает во внимание желание осужденных — решение об амнистии, как правило, продиктовано политическими интересами." />
-                </li>
-              </ul>
             </Typography>
+            <ul>
+              <li>
+                <Typography variant="span">
+                  <T message="выносится Государственной Думой в отношении индивидуально неопределенного круга лиц — амнистированные не перечисляются поименно;" />
+                </Typography>
+              </li>
+              <li>
+                <Typography variant="span">
+                  <T message="возможна уже с момента возбуждения уголовного дела;" />
+                </Typography>
+              </li>
+              <li>
+                <Typography variant="span">
+                  <T message="не принимает во внимание желание осужденных — решение об амнистии, как правило, продиктовано политическими интересами." />
+                </Typography>
+              </li>
+            </ul>
+
             <Typography>
               <i>
                 <T message="Пример:" />{" "}
@@ -60,18 +66,25 @@ const getFaqData = (t: any) => [
                 <T message="Помилование:" />
               </b>
               <br />
-              <ul>
-                <li>
-                  <T message="выносится Президентом в отношении конкретного человека;" />
-                </li>
-                <li>
-                  <T message="возможно только после вступления в силу обвинительного приговора;" />
-                </li>
-                <li>
-                  <T message="обычно инициируется самим осужденным — для этого нужно подать ходатайство." />
-                </li>
-              </ul>
             </Typography>
+            <ul>
+              <li>
+                <Typography variant="span">
+                  <T message="выносится Президентом в отношении конкретного человека;" />
+                </Typography>
+              </li>
+              <li>
+                <Typography variant="span">
+                  <T message="возможно только после вступления в силу обвинительного приговора;" />
+                </Typography>
+              </li>
+              <li>
+                <Typography variant="span">
+                  <T message="обычно инициируется самим осужденным — для этого нужно подать ходатайство." />
+                </Typography>
+              </li>
+            </ul>
+
             <Typography>
               <i>
                 <T message="Пример:" />{" "}
@@ -127,18 +140,25 @@ const getFaqData = (t: any) => [
           <>
             <Typography>
               <T message="Уголовный кодекс выделяет три типа наказаний:" />
-              <ul>
-                <li>
-                  <T message="основные — они выступают самостоятельными наказаниями;" />
-                </li>
-                <li>
-                  <T message="дополнительные — могут прибавляться к основным, чтобы сделать приговор строже;" />
-                </li>
-                <li>
-                  <T message="смешанные — используются в обоих качествах." />
-                </li>
-              </ul>
             </Typography>
+            <ul>
+              <li>
+                <Typography variant="span">
+                  <T message="основные — они выступают самостоятельными наказаниями;" />
+                </Typography>
+              </li>
+              <li>
+                <Typography variant="span">
+                  <T message="дополнительные — могут прибавляться к основным, чтобы сделать приговор строже;" />
+                </Typography>
+              </li>
+              <li>
+                <Typography variant="span">
+                  <T message="смешанные — используются в обоих качествах." />
+                </Typography>
+              </li>
+            </ul>
+
             <Typography>
               <T message="Решение о прибавлении дополнительного наказания к основному по большей части зависит от судьи, хотя в юридической практике заметна корреляция: если состав простой и без отягчающих обстоятельств — то есть судят за одно преступление, — суд скорее ограничится основным наказанием; если же в деле есть" />
               {` `}
@@ -216,9 +236,10 @@ const getFaqData = (t: any) => [
               </a>
               ):
             </Typography>
-            <Typography>
-              <ul className={cn(classes.ulWithAdditionalMargin)}>
-                <li>
+
+            <ul className={cn(classes.ulWithAdditionalMargin)}>
+              <li>
+                <Typography variant="span">
                   <b>
                     <T message="Оборона" />
                   </b>
@@ -229,8 +250,10 @@ const getFaqData = (t: any) => [
                     <T message="Пример: " />
                   </i>
                   <T message="оборона при нападении в парке." />
-                </li>
-                <li>
+                </Typography>
+              </li>
+              <li>
+                <Typography variant="span">
                   <b>
                     <T message="Задержание лица, совершившего преступление" />
                   </b>
@@ -241,8 +264,10 @@ const getFaqData = (t: any) => [
                     <T message="Пример: " />
                   </i>
                   <T message="при попытке задержать вора вы сломали его руку. " />
-                </li>
-                <li>
+                </Typography>
+              </li>
+              <li>
+                <Typography variant="span">
                   <b>
                     <T message="Крайняя необходимость" />
                   </b>
@@ -253,8 +278,11 @@ const getFaqData = (t: any) => [
                     <T message="Пример: " />
                   </i>
                   <T message="в экстренной ситуации врач вынужден спасти того пациента, чей риск смерти выше." />
-                </li>
-                <li>
+                </Typography>
+              </li>
+
+              <li>
+                <Typography variant="span">
                   <b>
                     <T message="Физическое или психическое принуждение" />
                   </b>
@@ -265,8 +293,10 @@ const getFaqData = (t: any) => [
                     <T message="Пример: " />
                   </i>
                   <T message="с помощью пыток человека заставляют оклеветать соседа по лестничной клетке." />
-                </li>
-                <li>
+                </Typography>
+              </li>
+              <li>
+                <Typography variant="span">
                   <b>
                     <T message="Обоснованный риск" />
                   </b>
@@ -277,8 +307,10 @@ const getFaqData = (t: any) => [
                     <T message="Пример: " />
                   </i>
                   <T message="технические испытания ракеты, которые могут привести к жертвам." />
-                </li>
-                <li>
+                </Typography>
+              </li>
+              <li>
+                <Typography variant="span">
                   <b>
                     <T message="Исполнение приказа" />
                   </b>
@@ -289,9 +321,9 @@ const getFaqData = (t: any) => [
                     <T message="Пример: " />
                   </i>
                   <T message="убийство на войне." />
-                </li>
-              </ul>
-            </Typography>
+                </Typography>
+              </li>
+            </ul>
           </>
         ),
       },
@@ -420,21 +452,30 @@ const getFaqData = (t: any) => [
                 <T message="гл. 15 УК" />
               </a>
               ). <T message="Это происходит в следующих случаях:" />
-              <ul>
-                <li>
-                  <T message="преступление было совершено в состоянии невменяемости;" />
-                </li>
-                <li>
-                  <T message="психическое расстройство наступило после преступления, так что назначить и исполнить наказание — невозможно;" />
-                </li>
-                <li>
-                  <T message="обвиняемый вменяем, но страдает психическим расстройством и опасен;" />
-                </li>
-                <li>
-                  <T message="обвиняемый совершил преступление против половой неприкосновенности несовершеннолетнего." />
-                </li>
-              </ul>
             </Typography>
+            <ul>
+              <li>
+                <Typography variant="span">
+                  <T message="преступление было совершено в состоянии невменяемости;" />
+                </Typography>
+              </li>
+              <li>
+                <Typography variant="span">
+                  <T message="психическое расстройство наступило после преступления, так что назначить и исполнить наказание — невозможно;" />
+                </Typography>
+              </li>
+              <li>
+                <Typography variant="span">
+                  <T message="обвиняемый вменяем, но страдает психическим расстройством и опасен;" />
+                </Typography>
+              </li>
+              <li>
+                <Typography variant="span">
+                  <T message="обвиняемый совершил преступление против половой неприкосновенности несовершеннолетнего." />
+                </Typography>
+              </li>
+            </ul>
+
             <Typography>
               <T message="Время в психиатрическом стационаре засчитывается осужденному в срок наказания, а если его признают выздоровевшим, уголовное дело будет возобновлено." />
             </Typography>
@@ -466,18 +507,25 @@ const getFaqData = (t: any) => [
                 <T message="ст. 49 УК" />
               </a>
               )
-              <ul>
-                <li>
-                  <T message="назначаются за преступления небольшой и средней тяжести;" />
-                </li>
-                <li>
-                  <T message="включают общественно полезный труд в свободное от работы или учебы время;" />
-                </li>
-                <li>
-                  <T message="срок исполнения — от 60 до 480 часов, не больше 4 часов в день." />
-                </li>
-              </ul>
             </Typography>
+            <ul>
+              <li>
+                <Typography variant="span">
+                  <T message="назначаются за преступления небольшой и средней тяжести;" />
+                </Typography>
+              </li>
+              <li>
+                <Typography variant="span">
+                  <T message="включают общественно полезный труд в свободное от работы или учебы время;" />
+                </Typography>
+              </li>
+              <li>
+                <Typography variant="span">
+                  <T message="срок исполнения — от 60 до 480 часов, не больше 4 часов в день." />
+                </Typography>
+              </li>
+            </ul>
+
             <Typography>
               <i>
                 <T message="Пример" />
@@ -498,23 +546,30 @@ const getFaqData = (t: any) => [
                 <T message="ст. 50 УК" />
               </a>
               )
-              <ul>
-                <li>
+            </Typography>
+            <ul>
+              <li>
+                <Typography variant="span">
                   <T message="назначаются за преступления небольшой и средней тяжести;" />
-                </li>
-                <li>
+                </Typography>
+              </li>
+              <li>
+                <Typography variant="span">
                   <T message="подразумевают взимание от 5 до 20% заработной платы осужденного в доход государства;" />
                   <Tooltip
                     tip={t(
                       "Если у осужденного нет постоянного места работы, его назначает суд. Как правило, это самый низкооплачиваемый труд: грузчик, дворник, уборщик."
                     )}
                   />
-                </li>
-                <li>
+                </Typography>
+              </li>
+              <li>
+                <Typography variant="span">
                   <T message="срок исполнения — от 2 месяцев до 2 лет." />
-                </li>
-              </ul>
-            </Typography>
+                </Typography>
+              </li>
+            </ul>
+
             <Typography>
               <i>
                 <T message="Пример" />
@@ -535,18 +590,24 @@ const getFaqData = (t: any) => [
                 <T message="ст. 53.1 УК" />
               </a>
               )
-              <ul>
-                <li>
-                  <T message="назначаются за небольшие и средние преступления, а также за тяжкие, если они совершены впервые;" />
-                </li>
-                <li>
-                  <T message="осужденные живут в исправительном центре ФСИН и получают заработную плату, из которой также от 5 до 20% уходит в доход государства;" />
-                </li>
-                <li>
-                  <T message="срок исполнения — от 2 месяцев до 5 лет." />
-                </li>
-              </ul>
             </Typography>
+            <ul>
+              <li>
+                <Typography variant="span">
+                  <T message="назначаются за небольшие и средние преступления, а также за тяжкие, если они совершены впервые;" />
+                </Typography>{" "}
+              </li>
+              <li>
+                <Typography variant="span">
+                  <T message="осужденные живут в исправительном центре ФСИН и получают заработную плату, из которой также от 5 до 20% уходит в доход государства;" />
+                </Typography>{" "}
+              </li>
+              <li>
+                <Typography variant="span">
+                  <T message="срок исполнения — от 2 месяцев до 5 лет." />
+                </Typography>{" "}
+              </li>
+            </ul>
           </>
         ),
       },
@@ -560,14 +621,20 @@ const getFaqData = (t: any) => [
                 <T message="К реабилитирующим основаниям" />
               </b>
               <T message="прекращения уголовного преследования относятся:" />
-              <ul>
-                <li>
+            </Typography>
+            <ul>
+              <li>
+                <Typography variant="span">
                   <T message="непричастность подозреваемого к совершению преступления;" />
-                </li>
-                <li>
+                </Typography>{" "}
+              </li>
+              <li>
+                <Typography variant="span">
                   <T message="отсутствие события преступления;" />
-                </li>
-                <li>
+                </Typography>{" "}
+              </li>
+              <li>
+                <Typography variant="span">
                   <T message="отсутствие в деянии" />{" "}
                   <mark>
                     <T message="состава преступления" />
@@ -581,9 +648,10 @@ const getFaqData = (t: any) => [
                     <T message="ст. 212 УПК" />
                   </a>
                   ).
-                </li>
-              </ul>
-            </Typography>
+                </Typography>{" "}
+              </li>
+            </ul>
+
             <Typography>
               <T message="В этом случае суд признает за бывшим обвиняемым право на возмещение имущественного и морального вреда и восстановление в трудовых, пенсионных, жилищных и иных правах" />{" "}
               (
@@ -602,11 +670,15 @@ const getFaqData = (t: any) => [
                 <T message="нереабилитирующим основаниям" />
               </b>
               <T message="относятся:" />
-              <ul>
-                <li>
+            </Typography>
+            <ul>
+              <li>
+                <Typography variant="span">
                   <T message="истечение сроков давности уголовного преследования;" />
-                </li>
-                <li>
+                </Typography>
+              </li>
+              <li>
+                <Typography variant="span">
                   <a
                     href="http://www.consultant.ru/document/cons_doc_LAW_10699/2ba2a1c7f4543c624328bd19c1c703a7056a3b2f/"
                     target="_blank"
@@ -615,24 +687,35 @@ const getFaqData = (t: any) => [
                     <T message="деятельное раскаяние " />
                   </a>
                   <T message="подозреваемого;" />
-                </li>
-                <li>
+                </Typography>
+              </li>
+              <li>
+                <Typography variant="span">
                   <T message="примирение сторон;" />
-                </li>
-                <li>
+                </Typography>{" "}
+              </li>
+              <li>
+                <Typography variant="span">
                   <T message="смерть подозреваемого или обвиняемого;" />
-                </li>
-                <li>
+                </Typography>{" "}
+              </li>
+              <li>
+                <Typography variant="span">
                   <T message="акт амнистии;" />
-                </li>
-                <li>
+                </Typography>{" "}
+              </li>
+              <li>
+                <Typography variant="span">
                   <T message="принятия закона, устраняющего преступность или наказуемость деяния;" />
-                </li>
-                <li>
+                </Typography>{" "}
+              </li>
+              <li>
+                <Typography variant="span">
                   <T message="возмещение ущерба, если преступление касалось экономической деятельности;" />
-                </li>
-              </ul>
-            </Typography>
+                </Typography>{" "}
+              </li>
+            </ul>
+
             <Typography>
               <T message="Прекратить уголовное преследование по нереабилитирующим основаниям можно только с согласия фигуранта дела, так как это означает добровольное признание вины и принятие последствий." />
             </Typography>
@@ -657,11 +740,15 @@ const getFaqData = (t: any) => [
                 <T message="ст. 17 УК" />
               </a>
               ).
-              <ul>
-                <li>
+            </Typography>
+            <ul>
+              <li>
+                <Typography variant="span">
                   <T message="Реальная совокупность означает, что человек последовательно совершил несколько преступлений. Например, сначала публично призывал к свержению конституционного строя, а через час сбил пешехода." />
-                </li>
-                <li>
+                </Typography>{" "}
+              </li>
+              <li>
+                <Typography variant="span">
                   <T message="Идеальная совокупность означает, что человек одним действием совершил сразу несколько преступлений. Например, прошел обучение в террористической организации" />{" "}
                   (
                   <a
@@ -680,9 +767,10 @@ const getFaqData = (t: any) => [
                     <T message="ст. 205.4 УК" />
                   </a>
                   ).
-                </li>
-              </ul>
-            </Typography>
+                </Typography>
+              </li>
+            </ul>
+
             <Typography>
               <T message="Такие дела — когда один или несколько человек совершают серию преступлений — могут быть объединены в одно дело и рассматриваться в суде вместе. Наказание будет вынесено за каждое совершенное преступление по соответствующей статье. В" />{" "}
               <a
