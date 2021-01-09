@@ -1,13 +1,13 @@
-const getMaximum = (array: []) => Math.max(...array);
+const getMaximum = (array: number[]) => Math.max(...array);
 
-const getMinimum = (array: []) => Math.min(...array);
+const getMinimum = (array: number[]) => Math.min(...array);
 
 const sumReducer = (acc: number, cur: number) => acc + cur;
 
 const roundValue = (number: number) =>
   Math.max(Math.round(number * 100) / 100, 0);
 
-const worstRatio = (row: [], width: number) => {
+const worstRatio = (row: number[], width: number) => {
   const sum = row.reduce(sumReducer, 0);
   const rowMax = getMaximum(row);
   const rowMin = getMinimum(row);
@@ -22,8 +22,10 @@ const getFontSize = (percent: number) => {
   return size > 16 ? size : 16;
 };
 
+type ValueData = { value: number };
+
 interface TreemapDataProps {
-  data: { value: number }[];
+  data: ValueData[];
   width: number;
   height: number;
 }
@@ -35,14 +37,14 @@ class TreemapData {
       y: number;
       width: number;
       height: number;
-      data: any;
+      data: ValueData;
     }[];
     xBeginning: number;
     yBeginning: number;
     totalWidth: number;
     totalHeight: number;
   };
-  initialData: any;
+  initialData: ValueData[];
 
   constructor(props: TreemapDataProps) {
     const { data, width, height } = props;
@@ -82,14 +84,14 @@ class TreemapData {
     });
   }
 
-  getMinWidth = () => {
+  getMinWidth = (): { value: number; vertical: boolean } => {
     if (this.Rectangle.totalHeight ** 2 > this.Rectangle.totalWidth ** 2) {
       return { value: this.Rectangle.totalWidth, vertical: false };
     }
     return { value: this.Rectangle.totalHeight, vertical: true };
   };
 
-  layoutRow = (row: [], width: number, vertical: boolean) => {
+  layoutRow = (row: number[], width: number, vertical: boolean): void => {
     const rowHeight = row.reduce(sumReducer, 0) / width;
 
     row.forEach((rowItem) => {
@@ -132,18 +134,17 @@ class TreemapData {
     }
   };
 
-  layoutLastRow = (rows: [], children: [], width: number) => {
+  layoutLastRow = (rows: number[], children: number[], width: number): void => {
     const { vertical } = this.getMinWidth();
     this.layoutRow(rows, width, vertical);
     this.layoutRow(children, width, vertical);
   };
 
-  /* @ts-ignore */
-  squarify = (children: any, row: [], width: number) => {
+  squarify = (children: number[], row: number[], width: number): void => {
     if (Number(children.length) === 1) {
       return this.layoutLastRow(row, children, width);
     }
-    const rowWithChild: any = [...row, children[0]];
+    const rowWithChild = [...row, children[0]];
 
     if (
       row.length === 0 ||

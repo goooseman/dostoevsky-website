@@ -8,6 +8,7 @@ import DownloadButton from "src/components/DownloadButton";
 import domtoimage from "dom-to-image";
 import { saveAs } from "file-saver";
 import { getClauseLink } from "src/config/routes";
+import { T } from "react-targem";
 
 const TREEMAP_COLORS = ["#7C89E4", "#FF6700", "#BA9BAF", "#F3607B"];
 
@@ -43,14 +44,31 @@ const Treemap: React.FC<TreemapProps> = ({
     saveAs(dataUrl, downloadFilename);
   };
 
-  const chartData = new TreemapData({
-    data: data
-      .sort((a, b) => b.value - a.value)
-      .filter((t) => t.value !== 0)
-      .map((t, i) => ({
-        ...t,
-        color: TREEMAP_COLORS[i],
-      })),
+  const chartData = data
+    .filter((t) => t.value !== 0)
+    .sort((a, b) => b.value - a.value)
+    .map((t, i) => ({
+      ...t,
+      color: TREEMAP_COLORS[i],
+    }));
+
+  if (chartData.length === 0) {
+    return (
+      <div style={{ width }}>
+        {title ? (
+          <Typography variant="h3" isUpperCased className={classes.title}>
+            <b>{title}</b>
+          </Typography>
+        ) : null}
+        <Typography>
+          <T message="Недостаточно данных для генерации графика." />
+        </Typography>
+      </div>
+    );
+  }
+
+  const treemaap = new TreemapData({
+    data: chartData,
     width,
     height,
   });
@@ -65,7 +83,7 @@ const Treemap: React.FC<TreemapProps> = ({
         ) : null}
         <svg width={width} height={height}>
           {/* @ts-ignore */}
-          {chartData.map((rectangle, i) => (
+          {treemaap.map((rectangle, i) => (
             <g
               key={`${rectangle.x}:${rectangle.y}`}
               fill={rectangle.data.color}

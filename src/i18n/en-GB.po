@@ -12,6 +12,10 @@ msgstr ""
 "Last-Translator: \n"
 "Language: en\n"
 
+#: src/components/charts/Treemap/Treemap.tsx:
+msgid "Недостаточно данных для генерации графика."
+msgstr "Недостаточно данных для генерации графика."
+
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
 msgid "Right arrow"
 msgstr "Right arrow"
