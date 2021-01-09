@@ -182,7 +182,7 @@ const FullDatasetPage: React.FC = () => {
               )
                 .map((p: OptionTypeBase) => p.value)
                 .join(","),
-              breakdown: breakdownValue
+              breakdowns: breakdownValue
                 ? breakdownValue.map((b: OptionTypeBase) => b.value).join(",")
                 : undefined,
             },
