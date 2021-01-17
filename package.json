@@ -140,7 +140,7 @@
     "lint:eslint:write": "eslint --ext .ts,.tsx --ignore-path .gitignore --fix",
     "lint:stylelint:check": "stylelint --ignore-path .gitignore",
     "lint:stylelint:write": "stylelint --fix --ignore-path .gitignore",
-    "intl:update-po": "gettext-utils export-strings --default-locale=en-GB && git add src/i18n/*.po*",
+    "intl:update-po": "gettext-utils export-strings --default-locale=ru && git add src/i18n/*.po*",
     "intl:generate-json": "gettext-utils import-strings",
     "extra:parse-uk-rf": "ts-node --project tsconfig.node.json extra/ук-рф-parser.ts "
   }
