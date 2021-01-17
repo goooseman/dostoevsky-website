@@ -20,7 +20,7 @@ const Loading: React.FC<LoadingProps> = ({
       <img
         className={cn(classes.image)}
         src={require("./assets/refresh.svg")}
-        alt={t("Loading")}
+        alt={t("Загрузка")}
       />
     </div>
   );

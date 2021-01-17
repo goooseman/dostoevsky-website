@@ -35,10 +35,13 @@ const Footer: React.FC<FooterProps> = ({ t }: FooterProps) => {
       <Container>
         <div className={cn(classes.leftContainer)}>
           <a href="https://google.com" target="_blank" rel="noreferrer">
-            <img src={require("./assets/oi-logo.png")} alt={t("OI logo")} />
+            <img src={require("./assets/oi-logo.png")} alt={t("Логотип OI")} />
           </a>
           <a href="https://google.com" target="_blank" rel="noreferrer">
-            <img src={require("./assets/d4s-logo.png")} alt={t("D4S logo")} />
+            <img
+              src={require("./assets/d4s-logo.png")}
+              alt={t("Логотип D4S")}
+            />
           </a>
         </div>
         <div className={cn(classes.middleContainer)}>

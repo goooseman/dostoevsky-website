@@ -3,9 +3,9 @@ import Select, { components, OptionTypeBase } from "react-select";
 import classes from "./FullDatasetPage.module.css";
 import cn from "clsx";
 import Typography from "src/components/ui-kit/Typography";
-import { T } from "react-targem";
+import { T, WithLocale, withLocale } from "react-targem";
 
-interface FullDatasetSelectProps {
+interface FullDatasetSelectProps extends WithLocale {
   children?: React.ReactNode;
   label: string;
   options: any;
@@ -39,11 +39,12 @@ const FullDatasetSelect: React.FC<FullDatasetSelectProps> = ({
     );
   };
 
-  const renderDropdownIndicator = (props: object) => {
+  const renderDropdownIndicator = (props: FullDatasetSelectProps) => {
+    const { t } = props;
     return (
       /* @ts-ignore */
       <components.DropdownIndicator {...props}>
-        <img src={require("./assets/down.svg")} alt="Down arrow" />
+        <img src={require("./assets/down.svg")} alt={t("Стрелка вниз")} />
       </components.DropdownIndicator>
     );
   };
@@ -119,4 +120,4 @@ const FullDatasetSelect: React.FC<FullDatasetSelectProps> = ({
   );
 };
 
-export default FullDatasetSelect;
+export default withLocale(FullDatasetSelect);

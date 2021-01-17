@@ -30,9 +30,9 @@ class SpoilerText extends PureComponent<SpoilerTextProps> {
   getArrowIcon = (): React.ReactNode => {
     const { isOpened, t } = this.props;
     return isOpened ? (
-      <img src={require("./assets/up.svg")} alt={t("Up icon")} />
+      <img src={require("./assets/up.svg")} alt={t("Иконка вверх")} />
     ) : (
-      <img src={require("./assets/down.svg")} alt={t("Down icon")} />
+      <img src={require("./assets/down.svg")} alt={t("Иконка вниз")} />
     );
   };
 }

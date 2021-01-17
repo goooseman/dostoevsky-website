@@ -48,18 +48,18 @@ class TableRow extends PureComponent<TableRowProps> {
     return isOpened ? (
       <button
         tabIndex={-1}
-        title={t("Close hidden content")}
+        title={t("Закрыть скрытый контент")}
         className={cn(classes.collapseIconButton)}
       >
-        <img src={require("./assets/minus.svg")} alt={t("Minus icon")} />
+        <img src={require("./assets/minus.svg")} alt={t("Иконка минус")} />
       </button>
     ) : (
       <button
         tabIndex={-1}
-        title={t("Open hidden content")}
+        title={t("Открыть скрытый контент")}
         className={cn(classes.collapseIconButton)}
       >
-        <img src={require("./assets/plus.svg")} alt={t("Plus icon")} />
+        <img src={require("./assets/plus.svg")} alt={t("Иконка плюс")} />
       </button>
     );
   };

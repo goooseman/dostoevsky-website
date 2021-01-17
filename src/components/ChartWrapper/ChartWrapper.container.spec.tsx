@@ -38,7 +38,7 @@ it("should create an image of a chart", async () => {
       <p>Chart</p>
     </ChatWrapperContainer>
   );
-  fireEvent.click(getByTitle("Download chart"));
+  fireEvent.click(getByTitle("Скачать чарт"));
   await waitFor(() => expect(writeMock).toBeCalledTimes(1));
 
   expect(writeMock).toBeCalledWith(expect.stringContaining("<svg"));

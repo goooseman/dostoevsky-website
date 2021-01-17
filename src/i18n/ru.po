@@ -18,16 +18,15 @@ msgid "Недостаточно данных для генерации граф�
 msgstr "Недостаточно данных для генерации графика."
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
-msgid "Right arrow"
-msgstr "Right arrow"
+msgid "Стрелка вправо"
+msgstr "Стрелка вправо"
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
-msgid "Close"
-msgstr "Close"
-
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
-msgid "Times icon"
-msgstr "Times icon"
+#: src/components/ui-kit/Modal/Modal.tsx:
+#: src/components/ui-kit/Modal/Modal.tsx:
+msgid "Закрыть"
+msgstr "Закрыть"
 
 #: src/components/ClausePageHeader/ClausePageHeader.tsx:
 #: src/templates/IndexPage/IndexPageFilter.tsx:
@@ -35,8 +34,9 @@ msgid "год"
 msgstr "год"
 
 #: src/components/ClausePageHeader/ClausePageHeader.tsx:
-msgid "Down arrow"
-msgstr "Down arrow"
+#: src/templates/FullDatasetPage/FullDatasetSelect.tsx:
+msgid "Стрелка вниз"
+msgstr "Стрелка вниз"
 
 #: src/components/ClausePageLayout/ClausePageLayout.tsx:
 msgid "ЧАРТЫ"
@@ -47,32 +47,40 @@ msgid "ТАБЛИЦА"
 msgstr "ТАБЛИЦА"
 
 #: src/components/DownloadButton/DownloadButton.tsx:
-msgid "Download chart"
-msgstr "Download chart"
+msgid "Скачать чарт"
+msgstr "Скачать чарт"
 
 #: src/components/DownloadButton/DownloadButton.tsx:
-msgid "Download icon"
-msgstr "Download icon"
+msgid "Скачать"
+msgstr "Скачать"
+
+#: src/components/EmbedModal/EmbedModal.tsx:
+msgid "Получить код для встраивания"
+msgstr "Получить код для встраивания"
+
+#: src/components/EmbedModal/EmbedModal.tsx:
+msgid "Иконка код"
+msgstr "Иконка код"
 
 #: src/components/EmbedModal/EmbedModal.tsx:
 msgid "Embed"
 msgstr "Embed"
 
 #: src/components/EmbedModal/EmbedModal.tsx:
-msgid "Copied"
-msgstr "Copied"
+msgid "Скопировано"
+msgstr "Скопировано"
 
 #: src/components/EmbedModal/EmbedModal.tsx:
-msgid "Copy"
-msgstr "Copy"
+msgid "Скопировать"
+msgstr "Скопировать"
 
 #: src/components/Footer/Footer.tsx:
-msgid "OI logo"
-msgstr "OI logo"
+msgid "Логотип OI"
+msgstr "Логотип OI"
 
 #: src/components/Footer/Footer.tsx:
-msgid "D4S logo"
-msgstr "D4S logo"
+msgid "Логотип D4S"
+msgstr "Логотип D4S"
 
 #: src/components/Header/Header.tsx:
 msgid "RU"
@@ -92,37 +100,37 @@ msgstr "Перейти"
 
 #: src/components/SpoilerText/SpoilerText.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
-msgid "Up icon"
-msgstr "Up icon"
+msgid "Иконка вверх"
+msgstr "Иконка вверх"
 
 #: src/components/SpoilerText/SpoilerText.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
-msgid "Down icon"
-msgstr "Down icon"
+msgid "Иконка вниз"
+msgstr "Иконка вниз"
 
 #: src/components/Table/components/TableRow/TableRow.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
-msgid "Close hidden content"
-msgstr "Close hidden content"
+msgid "Закрыть скрытый контент"
+msgstr "Закрыть скрытый контент"
 
 #: src/components/Table/components/TableRow/TableRow.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
-msgid "Minus icon"
-msgstr "Minus icon"
+msgid "Иконка минус"
+msgstr "Иконка минус"
 
 #: src/components/Table/components/TableRow/TableRow.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
-msgid "Open hidden content"
-msgstr "Open hidden content"
+msgid "Открыть скрытый контент"
+msgstr "Открыть скрытый контент"
 
 #: src/components/Table/components/TableRow/TableRow.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
-msgid "Plus icon"
-msgstr "Plus icon"
+msgid "Иконка плюс"
+msgstr "Иконка плюс"
 
 #: src/components/ui-kit/Loading/Loading.tsx:
-msgid "Loading"
-msgstr "Loading"
+msgid "Загрузка"
+msgstr "Загрузка"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Саша Беспалова"

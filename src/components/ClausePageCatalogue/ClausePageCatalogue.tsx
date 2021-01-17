@@ -42,7 +42,7 @@ const CatalogueRow: React.FC<CatalogueRowProps> = ({
           <img
             className={cn(classes.arrowRight)}
             src={require("./assets/right.svg")}
-            alt={t("Right arrow")}
+            alt={t("Стрелка вправо")}
           />
         ) : null}
       </a>
@@ -134,9 +134,9 @@ class ClausePageCatalogue extends PureComponent<ClausePageCatalogueProps> {
         <button
           onClick={onClose}
           className={cn(classes.closeButton)}
-          aria-label={t("Close")}
+          aria-label={t("Закрыть")}
         >
-          <img src={require("./assets/close.svg")} alt={t("Times icon")} />
+          <img src={require("./assets/close.svg")} alt={t("Закрыть")} />
         </button>
       </div>
     );

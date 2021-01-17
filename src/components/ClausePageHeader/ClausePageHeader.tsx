@@ -115,7 +115,7 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
       <components.DropdownIndicator {...props}>
         <>
           <div className={cn(classes.yearSelectIndicatorOverlay)}></div>
-          <img src={require("./assets/down.svg")} alt={t("Down arrow")} />
+          <img src={require("./assets/down.svg")} alt={t("Стрелка вниз")} />
         </>
       </components.DropdownIndicator>
     );

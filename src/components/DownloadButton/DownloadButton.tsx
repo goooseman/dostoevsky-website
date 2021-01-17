@@ -13,10 +13,10 @@ class DownloadButton extends PureComponent<DownloadButtonProps> {
     return (
       <button
         className={cn(classes.button)}
-        title={t("Download chart")}
+        title={t("Скачать чарт")}
         onClick={onClick}
       >
-        <img src={require("./assets/download.svg")} alt={t("Download icon")} />
+        <img src={require("./assets/download.svg")} alt={t("Скачать")} />
       </button>
     );
   }

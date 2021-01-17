@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Mon Jan 18 2021 00:24:48 GMT+0300 (GMT+03:00)\n"
+"POT-Creation-Date: Mon Jan 18 2021 00:41:39 GMT+0300 (GMT+03:00)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -11,15 +11,14 @@ msgid "Недостаточно данных для генерации граф�
 msgstr ""
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
-msgid "Right arrow"
+msgid "Стрелка вправо"
 msgstr ""
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
-msgid "Close"
-msgstr ""
-
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
-msgid "Times icon"
+#: src/components/ui-kit/Modal/Modal.tsx:
+#: src/components/ui-kit/Modal/Modal.tsx:
+msgid "Закрыть"
 msgstr ""
 
 #: src/components/ClausePageHeader/ClausePageHeader.tsx:
@@ -28,7 +27,8 @@ msgid "год"
 msgstr ""
 
 #: src/components/ClausePageHeader/ClausePageHeader.tsx:
-msgid "Down arrow"
+#: src/templates/FullDatasetPage/FullDatasetSelect.tsx:
+msgid "Стрелка вниз"
 msgstr ""
 
 #: src/components/ClausePageLayout/ClausePageLayout.tsx:
@@ -40,11 +40,19 @@ msgid "ТАБЛИЦА"
 msgstr ""
 
 #: src/components/DownloadButton/DownloadButton.tsx:
-msgid "Download chart"
+msgid "Скачать чарт"
 msgstr ""
 
 #: src/components/DownloadButton/DownloadButton.tsx:
-msgid "Download icon"
+msgid "Скачать"
+msgstr ""
+
+#: src/components/EmbedModal/EmbedModal.tsx:
+msgid "Получить код для встраивания"
+msgstr ""
+
+#: src/components/EmbedModal/EmbedModal.tsx:
+msgid "Иконка код"
 msgstr ""
 
 #: src/components/EmbedModal/EmbedModal.tsx:
@@ -52,19 +60,19 @@ msgid "Embed"
 msgstr ""
 
 #: src/components/EmbedModal/EmbedModal.tsx:
-msgid "Copied"
+msgid "Скопировано"
 msgstr ""
 
 #: src/components/EmbedModal/EmbedModal.tsx:
-msgid "Copy"
+msgid "Скопировать"
 msgstr ""
 
 #: src/components/Footer/Footer.tsx:
-msgid "OI logo"
+msgid "Логотип OI"
 msgstr ""
 
 #: src/components/Footer/Footer.tsx:
-msgid "D4S logo"
+msgid "Логотип D4S"
 msgstr ""
 
 #: src/components/Header/Header.tsx:
@@ -85,36 +93,36 @@ msgstr ""
 
 #: src/components/SpoilerText/SpoilerText.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
-msgid "Up icon"
+msgid "Иконка вверх"
 msgstr ""
 
 #: src/components/SpoilerText/SpoilerText.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
-msgid "Down icon"
+msgid "Иконка вниз"
 msgstr ""
 
 #: src/components/Table/components/TableRow/TableRow.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
-msgid "Close hidden content"
+msgid "Закрыть скрытый контент"
 msgstr ""
 
 #: src/components/Table/components/TableRow/TableRow.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
-msgid "Minus icon"
+msgid "Иконка минус"
 msgstr ""
 
 #: src/components/Table/components/TableRow/TableRow.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
-msgid "Open hidden content"
+msgid "Открыть скрытый контент"
 msgstr ""
 
 #: src/components/Table/components/TableRow/TableRow.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
-msgid "Plus icon"
+msgid "Иконка плюс"
 msgstr ""
 
 #: src/components/ui-kit/Loading/Loading.tsx:
-msgid "Loading"
+msgid "Загрузка"
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:

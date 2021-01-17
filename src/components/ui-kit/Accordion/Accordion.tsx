@@ -72,20 +72,20 @@ class AccordionNodePure extends PureComponent<AccordionNodeProps> {
     return isOpened ? (
       <button
         tabIndex={-1}
-        title={t("Close hidden content")}
+        title={t("Закрыть скрытый контент")}
         onClick={onClick}
         className={cn(classes.variantPrimaryIcon)}
       >
-        <img src={require("./assets/minus.svg")} alt={t("Minus icon")} />
+        <img src={require("./assets/minus.svg")} alt={t("Иконка минус")} />
       </button>
     ) : (
       <button
         tabIndex={-1}
-        title={t("Open hidden content")}
+        title={t("Открыть скрытый контент")}
         onClick={onClick}
         className={cn(classes.variantPrimaryIcon)}
       >
-        <img src={require("./assets/plus.svg")} alt={t("Plus icon")} />
+        <img src={require("./assets/plus.svg")} alt={t("Иконка плюс")} />
       </button>
     );
   };
@@ -95,13 +95,13 @@ class AccordionNodePure extends PureComponent<AccordionNodeProps> {
     return isOpened ? (
       <img
         src={require("./assets/up.svg")}
-        alt={t("Up icon")}
+        alt={t("Иконка вверх")}
         className={cn(classes.arrowIcon)}
       />
     ) : (
       <img
         src={require("./assets/down.svg")}
-        alt={t("Down icon")}
+        alt={t("Иконка вниз")}
         className={cn(classes.arrowIcon)}
       />
     );
