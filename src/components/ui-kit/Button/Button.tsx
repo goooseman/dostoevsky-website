@@ -4,7 +4,7 @@ import cn from "clsx";
 import { Link, GatsbyLinkProps } from "gatsby";
 
 interface SvgArrowProps {
-  color: "normal" | "inverted" | "secondary" | "third" | "dark";
+  color: "normal" | "inverted" | "secondary" | "third" | "dark" | "link";
   verticalArrow: boolean;
   verticalArrowRotate?: boolean;
 }
@@ -15,7 +15,7 @@ interface ButtonProps
     HTMLButtonElement
   > {
   size: "md" | "lg" | "sm";
-  color: "normal" | "inverted" | "secondary" | "third" | "dark";
+  color: "normal" | "inverted" | "secondary" | "third" | "dark" | "link";
   withArrow?: boolean;
   verticalArrow?: boolean;
   verticalArrowRotate?: boolean;
@@ -23,7 +23,7 @@ interface ButtonProps
 
 interface LinkProps extends GatsbyLinkProps<{}> {
   size: "sm" | "md" | "lg";
-  color: "normal" | "inverted" | "secondary" | "third" | "dark";
+  color: "normal" | "inverted" | "secondary" | "third" | "dark" | "link";
   withArrow?: boolean;
   verticalArrow?: boolean;
   verticalArrowRotate?: boolean;
@@ -95,6 +95,7 @@ class Button extends PureComponent<ButtonComponentProps> {
             [classes.buttonInverted]: color === "inverted",
             [classes.buttonSecondary]: color === "secondary",
             [classes.buttonThird]: color === "third",
+            [classes.buttonLink]: color === "link",
           })}
           {...otherProps}
         >
@@ -131,6 +132,7 @@ class Button extends PureComponent<ButtonComponentProps> {
           [classes.buttonSecondary]: color === "secondary",
           [classes.buttonThird]: color === "third",
           [classes.buttonDark]: color === "dark",
+          [classes.buttonLink]: color === "link",
         })}
         {...otherProps}
       >

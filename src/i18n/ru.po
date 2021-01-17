@@ -83,8 +83,20 @@ msgid "Логотип D4S"
 msgstr "Логотип D4S"
 
 #: src/components/Header/Header.tsx:
-msgid "RU"
-msgstr "RU"
+msgid "Иконка \"Земной шар\""
+msgstr "Иконка \"Земной шар\""
+
+#: src/components/Header/Header.tsx:
+msgid "Иконка \"Меню\""
+msgstr "Иконка \"Меню\""
+
+#: src/components/Header/Header.tsx:
+msgid "Логотип проекта Достоевский"
+msgstr "Логотип проекта Достоевский"
+
+#: src/components/Header/Header.tsx:
+msgid "Иконка \"Закрыть\""
+msgstr "Иконка \"Закрыть\""
 
 #: src/components/Promo/Promo.tsx:
 msgid "Нужны данные по всем статьям и годам?"

@@ -107,3 +107,8 @@
     margin: 1rem;
   }
 }
+
+.localeName {
+  text-transform: uppercase;
+  text-decoration: underline;
+}

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Mon Jan 18 2021 00:41:39 GMT+0300 (GMT+03:00)\n"
+"POT-Creation-Date: Mon Jan 18 2021 01:26:33 GMT+0300 (GMT+03:00)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -76,7 +76,19 @@ msgid "Логотип D4S"
 msgstr ""
 
 #: src/components/Header/Header.tsx:
-msgid "RU"
+msgid "Иконка \"Земной шар\""
+msgstr ""
+
+#: src/components/Header/Header.tsx:
+msgid "Иконка \"Меню\""
+msgstr ""
+
+#: src/components/Header/Header.tsx:
+msgid "Логотип проекта Достоевский"
+msgstr ""
+
+#: src/components/Header/Header.tsx:
+msgid "Иконка \"Закрыть\""
 msgstr ""
 
 #: src/components/Promo/Promo.tsx:
