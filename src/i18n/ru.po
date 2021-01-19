@@ -125,8 +125,8 @@ msgid "полный датасет"
 msgstr "полный датасет"
 
 #: src/components/Header/Header.tsx:
-msgid "Menu"
-msgstr "Menu"
+msgid "Иконка 'Закрыть'"
+msgstr "Иконка 'Закрыть'"
 
 #: src/components/Promo/Promo.tsx:
 msgid "Нужны данные по всем статьям и годам?"

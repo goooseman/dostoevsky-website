@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Tue Jan 19 2021 07:57:14 GMT+0300 (GMT+03:00)\n"
+"POT-Creation-Date: Tue Jan 19 2021 08:12:36 GMT+0300 (GMT+03:00)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -118,7 +118,7 @@ msgid "полный датасет"
 msgstr ""
 
 #: src/components/Header/Header.tsx:
-msgid "Menu"
+msgid "Иконка 'Закрыть'"
 msgstr ""
 
 #: src/components/Promo/Promo.tsx:

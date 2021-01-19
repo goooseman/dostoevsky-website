@@ -108,7 +108,10 @@ const Header: React.FC<HeaderProps> = () => {
             className={cn(classes.mobileMenu__close)}
             onClick={toggleLangSelector}
           >
-            <img src={require("./assets/close.svg")} alt={t("Menu")} />
+            <img
+              src={require("./assets/close.svg")}
+              alt={t("Иконка 'Закрыть'")}
+            />
           </div>
         </div>
         <div className={cn(classes.mobileMenu__listener)}>

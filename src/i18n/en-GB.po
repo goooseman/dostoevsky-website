@@ -104,27 +104,27 @@ msgstr ""
 
 #: src/components/Header/Header.tsx:
 msgid "каталог статей ук рф"
-msgstr ""
+msgstr "Articles of Criminal Code of Russian Federation"
 
 #: src/components/Header/Header.tsx:
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "Аналитика"
-msgstr ""
+msgstr "Analytics"
 
 #: src/components/Header/Header.tsx:
 msgid "о датасете"
-msgstr ""
+msgstr "Dataset"
 
 #: src/components/Header/Header.tsx:
 msgid "о проекте"
-msgstr ""
+msgstr "About"
 
 #: src/components/Header/Header.tsx:
 msgid "полный датасет"
-msgstr ""
+msgstr "Full dataset"
 
 #: src/components/Header/Header.tsx:
-msgid "Menu"
+msgid "Иконка 'Закрыть'"
 msgstr ""
 
 #: src/components/Promo/Promo.tsx:
@@ -2941,13 +2941,16 @@ msgstr ""
 
 #: src/templates/IndexPage/IndexPage.tsx:
 msgid "Статистика судебных решений"
-msgstr ""
+msgstr "Statistics on court decisions"
 
 #: src/templates/IndexPage/IndexPage.tsx:
 msgid ""
 "по статьям Уголовного кодекса на основе публикаций Судебного департамента при "
 "Верховном Суде РФ"
 msgstr ""
+"based on publications by Judicial Department of the Supreme Court of Russian "
+"Federation. For now, we focused just on Articles of Criminal Code of Russian "
+"Federation\n"
 
 #: src/templates/IndexPage/IndexPage.tsx:
 msgid ""
@@ -2955,6 +2958,9 @@ msgid ""
 "обвинительных и оправдательных приговоров, лишений свободы, амнистий и многое "
 "другое."
 msgstr ""
+"You can find information about court decisions on required article from 2009 to "
+"2019, for example:\n"
+"number of convictions, acquittals, imprisonments, amnesties and others."
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "Статьи УК РФ, по которым осуждали чаще всего в "
@@ -3027,7 +3033,7 @@ msgstr ""
 
 #: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "№ статьи ук рф или вид преступления"
-msgstr ""
+msgstr "# article Criminal Code of Russian Federation or type of crime"
 
 #: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "Введите статью..."
