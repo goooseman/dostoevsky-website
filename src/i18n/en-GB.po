@@ -82,6 +82,11 @@ msgid "Логотип D4S"
 msgstr ""
 
 #: src/components/Header/Header.tsx:
+#: src/components/Header/Header.tsx:
+msgid "Достоевский"
+msgstr ""
+
+#: src/components/Header/Header.tsx:
 msgid "Иконка \"Земной шар\""
 msgstr ""
 
@@ -95,6 +100,31 @@ msgstr ""
 
 #: src/components/Header/Header.tsx:
 msgid "Иконка \"Закрыть\""
+msgstr ""
+
+#: src/components/Header/Header.tsx:
+msgid "каталог статей ук рф"
+msgstr ""
+
+#: src/components/Header/Header.tsx:
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "Аналитика"
+msgstr ""
+
+#: src/components/Header/Header.tsx:
+msgid "о датасете"
+msgstr ""
+
+#: src/components/Header/Header.tsx:
+msgid "о проекте"
+msgstr ""
+
+#: src/components/Header/Header.tsx:
+msgid "полный датасет"
+msgstr ""
+
+#: src/components/Header/Header.tsx:
+msgid "Menu"
 msgstr ""
 
 #: src/components/Promo/Promo.tsx:
@@ -2945,10 +2975,6 @@ msgstr ""
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "принудительные меры к невменяемым"
-msgstr ""
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Аналитика"
 msgstr ""
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:

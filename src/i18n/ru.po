@@ -83,6 +83,11 @@ msgid "Логотип D4S"
 msgstr "Логотип D4S"
 
 #: src/components/Header/Header.tsx:
+#: src/components/Header/Header.tsx:
+msgid "Достоевский"
+msgstr "Достоевский"
+
+#: src/components/Header/Header.tsx:
 msgid "Иконка \"Земной шар\""
 msgstr "Иконка \"Земной шар\""
 
@@ -97,6 +102,31 @@ msgstr "Логотип проекта Достоевский"
 #: src/components/Header/Header.tsx:
 msgid "Иконка \"Закрыть\""
 msgstr "Иконка \"Закрыть\""
+
+#: src/components/Header/Header.tsx:
+msgid "каталог статей ук рф"
+msgstr "каталог статей ук рф"
+
+#: src/components/Header/Header.tsx:
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "Аналитика"
+msgstr "Аналитика"
+
+#: src/components/Header/Header.tsx:
+msgid "о датасете"
+msgstr "о датасете"
+
+#: src/components/Header/Header.tsx:
+msgid "о проекте"
+msgstr "о проекте"
+
+#: src/components/Header/Header.tsx:
+msgid "полный датасет"
+msgstr "полный датасет"
+
+#: src/components/Header/Header.tsx:
+msgid "Menu"
+msgstr "Menu"
 
 #: src/components/Promo/Promo.tsx:
 msgid "Нужны данные по всем статьям и годам?"
@@ -3381,10 +3411,6 @@ msgstr "лишение свободы"
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "принудительные меры к невменяемым"
 msgstr "принудительные меры к невменяемым"
-
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Аналитика"
-msgstr "Аналитика"
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "Статистика решений суда по всем статьям УК РФ в"

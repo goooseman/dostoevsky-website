@@ -23,7 +23,7 @@ const Header: React.FC<HeaderProps> = () => {
     <nav className={cn(classes.container)}>
       <div className={cn(classes.headerWrapper)}>
         <Link to="/" className={cn(classes.logo)}>
-          <img src={require("./assets/logo.svg")} alt="Достоевский" />
+          <img src={require("./assets/logo.svg")} alt={t("Достоевский")} />
         </Link>
         <div className={cn(classes.callMenuBar)}>
           <Button onClick={toggleLangSelector}>
@@ -71,19 +71,19 @@ const Header: React.FC<HeaderProps> = () => {
           <div className={cn(classes.mobileMenu__listener)}>
             <Menu variant="onBlackBackground">
               <MenuLink activeUrls={[/^\/\d\d\d/]} to="/clauses" size="normal">
-                каталог статей ук рф
+                <T message="каталог статей ук рф" />
               </MenuLink>
               <MenuLink partiallyActive to="/articles" size="normal">
-                Аналитика
+                <T message="Аналитика" />
               </MenuLink>
               <MenuLink to="/faq" size="normal">
-                о датасете
+                <T message="о датасете" />
               </MenuLink>
               <MenuLink to="/about" size="normal">
-                о проекте
+                <T message="о проекте" />
               </MenuLink>
               <MenuLink to="/full" size="normal">
-                полный датасет
+                <T message="полный датасет" />
               </MenuLink>
             </Menu>
           </div>
@@ -100,7 +100,7 @@ const Header: React.FC<HeaderProps> = () => {
             <Link to="/">
               <img
                 src={require("./assets/logo-mobile.svg")}
-                alt="Достоевский"
+                alt={t("Достоевский")}
               />
             </Link>
           </div>
@@ -108,7 +108,7 @@ const Header: React.FC<HeaderProps> = () => {
             className={cn(classes.mobileMenu__close)}
             onClick={toggleLangSelector}
           >
-            <img src={require("./assets/close.svg")} alt="Menu" />
+            <img src={require("./assets/close.svg")} alt={t("Menu")} />
           </div>
         </div>
         <div className={cn(classes.mobileMenu__listener)}>
