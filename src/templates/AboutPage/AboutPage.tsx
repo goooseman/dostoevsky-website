@@ -109,7 +109,7 @@ class AboutPage extends PureComponent<AboutPageProps> {
               </Typography>
               <Typography>
                 <T message="Главное в Достоевском — простая в использовании база уголовной статистики в России" />{" "}
-                <Typography variant="span" isNonBreakable>
+                <Typography variant="span">
                   <T message="с 2009 до 2019 года." />
                   <Tooltip
                     isInversed
