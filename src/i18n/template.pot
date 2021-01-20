@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Sun Jan 10 2021 00:39:02 GMT+0200 (Israel Standard Time)\n"
+"POT-Creation-Date: Wed Jan 20 2021 07:16:23 GMT+0300 (Moscow Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -202,11 +202,18 @@ msgid "Разве я сам(-а) не могу найти эти данные?"
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
+msgid "Можете. Все данные Достоевского генерируются на основе "
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "официальной статистики Судебного департамента при Верховном суде РФ"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
 msgid ""
-"Можете. Все данные Достоевского генерируются на основе официальной статистики "
-"Судебного департамента при Верховном суде РФ. Однако эта информация публикуется "
-"в виде десятков нечитаемых таблиц: для подробного анализа квалифицированному "
-"специалисту требуются часы, а иногда и дни работы."
+". Однако эта информация публикуется в виде десятков нечитаемых таблиц: для "
+"подробного анализа квалифицированному специалисту требуются часы, а иногда и "
+"дни работы."
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
