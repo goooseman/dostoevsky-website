@@ -12,10 +12,11 @@ interface FullDatasetPageProps {
 
 const FullDataset: React.FC<FullDatasetPageProps> = ({
   data,
+  location,
 }: FullDatasetPageProps) => {
   const meta = data.site?.meta;
   return (
-    <Layout>
+    <Layout location={location}>
       <Meta site={meta} />
       <FullDatasetPage />
     </Layout>

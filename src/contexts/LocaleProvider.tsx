@@ -6,12 +6,25 @@ import { isSupportedLocaleInPath } from "src/utils/locales";
 // so we use require() to prevent tsc compile time errors before webpack is first run
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const translationsJson = require("src/i18n/translations.json");
+import { Redirect } from "@reach/router";
 
-interface LocaleProviderProps {}
+interface LocaleProviderProps {
+  location: Location;
+}
 
-export class LocaleProvider extends React.Component<LocaleProviderProps> {
+interface LocaleProviderState {
+  redirectTo?: string;
+}
+
+export class LocaleProvider extends React.Component<
+  LocaleProviderProps,
+  LocaleProviderState
+> {
+  public state: LocaleProviderState = {};
+
   public componentDidMount(): void {
-    const path = window.location?.pathname || "/";
+    const { location } = this.props;
+    const path = location.pathname;
     if (path.includes("admin")) {
       return;
     }
@@ -20,23 +33,26 @@ export class LocaleProvider extends React.Component<LocaleProviderProps> {
         LOCALE_CODES,
         DEFAULT_LOCALE
       );
-      window.location.replace(
-        `/${defaultLocale}${path}${window.location.search}`
-      );
+      this.setState({
+        redirectTo: `/${defaultLocale}${path}${window.location.search}`,
+      });
     }
   }
 
   public render(): React.ReactNode {
     const { children } = this.props;
-
+    const { redirectTo } = this.state;
     return (
-      <TargemProvider
-        detectLocale={false}
-        defaultLocale={DEFAULT_LOCALE}
-        translations={translationsJson}
-      >
-        {children}
-      </TargemProvider>
+      <>
+        <TargemProvider
+          detectLocale={false}
+          defaultLocale={DEFAULT_LOCALE}
+          translations={translationsJson}
+        >
+          {children}
+        </TargemProvider>
+        {redirectTo ? <Redirect to={redirectTo} /> : null}
+      </>
     );
   }
 }

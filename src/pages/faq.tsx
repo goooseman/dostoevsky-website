@@ -10,10 +10,10 @@ interface FaqPageProps {
   location: Location;
 }
 
-const Faq: React.FC<FaqPageProps> = ({ data }: FaqPageProps) => {
+const Faq: React.FC<FaqPageProps> = ({ data, location }: FaqPageProps) => {
   const meta = data.site?.meta;
   return (
-    <Layout>
+    <Layout location={location}>
       <Meta site={meta} />
       <FaqPage />
     </Layout>

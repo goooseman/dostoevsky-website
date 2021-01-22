@@ -14,6 +14,7 @@ interface ArticlesPageProps {
 
 const ArticlesIndex: React.FC<ArticlesPageProps> = ({
   data,
+  location,
 }: ArticlesPageProps) => {
   const meta = data.site?.meta;
   const all = data.allMarkdownRemark || [];
@@ -22,7 +23,7 @@ const ArticlesIndex: React.FC<ArticlesPageProps> = ({
     return a;
   });
   return (
-    <Layout>
+    <Layout location={location}>
       <Meta site={meta} />
       <ArticlesPage articles={articles as Article[]} />
     </Layout>

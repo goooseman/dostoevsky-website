@@ -21,7 +21,7 @@ interface ClausePartsProps {
 
 class ClauseParts extends PureComponent<ClausePartsProps> {
   render(): React.ReactNode {
-    const { data, pageContext } = this.props;
+    const { data, pageContext, location } = this.props;
     type ClausePartsPageParts = React.ComponentProps<
       typeof ClausePartsPage
     >["parts"];
@@ -50,6 +50,7 @@ class ClauseParts extends PureComponent<ClausePartsProps> {
 
     return (
       <Layout
+        location={location}
         hasPageLayout={
           pageContext.view === "page" || pageContext.view === "table"
         }

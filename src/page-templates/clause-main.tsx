@@ -21,7 +21,7 @@ interface ClauseMainProps {
 
 class ClauseMain extends PureComponent<ClauseMainProps> {
   render(): React.ReactNode {
-    const { data, pageContext } = this.props;
+    const { data, pageContext, location } = this.props;
 
     const accumulatedClauses = accumulateNodes<
       ClauseMainQuery["clauses"]["edges"][number]["node"],
@@ -91,6 +91,7 @@ class ClauseMain extends PureComponent<ClauseMainProps> {
 
     return (
       <Layout
+        location={location}
         hasPageLayout={
           pageContext.view === "page" ||
           pageContext.view === "focus" ||

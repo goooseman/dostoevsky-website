@@ -12,10 +12,13 @@ interface ClausesPageProps {
   location: Location;
 }
 
-const Clauses: React.FC<ClausesPageProps> = ({ data }: ClausesPageProps) => {
+const Clauses: React.FC<ClausesPageProps> = ({
+  data,
+  location,
+}: ClausesPageProps) => {
   const meta = data.site?.meta;
   return (
-    <Layout>
+    <Layout location={location}>
       <Meta site={meta} />
       <ClausesPage parts={ukRf} actualYear={years[0]} />
     </Layout>

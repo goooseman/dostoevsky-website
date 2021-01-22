@@ -10,10 +10,10 @@ interface NoPageProps {
   location: Location;
 }
 
-const No: React.FC<NoPageProps> = ({ data }: NoPageProps) => {
+const No: React.FC<NoPageProps> = ({ data, location }: NoPageProps) => {
   const meta = data.site?.meta;
   return (
-    <Layout>
+    <Layout location={location}>
       <Meta site={meta} />
       <NoPage />
     </Layout>

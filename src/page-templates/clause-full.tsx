@@ -17,10 +17,10 @@ interface ClauseFullProps {
 
 class ClauseFull extends PureComponent<ClauseFullProps> {
   render(): React.ReactNode {
-    const { data, pageContext } = this.props;
+    const { data, pageContext, location } = this.props;
 
     return (
-      <Layout>
+      <Layout location={location}>
         <Meta site={data.site?.meta} />
         <ClauseFullPage
           year={parseInt(pageContext.year)}

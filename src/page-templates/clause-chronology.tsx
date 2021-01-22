@@ -21,7 +21,7 @@ interface ClauseChronologyProps {
 
 class ClauseChronology extends PureComponent<ClauseChronologyProps> {
   render(): React.ReactNode {
-    const { data, pageContext } = this.props;
+    const { data, pageContext, location } = this.props;
     const years = accumulateNodes<
       ClauseChronologyQuery["years"]["edges"][number]["node"],
       ClauseChronologyQuery["years"]["edges"][number]
@@ -35,6 +35,7 @@ class ClauseChronology extends PureComponent<ClauseChronologyProps> {
 
     return (
       <Layout
+        location={location}
         hasPageLayout={
           pageContext.view === "page" || pageContext.view === "table"
         }

@@ -24,6 +24,7 @@ interface IndexPageProps {
 const Index: React.FC<IndexPageProps> = ({
   data,
   pageContext,
+  location,
 }: IndexPageProps) => {
   const meta = data.site?.meta;
 
@@ -34,7 +35,7 @@ const Index: React.FC<IndexPageProps> = ({
   );
 
   return (
-    <Layout hasPageLayout={pageContext.view === "page"}>
+    <Layout location={location} hasPageLayout={pageContext.view === "page"}>
       <Meta site={meta} />
       <IndexPage
         counters={getIndexCountersFromData(data)}

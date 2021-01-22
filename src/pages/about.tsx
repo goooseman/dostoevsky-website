@@ -10,10 +10,13 @@ interface AboutPageProps {
   location: Location;
 }
 
-const About: React.FC<AboutPageProps> = ({ data }: AboutPageProps) => {
+const About: React.FC<AboutPageProps> = ({
+  data,
+  location,
+}: AboutPageProps) => {
   const meta = data.site?.meta;
   return (
-    <Layout>
+    <Layout location={location}>
       <Meta site={meta} />
       <AboutPage />
     </Layout>

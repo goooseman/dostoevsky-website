@@ -14,6 +14,7 @@ interface ArticleFullPageProps {
 
 const ArticleFull: React.FC<ArticleFullPageProps> = ({
   data,
+  location,
 }: ArticleFullPageProps) => {
   const meta = data.site?.meta;
   const node = data.markdownRemark;
@@ -23,7 +24,7 @@ const ArticleFull: React.FC<ArticleFullPageProps> = ({
       html: node.html || "",
     };
     return (
-      <Layout>
+      <Layout location={location}>
         <Meta site={meta} />
         <ArticleFullPage article={article} />
       </Layout>
