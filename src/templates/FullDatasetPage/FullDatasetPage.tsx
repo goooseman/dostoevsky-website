@@ -309,7 +309,7 @@ const FullDatasetPage: React.FC = () => {
             label="разбивка"
             options={BREAKDOWN_OPTIONS}
             value={breakdownValue}
-            onChange={(data) => setBreakdownValue(data)}
+            onChange={(data) => data && setBreakdownValue(data)}
           />
           <FullDatasetSelect
             label="набор метрик"

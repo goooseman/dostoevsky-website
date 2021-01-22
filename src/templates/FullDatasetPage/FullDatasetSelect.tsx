@@ -1,5 +1,17 @@
 import React from "react";
-import Select, { components, OptionTypeBase } from "react-select";
+import Select, {
+  components,
+  ControlProps,
+  IndicatorContainerProps,
+  IndicatorProps,
+  MenuListComponentProps,
+  MenuProps,
+  OptionProps,
+  OptionsType,
+  OptionTypeBase,
+  SingleValueProps,
+  ValueType,
+} from "react-select";
 import classes from "./FullDatasetPage.module.css";
 import cn from "clsx";
 import Typography from "src/components/ui-kit/Typography";
@@ -8,9 +20,9 @@ import { T, WithLocale, withLocale } from "react-targem";
 interface FullDatasetSelectProps extends WithLocale {
   children?: React.ReactNode;
   label: string;
-  options: any;
+  options: OptionsType<OptionTypeBase>;
   value: OptionTypeBase;
-  onChange(data: any): void;
+  onChange(value: ValueType<OptionTypeBase>): void;
 }
 
 const FullDatasetSelect: React.FC<FullDatasetSelectProps> = ({
@@ -18,10 +30,10 @@ const FullDatasetSelect: React.FC<FullDatasetSelectProps> = ({
   options,
   value,
   onChange,
+  t,
 }: FullDatasetSelectProps) => {
-  const renderControl = (props: object) => {
+  const renderControl = (props: ControlProps<OptionTypeBase>) => {
     return (
-      /* @ts-ignore */
       <components.Control
         {...props}
         className={cn(classes.fullDatasetSelectControl)}
@@ -29,9 +41,10 @@ const FullDatasetSelect: React.FC<FullDatasetSelectProps> = ({
     );
   };
 
-  const renderIndicatorsContainer = (props: object) => {
+  const renderIndicatorsContainer = (
+    props: IndicatorContainerProps<OptionTypeBase>
+  ) => {
     return (
-      /* @ts-ignore */
       <components.IndicatorsContainer
         {...props}
         className={cn(classes.fullDatasetSelectIndicatorsContainer)}
@@ -39,18 +52,15 @@ const FullDatasetSelect: React.FC<FullDatasetSelectProps> = ({
     );
   };
 
-  const renderDropdownIndicator = (props: FullDatasetSelectProps) => {
-    const { t } = props;
+  const renderDropdownIndicator = (props: IndicatorProps<OptionTypeBase>) => {
     return (
-      /* @ts-ignore */
       <components.DropdownIndicator {...props}>
         <img src={require("./assets/down.svg")} alt={t("Стрелка вниз")} />
       </components.DropdownIndicator>
     );
   };
 
-  const renderSingleValue = (props: { children: React.ReactNode }) => (
-    /* @ts-ignore */
+  const renderSingleValue = (props: SingleValueProps<OptionTypeBase>) => (
     <components.SingleValue
       {...props}
       className={cn(classes.fullDatasetSelectSingleValue)}
@@ -59,18 +69,16 @@ const FullDatasetSelect: React.FC<FullDatasetSelectProps> = ({
     </components.SingleValue>
   );
 
-  const renderMenu = (props: { children: React.ReactElement }) => {
+  const renderMenu = (props: MenuProps<OptionTypeBase>) => {
     return (
-      /* @ts-ignore */
       <components.Menu {...props} className={cn(classes.fullDatasetSelectMenu)}>
         {props.children}
       </components.Menu>
     );
   };
 
-  const renderMenuList = (props: { children: React.ReactNode }) => {
+  const renderMenuList = (props: MenuListComponentProps<OptionTypeBase>) => {
     return (
-      /* @ts-ignore */
       <components.MenuList
         {...props}
         className={cn(classes.fullDatasetSelectMenuList)}
@@ -80,9 +88,8 @@ const FullDatasetSelect: React.FC<FullDatasetSelectProps> = ({
     );
   };
 
-  const renderOption = (props: object) => {
+  const renderOption = (props: OptionProps<OptionTypeBase>) => {
     return (
-      /* @ts-ignore */
       <components.Option
         {...props}
         className={cn(classes.fullDatasetSelectOption)}
