@@ -141,22 +141,30 @@
   padding-right: 20px;
   padding-left: 20px;
 }
+.header .number-wrapper {
+  display: flex;
+  flex-direction: column;
+  border-right: 4px solid var(--color-palette-a);
+}
 
+.header .title {
+  padding: 4px 4px 2px;
+  font-size: 1rem;
+  background: var(--color-palette-a);
+}
 .header .clause-number {
   display: block;
   font-size: 160px;
 }
 
+.header .subtitle {
+  flex-grow: 1;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
 .container .menu {
   margin-bottom: 2rem;
-}
-
-.title {
-  border-right: 4px solid var(--color-primary);
-}
-
-.subtitle {
-  flex-grow: 1;
 }
 
 .doc-link {

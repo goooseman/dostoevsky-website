@@ -173,10 +173,6 @@
   margin-top: 2rem;
 }
 
-.analytics-charts-wrapper {
-  margin-top: 6rem;
-}
-
 @media all and (max-width: 680px) {
   .analytics-charts-wrapper {
     margin-top: 3rem;
