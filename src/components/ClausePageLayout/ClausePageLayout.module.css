@@ -148,7 +148,7 @@
 }
 
 .header .title {
-  padding: 4px 4px 2px;
+  padding: 4px 4px 1px;
   font-size: 1rem;
   background: var(--color-palette-a);
 }
