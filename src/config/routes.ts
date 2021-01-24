@@ -2,6 +2,7 @@ import {
   getRouteForClausePage,
   getRouteForIndexPage,
 } from "../../gatsby-routing";
+import type { Locale } from "./locales";
 
 enum clauseLinkTypes {
   main = "",
@@ -12,16 +13,20 @@ enum clauseLinkTypes {
 }
 
 export const getClauseLink = (
+  locale: Locale,
   clause: string | number,
   year: string | number | undefined,
   type: keyof typeof clauseLinkTypes,
   view = "page"
-): string => getRouteForClausePage(clause, year, type, view);
+): string => getRouteForClausePage(locale, clause, year, type, view);
 
 export type IndexPageViews =
   | "page"
   | "iframe-top-clauses"
   | "iframe-by-punishment";
 
-export const getIndexLink = (year: string, view: IndexPageViews): string =>
-  getRouteForIndexPage(year, view);
+export const getIndexLink = (
+  locale: Locale,
+  year: string,
+  view: IndexPageViews
+): string => getRouteForIndexPage(locale, year, view);

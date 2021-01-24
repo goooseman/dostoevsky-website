@@ -7,6 +7,7 @@ const years = require("./content/years.json");
 const {
   getRouteForClausePage,
   getRouteForIndexPage,
+  LOCALE_CODES,
 } = require("./gatsby-routing");
 
 exports.createPages = async ({ actions, graphql }) => {
@@ -60,21 +61,23 @@ exports.createPages = async ({ actions, graphql }) => {
   }
   if (!Boolean(process.env.IS_BLOG_BUILD)) {
     // Create a separate index for every year, but not first one (the first one is default index)
-    for (let year of years) {
-      const indexPageViewModes = [
-        IS_ONLY_EMBED ? undefined : "page",
-        IS_WITHOUT_EMBED ? undefined : "iframe-top-clauses",
-        IS_WITHOUT_EMBED ? undefined : "iframe-by-punishment",
-      ];
-      for (view of indexPageViewModes) {
-        if (view === undefined) {
-          continue;
+    for (locale of LOCALE_CODES) {
+      for (let year of years) {
+        const indexPageViewModes = [
+          IS_ONLY_EMBED ? undefined : "page",
+          IS_WITHOUT_EMBED ? undefined : "iframe-top-clauses",
+          IS_WITHOUT_EMBED ? undefined : "iframe-by-punishment",
+        ];
+        for (view of indexPageViewModes) {
+          if (view === undefined) {
+            continue;
+          }
+          createPage({
+            path: getRouteForIndexPage(locale, year, view),
+            component: path.resolve(`src/page-templates/index-year.tsx`),
+            context: { year, view },
+          });
         }
-        createPage({
-          path: getRouteForIndexPage(year, view),
-          component: path.resolve(`src/page-templates/index-year.tsx`),
-          context: { year, view },
-        });
       }
     }
 
@@ -86,58 +89,79 @@ exports.createPages = async ({ actions, graphql }) => {
             clauseRegex: `/^${chapter.id}[^\.]/i`,
             clauseId: chapter.id,
           };
-          for (let year of years) {
-            const contextWithYear = {
-              ...context,
-              year: year,
-            };
-            const mainPageViewModes = [
-              IS_ONLY_EMBED ? undefined : "page",
-              IS_ONLY_EMBED ? undefined : "table",
-              IS_ONLY_EMBED ? undefined : "focus",
-              IS_WITHOUT_EMBED
-                ? undefined
-                : "iframe-table-common-main-by-result",
-              IS_WITHOUT_EMBED
-                ? undefined
-                : "iframe-table-common-add-by-result",
-              IS_WITHOUT_EMBED ? undefined : "iframe-by-result",
-            ];
-            for (const view of mainPageViewModes) {
-              if (view === undefined) {
-                continue;
+          for (let locale of LOCALE_CODES) {
+            for (let year of years) {
+              const contextWithYear = {
+                ...context,
+                year: year,
+              };
+              const mainPageViewModes = [
+                IS_ONLY_EMBED ? undefined : "page",
+                IS_ONLY_EMBED ? undefined : "table",
+                IS_ONLY_EMBED ? undefined : "focus",
+                IS_WITHOUT_EMBED
+                  ? undefined
+                  : "iframe-table-common-main-by-result",
+                IS_WITHOUT_EMBED
+                  ? undefined
+                  : "iframe-table-common-add-by-result",
+                IS_WITHOUT_EMBED ? undefined : "iframe-by-result",
+              ];
+              for (const view of mainPageViewModes) {
+                if (view === undefined) {
+                  continue;
+                }
+                createPage({
+                  path: getRouteForClausePage(
+                    locale,
+                    chapter.id,
+                    year,
+                    "main",
+                    view
+                  ),
+                  component: path.resolve(`src/page-templates/clause-main.tsx`),
+                  context: { ...contextWithYear, view },
+                });
+              }
+              const partsPageViewModes = [
+                IS_ONLY_EMBED ? undefined : "page",
+                IS_ONLY_EMBED ? undefined : "table",
+                IS_WITHOUT_EMBED ? undefined : "iframe-parts",
+                IS_WITHOUT_EMBED ? undefined : "iframe-parts-by-result",
+                IS_WITHOUT_EMBED ? undefined : "iframe-parts-by-punishment",
+                IS_WITHOUT_EMBED ? undefined : "iframe-table-parts",
+              ];
+              for (const view of partsPageViewModes) {
+                if (view === undefined) {
+                  continue;
+                }
+                createPage({
+                  path: getRouteForClausePage(
+                    locale,
+                    chapter.id,
+                    year,
+                    "parts",
+                    view
+                  ),
+                  component: path.resolve(
+                    `src/page-templates/clause-parts.tsx`
+                  ),
+                  context: { ...contextWithYear, view },
+                });
               }
               createPage({
-                path: getRouteForClausePage(chapter.id, year, "main", view),
-                component: path.resolve(`src/page-templates/clause-main.tsx`),
-                context: { ...contextWithYear, view },
+                path: getRouteForClausePage(
+                  locale,
+                  chapter.id,
+                  year,
+                  "full",
+                  "page"
+                ),
+                component: path.resolve(`src/page-templates/clause-full.tsx`),
+                context: contextWithYear,
               });
             }
-            const partsPageViewModes = [
-              IS_ONLY_EMBED ? undefined : "page",
-              IS_ONLY_EMBED ? undefined : "table",
-              IS_WITHOUT_EMBED ? undefined : "iframe-parts",
-              IS_WITHOUT_EMBED ? undefined : "iframe-parts-by-result",
-              IS_WITHOUT_EMBED ? undefined : "iframe-parts-by-punishment",
-              IS_WITHOUT_EMBED ? undefined : "iframe-table-parts",
-            ];
-            for (const view of partsPageViewModes) {
-              if (view === undefined) {
-                continue;
-              }
-              createPage({
-                path: getRouteForClausePage(chapter.id, year, "parts", view),
-                component: path.resolve(`src/page-templates/clause-parts.tsx`),
-                context: { ...contextWithYear, view },
-              });
-            }
-            createPage({
-              path: getRouteForClausePage(chapter.id, year, "full", "page"),
-              component: path.resolve(`src/page-templates/clause-full.tsx`),
-              context: contextWithYear,
-            });
           }
-
           const chronoPageViewModes = [
             IS_ONLY_EMBED ? undefined : "page",
             IS_ONLY_EMBED ? undefined : "table",
@@ -154,6 +178,7 @@ exports.createPages = async ({ actions, graphql }) => {
             }
             createPage({
               path: getRouteForClausePage(
+                locale,
                 chapter.id,
                 undefined,
                 "chronology",

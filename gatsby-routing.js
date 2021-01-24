@@ -1,5 +1,5 @@
-const getRouteForClausePage = (clauseId, year, page, view) => {
-  let route = `/${clauseId}/`;
+const getRouteForClausePage = (locale, clauseId, year, page, view) => {
+  let route = `/${locale}/${clauseId}/`;
   if (page !== "chronology") {
     route += `${year || 2019}/`;
   }
@@ -12,8 +12,8 @@ const getRouteForClausePage = (clauseId, year, page, view) => {
   return route;
 };
 
-const getRouteForIndexPage = (year, view) => {
-  let route = `/`;
+const getRouteForIndexPage = (locale, year, view) => {
+  let route = `/${locale}/`;
   if (year.toString() !== "2019") {
     route += `${year}/`;
   }
@@ -23,7 +23,10 @@ const getRouteForIndexPage = (year, view) => {
   return route;
 };
 
+const LOCALE_CODES = ["en-GB", "ru"];
+
 module.exports = {
   getRouteForClausePage,
   getRouteForIndexPage,
+  LOCALE_CODES,
 };
