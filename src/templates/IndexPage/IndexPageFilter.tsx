@@ -9,6 +9,7 @@ import Button from "src/components/ui-kit/Button";
 import searchService from "src/services/SearchService";
 import PillButton from "src/components/ui-kit/PillButton";
 import { SelectOption } from "src/types";
+import { getLinkForCurrentLocale, getLinkForLocale } from "src/utils/locales";
 
 interface IndexPageFilterProps {
   yearSelectOptions: SelectOption[];
@@ -128,8 +129,8 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
             size="lg"
             color="third"
             withArrow
-            /* @ts-ignore */
-            to={selectedUk && selectedYear ? selectedUk.value : "/full"}
+            disabled={Boolean(selectedUk && selectedYear)}
+            to={selectedUk?.value && getLinkForCurrentLocale(selectedUk?.value)}
           >
             <T message="Перейти к данным" />
           </Button>
