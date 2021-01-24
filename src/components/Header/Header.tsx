@@ -6,9 +6,12 @@ import { Menu, MenuLink } from "src/components/Menu";
 import { T, useLocale } from "react-targem";
 import Typography from "../ui-kit/Typography";
 import Button from "../ui-kit/Button";
-interface HeaderProps {}
+import { getLinkForLocale } from "src/utils/locales";
+interface HeaderProps {
+  location: Location;
+}
 
-const Header: React.FC<HeaderProps> = () => {
+const Header: React.FC<HeaderProps> = ({ location }: HeaderProps) => {
   const [menuActive, setMenuActive] = useState(false);
   const [langSelectorActive, setLangSelector] = useState(false);
   const { locale, t } = useLocale();
@@ -19,6 +22,7 @@ const Header: React.FC<HeaderProps> = () => {
   function toggleLangSelector() {
     setLangSelector(!langSelectorActive);
   }
+
   return (
     <nav className={cn(classes.container)}>
       <div className={cn(classes.headerWrapper)}>
@@ -116,10 +120,18 @@ const Header: React.FC<HeaderProps> = () => {
         </div>
         <div className={cn(classes.mobileMenu__listener)}>
           <Menu variant="onBlackBackground">
-            <MenuLink activeUrls={[/^\/ru/]} to="/ru" size="normal">
+            <MenuLink
+              activeUrls={[/^\/ru/]}
+              to={getLinkForLocale("ru", location.pathname, location.search)}
+              size="normal"
+            >
               Русский
             </MenuLink>
-            <MenuLink activeUrls={[/^\/ru/]} to="/en" size="normal">
+            <MenuLink
+              activeUrls={[/^\/en-GB/]}
+              to={getLinkForLocale("en-GB", location.pathname, location.search)}
+              size="normal"
+            >
               English
             </MenuLink>
           </Menu>

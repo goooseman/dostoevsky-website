@@ -17,7 +17,7 @@ const Layout: React.FC<Props> = ({
 }: Props) => {
   return (
     <LocaleProvider location={location}>
-      {hasPageLayout ? <Header /> : null}
+      {hasPageLayout ? <Header location={location} /> : null}
       {children}
       {hasPageLayout ? <Footer /> : null}
     </LocaleProvider>
