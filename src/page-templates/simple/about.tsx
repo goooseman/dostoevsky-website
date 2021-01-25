@@ -1,29 +1,32 @@
 import { graphql } from "gatsby";
 import React from "react";
-import { FaqPageQuery } from "../../types/graphql-types";
-import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
-import FaqPage from "src/templates/FaqPage";
+import { AboutPageQuery } from "../../../types/graphql-types";
+import Meta from "src/components/Meta";
+import AboutPage from "src/templates/AboutPage";
 
-interface FaqPageProps {
-  data: FaqPageQuery;
+interface AboutPageProps {
+  data: AboutPageQuery;
   location: Location;
 }
 
-const Faq: React.FC<FaqPageProps> = ({ data, location }: FaqPageProps) => {
+const About: React.FC<AboutPageProps> = ({
+  data,
+  location,
+}: AboutPageProps) => {
   const meta = data.site?.meta;
   return (
     <Layout location={location}>
       <Meta site={meta} />
-      <FaqPage />
+      <AboutPage />
     </Layout>
   );
 };
 
-export default Faq;
+export default About;
 
 export const pageQuery = graphql`
-  query FaqPage {
+  query AboutPage {
     site {
       meta: siteMetadata {
         title

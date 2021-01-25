@@ -1,7 +1,7 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Layout from "src/components/Layout";
-import { FullDatasetPageQuery } from "../../types/graphql-types";
+import { FullDatasetPageQuery } from "../../../types/graphql-types";
 import Meta from "src/components/Meta";
 import FullDatasetPage from "src/templates/FullDatasetPage";
 

@@ -2,7 +2,7 @@ import {
   getRouteForClausePage,
   getRouteForIndexPage,
 } from "../../gatsby-routing";
-import { getLocale, getLocaleFromPath } from "src/utils/locales";
+import { getLocale } from "src/utils/locales";
 
 enum clauseLinkTypes {
   main = "",

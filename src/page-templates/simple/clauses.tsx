@@ -1,6 +1,6 @@
 import { graphql } from "gatsby";
 import React from "react";
-import { ClausesQueryQuery } from "../../types/graphql-types";
+import { ClausesQueryQuery } from "../../../types/graphql-types";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
 import ukRf from "content/ук-рф.json";

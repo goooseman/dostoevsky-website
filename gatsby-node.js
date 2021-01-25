@@ -7,17 +7,40 @@ const years = require("./content/years.json");
 const {
   getRouteForClausePage,
   getRouteForIndexPage,
+  getRouteForLocale,
   LOCALE_CODES,
+  DEFAULT_LOCALE,
 } = require("./gatsby-routing");
 
 exports.createPages = async ({ actions, graphql }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
   const IS_SEMI_BUILD = Boolean(process.env.IS_SEMI_BUILD);
   const IS_WITHOUT_EMBED = Boolean(process.env.IS_WITHOUT_EMBED);
   const IS_ONLY_EMBED = Boolean(process.env.IS_ONLY_EMBED);
 
   if (IS_SEMI_BUILD) {
     ukRf = ukRf.slice(3, 4); // Leave only first 1 clause group
+  }
+
+  createRedirect({
+    fromPath: `/`,
+    isPermanent: true,
+    toPath: getRouteForLocale(DEFAULT_LOCALE, "/"),
+  });
+
+  const simplePages = ["about", "articles", "clauses", "faq", "full"];
+  for (const simplePage of simplePages) {
+    createRedirect({
+      fromPath: `/${simplePage}`,
+      isPermanent: true,
+      toPath: getRouteForLocale(DEFAULT_LOCALE, `/${simplePage}`),
+    });
+    for (locale of LOCALE_CODES) {
+      createPage({
+        path: getRouteForLocale(locale, `/${simplePage}`),
+        component: path.resolve(`src/page-templates/simple/${simplePage}`),
+      });
+    }
   }
 
   const result = await graphql(`

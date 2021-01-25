@@ -12,6 +12,10 @@ const getRouteForClausePage = (locale, clauseId, year, page, view) => {
   return route;
 };
 
+const getRouteForLocale = (locale, path) => {
+  return `/${locale}${path}`;
+};
+
 const getRouteForIndexPage = (locale, year, view) => {
   let route = `/${locale}/`;
   if (year.toString() !== "2019") {
@@ -25,8 +29,12 @@ const getRouteForIndexPage = (locale, year, view) => {
 
 const LOCALE_CODES = ["en-GB", "ru"];
 
+const DEFAULT_LOCALE = "ru";
+
 module.exports = {
   getRouteForClausePage,
   getRouteForIndexPage,
+  getRouteForLocale,
   LOCALE_CODES,
+  DEFAULT_LOCALE,
 };

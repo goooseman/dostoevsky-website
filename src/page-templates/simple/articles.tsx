@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { graphql } from "gatsby";
 import React from "react";
-import { ArticlesPageQuery } from "../../types/graphql-types";
+import { ArticlesPageQuery } from "../../../types/graphql-types";
 import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
 import ArticlesPage from "src/templates/ArticlesPage/ArticlesPage";
