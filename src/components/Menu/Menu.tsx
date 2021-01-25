@@ -7,7 +7,12 @@ import { Location, WindowLocation } from "@reach/router";
 
 interface MenuProps {
   children: React.ReactNode;
-  variant: "activeBorderBottom" | "default" | "onBlackBackground" | "tabs";
+  variant:
+    | "activeBorderBottom"
+    | "default"
+    | "onBlackBackground"
+    | "tabs"
+    | "buttons";
   className?: string;
 }
 
@@ -22,6 +27,7 @@ export class Menu extends PureComponent<MenuProps> {
             [classes.onBlackBackground]: variant === "onBlackBackground",
             [classes.activeBorderBottom]: variant === "activeBorderBottom",
             [classes.tabs]: variant === "tabs",
+            [classes.buttons]: variant === "buttons",
           },
           className
         )}

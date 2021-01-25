@@ -7,6 +7,7 @@
 .header-wrapper {
   max-width: 1280px;
   margin: auto;
+  position: relative;
 }
 
 @media all and (max-width: 680px) {
@@ -62,6 +63,23 @@
   padding: 1rem;
 }
 
+.mobile-menu-holder__languages-mobile {
+  display: none;
+}
+
+.mobile-menu-holder__languages-desktop {
+  position: absolute;
+  width: 130px;
+  right: 100px;
+  top: 30px;
+}
+
+@media all and (max-width: 1000px) {
+  .mobile-menu-holder__languages-desktop {
+    right: 50px;
+  }
+}
+
 @media all and (max-width: 680px) {
   .call-menu-bar {
     display: flex;
@@ -86,8 +104,16 @@
     background: var(--color-outer-background);
   }
 
+  .mobile-menu-holder__languages-mobile {
+    display: block;
+  }
+
   .mobile-menu-holder.is-active .mobile-menu-holder__header {
     display: flex;
+  }
+
+  .mobile-menu-holder__languages-desktop {
+    display: none;
   }
 
   .mobile-menu__listener {

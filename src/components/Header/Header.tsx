@@ -26,6 +26,24 @@ const Header: React.FC<HeaderProps> = ({ location }: HeaderProps) => {
   return (
     <nav className={cn(classes.container)}>
       <div className={cn(classes.headerWrapper)}>
+        <div className={cn(classes.mobileMenuHolder__languagesDesktop)}>
+          <Menu variant="buttons">
+            <MenuLink
+              activeUrls={[/^\/ru/]}
+              to={getLinkForLocale("ru", location.pathname, location.search)}
+              size="normal"
+            >
+              RU
+            </MenuLink>
+            <MenuLink
+              activeUrls={[/^\/en-GB/]}
+              to={getLinkForLocale("en-GB", location.pathname, location.search)}
+              size="normal"
+            >
+              EN
+            </MenuLink>
+          </Menu>
+        </div>
         <Link to="/" className={cn(classes.logo)}>
           <img src={require("./assets/logo.svg")} alt={t("Достоевский")} />
         </Link>
@@ -118,7 +136,12 @@ const Header: React.FC<HeaderProps> = ({ location }: HeaderProps) => {
             />
           </div>
         </div>
-        <div className={cn(classes.mobileMenu__listener)}>
+        <div
+          className={cn(
+            classes.mobileMenu__listener,
+            classes.mobileMenuHolder__languagesMobile
+          )}
+        >
           <Menu variant="onBlackBackground">
             <MenuLink
               activeUrls={[/^\/ru/]}
