@@ -38,7 +38,7 @@ exports.createPages = async ({ actions, graphql }) => {
     for (locale of LOCALE_CODES) {
       createPage({
         path: getRouteForLocale(locale, `/${simplePage}`),
-        component: path.resolve(`src/page-templates/simple/${simplePage}`),
+        component: path.resolve(`src/page-templates/simple/${simplePage}.tsx`),
       });
     }
   }
