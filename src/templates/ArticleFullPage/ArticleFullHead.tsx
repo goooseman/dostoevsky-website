@@ -7,6 +7,7 @@ import { T } from "react-targem";
 import { Link } from "gatsby";
 import Container from "../../components/ui-kit/Container";
 import { Article } from "./ArticleFullPage";
+import { getLinkForCurrentLocale } from "src/utils/locales";
 
 export interface ArticleFullPageProps {
   article: Article;
@@ -32,7 +33,10 @@ const ArticleFullHead = (props: ArticleFullPageProps): JSX.Element => {
     >
       <Container>
         <div className={cn(classes.blogHeader__inner)}>
-          <Link to="/" className={cn(classes.blogHeader__lnk)}>
+          <Link
+            to={getLinkForCurrentLocale("/")}
+            className={cn(classes.blogHeader__lnk)}
+          >
             <Typography
               size="normal"
               variant="b"
@@ -58,24 +62,24 @@ const ArticleFullHead = (props: ArticleFullPageProps): JSX.Element => {
               </em>
             </Typography>
             <div className={cn(classes.blogHeader__social)}>
-              <Link to="https://telegram.com" target="_blank" rel="noreferrer">
+              <a href="https://telegram.com" target="_blank" rel="noreferrer">
                 <img
                   src={require("./assets/telegram.svg")}
                   alt="Our Telegram page"
                 />
-              </Link>
-              <Link to="https://facebook.com" target="_blank" rel="noreferrer">
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noreferrer">
                 <img
                   src={require("./assets/facebook.svg")}
                   alt="Our Facebook page"
                 />
-              </Link>
-              <Link to="https://twitter.com" target="_blank" rel="noreferrer">
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noreferrer">
                 <img
                   src={require("./assets/twitter.svg")}
                   alt="Our Twitter page"
                 />
-              </Link>
+              </a>
             </div>
           </section>
         </div>

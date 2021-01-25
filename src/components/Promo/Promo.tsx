@@ -4,6 +4,7 @@ import Container from "src/components/ui-kit/Container";
 import Typography from "src/components/ui-kit/Typography";
 import Button from "../ui-kit/Button";
 import { T } from "react-targem";
+import { getLinkForCurrentLocale } from "src/utils/locales";
 
 const Promo: React.FC = () => {
   return (
@@ -19,7 +20,10 @@ const Promo: React.FC = () => {
             <T message="Полный доступ к датасету" />
           </b>
         </Typography>
-        <Button to="/full" className={classes.button}>
+        <Button
+          to={getLinkForCurrentLocale("/full")}
+          className={classes.button}
+        >
           <T message="Перейти" />
         </Button>
       </div>

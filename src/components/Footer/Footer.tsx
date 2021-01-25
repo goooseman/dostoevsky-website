@@ -8,6 +8,7 @@ import Typography from "src/components/ui-kit/Typography";
 // import TextareaAutosize from "react-textarea-autosize";
 import Container from "../ui-kit/Container";
 import { Menu, MenuLink } from "../Menu";
+import { getLinkForCurrentLocale } from "src/utils/locales";
 // import Modal, { useModal } from "src/components/ui-kit/Modal";
 // import { useState } from "react";
 // import axios from "axios";
@@ -46,19 +47,19 @@ const Footer: React.FC<FooterProps> = ({ t }: FooterProps) => {
         </div>
         <div className={cn(classes.middleContainer)}>
           <Menu variant="onBlackBackground">
-            <MenuLink to="/clauses" size="small">
+            <MenuLink to={getLinkForCurrentLocale("/clauses")} size="small">
               каталог статей ук рф
             </MenuLink>
-            <MenuLink to="/articles" size="small">
+            <MenuLink to={getLinkForCurrentLocale("/articles")} size="small">
               Аналитика
             </MenuLink>
-            <MenuLink to="/faq" size="small">
+            <MenuLink to={getLinkForCurrentLocale("/faq")} size="small">
               о датасете
             </MenuLink>
-            <MenuLink to="/about" size="small">
+            <MenuLink to={getLinkForCurrentLocale("/about")} size="small">
               о проекте
             </MenuLink>
-            <MenuLink to="/full" size="small">
+            <MenuLink to={getLinkForCurrentLocale("/full")} size="small">
               полный датасет
             </MenuLink>
           </Menu>
