@@ -18,4 +18,5 @@
 
 ### Cheat sheet
 
+- Use `develop` branch as the base branch to create your branches from
 - To build faster in development use `npm run develop:semi` script, which builds the website only for the first clause group
