@@ -39,6 +39,9 @@ exports.createPages = async ({ actions, graphql }) => {
       createPage({
         path: getRouteForLocale(locale, `/${simplePage}`),
         component: path.resolve(`src/page-templates/simple/${simplePage}.tsx`),
+        context: {
+          locale,
+        },
       });
     }
   }
@@ -73,7 +76,7 @@ exports.createPages = async ({ actions, graphql }) => {
     result.data.allMarkdownRemark.edges.forEach(
       async ({ node }) =>
         await createPage({
-          path: node.frontmatter.slug,
+          path: `/${node.frontmatter.locale}${node.frontmatter.slug}`,
           component: require.resolve("./src/page-templates/article-full.tsx"),
           context: {
             article: { ...node.frontmatter, html: node.html },

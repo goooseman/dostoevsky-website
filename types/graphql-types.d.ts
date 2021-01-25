@@ -968,6 +968,7 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___frontmatter___date'
   | 'childrenMarkdownRemark___frontmatter___author'
   | 'childrenMarkdownRemark___frontmatter___tag'
+  | 'childrenMarkdownRemark___frontmatter___locale'
   | 'childrenMarkdownRemark___frontmatter___teaser'
   | 'childrenMarkdownRemark___excerpt'
   | 'childrenMarkdownRemark___rawMarkdownBody'
@@ -1027,6 +1028,7 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___date'
   | 'childMarkdownRemark___frontmatter___author'
   | 'childMarkdownRemark___frontmatter___tag'
+  | 'childMarkdownRemark___frontmatter___locale'
   | 'childMarkdownRemark___frontmatter___teaser'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
@@ -2116,6 +2118,7 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___date'
   | 'frontmatter___author'
   | 'frontmatter___tag'
+  | 'frontmatter___locale'
   | 'frontmatter___teaser'
   | 'excerpt'
   | 'rawMarkdownBody'
@@ -2246,6 +2249,7 @@ export type MarkdownRemarkFrontmatter = {
   date?: Maybe<Scalars['String']>;
   author?: Maybe<Scalars['String']>;
   tag?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
   teaser?: Maybe<Scalars['String']>;
 };
 
@@ -2255,6 +2259,7 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   date?: Maybe<StringQueryOperatorInput>;
   author?: Maybe<StringQueryOperatorInput>;
   tag?: Maybe<StringQueryOperatorInput>;
+  locale?: Maybe<StringQueryOperatorInput>;
   teaser?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -3007,6 +3012,7 @@ export type SitePageConnectionGroupArgs = {
 };
 
 export type SitePageContext = {
+  locale?: Maybe<Scalars['String']>;
   article?: Maybe<SitePageContextArticle>;
   slug?: Maybe<Scalars['String']>;
   year?: Maybe<Scalars['Int']>;
@@ -3037,6 +3043,7 @@ export type SitePageContextArticleFilterInput = {
 };
 
 export type SitePageContextFilterInput = {
+  locale?: Maybe<StringQueryOperatorInput>;
   article?: Maybe<SitePageContextArticleFilterInput>;
   slug?: Maybe<StringQueryOperatorInput>;
   year?: Maybe<IntQueryOperatorInput>;
@@ -3145,6 +3152,7 @@ export type SitePageFieldsEnum =
   | 'internal___owner'
   | 'internal___type'
   | 'isCreatedByStatefulCreatePages'
+  | 'context___locale'
   | 'context___article___slug'
   | 'context___article___tag'
   | 'context___article___title'
@@ -4192,7 +4200,9 @@ export type AboutPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type AboutPageQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }> };
 
-export type ArticlesPageQueryVariables = Exact<{ [key: string]: never; }>;
+export type ArticlesPageQueryVariables = Exact<{
+  locale?: Maybe<Scalars['String']>;
+}>;
 
 
 export type ArticlesPageQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, allMarkdownRemark: { edges: Array<{ node: (

@@ -33,7 +33,7 @@ const ArticlesIndex: React.FC<ArticlesPageProps> = ({
 export default ArticlesIndex;
 
 export const pageQuery = graphql`
-  query ArticlesPage {
+  query ArticlesPage($locale: String) {
     site {
       meta: siteMetadata {
         title
@@ -43,7 +43,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 10
+      filter: { frontmatter: { locale: { eq: $locale } } }
     ) {
       edges {
         node {
