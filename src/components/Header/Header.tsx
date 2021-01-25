@@ -7,9 +7,28 @@ import { T, useLocale } from "react-targem";
 import Typography from "../ui-kit/Typography";
 import Button from "../ui-kit/Button";
 import { getLinkForLocale } from "src/utils/locales";
+import { Locale } from "src/config/locales";
 interface HeaderProps {
   location: Location;
 }
+
+const getLogo = (locale: "en-GB" | "ru") => {
+  switch (locale) {
+    case "en-GB":
+      return require("./assets/logo-en.svg");
+    case "ru":
+      return require("./assets/logo-ru.svg");
+  }
+};
+
+const getMobileLogo = (locale: "en-GB" | "ru") => {
+  switch (locale) {
+    case "en-GB":
+      return require("./assets/logo-mobile-en.svg");
+    case "ru":
+      return require("./assets/logo-mobile-ru.svg");
+  }
+};
 
 const Header: React.FC<HeaderProps> = ({ location }: HeaderProps) => {
   const [menuActive, setMenuActive] = useState(false);
@@ -45,7 +64,7 @@ const Header: React.FC<HeaderProps> = ({ location }: HeaderProps) => {
           </Menu>
         </div>
         <Link to="/" className={cn(classes.logo)}>
-          <img src={require("./assets/logo.svg")} alt={t("Достоевский")} />
+          <img src={getLogo(locale as Locale)} alt={t("Достоевский")} />
         </Link>
         <div className={cn(classes.callMenuBar)}>
           <Button onClick={toggleLangSelector}>
@@ -78,7 +97,7 @@ const Header: React.FC<HeaderProps> = ({ location }: HeaderProps) => {
             <div>
               <Link to="/">
                 <img
-                  src={require("./assets/logo-mobile.svg")}
+                  src={getMobileLogo(locale as Locale)}
                   alt={t("Логотип проекта Достоевский")}
                 />
               </Link>
@@ -121,7 +140,7 @@ const Header: React.FC<HeaderProps> = ({ location }: HeaderProps) => {
           <div>
             <Link to="/">
               <img
-                src={require("./assets/logo-mobile.svg")}
+                src={getMobileLogo(locale as Locale)}
                 alt={t("Достоевский")}
               />
             </Link>
