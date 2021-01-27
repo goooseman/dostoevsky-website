@@ -21,10 +21,12 @@ msgid "Right arrow"
 msgstr "Right arrow"
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
+#: src/components/ui-kit/Modal/Modal.tsx:
 msgid "Close"
 msgstr "Close"
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
+#: src/components/ui-kit/Modal/Modal.tsx:
 msgid "Times icon"
 msgstr "Times icon"
 
