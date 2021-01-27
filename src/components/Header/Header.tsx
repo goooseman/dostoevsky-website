@@ -98,7 +98,7 @@ const Header: React.FC<HeaderProps> = ({ location }: HeaderProps) => {
               <Link to={getLinkForCurrentLocale("/")}>
                 <img
                   src={getMobileLogo(locale as Locale)}
-                  alt={t("Логотип проекта Достоевский")}
+                  alt={t("Достоевский")}
                 />
               </Link>
             </div>
@@ -161,7 +161,7 @@ const Header: React.FC<HeaderProps> = ({ location }: HeaderProps) => {
           >
             <img
               src={require("./assets/close.svg")}
-              alt={t("Иконка 'Закрыть'")}
+              alt={t('Иконка "Закрыть"')}
             />
           </div>
         </div>

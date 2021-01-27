@@ -50,8 +50,9 @@ msgid "Скачать чарт"
 msgstr ""
 
 #: src/components/DownloadButton/DownloadButton.tsx:
+#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
 msgid "Скачать"
-msgstr ""
+msgstr "Скачать"
 
 #: src/components/EmbedModal/EmbedModal.tsx:
 msgid "Получить код для встраивания"
@@ -110,6 +111,7 @@ msgstr "Full dataset"
 #: src/components/Footer/Footer.tsx:
 #: src/components/Header/Header.tsx:
 #: src/components/Header/Header.tsx:
+#: src/components/Header/Header.tsx:
 msgid "Достоевский"
 msgstr "Dostoevsky"
 
@@ -132,15 +134,8 @@ msgid "Иконка \"Меню\""
 msgstr ""
 
 #: src/components/Header/Header.tsx:
-msgid "Логотип проекта Достоевский"
-msgstr ""
-
 #: src/components/Header/Header.tsx:
 msgid "Иконка \"Закрыть\""
-msgstr ""
-
-#: src/components/Header/Header.tsx:
-msgid "Иконка 'Закрыть'"
 msgstr ""
 
 #: src/components/Promo/Promo.tsx:
@@ -629,7 +624,9 @@ msgstr "Acquitted"
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
 msgid "Прекращено за отсутствием события, состава, непричастности к преступлению"
-msgstr "Terminated due to the absence of elements of a misdemeanour offence / lack of legal components of crime / to lack of involvement"
+msgstr ""
+"Terminated due to the absence of elements of a misdemeanour offence / lack of "
+"legal components of crime / to lack of involvement"
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
@@ -974,7 +971,9 @@ msgstr ""
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Преступление не является оконченным (приготовление, покушение)"
-msgstr "The crime was uncomplete (preparation of an attempted murder and for the attempt itself)"
+msgstr ""
+"The crime was uncomplete (preparation of an attempted murder and for the "
+"attempt itself)"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid ""
@@ -1051,7 +1050,9 @@ msgstr "Services"
 msgid ""
 "Лишение права занимать определенные должности или заниматься определенной "
 "деятельностью"
-msgstr "Deprivation of the right to occupy a given position or to engage in a given activity"
+msgstr ""
+"Deprivation of the right to occupy a given position or to engage in a given "
+"activity"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
@@ -1107,7 +1108,10 @@ msgstr ""
 msgid ""
 "За отсутствием состава, события преступления, непричастностью к преступлению "
 "(по количеству составов преступлений)"
-msgstr "Terminated due to the absence of elements of a misdemeanour offence / lack of legal components of crime / to lack of involvement by main offence (by the number of crimes)"
+msgstr ""
+"Terminated due to the absence of elements of a misdemeanour offence / lack of "
+"legal components of crime / to lack of involvement by main offence (by the "
+"number of crimes)"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "По иным основаниям (по числу лиц) "
@@ -1125,7 +1129,9 @@ msgstr "Additional penalty"
 msgid ""
 "Лишение специального, воинского или почетного звания, классного чина и "
 "государственных наград"
-msgstr "Disbarment from holding a special or military rank or honorific titles, service grade or State honours"
+msgstr ""
+"Disbarment from holding a special or military rank or honorific titles, service "
+"grade or State honours"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Деяние совершено при обстоятельствах, исключающих преступность"
@@ -2495,7 +2501,9 @@ msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Прекращено за отсутствием события, состава, непричастностью к преступлению"
-msgstr "Terminated due to the absence of elements of a misdemeanour offence / lack of legal components of crime / to lack of involvement"
+msgstr ""
+"Terminated due to the absence of elements of a misdemeanour offence / lack of "
+"legal components of crime / to lack of involvement"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(dismissalAbsenceOfEvent)."
@@ -2768,7 +2776,9 @@ msgstr ""
 msgid ""
 "лишение права занимать определенные должности или заниматься определенной "
 "деятельностью"
-msgstr "Deprivation of the right to occupy a given position or to engage in a given activity"
+msgstr ""
+"Deprivation of the right to occupy a given position or to engage in a given "
+"activity"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(addDisqualification)"
@@ -2825,7 +2835,9 @@ msgstr ""
 msgid ""
 "лишение специального, воинского или почетного звания, классного чина и "
 "государственных наград"
-msgstr "disbarment from holding a special or military rank or honorific titles, service grade or State honours"
+msgstr ""
+"disbarment from holding a special or military rank or honorific titles, service "
+"grade or State honours"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(addTitlesWithdraw)"
@@ -2941,10 +2953,26 @@ msgid ""
 msgstr ""
 
 #: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+msgid "Ваш e-mail"
+msgstr "Ваш e-mail"
+
+#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+msgid "Ваше имя в Telegram, если хотите присоединиться к нашему сообществу"
+msgstr "Ваше имя в Telegram, если хотите присоединиться к нашему сообществу"
+
+#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+msgid "Ваше имя в Telegram"
+msgstr "Ваше имя в Telegram"
+
+#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
 msgid ""
 "При использовании данных, пожалуйста, указывайте ссылку на Достоевский и "
 "делитесь с нами своими материалами."
 msgstr ""
+
+#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+msgid "Загрузка..."
+msgstr "Загрузка..."
 
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:

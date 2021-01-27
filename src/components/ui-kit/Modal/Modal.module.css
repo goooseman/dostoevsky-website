@@ -43,6 +43,10 @@
   max-width: 616px;
 }
 
+.modal-size-lg {
+  max-width: 1062px;
+}
+
 .modal-header {
   display: flex;
   justify-content: flex-end;

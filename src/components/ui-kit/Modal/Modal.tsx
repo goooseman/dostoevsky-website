@@ -4,13 +4,15 @@ import cn from "clsx";
 import classes from "./Modal.module.css";
 import Typography from "src/components/ui-kit/Typography";
 import { useLocale } from "react-targem";
+import useBodyOverflowLock from "src/hooks/useBodyOverflowLock";
+import useEscButtonHandler from "src/hooks/useEscButtonHandler";
 
 interface ModalProps {
   isShowing: boolean;
   onHideButtonClick: () => void;
   title: React.ReactNode;
   children: React.ReactNode;
-  size?: "md" | "sm";
+  size?: "lg" | "md" | "sm";
   isCentered?: boolean;
 }
 
@@ -23,6 +25,9 @@ const Modal: React.FC<ModalProps> = ({
   title,
 }: ModalProps) => {
   const { t } = useLocale();
+  useBodyOverflowLock(isShowing);
+  useEscButtonHandler(onHideButtonClick, isShowing);
+
   return isShowing
     ? ReactDOM.createPortal(
         <React.Fragment>
@@ -40,6 +45,7 @@ const Modal: React.FC<ModalProps> = ({
               className={cn(classes.modal, {
                 [classes.modalSizeSm]: size === "sm",
                 [classes.modalSizeMd]: size === "md",
+                [classes.modalSizeLg]: size === "lg",
               })}
             >
               <div className={cn(classes.modalHeader)}>
