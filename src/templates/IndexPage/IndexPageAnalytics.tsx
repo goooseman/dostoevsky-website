@@ -122,7 +122,9 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
 
   const handleYearChange = (option: SelectOption) => {
     setSelectedYear(option);
-    navigate(getIndexLink(option.value, "page"));
+    //TODO: add view to getRouteForIndexPage in gatsby-routing.js
+    const selectUrl = "/" + String(option.value) + "#analitycs";
+    navigate(selectUrl);
   };
 
   const charts = getAnalyticsCharts(
@@ -146,7 +148,11 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
         <Typography isUpperCased color="secondary">
           <T message="Аналитика" />
         </Typography>
-        <Typography variant="h2" font="serif">
+        <Typography
+          style={{ maxWidth: 620, marginBottom: 40 }}
+          variant="h2"
+          font="serif"
+        >
           <b className={classes.analyticsTitleWrapper}>
             <T message="Статистика решений суда по всем статьям УК РФ в" />
             <Select

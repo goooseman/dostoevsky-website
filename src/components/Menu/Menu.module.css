@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: .5rem;
 }
 
 .menu-item:not(:last-child) {
@@ -24,17 +25,17 @@
 
 .menu-item .menu-link {
   display: inline-block;
-  padding: 0.2rem 1rem;
+  padding: .2rem 1rem;
   border: none;
   background-color: transparent;
   cursor: pointer;
-
-  /* white-space: nowrap; */
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .menu-item a.menu-link-active,
 .menu-item.menu-item-active .menu-link {
-  background-color: var(--color-primary);
+  background-color: var(--color-palette-a);
 }
 
 .menu.on-black-background:last-of-type,

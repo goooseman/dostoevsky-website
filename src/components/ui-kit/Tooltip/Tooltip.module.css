@@ -10,6 +10,8 @@
   font-weight: normal;
   line-height: 17px;
   opacity: 1;
+  overflow: hidden;
+  word-wrap: break-word;
 }
 
 .tooltip-wrapper .tooltip-image {

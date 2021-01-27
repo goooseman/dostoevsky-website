@@ -1,7 +1,7 @@
 .pill-button {
   display: inline-block;
   min-width: 3rem;
-  padding: 0.2rem 0.5rem 0.175rem 0.5rem;
+  padding: .35rem 1rem;
   border: 2px solid;
   border-radius: var(--border-radius);
   cursor: pointer;
@@ -12,7 +12,7 @@
   font-size: 14px;
   background: transparent;
   font-family: var(--font-family-sans-serif);
-  transition: 0.25s ease-in-out background-color;
+  transition: 0.25s ease-in-out;
   margin: 0.2rem;
   line-height: 1.1em;
 }
@@ -25,8 +25,8 @@
 
 .pill-button-black:hover,
 .pill-button-black.is-active {
-  background: var(--color-text-inverted);
-  color: var(--color-border-dark);
+  border-color: var(--color-secondary-background);
+  background: var(--color-secondary-background);
 }
 
 .pill-button-secondary {

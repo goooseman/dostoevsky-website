@@ -99,6 +99,7 @@ export class IndexPage extends PureComponent<IndexPageProps> {
         <div className={classes.promoWrapper}>
           <Promo />
         </div>
+        <div id="analitycs"></div>
         <IndexPageAnalytics
           topClauses={topClauses}
           yearSelectOptions={yearSelectOptions}
