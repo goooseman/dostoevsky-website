@@ -2877,9 +2877,29 @@ msgid ""
 msgstr ""
 
 #: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+msgid "Ваш e-mail"
+msgstr ""
+
+#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+msgid "Ваше имя в Telegram, если хотите присоединиться к нашему сообществу"
+msgstr ""
+
+#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+msgid "Ваше имя в Telegram"
+msgstr ""
+
+#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
 msgid ""
 "При использовании данных, пожалуйста, указывайте ссылку на Достоевский и "
 "делитесь с нами своими материалами."
+msgstr ""
+
+#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+msgid "Загрузка..."
+msgstr ""
+
+#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+msgid "Скачать"
 msgstr ""
 
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:

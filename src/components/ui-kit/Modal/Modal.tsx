@@ -9,7 +9,7 @@ interface ModalProps {
   onHideButtonClick: () => void;
   title: React.ReactNode;
   children: React.ReactNode;
-  size?: "md" | "sm";
+  size?: "lg" | "md" | "sm";
   isCentered?: boolean;
 }
 
@@ -40,6 +40,7 @@ const Modal: React.FC<ModalProps> = ({
               className={cn(classes.modal, {
                 [classes.modalSizeSm]: size === "sm",
                 [classes.modalSizeMd]: size === "md",
+                [classes.modalSizeLg]: size === "lg",
               })}
             >
               <div className={cn(classes.modalHeader)}>
