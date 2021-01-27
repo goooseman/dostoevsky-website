@@ -30,7 +30,7 @@ msgstr ""
 #: src/components/ClausePageHeader/ClausePageHeader.tsx:
 #: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "год"
-msgstr ""
+msgstr "year"
 
 #: src/components/ClausePageHeader/ClausePageHeader.tsx:
 #: src/templates/FullDatasetPage/FullDatasetSelect.tsx:
@@ -111,7 +111,7 @@ msgstr "Full dataset"
 #: src/components/Header/Header.tsx:
 #: src/components/Header/Header.tsx:
 msgid "Достоевский"
-msgstr ""
+msgstr "Dostoevsky"
 
 #: src/components/Footer/Footer.tsx:
 msgid ""
@@ -145,11 +145,11 @@ msgstr ""
 
 #: src/components/Promo/Promo.tsx:
 msgid "Нужны данные по всем статьям и годам?"
-msgstr ""
+msgstr "Need data for all articles and years?"
 
 #: src/components/Promo/Promo.tsx:
 msgid "Полный доступ к датасету"
-msgstr ""
+msgstr "Full access to dataset"
 
 #: src/components/Promo/Promo.tsx:
 msgid "Перейти"
@@ -516,31 +516,31 @@ msgstr ""
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Лишение свободы"
-msgstr ""
+msgstr "Deprivation of liberty"
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "условное осуждение к лишению свободы"
-msgstr ""
+msgstr "Suspended sentence of deprivation"
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "обязательные работы"
-msgstr ""
+msgstr "mandatory labour"
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "принудительные работы"
-msgstr ""
+msgstr "Forced labour"
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "исправительные работы"
-msgstr ""
+msgstr "community services"
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
@@ -562,7 +562,7 @@ msgstr ""
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 msgid "условное осуждение к иным мерам"
-msgstr ""
+msgstr "suspended sentence with other measures"
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 msgid "Динамика наказаний по статье с 2009 по 2019 гг."
@@ -576,7 +576,7 @@ msgstr ""
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByPunishmentTable/ClauseChronologyByPunishmentTable.tsx:
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
 msgid "Год"
-msgstr ""
+msgstr "Year"
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByPunishmentTable/ClauseChronologyByPunishmentTable.tsx:
 msgid "Условно к лишению свободы"
@@ -586,19 +586,19 @@ msgstr ""
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Обязательные работы"
-msgstr ""
+msgstr "Mandatory labour"
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByPunishmentTable/ClauseChronologyByPunishmentTable.tsx:
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Принудительные работы"
-msgstr ""
+msgstr "Forced labour"
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByPunishmentTable/ClauseChronologyByPunishmentTable.tsx:
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Исправительные работы"
-msgstr ""
+msgstr "Community services"
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByPunishmentTable/ClauseChronologyByPunishmentTable.tsx:
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
@@ -634,12 +634,12 @@ msgstr "Terminated due to the absence of elements of a misdemeanour offence / la
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Прекращено по амнистии"
-msgstr ""
+msgstr "Terminated by amnesty"
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Прекращено в связи с деятельным раскаянием"
-msgstr ""
+msgstr "Terminated in case of active repentance"
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
 msgid "Прекращено за примирением"
@@ -647,12 +647,12 @@ msgstr ""
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
 msgid "Судебный штраф"
-msgstr ""
+msgstr "Court fine"
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Прекращено по другим основаниям"
-msgstr ""
+msgstr "Terminated on other grounds"
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
 msgid "Динамика числа осужденных по основному составу. Основные параметры."
@@ -838,7 +838,7 @@ msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
 msgid "дел прекращено по амнистии"
-msgstr ""
+msgstr "cases terminated by amnesty"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
 msgid "дел прекращено как необходимая оборона"
@@ -974,7 +974,7 @@ msgstr ""
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Преступление не является оконченным (приготовление, покушение)"
-msgstr ""
+msgstr "The crime was uncomplete (preparation of an attempted murder and for the attempt itself)"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid ""
@@ -1019,31 +1019,31 @@ msgstr ""
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Условное осуждение к лишению свободы"
-msgstr ""
+msgstr "Suspended sentence of deprivation"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Содержание в дисциплинарной воинской части"
-msgstr ""
+msgstr "Confinement in a disciplinary military unit"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Арест"
-msgstr ""
+msgstr "Arrest"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Ограничение свободы"
-msgstr ""
+msgstr "Restriction of liberty"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Ограничение по военной службе"
-msgstr ""
+msgstr "Restrictions relating to military service"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Работы"
-msgstr ""
+msgstr "Services"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
@@ -1051,13 +1051,13 @@ msgstr ""
 msgid ""
 "Лишение права занимать определенные должности или заниматься определенной "
 "деятельностью"
-msgstr ""
+msgstr "Deprivation of the right to occupy a given position or to engage in a given activity"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "Условное осуждение к иным мерам"
-msgstr ""
+msgstr "Suspended sentence with other measures"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Прекращено (основной состав)"
@@ -1081,11 +1081,11 @@ msgstr ""
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Назначена мера уголовно-правового характера судебный штраф (ст. 25.1 УПК РФ)"
-msgstr ""
+msgstr "Criminal measures: fine (article 25.1 Code of Criminal Procedure)"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "По другим основаниям"
-msgstr ""
+msgstr "On other grounds"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid ""
@@ -1119,29 +1119,29 @@ msgstr "On other grounds (by the number of crimes)"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Дополнительное наказание"
-msgstr ""
+msgstr "Additional penalty"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid ""
 "Лишение специального, воинского или почетного звания, классного чина и "
 "государственных наград"
-msgstr ""
+msgstr "Disbarment from holding a special or military rank or honorific titles, service grade or State honours"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Деяние совершено при обстоятельствах, исключающих преступность"
-msgstr ""
+msgstr "The act committed under crime-free involvement circumstances"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "необходимая оборона (ст. 37 УК РФ)"
-msgstr ""
+msgstr "self-defence (article 37 Criminal Code of Russian Federation)"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "крайняя необходимость (ст. 39 УК РФ)"
-msgstr ""
+msgstr "state of necessity (article 39 Criminal Code of Russian Federation)"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "обстоятельства, предусмотренные статьями 38, 40 - 42 УК РФ"
-msgstr ""
+msgstr "circumstances under 38, 40-42 of Criminal Code of Russian Federation"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid ""
@@ -1295,7 +1295,7 @@ msgstr ""
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Приготовление"
-msgstr ""
+msgstr "Preparation"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid ""
@@ -2191,11 +2191,11 @@ msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Пожизненное лишение свободы"
-msgstr ""
+msgstr "Life imprisonment"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(primaryLifeSentence)"
-msgstr ""
+msgstr "(primaryLifeSentence)"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid ""
@@ -2217,15 +2217,15 @@ msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "до 1 года включительно"
-msgstr ""
+msgstr "up to one year"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(primaryImprisonment1);"
-msgstr ""
+msgstr "(primaryImprisonment1);"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "от 1 до 3 лет включительно"
-msgstr ""
+msgstr "one to three years"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid ""
@@ -2344,7 +2344,7 @@ msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Штраф (основное наказание)"
-msgstr ""
+msgstr "Fine (primary penalty)"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(primaryFine). Дана детализация по сумме штрафа:"
@@ -2371,84 +2371,84 @@ msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "до 5 тысяч рублей"
-msgstr ""
+msgstr "up to 5000 rub"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(primaryFine5);"
-msgstr ""
+msgstr "(primaryFine5);"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "свыше 5 тыс. до 25 тыс. рублей"
-msgstr ""
+msgstr "5 000-25 000 rub"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(primaryFine5_25);"
-msgstr ""
+msgstr "(primaryFine5_25);"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "свыше 25 тыс. до 500 тыс. рублей"
-msgstr ""
+msgstr "25 000-500 000 rub"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(primaryFine25_500);"
-msgstr ""
+msgstr "(primaryFine25_500);"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "свыше 25 тыс. до 100 тыс. рублей"
-msgstr ""
+msgstr "25 000-100 000 rub"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(primaryFine25_100);"
-msgstr ""
+msgstr "(primaryFine25_100);"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "свыше 100 тыс. до 300 тыс. рублей"
-msgstr ""
+msgstr "100 000-300 000 rub"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(primaryFine100_300);"
-msgstr ""
+msgstr "(primaryFine100_300);"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "свыше 300 тыс. до 500 тыс. рублей"
-msgstr ""
+msgstr "300 000-500 000 rub"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(primaryFine300_500);"
-msgstr ""
+msgstr "(primaryFine300_500);"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "свыше 500 тыс. до 1 млн рублей"
-msgstr ""
+msgstr "500 000-1 000 000 rub"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(primaryFine500_1M);"
-msgstr ""
+msgstr "(primaryFine500_1M);"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "свыше 1 млн рублей"
-msgstr ""
+msgstr "more than 1 000 000 rub"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(primaryFine1M);"
-msgstr ""
+msgstr "(primaryFine1M);"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(primaryDisqualification);"
-msgstr ""
+msgstr "(primaryDisqualification);"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(primaryMilitaryDisciplinaryUnit);"
-msgstr ""
+msgstr "(primaryMilitaryDisciplinaryUnit);"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid ""
@@ -2530,7 +2530,7 @@ msgstr ""
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "необходимая оборона"
-msgstr ""
+msgstr "self-defence"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
@@ -2568,7 +2568,7 @@ msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Прекращено за примирением с потерпевшим"
-msgstr ""
+msgstr "Terminated in the event of a reconciliation between the victim and the defendant"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(dismissalReconciliation)"
@@ -2662,17 +2662,17 @@ msgstr ""
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "по амнистии"
-msgstr ""
+msgstr "amnesty"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(exemptionAmnesty)"
-msgstr ""
+msgstr "(exemptionAmnesty)"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "по другим основаниям: лишение свободы"
-msgstr ""
+msgstr "on other grounds: deprivation of liberty"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
@@ -2682,12 +2682,12 @@ msgstr ""
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "по другим основаниям: от иных мер или наказание не назначалось"
-msgstr ""
+msgstr "on other grounds: from other measures or penalty been imposed"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(examptionOther)"
-msgstr ""
+msgstr "(examptionOther)"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
@@ -2707,7 +2707,7 @@ msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Наказание назначено ниже низшего предела лишение свободы"
-msgstr ""
+msgstr "Convicts received sentences that were under the lower limit"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid ""
@@ -2717,7 +2717,7 @@ msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Преступление не является оконченным"
-msgstr ""
+msgstr "The crime was uncomplete"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid ""
@@ -2727,7 +2727,7 @@ msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Общая сумма штрафов"
-msgstr ""
+msgstr "The total amount of fine"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid ""
@@ -2768,7 +2768,7 @@ msgstr ""
 msgid ""
 "лишение права занимать определенные должности или заниматься определенной "
 "деятельностью"
-msgstr ""
+msgstr "Deprivation of the right to occupy a given position or to engage in a given activity"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(addDisqualification)"
@@ -2825,7 +2825,7 @@ msgstr ""
 msgid ""
 "лишение специального, воинского или почетного звания, классного чина и "
 "государственных наград"
-msgstr ""
+msgstr "disbarment from holding a special or military rank or honorific titles, service grade or State honours"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(addTitlesWithdraw)"
@@ -2833,7 +2833,7 @@ msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "ограничение свободы"
-msgstr ""
+msgstr "restriction of liberty"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(addRestrain)"
@@ -2908,7 +2908,7 @@ msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Прекращено по другим основаниям: по числу лиц"
-msgstr ""
+msgstr "Terminated on other groudns: by the number of persons"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(addDismissalOtherPersons) и"
@@ -2993,7 +2993,7 @@ msgstr ""
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "лишение свободы"
-msgstr ""
+msgstr "deprivation of liberty"
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "принудительные меры к невменяемым"
@@ -3066,7 +3066,7 @@ msgstr ""
 
 #: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "Перейти к данным"
-msgstr ""
+msgstr "Go"
 
 #: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "Подсказка:"
