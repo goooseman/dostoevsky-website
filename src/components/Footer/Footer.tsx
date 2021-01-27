@@ -1,7 +1,7 @@
 import React from "react";
 import cn from "clsx";
 import classes from "./Footer.module.css";
-import { T, withLocale, WithLocale } from "react-targem";
+import { T, useLocale } from "react-targem";
 import Typography from "src/components/ui-kit/Typography";
 // import Button from "../ui-kit/Button";
 // import Input from "../ui-kit/Input";
@@ -13,9 +13,10 @@ import { getLinkForCurrentLocale } from "src/utils/locales";
 // import { useState } from "react";
 // import axios from "axios";
 
-interface FooterProps extends WithLocale {}
+interface FooterProps {}
 
-const Footer: React.FC<FooterProps> = ({ t }: FooterProps) => {
+const Footer: React.FC<FooterProps> = () => {
+  const { t, locale } = useLocale();
   // const { isShowing, toggle } = useModal();
   // const [username, setUsername] = useState("");
   // const [email, setEmail] = useState("");
@@ -50,9 +51,11 @@ const Footer: React.FC<FooterProps> = ({ t }: FooterProps) => {
             <MenuLink to={getLinkForCurrentLocale("/clauses")} size="small">
               <T message="каталог статей ук рф" />
             </MenuLink>
-            <MenuLink to={getLinkForCurrentLocale("/articles")} size="small">
-              <T message="Аналитика" />
-            </MenuLink>
+            {locale === "ru" ? (
+              <MenuLink to={getLinkForCurrentLocale("/articles")} size="small">
+                <T message="Аналитика" />
+              </MenuLink>
+            ) : null}
             <MenuLink to={getLinkForCurrentLocale("/faq")} size="small">
               <T message="о датасете" />
             </MenuLink>
@@ -138,4 +141,4 @@ const Footer: React.FC<FooterProps> = ({ t }: FooterProps) => {
   );
 };
 
-export default withLocale(Footer);
+export default Footer;

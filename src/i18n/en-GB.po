@@ -625,11 +625,11 @@ msgstr ""
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Оправдано"
-msgstr ""
+msgstr "Acquitted"
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
 msgid "Прекращено за отсутствием события, состава, непричастности к преступлению"
-msgstr ""
+msgstr "Terminated due to the absence of elements of a misdemeanour offence / lack of legal components of crime / to lack of involvement"
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
@@ -664,11 +664,11 @@ msgstr ""
 
 #: src/templates/ClauseFullPage/ClauseFullPage.tsx:
 msgid "Выбрать все параметры"
-msgstr ""
+msgstr "Select all options"
 
 #: src/templates/ClauseFullPage/ClauseFullPage.tsx:
 msgid "Разбить по частям"
-msgstr ""
+msgstr "Divide by category"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "количество человек, чьи дела прошли через суд"
@@ -696,7 +696,7 @@ msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "Основной и дополнительный состав: общие сведения"
-msgstr ""
+msgstr "Main and additional qualification: general information"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "Основной состав: в фокусе"
@@ -802,7 +802,7 @@ msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
 msgid "Дела прекращены по иным основаниям (число лиц)"
-msgstr ""
+msgstr "Terminated on other grounds (number of persons)"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
 msgid "Принудительное лечение"
@@ -894,11 +894,11 @@ msgstr ""
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
 msgid "доп. состав (по количеству составов)"
-msgstr ""
+msgstr "add. qualification (by the number of crimes)"
 
 #: src/templates/ClauseMainPage/components/tables/CommonAddResultsTable/CommonAddResultsTable.tsx:
 msgid "по числу лиц"
-msgstr ""
+msgstr "by the number of persons"
 
 #: src/templates/ClauseMainPage/components/tables/CommonAddResultsTable/CommonAddResultsTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
@@ -907,7 +907,7 @@ msgstr ""
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "по количеству составов преступлений"
-msgstr ""
+msgstr "by the number of crimes"
 
 #: src/templates/ClauseMainPage/components/tables/CommonAddResultsTable/CommonAddResultsTable.tsx:
 msgid "Дополнительный состав: детали"
@@ -916,7 +916,7 @@ msgstr ""
 #: src/templates/ClauseMainPage/components/tables/CommonMainResultsTable/CommonMainResultsTable.tsx:
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "дополнительный состав"
-msgstr ""
+msgstr "additional qualification"
 
 #: src/templates/ClauseMainPage/components/tables/CommonMainResultsTable/CommonMainResultsTable.tsx:
 msgid "Результаты рассмотрения дел по статье: основные параметры"
@@ -994,15 +994,15 @@ msgstr ""
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Дополнительный состав"
-msgstr ""
+msgstr "Additional qualification"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Всего осуждено (по числу лиц)"
-msgstr ""
+msgstr "The overall number of convicted (by the number of persons)"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Всего осуждено (по количеству составов преступлений) "
-msgstr ""
+msgstr "The overall number of convicted (by the number of crimes)"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Оправдано (по числу лиц)"
@@ -1010,7 +1010,7 @@ msgstr ""
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Оправдано (по количеству составов преступлений)"
-msgstr ""
+msgstr "Acquitted (by the number of crimes)"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Виды основного наказания"
@@ -1095,7 +1095,7 @@ msgstr ""
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Прекращено (дополнительный состав)"
-msgstr ""
+msgstr "Terminated (additional qualification)"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid ""
@@ -1107,15 +1107,15 @@ msgstr ""
 msgid ""
 "За отсутствием состава, события преступления, непричастностью к преступлению "
 "(по количеству составов преступлений)"
-msgstr ""
+msgstr "Terminated due to the absence of elements of a misdemeanour offence / lack of legal components of crime / to lack of involvement by main offence (by the number of crimes)"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "По иным основаниям (по числу лиц) "
-msgstr ""
+msgstr "On other grounds (by the number of persons)"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "По иным основаниям (по количеству составов преступлений)"
-msgstr ""
+msgstr "On other grounds (by the number of crimes)"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Дополнительное наказание"
@@ -1915,7 +1915,7 @@ msgstr ""
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "всего осуждено"
-msgstr ""
+msgstr "the overall number of convicted"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "134 ч. 1 (в старой редакции до ФЗ от 29.02.2012 № 14-ФЗ)"
@@ -2495,7 +2495,7 @@ msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Прекращено за отсутствием события, состава, непричастностью к преступлению"
-msgstr ""
+msgstr "Terminated due to the absence of elements of a misdemeanour offence / lack of legal components of crime / to lack of involvement"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(dismissalAbsenceOfEvent)."
@@ -2861,7 +2861,7 @@ msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Осуждено: по числу лиц"
-msgstr ""
+msgstr "Convicted: by the number of persons"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(addTotalPersons) и"

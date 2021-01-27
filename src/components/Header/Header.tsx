@@ -118,13 +118,15 @@ const Header: React.FC<HeaderProps> = ({ location }: HeaderProps) => {
               >
                 <T message="каталог статей ук рф" />
               </MenuLink>
-              <MenuLink
-                partiallyActive
-                to={getLinkForCurrentLocale("/articles")}
-                size="normal"
-              >
-                <T message="Аналитика" />
-              </MenuLink>
+              {locale === "ru" ? (
+                <MenuLink
+                  partiallyActive
+                  to={getLinkForCurrentLocale("/articles")}
+                  size="normal"
+                >
+                  <T message="Аналитика" />
+                </MenuLink>
+              ) : null}
               <MenuLink to={getLinkForCurrentLocale("/faq")} size="normal">
                 <T message="о датасете" />
               </MenuLink>
