@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Tue Jan 19 2021 08:12:36 GMT+0300 (GMT+03:00)\n"
+"POT-Creation-Date: Wed Jan 27 2021 13:25:30 GMT+0300 (GMT+03:00)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -75,9 +75,46 @@ msgstr ""
 msgid "Логотип D4S"
 msgstr ""
 
+#: src/components/Footer/Footer.tsx:
+#: src/components/Header/Header.tsx:
+msgid "каталог статей ук рф"
+msgstr ""
+
+#: src/components/Footer/Footer.tsx:
+#: src/components/Header/Header.tsx:
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "Аналитика"
+msgstr ""
+
+#: src/components/Footer/Footer.tsx:
+#: src/components/Header/Header.tsx:
+msgid "о датасете"
+msgstr ""
+
+#: src/components/Footer/Footer.tsx:
+#: src/components/Header/Header.tsx:
+msgid "о проекте"
+msgstr ""
+
+#: src/components/Footer/Footer.tsx:
+#: src/components/Header/Header.tsx:
+msgid "полный датасет"
+msgstr ""
+
+#: src/components/Footer/Footer.tsx:
 #: src/components/Header/Header.tsx:
 #: src/components/Header/Header.tsx:
 msgid "Достоевский"
+msgstr ""
+
+#: src/components/Footer/Footer.tsx:
+msgid ""
+"Все материалы сайта доступны по лицензии Creative\n"
+"            Commons СС-BY-SA 4.0"
+msgstr ""
+
+#: src/components/Footer/Footer.tsx:
+msgid "напишите нам"
 msgstr ""
 
 #: src/components/Header/Header.tsx:
@@ -94,27 +131,6 @@ msgstr ""
 
 #: src/components/Header/Header.tsx:
 msgid "Иконка \"Закрыть\""
-msgstr ""
-
-#: src/components/Header/Header.tsx:
-msgid "каталог статей ук рф"
-msgstr ""
-
-#: src/components/Header/Header.tsx:
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Аналитика"
-msgstr ""
-
-#: src/components/Header/Header.tsx:
-msgid "о датасете"
-msgstr ""
-
-#: src/components/Header/Header.tsx:
-msgid "о проекте"
-msgstr ""
-
-#: src/components/Header/Header.tsx:
-msgid "полный датасет"
 msgstr ""
 
 #: src/components/Header/Header.tsx:

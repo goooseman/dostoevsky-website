@@ -82,10 +82,49 @@ msgstr "Логотип OI"
 msgid "Логотип D4S"
 msgstr "Логотип D4S"
 
+#: src/components/Footer/Footer.tsx:
+#: src/components/Header/Header.tsx:
+msgid "каталог статей ук рф"
+msgstr "каталог статей ук рф"
+
+#: src/components/Footer/Footer.tsx:
+#: src/components/Header/Header.tsx:
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "Аналитика"
+msgstr "Аналитика"
+
+#: src/components/Footer/Footer.tsx:
+#: src/components/Header/Header.tsx:
+msgid "о датасете"
+msgstr "о датасете"
+
+#: src/components/Footer/Footer.tsx:
+#: src/components/Header/Header.tsx:
+msgid "о проекте"
+msgstr "о проекте"
+
+#: src/components/Footer/Footer.tsx:
+#: src/components/Header/Header.tsx:
+msgid "полный датасет"
+msgstr "полный датасет"
+
+#: src/components/Footer/Footer.tsx:
 #: src/components/Header/Header.tsx:
 #: src/components/Header/Header.tsx:
 msgid "Достоевский"
 msgstr "Достоевский"
+
+#: src/components/Footer/Footer.tsx:
+msgid ""
+"Все материалы сайта доступны по лицензии Creative\n"
+"            Commons СС-BY-SA 4.0"
+msgstr ""
+"Все материалы сайта доступны по лицензии Creative\n"
+"            Commons СС-BY-SA 4.0"
+
+#: src/components/Footer/Footer.tsx:
+msgid "напишите нам"
+msgstr "напишите нам"
 
 #: src/components/Header/Header.tsx:
 msgid "Иконка \"Земной шар\""
@@ -102,27 +141,6 @@ msgstr "Логотип проекта Достоевский"
 #: src/components/Header/Header.tsx:
 msgid "Иконка \"Закрыть\""
 msgstr "Иконка \"Закрыть\""
-
-#: src/components/Header/Header.tsx:
-msgid "каталог статей ук рф"
-msgstr "каталог статей ук рф"
-
-#: src/components/Header/Header.tsx:
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Аналитика"
-msgstr "Аналитика"
-
-#: src/components/Header/Header.tsx:
-msgid "о датасете"
-msgstr "о датасете"
-
-#: src/components/Header/Header.tsx:
-msgid "о проекте"
-msgstr "о проекте"
-
-#: src/components/Header/Header.tsx:
-msgid "полный датасет"
-msgstr "полный датасет"
 
 #: src/components/Header/Header.tsx:
 msgid "Иконка 'Закрыть'"

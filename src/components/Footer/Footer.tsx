@@ -1,7 +1,7 @@
 import React from "react";
 import cn from "clsx";
 import classes from "./Footer.module.css";
-import { withLocale, WithLocale } from "react-targem";
+import { T, withLocale, WithLocale } from "react-targem";
 import Typography from "src/components/ui-kit/Typography";
 // import Button from "../ui-kit/Button";
 // import Input from "../ui-kit/Input";
@@ -48,50 +48,44 @@ const Footer: React.FC<FooterProps> = ({ t }: FooterProps) => {
         <div className={cn(classes.middleContainer)}>
           <Menu variant="onBlackBackground">
             <MenuLink to={getLinkForCurrentLocale("/clauses")} size="small">
-              каталог статей ук рф
+              <T message="каталог статей ук рф" />
             </MenuLink>
             <MenuLink to={getLinkForCurrentLocale("/articles")} size="small">
-              Аналитика
+              <T message="Аналитика" />
             </MenuLink>
             <MenuLink to={getLinkForCurrentLocale("/faq")} size="small">
-              о датасете
+              <T message="о датасете" />
             </MenuLink>
             <MenuLink to={getLinkForCurrentLocale("/about")} size="small">
-              о проекте
+              <T message="о проекте" />
             </MenuLink>
             <MenuLink to={getLinkForCurrentLocale("/full")} size="small">
-              полный датасет
+              <T message="полный датасет" />
             </MenuLink>
           </Menu>
           <Typography size="small" color="inverted">
-            Достоевский. Все материалы сайта доступны по лицензии Creative
-            Commons СС-BY-SA 4.0
+            <T message="Достоевский" />.{" "}
+            <T
+              message="Все материалы сайта доступны по лицензии Creative
+            Commons СС-BY-SA 4.0"
+            />
           </Typography>
         </div>
         <div className={cn(classes.rightContainer)}>
           {/*<Button color="inverted" onClick={() => toggle()}> */}
           <Typography variant="span" color="inverted">
-            напишите нам
+            <T message="напишите нам" />
           </Typography>
           {/*</Button> */}
           <div className={classes.socialMediaLinksContainer}>
             <a href="https://telegram.com" target="_blank" rel="noreferrer">
-              <img
-                src={require("./assets/telegram.svg")}
-                alt="Our Telegram page"
-              />
+              <img src={require("./assets/telegram.svg")} alt="Telegram" />
             </a>
             <a href="https://facebook.com" target="_blank" rel="noreferrer">
-              <img
-                src={require("./assets/facebook.svg")}
-                alt="Our Facebook page"
-              />
+              <img src={require("./assets/facebook.svg")} alt="Facebook" />
             </a>
             <a href="https://twitter.com" target="_blank" rel="noreferrer">
-              <img
-                src={require("./assets/twitter.svg")}
-                alt="Our Twitter page"
-              />
+              <img src={require("./assets/twitter.svg")} alt="Twitter " />
             </a>
           </div>
           <div>

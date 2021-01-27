@@ -81,9 +81,46 @@ msgstr ""
 msgid "Логотип D4S"
 msgstr ""
 
+#: src/components/Footer/Footer.tsx:
+#: src/components/Header/Header.tsx:
+msgid "каталог статей ук рф"
+msgstr "Articles of Criminal Code of Russian Federation"
+
+#: src/components/Footer/Footer.tsx:
+#: src/components/Header/Header.tsx:
+#: src/templates/IndexPage/IndexPageAnalytics.tsx:
+msgid "Аналитика"
+msgstr "Analytics"
+
+#: src/components/Footer/Footer.tsx:
+#: src/components/Header/Header.tsx:
+msgid "о датасете"
+msgstr "Dataset"
+
+#: src/components/Footer/Footer.tsx:
+#: src/components/Header/Header.tsx:
+msgid "о проекте"
+msgstr "About"
+
+#: src/components/Footer/Footer.tsx:
+#: src/components/Header/Header.tsx:
+msgid "полный датасет"
+msgstr "Full dataset"
+
+#: src/components/Footer/Footer.tsx:
 #: src/components/Header/Header.tsx:
 #: src/components/Header/Header.tsx:
 msgid "Достоевский"
+msgstr ""
+
+#: src/components/Footer/Footer.tsx:
+msgid ""
+"Все материалы сайта доступны по лицензии Creative\n"
+"            Commons СС-BY-SA 4.0"
+msgstr ""
+
+#: src/components/Footer/Footer.tsx:
+msgid "напишите нам"
 msgstr ""
 
 #: src/components/Header/Header.tsx:
@@ -101,27 +138,6 @@ msgstr ""
 #: src/components/Header/Header.tsx:
 msgid "Иконка \"Закрыть\""
 msgstr ""
-
-#: src/components/Header/Header.tsx:
-msgid "каталог статей ук рф"
-msgstr "Articles of Criminal Code of Russian Federation"
-
-#: src/components/Header/Header.tsx:
-#: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Аналитика"
-msgstr "Analytics"
-
-#: src/components/Header/Header.tsx:
-msgid "о датасете"
-msgstr "Dataset"
-
-#: src/components/Header/Header.tsx:
-msgid "о проекте"
-msgstr "About"
-
-#: src/components/Header/Header.tsx:
-msgid "полный датасет"
-msgstr "Full dataset"
 
 #: src/components/Header/Header.tsx:
 msgid "Иконка 'Закрыть'"
