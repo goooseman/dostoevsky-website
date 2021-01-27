@@ -98,6 +98,9 @@ const FullDatasetDownloadModal: React.FC<FullDatasetDownloadModalProps> = ({
       isCentered
     >
       <form
+        data-netlify="true"
+        name="full-dataset"
+        method="post"
         onSubmit={handleFormSubmit}
         className={cn(classes.fullDatasetDownloadModalWrapper)}
       >
