@@ -976,22 +976,6 @@ msgstr ""
 "attempt itself)"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
-msgid ""
-"Число лиц, в отношении которых уголовные дела прекращены за отсутствием "
-"состава, события преступления, непричастностью к преступлению по основной статье"
-msgstr ""
-
-#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
-msgid ""
-"Число лиц, в отношении которых уголовные дела прекращены по иным основаниям по "
-"основной статье"
-msgstr ""
-
-#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
-msgid "Освобождено от наказания или наказание не назначалось"
-msgstr ""
-
-#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Дополнительный состав"
 msgstr "Additional qualification"
 
