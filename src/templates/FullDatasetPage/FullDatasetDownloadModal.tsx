@@ -1,12 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 import classes from "./FullDatasetDownloadModal.module.css";
 import cn from "clsx";
 import Modal from "src/components/ui-kit/Modal";
 import { getCsv } from "src/utils/csv";
 import { saveAs } from "file-saver";
-import iconv from "iconv-lite";
-import { T } from "react-targem";
+import { T, useLocale } from "react-targem";
 import Typography from "src/components/ui-kit/Typography";
 import Input from "src/components/ui-kit/Input";
 import Button from "src/components/ui-kit/Button";
@@ -36,7 +35,9 @@ const FullDatasetDownloadModal: React.FC<FullDatasetDownloadModalProps> = ({
   tables,
 }: FullDatasetDownloadModalProps) => {
   const [email, setEmail] = useState("");
-  const [isEmailSending, setIsEmailSending] = useState<boolean>(false);
+  const [telegramNick, setTelegramNick] = useState("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const { t } = useLocale();
 
   const handleDownload = () => {
     if (loadingDataset || !tables) return false;
@@ -49,9 +50,16 @@ const FullDatasetDownloadModal: React.FC<FullDatasetDownloadModalProps> = ({
     setEmail(e.currentTarget.value);
   };
 
-  const handleClickButton = async () => {
+  const handleTelegramNickChange = (
+    e: React.SyntheticEvent<HTMLInputElement>
+  ) => {
+    setTelegramNick(e.currentTarget.value);
+  };
+
+  const handleFormSubmit = async (e: FormEvent) => {
+    e.preventDefault();
     if (email) {
-      setIsEmailSending(true);
+      setIsLoading(true);
       // https://mailchimp.com/help/host-your-own-signup-forms/
       try {
         await axios.post(MAILCHIMP_ADDRESS, {
@@ -65,7 +73,18 @@ const FullDatasetDownloadModal: React.FC<FullDatasetDownloadModalProps> = ({
         console.error(e);
       }
 
-      setIsEmailSending(false);
+      setIsLoading(false);
+    }
+    if (telegramNick || email) {
+      const params = new URLSearchParams();
+      params.append("form-name", "full-dataset");
+      params.append("email", email);
+      params.append("telegram-nick", telegramNick);
+      setIsLoading(true);
+      await axios.post("/", params, {
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      });
+      setIsLoading(false);
     }
     handleDownload();
   };
@@ -73,33 +92,54 @@ const FullDatasetDownloadModal: React.FC<FullDatasetDownloadModalProps> = ({
   return (
     <Modal
       isShowing={isShowing}
+      size="lg"
       onHideButtonClick={toggle}
       title={<T message="Скачать данные" />}
       isCentered
     >
-      <div className={cn(classes.fullDatasetDownloadModalWrapper)}>
-        <Typography font="serif">
-          <i>
-            <T message="Если вы оставите свой email, мы будем время от времени присылать вам что-нибудь полезное!" />
-          </i>
-        </Typography>
-        <Input
-          type="email"
-          value={email}
-          placeholder="Ваш e-mail"
-          onChange={handleEmailChange}
-        />
+      <form
+        onSubmit={handleFormSubmit}
+        className={cn(classes.fullDatasetDownloadModalWrapper)}
+      >
+        <div className={cn(classes.fullDatasetTwoForms)}>
+          <div>
+            <Typography font="serif">
+              <i>
+                <T message="Если вы оставите свой email, мы будем время от времени присылать вам что-нибудь полезное!" />
+              </i>
+            </Typography>
+            <Input
+              type="email"
+              value={email}
+              placeholder={t("Ваш e-mail")}
+              onChange={handleEmailChange}
+            />
+          </div>
+          <div>
+            <Typography font="serif">
+              <i>
+                <T message="Ваше имя в Telegram, если хотите присоединиться к нашему сообществу" />
+              </i>
+            </Typography>
+            <Input
+              type="text"
+              value={telegramNick}
+              placeholder={t("Ваше имя в Telegram")}
+              onChange={handleTelegramNickChange}
+            />
+          </div>
+        </div>
         <Typography>
           <T message="При использовании данных, пожалуйста, указывайте ссылку на Достоевский и делитесь с нами своими материалами." />
         </Typography>
-        <Button color="secondary" onClick={handleClickButton}>
-          <T
-            message={
-              isEmailSending || loadingDataset ? "Загрузка..." : "Скачать"
-            }
-          />
+        <Button color="secondary" type="submit">
+          {isLoading || loadingDataset ? (
+            <T message="Загрузка..." />
+          ) : (
+            <T message="Скачать" />
+          )}
         </Button>
-      </div>
+      </form>
     </Modal>
   );
 };

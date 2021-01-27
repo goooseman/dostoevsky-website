@@ -3,17 +3,18 @@ import ReactDOM from "react-dom";
 import cn from "clsx";
 import classes from "./Modal.module.css";
 import Typography from "src/components/ui-kit/Typography";
+import { useLocale } from "react-targem";
+import useBodyOverflowLock from "src/hooks/useBodyOverflowLock";
+import useEscButtonHandler from "src/hooks/useEscButtonHandler";
 
 interface ModalProps {
   isShowing: boolean;
   onHideButtonClick: () => void;
   title: React.ReactNode;
   children: React.ReactNode;
-  size?: "md" | "sm";
+  size?: "lg" | "md" | "sm";
   isCentered?: boolean;
 }
-
-// TODO i18n aria labels
 
 const Modal: React.FC<ModalProps> = ({
   isShowing,
@@ -22,8 +23,12 @@ const Modal: React.FC<ModalProps> = ({
   size = "md",
   isCentered = false,
   title,
-}: ModalProps) =>
-  isShowing
+}: ModalProps) => {
+  const { t } = useLocale();
+  useBodyOverflowLock(isShowing);
+  useEscButtonHandler(onHideButtonClick, isShowing);
+
+  return isShowing
     ? ReactDOM.createPortal(
         <React.Fragment>
           <div className={cn(classes.modalOverlay)} />
@@ -40,6 +45,7 @@ const Modal: React.FC<ModalProps> = ({
               className={cn(classes.modal, {
                 [classes.modalSizeSm]: size === "sm",
                 [classes.modalSizeMd]: size === "md",
+                [classes.modalSizeLg]: size === "lg",
               })}
             >
               <div className={cn(classes.modalHeader)}>
@@ -47,10 +53,13 @@ const Modal: React.FC<ModalProps> = ({
                   type="button"
                   className={cn(classes.modalCloseButton)}
                   data-dismiss="modal"
-                  aria-label="Close"
+                  aria-label={t("Close")}
                   onClick={onHideButtonClick}
                 >
-                  <img src={require("./assets/close.svg")} alt="Close icon" />
+                  <img
+                    src={require("./assets/close.svg")}
+                    alt={t("Times icon")}
+                  />
                 </button>
               </div>
               <Typography
@@ -68,5 +77,6 @@ const Modal: React.FC<ModalProps> = ({
         document.body
       )
     : null;
+};
 
 export default Modal;

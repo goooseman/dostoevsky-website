@@ -21,10 +21,12 @@ msgid "Right arrow"
 msgstr "Right arrow"
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
+#: src/components/ui-kit/Modal/Modal.tsx:
 msgid "Close"
 msgstr "Close"
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
+#: src/components/ui-kit/Modal/Modal.tsx:
 msgid "Times icon"
 msgstr "Times icon"
 
@@ -74,8 +76,22 @@ msgid "D4S logo"
 msgstr "D4S logo"
 
 #: src/components/Header/Header.tsx:
+#: src/components/Header/Header.tsx:
+msgid "Достоевский"
+msgstr "Достоевский"
+
+#: src/components/Header/Header.tsx:
+msgid "Иконка 'Язык'"
+msgstr "Иконка 'Язык'"
+
+#: src/components/Header/Header.tsx:
 msgid "RU"
 msgstr "RU"
+
+#: src/components/Header/Header.tsx:
+#: src/components/Header/Header.tsx:
+msgid "Иконка 'Меню'"
+msgstr "Иконка 'Меню'"
 
 #: src/components/Promo/Promo.tsx:
 msgid "Нужны данные по всем статьям и годам?"
@@ -3308,12 +3324,32 @@ msgstr ""
 "полезное!"
 
 #: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+msgid "Ваш e-mail"
+msgstr "Ваш e-mail"
+
+#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+msgid "Ваше имя в Telegram, если хотите присоединиться к нашему сообществу"
+msgstr "Ваше имя в Telegram, если хотите присоединиться к нашему сообществу"
+
+#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+msgid "Ваше имя в Telegram"
+msgstr "Ваше имя в Telegram"
+
+#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
 msgid ""
 "При использовании данных, пожалуйста, указывайте ссылку на Достоевский и "
 "делитесь с нами своими материалами."
 msgstr ""
 "При использовании данных, пожалуйста, указывайте ссылку на Достоевский и "
 "делитесь с нами своими материалами."
+
+#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+msgid "Загрузка..."
+msgstr "Загрузка..."
+
+#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+msgid "Скачать"
+msgstr "Скачать"
 
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:

@@ -3,12 +3,13 @@ import { Link } from "gatsby";
 import cn from "clsx";
 import classes from "./Header.module.css";
 import { Menu, MenuLink } from "src/components/Menu";
-import { T } from "react-targem";
+import { T, useLocale } from "react-targem";
 import Typography from "../ui-kit/Typography";
 interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = () => {
   const [menuActive, setMenuActive] = useState(false);
+  const { t } = useLocale();
   function toggleMenu() {
     setMenuActive(!menuActive);
   }
@@ -16,17 +17,20 @@ const Header: React.FC<HeaderProps> = () => {
     <nav className={cn(classes.container)}>
       <div className={cn(classes.headerWrapper)}>
         <Link to="/" className={cn(classes.logo)}>
-          <img src={require("./assets/logo.svg")} alt="Достоевский" />
+          <img src={require("./assets/logo.svg")} alt={t("Достоевский")} />
         </Link>
         <div className={cn(classes.callMenuBar)}>
           <Link to="/">
-            <img src={require("./assets/lang.svg")} alt="Lang" />
+            <img src={require("./assets/lang.svg")} alt={t("Иконка 'Язык'")} />
             <Typography color="inverted" variant="span">
               <T message="RU" />
             </Typography>
           </Link>
           <div className="test" onClick={toggleMenu}>
-            <img src={require("./assets/hamburger.svg")} alt="Menu" />
+            <img
+              src={require("./assets/hamburger.svg")}
+              alt={t("Иконка 'Меню'")}
+            />
           </div>
         </div>
         <div
@@ -40,12 +44,15 @@ const Header: React.FC<HeaderProps> = () => {
               <Link to="/">
                 <img
                   src={require("./assets/logo-mobile.svg")}
-                  alt="Достоевский"
+                  alt={t("Достоевский")}
                 />
               </Link>
             </div>
             <div className={cn(classes.mobileMenu__close)} onClick={toggleMenu}>
-              <img src={require("./assets/close.svg")} alt="Menu" />
+              <img
+                src={require("./assets/close.svg")}
+                alt={t("Иконка 'Меню'")}
+              />
             </div>
           </div>
           <div className={cn(classes.mobileMenu__listener)}>
