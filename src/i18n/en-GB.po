@@ -39,11 +39,11 @@ msgstr ""
 
 #: src/components/ClausePageLayout/ClausePageLayout.tsx:
 msgid "ЧАРТЫ"
-msgstr ""
+msgstr "VISUALISATION"
 
 #: src/components/ClausePageLayout/ClausePageLayout.tsx:
 msgid "ТАБЛИЦА"
-msgstr ""
+msgstr "TABLE"
 
 #: src/components/DownloadButton/DownloadButton.tsx:
 msgid "Скачать чарт"
@@ -52,7 +52,7 @@ msgstr ""
 #: src/components/DownloadButton/DownloadButton.tsx:
 #: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
 msgid "Скачать"
-msgstr "Скачать"
+msgstr "Download"
 
 #: src/components/EmbedModal/EmbedModal.tsx:
 msgid "Получить код для встраивания"
@@ -76,11 +76,11 @@ msgstr ""
 
 #: src/components/Footer/Footer.tsx:
 msgid "Логотип OI"
-msgstr ""
+msgstr "OI logo"
 
 #: src/components/Footer/Footer.tsx:
 msgid "Логотип D4S"
-msgstr ""
+msgstr "D4S logo"
 
 #: src/components/Footer/Footer.tsx:
 #: src/components/Header/Header.tsx:
@@ -123,7 +123,7 @@ msgstr ""
 
 #: src/components/Footer/Footer.tsx:
 msgid "напишите нам"
-msgstr ""
+msgstr "contact us"
 
 #: src/components/Header/Header.tsx:
 msgid "Иконка \"Земной шар\""
@@ -456,7 +456,7 @@ msgstr ""
 
 #: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:
 msgid "Хронология"
-msgstr ""
+msgstr "Chronology"
 
 #: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:
 msgid ""
@@ -917,7 +917,7 @@ msgstr "additional qualification"
 
 #: src/templates/ClauseMainPage/components/tables/CommonMainResultsTable/CommonMainResultsTable.tsx:
 msgid "Результаты рассмотрения дел по статье: основные параметры"
-msgstr ""
+msgstr "Outcome of cases: basic parameters"
 
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
 msgid ""
@@ -967,7 +967,7 @@ msgstr ""
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Результаты рассмотрения дел по статье {{ clause }}"
-msgstr ""
+msgstr "Outcome of case {{ clause }}"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Преступление не является оконченным (приготовление, покушение)"
@@ -1917,7 +1917,7 @@ msgstr ""
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "статья"
-msgstr ""
+msgstr "article"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "всего осуждено"
@@ -2954,15 +2954,15 @@ msgstr ""
 
 #: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
 msgid "Ваш e-mail"
-msgstr "Ваш e-mail"
+msgstr "Your e-mail"
 
 #: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
 msgid "Ваше имя в Telegram, если хотите присоединиться к нашему сообществу"
-msgstr "Ваше имя в Telegram, если хотите присоединиться к нашему сообществу"
+msgstr ""
 
 #: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
 msgid "Ваше имя в Telegram"
-msgstr "Ваше имя в Telegram"
+msgstr "Your Telegram nickname"
 
 #: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
 msgid ""
@@ -2972,7 +2972,7 @@ msgstr ""
 
 #: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
 msgid "Загрузка..."
-msgstr "Загрузка..."
+msgstr "Loading..."
 
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
@@ -3102,7 +3102,7 @@ msgstr ""
 
 #: src/templates/IndexPage/IndexPageMore.tsx:
 msgid "Больше материалов в разделе аналитика"
-msgstr ""
+msgstr "More materials in Analytics section"
 
 #: src/templates/IndexPage/IndexPageSubscription.tsx:
 msgid "Хотите первыми получать новости и обновления от команды Достоевского?"
