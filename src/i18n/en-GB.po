@@ -76,8 +76,22 @@ msgid "D4S logo"
 msgstr "D4S logo"
 
 #: src/components/Header/Header.tsx:
+#: src/components/Header/Header.tsx:
+msgid "Достоевский"
+msgstr "Достоевский"
+
+#: src/components/Header/Header.tsx:
+msgid "Иконка 'Язык'"
+msgstr "Иконка 'Язык'"
+
+#: src/components/Header/Header.tsx:
 msgid "RU"
 msgstr "RU"
+
+#: src/components/Header/Header.tsx:
+#: src/components/Header/Header.tsx:
+msgid "Иконка 'Меню'"
+msgstr "Иконка 'Меню'"
 
 #: src/components/Promo/Promo.tsx:
 msgid "Нужны данные по всем статьям и годам?"
