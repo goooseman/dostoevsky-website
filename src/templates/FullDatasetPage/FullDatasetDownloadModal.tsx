@@ -62,13 +62,22 @@ const FullDatasetDownloadModal: React.FC<FullDatasetDownloadModalProps> = ({
       setIsLoading(true);
       // https://mailchimp.com/help/host-your-own-signup-forms/
       try {
-        await axios.post(MAILCHIMP_ADDRESS, {
-          json: {
-            u: MAILCHIMP_U,
-            id: MAILCHIMP_ID,
-            email: email,
-          },
-        });
+        await fetch(
+          MAILCHIMP_ADDRESS +
+            "?" +
+            new URLSearchParams({
+              u: MAILCHIMP_U || "",
+              id: MAILCHIMP_ID || "",
+              MERGE0: email,
+            }),
+          {
+            method: "GET",
+            mode: "no-cors",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
       } catch (e) {
         console.error(e);
       }
@@ -81,9 +90,14 @@ const FullDatasetDownloadModal: React.FC<FullDatasetDownloadModalProps> = ({
       params.append("email", email);
       params.append("telegram-nick", telegramNick);
       setIsLoading(true);
-      await axios.post("/", params, {
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      });
+      try {
+        await axios.post("/", params, {
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        });
+      } catch (e) {
+        console.error(e);
+      }
+
       setIsLoading(false);
     }
     handleDownload();
