@@ -109,7 +109,6 @@
 }
 
 .analytics-title-wrapper {
-  display: flex;
   margin-top: 1rem;
   :global {
     .select {
@@ -144,10 +143,12 @@
       display: none;
     }
     .select__single-value {
+      font-size: 1.5rem;
       font-family: var(--font-family-sans-serif);
+      font-weight: 500;
     }
     .select__menu {
-      top: 150%;
+      top: 100%;
       border: 1px solid var(--color-border-dark);
       border-radius: 5px;
       box-shadow: none;
@@ -171,10 +172,6 @@
 
 .analytics-subtitle {
   margin-top: 2rem;
-}
-
-.analytics-charts-wrapper {
-  margin-top: 6rem;
 }
 
 @media all and (max-width: 680px) {
@@ -325,10 +322,6 @@
 }
 .hints-wrapper .hints-inner button {
   margin: 0.1rem;
-  padding: 0.2rem 0.5rem;
-
-  /* font-size: 1.5rem;
-  line-height: 2.4rem; */
 }
 @media all and (max-width: 680px) {
   .hints-wrapper {

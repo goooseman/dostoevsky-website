@@ -56,9 +56,7 @@ export class MenuItem extends PureComponent<MenuItemProps> {
         className={cn(classes.menuItem, { [classes.menuItemActive]: isActive })}
       >
         <button onClick={onClick} className={cn(classes.menuLink)}>
-          <Typography variant="span">
-            <b>{children}</b>
-          </Typography>
+          <Typography variant="span">{children}</Typography>
         </button>
       </li>
     );
@@ -89,7 +87,7 @@ export class MenuLink extends PureComponent<MenuLinkProps> {
                 })}
                 activeClassName={cn(classes.menuLinkActive)}
               >
-                <b>{children}</b>
+                {children}
               </Link>
             </Typography>
           </li>

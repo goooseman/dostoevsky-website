@@ -120,13 +120,17 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
               ) : null}
               <div className={cn(classes.headerContainer)}>
                 <div className={cn(classes.header)}>
-                  <Typography
-                    isLineHeightDisabled
-                    variant="h1"
-                    font="serif"
-                    className={cn(classes.title)}
-                  >
-                    статья{" "}
+                  <div className={cn(classes.numberWrapper)}>
+                    <div>
+                      <Typography
+                        isUpperCased
+                        variant="span"
+                        color="inverted"
+                        className={cn(classes.title)}
+                      >
+                        статья УК РФ
+                      </Typography>
+                    </div>
                     <Typography
                       isLineHeightDisabled
                       component="span"
@@ -135,13 +139,8 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
                     >
                       {clauseNumber}
                     </Typography>
-                  </Typography>
-
-                  <Typography
-                    variant="h3"
-                    component="h2"
-                    className={cn(classes.subtitle)}
-                  >
+                  </div>
+                  <Typography component="h2" className={cn(classes.subtitle)}>
                     {clauseText.ru}
                   </Typography>
 
