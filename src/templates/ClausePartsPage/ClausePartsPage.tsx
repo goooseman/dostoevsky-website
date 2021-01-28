@@ -8,8 +8,8 @@ import PartsByResultChart from "./components/charts/PartsByResultChart";
 import PartsByPunishment from "./components/charts/PartsByPunishment";
 import ClausePartsTable from "./components/ClausePartsTable";
 import SpoilerText from "src/components/SpoilerText";
-import { T } from "react-targem";
 import { formatNumber } from "src/utils/numbers";
+import T from "src/components/T";
 
 export type ClausePartsPageViewMode =
   | "page"
@@ -137,14 +137,14 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
         {partIndex === 1 ? (
           <T
             message="В {{ year }} году по части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному составу {{ count }} человек"
-            messagePlural="В {{ year }} году по части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному составу {{ count }} человек"
+            messagePlural="В {{ year }} году по части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному составу {{ count }} человека"
             scope={{ year, clauseNumber, partIndex }}
             count={part.totalConvicted}
           />
         ) : (
           <T
             message="По части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному составу {{ count }} человек"
-            messagePlural="По части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному составу {{ count }} человек"
+            messagePlural="По части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному составу {{ count }} человека"
             scope={{ clauseNumber, partIndex }}
             count={part.totalConvicted}
           />
@@ -178,18 +178,15 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
           count={part.totalAcquittal}
         />
         {". "}
-        <T message="Прекращены дела в отношении" /> <b>{part.totalDismissal}</b>{" "}
         <T
-          message="человек"
-          messagePlural="человек"
+          message="Прекращены дела в отношении <b>{{ count }}</b> человека"
+          messagePlural="Прекращены дела в отношении <b>{{ count }}</b> человек"
           count={part.totalDismissal}
         />
         {". "}
-        <T message="По дополнительному составу осуждены" />{" "}
-        <b>{part.addTotalPersons}</b>{" "}
         <T
-          message="человек"
-          messagePlural="человек"
+          message="По дополнительному составу осуждены <b>{{ count }}</b> человек"
+          messagePlural="По дополнительному составу осуждены <b>{{ count }}</b> человека"
           count={part.totalDismissal}
         />
         {"."}

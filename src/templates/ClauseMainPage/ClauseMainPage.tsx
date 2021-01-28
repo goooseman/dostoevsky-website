@@ -1,7 +1,6 @@
 import React, { PureComponent } from "react";
 import ClausePageLayout from "src/components/ClausePageLayout";
 import Typography from "src/components/ui-kit/Typography";
-import { T } from "react-targem";
 import classes from "./ClauseMainPage.module.css";
 import cn from "clsx";
 import { Counters, Counter } from "src/components/Counters";
@@ -14,6 +13,7 @@ import { Menu, MenuLink } from "src/components/Menu";
 import { getClauseLink } from "src/config/routes";
 
 import ClauseMainPageFocus from "./ClauseMainPageFocus";
+import T from "src/components/T";
 
 export type ClausePartsPageViewMode =
   | "page"
@@ -214,18 +214,15 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
     return (
       <>
         <T
-          message="В {{ year }} году по данной статье был осужден по основному составу"
-          messagePlural="В {{ year }} году по данной статье были осуждены по основному составу"
+          message="В {{ year }} году по данной статье был осужден по основному составу <b>{{ count }}</b> человек"
+          messagePlural="В {{ year }} году по данной статье были осуждены по основному составу <b>{{ count }}</b> человека"
           scope={{ year }}
           count={totalConvicted}
-        />{" "}
-        <b>{totalConvicted}</b>{" "}
-        <T message="человек" messagePlural="человек" count={totalConvicted} />
+        />
         {". "}
-        <T message="Из них" /> <b>{primarySuspended}</b>{" "}
         <T
-          message="({{ primarySuspendedPercent }}%) был приговорен к лишению свободы условно"
-          messagePlural="({{ primarySuspendedPercent }}%) были приговорены к лишению свободы условно"
+          message="Из них <b>{{ count }}</b> ({{ primarySuspendedPercent }}%) был приговорен к лишению свободы условно"
+          messagePlural="Из них <b>{{ count }}</b> ({{ primarySuspendedPercent }}%) были приговорены к лишению свободы условно"
           scope={{
             primarySuspendedPercent: formatNumber(
               primarySuspended / (totalConvicted / 100)
@@ -234,11 +231,10 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
           count={primarySuspended}
         />
         {", "}
-        <T message="еще" /> <b>{primaryRestrain}</b>{" "}
         <T
-          message="({{ primaryRestrainPercent }}%) получил реальные сроки"
-          messagePlural="({{ primaryRestrainPercent }}%) получили реальные сроки"
-          count={0}
+          message="еще <b>{{ count }}</b> ({{ primaryRestrainPercent }}%) получил реальные сроки"
+          messagePlural="еще <b>{{ count }}</b> ({{ primaryRestrainPercent }}%) получили реальные сроки"
+          count={primaryRestrain}
           scope={{
             primaryRestrainPercent: formatNumber(
               primaryRestrain / (totalConvicted / 100)
@@ -247,17 +243,15 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
         />
         {". "}
         <T
-          message="Оправдан"
-          messagePlural="Оправданы"
+          message="Оправдан <b>{{ count }}</b> человек"
+          messagePlural="Оправданы <b>{{ count }}</b> человек"
           count={totalAcquittal}
-        />{" "}
-        <b>{totalAcquittal}</b>{" "}
-        <T message="человек" messagePlural="человек" count={totalAcquittal} />
+        />
         {". "}
-        <T message="Прекращены дела в отношении" /> <b>{totalDismissal}</b>{" "}
-        <T message="человек" messagePlural="человек" count={totalDismissal} />{" "}
         <T
-          message="({{ dismissalPercent }}% от всех, попавших в суд)"
+          message="Прекращены дела в отношении <b>{{ count }}</b> человека ({{ dismissalPercent }}% от всех, попавших в суд)"
+          messagePlural="Прекращены дела в отношении <b>{{ count }}</b> человек ({{ dismissalPercent }}% от всех, попавших в суд)"
+          count={totalDismissal}
           scope={{
             dismissalPercent: formatNumber(totalDismissal / (total / 100)),
           }}
@@ -270,24 +264,21 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
         {". "}
         <br />
         <br />
-        <b>{addTotalPersons}</b>{" "}
         <T
-          message="человек были осуждены по дополнительному составу"
-          messagePlural="человека были осуждены по дополнительному составу"
+          message="<b>{{ count }}</b> человек были осуждены по дополнительному составу"
+          messagePlural="<b>{{ count }}</b> человека были осуждены по дополнительному составу"
           count={addTotalPersons}
         />
         {". "}
-        <T message="Еще в отношении" /> <b>{addDismissalPersons}</b>{" "}
         <T
-          message="человек суд принял решение прекратить дело по данной статье по дополнительному составу"
-          messagePlural="человек суд принял решение прекратить дело по данной статье по дополнительному составу"
+          message="Еще в отношении <b>{{ count }}</b> человека суд принял решение прекратить дело по данной статье по дополнительному составу"
+          messagePlural="Еще в отношении <b>{{ count }}</b> человек суд принял решение прекратить дело по данной статье по дополнительному составу"
           count={addDismissalPersons}
         />
         {". "}
-        <b>{addAcquittalPersons}</b>{" "}
         <T
-          message="человек были оправданы по дополнительному составу"
-          messagePlural="человек были оправданы по дополнительному составу"
+          message="<b>{{ count }}</b> человек были оправданы по дополнительному составу"
+          messagePlural="<b>{{ count }}</b> человек были оправданы по дополнительному составу"
           count={addAcquittalPersons}
         />
         {"."}
