@@ -2975,7 +2975,7 @@ msgstr "Loading..."
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 msgid "Полный датасет"
-msgstr ""
+msgstr "Full dataset"
 
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 msgid "Произошла ошибка. Пожалуйста, измените параметры поиска."
