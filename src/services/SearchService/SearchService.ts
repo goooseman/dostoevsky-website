@@ -39,16 +39,26 @@ class SearchService {
     });
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  getHelpItems(locale: "ru"): string[] {
-    return [
-      "282",
-      "282 часть 2",
-      "против личности",
-      "против государства",
-      "экстремизм",
-      "убийство",
-    ];
+  getHelpItems(locale: "ru" | "en-GB"): string[] {
+    if (locale === "ru") {
+      return [
+        "282",
+        "против личности",
+        "против государства",
+        "экстремизм",
+        "убийство",
+      ];
+    }
+    if (locale === "en-GB") {
+      return [
+        "282",
+        "against personality",
+        "against goverment",
+        "extremism",
+        "murder",
+      ];
+    }
+    return [];
   }
 }
 
