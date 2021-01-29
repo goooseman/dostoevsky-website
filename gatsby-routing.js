@@ -13,7 +13,7 @@ const getRouteForClausePage = (locale, clauseId, year, page, view) => {
 };
 
 const getRouteForLocale = (locale, path) => {
-  return `/${locale}${path}`;
+  return `/${locale}${path}/`;
 };
 
 const getRouteForIndexPage = (locale, year, view) => {
