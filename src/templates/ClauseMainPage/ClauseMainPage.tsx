@@ -129,12 +129,12 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
               />
               <Counter
                 counter={totalConvicted}
-                label={<T message="человек Осуждены по основному составу" />}
+                label={<T message="человек осуждены по основному составу" />}
               />
               <Counter
                 counter={addTotalPersons}
                 label={
-                  <T message="человек Осуждены по дополнительному составу" />
+                  <T message="человек осуждены по дополнительному составу" />
                 }
               />
               <Counter

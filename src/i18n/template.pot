@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Fri Jan 29 2021 20:12:35 GMT+0300 (GMT+03:00)\n"
+"POT-Creation-Date: Fri Jan 29 2021 20:24:08 GMT+0300 (GMT+03:00)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -233,7 +233,7 @@ msgid "Юрист и аналитик ОВД-Инфо"
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
-msgid "Света шуранова"
+msgid "Света Шуранова"
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
@@ -270,7 +270,7 @@ msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid ""
-". Однако эта информация публикуется в виде десятков нечитаемых таблиц: для "
+"Однако эта информация публикуется в виде десятков нечитаемых таблиц: для "
 "подробного анализа квалифицированному специалисту требуются часы, а иногда и "
 "дни работы."
 msgstr ""
@@ -669,11 +669,11 @@ msgid "количество человек, чьи дела прошли чер�
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
-msgid "человек Осуждены по основному составу"
+msgid "человек осуждены по основному составу"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
-msgid "человек Осуждены по дополнительному составу"
+msgid "человек осуждены по дополнительному составу"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
