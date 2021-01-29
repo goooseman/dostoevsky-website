@@ -21,7 +21,10 @@ const getArticleBackground = (type?: Article["tag"]) => {
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const IndexPageMore = (props: IndexPageMoreProps) => {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
+  if (locale !== "ru") {
+    return null;
+  }
   const { articles } = props;
   return (
     <Container>
