@@ -7,7 +7,7 @@ import Table from "src/components/Table";
 import metrics from "content/metriсs.json";
 import Tooltip from "src/components/ui-kit/Tooltip";
 
-const FaqPageUploadFieldsNParameterTree = (): React.ReactNode => {
+const FaqPageUploadFieldsNParameterTree: React.FC = () => {
   const { t } = useLocale();
 
   const tables = [
