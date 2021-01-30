@@ -552,7 +552,7 @@ const FaqPageUploadFieldsNParameterTree: React.FC = () => {
                 <b>
                   <T message="по другим основаниям: от иных мер или наказание не назначалось" />
                 </b>{" "}
-                (examptionOther)
+                (exemptionOther)
               </li>
             </ol>
           </li>

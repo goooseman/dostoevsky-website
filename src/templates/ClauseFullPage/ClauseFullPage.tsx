@@ -87,18 +87,276 @@ const accordionData = [
       },
     ],
   },
-  { title: "Виды основного наказания", id: "typesOfBasicPunishment" },
+  {
+    title: "Виды основного наказания",
+    id: "typesOfBasicPunishment",
+    children: [
+      {
+        title: "Пожизненное лишение свободы",
+        id: "primaryLifeSentence",
+      },
+      {
+        title: "Лишение свободы",
+        id: "primaryImprisonment",
+        children: [
+          {
+            title: "до 1 года включительно",
+            id: "primaryImprisonment1",
+          },
+          {
+            title: "от 1 до 3 лет включительно",
+            id: "primaryImprisonment1_3",
+          },
+          {
+            title: "свыше 1 до 2 лет включительно",
+            id: "primaryImprisonment1_2",
+          },
+          {
+            title: "свыше 2 до 3 лет включительно",
+            id: "primaryImprisonment2_3",
+          },
+          {
+            title: "свыше 3 до 5 лет включительно",
+            id: "primaryImprisonment3_5",
+          },
+          {
+            title: "свыше 5 до 8 лет включительно",
+            id: "primaryImprisonment5_8",
+          },
+          {
+            title: "свыше 8 до 10 лет включительно",
+            id: "primaryImprisonment8_10",
+          },
+          {
+            title: "свыше 10 до 15 лет включительно",
+            id: "primaryImprisonment10_15",
+          },
+          {
+            title: "свыше 15 до 20 лет включительно",
+            id: "primaryImprisonment15_20",
+          },
+        ],
+      },
+      {
+        title: "Наказание назначено ниже низшего предела",
+        id: "primaryImprisonmentUnderLowerLimit",
+      },
+      {
+        title: "Условное осуждение к лишению свободы",
+        id: "primarySuspended",
+      },
+      {
+        title: "Содержание в дисциплинарной воинской части",
+        id: "primaryMilitaryDisciplinaryUnit",
+      },
+      {
+        title: "Арест",
+        id: "primaryArrest",
+      },
+      {
+        title: "Ограничение свободы",
+        id: "primaryRestrain",
+      },
+      {
+        title: "Ограничения по воинской службе",
+        id: "primaryRestrictionsInMilitaryService",
+      },
+      {
+        title: "Работы",
+        id: "labour",
+        children: [
+          {
+            title: "исправительные работы",
+            id: "primaryCorrectionalLabour",
+          },
+          {
+            title: "обязательные работы",
+            id: "primaryCommunityService",
+          },
+          {
+            title: "принудительные работы",
+            id: "primaryForcedLabour",
+          },
+        ],
+      },
+      {
+        title:
+          "Лишение права занимать определенные должности или заниматься определенной деятельностью",
+        id: "primaryDisqualification",
+      },
+      {
+        title: "Штраф",
+        id: "primaryFine",
+        children: [
+          {
+            title: "до 5 тыс.",
+            id: "primaryFine5",
+          },
+          {
+            title: "свыше 5 тыс. до 25 тыс.",
+            id: "primaryFine5_25",
+          },
+          {
+            title: "свыше 25 тыс. до 100 тыс.",
+            id: "primaryFine25_100",
+          },
+          {
+            title: "свыше 100 тыс. до 300 тыс.",
+            id: "primaryFine100_300",
+          },
+          {
+            title: "свыше 300 тыс. до 500 тыс.",
+            id: "primaryFine300_500",
+          },
+          {
+            title: "свыше 500 тыс. до 1 млн",
+            id: "primaryFine500_1M",
+          },
+          {
+            title: "свыше 1 млн",
+            id: "primaryFine1M",
+          },
+        ],
+      },
+      {
+        title: "Условное осуждение к иным мерам",
+        id: "primaryOther",
+      },
+    ],
+  },
   {
     title: "Освобождено от наказания или наказание не назначалось (число лиц)",
     id: "noPunishment",
+    children: [
+      {
+        title:
+          "В связи с зачетом срока содержания под стражей, домашнего ареста",
+        id: "exemptionFromImprisonment",
+      },
+      {
+        title: "По амнистии",
+        id: "exemptionAmnesty",
+      },
+      {
+        title: "По другим основаниям",
+        id: "exemptionOther",
+      },
+    ],
   },
-  { title: "Прекращено", id: "terminated" },
-  { title: "Дополнительное наказание", id: "additionalPunishment" },
+  {
+    title: "Прекращено",
+    id: "terminated",
+    children: [
+      {
+        title: "Прекращено по амнистии",
+        id: "dismissalAmnesty",
+      },
+      {
+        title: "Прекращено за примирением с потерпевшим",
+        id: "dismissalReconciliation",
+      },
+      {
+        title: "Прекращено в связи с деятельным раскаянием",
+        id: "dismissalRepentance",
+      },
+      {
+        title: "Назначена мера уголовно-правового характера судебный штраф",
+        id: "dismissalCourtFine",
+      },
+      {
+        title:
+          "На основании примечаний к статьям УК РФ (в том числе в связи с деятельным раскаянием ч. 2 ст. 28 УПК РФ)",
+        id: "dismissalOther",
+      },
+    ],
+  },
+  {
+    title: "Дополнительное наказание",
+    id: "additionalPunishment",
+    children: [
+      {
+        title:
+          "Лишение права занимать определенные должности или заниматься определенной деятельностью",
+        id: "addDisqualification",
+      },
+      {
+        title: "Штраф",
+        id: "addFine",
+        children: [
+          {
+            title: "до 5 тысяч рублей",
+            id: "addFine5",
+          },
+          {
+            title: "свыше 5 тыс. до 25 тыс. рублей",
+            id: "addFine5_25",
+          },
+          {
+            title: "свыше 25 тыс. до 500 тыс. рублей",
+            id: "addFine25_500",
+          },
+          {
+            title: "свыше 100 тыс. до 300 тыс. рублей",
+            id: "addFine100_300",
+          },
+          {
+            title: "свыше 300 тыс. до 500 тыс. рублей",
+            id: "addFine300_500",
+          },
+          {
+            title: "свыше 500 тыс. до 1 млн рублей",
+            id: "addFine500_1M",
+          },
+          {
+            title: "свыше 1 млн рублей",
+            id: "addFine1M",
+          },
+        ],
+      },
+      {
+        title:
+          "лишение специального, воинского или почетного звания, классного чина и государственных наград",
+        id: "addTitlesWithdraw",
+      },
+      {
+        title: "ограничение свободы",
+        id: "addRestrain",
+      },
+    ],
+  },
   {
     title: "Деяние совершено при обстоятельствах, исключающих преступность",
     id: "precludingCriminality",
+    children: [
+      {
+        title: "Необходимая оборона",
+        id: "noCrimeSelfDefence",
+      },
+      {
+        title: "Крайняя необходимость",
+        id: "noCrimeNecessity",
+      },
+      {
+        title:
+          "Обстоятельства, исключающие преступность, предусмотренные статьями 38, 40 - 42 УК РФ",
+        id: "noCrimeOther",
+      },
+    ],
   },
-  { title: "Общая сумма штрафов (руб.)", id: "fineAmount" },
+  {
+    title: "Общая сумма штрафов (руб.)",
+    id: "fineAmount",
+    children: [
+      {
+        title: "Основное наказание",
+        id: "primaryFineSum",
+      },
+      {
+        title: "Дополнительное наказание",
+        id: "addFineSum",
+      },
+    ],
+  },
 ];
 
 const getValueFromEdges = (id: string, data: any) => {
