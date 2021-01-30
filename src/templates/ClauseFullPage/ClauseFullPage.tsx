@@ -103,8 +103,8 @@ const accordionData = [
 
 const getValueFromEdges = (id: string, data: any) => {
   return data.parts.edges.reduce((a: string | number, c: any) => {
-    if (id in c.node) {
-      a = a === "-" ? c.node[id] : a + c.node[id];
+    if (id in c.node.parameters) {
+      a = a === "-" ? c.node.parameters[id] : a + c.node.parameters[id];
     }
     return a;
   }, "-");
@@ -118,7 +118,9 @@ interface ClauseFullPageProps {
 }
 
 interface ClauseFullPageState {
-  selected: any;
+  selected: {
+    [id: string]: boolean;
+  };
   allSelected: boolean;
   splitByArticle: boolean;
 }
@@ -164,11 +166,11 @@ class ClauseFullPage extends PureComponent<
     this.setState({ splitByArticle: checked });
   }
 
-  private handleToggleCheckbox(e: any) {
+  private handleToggleCheckbox(e: React.ChangeEvent<HTMLInputElement>) {
     const { id, checked } = e.target;
     const { selected } = this.state;
 
-    const newSelected: any = { ...selected };
+    const newSelected = { ...selected };
 
     accordionData.forEach((a) => {
       if (a.id === id) {
@@ -247,7 +249,7 @@ class ClauseFullPage extends PureComponent<
                   }
                   table.rows[i].values.push({
                     key: ac.id,
-                    value: e.node[ac.id],
+                    value: e.node.parameters[ac.id],
                   });
                 });
               } else {
@@ -274,7 +276,7 @@ class ClauseFullPage extends PureComponent<
                     }
                     table.rows[i].values.push({
                       key: acc.id,
-                      value: e.node[acc.id],
+                      value: e.node.parameters[acc.id],
                     });
                   });
                 } else {
@@ -357,7 +359,7 @@ class ClauseFullPage extends PureComponent<
                       <Checkbox
                         id={a.id}
                         checked={selected[a.id]}
-                        onChange={(e) => this.handleToggleCheckbox(e)}
+                        onChange={this.handleToggleCheckbox}
                       />
                       <Typography
                         className={cn(classes.clauseFullPageElementTitle)}
