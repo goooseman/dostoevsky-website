@@ -133,6 +133,7 @@ exports.createPages = async ({ actions, graphql }) => {
                   ? undefined
                   : "iframe-table-common-add-by-result",
                 IS_WITHOUT_EMBED ? undefined : "iframe-by-result",
+                IS_WITHOUT_EMBED ? undefined : "iframe-table-focus",
               ];
               for (const view of mainPageViewModes) {
                 if (view === undefined) {
