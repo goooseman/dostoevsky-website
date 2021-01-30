@@ -36,6 +36,7 @@ class Typography extends PureComponent<TypographyProps> {
     font: "sans-serif",
     isUpperCased: false,
     isCentered: false,
+    isCapitalized: false,
   };
 
   render(): React.ReactNode {
