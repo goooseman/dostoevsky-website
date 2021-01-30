@@ -54,6 +54,7 @@ class Typography extends PureComponent<TypographyProps> {
       isCentered,
       gutterTop,
       isNonBreakable,
+      isCapitalized,
       ...otherProps
     } = this.props;
     const Component = component || variant;
