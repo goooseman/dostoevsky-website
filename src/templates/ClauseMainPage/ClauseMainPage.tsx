@@ -19,6 +19,7 @@ export type ClausePartsPageViewMode =
   | "page"
   | "table"
   | "focus"
+  | "focus-table"
   | "iframe-table-common-main-by-result"
   | "iframe-table-common-add-by-result"
   | "iframe-by-result";
@@ -102,12 +103,20 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
         hasParts={partsCount > 0}
         headerChildren={this.renderHeaderChildren()}
         chartsLink={
-          view === "focus"
-            ? getClauseLink(clauseNumber, year, "focus")
+          view === "focus" || view === "focus-table"
+            ? getClauseLink(clauseNumber, year, "main", "focus")
+            : undefined
+        }
+        tableLink={
+          view === "focus" || view === "focus-table"
+            ? getClauseLink(clauseNumber, year, "main", "focus-table")
             : undefined
         }
       >
         {view === "focus" ? <ClauseMainPageFocus {...this.props} /> : null}
+        {view === "focus-table" ? (
+          <ClauseMainPageFocus {...this.props} />
+        ) : null}
         {view === "table" ? (
           <>
             <div className={classes.tableContainer}>
@@ -181,7 +190,9 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
               <T message="Основной и дополнительный состав: общие сведения" />
             </MenuLink>
             <MenuLink
-              partiallyActive
+              activeUrls={[
+                getClauseLink(clauseNumber, year, "main", "focus-table"),
+              ]}
               to={getClauseLink(clauseNumber, year, "main", "focus")}
             >
               <T message="Основной состав: в фокусе" />

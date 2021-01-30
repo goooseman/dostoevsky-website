@@ -166,9 +166,11 @@ const ClauseMainPageFocus: React.FC<ClauseMainPageFocusProps> = (
           Меры: "^^",
           "Число человек": "%%",
         }}
+        /* TODO fix iframe path */
         iframePath={getClauseLink(
           clauseNumber.toString(),
           year.toString(),
+          "main",
           "focus"
         )}
       />

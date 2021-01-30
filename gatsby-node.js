@@ -125,6 +125,7 @@ exports.createPages = async ({ actions, graphql }) => {
                 IS_ONLY_EMBED ? undefined : "page",
                 IS_ONLY_EMBED ? undefined : "table",
                 IS_ONLY_EMBED ? undefined : "focus",
+                IS_ONLY_EMBED ? undefined : "focus-table",
                 IS_WITHOUT_EMBED
                   ? undefined
                   : "iframe-table-common-main-by-result",
