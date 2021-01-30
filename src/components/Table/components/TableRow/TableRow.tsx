@@ -31,7 +31,11 @@ class TableRow extends PureComponent<TableRowProps> {
         {values.map((v) => (
           <td key={v.key} colSpan={isAccordion ? columnsCount : undefined}>
             {this.getAccrodionButton()}
-            <Typography isUpperCased={Boolean(isAccordion)} component="span">
+            <Typography
+              isUpperCased={isAccordion}
+              isCapitalized={!isAccordion}
+              component="span"
+            >
               {isAccordion ? <b>{v.value}</b> : v.value}
             </Typography>
           </td>

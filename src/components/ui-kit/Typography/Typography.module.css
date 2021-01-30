@@ -25,6 +25,10 @@
   text-transform: uppercase;
 }
 
+.is-capitalized {
+  text-transform: capitalize;
+}
+
 .is-centered {
   text-align: center;
 }
