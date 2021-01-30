@@ -314,6 +314,7 @@ class ClauseFullPage extends PureComponent<
         year={year}
         title="Полная статистика"
         pageType="full"
+        isWithoutChartsTablesTabs
         hasParts={partsCount > 0}
       >
         <div className={cn(classes.clauseFullPageWrapper)}>
