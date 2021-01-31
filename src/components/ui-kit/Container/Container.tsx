@@ -6,13 +6,15 @@ interface ContainerProps {
   children: React.ReactNode;
   isThin?: boolean;
   className?: string;
+  id?: string;
 }
 
 class Container extends PureComponent<ContainerProps> {
   render(): React.ReactNode {
-    const { isThin } = this.props;
+    const { isThin, id } = this.props;
     return (
       <div
+        id={id}
         className={cn(classes.container, this.props.className, {
           [classes.isThin]: isThin,
         })}

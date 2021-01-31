@@ -123,9 +123,7 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
 
   const handleYearChange = (option: SelectOption) => {
     setSelectedYear(option);
-    //TODO: add view to getRouteForIndexPage in gatsby-routing.js
-    const selectUrl = "/" + String(option.value) + "#analitycs";
-    navigate(selectUrl);
+    navigate(getIndexLink(option.value, "page", "analitycs"));
   };
 
   const charts = getAnalyticsCharts(
@@ -144,7 +142,7 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
   }
 
   return (
-    <Container className={classes.analyticsWrapper}>
+    <Container id="analitycs" className={classes.analyticsWrapper}>
       <div>
         <Typography isUpperCased color="secondary">
           <T message="Аналитика" />

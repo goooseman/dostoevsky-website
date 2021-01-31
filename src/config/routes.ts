@@ -20,6 +20,11 @@ export type IndexPageViews =
   | "iframe-top-clauses"
   | "iframe-by-punishment";
 
-export const getIndexLink = (year: string, view: IndexPageViews): string => {
-  return getRouteForIndexPage(getLocale(), year, view);
+export const getIndexLink = (
+  year: string,
+  view: IndexPageViews,
+  /** without # */
+  anchor?: string
+): string => {
+  return getRouteForIndexPage(getLocale(), year, view, anchor);
 };
