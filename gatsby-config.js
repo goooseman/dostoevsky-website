@@ -106,7 +106,6 @@ module.exports = {
     description: "SEO description of dostoevsky",
     siteUrl: process.env.SITE_URL,
     embedsUrl: process.env.EMBEDS_URL,
-    netlifyUrl: process.env.NETLIFY_URL,
     api: {
       base: api_base,
       token: api_token,

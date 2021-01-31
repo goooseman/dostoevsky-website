@@ -11,7 +11,6 @@ import Input from "src/components/ui-kit/Input";
 import Button from "src/components/ui-kit/Button";
 import axios from "axios";
 import { MAILCHIMP_ADDRESS, MAILCHIMP_ID, MAILCHIMP_U } from "src/config/vars";
-import useSiteMetadata from "src/hooks/useSiteMetadata";
 
 interface FullDatasetDownloadModalProps {
   children?: React.ReactNode;
@@ -38,7 +37,6 @@ const FullDatasetDownloadModal: React.FC<FullDatasetDownloadModalProps> = ({
   const [email, setEmail] = useState("");
   const [telegramNick, setTelegramNick] = useState("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const { netlifyUrl } = useSiteMetadata();
   const { t } = useLocale();
 
   const handleDownload = () => {
@@ -93,9 +91,7 @@ const FullDatasetDownloadModal: React.FC<FullDatasetDownloadModalProps> = ({
       params.append("telegram-nick", telegramNick);
       setIsLoading(true);
       try {
-        // Website is deployed to Netlify only to use Netlify forms
-        // NETLIFY_URL env var can be removed if Netlify forms are not in use anymore
-        await axios.post(`${netlifyUrl}/`, params, {
+        await axios.post("/", params, {
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
         });
       } catch (e) {
