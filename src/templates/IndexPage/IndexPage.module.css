@@ -453,6 +453,7 @@
   bottom: 0;
   left: 0;
   display: flex;
+  align-items: flex-end;
   width: calc(100% - 1rem);
   padding-top: 1rem;
   border-top: 3px solid;
@@ -465,6 +466,7 @@
 
 .more-wrapper .more-item .more-item-bottom .more-item-date {
   margin-left: auto;
+  white-space: nowrap;
 }
 
 .more-wrapper .more-item.more-item-blog .more-item-type {
