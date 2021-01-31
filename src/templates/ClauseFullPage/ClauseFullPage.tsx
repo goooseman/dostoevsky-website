@@ -1,13 +1,14 @@
 import React, { PureComponent } from "react";
 import ClausePageLayout from "src/components/ClausePageLayout";
 import Typography from "src/components/ui-kit/Typography";
-import { T } from "react-targem";
+import { T, withLocale, WithLocale } from "react-targem";
 import Accordion, { AccordionNode } from "src/components/ui-kit/Accordion";
 import Checkbox from "src/components/ui-kit/Checkbox";
 import classes from "./ClauseFullPage.module.css";
 import cn from "clsx";
 import { getCsv } from "src/utils/csv";
 import { saveAs } from "file-saver";
+import { Helmet } from "react-helmet";
 
 const accordionData = [
   {
@@ -368,7 +369,7 @@ const getValueFromEdges = (id: string, data: any) => {
   }, "-");
 };
 
-interface ClauseFullPageProps {
+interface ClauseFullPageProps extends WithLocale {
   clauseNumber: number;
   year: number;
   partsCount: number;
@@ -565,20 +566,31 @@ class ClauseFullPage extends PureComponent<
   }
 
   render(): React.ReactNode {
-    const { clauseNumber, year, partsCount } = this.props;
+    const { clauseNumber, year, partsCount, t } = this.props;
     const { selected, allSelected, splitByArticle } = this.state;
 
     return (
       <ClausePageLayout
         clauseNumber={clauseNumber}
         year={year}
-        title="Полная статистика"
+        title={<T message="Полная статистика" />}
         pageType="full"
         isWithoutChartsTablesTabs
         hasParts={partsCount > 0}
       >
         <div className={cn(classes.clauseFullPageWrapper)}>
           <div>
+            <Helmet defer={false}>
+              <title>
+                {`${t("Статья")} ${clauseNumber} | ${t("Полная статистика")}`}
+              </title>
+              <meta
+                name="description"
+                content={t(
+                  "Вы можете выбрать интересующие вас параметры и скачать данные в формате .csv:"
+                )}
+              />
+            </Helmet>
             <Typography>
               <T message="Вы можете выбрать интересующие вас параметры и скачать данные в формате .csv: " />
             </Typography>
@@ -694,4 +706,4 @@ class ClauseFullPage extends PureComponent<
     );
   }
 }
-export default ClauseFullPage;
+export default withLocale(ClauseFullPage);

@@ -10,6 +10,7 @@ import { Menu, MenuItem } from "src/components/Menu";
 import FaqPageHowWasCollected from "./FaqPageHowWasCollected";
 import FaqPageUploadFieldsNParameterTree from "./FaqPageUploadFieldsNParameterTree";
 import Tooltip from "src/components/ui-kit/Tooltip";
+import { Helmet } from "react-helmet";
 
 const getFaqData = (t: WithLocale["t"]) => [
   {
@@ -871,6 +872,13 @@ const FaqPage: React.FC = () => {
   return (
     <main className={cn(classes.container)}>
       <Container>
+        <Helmet defer={false}>
+          <title>{t("О датасете")}</title>
+          <meta
+            name="description"
+            content={t("Как устроен проект Достоевский?")}
+          />
+        </Helmet>
         <SinglePageLayout>
           {/* <div className={cn(classes.searchWrapper)}>
             <Input

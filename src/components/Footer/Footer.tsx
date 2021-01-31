@@ -49,7 +49,7 @@ const Footer: React.FC<FooterProps> = () => {
         <div className={cn(classes.middleContainer)}>
           <Menu variant="onBlackBackground">
             <MenuLink to={getLinkForCurrentLocale("/clauses")} size="small">
-              <T message="каталог статей ук рф" />
+              <T message="Каталог статей УК РФ" />
             </MenuLink>
             {locale === "ru" ? (
               <MenuLink to={getLinkForCurrentLocale("/articles")} size="small">

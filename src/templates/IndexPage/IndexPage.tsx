@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import classes from "./IndexPage.module.css";
 import Promo from "src/components/Promo";
 import Container from "src/components/ui-kit/Container";
-import { T } from "react-targem";
+import { T, withLocale, WithLocale } from "react-targem";
 import Typography from "src/components/ui-kit/Typography";
 import IndexPageFilter from "./IndexPageFilter";
 import IndexPageAnalytics from "./IndexPageAnalytics";
@@ -13,13 +13,14 @@ import years from "content/years.json";
 import { Article } from "../ArticleFullPage/ArticleFullPage";
 import { IndexCounters, IndexTopClause } from "src/utils/index-page";
 import { IndexPageViews } from "src/config/routes";
+import { Helmet } from "react-helmet";
 
 const yearSelectOptions = years.map((y) => ({
   value: y.toString(),
   label: y.toString(),
 }));
 
-interface IndexPageProps {
+interface IndexPageProps extends WithLocale {
   articles: Partial<Article>[];
   currentSelectedYear: number;
   counters: IndexCounters;
@@ -38,6 +39,7 @@ export class IndexPage extends PureComponent<IndexPageProps> {
       articles,
       topClauses,
       view,
+      t,
     } = this.props;
     const defaultYearSelectOption = {
       value: currentSelectedYear.toString(),
@@ -65,6 +67,19 @@ export class IndexPage extends PureComponent<IndexPageProps> {
                 variant="h1"
                 className={classes.leftText}
               >
+                <Helmet defer={false}>
+                  <title>
+                    {`${t(
+                      "Статистика судебных решений"
+                    )} | ${currentSelectedYear}`}
+                  </title>
+                  <meta
+                    name="description"
+                    content={`${t("Статистика судебных решений")} ${t(
+                      "по статьям Уголовного кодекса на основе публикаций Судебного департамента при Верховном Суде РФ"
+                    )}`}
+                  />
+                </Helmet>
                 <b>
                   <T message="Статистика судебных решений" />{" "}
                 </b>
@@ -115,4 +130,4 @@ export class IndexPage extends PureComponent<IndexPageProps> {
   }
 }
 
-export default IndexPage;
+export default withLocale(IndexPage);

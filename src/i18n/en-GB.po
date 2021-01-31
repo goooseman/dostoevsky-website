@@ -21,6 +21,21 @@ msgid "Стрелка вправо"
 msgstr "Right arrow"
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
+#: src/components/Footer/Footer.tsx:
+#: src/components/Header/Header.tsx:
+msgid "Каталог статей УК РФ"
+msgstr "Articles of Criminal Code"
+
+#: src/components/Footer/Footer.tsx:
+#: src/components/Header/Header.tsx:
+
+#: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
+msgid ""
+"Полный перечень всех статей УК РФ, выберите статью для получения полной "
+"информации."
+msgstr ""
+
+#: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
 #: src/components/ui-kit/Modal/Modal.tsx:
 #: src/components/ui-kit/Modal/Modal.tsx:
@@ -38,12 +53,20 @@ msgid "Стрелка вниз"
 msgstr "Down arrow"
 
 #: src/components/ClausePageLayout/ClausePageLayout.tsx:
-msgid "ЧАРТЫ"
-msgstr "VISUALISATION"
+#: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid "Чарты"
+msgstr "Visualisation"
 
 #: src/components/ClausePageLayout/ClausePageLayout.tsx:
-msgid "ТАБЛИЦА"
-msgstr "TABLE"
+#: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+#: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid "Таблица"
+msgstr "Table"
 
 #: src/components/DownloadButton/DownloadButton.tsx:
 msgid "Скачать чарт"
@@ -84,11 +107,7 @@ msgstr "D4S logo"
 
 #: src/components/Footer/Footer.tsx:
 #: src/components/Header/Header.tsx:
-msgid "каталог статей ук рф"
-msgstr "articles of Criminal Code of Russian Federation"
-
-#: src/components/Footer/Footer.tsx:
-#: src/components/Header/Header.tsx:
+#: src/templates/ArticlesPage/ArticlesPageFilter/ArticlesPageFilter.tsx:
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "Аналитика"
 msgstr "Analytics"
@@ -247,9 +266,11 @@ msgid "Продюсер"
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
+#: src/templates/AboutPage/AboutPage.tsx:
 msgid "О проекте"
 msgstr "About"
 
+#: src/templates/AboutPage/AboutPage.tsx:
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Что такое Достоевский?"
 msgstr ""
@@ -456,13 +477,33 @@ msgid "Поделиться:"
 msgstr ""
 
 #: src/templates/ArticlesPage/ArticlesPageFilter/ArticlesPageFilter.tsx:
+msgid "Блог аналитических статей от наших специалистов"
+msgstr ""
+
+#: src/templates/ArticlesPage/ArticlesPageFilter/ArticlesPageFilter.tsx:
 msgid "Все"
 msgstr ""
 
 #: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:
+#: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:
+#: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:
 msgid "Хронология"
 msgstr "Chronology"
 
+#: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:
+#: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:
+#: src/templates/ClauseFullPage/ClauseFullPage.tsx:
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+#: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid "Статья"
+msgstr ""
+
+#: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:
+#: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:
 #: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:
 msgid ""
 "На этой странице мы сравнили ключевые показатели по статье за период с 2009 по "
@@ -670,6 +711,15 @@ msgid "Динамика числа осужденных по основному 
 msgstr ""
 
 #: src/templates/ClauseFullPage/ClauseFullPage.tsx:
+#: src/templates/ClauseFullPage/ClauseFullPage.tsx:
+msgid "Полная статистика"
+msgstr ""
+
+#: src/templates/ClauseFullPage/ClauseFullPage.tsx:
+msgid "Вы можете выбрать интересующие вас параметры и скачать данные в формате .csv:"
+msgstr ""
+
+#: src/templates/ClauseFullPage/ClauseFullPage.tsx:
 msgid "Вы можете выбрать интересующие вас параметры и скачать данные в формате .csv: "
 msgstr ""
 
@@ -680,6 +730,24 @@ msgstr "Select all options"
 #: src/templates/ClauseFullPage/ClauseFullPage.tsx:
 msgid "Разбить по частям"
 msgstr "Divide by category"
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "Основной и дополнительный составы"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "Основной и дополнительный состав: общие сведения"
+msgstr "Main and additional qualification: general information"
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "Общие сведения по основному и дополнительному составу статьи в виде таблицы"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "Общие сведения по основному и дополнительному составу статьи в виде чартов"
+msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "количество человек, чьи дела прошли через суд"
@@ -706,10 +774,8 @@ msgid "общее количество случаев использования
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
-msgid "Основной и дополнительный состав: общие сведения"
-msgstr "Main and additional qualification: general information"
-
-#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+#: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 msgid "Основной состав: в фокусе"
 msgstr ""
 
@@ -821,6 +887,10 @@ msgid "Принудительное лечение"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
+msgid "Информация по основному и дополнительному составу статьи в виде чартов"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
 msgid "человек осуждены за год"
 msgstr ""
 
@@ -870,6 +940,10 @@ msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
 msgid "Наказания для подсудимых по статье "
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
+msgid "Информация по основному и дополнительному составу статьи в виде таблицы"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
@@ -1136,6 +1210,20 @@ msgstr "additional qualification"
 #: src/templates/ClauseMainPage/components/tables/CommonMainResultsTable/CommonMainResultsTable.tsx:
 msgid "Результаты рассмотрения дел по статье: основные параметры"
 msgstr "Outcome of cases: basic parameters"
+
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid "Части"
+msgstr ""
+
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid "Информация по частям статьи в виде таблицы"
+msgstr ""
+
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid "Информация по частям статьи в виде чартов"
+msgstr ""
 
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
 msgid ""
@@ -2012,6 +2100,14 @@ msgid ""
 "пяти лет."
 msgstr ""
 
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "О датасете"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "Как устроен проект Достоевский?"
+msgstr ""
+
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "статья"
 msgstr "article"
@@ -2782,17 +2878,25 @@ msgstr "Loading..."
 
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
+#: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 msgid "Полный датасет"
 msgstr "Full dataset"
+
+#: src/templates/FullDatasetPage/FullDatasetPage.tsx:
+msgid "Скачать полный датасет о статистике преступлений и наказаний в России"
+msgstr ""
 
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 msgid "Произошла ошибка. Пожалуйста, измените параметры поиска."
 msgstr ""
 
 #: src/templates/IndexPage/IndexPage.tsx:
+#: src/templates/IndexPage/IndexPage.tsx:
+#: src/templates/IndexPage/IndexPage.tsx:
 msgid "Статистика судебных решений"
 msgstr "Statistics on court decisions"
 
+#: src/templates/IndexPage/IndexPage.tsx:
 #: src/templates/IndexPage/IndexPage.tsx:
 msgid ""
 "по статьям Уголовного кодекса на основе публикаций Судебного департамента при "

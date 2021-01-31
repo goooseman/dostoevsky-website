@@ -5,6 +5,7 @@ import { withLocale, WithLocale } from "react-targem";
 import { getClauseLink } from "src/config/routes";
 import Typography from "src/components/ui-kit/Typography";
 import type { I18nText } from "src/types";
+import { Helmet } from "react-helmet";
 
 interface CatalogueRowProps {
   id: number;
@@ -90,6 +91,15 @@ class ClausePageCatalogue extends PureComponent<ClausePageCatalogueProps> {
 
     return (
       <div className={cn(classes.container)}>
+        <Helmet defer={false}>
+          <title>{t("Каталог статей УК РФ")}</title>
+          <meta
+            name="description"
+            content={t(
+              "Полный перечень всех статей УК РФ, выберите статью для получения полной информации."
+            )}
+          />
+        </Helmet>
         <div className={cn(classes.column)}>
           {parts.map((p) => (
             <CatalogueRow

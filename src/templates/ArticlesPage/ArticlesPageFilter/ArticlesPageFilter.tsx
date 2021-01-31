@@ -8,6 +8,7 @@ import PillButton, {
 } from "src/components/ui-kit/PillButton";
 import { graphql, useStaticQuery } from "gatsby";
 import { ArticleTag } from "src/types";
+import { Helmet } from "react-helmet";
 
 interface ArticlesFeedPageFilterProps {
   currentFilter?: ArticleTag;
@@ -45,6 +46,13 @@ export const ArticlesFeedPageFilter: React.FC<ArticlesFeedPageFilterProps> = ({
   return (
     <Container>
       <div className={cn(classes.tags)}>
+        <Helmet defer={false}>
+          <title>{t("Аналитика")}</title>
+          <meta
+            name="description"
+            content={t("Блог аналитических статей от наших специалистов")}
+          />
+        </Helmet>
         <PillButton
           value={t("Все")}
           isActive={Boolean(currentFilter)}

@@ -7,6 +7,7 @@ import SinglePageLayout from "src/components/SinglePageLayout";
 import { T, withLocale, WithLocale } from "react-targem";
 import Separator from "src/components/ui-kit/Separator";
 import Tooltip from "src/components/ui-kit/Tooltip";
+import { Helmet } from "react-helmet";
 
 interface AboutPageProps extends WithLocale {}
 
@@ -67,6 +68,10 @@ class AboutPage extends PureComponent<AboutPageProps> {
     return (
       <main className={cn(classes.container)}>
         <Container isThin>
+          <Helmet defer={false}>
+            <title>{t("О проекте")}</title>
+            <meta name="description" content={t("Что такое Достоевский?")} />
+          </Helmet>
           <SinglePageLayout title={<T message="О проекте" />}>
             <>
               <Typography isUpperCased variant="h3">

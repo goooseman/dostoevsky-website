@@ -116,7 +116,7 @@ const Header: React.FC<HeaderProps> = ({ location }: HeaderProps) => {
                 to={getLinkForCurrentLocale("/clauses")}
                 size="normal"
               >
-                <T message="каталог статей ук рф" />
+                <T message="Каталог статей УК РФ" />
               </MenuLink>
               {locale === "ru" ? (
                 <MenuLink

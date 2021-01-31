@@ -14,6 +14,8 @@ import { getClauseLink } from "src/config/routes";
 import ClauseMainPageFocus from "./ClauseMainPageFocus";
 import T from "src/components/T";
 import ClauseMainPageFocusTable from "./ClauseMainPageFocusTable";
+import { withLocale, WithLocale } from "react-targem";
+import { Helmet } from "react-helmet";
 
 export type ClausePartsPageViewMode =
   | "page"
@@ -25,7 +27,7 @@ export type ClausePartsPageViewMode =
   | "iframe-by-result"
   | "iframe-table-focus";
 
-interface ClauseMainPageProps {
+interface ClauseMainPageProps extends WithLocale {
   clauseNumber: number;
   year: number;
   partsCount: number;
@@ -112,6 +114,7 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
       totalDismissal,
       totalCases,
       view,
+      t,
     } = this.props;
 
     if (view === "iframe-table-common-main-by-result") {
@@ -134,7 +137,7 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
       <ClausePageLayout
         clauseNumber={clauseNumber}
         year={year}
-        title="Основной и дополнительный составы"
+        title={t("Основной и дополнительный составы")}
         pageType="main"
         hasParts={partsCount > 0}
         headerChildren={this.renderHeaderChildren()}
@@ -155,6 +158,19 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
         ) : null}
         {view === "table" ? (
           <>
+            <Helmet defer={false}>
+              <title>
+                {`${t("Статья")} ${clauseNumber} | ${t(
+                  "Основной и дополнительный состав: общие сведения"
+                )} | ${t("Таблица")}`}
+              </title>
+              <meta
+                name="description"
+                content={t(
+                  "Общие сведения по основному и дополнительному составу статьи в виде таблицы"
+                )}
+              />
+            </Helmet>
             <div className={classes.tableContainer}>
               <CommonMainResultsTable {...this.props} />
             </div>
@@ -165,6 +181,19 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
         ) : null}
         {view === "page" ? (
           <>
+            <Helmet defer={false}>
+              <title>
+                {`${t("Статья")} ${clauseNumber} | ${t(
+                  "Основной и дополнительный состав: общие сведения"
+                )} | ${t("Чарты")}`}
+              </title>
+              <meta
+                name="description"
+                content={t(
+                  "Общие сведения по основному и дополнительному составу статьи в виде чартов"
+                )}
+              />
+            </Helmet>
             <Counters className={cn(classes.counter)}>
               <Counter
                 counter={total}
@@ -334,4 +363,4 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
   };
 }
 
-export default ClauseMainPage;
+export default withLocale(ClauseMainPage);

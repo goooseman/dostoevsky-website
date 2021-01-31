@@ -168,7 +168,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
                       chartsLink || getClauseLink(clauseNumber, year, pageType)
                     }
                   >
-                    <T message="ЧАРТЫ" />
+                    <T message="Чарты" />
                   </MenuLink>
                   <MenuLink
                     to={
@@ -176,7 +176,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
                       getClauseLink(clauseNumber, year, pageType, "table")
                     }
                   >
-                    <T message="ТАБЛИЦА" />
+                    <T message="Таблица" />
                   </MenuLink>
                 </Menu>
               ) : null}

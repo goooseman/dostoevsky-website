@@ -7,7 +7,7 @@ import Typography from "src/components/ui-kit/Typography";
 import Button from "src/components/ui-kit/Button";
 import { useModal } from "src/components/ui-kit/Modal";
 import SinglePageLayout from "src/components/SinglePageLayout";
-import { T } from "react-targem";
+import { T, useLocale } from "react-targem";
 import { OptionTypeBase, GroupedOptionsType } from "react-select";
 import axios from "axios";
 import metricsData from "content/metriсs.json";
@@ -15,6 +15,7 @@ import Table from "src/components/Table";
 import FullDatasetSelect from "./FullDatasetSelect";
 import FullDatasetDownloadModal from "./FullDatasetDownloadModal";
 import Loading from "src/components/ui-kit/Loading";
+import { Helmet } from "react-helmet";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { api } = require("../../../gatsby-config").siteMetadata;
@@ -85,6 +86,7 @@ const AUTH_AXIOS_OPTIONS = {
 };
 
 const FullDatasetPage: React.FC = () => {
+  const { t } = useLocale();
   const [yearsOptions, setYearsOptions] = useState<
     GroupedOptionsType<OptionTypeBase>
   >([]);
@@ -292,6 +294,15 @@ const FullDatasetPage: React.FC = () => {
   return (
     <main className={cn(classes.container)}>
       <Container>
+        <Helmet defer={false}>
+          <title>{t("Полный датасет")}</title>
+          <meta
+            name="description"
+            content={t(
+              "Скачать полный датасет о статистике преступлений и наказаний в России"
+            )}
+          />
+        </Helmet>
         <SinglePageLayout title={<T message="Полный датасет" />}>
           <FullDatasetSelect
             label="год"
