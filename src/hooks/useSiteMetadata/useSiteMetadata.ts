@@ -3,7 +3,7 @@ import { SiteSiteMetadata } from "types/graphql-types";
 
 const useSiteMetadata = (): Pick<
   SiteSiteMetadata,
-  "title" | "description" | "siteUrl" | "embedsUrl"
+  "title" | "description" | "siteUrl" | "embedsUrl" | "netlifyUrl"
 > => {
   try {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -16,6 +16,7 @@ const useSiteMetadata = (): Pick<
               description
               siteUrl
               embedsUrl
+              netlifyUrl
             }
           }
         }
