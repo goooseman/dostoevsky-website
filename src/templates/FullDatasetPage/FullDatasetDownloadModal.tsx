@@ -84,22 +84,24 @@ const FullDatasetDownloadModal: React.FC<FullDatasetDownloadModalProps> = ({
 
       setIsLoading(false);
     }
-    if (telegramNick || email) {
-      const params = new URLSearchParams();
-      params.append("form-name", "full-dataset");
-      params.append("email", email);
-      params.append("telegram-nick", telegramNick);
-      setIsLoading(true);
-      try {
-        await axios.post("/", params, {
+    const params = new URLSearchParams();
+    params.append("email", email);
+    params.append("telegram-nick", telegramNick);
+    params.append("subject", "Пользователь скачал полный датасет");
+    setIsLoading(true);
+    try {
+      await fetch(
+        "https://formsubmit.io/send/14fbbc76-38f5-4d2d-b71f-75da4c34554e",
+        {
+          method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        });
-      } catch (e) {
-        console.error(e);
-      }
-
-      setIsLoading(false);
+          body: params.toString(),
+        }
+      );
+    } catch (e) {
+      console.error(e);
     }
+    setIsLoading(false);
     handleDownload();
   };
 
@@ -112,9 +114,6 @@ const FullDatasetDownloadModal: React.FC<FullDatasetDownloadModalProps> = ({
       isCentered
     >
       <form
-        data-netlify="true"
-        name="full-dataset"
-        method="post"
         onSubmit={handleFormSubmit}
         className={cn(classes.fullDatasetDownloadModalWrapper)}
       >
