@@ -18,9 +18,9 @@ const commonProps = {
 };
 
 const byResult = [
-  "осуждённых",
+  "осуждeнных",
   "оправданных",
-  "прекращённых",
+  "прекращeнных",
   "принудительное лечение",
 ];
 export const withTwoGroups = (): React.ReactNode => {
