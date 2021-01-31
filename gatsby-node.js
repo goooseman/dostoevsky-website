@@ -177,17 +177,19 @@ exports.createPages = async ({ actions, graphql }) => {
                   context: { ...contextWithYear, view },
                 });
               }
-              createPage({
-                path: getRouteForClausePage(
-                  locale,
-                  chapter.id,
-                  year,
-                  "full",
-                  "page"
-                ),
-                component: path.resolve(`src/page-templates/clause-full.tsx`),
-                context: contextWithYear,
-              });
+              if (!IS_ONLY_EMBED) {
+                createPage({
+                  path: getRouteForClausePage(
+                    locale,
+                    chapter.id,
+                    year,
+                    "full",
+                    "page"
+                  ),
+                  component: path.resolve(`src/page-templates/clause-full.tsx`),
+                  context: contextWithYear,
+                });
+              }
             }
           }
           const chronoPageViewModes = [
