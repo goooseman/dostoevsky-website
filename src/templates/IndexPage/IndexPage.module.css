@@ -184,6 +184,8 @@
   display: flex;
   margin-left: 2rem;
   text-decoration: none;
+  position: relative;
+  bottom: -10rem;
 }
 
 .analytics-link-wrapper .analytics-link {
@@ -194,6 +196,8 @@
 @media all and (max-width: 680px) {
   .analytics-link-wrapper {
     margin: 1rem 0;
+    bottom: inherit;
+    position: static;
   }
 
   .analytics-link-wrapper .analytics-link {
