@@ -2471,6 +2471,8 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   flags?: Maybe<SiteFlagsFilterInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
@@ -2632,6 +2634,8 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
+  port?: Maybe<Scalars['Int']>;
+  host?: Maybe<Scalars['String']>;
   flags?: Maybe<SiteFlags>;
   pathPrefix?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
@@ -2840,6 +2844,8 @@ export type SiteFieldsEnum =
   | 'siteMetadata___api___token'
   | 'siteMetadata___api___headers___Content_Type'
   | 'siteMetadata___api___headers___Authorization'
+  | 'port'
+  | 'host'
   | 'flags___PRESERVE_WEBPACK_CACHE'
   | 'flags___PRESERVE_FILE_DOWNLOAD_CACHE'
   | 'flags___FAST_REFRESH'
@@ -2935,6 +2941,8 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   flags?: Maybe<SiteFlagsFilterInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
@@ -3007,6 +3015,11 @@ export type SitePageContext = {
   locale?: Maybe<Scalars['String']>;
   article?: Maybe<SitePageContextArticle>;
   slug?: Maybe<Scalars['String']>;
+  year?: Maybe<Scalars['Int']>;
+  view?: Maybe<Scalars['String']>;
+  partRegex?: Maybe<Scalars['String']>;
+  clauseRegex?: Maybe<Scalars['String']>;
+  clauseId?: Maybe<Scalars['Float']>;
 };
 
 export type SitePageContextArticle = {
@@ -3035,6 +3048,11 @@ export type SitePageContextFilterInput = {
   locale?: Maybe<StringQueryOperatorInput>;
   article?: Maybe<SitePageContextArticleFilterInput>;
   slug?: Maybe<StringQueryOperatorInput>;
+  year?: Maybe<IntQueryOperatorInput>;
+  view?: Maybe<StringQueryOperatorInput>;
+  partRegex?: Maybe<StringQueryOperatorInput>;
+  clauseRegex?: Maybe<StringQueryOperatorInput>;
+  clauseId?: Maybe<FloatQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -3146,6 +3164,11 @@ export type SitePageFieldsEnum =
   | 'context___article___locale'
   | 'context___article___html'
   | 'context___slug'
+  | 'context___year'
+  | 'context___view'
+  | 'context___partRegex'
+  | 'context___clauseRegex'
+  | 'context___clauseId'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'
