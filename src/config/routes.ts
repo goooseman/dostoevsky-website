@@ -4,18 +4,12 @@ import {
 } from "../../gatsby-routing";
 import { getLocale } from "src/utils/locales";
 
-enum clauseLinkTypes {
-  main = "",
-  parts = "parts",
-  chronology = "chronology",
-  full = "full",
-  focus = "focus",
-}
+type clauseLinkTypes = "main" | "parts" | "chronology" | "full";
 
 export const getClauseLink = (
   clause: string | number,
   year: string | number | undefined,
-  type: keyof typeof clauseLinkTypes,
+  type: clauseLinkTypes,
   view = "page"
 ): string => {
   return getRouteForClausePage(getLocale(), clause, year, type, view);
@@ -26,6 +20,11 @@ export type IndexPageViews =
   | "iframe-top-clauses"
   | "iframe-by-punishment";
 
-export const getIndexLink = (year: string, view: IndexPageViews): string => {
-  return getRouteForIndexPage(getLocale(), year, view);
+export const getIndexLink = (
+  year: string,
+  view: IndexPageViews,
+  /** without # */
+  anchor?: string
+): string => {
+  return getRouteForIndexPage(getLocale(), year, view, anchor);
 };

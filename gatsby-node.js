@@ -33,11 +33,11 @@ exports.createPages = async ({ actions, graphql }) => {
     createRedirect({
       fromPath: `/${simplePage}`,
       isPermanent: true,
-      toPath: getRouteForLocale(DEFAULT_LOCALE, `/${simplePage}`),
+      toPath: getRouteForLocale(DEFAULT_LOCALE, `/${simplePage}/`),
     });
     for (locale of LOCALE_CODES) {
       createPage({
-        path: getRouteForLocale(locale, `/${simplePage}`),
+        path: getRouteForLocale(locale, `/${simplePage}/`),
         component: path.resolve(`src/page-templates/simple/${simplePage}.tsx`),
         context: {
           locale,
@@ -62,6 +62,7 @@ exports.createPages = async ({ actions, graphql }) => {
               teaser
               date
               author
+              locale
             }
           }
         }
@@ -76,7 +77,7 @@ exports.createPages = async ({ actions, graphql }) => {
     result.data.allMarkdownRemark.edges.forEach(
       async ({ node }) =>
         await createPage({
-          path: `/${node.frontmatter.locale}${node.frontmatter.slug}`,
+          path: `/${node.frontmatter.locale}${node.frontmatter.slug}/`,
           component: require.resolve("./src/page-templates/article-full.tsx"),
           context: {
             article: { ...node.frontmatter, html: node.html },
@@ -125,6 +126,7 @@ exports.createPages = async ({ actions, graphql }) => {
                 IS_ONLY_EMBED ? undefined : "page",
                 IS_ONLY_EMBED ? undefined : "table",
                 IS_ONLY_EMBED ? undefined : "focus",
+                IS_ONLY_EMBED ? undefined : "focus-table",
                 IS_WITHOUT_EMBED
                   ? undefined
                   : "iframe-table-common-main-by-result",
@@ -132,6 +134,7 @@ exports.createPages = async ({ actions, graphql }) => {
                   ? undefined
                   : "iframe-table-common-add-by-result",
                 IS_WITHOUT_EMBED ? undefined : "iframe-by-result",
+                IS_WITHOUT_EMBED ? undefined : "iframe-table-focus",
               ];
               for (const view of mainPageViewModes) {
                 if (view === undefined) {
@@ -175,17 +178,19 @@ exports.createPages = async ({ actions, graphql }) => {
                   context: { ...contextWithYear, view },
                 });
               }
-              createPage({
-                path: getRouteForClausePage(
-                  locale,
-                  chapter.id,
-                  year,
-                  "full",
-                  "page"
-                ),
-                component: path.resolve(`src/page-templates/clause-full.tsx`),
-                context: contextWithYear,
-              });
+              if (!IS_ONLY_EMBED) {
+                createPage({
+                  path: getRouteForClausePage(
+                    locale,
+                    chapter.id,
+                    year,
+                    "full",
+                    "page"
+                  ),
+                  component: path.resolve(`src/page-templates/clause-full.tsx`),
+                  context: contextWithYear,
+                });
+              }
             }
           }
           const chronoPageViewModes = [

@@ -7,7 +7,7 @@ import Table from "src/components/Table";
 import metrics from "content/metriсs.json";
 import Tooltip from "src/components/ui-kit/Tooltip";
 
-const FaqPageUploadFieldsNParameterTree = () => {
+const FaqPageUploadFieldsNParameterTree: React.FC = () => {
   const { t } = useLocale();
 
   const tables = [
@@ -50,48 +50,51 @@ const FaqPageUploadFieldsNParameterTree = () => {
           <li>
             <b>
               <T message="Всего осуждено" />
-            </b>{" "}
-            <T message="(totalConvicted). Показатель описывает случаи, когда суд признал человека виновным и назначил наказание:" />
+            </b>
+            {" (totalConvicted). "}
+            <T message="Показатель описывает случаи, когда суд признал человека виновным и назначил наказание:" />
             <ol>
               <li>
                 <b>
                   <T message="Пожизненное лишение свободы" />
                 </b>{" "}
-                <T message="(primaryLifeSentence)" />
+                (primaryLifeSentence)
               </li>
               <li>
                 <b>
                   <T message="Лишение свободы" />
-                </b>{" "}
-                <T message="(primaryImprisonment). Категории нет в таблице, дана детализация по срокам наказания:" />
+                </b>
+                {" (primaryImprisonment). "}
+                <T message=" Категории нет в таблице, дана детализация по срокам наказания:" />
                 <ol type="a">
                   <li>
                     <T message="Лишение свободы: количество осужденных по срокам" />{" "}
                     <b>
                       <T message="до 1 года включительно" />
-                    </b>{" "}
-                    <T message="(primaryImprisonment1);" />
+                    </b>
+                    {" (primaryImprisonment1);"}
                   </li>
                   <li>
                     <T message="Лишение свободы: количество осужденных по срокам" />{" "}
                     <b>
                       <T message="от 1 до 3 лет включительно" />
-                    </b>{" "}
-                    <T message="(primaryImprisonment1_3) — в некоторых таблицах Судебного департамента детализация по этим данным представлена единым блоком, в других дана раздельно по следующим категориям:" />
+                    </b>
+                    {" (primaryImprisonment1_3)"}
+                    <T message="— в некоторых таблицах Судебного департамента детализация по этим данным представлена единым блоком, в других дана раздельно по следующим категориям:" />
                     <ul>
                       <li>
                         <T message="Лишение свободы: количество осужденных по срокам" />{" "}
                         <b>
                           <T message="свыше 1 до 2 лет включительно" />
-                        </b>{" "}
-                        <T message="(primaryImprisonment1_2)" />
+                        </b>
+                        {" (primaryImprisonment1_2)"}
                       </li>
                       <li>
                         <T message="Лишение свободы: количество осужденных по срокам" />{" "}
                         <b>
                           <T message="свыше 2 до 3 лет включительно" />
                         </b>{" "}
-                        <T message="(primaryImprisonment2_3)" />
+                        (primaryImprisonment2_3)
                       </li>
                     </ul>
                   </li>
@@ -100,35 +103,35 @@ const FaqPageUploadFieldsNParameterTree = () => {
                     <b>
                       <T message="свыше 3 до 5 лет включительно" />
                     </b>{" "}
-                    <T message="(primaryImprisonment3_5)" />
+                    (primaryImprisonment3_5)
                   </li>
                   <li>
                     <T message="Лишение свободы: количество осужденных по срокам" />{" "}
                     <b>
                       <T message="свыше 5 до 8 лет включительно" />
                     </b>{" "}
-                    <T message="(primaryImprisonment5_8)" />
+                    (primaryImprisonment5_8)
                   </li>
                   <li>
                     <T message="Лишение свободы: количество осужденных по срокам" />{" "}
                     <b>
                       <T message="свыше 8 до 10 лет включительно" />
                     </b>{" "}
-                    <T message="(primaryImprisonment8_10)" />
+                    (primaryImprisonment8_10)
                   </li>
                   <li>
                     <T message="Лишение свободы: количество осужденных по срокам" />{" "}
                     <b>
                       <T message="свыше 10 до 15 лет включительно" />
                     </b>{" "}
-                    <T message="(primaryImprisonment10_15)" />
+                    (primaryImprisonment10_15)
                   </li>
                   <li>
                     <T message="Лишение свободы: количество осужденных по срокам" />{" "}
                     <b>
                       <T message="свыше 15 до 20 лет включительно" />
                     </b>{" "}
-                    <T message="(primaryImprisonment15_20)" />
+                    (primaryImprisonment15_20)
                   </li>
                 </ol>
               </li>
@@ -136,23 +139,26 @@ const FaqPageUploadFieldsNParameterTree = () => {
                 <b>
                   <T message="Арест" />
                 </b>{" "}
-                <T message="(primaryArrest)" />
+                (primaryArrest)
               </li>
               <li>
                 <b>
                   <T message="Ограничение свободы" />
-                </b>{" "}
-                <T message="(primaryRestrain) и" />{" "}
+                </b>
+                {" (primaryRestrain) "}
+                <T message="и" />{" "}
                 <b>
                   <T message="ограничение свободы/ограничение по военной службе, содержание в дисциплинарной воинской части" />
-                </b>{" "}
-                <T message="(primaryRestrain2009). Это одинаковые показатели, но в таблицах они обозначены по-разному. Показатель primaryRestrain2009 относится только к данным 2009 года." />
+                </b>
+                {" (primaryRestrain2009). "}
+                <T message="Это одинаковые показатели, но в таблицах они обозначены по-разному. Показатель primaryRestrain2009 относится только к данным 2009 года." />
               </li>
               <li>
                 <b>
                   <T message="Ограничения по воинской службе" />
-                </b>{" "}
-                <T message="(primaryRestrictionsInMilitaryService). Этот показатель частично пересекается с пунктом I.4." />
+                </b>
+                {" (primaryRestrictionsInMilitaryService). "}
+                <T message="Этот показатель частично пересекается с пунктом I.4." />
                 <Tooltip tip={t("раздел «Основной состав», пункт I.4.")} />
                 <T message="Вероятно, в некоторых таблицах эта мера наказания была объединена с другими, затем статистические формы поменяли" />
               </li>
@@ -160,67 +166,68 @@ const FaqPageUploadFieldsNParameterTree = () => {
                 <b>
                   <T message="Исправительные работы" />
                 </b>{" "}
-                <T message="(primaryCorrectionalLabour)" />
+                (primaryCorrectionalLabour)
               </li>
               <li>
                 <b>
                   <T message="Обязательные работы" />
                 </b>{" "}
-                <T message="(primaryCommunityService)" />
+                (primaryCommunityService)
               </li>
               <li>
                 <b>
                   <T message="Принудительные работы" />
                 </b>{" "}
-                <T message="(primaryForcedLabour)" />
+                (primaryForcedLabour)
               </li>
               <li>
                 <b>
                   <T message="Штраф (основное наказание)" />
-                </b>{" "}
-                <T message="(primaryFine). Дана детализация по сумме штрафа:" />
+                </b>
+                {" (primaryFine). "}
+                <T message="Дана детализация по сумме штрафа:" />
                 <ol type="a">
                   <li>
                     <T message="Штраф: количество осужденных по размеру штрафа" />{" "}
                     <b>
                       <T message="до 5 тысяч рублей" />
                     </b>{" "}
-                    <T message="(primaryFine5);" />
+                    (primaryFine5);
                   </li>
                   <li>
                     <T message="Штраф: количество осужденных по размеру штрафа" />{" "}
                     <b>
                       <T message="свыше 5 тыс. до 25 тыс. рублей" />
                     </b>{" "}
-                    <T message="(primaryFine5_25);" />
+                    (primaryFine5_25);
                   </li>
                   <li>
                     <T message="Штраф: количество осужденных по размеру штрафа" />{" "}
                     <b>
                       <T message="свыше 25 тыс. до 500 тыс. рублей" />
                     </b>{" "}
-                    <T message="(primaryFine25_500);" />
+                    (primaryFine25_500);
                     <ul>
                       <li>
                         <T message="Штраф: количество осужденных по размеру штрафа" />{" "}
                         <b>
                           <T message="свыше 25 тыс. до 100 тыс. рублей" />
                         </b>{" "}
-                        <T message="(primaryFine25_100);" />
+                        (primaryFine25_100);
                       </li>
                       <li>
                         <T message="Штраф: количество осужденных по размеру штрафа" />{" "}
                         <b>
-                          <T message="свыше 100 тыс. до 300 тыс. рублей" />{" "}
-                        </b>
-                        <T message="(primaryFine100_300);" />
+                          <T message="свыше 100 тыс. до 300 тыс. рублей" />
+                        </b>{" "}
+                        (primaryFine100_300);
                       </li>
                       <li>
                         <T message="Штраф: количество осужденных по размеру штрафа" />{" "}
                         <b>
                           <T message="свыше 300 тыс. до 500 тыс. рублей" />{" "}
                         </b>
-                        <T message="(primaryFine300_500);" />
+                        (primaryFine300_500);
                       </li>
                     </ul>
                   </li>
@@ -229,14 +236,14 @@ const FaqPageUploadFieldsNParameterTree = () => {
                     <b>
                       <T message="свыше 500 тыс. до 1 млн рублей" />{" "}
                     </b>
-                    <T message="(primaryFine500_1M);" />
+                    (primaryFine500_1M);
                   </li>
                   <li>
                     <T message="Штраф: количество осужденных по размеру штрафа" />{" "}
                     <b>
                       <T message="свыше 1 млн рублей" />{" "}
                     </b>
-                    <T message="(primaryFine1M);" />
+                    (primaryFine1M);
                   </li>
                 </ol>
               </li>
@@ -244,13 +251,13 @@ const FaqPageUploadFieldsNParameterTree = () => {
                 <b>
                   <T message="Лишение права занимать определенные должности или заниматься определенной деятельностью" />
                 </b>{" "}
-                <T message="(primaryDisqualification);" />
+                (primaryDisqualification);
               </li>
               <li>
                 <b>
                   <T message="Содержание в дисциплинарной воинской части" />
                 </b>{" "}
-                <T message="(primaryMilitaryDisciplinaryUnit);" />
+                (primaryMilitaryDisciplinaryUnit);
               </li>
               <li>
                 <b>
@@ -261,22 +268,25 @@ const FaqPageUploadFieldsNParameterTree = () => {
               <li>
                 <b>
                   <T message="Условное осуждение к лишению свободы" />
-                </b>{" "}
-                <T message="(primarySuspended). Эта категория не квалифицируется как мера наказания (принято считать это наказанием, совмещенным с освобождением от него), однако в данных Судебного департамента она дана как еще один вид наказания." />
+                </b>
+                {" (primarySuspended). "}
+                <T message="Эта категория не квалифицируется как мера наказания (принято считать это наказанием, совмещенным с освобождением от него), однако в данных Судебного департамента она дана как еще один вид наказания." />
               </li>
             </ol>
           </li>
           <li>
             <b>
               <T message="Оправдано" />
-            </b>{" "}
-            <T message="(acquittal). Показатель описывает случаи, когда по решению суда человек признан невиновным." />
+            </b>
+            {" (acquittal). "}
+            <T message="Показатель описывает случаи, когда по решению суда человек признан невиновным." />
           </li>
           <li>
             <b>
               <T message="Прекращено" />
-            </b>{" "}
-            <T message="(dismissal). Показатель описывает случаи, когда судебное производство было прекращено. Категории нет в таблице, дана детализация по основаниям прекращения:" />
+            </b>
+            {" (dismissal). "}
+            <T message="Показатель описывает случаи, когда судебное производство было прекращено. Категории нет в таблице, дана детализация по основаниям прекращения:" />
             <ol>
               <li>
                 <b>
@@ -287,8 +297,8 @@ const FaqPageUploadFieldsNParameterTree = () => {
                   <li>
                     <b>
                       <T message="Прекращено за отсутствием события, состава, непричастностью к преступлению" />
-                    </b>{" "}
-                    <T message="(dismissalAbsenceOfEvent)." />
+                    </b>
+                    {" (dismissalAbsenceOfEvent)."}
                   </li>
                   <li>
                     <b>
@@ -306,21 +316,21 @@ const FaqPageUploadFieldsNParameterTree = () => {
                         <T message="Обстоятельства, исключающие преступность деяния:" />{" "}
                         <b>
                           <T message="необходимая оборона" />
-                        </b>{" "}
-                        <T message="(noCrimeSelf-defence)" />
+                        </b>
+                        {" (noCrimeSelf-defence)"}
                       </li>
                       <li>
                         <T message="Обстоятельства, исключающие преступность деяния:" />{" "}
                         <b>
                           <T message="крайняя необходимость" />
                         </b>{" "}
-                        <T message="(noCrimeNecessity)" />
+                        (noCrimeNecessity)
                       </li>
                       <li>
                         <b>
                           <T message="Обстоятельства, исключающие преступность, предусмотренные статьями 38, 40-42 УК РФ" />
                         </b>{" "}
-                        <T message="(noCrimeOther)" />
+                        (noCrimeOther)
                       </li>
                     </ul>
                   </li>
@@ -336,57 +346,59 @@ const FaqPageUploadFieldsNParameterTree = () => {
                     <b>
                       <T message="Прекращено по амнистии" />
                     </b>{" "}
-                    <T message="(dismissalAmnesty)" />
+                    (dismissalAmnesty)
                   </li>
                   <li>
                     <b>
                       <T message="Прекращено за примирением с потерпевшим" />
                     </b>{" "}
-                    <T message="(dismissalReconciliation)" />
+                    (dismissalReconciliation)
                   </li>
                   <li>
                     <b>
                       <T message="Прекращено в связи с деятельным раскаянием" />
-                    </b>{" "}
-                    <T message="(dismissalRepentance) и" />{" "}
+                    </b>
+                    {" (dismissalRepentance) "}
+                    <T message="и" />{" "}
                     <b>
                       <T message="прекращено по другим основаниям: на основании примечаний к статьям УК РФ (в связи с деятельным раскаянием ч. 2 ст. 28 УПК РФ)" />
-                    </b>{" "}
-                    <T message="(dismissalRepentance2). Мы не знаем, интерпретирует ли Судебный департамент эти данные как один или разные показатели. Это может быть детализация или наслоение данных" />
+                    </b>
+                    {" (dismissalRepentance2). "}
+                    <T message="Мы не знаем, интерпретирует ли Судебный департамент эти данные как один или разные показатели. Это может быть детализация или наслоение данных" />
                   </li>
                   <li>
                     <b>
                       <T message="Прекращено с назначением судебного штрафа" />
-                    </b>{" "}
-                    <T message="(dismissalCourtFinе):" />
+                    </b>
+                    {" (dismissalCourtFinе):"}
                     <ul>
                       <li>
                         <T message="Судебный штраф: количество осужденных по размеру штрафа" />{" "}
                         <b>
                           <T message="до 5 тыс. рублей" />
-                        </b>{" "}
-                        <T message="(dismissalCourtFine5)" />
+                        </b>
+                        {" (dismissalCourtFine5)"}
                       </li>
                       <li>
                         <T message="Судебный штраф: количество осужденных по размеру штрафа" />{" "}
                         <b>
                           <T message="свыше 5 тыс. до 25 тыс. рублей" />
-                        </b>{" "}
-                        <T message="(dismissalCourtFine5_25)" />
+                        </b>
+                        {" (dismissalCourtFine5_25)"}
                       </li>
                       <li>
                         <T message="Судебный штраф: количество осужденных по размеру штрафа" />{" "}
                         <b>
                           <T message="свыше 25 тыс. до 100 тыс. рублей" />
-                        </b>{" "}
-                        <T message="(dismissalCourtFine25_100)" />
+                        </b>
+                        {" (dismissalCourtFine25_100)"}
                       </li>
                       <li>
                         <T message="Судебный штраф: количество осужденных по размеру штрафа" />{" "}
                         <b>
                           <T message="свыше 100 тыс. рублей" />
-                        </b>{" "}
-                        <T message="(dismissalCourtFine100)" />
+                        </b>
+                        {" (dismissalCourtFine100)"}
                       </li>
                     </ul>
                   </li>
@@ -395,22 +407,30 @@ const FaqPageUploadFieldsNParameterTree = () => {
               <li>
                 <b>
                   <T message="Прекращено по другим основаниям" />
-                </b>{" "}
-                <T message="(dismissalOther). Мы не знаем, какие именно основания входят в эту категорию. Здесь могут быть некоторые из реабилитирующих и нереабилитирующих оснований." />
+                </b>
+                {" (dismissalOther). "}
+                <T message="Мы не знаем, какие именно основания входят в эту категорию. Здесь могут быть некоторые из реабилитирующих и нереабилитирующих оснований." />
               </li>
             </ol>
           </li>
           <li>
             <b>
               <T message="Принудительные меры к невменяемым" />
-            </b>{" "}
-            <T message="(coerciveMeasures). Показатель описывает случаи, когда к человеку были применены принудительные меры медицинского характера." />
+            </b>
+            {" (coerciveMeasures). "}
+            <T message="Показатель описывает случаи, когда к человеку были применены принудительные меры медицинского характера." />
           </li>
           <li>
             <b>
               <T message="Освобождение от наказания" />
-            </b>{" "}
-            <T message="(exemption). Мы не знаем, является ли эта категория в статистике Судебного департамента одним из исходов дела, наряду с обвинением и оправданием, или дополнительной характеристикой тех случаев, когда человека осудили (всего осуждено (totalConvicted)), поэтому мы включили еe в оба раздела." />
+            </b>
+            {" (exemption). "}
+            <T message="Мы не знаем, является ли эта категория в статистике Судебного департамента одним из исходов дела, наряду с обвинением и оправданием, или дополнительной характеристикой тех случаев, когда человека осудили" />
+            {" ("}
+            <T message="всего осуждено" />
+            {" (totalConvicted)), "}
+            <T message="поэтому мы включили её в оба раздела" />
+            {"."}
             <Tooltip
               tip={t(
                 "Раздел «Основной состав», пункт V и раздел «Дополнительные характеристики по основному составу», пункт V."
@@ -422,22 +442,22 @@ const FaqPageUploadFieldsNParameterTree = () => {
                 <T message="Освобождение от наказания" />{" "}
                 <b>
                   <T message="по амнистии" />
-                </b>{" "}
-                <T message="(exemptionAmnesty)" />
+                </b>
+                {" (exemptionAmnesty)"}
               </li>
               <li>
                 <T message="Освобождение от наказания" />{" "}
                 <b>
                   <T message="по другим основаниям: лишение свободы" />
-                </b>{" "}
-                <T message="(exemptionFromImprisonment)" />
+                </b>
+                {" (exemptionFromImprisonment)"}
               </li>
               <li>
                 <T message="Освобождение от наказания" />{" "}
                 <b>
                   <T message="по другим основаниям: от иных мер или наказание не назначалось" />
-                </b>{" "}
-                <T message="(examptionOther)" />
+                </b>
+                {" (examptionOther)"}
               </li>
             </ol>
           </li>
@@ -453,38 +473,59 @@ const FaqPageUploadFieldsNParameterTree = () => {
           <li>
             <b>
               <T message="Коррупционный мотив" />
-            </b>{" "}
-            <T message="(corruption). Дополнительная характеристика мотивов для тех, кого признали виновными («Всего осуждено» (totalConvicted)), данные есть за 2010-2012 годы включительно." />
+            </b>
+            {" (corruption). "}
+            <T message="Дополнительная характеристика мотивов для тех, кого признали виновными" />
+            {" ("}
+            <T message="«Всего осуждено»" />
+            {"  (totalConvicted)), "}{" "}
+            <T message="данные есть за 2010-2012 годы включительно" />
+            {"."}
           </li>
           <li>
             <b>
               <T message="Наказание назначено ниже низшего предела лишение свободы" />
-            </b>{" "}
-            <T message="(primaryImprisonmentUnderLowerLimit). Дополнительная характеристика для тех, кому назначили лишение свободы ((primaryImprisonment) — по всем детализациям)." />
+            </b>
+            {" (primaryImprisonmentUnderLowerLimit). "}
+            <T message="Дополнительная характеристика для тех, кому назначили лишение свободы" />
+            {" ((primaryImprisonment) "}
+            <T message="— по всем детализациям" />
+            {")."}
           </li>
           <li>
             <b>
               <T message="Преступление не является оконченным" />
             </b>{" "}
-            <T message="(приготовление, покушение) (unfinishedOffence). Дополнительная характеристика по категории «Всего осуждено» (totalConvicted)." />
+            <T message="(приготовление, покушение)" />
+            {" (unfinishedOffence). "}
+            <T message="Дополнительная характеристика по категории «Всего осуждено»" />
+            {" (totalConvicted)."}
           </li>
           <li>
             <b>
               <T message="Общая сумма штрафов" />
-            </b>{" "}
-            <T message="(primaryFineSum). Дополнительная характеристика совокупности наказаний в виде штрафа в качестве основного наказания." />
+            </b>
+            {" (primaryFineSum). "}
+            <T message="Дополнительная характеристика совокупности наказаний в виде штрафа в качестве основного наказания." />
           </li>
           <li>
             <b>
               <T message="Судебный штраф: общая сумма" />
-            </b>{" "}
-            <T message="(dismissalCourtFineSum). Дополнительная характеристика одного из видов прекращения судебного производства. Этот штраф не следует складывать со штрафом как видом наказания, основным или дополнительным." />
+            </b>
+            {" (dismissalCourtFineSum). "}
+            <T message="Дополнительная характеристика одного из видов прекращения судебного производства. Этот штраф не следует складывать со штрафом как видом наказания, основным или дополнительным." />
           </li>
           <li>
             <b>
               <T message="Освобождение от наказания" />
-            </b>{" "}
-            <T message="(exemption). Мы не знаем, является ли эта категория в статистике Судебного департамента одним из исходов дела, наряду с обвинением и оправданием, или дополнительной характеристикой тех случаев, когда человека осудили (всего осуждено (totalConvicted)), поэтому мы включили еe в оба раздела." />
+            </b>
+            {" (exemption). "}
+            <T message="Мы не знаем, является ли эта категория в статистике Судебного департамента одним из исходов дела, наряду с обвинением и оправданием, или дополнительной характеристикой тех случаев, когда человека осудили" />
+            {" ("}
+            <T message="всего осуждено" />
+            {" (totalConvicted)), "}
+            <T message="поэтому мы включили её в оба раздела" />
+            {"."}
             <Tooltip
               tip={t(
                 "Раздел «Основной состав», пункт V и раздел «Дополнительные характеристики по основному составу», пункт V."
@@ -497,21 +538,21 @@ const FaqPageUploadFieldsNParameterTree = () => {
                 <b>
                   <T message="по амнистии" />
                 </b>{" "}
-                <T message="(exemptionAmnesty)" />
+                (exemptionAmnesty)
               </li>
               <li>
                 <T message="Освобождение от наказания" />{" "}
                 <b>
                   <T message="по другим основаниям: лишение свободы" />
                 </b>{" "}
-                <T message="(exemptionFromImprisonment)" />
+                (exemptionFromImprisonment)
               </li>
               <li>
                 <T message="Освобождение от наказания" />{" "}
                 <b>
                   <T message="по другим основаниям: от иных мер или наказание не назначалось" />
                 </b>{" "}
-                <T message="(examptionOther)" />
+                (exemptionOther)
               </li>
             </ol>
           </li>
@@ -519,63 +560,67 @@ const FaqPageUploadFieldsNParameterTree = () => {
             <b>
               <T message="Дополнительные наказания." />
             </b>{" "}
-            <T message="Дополнительная характеристика категории «Всего осуждено» (totalConvicted), показывает случаи, когда к основному наказанию суд назначает дополнительное за тот же состав преступления. Категории нет в таблице, дана детализация по видам:" />
+            <T message="Дополнительная характеристика категории «Всего осуждено»" />
+            {" (totalConvicted), "}
+            <T message="показывает случаи, когда к основному наказанию суд назначает дополнительное за тот же состав преступления" />
+            {"."}
+            <T message="Категории нет в таблице, дана детализация по видам:" />
             <ol>
               <li>
                 <T message="Дополнительное наказание:" />{" "}
                 <b>
                   <T message="лишение права занимать определенные должности или заниматься определенной деятельностью" />
                 </b>{" "}
-                <T message="(addDisqualification)" />
+                (addDisqualification)
               </li>
               <li>
                 <T message="Дополнительное наказание:" />{" "}
                 <b>
                   <T message="штраф" />
                 </b>{" "}
-                <T message="(addFine)" />
+                (addFine)
                 <ol type="a">
                   <li>
                     <T message="Штраф: количество осужденных по размеру штрафа" />{" "}
                     <b>
                       <T message="до 5 тыс. рублей" />
                     </b>{" "}
-                    <T message="(addFine5)" />
+                    (addFine5)
                   </li>
                   <li>
                     <T message="Штраф: количество осужденных по размеру штрафа" />{" "}
                     <b>
                       <T message="свыше 5 тыс. до 25 тыс. рублей" />
                     </b>{" "}
-                    <T message="(addFine5_25)" />
+                    (addFine5_25)
                   </li>
                   <li>
                     <T message="Штраф: количество осужденных по размеру штрафа" />{" "}
                     <b>
                       <T message="свыше 25 тыс. до 500 тыс. рублей" />
                     </b>{" "}
-                    <T message="(addFine25_500)" />
+                    (addFine25_500)
                     <ul>
                       <li>
                         <T message="Штраф: количество осужденных по размеру штрафа" />{" "}
                         <b>
                           <T message="свыше 25 тыс. до 100 тыс. рублей" />
                         </b>{" "}
-                        <T message="(addFine25_100)" />
+                        (addFine25_100)
                       </li>
                       <li>
                         <T message="Штраф: количество осужденных по размеру штрафа" />{" "}
                         <b>
                           <T message="свыше 100 тыс. до 300 тыс. рублей" />
                         </b>{" "}
-                        <T message="(addFine100_300)" />
+                        (addFine100_300)
                       </li>
                       <li>
                         <T message="Штраф: количество осужденных по размеру штрафа" />{" "}
                         <b>
                           <T message="свыше 300 тыс. до 500 тыс. рублей" />
                         </b>{" "}
-                        <T message="(addFine300_500)" />
+                        (addFine300_500)
                       </li>
                     </ul>
                   </li>
@@ -584,20 +629,21 @@ const FaqPageUploadFieldsNParameterTree = () => {
                     <b>
                       <T message="свыше 500 тыс. до 1 млн рублей" />
                     </b>{" "}
-                    <T message="(addFine500_1M)" />
+                    (addFine500_1M)
                   </li>
                   <li>
                     <T message="Штраф: количество осужденных по размеру штрафа" />{" "}
                     <b>
                       <T message="свыше 1 млн рублей" />
                     </b>{" "}
-                    <T message="(addFine1M)" />
+                    (addFine1M)
                   </li>
                   <li>
                     <b>
                       <T message="Штраф (дополнительное наказание): общая сумма" />
-                    </b>{" "}
-                    <T message="(addFineSum). Дополнительная характеристика показателя по штрафам в качестве дополнительного наказания. Может складываться с общей суммой штрафа как основного наказания." />
+                    </b>
+                    {" (addFineSum). "}
+                    <T message="Дополнительная характеристика показателя по штрафам в качестве дополнительного наказания. Может складываться с общей суммой штрафа как основного наказания." />
                   </li>
                 </ol>
               </li>
@@ -606,14 +652,14 @@ const FaqPageUploadFieldsNParameterTree = () => {
                 <b>
                   <T message="лишение специального, воинского или почетного звания, классного чина и государственных наград" />
                 </b>{" "}
-                <T message="(addTitlesWithdraw)" />
+                (addTitlesWithdraw)
               </li>
               <li>
                 <T message="Дополнительное наказание:" />{" "}
                 <b>
                   <T message="ограничение свободы" />
                 </b>{" "}
-                <T message="(addRestrain)" />
+                (addRestrain)
               </li>
             </ol>
           </li>
@@ -634,20 +680,20 @@ const FaqPageUploadFieldsNParameterTree = () => {
                 <b>
                   <T message="необходимая оборона" />
                 </b>{" "}
-                <T message="(noCrimeSelf-defence)" />
+                (noCrimeSelf-defence)
               </li>
               <li>
                 <T message="Обстоятельства, исключающие преступность деяния:" />{" "}
                 <b>
                   <T message="крайняя необходимость" />
                 </b>{" "}
-                <T message="(noCrimeNecessity)" />
+                (noCrimeNecessity)
               </li>
               <li>
                 <b>
                   <T message="Обстоятельства, исключающие преступность, предусмотренные статьями 38, 40 - 42 УК РФ" />
                 </b>{" "}
-                <T message="(noCrimeOther)" />
+                (noCrimeOther)
               </li>
             </ol>
           </li>
@@ -663,22 +709,24 @@ const FaqPageUploadFieldsNParameterTree = () => {
           <li>
             <b>
               <T message="Осуждено: по числу лиц" />
-            </b>{" "}
-            <T message="(addTotalPersons) и" />{" "}
+            </b>
+            {" (addTotalPersons) "}
+            <T message="и" />{" "}
             <b>
               <T message="по количеству составов преступлений" />
             </b>{" "}
-            <T message="(addTotalOffences)" />
+            (addTotalOffences)
           </li>
           <li>
             <b>
               <T message="Оправдано: по числу лиц" />
-            </b>{" "}
-            <T message="(addAcquittalPersons) и" />{" "}
+            </b>
+            {" (addAcquittalPersons) "}
+            <T message="и" />{" "}
             <b>
               <T message="по количеству составов преступлений" />
-            </b>{" "}
-            <T message="(addAcquittalOffences)" />
+            </b>
+            {" (addAcquittalOffences)"}
           </li>
           <li>
             <b>
@@ -689,34 +737,37 @@ const FaqPageUploadFieldsNParameterTree = () => {
               <li>
                 <b>
                   <T message="Прекращено: по числу лиц" />
-                </b>{" "}
-                <T message="(addAcquittalOffences) и" />{" "}
+                </b>
+                {" (addAcquittalOffences) "}
+                <T message="и" />{" "}
                 <b>
                   <T message="по количеству составов преступлений" />
-                </b>{" "}
-                <T message="(addDismissalOffences)" />
+                </b>
+                {" (addDismissalOffences)"}
               </li>
               <li>
                 <b>
                   <T message="Прекращено по другим основаниям: по числу лиц" />
-                </b>{" "}
-                <T message="(addDismissalOtherPersons) и" />{" "}
+                </b>
+                {" (addDismissalOtherPersons) "}
+                <T message="и" />{" "}
                 <b>
                   <T message="по количеству составов преступлений" />
-                </b>{" "}
-                <T message="(addDismissalOtherOffences)." />
+                </b>
+                {" (addDismissalOtherOffences)."}
               </li>
             </ol>
           </li>
           <li>
             <b>
               <T message="Признаны невменяемыми: по числу лиц" />
-            </b>{" "}
-            <T message="(addUnfitToPleadPersons) и" />{" "}
+            </b>
+            {" (addUnfitToPleadPersons) "}
+            <T message="и" />{" "}
             <b>
               <T message="по количеству составов преступлений" />
-            </b>{" "}
-            <T message="(addUnfitToPleadOffences)." />
+            </b>
+            {" (addUnfitToPleadOffences)."}
           </li>
         </ol>
       </Typography>

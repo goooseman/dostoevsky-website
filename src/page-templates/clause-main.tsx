@@ -95,7 +95,8 @@ class ClauseMain extends PureComponent<ClauseMainProps> {
         hasPageLayout={
           pageContext.view === "page" ||
           pageContext.view === "focus" ||
-          pageContext.view === "table"
+          pageContext.view === "table" ||
+          pageContext.view === "focus-table"
         }
       >
         <Meta site={data.site?.meta} />
@@ -179,6 +180,37 @@ export const query = graphql`
             exemptionAmnesty
             exemptionFromImprisonment
             exemptionOther
+
+            noCrimeNecessity
+            noCrimeOther
+
+            primaryImprisonmentUnderLowerLimit
+            primaryImprisonment1
+            primaryImprisonment1_2
+            primaryImprisonment1_3
+            primaryImprisonment2_3
+            primaryImprisonment3_5
+            primaryImprisonment5_8
+            primaryImprisonment8_10
+            primaryImprisonment10_15
+            primaryImprisonment15_20
+
+            primaryLifeSentence
+            primaryArrest
+            primaryRestrain2009
+            primaryCommunityService
+            primaryForcedLabour
+            primaryDisqualification
+            primaryOther
+            primaryMilitaryDisciplinaryUnit
+            primaryRestrictionsInMilitaryService
+
+            dismissalAbsenceOfEvent
+            dismissalReconciliation
+            dismissalRepentance
+            dismissalCourtFine
+            dismissalOther
+            dismissalRepentance2
           }
         }
       }

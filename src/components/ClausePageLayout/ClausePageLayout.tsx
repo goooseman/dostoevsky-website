@@ -28,6 +28,7 @@ interface ClausePageLayoutProps {
   pageType: "main" | "parts" | "chronology" | "full";
   chartsLink?: string;
   tableLink?: string;
+  isWithoutChartsTablesTabs?: boolean;
 }
 
 class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
@@ -46,6 +47,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
       hasParts,
       chartsLink,
       tableLink,
+      isWithoutChartsTablesTabs,
     } = this.props;
 
     return (
@@ -159,21 +161,25 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
               >
                 {headerChildren}
               </ClausePageHeader>
-              <Menu variant="activeBorderBottom" className={cn(classes.menu)}>
-                <MenuLink
-                  to={chartsLink || getClauseLink(clauseNumber, year, pageType)}
-                >
-                  <T message="ЧАРТЫ" />
-                </MenuLink>
-                <MenuLink
-                  to={
-                    tableLink ||
-                    getClauseLink(clauseNumber, year, pageType, "table")
-                  }
-                >
-                  <T message="ТАБЛИЦА" />
-                </MenuLink>
-              </Menu>
+              {!isWithoutChartsTablesTabs ? (
+                <Menu variant="activeBorderBottom" className={cn(classes.menu)}>
+                  <MenuLink
+                    to={
+                      chartsLink || getClauseLink(clauseNumber, year, pageType)
+                    }
+                  >
+                    <T message="Чарты" />
+                  </MenuLink>
+                  <MenuLink
+                    to={
+                      tableLink ||
+                      getClauseLink(clauseNumber, year, pageType, "table")
+                    }
+                  >
+                    <T message="Таблица" />
+                  </MenuLink>
+                </Menu>
+              ) : null}
               <div>{children}</div>
             </div>
           </div>

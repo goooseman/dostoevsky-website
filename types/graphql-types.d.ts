@@ -2471,8 +2471,6 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   flags?: Maybe<SiteFlagsFilterInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
@@ -2634,8 +2632,6 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
-  port?: Maybe<Scalars['Int']>;
-  host?: Maybe<Scalars['String']>;
   flags?: Maybe<SiteFlags>;
   pathPrefix?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
@@ -2844,8 +2840,6 @@ export type SiteFieldsEnum =
   | 'siteMetadata___api___token'
   | 'siteMetadata___api___headers___Content_Type'
   | 'siteMetadata___api___headers___Authorization'
-  | 'port'
-  | 'host'
   | 'flags___PRESERVE_WEBPACK_CACHE'
   | 'flags___PRESERVE_FILE_DOWNLOAD_CACHE'
   | 'flags___FAST_REFRESH'
@@ -2941,8 +2935,6 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   flags?: Maybe<SiteFlagsFilterInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
@@ -3015,11 +3007,6 @@ export type SitePageContext = {
   locale?: Maybe<Scalars['String']>;
   article?: Maybe<SitePageContextArticle>;
   slug?: Maybe<Scalars['String']>;
-  year?: Maybe<Scalars['Int']>;
-  view?: Maybe<Scalars['String']>;
-  partRegex?: Maybe<Scalars['String']>;
-  clauseRegex?: Maybe<Scalars['String']>;
-  clauseId?: Maybe<Scalars['Float']>;
 };
 
 export type SitePageContextArticle = {
@@ -3029,6 +3016,7 @@ export type SitePageContextArticle = {
   teaser?: Maybe<Scalars['String']>;
   date?: Maybe<Scalars['String']>;
   author?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
   html?: Maybe<Scalars['String']>;
 };
 
@@ -3039,6 +3027,7 @@ export type SitePageContextArticleFilterInput = {
   teaser?: Maybe<StringQueryOperatorInput>;
   date?: Maybe<StringQueryOperatorInput>;
   author?: Maybe<StringQueryOperatorInput>;
+  locale?: Maybe<StringQueryOperatorInput>;
   html?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -3046,11 +3035,6 @@ export type SitePageContextFilterInput = {
   locale?: Maybe<StringQueryOperatorInput>;
   article?: Maybe<SitePageContextArticleFilterInput>;
   slug?: Maybe<StringQueryOperatorInput>;
-  year?: Maybe<IntQueryOperatorInput>;
-  view?: Maybe<StringQueryOperatorInput>;
-  partRegex?: Maybe<StringQueryOperatorInput>;
-  clauseRegex?: Maybe<StringQueryOperatorInput>;
-  clauseId?: Maybe<FloatQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -3159,13 +3143,9 @@ export type SitePageFieldsEnum =
   | 'context___article___teaser'
   | 'context___article___date'
   | 'context___article___author'
+  | 'context___article___locale'
   | 'context___article___html'
   | 'context___slug'
-  | 'context___year'
-  | 'context___view'
-  | 'context___partRegex'
-  | 'context___clauseRegex'
-  | 'context___clauseId'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'
@@ -4150,7 +4130,10 @@ export type ClauseFullQueryVariables = Exact<{
 
 export type ClauseFullQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, parts: { edges: Array<{ node: (
         Pick<Api_Server__Data, 'part'>
-        & { parameters?: Maybe<Pick<Api_Server__DataParameters, 'totalConvicted' | 'acquittal' | 'addTotalPersons' | 'addTotalOffences' | 'addAcquittalPersons' | 'addAcquittalOffences' | 'dismissalAbsenceOfEvent' | 'addDismissalPersons' | 'addDismissalOffences' | 'dismissalOther' | 'addDismissalOtherPersons' | 'addDismissalOtherOffences' | 'dismissalRepentance' | 'dismissalCourtFine' | 'coerciveMeasures' | 'addUnfitToPleadOffences' | 'unfinishedOffence'>> }
+        & { parameters?: Maybe<(
+          Pick<Api_Server__DataParameters, 'totalConvicted' | 'acquittal' | 'addTotalPersons' | 'addTotalOffences' | 'addAcquittalPersons' | 'addAcquittalOffences' | 'dismissalAbsenceOfEvent' | 'addDismissalPersons' | 'addDismissalOffences' | 'dismissalOther' | 'addDismissalOtherPersons' | 'addDismissalOtherOffences' | 'dismissalRepentance' | 'dismissalCourtFine' | 'coerciveMeasures' | 'addUnfitToPleadOffences' | 'unfinishedOffence' | 'primaryLifeSentence' | 'primaryImprisonment' | 'primaryImprisonment1' | 'primaryImprisonment1_3' | 'primaryImprisonment1_2' | 'primaryImprisonment2_3' | 'primaryImprisonment3_5' | 'primaryImprisonment5_8' | 'primaryImprisonment8_10' | 'primaryImprisonment10_15' | 'primaryImprisonment15_20' | 'primaryImprisonmentUnderLowerLimit' | 'primarySuspended' | 'primaryMilitaryDisciplinaryUnit' | 'primaryArrest' | 'primaryRestrain' | 'primaryRestrictionsInMilitaryService' | 'primaryCorrectionalLabour' | 'primaryCommunityService' | 'primaryForcedLabour' | 'primaryDisqualification' | 'primaryFine' | 'primaryFine5' | 'primaryFine5_25' | 'primaryFine25_100' | 'primaryFine100_300' | 'primaryFine300_500' | 'primaryFine500_1M' | 'primaryFine1M' | 'primaryOther' | 'exemptionFromImprisonment' | 'exemptionAmnesty' | 'exemptionOther' | 'dismissalAmnesty' | 'dismissalReconciliation' | 'addDisqualification' | 'addFine' | 'addFine5' | 'addFine5_25' | 'addFine25_500' | 'addFine100_300' | 'addFine300_500' | 'addFine500_1M' | 'addFine1M' | 'addTitlesWithdraw' | 'addRestrain' | 'noCrimeNecessity' | 'noCrimeOther' | 'primaryFineSum' | 'addFineSum'>
+          & { noCrimeSelfDefence: Api_Server__DataParameters['noCrimeSelf_defence'] }
+        )> }
       ) }> } };
 
 export type ClauseMainQueryVariables = Exact<{
@@ -4163,7 +4146,7 @@ export type ClauseMainQueryVariables = Exact<{
 export type ClauseMainQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, parts: { edges: Array<{ node: Pick<Api_Server__Data, 'part'> }> }, clauses: { edges: Array<{ node: (
         Pick<Api_Server__Data, 'part' | 'year'>
         & { parameters?: Maybe<(
-          Pick<Api_Server__DataParameters, 'totalConvicted' | 'coerciveMeasures' | 'primarySuspended' | 'primaryRestrain' | 'primaryImprisonment' | 'primaryFine' | 'primaryCorrectionalLabour' | 'addTotalPersons' | 'addTotalOffences' | 'addAcquittalPersons' | 'addAcquittalOffences' | 'addDismissalPersons' | 'addDismissalOffences' | 'addDismissalOtherPersons' | 'addDismissalOtherOffences' | 'addUnfitToPleadPersons' | 'addUnfitToPleadOffences' | 'addDisqualification' | 'addFine' | 'addTitlesWithdraw' | 'addRestrain' | 'dismissalAbsenceOfEvent' | 'dismissalAmnesty' | 'dismissalReconciliation' | 'dismissalRepentance' | 'dismissalCourtFine' | 'dismissalOther' | 'unfinishedOffence' | 'noCrimeNecessity' | 'noCrimeOther' | 'exemptionAmnesty' | 'exemptionFromImprisonment' | 'exemptionOther'>
+          Pick<Api_Server__DataParameters, 'totalConvicted' | 'coerciveMeasures' | 'primarySuspended' | 'primaryRestrain' | 'primaryImprisonment' | 'primaryFine' | 'primaryCorrectionalLabour' | 'addTotalPersons' | 'addTotalOffences' | 'addAcquittalPersons' | 'addAcquittalOffences' | 'addDismissalPersons' | 'addDismissalOffences' | 'addDismissalOtherPersons' | 'addDismissalOtherOffences' | 'addUnfitToPleadPersons' | 'addUnfitToPleadOffences' | 'addDisqualification' | 'addFine' | 'addTitlesWithdraw' | 'addRestrain' | 'dismissalAbsenceOfEvent' | 'dismissalAmnesty' | 'dismissalReconciliation' | 'dismissalRepentance' | 'dismissalCourtFine' | 'dismissalOther' | 'unfinishedOffence' | 'noCrimeNecessity' | 'noCrimeOther' | 'exemptionAmnesty' | 'exemptionFromImprisonment' | 'exemptionOther' | 'primaryImprisonmentUnderLowerLimit' | 'primaryImprisonment1' | 'primaryImprisonment1_2' | 'primaryImprisonment1_3' | 'primaryImprisonment2_3' | 'primaryImprisonment3_5' | 'primaryImprisonment5_8' | 'primaryImprisonment8_10' | 'primaryImprisonment10_15' | 'primaryImprisonment15_20' | 'primaryLifeSentence' | 'primaryArrest' | 'primaryRestrain2009' | 'primaryCommunityService' | 'primaryForcedLabour' | 'primaryDisqualification' | 'primaryOther' | 'primaryMilitaryDisciplinaryUnit' | 'primaryRestrictionsInMilitaryService' | 'dismissalRepentance2'>
           & { totalAcquittal: Api_Server__DataParameters['acquittal'], noCrimeSelfDefence: Api_Server__DataParameters['noCrimeSelf_defence'] }
         )> }
       ) }> } };
@@ -4207,7 +4190,7 @@ export type ArticlesPageQueryVariables = Exact<{
 
 export type ArticlesPageQuery = { site?: Maybe<{ meta?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl'>> }>, allMarkdownRemark: { edges: Array<{ node: (
         Pick<MarkdownRemark, 'html'>
-        & { frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'slug' | 'title' | 'author' | 'date' | 'tag' | 'teaser'>> }
+        & { frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'slug' | 'title' | 'author' | 'date' | 'tag' | 'teaser' | 'locale'>> }
       ) }> } };
 
 export type ClausesQueryQueryVariables = Exact<{ [key: string]: never; }>;

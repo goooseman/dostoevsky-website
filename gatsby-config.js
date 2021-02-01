@@ -233,5 +233,6 @@ module.exports = {
       },
     },
     "gatsby-plugin-uninline-styles",
+    "gatsby-plugin-zeit-now",
   ],
 };

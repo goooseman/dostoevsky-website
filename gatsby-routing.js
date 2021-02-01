@@ -16,13 +16,16 @@ const getRouteForLocale = (locale, path) => {
   return `/${locale}${path}`;
 };
 
-const getRouteForIndexPage = (locale, year, view) => {
+const getRouteForIndexPage = (locale, year, view, anchor) => {
   let route = `/${locale}/`;
   if (year.toString() !== "2019") {
     route += `${year}/`;
   }
   if (view !== "page") {
     route += `${view}/`;
+  }
+  if (anchor) {
+    route += `#${anchor}`;
   }
   return route;
 };

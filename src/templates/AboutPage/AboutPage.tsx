@@ -7,6 +7,7 @@ import SinglePageLayout from "src/components/SinglePageLayout";
 import { T, withLocale, WithLocale } from "react-targem";
 import Separator from "src/components/ui-kit/Separator";
 import Tooltip from "src/components/ui-kit/Tooltip";
+import { Helmet } from "react-helmet";
 
 interface AboutPageProps extends WithLocale {}
 
@@ -54,7 +55,7 @@ const teamMembers = [
     photoSrc2x: require("./assets/shedov_2x.png"),
   },
   {
-    name: <T message="Света шуранова" />,
+    name: <T message="Света Шуранова" />,
     position: <T message="Продюсер" />,
     photoSrc: require("./assets/shuranova.png"),
     photoSrc2x: require("./assets/shuranova_2x.png"),
@@ -67,6 +68,10 @@ class AboutPage extends PureComponent<AboutPageProps> {
     return (
       <main className={cn(classes.container)}>
         <Container isThin>
+          <Helmet defer={false}>
+            <title>{t("О проекте")}</title>
+            <meta name="description" content={t("Что такое Достоевский?")} />
+          </Helmet>
           <SinglePageLayout title={<T message="О проекте" />}>
             <>
               <Typography isUpperCased variant="h3">
@@ -87,7 +92,8 @@ class AboutPage extends PureComponent<AboutPageProps> {
                 >
                   <T message="официальной статистики Судебного департамента при Верховном суде РФ" />
                 </a>
-                <T message=". Однако эта информация публикуется в виде десятков нечитаемых таблиц: для подробного анализа квалифицированному специалисту требуются часы, а иногда и дни работы." />
+                {". "}
+                <T message="Однако эта информация публикуется в виде десятков нечитаемых таблиц: для подробного анализа квалифицированному специалисту требуются часы, а иногда и дни работы." />
               </Typography>
               <Typography gutterTop gutterBottom>
                 <T message="Мы взяли уголовную статистику, очистили от задвоений, привели к единому виду и сформировали полную базу данных, дополнив еe аналитическими статьями и инфографикой. Всe это можно скачать с сайта и использовать по лицензии Creative Commons 4.0. " />

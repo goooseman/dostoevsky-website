@@ -1,13 +1,14 @@
 import React, { PureComponent } from "react";
 import ClausePageLayout from "src/components/ClausePageLayout";
 import Typography from "src/components/ui-kit/Typography";
-import { T } from "react-targem";
+import { T, withLocale, WithLocale } from "react-targem";
 import Accordion, { AccordionNode } from "src/components/ui-kit/Accordion";
 import Checkbox from "src/components/ui-kit/Checkbox";
 import classes from "./ClauseFullPage.module.css";
 import cn from "clsx";
 import { getCsv } from "src/utils/csv";
 import { saveAs } from "file-saver";
+import { Helmet } from "react-helmet";
 
 const accordionData = [
   {
@@ -87,30 +88,288 @@ const accordionData = [
       },
     ],
   },
-  { title: "Виды основного наказания", id: "typesOfBasicPunishment" },
+  {
+    title: "Виды основного наказания",
+    id: "typesOfBasicPunishment",
+    children: [
+      {
+        title: "Пожизненное лишение свободы",
+        id: "primaryLifeSentence",
+      },
+      {
+        title: "Лишение свободы",
+        id: "primaryImprisonment",
+        children: [
+          {
+            title: "до 1 года включительно",
+            id: "primaryImprisonment1",
+          },
+          {
+            title: "от 1 до 3 лет включительно",
+            id: "primaryImprisonment1_3",
+          },
+          {
+            title: "свыше 1 до 2 лет включительно",
+            id: "primaryImprisonment1_2",
+          },
+          {
+            title: "свыше 2 до 3 лет включительно",
+            id: "primaryImprisonment2_3",
+          },
+          {
+            title: "свыше 3 до 5 лет включительно",
+            id: "primaryImprisonment3_5",
+          },
+          {
+            title: "свыше 5 до 8 лет включительно",
+            id: "primaryImprisonment5_8",
+          },
+          {
+            title: "свыше 8 до 10 лет включительно",
+            id: "primaryImprisonment8_10",
+          },
+          {
+            title: "свыше 10 до 15 лет включительно",
+            id: "primaryImprisonment10_15",
+          },
+          {
+            title: "свыше 15 до 20 лет включительно",
+            id: "primaryImprisonment15_20",
+          },
+        ],
+      },
+      {
+        title: "Наказание назначено ниже низшего предела",
+        id: "primaryImprisonmentUnderLowerLimit",
+      },
+      {
+        title: "Условное осуждение к лишению свободы",
+        id: "primarySuspended",
+      },
+      {
+        title: "Содержание в дисциплинарной воинской части",
+        id: "primaryMilitaryDisciplinaryUnit",
+      },
+      {
+        title: "Арест",
+        id: "primaryArrest",
+      },
+      {
+        title: "Ограничение свободы",
+        id: "primaryRestrain",
+      },
+      {
+        title: "Ограничения по воинской службе",
+        id: "primaryRestrictionsInMilitaryService",
+      },
+      {
+        title: "Работы",
+        id: "labour",
+        children: [
+          {
+            title: "исправительные работы",
+            id: "primaryCorrectionalLabour",
+          },
+          {
+            title: "обязательные работы",
+            id: "primaryCommunityService",
+          },
+          {
+            title: "принудительные работы",
+            id: "primaryForcedLabour",
+          },
+        ],
+      },
+      {
+        title:
+          "Лишение права занимать определенные должности или заниматься определенной деятельностью",
+        id: "primaryDisqualification",
+      },
+      {
+        title: "Штраф",
+        id: "primaryFine",
+        children: [
+          {
+            title: "до 5 тыс.",
+            id: "primaryFine5",
+          },
+          {
+            title: "свыше 5 тыс. до 25 тыс.",
+            id: "primaryFine5_25",
+          },
+          {
+            title: "свыше 25 тыс. до 100 тыс.",
+            id: "primaryFine25_100",
+          },
+          {
+            title: "свыше 100 тыс. до 300 тыс.",
+            id: "primaryFine100_300",
+          },
+          {
+            title: "свыше 300 тыс. до 500 тыс.",
+            id: "primaryFine300_500",
+          },
+          {
+            title: "свыше 500 тыс. до 1 млн",
+            id: "primaryFine500_1M",
+          },
+          {
+            title: "свыше 1 млн",
+            id: "primaryFine1M",
+          },
+        ],
+      },
+      {
+        title: "Условное осуждение к иным мерам",
+        id: "primaryOther",
+      },
+    ],
+  },
   {
     title: "Освобождено от наказания или наказание не назначалось (число лиц)",
     id: "noPunishment",
+    children: [
+      {
+        title:
+          "В связи с зачетом срока содержания под стражей, домашнего ареста",
+        id: "exemptionFromImprisonment",
+      },
+      {
+        title: "По амнистии",
+        id: "exemptionAmnesty",
+      },
+      {
+        title: "По другим основаниям",
+        id: "exemptionOther",
+      },
+    ],
   },
-  { title: "Прекращено", id: "terminated" },
-  { title: "Дополнительное наказание", id: "additionalPunishment" },
+  {
+    title: "Прекращено",
+    id: "terminated",
+    children: [
+      {
+        title: "Прекращено по амнистии",
+        id: "dismissalAmnesty",
+      },
+      {
+        title: "Прекращено за примирением с потерпевшим",
+        id: "dismissalReconciliation",
+      },
+      {
+        title: "Прекращено в связи с деятельным раскаянием",
+        id: "dismissalRepentance",
+      },
+      {
+        title: "Назначена мера уголовно-правового характера судебный штраф",
+        id: "dismissalCourtFine",
+      },
+      {
+        title:
+          "На основании примечаний к статьям УК РФ (в том числе в связи с деятельным раскаянием ч. 2 ст. 28 УПК РФ)",
+        id: "dismissalOther",
+      },
+    ],
+  },
+  {
+    title: "Дополнительное наказание",
+    id: "additionalPunishment",
+    children: [
+      {
+        title:
+          "Лишение права занимать определенные должности или заниматься определенной деятельностью",
+        id: "addDisqualification",
+      },
+      {
+        title: "Штраф",
+        id: "addFine",
+        children: [
+          {
+            title: "до 5 тысяч рублей",
+            id: "addFine5",
+          },
+          {
+            title: "свыше 5 тыс. до 25 тыс. рублей",
+            id: "addFine5_25",
+          },
+          {
+            title: "свыше 25 тыс. до 500 тыс. рублей",
+            id: "addFine25_500",
+          },
+          {
+            title: "свыше 100 тыс. до 300 тыс. рублей",
+            id: "addFine100_300",
+          },
+          {
+            title: "свыше 300 тыс. до 500 тыс. рублей",
+            id: "addFine300_500",
+          },
+          {
+            title: "свыше 500 тыс. до 1 млн рублей",
+            id: "addFine500_1M",
+          },
+          {
+            title: "свыше 1 млн рублей",
+            id: "addFine1M",
+          },
+        ],
+      },
+      {
+        title:
+          "лишение специального, воинского или почетного звания, классного чина и государственных наград",
+        id: "addTitlesWithdraw",
+      },
+      {
+        title: "ограничение свободы",
+        id: "addRestrain",
+      },
+    ],
+  },
   {
     title: "Деяние совершено при обстоятельствах, исключающих преступность",
     id: "precludingCriminality",
+    children: [
+      {
+        title: "Необходимая оборона",
+        id: "noCrimeSelfDefence",
+      },
+      {
+        title: "Крайняя необходимость",
+        id: "noCrimeNecessity",
+      },
+      {
+        title:
+          "Обстоятельства, исключающие преступность, предусмотренные статьями 38, 40 - 42 УК РФ",
+        id: "noCrimeOther",
+      },
+    ],
   },
-  { title: "Общая сумма штрафов (руб.)", id: "fineAmount" },
+  {
+    title: "Общая сумма штрафов (руб.)",
+    id: "fineAmount",
+    children: [
+      {
+        title: "Основное наказание",
+        id: "primaryFineSum",
+      },
+      {
+        title: "Дополнительное наказание",
+        id: "addFineSum",
+      },
+    ],
+  },
 ];
 
 const getValueFromEdges = (id: string, data: any) => {
   return data.parts.edges.reduce((a: string | number, c: any) => {
-    if (id in c.node) {
-      a = a === "-" ? c.node[id] : a + c.node[id];
+    if (id in c.node.parameters) {
+      a = a === "-" ? c.node.parameters[id] : a + c.node.parameters[id];
     }
     return a;
   }, "-");
 };
 
-interface ClauseFullPageProps {
+interface ClauseFullPageProps extends WithLocale {
   clauseNumber: number;
   year: number;
   partsCount: number;
@@ -118,7 +377,9 @@ interface ClauseFullPageProps {
 }
 
 interface ClauseFullPageState {
-  selected: any;
+  selected: {
+    [id: string]: boolean;
+  };
   allSelected: boolean;
   splitByArticle: boolean;
 }
@@ -164,11 +425,11 @@ class ClauseFullPage extends PureComponent<
     this.setState({ splitByArticle: checked });
   }
 
-  private handleToggleCheckbox(e: any) {
+  private handleToggleCheckbox(e: React.ChangeEvent<HTMLInputElement>) {
     const { id, checked } = e.target;
     const { selected } = this.state;
 
-    const newSelected: any = { ...selected };
+    const newSelected = { ...selected };
 
     accordionData.forEach((a) => {
       if (a.id === id) {
@@ -247,7 +508,7 @@ class ClauseFullPage extends PureComponent<
                   }
                   table.rows[i].values.push({
                     key: ac.id,
-                    value: e.node[ac.id],
+                    value: e.node.parameters[ac.id],
                   });
                 });
               } else {
@@ -274,7 +535,7 @@ class ClauseFullPage extends PureComponent<
                     }
                     table.rows[i].values.push({
                       key: acc.id,
-                      value: e.node[acc.id],
+                      value: e.node.parameters[acc.id],
                     });
                   });
                 } else {
@@ -305,19 +566,31 @@ class ClauseFullPage extends PureComponent<
   }
 
   render(): React.ReactNode {
-    const { clauseNumber, year, partsCount } = this.props;
+    const { clauseNumber, year, partsCount, t } = this.props;
     const { selected, allSelected, splitByArticle } = this.state;
 
     return (
       <ClausePageLayout
         clauseNumber={clauseNumber}
         year={year}
-        title="Полная статистика"
+        title={<T message="Полная статистика" />}
         pageType="full"
+        isWithoutChartsTablesTabs
         hasParts={partsCount > 0}
       >
         <div className={cn(classes.clauseFullPageWrapper)}>
           <div>
+            <Helmet defer={false}>
+              <title>
+                {`${t("Статья")} ${clauseNumber} | ${t("Полная статистика")}`}
+              </title>
+              <meta
+                name="description"
+                content={t(
+                  "Вы можете выбрать интересующие вас параметры и скачать данные в формате .csv:"
+                )}
+              />
+            </Helmet>
             <Typography>
               <T message="Вы можете выбрать интересующие вас параметры и скачать данные в формате .csv: " />
             </Typography>
@@ -356,7 +629,7 @@ class ClauseFullPage extends PureComponent<
                       <Checkbox
                         id={a.id}
                         checked={selected[a.id]}
-                        onChange={(e) => this.handleToggleCheckbox(e)}
+                        onChange={this.handleToggleCheckbox}
                       />
                       <Typography
                         className={cn(classes.clauseFullPageElementTitle)}
@@ -433,4 +706,4 @@ class ClauseFullPage extends PureComponent<
     );
   }
 }
-export default ClauseFullPage;
+export default withLocale(ClauseFullPage);

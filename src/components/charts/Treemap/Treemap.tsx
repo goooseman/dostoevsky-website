@@ -142,10 +142,12 @@ const Treemap: React.FC<TreemapProps> = ({
         </div>
         {!isIframeMode ? (
           <div className={cn(classes.actions)}>
+            {/* TODO fix embed url */}
             <EmbedModal
               iframePath={getClauseLink(
                 clauseNumber.toString(),
                 year.toString(),
+                "main",
                 "focus"
               )}
             />

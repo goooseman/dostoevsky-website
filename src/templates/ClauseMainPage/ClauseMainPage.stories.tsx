@@ -44,6 +44,37 @@ const defaultProps = {
   addFine: 175,
   addTitlesWithdraw: 200,
   addRestrain: 250,
+
+  noCrimeNecessity: 200,
+  noCrimeOther: 10,
+
+  primaryImprisonmentUnderLowerLimit: 15,
+  primaryImprisonment1: 45,
+  primaryImprisonment1_2: 10,
+  primaryImprisonment1_3: 12,
+  primaryImprisonment2_3: 8,
+  primaryImprisonment3_5: 6,
+  primaryImprisonment5_8: 8,
+  primaryImprisonment8_10: 10,
+  primaryImprisonment10_15: 15,
+  primaryImprisonment15_20: 20,
+
+  primaryLifeSentence: 112,
+  primaryArrest: 120,
+  primaryRestrain2009: 125,
+  primaryCommunityService: 130,
+  primaryForcedLabour: 132,
+  primaryDisqualification: 65,
+  primaryOther: 34,
+  primaryMilitaryDisciplinaryUnit: 33,
+  primaryRestrictionsInMilitaryService: 20,
+
+  dismissalAbsenceOfEvent: 44,
+  dismissalReconciliation: 36,
+  dismissalRepentance: 76,
+  dismissalCourtFine: 65,
+  dismissalOther: 64,
+  dismissalRepentance2: 75,
 };
 
 export const withGraphs = (): React.ReactNode => (

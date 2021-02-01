@@ -11,19 +11,23 @@ import CommonMainResultsTable from "./components/tables/CommonMainResultsTable";
 import CommonAddResultsTable from "./components/tables/CommonAddResultsTable";
 import { Menu, MenuLink } from "src/components/Menu";
 import { getClauseLink } from "src/config/routes";
-
 import ClauseMainPageFocus from "./ClauseMainPageFocus";
 import T from "src/components/T";
+import ClauseMainPageFocusTable from "./ClauseMainPageFocusTable";
+import { withLocale, WithLocale } from "react-targem";
+import { Helmet } from "react-helmet";
 
 export type ClausePartsPageViewMode =
   | "page"
   | "table"
   | "focus"
+  | "focus-table"
   | "iframe-table-common-main-by-result"
   | "iframe-table-common-add-by-result"
-  | "iframe-by-result";
+  | "iframe-by-result"
+  | "iframe-table-focus";
 
-interface ClauseMainPageProps {
+interface ClauseMainPageProps extends WithLocale {
   clauseNumber: number;
   year: number;
   partsCount: number;
@@ -36,6 +40,9 @@ interface ClauseMainPageProps {
   totalAcquittal: number; // Оправдано
   totalDismissal: number; // Прекращено
   coerciveMeasures: number; // Принудительные меры к невменяемым
+
+  noCrimeNecessity: number; // Обстоятельства, исключающие преступность: крайняя необходимость
+  noCrimeOther: number; // Обстоятельства, исключающие преступность, предусмотренные статьями 38, 40 - 42 УК РФ
 
   dismissalAmnesty: number; // Прекращено по амнистии
   noCrimeSelfDefence: number; // Прекращено как необходимая оборона
@@ -64,6 +71,34 @@ interface ClauseMainPageProps {
   addFine: number; // Дополнительное наказание: штраф
   addTitlesWithdraw: number; // Дополнительное наказание: лишение специального, воинского или почетного звания, классного чина и государственных наград
   addRestrain: number; // Дополнительное наказание: ограничение свободы
+
+  primaryImprisonmentUnderLowerLimit: number; // Наказание назначено ниже низшего предела лишение свободы
+  primaryImprisonment1: number; // до 1 года включительно
+  primaryImprisonment1_2: number; // свыше 1 до 2 лет включительно
+  primaryImprisonment1_3: number; // от 1 до 3 лет включительно
+  primaryImprisonment2_3: number; // свыше 2 до 3 лет включительно
+  primaryImprisonment3_5: number; // свыше 3 до 5 лет включительно
+  primaryImprisonment5_8: number; // свыше 5 до 8 лет включительно
+  primaryImprisonment8_10: number; // свыше 8 до 10 лет включительно
+  primaryImprisonment10_15: number; // свыше 10 до 15 лет включительно
+  primaryImprisonment15_20: number; // свыше 15 до 20 лет включительно
+
+  primaryLifeSentence: number; // Пожизненное лишение свободы
+  primaryArrest: number; // Арест
+  primaryRestrain2009: number; // Ограничение свободы/ограничение по военной службе, содержание в дисциплинарной воинской части
+  primaryCommunityService: number; // Обязательные работы
+  primaryForcedLabour: number; // Принудительные работы
+  primaryDisqualification: number; // Лишение права занимать определенные должности или заниматься определенной деятельностью
+  primaryOther: number; // Условное осуждение к иным мерам
+  primaryMilitaryDisciplinaryUnit: number; // Содержание в дисциплинарной воинской части
+  primaryRestrictionsInMilitaryService: number; // Ограничение по военной службе
+
+  dismissalAbsenceOfEvent: number; // Прекращено за отсутствием события, состава, непричастностью к преступлению
+  dismissalReconciliation: number; // Прекращено за примирением с потерпевшим
+  dismissalRepentance: number; // Прекращено в связи с деятельным раскаянием
+  dismissalCourtFine: number; // Прекращено судебный штраф
+  dismissalOther: number; // Прекращено по другим основаниям
+  dismissalRepentance2: number; // Прекращено по другим основаниям: на основании примечаний к статьям УК РФ (в связи с деятельным раскаянием ч. 2 ст. 28 УПК РФ)'
 }
 
 class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
@@ -79,6 +114,7 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
       totalDismissal,
       totalCases,
       view,
+      t,
     } = this.props;
 
     if (view === "iframe-table-common-main-by-result") {
@@ -93,23 +129,48 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
       return <MainByResult {...this.props} isIframeMode />;
     }
 
+    if (view === "iframe-table-focus") {
+      return <ClauseMainPageFocusTable {...this.props} />;
+    }
+
     return (
       <ClausePageLayout
         clauseNumber={clauseNumber}
         year={year}
-        title="Основной и дополнительный составы"
+        title={t("Основной и дополнительный составы")}
         pageType="main"
         hasParts={partsCount > 0}
         headerChildren={this.renderHeaderChildren()}
         chartsLink={
-          view === "focus"
-            ? getClauseLink(clauseNumber, year, "focus")
+          view === "focus" || view === "focus-table"
+            ? getClauseLink(clauseNumber, year, "main", "focus")
+            : undefined
+        }
+        tableLink={
+          view === "focus" || view === "focus-table"
+            ? getClauseLink(clauseNumber, year, "main", "focus-table")
             : undefined
         }
       >
         {view === "focus" ? <ClauseMainPageFocus {...this.props} /> : null}
+        {view === "focus-table" ? (
+          <ClauseMainPageFocusTable {...this.props} />
+        ) : null}
         {view === "table" ? (
           <>
+            <Helmet defer={false}>
+              <title>
+                {`${t("Статья")} ${clauseNumber} | ${t(
+                  "Основной и дополнительный состав: общие сведения"
+                )} | ${t("Таблица")}`}
+              </title>
+              <meta
+                name="description"
+                content={t(
+                  "Общие сведения по основному и дополнительному составу статьи в виде таблицы"
+                )}
+              />
+            </Helmet>
             <div className={classes.tableContainer}>
               <CommonMainResultsTable {...this.props} />
             </div>
@@ -120,6 +181,19 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
         ) : null}
         {view === "page" ? (
           <>
+            <Helmet defer={false}>
+              <title>
+                {`${t("Статья")} ${clauseNumber} | ${t(
+                  "Основной и дополнительный состав: общие сведения"
+                )} | ${t("Чарты")}`}
+              </title>
+              <meta
+                name="description"
+                content={t(
+                  "Общие сведения по основному и дополнительному составу статьи в виде чартов"
+                )}
+              />
+            </Helmet>
             <Counters className={cn(classes.counter)}>
               <Counter
                 counter={total}
@@ -129,12 +203,12 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
               />
               <Counter
                 counter={totalConvicted}
-                label={<T message="человек Осуждены по основному составу" />}
+                label={<T message="человек осуждены по основному составу" />}
               />
               <Counter
                 counter={addTotalPersons}
                 label={
-                  <T message="человек Осуждены по дополнительному составу" />
+                  <T message="человек осуждены по дополнительному составу" />
                 }
               />
               <Counter
@@ -181,7 +255,9 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
               <T message="Основной и дополнительный состав: общие сведения" />
             </MenuLink>
             <MenuLink
-              partiallyActive
+              activeUrls={[
+                getClauseLink(clauseNumber, year, "main", "focus-table"),
+              ]}
               to={getClauseLink(clauseNumber, year, "main", "focus")}
             >
               <T message="Основной состав: в фокусе" />
@@ -287,4 +363,4 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
   };
 }
 
-export default ClauseMainPage;
+export default withLocale(ClauseMainPage);

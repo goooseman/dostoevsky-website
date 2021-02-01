@@ -35,6 +35,6 @@ it("should open modal", () => {
 it("should close modal", () => {
   const { getByText, getByLabelText, queryByText } = render(<TestHelper />);
   fireEvent.click(getByText("Show Modal"));
-  fireEvent.click(getByLabelText("Close"));
+  fireEvent.click(getByLabelText("Закрыть"));
   expect(queryByText("Modal Body")).toBeNull();
 });

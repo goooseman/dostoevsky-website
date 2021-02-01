@@ -8,6 +8,7 @@ interface TypographyProps {
   component?: "p" | "h1" | "h2" | "h3" | "label" | "span";
   font: "sans-serif" | "serif";
   isUpperCased: boolean;
+  isCapitalized: boolean;
   isCentered: boolean;
   gutterBottom: boolean;
   gutterTop: boolean;
@@ -35,6 +36,7 @@ class Typography extends PureComponent<TypographyProps> {
     font: "sans-serif",
     isUpperCased: false,
     isCentered: false,
+    isCapitalized: false,
   };
 
   render(): React.ReactNode {
@@ -52,6 +54,7 @@ class Typography extends PureComponent<TypographyProps> {
       isCentered,
       gutterTop,
       isNonBreakable,
+      isCapitalized,
       ...otherProps
     } = this.props;
     const Component = component || variant;
@@ -75,6 +78,7 @@ class Typography extends PureComponent<TypographyProps> {
       isCentered,
       gutterTop,
       isNonBreakable,
+      isCapitalized,
     } = this.props;
     return cn(
       classes.common,
@@ -94,6 +98,7 @@ class Typography extends PureComponent<TypographyProps> {
         [classes.isUppercased]: isUpperCased,
         [classes.isCentered]: isCentered,
         [classes.isNonBreakable]: isNonBreakable,
+        [classes.isCapitalized]: isCapitalized,
       },
       className
     );

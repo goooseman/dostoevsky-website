@@ -10,6 +10,8 @@ import ClausePartsTable from "./components/ClausePartsTable";
 import SpoilerText from "src/components/SpoilerText";
 import { formatNumber } from "src/utils/numbers";
 import T from "src/components/T";
+import { Helmet } from "react-helmet";
+import { withLocale, WithLocale } from "react-targem";
 
 export type ClausePartsPageViewMode =
   | "page"
@@ -69,7 +71,7 @@ export interface Part {
   // addUnfitToPleadOffences: number; // Доп. квалификация: признано невменяемыми по количеству составов преступлений
 }
 
-export interface ClausePartsPageProps {
+export interface ClausePartsPageProps extends WithLocale {
   clauseNumber: number;
   year: number;
   view: ClausePartsPageViewMode;
@@ -78,7 +80,7 @@ export interface ClausePartsPageProps {
 
 class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
   render(): React.ReactNode {
-    const { clauseNumber, year, view, parts } = this.props;
+    const { clauseNumber, year, view, parts, t } = this.props;
 
     if (view === "iframe-parts") {
       return <PartsChart {...this.props} isIframeMode />;
@@ -100,14 +102,40 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
       <ClausePageLayout
         clauseNumber={clauseNumber}
         year={year}
-        title="Части"
+        title={<T message="Части" />}
         pageType="parts"
         headerChildren={this.renderHeaderChildren()}
         hasParts={parts.length > 0}
       >
-        {view === "table" ? <ClausePartsTable {...this.props} /> : null}
+        {view === "table" ? (
+          <>
+            <Helmet defer={false}>
+              <title>
+                {`${t("Статья")} ${clauseNumber} | ${t("Части")} | ${t(
+                  "Таблица"
+                )}`}
+              </title>
+              <meta
+                name="description"
+                content={t("Информация по частям статьи в виде таблицы")}
+              />
+            </Helmet>
+            <ClausePartsTable {...this.props} />
+          </>
+        ) : null}
         {view === "page" ? (
           <div className={cn(classes.charts)}>
+            <Helmet defer={false}>
+              <title>
+                {`${t("Статья")} ${clauseNumber} | ${t("Части")} | ${t(
+                  "Чарты"
+                )}`}
+              </title>
+              <meta
+                name="description"
+                content={t("Информация по частям статьи в виде чартов")}
+              />
+            </Helmet>
             <div className={cn(classes.chartContainer)}>
               <SpoilerText
                 text={parts.map((p, i) =>
@@ -219,4 +247,4 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
   };
 }
 
-export default ClausePartsPage;
+export default withLocale(ClausePartsPage);

@@ -6,6 +6,7 @@ import Treemap from "src/components/charts/Treemap";
 import Button from "src/components/ui-kit/Button";
 import PercentageBar from "src/components/charts/PercentageBar";
 import { getClauseLink } from "src/config/routes";
+import { Helmet } from "react-helmet";
 
 interface ClauseMainPageFocusProps {
   clauseNumber: number;
@@ -71,6 +72,19 @@ const ClauseMainPageFocus: React.FC<ClauseMainPageFocusProps> = (
 
   return (
     <>
+      <Helmet defer={false}>
+        <title>
+          {`${t("Статья")} ${clauseNumber} | ${t(
+            "Основной состав: в фокусе"
+          )} | ${t("Чарты")}`}
+        </title>
+        <meta
+          name="description"
+          content={t(
+            "Информация по основному и дополнительному составу статьи в виде чартов"
+          )}
+        />
+      </Helmet>
       <Counters className={classes.counter}>
         <Counter
           counter={totalConvicted}
@@ -166,9 +180,11 @@ const ClauseMainPageFocus: React.FC<ClauseMainPageFocusProps> = (
           Меры: "^^",
           "Число человек": "%%",
         }}
+        /* TODO fix iframe path */
         iframePath={getClauseLink(
           clauseNumber.toString(),
           year.toString(),
+          "main",
           "focus"
         )}
       />
