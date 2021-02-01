@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Sun Jan 31 2021 08:35:19 GMT+0300 (GMT+03:00)\n"
+"POT-Creation-Date: Mon Feb 01 2021 09:33:16 GMT+0300 (GMT+03:00)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -15,7 +15,6 @@ msgid "Стрелка вправо"
 msgstr ""
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
-#: src/components/Footer/Footer.tsx:
 #: src/components/Header/Header.tsx:
 msgid "Каталог статей УК РФ"
 msgstr ""
@@ -94,6 +93,10 @@ msgstr ""
 
 #: src/components/Footer/Footer.tsx:
 msgid "Логотип D4S"
+msgstr ""
+
+#: src/components/Footer/Footer.tsx:
+msgid "каталог статей ук рф"
 msgstr ""
 
 #: src/components/Footer/Footer.tsx:
@@ -2617,12 +2620,7 @@ msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
-
 msgid "поэтому мы включили её в оба раздела"
-"(exemption). Мы не знаем, является ли эта категория в статистике Судебного "
-"департамента одним из исходов дела, наряду с обвинением и оправданием, или "
-"дополнительной характеристикой тех случаев, когда человека осудили (всего "
-"осуждено (totalConvicted)), поэтому мы включили еe в оба раздела."
 msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:

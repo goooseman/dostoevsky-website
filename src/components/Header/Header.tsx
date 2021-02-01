@@ -10,6 +10,7 @@ import { getLinkForCurrentLocale, getLinkForLocale } from "src/utils/locales";
 import { Locale } from "src/config/locales";
 interface HeaderProps {
   location: Location;
+  isBig?: boolean;
 }
 
 const getLogo = (locale: "en-GB" | "ru") => {

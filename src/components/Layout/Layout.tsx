@@ -7,17 +7,21 @@ import { LocaleProvider } from "src/contexts/LocaleProvider";
 interface Props {
   children?: React.ReactNode;
   hasPageLayout?: boolean;
+  hasBigHeader?: boolean;
   location: Location;
 }
 
 const Layout: React.FC<Props> = ({
   children,
   hasPageLayout = true,
+  hasBigHeader = false,
   location,
 }: Props) => {
   return (
     <LocaleProvider location={location}>
-      {hasPageLayout ? <Header location={location} /> : null}
+      {hasPageLayout ? (
+        <Header isBig={hasBigHeader} location={location} />
+      ) : null}
       {children}
       {hasPageLayout ? <Footer /> : null}
     </LocaleProvider>

@@ -21,13 +21,9 @@ msgid "Стрелка вправо"
 msgstr "Right arrow"
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
-#: src/components/Footer/Footer.tsx:
 #: src/components/Header/Header.tsx:
 msgid "Каталог статей УК РФ"
 msgstr "Articles of Criminal Code"
-
-#: src/components/Footer/Footer.tsx:
-#: src/components/Header/Header.tsx:
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
 msgid ""
@@ -104,6 +100,10 @@ msgstr "OI logo"
 #: src/components/Footer/Footer.tsx:
 msgid "Логотип D4S"
 msgstr "D4S logo"
+
+#: src/components/Footer/Footer.tsx:
+msgid "каталог статей ук рф"
+msgstr ""
 
 #: src/components/Footer/Footer.tsx:
 #: src/components/Header/Header.tsx:
@@ -2655,12 +2655,7 @@ msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
-
 msgid "поэтому мы включили её в оба раздела"
-"(exemption). Мы не знаем, является ли эта категория в статистике Судебного "
-"департамента одним из исходов дела, наряду с обвинением и оправданием, или "
-"дополнительной характеристикой тех случаев, когда человека осудили (всего "
-"осуждено (totalConvicted)), поэтому мы включили еe в оба раздела."
 msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:

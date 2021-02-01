@@ -35,7 +35,11 @@ const Index: React.FC<IndexPageProps> = ({
   );
 
   return (
-    <Layout location={location} hasPageLayout={pageContext.view === "page"}>
+    <Layout
+      hasBigHeader
+      location={location}
+      hasPageLayout={pageContext.view === "page"}
+    >
       <Meta site={meta} />
       <IndexPage
         counters={getIndexCountersFromData(data)}

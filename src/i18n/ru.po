@@ -22,7 +22,6 @@ msgid "Стрелка вправо"
 msgstr "Стрелка вправо"
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
-#: src/components/Footer/Footer.tsx:
 #: src/components/Header/Header.tsx:
 msgid "Каталог статей УК РФ"
 msgstr "Каталог статей УК РФ"
@@ -104,6 +103,10 @@ msgstr "Логотип OI"
 #: src/components/Footer/Footer.tsx:
 msgid "Логотип D4S"
 msgstr "Логотип D4S"
+
+#: src/components/Footer/Footer.tsx:
+msgid "каталог статей ук рф"
+msgstr "каталог статей ук рф"
 
 #: src/components/Footer/Footer.tsx:
 #: src/components/Header/Header.tsx:
