@@ -842,7 +842,7 @@ const getFaqData = (t: WithLocale["t"]) => [
   },
   {
     id: "howWasCollected",
-    title: "Как собирали эти данные",
+    title: "Как собирались эти данные",
     content: <FaqPageHowWasCollected />,
   },
   {
