@@ -3,9 +3,9 @@ import PercentageBar from "src/components/charts/PercentageBar";
 import { getClauseLink } from "src/config/routes";
 
 const byResultLabels = [
-  "осуждённых",
+  "осуждeнных",
   "оправданных",
-  "прекращённых",
+  "прекращeнных",
   "принудительное лечение",
 ];
 

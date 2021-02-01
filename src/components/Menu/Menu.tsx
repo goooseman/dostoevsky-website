@@ -69,11 +69,12 @@ interface MenuLinkProps {
   size?: "small" | "normal" | undefined;
   partiallyActive?: boolean;
   activeUrls?: (RegExp | string)[];
+  isNowrap?: boolean;
 }
 
 export class MenuLink extends PureComponent<MenuLinkProps> {
   render(): React.ReactNode {
-    const { to, children, size, partiallyActive } = this.props;
+    const { to, children, size, partiallyActive, isNowrap } = this.props;
     return (
       <Location>
         {({ location }) => (
@@ -84,6 +85,7 @@ export class MenuLink extends PureComponent<MenuLinkProps> {
                 to={to}
                 className={cn(classes.menuLink, {
                   [classes.menuLinkActive]: this.isActiveByUrl(location),
+                  [classes.menuLinkNowrap]: isNowrap,
                 })}
                 activeClassName={cn(classes.menuLinkActive)}
               >

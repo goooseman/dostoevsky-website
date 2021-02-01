@@ -47,22 +47,42 @@ const Footer: React.FC<FooterProps> = () => {
           </a>
         </div>
         <div className={cn(classes.middleContainer)}>
-          <Menu variant="onBlackBackground">
-            <MenuLink to={getLinkForCurrentLocale("/clauses")} size="small">
-              <T message="Каталог статей УК РФ" />
+          <Menu variant="onBlackBackground" className={cn(classes.footerMenu)}>
+            <MenuLink
+              to={getLinkForCurrentLocale("/clauses")}
+              size="small"
+              isNowrap={true}
+            >
+              <T message="каталог статей ук рф" />
             </MenuLink>
             {locale === "ru" ? (
-              <MenuLink to={getLinkForCurrentLocale("/articles")} size="small">
+              <MenuLink
+                isNowrap={true}
+                to={getLinkForCurrentLocale("/articles")}
+                size="small"
+              >
                 <T message="Аналитика" />
               </MenuLink>
             ) : null}
-            <MenuLink to={getLinkForCurrentLocale("/faq")} size="small">
+            <MenuLink
+              isNowrap={true}
+              to={getLinkForCurrentLocale("/faq")}
+              size="small"
+            >
               <T message="о датасете" />
             </MenuLink>
-            <MenuLink to={getLinkForCurrentLocale("/about")} size="small">
+            <MenuLink
+              isNowrap={true}
+              to={getLinkForCurrentLocale("/about")}
+              size="small"
+            >
               <T message="о проекте" />
             </MenuLink>
-            <MenuLink to={getLinkForCurrentLocale("/full")} size="small">
+            <MenuLink
+              isNowrap={true}
+              to={getLinkForCurrentLocale("/full")}
+              size="small"
+            >
               <T message="полный датасет" />
             </MenuLink>
           </Menu>
@@ -81,8 +101,12 @@ const Footer: React.FC<FooterProps> = () => {
             <a href="https://telegram.com" target="_blank" rel="noreferrer">
               <img src={require("./assets/telegram.svg")} alt="Telegram" />
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noreferrer">
-              <img src={require("./assets/facebook.svg")} alt="Facebook" />
+            <a
+              href="https://github.com/goooseman/dostoevsky-website/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={require("./assets/git.svg")} alt="Facebook" />
             </a>
             <a href="https://twitter.com" target="_blank" rel="noreferrer">
               <img src={require("./assets/twitter.svg")} alt="Twitter " />

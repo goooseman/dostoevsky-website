@@ -33,6 +33,13 @@
   font-weight: 500;
 }
 
+.menu-item small,
+.menu-item small .menu-link{
+  font-size: 14px !important;
+}
+.menu-link-nowrap {
+  white-space: nowrap;
+}
 .menu-item a.menu-link-active,
 .menu-item.menu-item-active .menu-link {
   background-color: var(--color-palette-a);
@@ -126,3 +133,4 @@
 .menu.tabs .menu-item:last-child {
   border-right: 1px solid var(--color-border-dark);
 }
+

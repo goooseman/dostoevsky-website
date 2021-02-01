@@ -184,6 +184,8 @@
   display: flex;
   margin-left: 2rem;
   text-decoration: none;
+  position: relative;
+  bottom: -10rem;
 }
 
 .analytics-link-wrapper .analytics-link {
@@ -194,6 +196,8 @@
 @media all and (max-width: 680px) {
   .analytics-link-wrapper {
     margin: 1rem 0;
+    bottom: inherit;
+    position: static;
   }
 
   .analytics-link-wrapper .analytics-link {
@@ -449,6 +453,7 @@
   bottom: 0;
   left: 0;
   display: flex;
+  align-items: flex-end;
   width: calc(100% - 1rem);
   padding-top: 1rem;
   border-top: 3px solid;
@@ -461,6 +466,7 @@
 
 .more-wrapper .more-item .more-item-bottom .more-item-date {
   margin-left: auto;
+  white-space: nowrap;
 }
 
 .more-wrapper .more-item.more-item-blog .more-item-type {
