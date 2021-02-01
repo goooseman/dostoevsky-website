@@ -51,7 +51,10 @@ const ArticlesFeedPageMore = (props: FeedPageMoreProps) => {
                   {type}
                 </Typography>
               ) : null}
-              <Link className={classes.moreItemInner} to={d.slug || "#"}>
+              <Link
+                className={classes.moreItemInner}
+                to={`/${d.locale}${d.slug}` || "#"}
+              >
                 <Typography variant="h2" font="serif">
                   <b>{d.title || ""}</b>
                 </Typography>

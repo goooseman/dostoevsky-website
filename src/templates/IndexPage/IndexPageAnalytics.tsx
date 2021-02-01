@@ -116,7 +116,7 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
   },
   topClauses,
 }: IndexPageAnalyticsProps) => {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   const [selectedYear, setSelectedYear] = useState<SelectOption>(
     defaultYearSelectOption
   );
@@ -202,7 +202,7 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
       </div>
       <Link
         className={classes.analyticsLinkWrapper}
-        to={`/stats-${selectedYear.value}`}
+        to={`${locale}/articles/stats-${selectedYear.value}`}
       >
         <Typography isUpperCased className={classes.analyticsLink}>
           <b>

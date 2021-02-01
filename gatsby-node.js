@@ -62,6 +62,7 @@ exports.createPages = async ({ actions, graphql }) => {
               teaser
               date
               author
+              locale
             }
           }
         }

@@ -55,6 +55,7 @@ export const pageQuery = graphql`
             date
             tag
             teaser
+            locale
           }
         }
       }

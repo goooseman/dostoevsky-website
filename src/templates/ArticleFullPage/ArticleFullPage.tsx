@@ -14,6 +14,7 @@ export interface Article {
   slug: string;
   tag: ArticleTag;
   teaser: string;
+  locale: string;
 }
 
 export interface ArticleFullPageProps {
