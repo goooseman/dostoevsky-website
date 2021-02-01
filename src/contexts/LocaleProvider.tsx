@@ -10,15 +10,12 @@ import {
 // so we use require() to prevent tsc compile time errors before webpack is first run
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const translationsJson = require("src/i18n/translations.json");
-import { Redirect } from "@reach/router";
 
 interface LocaleProviderProps {
   location: Location;
 }
 
-interface LocaleProviderState {
-  redirectTo?: string;
-}
+interface LocaleProviderState {}
 
 export class LocaleProvider extends React.Component<
   LocaleProviderProps,
@@ -37,19 +34,14 @@ export class LocaleProvider extends React.Component<
         LOCALE_CODES,
         DEFAULT_LOCALE
       ) as Locale;
-      this.setState({
-        redirectTo: getLinkForLocale(
-          defaultLocale,
-          location.pathname,
-          location.search
-        ),
-      });
+      window.location.replace(
+        getLinkForLocale(defaultLocale, location.pathname, location.search)
+      );
     }
   }
 
   public render(): React.ReactNode {
     const { children, location } = this.props;
-    const { redirectTo } = this.state;
     return (
       <>
         <TargemProvider
@@ -60,7 +52,6 @@ export class LocaleProvider extends React.Component<
         >
           {children}
         </TargemProvider>
-        {redirectTo ? <Redirect to={redirectTo} /> : null}
       </>
     );
   }
