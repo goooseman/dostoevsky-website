@@ -10,7 +10,12 @@ import Typography from "src/components/ui-kit/Typography";
 import Input from "src/components/ui-kit/Input";
 import Button from "src/components/ui-kit/Button";
 import axios from "axios";
-import { MAILCHIMP_ADDRESS, MAILCHIMP_ID, MAILCHIMP_U } from "src/config/vars";
+import {
+  MAILCHIMP_ADDRESS,
+  MAILCHIMP_ID,
+  MAILCHIMP_U,
+  FORMSUBMIT_ID,
+} from "src/config/vars";
 
 interface FullDatasetDownloadModalProps {
   children?: React.ReactNode;
@@ -91,15 +96,13 @@ const FullDatasetDownloadModal: React.FC<FullDatasetDownloadModalProps> = ({
     params.append("subject", "Пользователь скачал полный датасет");
     setIsLoading(true);
     try {
-      await fetch(
-        "https://formsubmit.io/send/14fbbc76-38f5-4d2d-b71f-75da4c34554e",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: params.toString(),
-          referrerPolicy: "unsafe-url",
-        }
-      );
+      await fetch(`https://formsubmit.io/send/${FORMSUBMIT_ID}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: params.toString(),
+        referrerPolicy: "unsafe-url",
+        redirect: "manual",
+      });
     } catch (e) {
       console.error(e);
     }
