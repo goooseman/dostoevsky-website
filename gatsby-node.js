@@ -14,6 +14,7 @@ const {
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage, createRedirect } = actions;
+  const IS_DEV = process.env.NODE_ENV === "development";
   const IS_SEMI_BUILD = Boolean(process.env.IS_SEMI_BUILD);
   const IS_WITHOUT_EMBED = Boolean(process.env.IS_WITHOUT_EMBED);
   const IS_ONLY_EMBED = Boolean(process.env.IS_ONLY_EMBED);
@@ -27,6 +28,15 @@ exports.createPages = async ({ actions, graphql }) => {
     isPermanent: true,
     toPath: getRouteForLocale(DEFAULT_LOCALE, "/"),
   });
+
+  // Gatsby in development does not implement redirect from index (from / to /ru/)
+  // So we need to render index page, so redirect should happen on client in `LocaleProvider`
+  if (IS_DEV) {
+    createPage({
+      path: "/",
+      component: path.resolve(`src/pages/404.tsx`),
+    });
+  }
 
   const simplePages = ["about", "articles", "clauses", "faq", "full"];
   for (const simplePage of simplePages) {
