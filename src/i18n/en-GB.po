@@ -94,6 +94,12 @@ msgid "Скопировать"
 msgstr "Copy"
 
 #: src/components/Footer/Footer.tsx:
+msgid ""
+"Ваше сообщение не было отправлено. Пожалуйста, отправьте email на "
+"info@dostoevsky.io."
+msgstr ""
+
+#: src/components/Footer/Footer.tsx:
 msgid "Логотип OI"
 msgstr "OI logo"
 
@@ -141,6 +147,36 @@ msgstr ""
 #: src/components/Footer/Footer.tsx:
 msgid "напишите нам"
 msgstr "contact us"
+
+#: src/components/Footer/Footer.tsx:
+msgid "Напишите нам"
+msgstr ""
+
+#: src/components/Footer/Footer.tsx:
+msgid "Спасибо!"
+msgstr ""
+
+#: src/components/Footer/Footer.tsx:
+msgid "Ваше сообщение было отправлено!"
+msgstr ""
+
+#: src/components/Footer/Footer.tsx:
+msgid "Ваше имя"
+msgstr ""
+
+#: src/components/Footer/Footer.tsx:
+#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+msgid "Ваш e-mail"
+msgstr "Your e-mail"
+
+#: src/components/Footer/Footer.tsx:
+#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+msgid "Загрузка..."
+msgstr "Loading..."
+
+#: src/components/Footer/Footer.tsx:
+msgid "Отправить"
+msgstr ""
 
 #: src/components/Header/Header.tsx:
 msgid "Иконка \"Земной шар\""
@@ -2855,10 +2891,6 @@ msgid ""
 msgstr ""
 
 #: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
-msgid "Ваш e-mail"
-msgstr "Your e-mail"
-
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
 msgid "Ваше имя в Telegram, если хотите присоединиться к нашему сообществу"
 msgstr ""
 
@@ -2871,10 +2903,6 @@ msgid ""
 "При использовании данных, пожалуйста, указывайте ссылку на Достоевский и "
 "делитесь с нами своими материалами."
 msgstr ""
-
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
-msgid "Загрузка..."
-msgstr "Loading..."
 
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:

@@ -9,7 +9,6 @@ import { T, useLocale } from "react-targem";
 import Typography from "src/components/ui-kit/Typography";
 import Input from "src/components/ui-kit/Input";
 import Button from "src/components/ui-kit/Button";
-import axios from "axios";
 import {
   MAILCHIMP_ADDRESS,
   MAILCHIMP_ID,

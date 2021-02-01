@@ -3,34 +3,60 @@ import cn from "clsx";
 import classes from "./Footer.module.css";
 import { T, useLocale } from "react-targem";
 import Typography from "src/components/ui-kit/Typography";
-// import Button from "../ui-kit/Button";
-// import Input from "../ui-kit/Input";
-// import TextareaAutosize from "react-textarea-autosize";
+import Button from "../ui-kit/Button";
+import Input from "../ui-kit/Input";
+import TextareaAutosize from "react-textarea-autosize";
 import Container from "../ui-kit/Container";
 import { Menu, MenuLink } from "../Menu";
 import { getLinkForCurrentLocale } from "src/utils/locales";
-// import Modal, { useModal } from "src/components/ui-kit/Modal";
-// import { useState } from "react";
-// import axios from "axios";
+import Modal, { useModal } from "src/components/ui-kit/Modal";
+import { useState } from "react";
+import { FORMSUBMIT_ID } from "src/config/vars";
 
 interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = () => {
   const { t, locale } = useLocale();
-  // const { isShowing, toggle } = useModal();
-  // const [username, setUsername] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [message, setMessage] = useState("");
-  // const sendFeedback = async () => {
-  //   if (email && message) {
-  //     await axios({
-  //       method: "post",
-  //       url: "/feedback/",
-  //       responseType: "text",
-  //       data: { username, email, message },
-  //     });
-  //   }
-  // };
+  const { isShowing, toggle } = useModal();
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isSent, setIsSent] = useState<boolean>(false);
+
+  const handleModalClose = () => {
+    toggle();
+    setIsSent(false);
+    setIsLoading(false);
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const params = new URLSearchParams();
+    params.append("email", email);
+    params.append("message", message);
+    params.append("subject", "Пользователь отпрвил сообщение в форму связи");
+    setIsLoading(true);
+    try {
+      await fetch(`https://formsubmit.io/send/${FORMSUBMIT_ID}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: params.toString(),
+        referrerPolicy: "unsafe-url",
+        redirect: "manual",
+      });
+    } catch (e) {
+      alert(
+        t(
+          "Ваше сообщение не было отправлено. Пожалуйста, отправьте email на info@dostoevsky.io."
+        )
+      );
+      setIsLoading(false);
+      return;
+    }
+    setIsLoading(false);
+    setIsSent(true);
+  };
 
   return (
     <div className={cn(classes.container)}>
@@ -92,11 +118,11 @@ const Footer: React.FC<FooterProps> = () => {
           </Typography>
         </div>
         <div className={cn(classes.rightContainer)}>
-          {/*<Button color="inverted" onClick={() => toggle()}> */}
-          <Typography variant="span" color="inverted">
-            <T message="напишите нам" />
-          </Typography>
-          {/*</Button> */}
+          <Button color="inverted" onClick={toggle}>
+            <Typography variant="span" color="inverted">
+              <T message="напишите нам" />
+            </Typography>
+          </Button>
           <div className={classes.socialMediaLinksContainer}>
             <a href="https://telegram.com" target="_blank" rel="noreferrer">
               <img src={require("./assets/telegram.svg")} alt="Telegram" />
@@ -121,43 +147,65 @@ const Footer: React.FC<FooterProps> = () => {
           </div>
         </div>
       </Container>
-      {/* <Modal
+      <Modal
         isShowing={isShowing}
-        onHideButtonClick={toggle}
-        title={"Напишите нам"}
+        onHideButtonClick={handleModalClose}
+        title={<T message="Напишите нам" />}
         size="md"
         isCentered
       >
-        <div className="modal-centered">
-          <div className="modal-line">
-            <Input
-              type="text"
-              value={username}
-              placeholder="Ваше имя"
-              onChange={(e) => setUsername(e.currentTarget.value)}
-            />
+        {isSent ? (
+          <div className={cn(classes.modalSuccess)}>
+            <Typography variant="h3" font="serif">
+              <i>
+                <T message="Спасибо!" />{" "}
+                <T message="Ваше сообщение было отправлено!" />
+              </i>
+            </Typography>
           </div>
-          <div className="modal-line">
-            <Input
-              type="email"
-              value={email}
-              placeholder="Ваш e-mail"
-              onChange={(e) => setEmail(e.currentTarget.value)}
-            />
-          </div>
-          <div className="modal-line">
-            <TextareaAutosize
-              name="message"
-              onChange={(e) => setMessage(e.currentTarget.value)}
-            />
-          </div>
-          <div className="modal-line">
-            <Button onClick={() => sendFeedback()} color="secondary">
-              Отправить
-            </Button>
-          </div>
-        </div>
-      </Modal> */}
+        ) : (
+          <form className={cn(classes.modalForm)} onSubmit={handleFormSubmit}>
+            <div>
+              <Input
+                type="text"
+                value={username}
+                required
+                placeholder={t("Ваше имя")}
+                className={cn(classes.modalInput)}
+                onChange={(e) => setUsername(e.currentTarget.value)}
+              />
+            </div>
+            <div>
+              <Input
+                type="email"
+                value={email}
+                required
+                placeholder={t("Ваш e-mail")}
+                className={cn(classes.modalInput)}
+                onChange={(e) => setEmail(e.currentTarget.value)}
+              />
+            </div>
+            <div>
+              <TextareaAutosize
+                name="message"
+                minRows={4}
+                required
+                className={cn(classes.modalTextarea)}
+                onChange={(e) => setMessage(e.currentTarget.value)}
+              />
+            </div>
+            <div>
+              <Button color="secondary" type="submit">
+                {isLoading ? (
+                  <T message="Загрузка..." />
+                ) : (
+                  <T message="Отправить" />
+                )}
+              </Button>
+            </div>
+          </form>
+        )}
+      </Modal>
     </div>
   );
 };
