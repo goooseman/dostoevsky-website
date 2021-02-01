@@ -34,7 +34,7 @@
 }
 
 .menu-item small,
-.menu-item small .menu-link{
+.menu-item small .menu-link {
   font-size: 14px !important;
 }
 .menu-link-nowrap {
@@ -133,4 +133,3 @@
 .menu.tabs .menu-item:last-child {
   border-right: 1px solid var(--color-border-dark);
 }
-
