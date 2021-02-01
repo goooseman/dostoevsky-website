@@ -76,6 +76,7 @@ const FullDatasetDownloadModal: React.FC<FullDatasetDownloadModalProps> = ({
             headers: {
               "Content-Type": "application/json",
             },
+            referrerPolicy: "unsafe-url",
           }
         );
       } catch (e) {
@@ -96,6 +97,7 @@ const FullDatasetDownloadModal: React.FC<FullDatasetDownloadModalProps> = ({
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: params.toString(),
+          referrerPolicy: "unsafe-url",
         }
       );
     } catch (e) {
