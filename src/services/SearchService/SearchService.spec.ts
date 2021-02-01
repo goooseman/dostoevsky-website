@@ -140,7 +140,6 @@ describe("getHelpItems", () => {
     const result = searchService.getHelpItems("ru");
     expect(result).toEqual([
       "282",
-      "282 часть 2",
       "против личности",
       "против государства",
       "экстремизм",
