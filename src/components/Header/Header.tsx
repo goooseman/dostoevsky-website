@@ -13,12 +13,20 @@ interface HeaderProps {
   isBig?: boolean;
 }
 
-const getLogo = (locale: "en-GB" | "ru") => {
+const getLogo = (locale: "en-GB" | "ru", isBig: false) => {
   switch (locale) {
     case "en-GB":
-      return require("./assets/logo-en.svg");
+      if (isBig) {
+        return require("./assets/logo-en.svg");
+      } else {
+        return require("./assets/logo-inner-en.svg");
+      }
     case "ru":
-      return require("./assets/logo-ru.svg");
+      if (isBig) {
+        return require("./assets/logo-ru.svg");
+      } else {
+        return require("./assets/logo-inner-ru.svg");
+      }
   }
 };
 
@@ -31,7 +39,7 @@ const getMobileLogo = (locale: "en-GB" | "ru") => {
   }
 };
 
-const Header: React.FC<HeaderProps> = ({ location }: HeaderProps) => {
+const Header: React.FC<HeaderProps> = ({ location, isBig }: HeaderProps) => {
   const [menuActive, setMenuActive] = useState(false);
   const [langSelectorActive, setLangSelector] = useState(false);
   const { locale, t } = useLocale();
@@ -44,7 +52,7 @@ const Header: React.FC<HeaderProps> = ({ location }: HeaderProps) => {
   }
 
   return (
-    <nav className={cn(classes.container)}>
+    <nav className={cn(classes.container, { [classes.headerLarge]: isBig })}>
       <div className={cn(classes.headerWrapper)}>
         <div className={cn(classes.mobileMenuHolder__languagesDesktop)}>
           <Menu variant="buttons">
@@ -65,7 +73,7 @@ const Header: React.FC<HeaderProps> = ({ location }: HeaderProps) => {
           </Menu>
         </div>
         <Link to={getLinkForCurrentLocale("/")} className={cn(classes.logo)}>
-          <img src={getLogo(locale as Locale)} alt={t("Достоевский")} />
+          <img src={getLogo(locale as Locale, isBig)} alt={t("Достоевский")} />
         </Link>
         <div className={cn(classes.callMenuBar)}>
           <Button onClick={toggleLangSelector}>

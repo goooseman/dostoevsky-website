@@ -4,6 +4,7 @@
   background-color: var(--color-outer-background);
   color: var(--color-text-inverted);
 }
+
 .header-wrapper {
   max-width: 1280px;
   margin: auto;
@@ -17,12 +18,24 @@
 }
 
 .logo {
+  width: 228px;
+  height: 38px;
+  display: flex;
+  overflow: hidden;
+  margin: 1.5rem 1.5rem 97px;
+}
+.logo img {
+  width: 228px;
+  height: 38px;
+}
+
+.header-large .logo {
   display: flex;
   width: 415px;
   margin: 1.5rem auto;
 }
 
-.logo img {
+.header-large .logo img {
   position: relative;
 
   /* fix inccorrect logo width */
