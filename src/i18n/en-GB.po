@@ -5,7 +5,7 @@ msgstr ""
 "POT-Creation-Date: Sun Jan 10 2021 00:39:02 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"PO-Revision-Date: 2021-02-04 10:57\n"
+"PO-Revision-Date: 2021-02-04 12:28\n"
 "Language-Team: English, United Kingdom\n"
 "MIME-Version: 1.0\n"
 "X-Generator: Poedit 2.4.2\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: src/components/charts/Treemap/Treemap.tsx:
 msgid "Недостаточно данных для генерации графика."
-msgstr ""
+msgstr "Not enough data to generate chart."
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
 msgid "Стрелка вправо"
