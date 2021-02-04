@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Mon Feb 01 2021 22:22:31 GMT+0300 (GMT+03:00)\n"
+"POT-Creation-Date: Thu Feb 04 2021 23:12:32 GMT+0300 (GMT+03:00)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -165,6 +165,7 @@ msgstr ""
 
 #: src/components/Footer/Footer.tsx:
 #: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+#: src/templates/IndexPage/IndexPageSubscription.tsx:
 msgid "Загрузка..."
 msgstr ""
 

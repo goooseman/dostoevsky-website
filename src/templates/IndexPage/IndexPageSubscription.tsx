@@ -8,20 +8,19 @@ import Button from "src/components/ui-kit/Button";
 import Input from "src/components/ui-kit/Input";
 import Modal from "src/components/ui-kit/Modal";
 import axios from "axios";
+import { subscribeToEmail } from "src/utils/emails-service";
 
 const url = "https://dostoevsky.us2.list-manage.com/subscribe/post";
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const IndexPageSubscription = () => {
-  const [value, setValue] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [flag, setFlag] = useState<boolean>(false);
   const handleClick = async () => {
-    const params = new URLSearchParams();
-    params.append("u", "f077fefd24ca7afab1bd50ad9");
-    params.append("id", "9cf06a72fd");
-    params.append("email", value);
-    const headers = { "Content-Type": "application/x-www-form-urlencoded" };
-    await axios({ method: "post", url, headers, params });
+    setIsLoading(true);
+    await subscribeToEmail(email);
+    setIsLoading(false);
     setFlag(true);
   };
   return (
@@ -49,12 +48,21 @@ const IndexPageSubscription = () => {
           <Input
             type="text"
             className={classes.subscriptionInput}
-            value={value}
-            onChange={(e) => setValue(e.currentTarget.value)}
+            value={email}
+            onChange={(e) => setEmail(e.currentTarget.value)}
             placeholder="Ваш E-mail"
           />
-          <Button onClick={() => handleClick()} color="secondary" type="submit">
-            <img src={require("./assets/button-arrow.svg")} />
+          <Button
+            disabled={isLoading}
+            onClick={handleClick}
+            color="secondary"
+            type="submit"
+          >
+            {isLoading ? (
+              <T message="Загрузка..." />
+            ) : (
+              <img src={require("./assets/button-arrow.svg")} />
+            )}
           </Button>
         </div>
       </div>

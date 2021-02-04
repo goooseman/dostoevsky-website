@@ -176,6 +176,7 @@ msgstr "Ваш e-mail"
 
 #: src/components/Footer/Footer.tsx:
 #: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+#: src/templates/IndexPage/IndexPageSubscription.tsx:
 msgid "Загрузка..."
 msgstr "Загрузка..."
 
