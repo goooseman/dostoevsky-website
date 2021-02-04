@@ -24,7 +24,7 @@ const ChronologyConvictedDynamics: React.SFC<ChronologyConvictedDynamicsProps> =
   props: ChronologyConvictedDynamicsProps
 ) => {
   const { clauseNumber, years, isIframeMode } = props;
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
 
   const getTooltipDescription = (title: string) => ({
     [t("Состав")]: "Основной состав",
@@ -140,6 +140,7 @@ const ChronologyConvictedDynamics: React.SFC<ChronologyConvictedDynamicsProps> =
       areLabelsRotated
       chartType="dynamicsPunishment"
       iframePath={getClauseLink(
+        locale,
         clauseNumber.toString(),
         undefined,
         "chronology",

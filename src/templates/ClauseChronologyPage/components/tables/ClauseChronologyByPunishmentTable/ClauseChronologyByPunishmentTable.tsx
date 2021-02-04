@@ -18,7 +18,7 @@ const ClauseChronologyByPunishmentTable: React.FC<ClauseChronologyByPunishmentTa
   clauseNumber,
   years,
 }: ClauseChronologyByPunishmentTableProps) => {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
 
   const tables = [
     {
@@ -61,6 +61,7 @@ const ClauseChronologyByPunishmentTable: React.FC<ClauseChronologyByPunishmentTa
       title={<T message="НАКАЗАНИЯ ПО СТАТЬЕ" />}
       downloadFilename={`${clauseNumber}-chronology-by-punishment`}
       iframePath={getClauseLink(
+        locale,
         clauseNumber,
         undefined,
         "parts",

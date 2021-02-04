@@ -16,7 +16,7 @@ const ChronologyConvictedDynamics: React.SFC<ChronologyConvictedDynamicsProps> =
   props: ChronologyConvictedDynamicsProps
 ) => {
   const { clauseNumber, years, isIframeMode } = props;
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
 
   return (
     <LineChart
@@ -36,6 +36,7 @@ const ChronologyConvictedDynamics: React.SFC<ChronologyConvictedDynamicsProps> =
         },
       ]}
       iframePath={getClauseLink(
+        locale,
         clauseNumber.toString(),
         undefined,
         "chronology",

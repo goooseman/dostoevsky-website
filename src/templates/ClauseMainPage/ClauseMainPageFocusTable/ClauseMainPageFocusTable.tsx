@@ -67,7 +67,7 @@ const ClauseMainPageFocusTable: React.FC<ClauseMainPageFocusTableProps> = ({
   year,
   ...p
 }: ClauseMainPageFocusTableProps) => {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   return (
     <>
       <Helmet defer={false}>
@@ -92,6 +92,7 @@ const ClauseMainPageFocusTable: React.FC<ClauseMainPageFocusTableProps> = ({
         }
         downloadFilename={`${clauseNumber}-${year}-parts`}
         iframePath={getClauseLink(
+          locale,
           clauseNumber,
           year,
           "main",

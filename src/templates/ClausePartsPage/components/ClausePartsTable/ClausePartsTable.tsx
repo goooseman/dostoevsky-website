@@ -60,7 +60,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
   year,
   parts,
 }: ClausePartsTableProps) => {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   return (
     <Table
       title={
@@ -71,6 +71,7 @@ const ClausePartsTable: React.FC<ClausePartsTableProps> = ({
       }
       downloadFilename={`${clauseNumber}-${year}-parts`}
       iframePath={getClauseLink(
+        locale,
         clauseNumber,
         year,
         "parts",

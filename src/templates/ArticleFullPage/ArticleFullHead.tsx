@@ -3,13 +3,13 @@ import React from "react";
 import classes from "./ArticleFullHead.module.css";
 import cn from "clsx";
 import Typography from "src/components/ui-kit/Typography";
-import { T } from "react-targem";
+import { T, withLocale, WithLocale } from "react-targem";
 import { Link } from "gatsby";
 import Container from "../../components/ui-kit/Container";
 import { Article } from "./ArticleFullPage";
-import { getLinkForCurrentLocale } from "src/utils/locales";
+import { getLinkForLocale } from "src/utils/locales";
 
-export interface ArticleFullPageProps {
+export interface ArticleFullPageProps extends WithLocale {
   article: Article;
 }
 
@@ -23,7 +23,7 @@ const getArticleBackground = (type: Article["tag"]) => {
 };
 
 const ArticleFullHead = (props: ArticleFullPageProps): JSX.Element => {
-  const { article } = props;
+  const { article, locale } = props;
   return (
     <header
       className={cn(classes.blogHeader)}
@@ -34,7 +34,7 @@ const ArticleFullHead = (props: ArticleFullPageProps): JSX.Element => {
       <Container>
         <div className={cn(classes.blogHeader__inner)}>
           <Link
-            to={getLinkForCurrentLocale("/")}
+            to={getLinkForLocale(locale, "/")}
             className={cn(classes.blogHeader__lnk)}
           >
             <Typography
@@ -88,4 +88,4 @@ const ArticleFullHead = (props: ArticleFullPageProps): JSX.Element => {
   );
 };
 
-export default ArticleFullHead;
+export default withLocale(ArticleFullHead);

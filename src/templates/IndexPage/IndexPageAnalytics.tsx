@@ -15,13 +15,14 @@ const getAnalyticsCharts = (
   selectedYear: string,
   counters: CountersByPunishment,
   topCounters: IndexTopClause[],
-  t: (s: string) => string
+  t: (s: string) => string,
+  locale: string
 ) => [
   {
     title: t(
       `Статьи УК РФ, по которым осуждали чаще всего в ${selectedYear} году`
     ),
-    iframePath: getIndexLink(selectedYear, "iframe-top-clauses"),
+    iframePath: getIndexLink(locale, selectedYear, "iframe-top-clauses"),
     charts: [
       {
         title: t("осудили человек"),
@@ -38,7 +39,7 @@ const getAnalyticsCharts = (
     title: t(
       `Какие наказания суды чаще всего назначали в ${selectedYear} году`
     ),
-    iframePath: getIndexLink(selectedYear, "iframe-by-punishment"),
+    iframePath: getIndexLink(locale, selectedYear, "iframe-by-punishment"),
     charts: [
       {
         title: t("осудили человек"),
@@ -123,14 +124,15 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
 
   const handleYearChange = (option: SelectOption) => {
     setSelectedYear(option);
-    navigate(getIndexLink(option.value, "page", "analitycs"));
+    navigate(getIndexLink(locale, option.value, "page", "analitycs"));
   };
 
   const charts = getAnalyticsCharts(
     selectedYear.label,
     counters.totalByPunishment,
     topClauses,
-    t
+    t,
+    locale
   );
 
   if (view === "iframe-top-clauses") {

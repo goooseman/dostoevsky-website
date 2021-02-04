@@ -115,6 +115,7 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
       totalCases,
       view,
       t,
+      locale,
     } = this.props;
 
     if (view === "iframe-table-common-main-by-result") {
@@ -143,12 +144,12 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
         headerChildren={this.renderHeaderChildren()}
         chartsLink={
           view === "focus" || view === "focus-table"
-            ? getClauseLink(clauseNumber, year, "main", "focus")
+            ? getClauseLink(locale, clauseNumber, year, "main", "focus")
             : undefined
         }
         tableLink={
           view === "focus" || view === "focus-table"
-            ? getClauseLink(clauseNumber, year, "main", "focus-table")
+            ? getClauseLink(locale, clauseNumber, year, "main", "focus-table")
             : undefined
         }
       >
@@ -243,22 +244,30 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
   }
 
   private renderHeaderChildren = () => {
-    const { clauseNumber, year } = this.props;
+    const { clauseNumber, year, locale } = this.props;
     return (
       <>
         <div className={classes.focusMenu}>
           <Menu variant="tabs" className={cn(classes.tabs)}>
             <MenuLink
-              activeUrls={[getClauseLink(clauseNumber, year, "main", "table")]}
-              to={getClauseLink(clauseNumber, year, "main")}
+              activeUrls={[
+                getClauseLink(locale, clauseNumber, year, "main", "table"),
+              ]}
+              to={getClauseLink(locale, clauseNumber, year, "main")}
             >
               <T message="Основной и дополнительный состав: общие сведения" />
             </MenuLink>
             <MenuLink
               activeUrls={[
-                getClauseLink(clauseNumber, year, "main", "focus-table"),
+                getClauseLink(
+                  locale,
+                  clauseNumber,
+                  year,
+                  "main",
+                  "focus-table"
+                ),
               ]}
-              to={getClauseLink(clauseNumber, year, "main", "focus")}
+              to={getClauseLink(locale, clauseNumber, year, "main", "focus")}
             >
               <T message="Основной состав: в фокусе" />
             </MenuLink>

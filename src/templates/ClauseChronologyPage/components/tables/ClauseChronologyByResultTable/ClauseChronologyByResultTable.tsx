@@ -26,7 +26,7 @@ const ClauseChronologyByResultTable: React.FC<ClauseChronologyByResultProps> = (
   clauseNumber,
   years,
 }: ClauseChronologyByResultProps) => {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
 
   const tables = [
     {
@@ -75,6 +75,7 @@ const ClauseChronologyByResultTable: React.FC<ClauseChronologyByResultProps> = (
       }
       downloadFilename={`${clauseNumber}-chronology-by-result`}
       iframePath={getClauseLink(
+        locale,
         clauseNumber,
         undefined,
         "parts",

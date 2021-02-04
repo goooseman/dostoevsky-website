@@ -49,7 +49,7 @@ const ClauseMainPageFocus: React.FC<ClauseMainPageFocusProps> = (
     primaryCorrectionalLabour,
   } = props;
 
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
 
   const [openMoreStats, setOpenMoreStats] = useState(false);
 
@@ -182,6 +182,7 @@ const ClauseMainPageFocus: React.FC<ClauseMainPageFocusProps> = (
         }}
         /* TODO fix iframe path */
         iframePath={getClauseLink(
+          locale,
           clauseNumber.toString(),
           year.toString(),
           "main",

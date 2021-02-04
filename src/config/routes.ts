@@ -2,17 +2,17 @@ import {
   getRouteForClausePage,
   getRouteForIndexPage,
 } from "../../gatsby-routing";
-import { getLocale } from "src/utils/locales";
 
 type clauseLinkTypes = "main" | "parts" | "chronology" | "full";
 
 export const getClauseLink = (
+  locale: string,
   clause: string | number,
   year: string | number | undefined,
   type: clauseLinkTypes,
   view = "page"
 ): string => {
-  return getRouteForClausePage(getLocale(), clause, year, type, view);
+  return getRouteForClausePage(locale, clause, year, type, view);
 };
 
 export type IndexPageViews =
@@ -21,10 +21,11 @@ export type IndexPageViews =
   | "iframe-by-punishment";
 
 export const getIndexLink = (
+  locale: string,
   year: string,
   view: IndexPageViews,
   /** without # */
   anchor?: string
 ): string => {
-  return getRouteForIndexPage(getLocale(), year, view, anchor);
+  return getRouteForIndexPage(locale, year, view, anchor);
 };

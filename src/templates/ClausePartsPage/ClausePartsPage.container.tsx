@@ -5,8 +5,9 @@ import ClausePartsPage, {
 } from "./ClausePartsPage";
 import { Redirect } from "@reach/router";
 import { getClauseLink } from "src/config/routes";
+import { withLocale, WithLocale } from "react-targem";
 
-interface ClausePartsPageContainerProps {
+interface ClausePartsPageContainerProps extends WithLocale {
   clauseNumber: number;
   year: number;
   view: ClausePartsPageViewMode;
@@ -17,12 +18,14 @@ class ClausePartsPageContainer extends PureComponent<
   ClausePartsPageContainerProps
 > {
   render(): React.ReactNode {
-    const { clauseNumber, year } = this.props;
+    const { clauseNumber, year, locale } = this.props;
     if (this.props.parts.length === 0) {
-      return <Redirect to={getClauseLink(clauseNumber, year, "main")} />;
+      return (
+        <Redirect to={getClauseLink(locale, clauseNumber, year, "main")} />
+      );
     }
     return <ClausePartsPage {...this.props}></ClausePartsPage>;
   }
 }
 
-export default ClausePartsPageContainer;
+export default withLocale(ClausePartsPageContainer);

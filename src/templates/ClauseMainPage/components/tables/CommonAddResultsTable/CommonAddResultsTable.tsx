@@ -24,7 +24,7 @@ const CommonAddResultsTable: React.FC<CommonAddResultsTableProps> = ({
   year,
   ...p
 }: CommonAddResultsTableProps) => {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
 
   const tables = [
     {
@@ -154,6 +154,7 @@ const CommonAddResultsTable: React.FC<CommonAddResultsTableProps> = ({
       title={<T message="Дополнительный состав: детали" />}
       downloadFilename={`${clauseNumber}-common-add-by-result`}
       iframePath={getClauseLink(
+        locale,
         clauseNumber,
         year,
         "main",

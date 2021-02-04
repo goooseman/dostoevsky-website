@@ -8,7 +8,7 @@ import DownloadButton from "src/components/DownloadButton";
 import domtoimage from "dom-to-image";
 import { saveAs } from "file-saver";
 import { getClauseLink } from "src/config/routes";
-import { T } from "react-targem";
+import { T, useLocale } from "react-targem";
 
 const TREEMAP_COLORS = ["#7C89E4", "#FF6700", "#BA9BAF", "#F3607B"];
 
@@ -34,6 +34,7 @@ const Treemap: React.FC<TreemapProps> = ({
   downloadFilename,
 }: TreemapProps) => {
   const downloadAreaRef = useRef(null);
+  const { locale } = useLocale();
 
   const handleDownloadButtonClick = async () => {
     if (!downloadAreaRef || !downloadAreaRef.current) {
@@ -145,6 +146,7 @@ const Treemap: React.FC<TreemapProps> = ({
             {/* TODO fix embed url */}
             <EmbedModal
               iframePath={getClauseLink(
+                locale,
                 clauseNumber.toString(),
                 year.toString(),
                 "main",
