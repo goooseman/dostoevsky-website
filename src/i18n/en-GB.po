@@ -5,7 +5,7 @@ msgstr ""
 "POT-Creation-Date: Sun Jan 10 2021 00:39:02 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"PO-Revision-Date: 2021-02-04 18:12\n"
+"PO-Revision-Date: 2021-02-04 21:07\n"
 "Language-Team: English, United Kingdom\n"
 "MIME-Version: 1.0\n"
 "X-Generator: Poedit 2.4.2\n"
@@ -172,6 +172,7 @@ msgstr ""
 
 #: src/components/Footer/Footer.tsx:
 #: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+#: src/templates/IndexPage/IndexPageSubscription.tsx:
 msgid "Загрузка..."
 msgstr ""
 
