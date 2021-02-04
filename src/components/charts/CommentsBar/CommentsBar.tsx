@@ -118,13 +118,32 @@ const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
       );
       text.innerHTML = data.value.x;
       const textX = data.x2 - text.innerHTML.length * 11.5;
+      const isInside = textX >= data.x1;
       text.setAttribute("y", data.y1 + 6);
-      text.setAttribute("x", textX >= data.x1 ? textX : data.x2 + 10);
+      text.setAttribute("x", isInside ? textX : data.x2 + 10);
       text.setAttribute(
         "class",
-        `bar-number bar-number-${textX >= data.x1 ? "inside" : "outside"}`
+        `bar-number bar-number-${isInside ? "inside" : "outside"}`
       );
+
+      let background;
+      if (!isInside) {
+        background = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "line"
+        );
+        background.setAttribute("x1", data.x2);
+        background.setAttribute("y1", data.y1);
+        background.setAttribute("y2", data.y2);
+        background.setAttribute("class", "bar-number-background");
+        data.element._node.parentElement.appendChild(background);
+      }
+      // Background should be added before text
       data.element._node.parentElement.appendChild(text);
+
+      if (background) {
+        background.setAttribute("x2", data.x2 + text.getBBox().width + 20);
+      }
     }
   };
 

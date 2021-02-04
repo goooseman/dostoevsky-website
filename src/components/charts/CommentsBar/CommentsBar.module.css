@@ -24,6 +24,10 @@
     .bar-number-outside {
       fill: var(--color-text);
     }
+    .bar-number-background {
+      stroke: #fff;
+      stroke-width: 30px;
+    }
   }
 }
 
