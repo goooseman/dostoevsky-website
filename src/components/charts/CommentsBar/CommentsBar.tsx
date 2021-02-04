@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ChartWrapper from "src/components/ChartWrapper";
+import ChartWrapper, { LabelOverrideValue } from "src/components/ChartWrapper";
 import Chartist, {
   IChartistStepAxis,
   ChartDrawData,
@@ -20,6 +20,7 @@ interface CommentsBarProps {
   title: string;
   iframePath: string;
   charts: Chart[];
+  labelOverrides?: LabelOverrideValue[];
 }
 
 const ROW_HEIGHT = 55;
@@ -42,7 +43,7 @@ const createChartRefs = (charts: Chart[]) => {
 const removeTextInBrackets = (str: string): string => str.replace(/\(.+\)/, "");
 
 const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
-  const { charts } = props;
+  const { charts, labelOverrides } = props;
 
   const [chartRefs] = useState(createChartRefs(charts));
 
@@ -170,13 +171,16 @@ const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
       labels={getLabels()}
       downloadFilename={props.title}
       iframePath={props.iframePath}
+      labelOverrides={labelOverrides}
     >
       {charts.map((c, i) => (
         <div key={i} className={classes.barOuterWrapper}>
           <div
             ref={chartRefs[i]}
             className={cn(classes.barWrapper, {
-              [`ct-chart-${String.fromCharCode(97 + i)}`]: true,
+              [`ct-chart-${
+                labelOverrides ? labelOverrides[i] : String.fromCharCode(97 + i)
+              }`]: true,
             })}
             style={{
               height: charts[i].series[0].length * ROW_HEIGHT,

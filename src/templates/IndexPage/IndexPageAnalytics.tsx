@@ -34,6 +34,7 @@ const getAnalyticsCharts = (
         ],
       },
     ],
+    labelOverrides: ["b" as const],
   },
   {
     title: t(

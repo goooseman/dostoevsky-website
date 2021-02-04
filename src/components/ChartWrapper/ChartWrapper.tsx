@@ -8,6 +8,19 @@ import DownloadButton from "src/components/DownloadButton";
 import "chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css";
 import "chartist/dist/chartist.min.css";
 
+export type LabelOverrideValue =
+  | "a"
+  | "b"
+  | "c"
+  | "d"
+  | "e"
+  | "f"
+  | "h"
+  | "i"
+  | "j"
+  | "k"
+  | "l";
+
 interface ChartWrapperProps {
   labels?: string[];
   title: React.ReactNode;
@@ -18,6 +31,7 @@ interface ChartWrapperProps {
   iframePath: string;
   isSeparateLabels?: boolean;
   centerTitle?: boolean;
+  labelOverrides?: LabelOverrideValue[];
 }
 
 class ChartWrapper extends PureComponent<
@@ -38,6 +52,7 @@ class ChartWrapper extends PureComponent<
       iframePath,
       isSeparateLabels = false,
       centerTitle = false,
+      labelOverrides,
     } = this.props;
 
     return (
@@ -64,7 +79,11 @@ class ChartWrapper extends PureComponent<
                   <svg
                     width="16"
                     height="16"
-                    className={`ct-series-${String.fromCharCode(97 + i)}`}
+                    className={`ct-series-${
+                      labelOverrides
+                        ? labelOverrides[i]
+                        : String.fromCharCode(97 + i)
+                    }`}
                   >
                     <rect
                       width="16"
