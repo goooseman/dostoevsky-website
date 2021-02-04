@@ -113,7 +113,6 @@
   :global {
     .select {
       display: inline-block;
-      margin: 0 1rem;
     }
     .select__control {
       padding-bottom: 0.3rem;

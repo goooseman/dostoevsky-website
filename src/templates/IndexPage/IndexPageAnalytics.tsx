@@ -156,6 +156,7 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
           font="serif"
         >
           <b className={classes.analyticsTitleWrapper}>
+            {" "}
             <T message="Статистика решений суда по всем статьям УК РФ в" />
             <Select
               className="select"
@@ -167,7 +168,7 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
               // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore
               onChange={handleYearChange}
-            />
+            />{" "}
             <T message="году" />
           </b>
         </Typography>
