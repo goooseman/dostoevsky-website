@@ -33,10 +33,15 @@ class DonutChart extends PureComponent<DonutChartProps> {
     for (let i = 0; i < charts.length; i++) {
       const { groups, tooltipDescription, labels } = charts[i];
 
-      const series: { value: number }[] = groups.map((g, ii) => ({
-        value: g || 0,
-        meta: { tooltip: tooltipDescription, label: labels[ii] },
-      }));
+      let totalSum = 0;
+
+      const series: { value: number }[] = groups.map((g, ii) => {
+        totalSum += g || 0;
+        return {
+          value: g || 0,
+          meta: { tooltip: tooltipDescription, label: labels[ii] },
+        };
+      });
 
       const plugins = [];
 
@@ -60,8 +65,9 @@ class DonutChart extends PureComponent<DonutChartProps> {
           donutWidth: 80,
           showLabel: true,
           labelInterpolationFnc: (label: string, idx: number) => {
-            const val = groups[idx];
-            if (!val || val < 3) {
+            const val = groups[idx] || 0;
+            const percentage = (val / totalSum) * 100;
+            if (percentage < 4) {
               return;
             }
             return val;

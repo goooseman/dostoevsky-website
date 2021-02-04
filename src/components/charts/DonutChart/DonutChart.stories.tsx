@@ -49,3 +49,32 @@ const fromClauseMainProps = {
 export const fromClauseMain = (): React.ReactNode => (
   <DonutChart {...fromClauseMainProps} />
 );
+
+const withSmallNumberProps = {
+  title: "Чем закончились дела по статье 158, дошедшие до суда",
+  charts: [
+    {
+      title: "основной состав",
+      labels,
+      groups: [150495, 39, 69467, 2043],
+      tooltipDescription,
+    },
+    {
+      title: "доп. состав (по числу лиц)",
+      labels,
+      groups: [18611, 194, 7335, 0],
+      tooltipDescription,
+    },
+    {
+      title: "доп. состав (по количеству составов)",
+      labels,
+      groups: [75780, 402, 12080, 1163],
+      tooltipDescription,
+    },
+  ],
+  ...commonProps,
+};
+
+export const withSmallNumber = (): React.ReactNode => (
+  <DonutChart {...withSmallNumberProps} />
+);
