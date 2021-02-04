@@ -23,6 +23,6 @@
 
 @media screen and (max-width: 680px) {
   .container {
-    width: auto;
+    width: 100%;
   }
 }
