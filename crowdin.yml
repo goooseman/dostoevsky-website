@@ -26,7 +26,7 @@ files: [
       # Where translations will be placed
       # e.g. "/resources/%two_letters_code%/%original_file_name%"
       #
-      "translation": "/src/i18n/{{locale}}.po",
+      "translation": "/src/i18n/%locale%.po",
     },
   ]
 #
