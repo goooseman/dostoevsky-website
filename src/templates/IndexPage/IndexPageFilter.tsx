@@ -58,7 +58,7 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
 
   const [, setUkOptionsLoading] = useState(false);
 
-  const helpItems = searchService.getHelpItems("ru");
+  const helpItems = searchService.getHelpItems(locale as "ru" | "en-GB");
 
   const loadUkOptions = (value: string) => {
     return new Promise(async (resolve) => {
