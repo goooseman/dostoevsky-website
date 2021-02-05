@@ -16,6 +16,7 @@ import T from "src/components/T";
 import ClauseMainPageFocusTable from "./ClauseMainPageFocusTable";
 import { withLocale, WithLocale } from "react-targem";
 import { Helmet } from "react-helmet";
+import ClauseMainPageFocusTerminatedChart from "./components/charts/ClauseMainPageFocusTerminatedChart";
 
 export type ClausePartsPageViewMode =
   | "page"
@@ -25,7 +26,8 @@ export type ClausePartsPageViewMode =
   | "iframe-table-common-main-by-result"
   | "iframe-table-common-add-by-result"
   | "iframe-by-result"
-  | "iframe-table-focus";
+  | "iframe-table-focus"
+  | "iframe-focus-by-terminated";
 
 interface ClauseMainPageProps extends WithLocale {
   clauseNumber: number;
@@ -132,6 +134,10 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
 
     if (view === "iframe-table-focus") {
       return <ClauseMainPageFocusTable {...this.props} />;
+    }
+
+    if (view === "iframe-focus-by-terminated") {
+      return <ClauseMainPageFocusTerminatedChart {...this.props} />;
     }
 
     return (

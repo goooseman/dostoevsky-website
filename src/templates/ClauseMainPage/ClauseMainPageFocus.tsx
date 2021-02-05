@@ -4,9 +4,8 @@ import { T, useLocale } from "react-targem";
 import { Counters, Counter } from "src/components/Counters";
 import Treemap from "src/components/charts/Treemap";
 import Button from "src/components/ui-kit/Button";
-import PercentageBar from "src/components/charts/PercentageBar";
-import { getClauseLink } from "src/config/routes";
 import { Helmet } from "react-helmet";
+import ClauseMainPageFocusTerminatedChart from "./components/charts/ClauseMainPageFocusTerminatedChart";
 
 interface ClauseMainPageFocusProps {
   clauseNumber: number;
@@ -40,8 +39,6 @@ const ClauseMainPageFocus: React.FC<ClauseMainPageFocusProps> = (
     coerciveMeasures,
     dismissalAmnesty,
     noCrimeSelfDefence,
-    addDismissalPersons,
-    addDismissalOtherOffences,
     totalAdd,
     primarySuspended,
     primaryImprisonment,
@@ -49,26 +46,9 @@ const ClauseMainPageFocus: React.FC<ClauseMainPageFocusProps> = (
     primaryCorrectionalLabour,
   } = props;
 
-  const { t, locale } = useLocale();
+  const { t } = useLocale();
 
   const [openMoreStats, setOpenMoreStats] = useState(false);
-
-  const statsOnTermination = [
-    {
-      label: t(
-        "Дела прекращены за отсутствием состава, события преступления, непричастностью к преступлению (число лиц)"
-      ),
-      value: addDismissalPersons,
-    },
-    {
-      label: t("Дела прекращены по иным основаниям (число лиц)"),
-      value: addDismissalOtherOffences,
-    },
-    {
-      label: t("Принудительное лечение"),
-      value: coerciveMeasures,
-    },
-  ].sort((a, b) => b.value - a.value);
 
   return (
     <>
@@ -166,33 +146,7 @@ const ClauseMainPageFocus: React.FC<ClauseMainPageFocusProps> = (
         />
       </div>
 
-      <PercentageBar
-        isSeparateLabels
-        centerTitle
-        labels={statsOnTermination.map((s) => s.label)}
-        downloadFilename={`${clauseNumber}-${year}-parts`}
-        title={t(`Статистика прекращения дел по статье в ${year} году`)}
-        groups={[
-          {
-            title: "",
-            values: statsOnTermination.map((s) => s.value),
-          },
-        ]}
-        isIframeMode={false}
-        tooltipDescription={{
-          Состав: `${clauseNumber} основной состав`,
-          Меры: "^^",
-          "Число человек": "%%",
-        }}
-        /* TODO fix iframe path */
-        iframePath={getClauseLink(
-          locale,
-          clauseNumber.toString(),
-          year.toString(),
-          "main",
-          "focus"
-        )}
-      />
+      <ClauseMainPageFocusTerminatedChart {...props} />
 
       <Counters className={classes.counter}>
         <Counter

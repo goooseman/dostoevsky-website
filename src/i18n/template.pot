@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Fri Feb 05 2021 10:44:02 GMT+0300 (GMT+03:00)\n"
+"POT-Creation-Date: Fri Feb 05 2021 17:56:17 GMT+0300 (GMT+03:00)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -919,20 +919,6 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-msgid ""
-"Дела прекращены за отсутствием состава, события преступления, непричастностью к "
-"преступлению (число лиц)"
-msgstr ""
-
-#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-msgid "Дела прекращены по иным основаниям (число лиц)"
-msgstr ""
-
-#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-msgid "Принудительное лечение"
-msgstr ""
-
-#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
 msgid "Информация по основному и дополнительному составу статьи в виде чартов"
 msgstr ""
 
@@ -974,10 +960,6 @@ msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
 msgid "Чем закончились дела по статье "
-msgstr ""
-
-#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-msgid "Статистика прекращения дел по статье в "
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
@@ -1187,6 +1169,24 @@ msgstr ""
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "обстоятельства, предусмотренные статьями 38, 40 - 42 УК РФ"
+msgstr ""
+
+#: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
+msgid ""
+"Дела прекращены за отсутствием состава, события преступления, непричастностью к "
+"преступлению (число лиц)"
+msgstr ""
+
+#: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
+msgid "Дела прекращены по иным основаниям (число лиц)"
+msgstr ""
+
+#: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
+msgid "Принудительное лечение"
+msgstr ""
+
+#: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
+msgid "Статистика прекращения дел по статье в "
 msgstr ""
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:

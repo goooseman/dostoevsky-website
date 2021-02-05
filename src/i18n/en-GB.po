@@ -948,20 +948,6 @@ msgstr[0] "<b>{{ count }}</b> person was acquitted of additional offense"
 msgstr[1] "<b>{{ count }}</b> people were acquitted of additional offense"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-msgid ""
-"Дела прекращены за отсутствием состава, события преступления, непричастностью к "
-"преступлению (число лиц)"
-msgstr ""
-
-#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-msgid "Дела прекращены по иным основаниям (число лиц)"
-msgstr "Terminated on other grounds (number of persons)"
-
-#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-msgid "Принудительное лечение"
-msgstr ""
-
-#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
 msgid "Информация по основному и дополнительному составу статьи в виде чартов"
 msgstr ""
 
@@ -1003,10 +989,6 @@ msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
 msgid "Чем закончились дела по статье "
-msgstr ""
-
-#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-msgid "Статистика прекращения дел по статье в "
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
@@ -1223,6 +1205,24 @@ msgstr "state of necessity (article 39 Criminal Code of Russian Federation)"
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "обстоятельства, предусмотренные статьями 38, 40 - 42 УК РФ"
 msgstr "circumstances under 38, 40-42 of Criminal Code of Russian Federation"
+
+#: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
+msgid ""
+"Дела прекращены за отсутствием состава, события преступления, непричастностью к "
+"преступлению (число лиц)"
+msgstr ""
+
+#: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
+msgid "Дела прекращены по иным основаниям (число лиц)"
+msgstr "Terminated on other grounds (number of persons)"
+
+#: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
+msgid "Принудительное лечение"
+msgstr ""
+
+#: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
+msgid "Статистика прекращения дел по статье в "
+msgstr ""
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
 msgid "прекращено дел в отношении человек"
