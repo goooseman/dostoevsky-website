@@ -49,18 +49,21 @@ const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
 
   useEffect(() => {
     for (let i = 0; i < charts.length; i++) {
+      const labels = charts[i].series[0].map((s) =>
+        removeTextInBrackets(s.title)
+      );
       const chart = new Chartist.Bar(
         chartRefs[i].current,
         {
-          labels: [], //chartLabels,
+          labels: labels,
           series: charts[i].series.map((s) =>
             s
               .map((s) => ({
                 value: s.value,
-                meta: { title: "Foo" },
+                meta: { title: s.title },
               }))
               .sort((a, b) => a.value - b.value)
-          ), //series,
+          ),
         },
         {
           stackBars: true,
@@ -77,9 +80,10 @@ const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
             showGrid: true,
             offset: 0,
             fullWidth: false,
+            position: "end",
           } as IChartistStepAxis,
           chartPadding: {
-            right: 20,
+            right: 305,
             bottom: 0,
           },
         }
@@ -186,17 +190,6 @@ const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
               height: charts[i].series[0].length * ROW_HEIGHT,
             }}
           />
-          <div className={classes.barTitles}>
-            {charts[i].series[0]
-              .sort((a, b) => a.value - b.value)
-              .map((s) => (
-                <div key={s.title}>
-                  <span className={cn(classes.barTitle)} title={s.title}>
-                    {removeTextInBrackets(s.title)}
-                  </span>
-                </div>
-              ))}
-          </div>
         </div>
       ))}
     </ChartWrapper>

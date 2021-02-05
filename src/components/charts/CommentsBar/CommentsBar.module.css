@@ -15,6 +15,10 @@
     .ct-bar {
       stroke-width: 33px;
     }
+    .ct-label.ct-vertical.ct-end {
+      white-space: normal;
+      width: 300px !important;
+    }
     .bar-number {
       font-weight: 500;
     }
@@ -31,37 +35,12 @@
   }
 }
 
-.bar-titles {
-  display: flex;
-  width: 380px;
-  margin-right: -100px;
-  height: calc(100% - 45px);
-  flex-direction: column;
-  margin-top: 15px;
-}
-
-.bar-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.bar-title::first-letter {
-  text-transform: uppercase;
-}
-
-.bar-titles > div {
-  display: flex;
-  flex: 1;
-  align-items: center;
-}
-
 @media all and (max-width: 680px) {
-  .bar-titles {
-    font-size: 12px;
-  }
-
-  .ct-chart-bar.ct-horizontal-bars .ct-label.ct-horizontal.ct-end {
-    font-size: 8px;
+  .bar-wrapper {
+    :global {
+      .ct-chart-bar.ct-horizontal-bars .ct-label.ct-horizontal.ct-end {
+        font-size: 8px;
+      }
+    }
   }
 }
