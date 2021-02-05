@@ -78,7 +78,18 @@ const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
             right: 305,
             bottom: 0,
           },
-        }
+        },
+        [
+          [
+            "screen and (max-width: 680px)",
+            {
+              chartPadding: {
+                right: 180,
+                left: 0,
+              },
+            },
+          ],
+        ]
       );
 
       chart.on("draw", (data: ChartDrawData) => {

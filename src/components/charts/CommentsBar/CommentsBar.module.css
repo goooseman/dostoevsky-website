@@ -39,8 +39,9 @@
 @media all and (max-width: 680px) {
   .bar-wrapper {
     :global {
-      .ct-chart-bar.ct-horizontal-bars .ct-label.ct-horizontal.ct-end {
+      .ct-label.ct-vertical.ct-end {
         font-size: 8px;
+        width: 150px !important;
       }
     }
   }
