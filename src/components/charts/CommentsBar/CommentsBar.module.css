@@ -18,6 +18,7 @@
     .ct-label.ct-vertical.ct-end {
       white-space: normal;
       width: 300px !important;
+      text-transform: none;
     }
     .bar-number {
       font-weight: 500;

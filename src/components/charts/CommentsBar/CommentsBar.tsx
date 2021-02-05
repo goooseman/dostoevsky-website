@@ -7,6 +7,7 @@ import Chartist, {
 } from "chartist";
 import classes from "./CommentsBar.module.css";
 import cn from "clsx";
+import { removeTextInBrackets, capitalize } from "src/utils/strings";
 
 interface Chart {
   title: string;
@@ -39,9 +40,6 @@ const createChartRefs = (charts: Chart[]) => {
   return chartRefs;
 };
 
-/** "Угроза убийством или причинением тяжкого вреда здоровью (включая ст. 119 старой редакции УК РФ)" => "Угроза убийством или причинением тяжкого вреда здоровью " */
-const removeTextInBrackets = (str: string): string => str.replace(/\(.+\)/, "");
-
 const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
   const { charts, labelOverrides } = props;
 
@@ -49,21 +47,22 @@ const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
 
   useEffect(() => {
     for (let i = 0; i < charts.length; i++) {
-      const labels = charts[i].series[0].map((s) =>
-        removeTextInBrackets(s.title)
-      );
+      const labels: string[] = [];
       const chart = new Chartist.Bar(
         chartRefs[i].current,
         {
-          labels: labels,
           series: charts[i].series.map((s) =>
             s
-              .map((s) => ({
-                value: s.value,
-                meta: { title: s.title },
-              }))
+              .map((s) => {
+                labels.push(capitalize(removeTextInBrackets(s.title)));
+                return {
+                  value: s.value,
+                  meta: { title: s.title },
+                };
+              })
               .sort((a, b) => a.value - b.value)
           ),
+          labels: labels,
         },
         {
           stackBars: true,
