@@ -5,7 +5,7 @@ msgstr ""
 "POT-Creation-Date: Sun Jan 10 2021 00:39:02 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"PO-Revision-Date: 2021-02-05 08:43\n"
+"PO-Revision-Date: 2021-02-05 15:57\n"
 "Language-Team: English, United Kingdom\n"
 "MIME-Version: 1.0\n"
 "X-Generator: Poedit 2.4.2\n"
@@ -814,18 +814,6 @@ msgstr[0] "<b>{{ count }}</b> person was acquitted of additional offense"
 msgstr[1] "<b>{{ count }}</b> people were acquitted of additional offense"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-msgid "Дела прекращены за отсутствием состава, события преступления, непричастностью к преступлению (число лиц)"
-msgstr ""
-
-#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-msgid "Дела прекращены по иным основаниям (число лиц)"
-msgstr "Terminated on other grounds (number of persons)"
-
-#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-msgid "Принудительное лечение"
-msgstr ""
-
-#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
 msgid "Информация по основному и дополнительному составу статьи в виде чартов"
 msgstr ""
 
@@ -862,19 +850,7 @@ msgid "дел прекращено как необходимая оборона"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-msgid "Чем закончились дела по статье "
-msgstr ""
-
-#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-msgid "Статистика прекращения дел по статье в "
-msgstr ""
-
-#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
 msgid "дополнительных наказаний назначено по статье"
-msgstr ""
-
-#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-msgid "Наказания для подсудимых по статье "
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
@@ -1071,6 +1047,30 @@ msgstr "state of necessity (article 39 Criminal Code of Russian Federation)"
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "обстоятельства, предусмотренные статьями 38, 40 - 42 УК РФ"
 msgstr "circumstances under 38, 40-42 of Criminal Code of Russian Federation"
+
+#: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusPunishmentsTreemap/ClauseMainPageFocusPunishmentsTreemap.tsx:
+msgid "Наказания для подсудимых по статье "
+msgstr ""
+
+#: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
+msgid "Дела прекращены за отсутствием состава, события преступления, непричастностью к преступлению (число лиц)"
+msgstr ""
+
+#: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
+msgid "Дела прекращены по иным основаниям (число лиц)"
+msgstr "Terminated on other grounds (number of persons)"
+
+#: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
+msgid "Принудительное лечение"
+msgstr ""
+
+#: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
+msgid "Статистика прекращения дел по статье в "
+msgstr ""
+
+#: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedTreemap/ClauseMainPageFocusTerminatedTreemap.tsx:
+msgid "Чем закончились дела по статье "
+msgstr ""
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
 msgid "прекращено дел в отношении человек"
