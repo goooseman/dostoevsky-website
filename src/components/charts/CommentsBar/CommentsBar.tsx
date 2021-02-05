@@ -4,6 +4,7 @@ import Chartist, {
   IChartistStepAxis,
   ChartDrawData,
   IChartDrawGridData,
+  IChartDrawLabelData,
 } from "chartist";
 import classes from "./CommentsBar.module.css";
 import cn from "clsx";
@@ -69,7 +70,8 @@ const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
           horizontalBars: true,
           axisX: {
             onlyInteger: true,
-            showGrid: false,
+            showGrid: true,
+            scaleMinSpace: 50,
             labelOffset: {
               y: Y_LABEL_MARGIN,
             },
@@ -92,9 +94,41 @@ const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
         styleVerticalGrid(data);
         transformHorizontalGrid(data);
         addNumbersToBars(data);
+        positionXLabel(data);
       });
     }
   }, []);
+
+  const isLabel = (data: ChartDrawData): data is IChartDrawLabelData =>
+    data.type === "label";
+
+  const isXLabel = (data: IChartDrawLabelData) => data.axis?.units.pos === "x";
+
+  const positionXLabel = (data: ChartDrawData): void => {
+    if (!isLabel(data) || !isXLabel(data)) {
+      return;
+    }
+    data.element.attr({
+      width: 35,
+    });
+    if (data.index === 0) {
+      return;
+    }
+    const x = data.x || 0;
+
+    if (data.index === data.axis.ticks.length - 1) {
+      data.element.attr({
+        x: x - 15,
+      });
+      return;
+    }
+    const digitsCount = data.element._node.textContent?.length || 1;
+    data.element.attr({
+      x: x - digitsCount * 3.5,
+    });
+  };
+
+  const isYGrid = (data: IChartDrawGridData) => data.axis?.units.pos === "y";
 
   const transformHorizontalGrid = (data: ChartDrawData): void => {
     if (data.type === "bar") {
@@ -109,7 +143,7 @@ const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
       line.setAttribute("class", "ct-grid ct-vertical");
       data.element._node.parentElement.insertBefore(line, data.element._node);
     }
-    if (data.type === "grid" && data.index !== 0) {
+    if (data.type === "grid" && data.index !== 0 && isYGrid(data)) {
       data.element.remove();
     }
   };
