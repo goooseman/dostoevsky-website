@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import classes from "./ClauseMainPage.module.css";
 import { T, useLocale } from "react-targem";
 import { Counters, Counter } from "src/components/Counters";
-import Treemap from "src/components/charts/Treemap";
 import Button from "src/components/ui-kit/Button";
 import { Helmet } from "react-helmet";
 import ClauseMainPageFocusTerminatedChart from "./components/charts/ClauseMainPageFocusTerminatedChart";
+import ClauseMainPageFocusTerminatedTreemap from "./components/charts/ClauseMainPageFocusTerminatedTreemap";
+import ClauseMainPageFocusPunishmentsTreemap from "./components/charts/ClauseMainPageFocusPunishmentsTreemap";
 
 interface ClauseMainPageFocusProps {
   clauseNumber: number;
@@ -31,19 +32,13 @@ const ClauseMainPageFocus: React.FC<ClauseMainPageFocusProps> = (
 ) => {
   const {
     clauseNumber,
-    year,
     totalConvicted,
     totalAcquittal,
     totalDismissal,
     unfinishedOffence,
-    coerciveMeasures,
     dismissalAmnesty,
     noCrimeSelfDefence,
     totalAdd,
-    primarySuspended,
-    primaryImprisonment,
-    primaryFine,
-    primaryCorrectionalLabour,
   } = props;
 
   const { t } = useLocale();
@@ -119,31 +114,7 @@ const ClauseMainPageFocus: React.FC<ClauseMainPageFocusProps> = (
       ) : null}
 
       <div className={classes.treemapWrapper}>
-        <Treemap
-          title={t(
-            `Чем закончились дела по статье ${clauseNumber}, дошедшие до суда по основному составу в ${year} году`
-          )}
-          data={[
-            {
-              value: totalDismissal,
-              label: "прекращено дел в отношении человек",
-            },
-            { value: totalConvicted, label: "осуждены" },
-            {
-              value: totalAcquittal,
-              label: "оправданы",
-            },
-            {
-              value: coerciveMeasures,
-              label: "принудительное лечение",
-            },
-          ]}
-          width={625}
-          height={392}
-          clauseNumber={clauseNumber}
-          year={year}
-          downloadFilename={`${clauseNumber}-${year}-treemap`}
-        />
+        <ClauseMainPageFocusTerminatedTreemap {...props} />
       </div>
 
       <ClauseMainPageFocusTerminatedChart {...props} />
@@ -156,31 +127,7 @@ const ClauseMainPageFocus: React.FC<ClauseMainPageFocusProps> = (
       </Counters>
 
       <div className={classes.treemapWrapper}>
-        <Treemap
-          title={t(
-            `Наказания для подсудимых по статье ${clauseNumber} в ${year} году`
-          )}
-          data={[
-            {
-              value: primarySuspended,
-              label: "условное осуждение к лишению свободы",
-            },
-            { value: primaryImprisonment, label: "лишение свободы" },
-            {
-              value: primaryFine,
-              label: "штраф",
-            },
-            {
-              value: primaryCorrectionalLabour,
-              label: "исправительные работы",
-            },
-          ]}
-          width={625}
-          height={392}
-          clauseNumber={clauseNumber}
-          year={year}
-          downloadFilename={`${clauseNumber}-${year}-treemap`}
-        />
+        <ClauseMainPageFocusPunishmentsTreemap {...props} />
       </div>
     </>
   );

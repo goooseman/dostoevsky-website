@@ -9,6 +9,7 @@ interface ClauseMainPageFocusTerminatedChart {
   addDismissalPersons: number;
   addDismissalOtherOffences: number;
   coerciveMeasures: number;
+  isIframeMode?: boolean;
 }
 
 const ClauseMainPageFocusTerminatedChart: React.FC<ClauseMainPageFocusTerminatedChart> = ({
@@ -17,6 +18,7 @@ const ClauseMainPageFocusTerminatedChart: React.FC<ClauseMainPageFocusTerminated
   addDismissalPersons,
   addDismissalOtherOffences,
   coerciveMeasures,
+  isIframeMode,
 }: ClauseMainPageFocusTerminatedChart) => {
   const { t, locale } = useLocale();
   const statsOnTermination = [
@@ -48,7 +50,7 @@ const ClauseMainPageFocusTerminatedChart: React.FC<ClauseMainPageFocusTerminated
           values: statsOnTermination.map((s) => s.value),
         },
       ]}
-      isIframeMode={false}
+      isIframeMode={isIframeMode}
       tooltipDescription={{
         Состав: `${clauseNumber} основной состав`,
         Меры: "^^",

@@ -1,0 +1,2 @@
+import ClauseMainPageFocusPunishmentsTreemap from "./ClauseMainPageFocusPunishmentsTreemap";
+export default ClauseMainPageFocusPunishmentsTreemap;

@@ -1,7 +1,6 @@
 import React, { PureComponent } from "react";
 import Table from "./Table";
 import { saveAs } from "file-saver";
-import iconv from "iconv-lite";
 import { getCsv } from "src/utils/csv";
 
 interface TableContainerProps

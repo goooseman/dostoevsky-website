@@ -17,6 +17,8 @@ import ClauseMainPageFocusTable from "./ClauseMainPageFocusTable";
 import { withLocale, WithLocale } from "react-targem";
 import { Helmet } from "react-helmet";
 import ClauseMainPageFocusTerminatedChart from "./components/charts/ClauseMainPageFocusTerminatedChart";
+import ClauseMainPageFocusPunishmentsTreemap from "./components/charts/ClauseMainPageFocusPunishmentsTreemap";
+import ClauseMainPageFocusTerminatedTreemap from "./components/charts/ClauseMainPageFocusTerminatedTreemap";
 
 export type ClausePartsPageViewMode =
   | "page"
@@ -27,7 +29,9 @@ export type ClausePartsPageViewMode =
   | "iframe-table-common-add-by-result"
   | "iframe-by-result"
   | "iframe-table-focus"
-  | "iframe-focus-by-terminated";
+  | "iframe-focus-by-terminated"
+  | "iframe-focus-treemap-by-punisment"
+  | "iframe-focus-treemap-by-terminated";
 
 interface ClauseMainPageProps extends WithLocale {
   clauseNumber: number;
@@ -137,7 +141,21 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
     }
 
     if (view === "iframe-focus-by-terminated") {
-      return <ClauseMainPageFocusTerminatedChart {...this.props} />;
+      return (
+        <ClauseMainPageFocusTerminatedChart {...this.props} isIframeMode />
+      );
+    }
+
+    if (view === "iframe-focus-treemap-by-punisment") {
+      return (
+        <ClauseMainPageFocusPunishmentsTreemap {...this.props} isIframeMode />
+      );
+    }
+
+    if (view === "iframe-focus-treemap-by-terminated") {
+      return (
+        <ClauseMainPageFocusTerminatedTreemap {...this.props} isIframeMode />
+      );
     }
 
     return (

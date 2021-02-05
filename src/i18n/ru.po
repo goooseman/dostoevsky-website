@@ -1086,16 +1086,8 @@ msgid "дел прекращено как необходимая оборона"
 msgstr "дел прекращено как необходимая оборона"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-msgid "Чем закончились дела по статье "
-msgstr "Чем закончились дела по статье "
-
-#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
 msgid "дополнительных наказаний назначено по статье"
 msgstr "дополнительных наказаний назначено по статье"
-
-#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-msgid "Наказания для подсудимых по статье "
-msgstr "Наказания для подсудимых по статье "
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 msgid "Информация по основному и дополнительному составу статьи в виде таблицы"
@@ -1304,6 +1296,10 @@ msgstr "крайняя необходимость (ст. 39 УК РФ)"
 msgid "обстоятельства, предусмотренные статьями 38, 40 - 42 УК РФ"
 msgstr "обстоятельства, предусмотренные статьями 38, 40 - 42 УК РФ"
 
+#: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusPunishmentsTreemap/ClauseMainPageFocusPunishmentsTreemap.tsx:
+msgid "Наказания для подсудимых по статье "
+msgstr "Наказания для подсудимых по статье "
+
 #: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
 msgid ""
 "Дела прекращены за отсутствием состава, события преступления, непричастностью к "
@@ -1323,6 +1319,10 @@ msgstr "Принудительное лечение"
 #: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
 msgid "Статистика прекращения дел по статье в "
 msgstr "Статистика прекращения дел по статье в "
+
+#: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedTreemap/ClauseMainPageFocusTerminatedTreemap.tsx:
+msgid "Чем закончились дела по статье "
+msgstr "Чем закончились дела по статье "
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
 msgid "прекращено дел в отношении человек"

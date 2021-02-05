@@ -988,15 +988,7 @@ msgid "дел прекращено как необходимая оборона"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-msgid "Чем закончились дела по статье "
-msgstr ""
-
-#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
 msgid "дополнительных наказаний назначено по статье"
-msgstr ""
-
-#: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
-msgid "Наказания для подсудимых по статье "
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
@@ -1206,6 +1198,10 @@ msgstr "state of necessity (article 39 Criminal Code of Russian Federation)"
 msgid "обстоятельства, предусмотренные статьями 38, 40 - 42 УК РФ"
 msgstr "circumstances under 38, 40-42 of Criminal Code of Russian Federation"
 
+#: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusPunishmentsTreemap/ClauseMainPageFocusPunishmentsTreemap.tsx:
+msgid "Наказания для подсудимых по статье "
+msgstr ""
+
 #: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
 msgid ""
 "Дела прекращены за отсутствием состава, события преступления, непричастностью к "
@@ -1222,6 +1218,10 @@ msgstr ""
 
 #: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
 msgid "Статистика прекращения дел по статье в "
+msgstr ""
+
+#: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedTreemap/ClauseMainPageFocusTerminatedTreemap.tsx:
+msgid "Чем закончились дела по статье "
 msgstr ""
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:

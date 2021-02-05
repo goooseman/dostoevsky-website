@@ -146,6 +146,12 @@ exports.createPages = async ({ actions, graphql }) => {
                 IS_WITHOUT_EMBED ? undefined : "iframe-by-result",
                 IS_WITHOUT_EMBED ? undefined : "iframe-table-focus",
                 IS_WITHOUT_EMBED ? undefined : "iframe-focus-by-terminated",
+                IS_WITHOUT_EMBED
+                  ? undefined
+                  : "iframe-focus-treemap-by-punisment",
+                IS_WITHOUT_EMBED
+                  ? undefined
+                  : "iframe-focus-treemap-by-terminated",
               ];
               for (const view of mainPageViewModes) {
                 if (view === undefined) {
