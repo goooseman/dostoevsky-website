@@ -76,31 +76,22 @@
   background-color: var(--color-main-background);
 }
 
-.sidebar .item-active > span > small,
-.sidebar .item-active > span > small::before {
-  background-color: var(--color-primary);
-}
-
 .sidebar .item-active > span > small::after {
   content: " ";
 }
 
-.sidebar .item-active > span > small {
+.sidebar .item-active > span {
   position: relative;
+}
+
+.sidebar .item-active > span > small {
+  background-color: var(--color-primary);
   line-height: 1;
   display: inline;
   white-space: pre-wrap;
   border: solid var(--color-primary);
   border-width: 0.25em 0;
   padding: 2px 0;
-}
-.sidebar .item-active > span > small::before {
-  content: "";
-  position: absolute;
-  top: -0.25em;
-  right: 100%;
-  bottom: -0.25em;
-  width: 0.25em;
 }
 
 .page-container {
