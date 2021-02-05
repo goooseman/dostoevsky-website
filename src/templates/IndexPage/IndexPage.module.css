@@ -356,22 +356,32 @@
 
 .more-title {
   position: relative;
-  min-height: 5px;
-  border-top: 5px solid var(--color-border-dark);
   margin-top: 5rem;
+}
+
+.more-title::after {
+  content: "";
+  height: 5px;
+  width: 100%;
+  background-color: var(--color-border-dark);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 @media all and (max-width: 680px) {
   .more-title {
-    margin: 2rem;
+    text-align: center;
+  }
+  .more-title::after {
+    display: none;
   }
 }
 
 .more-title-inner {
-  position: absolute;
-  top: -15px;
-  left: 0;
   padding-right: 1rem;
+  display: inline-block;
   background-color: var(--color-text-inverted);
 }
 
@@ -400,6 +410,8 @@
   background-repeat: no-repeat;
   background-size: contain;
   min-height: 438px;
+  display: flex;
+  align-items: stretch;
 }
 @media all and (max-width: 1189px) {
   .more-wrapper .more-item {
@@ -418,7 +430,6 @@
   position: relative;
   z-index: 2;
   display: block;
-  height: calc(100% - 4rem);
   padding: 0.5rem;
   padding-bottom: 4rem;
   margin-top: 3rem;

@@ -156,8 +156,7 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
           font="serif"
         >
           <b className={classes.analyticsTitleWrapper}>
-            {" "}
-            <T message="Статистика решений суда по всем статьям УК РФ в" />
+            <T message="Статистика решений суда по всем статьям УК РФ в" />{" "}
             <Select
               className="select"
               classNamePrefix="select"
