@@ -1,4 +1,4 @@
-const getRouteForClausePage = (locale, clauseId, year, page, view) => {
+const getRouteForClausePage = (locale, clauseId, year, page, view, anchor) => {
   let route = `/${locale}/${clauseId}/`;
   if (page !== "chronology") {
     route += `${year || 2019}/`;
@@ -8,6 +8,9 @@ const getRouteForClausePage = (locale, clauseId, year, page, view) => {
   }
   if (view !== "page") {
     route += `${view}/`;
+  }
+  if (anchor) {
+    route += `#${anchor}`;
   }
   return route;
 };

@@ -163,26 +163,62 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
                 {headerChildren}
               </ClausePageHeader>
               {!isWithoutChartsTablesTabs ? (
-                <Menu variant="activeBorderBottom" className={cn(classes.menu)}>
+                <Menu
+                  id="view-selector"
+                  variant="activeBorderBottom"
+                  className={cn(classes.menu)}
+                >
                   <MenuLink
                     to={
-                      chartsLink ||
-                      getClauseLink(locale, clauseNumber, year, pageType)
+                      chartsLink
+                        ? chartsLink + "#view-selector"
+                        : getClauseLink(
+                            locale,
+                            clauseNumber,
+                            year,
+                            pageType,
+                            undefined,
+                            "view-selector"
+                          )
                     }
+                    activeUrls={[
+                      new RegExp(
+                        `${getClauseLink(
+                          locale,
+                          clauseNumber,
+                          year,
+                          pageType,
+                          undefined
+                        )}$`
+                      ),
+                      chartsLink,
+                    ]}
                   >
                     <T message="Чарты" />
                   </MenuLink>
                   <MenuLink
                     to={
-                      tableLink ||
+                      tableLink
+                        ? tableLink + "#view-selector"
+                        : getClauseLink(
+                            locale,
+                            clauseNumber,
+                            year,
+                            pageType,
+                            "table",
+                            "view-selector"
+                          )
+                    }
+                    activeUrls={[
                       getClauseLink(
                         locale,
                         clauseNumber,
                         year,
                         pageType,
                         "table"
-                      )
-                    }
+                      ),
+                      tableLink,
+                    ]}
                   >
                     <T message="Таблица" />
                   </MenuLink>

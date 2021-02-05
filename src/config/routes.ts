@@ -10,9 +10,11 @@ export const getClauseLink = (
   clause: string | number,
   year: string | number | undefined,
   type: clauseLinkTypes,
-  view = "page"
+  view = "page",
+  /** without # */
+  anchor?: string
 ): string => {
-  return getRouteForClausePage(locale, clause, year, type, view);
+  return getRouteForClausePage(locale, clause, year, type, view, anchor);
 };
 
 export type IndexPageViews =
