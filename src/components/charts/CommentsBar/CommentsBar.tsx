@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from "react";
 import ChartWrapper, { LabelOverrideValue } from "src/components/ChartWrapper";
-import Chartist, {
-  IChartistStepAxis,
-  ChartDrawData,
-  IChartDrawGridData,
-  IChartDrawLabelData,
-} from "chartist";
+import Chartist, { IChartistStepAxis, ChartDrawData } from "chartist";
 import classes from "./CommentsBar.module.css";
 import cn from "clsx";
 import { removeTextInBrackets, capitalize } from "src/utils/strings";
+import { centerXLabel, styleVerticalGrid, isYGrid } from "src/utils/chartist";
 
 interface Chart {
   title: string;
@@ -27,11 +23,6 @@ interface CommentsBarProps {
 
 const ROW_HEIGHT = 55;
 const Y_LABEL_MARGIN = 15;
-
-const isGrid = (data: ChartDrawData): data is IChartDrawGridData =>
-  data.type === "grid";
-
-const isXGrid = (data: IChartDrawGridData) => data.axis?.units.pos === "x";
 
 const createChartRefs = (charts: Chart[]) => {
   const chartRefs = [];
@@ -91,44 +82,13 @@ const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
       );
 
       chart.on("draw", (data: ChartDrawData) => {
-        styleVerticalGrid(data);
+        styleVerticalGrid(data, Y_LABEL_MARGIN);
         transformHorizontalGrid(data);
         addNumbersToBars(data);
-        positionXLabel(data);
+        centerXLabel(data);
       });
     }
   }, []);
-
-  const isLabel = (data: ChartDrawData): data is IChartDrawLabelData =>
-    data.type === "label";
-
-  const isXLabel = (data: IChartDrawLabelData) => data.axis?.units.pos === "x";
-
-  const positionXLabel = (data: ChartDrawData): void => {
-    if (!isLabel(data) || !isXLabel(data)) {
-      return;
-    }
-    data.element.attr({
-      width: 35,
-    });
-    if (data.index === 0) {
-      return;
-    }
-    const x = data.x || 0;
-
-    if (data.index === data.axis.ticks.length - 1) {
-      data.element.attr({
-        x: x - 15,
-      });
-      return;
-    }
-    const digitsCount = data.element._node.textContent?.length || 1;
-    data.element.attr({
-      x: x - digitsCount * 3.5,
-    });
-  };
-
-  const isYGrid = (data: IChartDrawGridData) => data.axis?.units.pos === "y";
 
   const transformHorizontalGrid = (data: ChartDrawData): void => {
     if (data.type === "bar") {
@@ -183,16 +143,6 @@ const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
         background.setAttribute("x2", data.x2 + text.getBBox().width + 20);
       }
     }
-  };
-
-  const styleVerticalGrid = (data: ChartDrawData): void => {
-    if (!isGrid(data) || !isXGrid(data)) {
-      return;
-    }
-    data.element.attr({
-      y1: data.y2,
-      y2: data.y2 + Y_LABEL_MARGIN - 5,
-    });
   };
 
   const getLabels = () => {

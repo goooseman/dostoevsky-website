@@ -1,15 +1,15 @@
 import React, { PureComponent } from "react";
 import ChartWrapper from "src/components/ChartWrapper";
-import Chartist, {
-  IChartistStepAxis,
-  ChartDrawData,
-  IChartDrawLabelData,
-  IChartDrawGridData,
-} from "chartist";
+import Chartist, { IChartistStepAxis, ChartDrawData } from "chartist";
 import classes from "./Bar.module.css";
 import cn from "clsx";
 import he from "he";
 import Typography from "src/components/ui-kit/Typography";
+import {
+  centerXLabel,
+  styleVerticalGrid,
+  removeHorizontalGridExceptLast,
+} from "src/utils/chartist";
 
 interface BarProps extends React.ComponentProps<typeof ChartWrapper> {
   charts: {
@@ -94,7 +94,7 @@ class Bar extends PureComponent<BarProps> {
             onlyInteger: true,
             showGrid: true,
             labelOffset: {
-              y: areLabelsRotated ? 10 : Y_LABEL_MARGIN,
+              y: areLabelsRotated ? 10 : 20,
             },
           },
           axisY: {
@@ -116,9 +116,9 @@ class Bar extends PureComponent<BarProps> {
       );
 
       chart.on("draw", (data: ChartDrawData) => {
-        this.positionXLabel(data);
-        this.styleVerticalGrid(data);
-        this.styleHorizontalGrid(data);
+        centerXLabel(data);
+        styleVerticalGrid(data, Y_LABEL_MARGIN);
+        removeHorizontalGridExceptLast(data);
         if (chartType === "partsByPunishment") {
           this.getBarSum(data, series.length);
         }
@@ -177,51 +177,6 @@ class Bar extends PureComponent<BarProps> {
     return undefined;
   };
 
-  private positionXLabel = (data: ChartDrawData): void => {
-    if (!this.isLabel(data) || !this.isXLabel(data)) {
-      return;
-    }
-    data.element.attr({
-      width: 35,
-    });
-    if (data.index === 0) {
-      return;
-    }
-    const x = data.x || 0;
-
-    if (data.index === data.axis.ticks.length - 1) {
-      data.element.attr({
-        x: x - 15,
-      });
-      return;
-    }
-
-    data.element.attr({
-      x: x - 6,
-    });
-  };
-
-  /** Function to remove all horizontal lines, except for the last one */
-  private styleHorizontalGrid = (data: ChartDrawData): void => {
-    if (!this.isGrid(data) || !this.isYGrid(data)) {
-      return;
-    }
-    if (data.index !== 0) {
-      data.element.remove();
-    }
-  };
-
-  /** Function to show vertical grid under the canvas */
-  private styleVerticalGrid = (data: ChartDrawData): void => {
-    if (!this.isGrid(data) || !this.isXGrid(data)) {
-      return;
-    }
-    data.element.attr({
-      y1: data.y2,
-      y2: data.y2 + Y_LABEL_MARGIN - 5,
-    });
-  };
-
   private getTooltipText = (meta: string, value: number) => {
     let metaDeserialized: {
       data: {
@@ -264,19 +219,6 @@ class Bar extends PureComponent<BarProps> {
       data.element._node.parentElement.appendChild(foreignObject);
     }
   };
-
-  private isLabel = (data: ChartDrawData): data is IChartDrawLabelData =>
-    data.type === "label";
-
-  private isXLabel = (data: IChartDrawLabelData) =>
-    data.axis?.units.pos === "x";
-
-  private isGrid = (data: ChartDrawData): data is IChartDrawGridData =>
-    data.type === "grid";
-
-  private isYGrid = (data: IChartDrawGridData) => data.axis?.units.pos === "y";
-
-  private isXGrid = (data: IChartDrawGridData) => data.axis?.units.pos === "x";
 }
 
 export default Bar;

@@ -5,11 +5,14 @@ import Chartist, {
   IChartistStepAxis,
   ChartDrawData,
   IChartDrawBarData,
-  IChartDrawGridData,
-  IChartDrawLabelData,
 } from "chartist";
 import ChartWrapper from "src/components/ChartWrapper";
 import he from "he";
+import {
+  centerXLabel,
+  styleVerticalGrid,
+  removeHorizontalGridExceptLast,
+} from "src/utils/chartist";
 
 const ROW_HEIGHT = 90;
 const BAR_HEIGHT = 61;
@@ -117,11 +120,11 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
       }
     );
     chart.on("draw", (data: ChartDrawData) => {
-      this.positionXLabel(data);
+      centerXLabel(data);
       this.addTextValueToBar(data);
       this.increaseBarHeight(data);
-      this.styleHorizontalGrid(data);
-      this.styleVerticalGrid(data);
+      removeHorizontalGridExceptLast(data);
+      styleVerticalGrid(data, Y_LABEL_MARGIN);
     });
   }
 
@@ -159,26 +162,6 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
       );
     }
     return `<span class="chartist-tooltip-meta">${lines.join("<br>")}</span>`;
-  };
-
-  private positionXLabel = (data: ChartDrawData): void => {
-    if (!this.isLabel(data) || !this.isXLabel(data)) {
-      return;
-    }
-    if (data.index === 0) {
-      return;
-    }
-    const x = data.x || 0;
-    if (data.index === data.axis.ticks.length - 1) {
-      data.element.attr({
-        x: x - 19,
-      });
-      return;
-    }
-
-    data.element.attr({
-      x: x - 7,
-    });
   };
 
   private addTextValueToBar = (data: ChartDrawData): void => {
@@ -225,27 +208,6 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
     });
   };
 
-  /** Function to remove all horizontal lines, except for the last one */
-  private styleHorizontalGrid = (data: ChartDrawData): void => {
-    if (!this.isGrid(data) || !this.isYGrid(data)) {
-      return;
-    }
-    if (data.index !== 0) {
-      data.element.remove();
-    }
-  };
-
-  /** Function to show vertical grid under the canvas */
-  private styleVerticalGrid = (data: ChartDrawData): void => {
-    if (!this.isGrid(data) || !this.isXGrid(data)) {
-      return;
-    }
-    data.element.attr({
-      y1: data.y2,
-      y2: data.y2 + Y_LABEL_MARGIN - 5,
-    });
-  };
-
   private isBar = (
     data: ChartDrawData
   ): data is IChartDrawBarData<PercentageBarMeta> => data.type === "bar";
@@ -255,19 +217,6 @@ class PercentageBar extends PureComponent<PercentageBarProps> {
 
   private isSmallBar = (data: IChartDrawBarData<PercentageBarMeta>): boolean =>
     data.x2 - data.x1 < 20;
-
-  private isLabel = (data: ChartDrawData): data is IChartDrawLabelData =>
-    data.type === "label";
-
-  private isXLabel = (data: IChartDrawLabelData) =>
-    data.axis?.units.pos === "x";
-
-  private isGrid = (data: ChartDrawData): data is IChartDrawGridData =>
-    data.type === "grid";
-
-  private isYGrid = (data: IChartDrawGridData) => data.axis?.units.pos === "y";
-
-  private isXGrid = (data: IChartDrawGridData) => data.axis?.units.pos === "x";
 }
 
 export default PercentageBar;
