@@ -52,7 +52,9 @@ const ArticleFullHead = (props: ArticleFullPageProps): JSX.Element => {
             className={cn(classes.blogHeader__title)}
             isCentered
           >
-            <T message={article.title || ""} />
+            <span>
+              <T message={article.title || ""} />
+            </span>
           </Typography>
 
           <section className={cn(classes.blogHeader__share)}>
