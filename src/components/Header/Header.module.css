@@ -18,21 +18,15 @@
 }
 
 .logo {
-  width: 228px;
-  height: 38px;
-  display: flex;
+  display: inline-flex;
   overflow: hidden;
-  margin: 1.5rem 1.5rem 97px;
-}
-.logo img {
-  width: 228px;
-  height: 38px;
+  margin: 1.5rem 2.5rem 2rem;
 }
 
 .header-large .logo {
   display: flex;
   width: 415px;
-  margin: 1.5rem auto;
+  margin: 1.5rem 1.5rem 97px;
 }
 
 .header-large .logo img {
@@ -58,6 +52,14 @@
     width: 100%;
     height: auto;
   }
+}
+
+.container ul li span a {
+  font-size: 14px !important;
+}
+
+.container.header-large ul li span a {
+  font-size: 16px !important;
 }
 
 .call-menu-bar {
