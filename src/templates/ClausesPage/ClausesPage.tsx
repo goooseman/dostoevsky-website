@@ -6,8 +6,9 @@ import Accordion, { AccordionNode } from "src/components/ui-kit/Accordion";
 import Typography from "src/components/ui-kit/Typography";
 import { getClauseLink } from "src/config/routes";
 import type { I18nText } from "src/types";
+import { withLocale, WithLocale } from "react-targem";
 
-interface ClausesPageProps {
+interface ClausesPageProps extends WithLocale {
   parts: {
     text: I18nText;
     id: number;
@@ -25,7 +26,7 @@ interface ClausesPageProps {
 
 class ClausesPage extends PureComponent<ClausesPageProps> {
   render(): React.ReactNode {
-    const { parts, actualYear } = this.props;
+    const { parts, actualYear, locale } = this.props;
     return (
       <main className={cn(classes.container)}>
         <Container>
@@ -43,6 +44,7 @@ class ClausesPage extends PureComponent<ClausesPageProps> {
                         <Typography key={chapter.id}>
                           <a
                             href={getClauseLink(
+                              locale,
                               chapter.id.toString(),
                               actualYear.toString(),
                               "main"
@@ -65,4 +67,4 @@ class ClausesPage extends PureComponent<ClausesPageProps> {
   }
 }
 
-export default ClausesPage;
+export default withLocale(ClausesPage);

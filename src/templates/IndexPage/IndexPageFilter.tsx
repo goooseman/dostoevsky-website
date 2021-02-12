@@ -9,7 +9,7 @@ import Button from "src/components/ui-kit/Button";
 import searchService from "src/services/SearchService";
 import PillButton from "src/components/ui-kit/PillButton";
 import { SelectOption } from "src/types";
-import { getLinkForCurrentLocale } from "src/utils/locales";
+import { getLinkForLocale } from "src/utils/locales";
 
 interface IndexPageFilterProps {
   yearSelectOptions: SelectOption[];
@@ -20,7 +20,7 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
   yearSelectOptions,
   defaultYearSelectOption,
 }: IndexPageFilterProps) => {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
 
   const selectRef = useRef<AsyncSelect<SelectOption> | null>(null);
   const selectContainerRef = useRef<HTMLDivElement | null>(null);
@@ -58,7 +58,7 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
 
   const [, setUkOptionsLoading] = useState(false);
 
-  const helpItems = searchService.getHelpItems("ru");
+  const helpItems = searchService.getHelpItems(locale as "ru" | "en-GB");
 
   const loadUkOptions = (value: string) => {
     return new Promise(async (resolve) => {
@@ -132,8 +132,8 @@ const IndexPageFilter: React.FC<IndexPageFilterProps> = ({
             disabled={Boolean(selectedUk && selectedYear)}
             to={
               selectedUk?.value
-                ? getLinkForCurrentLocale(selectedUk?.value)
-                : getLinkForCurrentLocale("/full")
+                ? getLinkForLocale(locale, selectedUk?.value)
+                : getLinkForLocale(locale, "/full")
             }
           >
             <T message="Перейти к данным" />

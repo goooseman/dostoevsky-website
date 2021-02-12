@@ -150,7 +150,7 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
   };
 
   private renderOption = (props: OptionProps<OptionTypeBase>) => {
-    const { clauseNumber, pageType } = this.props;
+    const { clauseNumber, pageType, locale } = this.props;
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const value = props.value;
@@ -159,7 +159,12 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
         <Typography component="span">
           <a
             className={cn(classes.yearSelectOptionLink)}
-            href={getClauseLink(clauseNumber.toString(), value, pageType)}
+            href={getClauseLink(
+              locale,
+              clauseNumber.toString(),
+              value,
+              pageType
+            )}
           >
             {value}
           </a>

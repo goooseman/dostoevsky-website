@@ -15,6 +15,7 @@ import {
   MAILCHIMP_U,
   FORMSUBMIT_ID,
 } from "src/config/vars";
+import { subscribeToEmail } from "src/utils/emails-service";
 
 interface FullDatasetDownloadModalProps {
   children?: React.ReactNode;
@@ -66,23 +67,7 @@ const FullDatasetDownloadModal: React.FC<FullDatasetDownloadModalProps> = ({
       setIsLoading(true);
       // https://mailchimp.com/help/host-your-own-signup-forms/
       try {
-        await fetch(
-          MAILCHIMP_ADDRESS +
-            "?" +
-            new URLSearchParams({
-              u: MAILCHIMP_U || "",
-              id: MAILCHIMP_ID || "",
-              MERGE0: email,
-            }),
-          {
-            method: "GET",
-            mode: "no-cors",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            referrerPolicy: "unsafe-url",
-          }
-        );
+        await subscribeToEmail(email);
       } catch (e) {
         console.error(e);
       }

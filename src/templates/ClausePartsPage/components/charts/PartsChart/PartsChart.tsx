@@ -1,8 +1,9 @@
 import React, { PureComponent } from "react";
 import PercentageBar from "src/components/charts/PercentageBar";
 import { getClauseLink } from "src/config/routes";
+import { withLocale, WithLocale } from "react-targem";
 
-interface PartsProps {
+interface PartsProps extends WithLocale {
   isIframeMode?: boolean;
   clauseNumber: number;
   year: number;
@@ -14,7 +15,7 @@ interface PartsProps {
 
 class Parts extends PureComponent<PartsProps> {
   render(): React.ReactNode {
-    const { clauseNumber, year, parts, isIframeMode } = this.props;
+    const { clauseNumber, year, parts, isIframeMode, locale } = this.props;
 
     return (
       <PercentageBar
@@ -34,6 +35,7 @@ class Parts extends PureComponent<PartsProps> {
           "Число человек": "%%",
         }}
         iframePath={getClauseLink(
+          locale,
           clauseNumber.toString(),
           year.toString(),
           "parts",
@@ -44,4 +46,4 @@ class Parts extends PureComponent<PartsProps> {
   }
 }
 
-export default Parts;
+export default withLocale(Parts);

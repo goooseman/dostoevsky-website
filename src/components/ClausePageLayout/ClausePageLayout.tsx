@@ -12,9 +12,9 @@ import ClausePageHeader from "src/components/ClausePageHeader";
 import { Menu, MenuLink } from "src/components/Menu";
 import Promo from "src/components/Promo";
 import { LinkGetProps } from "@reach/router";
-import { T } from "react-targem";
+import { T, withLocale, WithLocale } from "react-targem";
 
-interface ClausePageLayoutProps {
+interface ClausePageLayoutProps extends WithLocale {
   clauseNumber: number;
   clauseText: I18nText;
   hasParts?: boolean;
@@ -48,6 +48,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
       chartsLink,
       tableLink,
       isWithoutChartsTablesTabs,
+      locale,
     } = this.props;
 
     return (
@@ -72,7 +73,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
                 </button>
 
                 <Link
-                  to={getClauseLink(clauseNumber, year, "main")}
+                  to={getClauseLink(locale, clauseNumber, year, "main")}
                   getProps={this.getMainLinkProps}
                 >
                   <Typography size="small" variant="span" isUpperCased>
@@ -81,7 +82,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
                 </Link>
                 {hasParts ? (
                   <Link
-                    to={getClauseLink(clauseNumber, year, "parts")}
+                    to={getClauseLink(locale, clauseNumber, year, "parts")}
                     partiallyActive
                     activeClassName={cn(classes.itemActive)}
                   >
@@ -92,7 +93,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
                 ) : null}
 
                 <Link
-                  to={getClauseLink(clauseNumber, year, "chronology")}
+                  to={getClauseLink(locale, clauseNumber, year, "chronology")}
                   partiallyActive
                   activeClassName={cn(classes.itemActive)}
                 >
@@ -101,7 +102,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
                   </Typography>
                 </Link>
                 <Link
-                  to={getClauseLink(clauseNumber, year, "full")}
+                  to={getClauseLink(locale, clauseNumber, year, "full")}
                   activeClassName={cn(classes.itemActive)}
                 >
                   <Typography size="small" variant="span" isUpperCased>
@@ -162,19 +163,62 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
                 {headerChildren}
               </ClausePageHeader>
               {!isWithoutChartsTablesTabs ? (
-                <Menu variant="activeBorderBottom" className={cn(classes.menu)}>
+                <Menu
+                  id="view-selector"
+                  variant="activeBorderBottom"
+                  className={cn(classes.menu)}
+                >
                   <MenuLink
                     to={
-                      chartsLink || getClauseLink(clauseNumber, year, pageType)
+                      chartsLink
+                        ? chartsLink + "#view-selector"
+                        : getClauseLink(
+                            locale,
+                            clauseNumber,
+                            year,
+                            pageType,
+                            undefined,
+                            "view-selector"
+                          )
                     }
+                    activeUrls={[
+                      new RegExp(
+                        `${getClauseLink(
+                          locale,
+                          clauseNumber,
+                          year,
+                          pageType,
+                          undefined
+                        )}$`
+                      ),
+                      chartsLink,
+                    ]}
                   >
                     <T message="Чарты" />
                   </MenuLink>
                   <MenuLink
                     to={
-                      tableLink ||
-                      getClauseLink(clauseNumber, year, pageType, "table")
+                      tableLink
+                        ? tableLink + "#view-selector"
+                        : getClauseLink(
+                            locale,
+                            clauseNumber,
+                            year,
+                            pageType,
+                            "table",
+                            "view-selector"
+                          )
                     }
+                    activeUrls={[
+                      getClauseLink(
+                        locale,
+                        clauseNumber,
+                        year,
+                        pageType,
+                        "table"
+                      ),
+                      tableLink,
+                    ]}
                   >
                     <T message="Таблица" />
                   </MenuLink>
@@ -202,4 +246,4 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
   };
 }
 
-export default ClausePageLayout;
+export default withLocale(ClausePageLayout);

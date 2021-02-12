@@ -121,9 +121,10 @@
   "main": "n/a",
   "scripts": {
     "postinstall": "patch-package",
-    "develop": "cross-env NODE_OPTIONS=\"--max-old-space-size=5096\" gatsby develop",
+    "develop": "cross-env NODE_OPTIONS=\"--max-old-space-size=6144\" gatsby develop",
     "develop:ram": "cross-env NODE_OPTIONS=\"--max-old-space-size=6144\" npm run develop",
-    "develop:semi": "cross-env IS_SEMI_BUILD=true npm run develop",
+    "develop:semi": "cross-env IS_SEMI_BUILD=true IS_WITHOUT_EMBED=true npm run develop",
+    "develop:without-embeds": "cross-env IS_WITHOUT_EMBED=true npm run develop",
     "develop:blog": "cross-env IS_SEMI_BUILD=true IS_BLOG_BUILD=true npm run develop",
     "storybook": "start-storybook -p 6006",
     "build": "cross-env GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",

@@ -14,13 +14,15 @@ interface MenuProps {
     | "tabs"
     | "buttons";
   className?: string;
+  id?: string;
 }
 
 export class Menu extends PureComponent<MenuProps> {
   render(): React.ReactNode {
-    const { variant, children, className } = this.props;
+    const { variant, children, className, id } = this.props;
     return (
       <ul
+        id={id}
         className={cn(
           classes.menu,
           {
@@ -68,7 +70,7 @@ interface MenuLinkProps {
   to: string;
   size?: "small" | "normal" | undefined;
   partiallyActive?: boolean;
-  activeUrls?: (RegExp | string)[];
+  activeUrls?: (RegExp | string | undefined)[];
   isNowrap?: boolean;
 }
 
@@ -104,6 +106,9 @@ export class MenuLink extends PureComponent<MenuLinkProps> {
       return false;
     }
     for (const url of activeUrls) {
+      if (!url) {
+        continue;
+      }
       if (location.pathname.match(url)) {
         return true;
       }

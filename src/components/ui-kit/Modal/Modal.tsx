@@ -31,7 +31,6 @@ const Modal: React.FC<ModalProps> = ({
   return isShowing
     ? ReactDOM.createPortal(
         <React.Fragment>
-          <div className={cn(classes.modalOverlay)} />
           <div
             className={cn(classes.modalWrapper, {
               [classes.modalWrapperCentered]: isCentered,
@@ -41,6 +40,10 @@ const Modal: React.FC<ModalProps> = ({
             tabIndex={-1}
             role="dialog"
           >
+            <div
+              onClick={onHideButtonClick}
+              className={cn(classes.modalOverlay)}
+            />
             <div
               className={cn(classes.modal, {
                 [classes.modalSizeSm]: size === "sm",

@@ -31,7 +31,7 @@ const MainByResult: React.SFC<MainByResultProps> = ({
   isIframeMode,
   ...p
 }: MainByResultProps) => {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   const labels = [
     t("прекращено дел в отношении человек"),
     t("оправданы"),
@@ -91,6 +91,7 @@ const MainByResult: React.SFC<MainByResultProps> = ({
       ]}
       downloadFilename={`${clauseNumber}-${year}-by-result`}
       iframePath={getClauseLink(
+        locale,
         clauseNumber.toString(),
         year.toString(),
         "main",

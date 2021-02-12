@@ -1,12 +1,13 @@
 import React, { PureComponent } from "react";
 import ChartWrapper from "src/components/ChartWrapper";
-import Chartist, {
-  IChartistStepAxis,
-  ChartDrawData,
-  IChartDrawLabelData,
-  IChartDrawGridData,
-} from "chartist";
+import Chartist, { IChartistStepAxis, ChartDrawData } from "chartist";
 import he from "he";
+import {
+  centerXLabel,
+  styleVerticalGrid,
+  isGrid,
+  isYGrid,
+} from "src/utils/chartist";
 
 interface LineChartProps extends React.ComponentProps<typeof ChartWrapper> {
   groups: {
@@ -74,8 +75,8 @@ class LineChart extends PureComponent<LineChartProps> {
     );
 
     chart.on("draw", (data: ChartDrawData) => {
-      this.positionXLabel(data);
-      this.styleVerticalGrid(data);
+      centerXLabel(data);
+      styleVerticalGrid(data, Y_LABEL_MARGIN, true);
       this.styleHorizontalGrid(data);
     });
   }
@@ -90,52 +91,13 @@ class LineChart extends PureComponent<LineChartProps> {
     );
   }
 
-  private positionXLabel = (data: ChartDrawData): void => {
-    if (!this.isLabel(data) || !this.isXLabel(data)) {
-      return;
-    }
-    if (data.index === 0) {
-      return;
-    }
-    const x = data.x || 0;
-
-    if (data.index === data.axis.ticks.length - 1) {
-      data.element.attr({
-        x: x - 23,
-      });
-      return;
-    }
-
-    data.element.attr({
-      x: x - 13,
-    });
-  };
-
   /** Function to show horizontal grid a little left */
   private styleHorizontalGrid = (data: ChartDrawData): void => {
-    if (!this.isGrid(data) || !this.isYGrid(data)) {
+    if (!isGrid(data) || !isYGrid(data)) {
       return;
     }
     data.element.attr({
       x1: data.x1 - 5,
-    });
-  };
-
-  /** Function to show vertical grid under the canvas */
-  private styleVerticalGrid = (data: ChartDrawData): void => {
-    if (!this.isGrid(data) || !this.isXGrid(data)) {
-      return;
-    }
-    if (data.index === 0) {
-      data.element.attr({
-        y1: data.y1,
-        y2: data.y2 + Y_LABEL_MARGIN - 5,
-      });
-      return;
-    }
-    data.element.attr({
-      y1: data.y2,
-      y2: data.y2 + Y_LABEL_MARGIN - 5,
     });
   };
 
@@ -166,19 +128,6 @@ class LineChart extends PureComponent<LineChartProps> {
     }
     return `<span class="chartist-tooltip-meta">${lines.join("<br>")}</span>`;
   };
-
-  private isLabel = (data: ChartDrawData): data is IChartDrawLabelData =>
-    data.type === "label";
-
-  private isXLabel = (data: IChartDrawLabelData) =>
-    data.axis?.units.pos === "x";
-
-  private isYGrid = (data: IChartDrawGridData) => data.axis?.units.pos === "y";
-
-  private isGrid = (data: ChartDrawData): data is IChartDrawGridData =>
-    data.type === "grid";
-
-  private isXGrid = (data: IChartDrawGridData) => data.axis?.units.pos === "x";
 }
 
 export default LineChart;

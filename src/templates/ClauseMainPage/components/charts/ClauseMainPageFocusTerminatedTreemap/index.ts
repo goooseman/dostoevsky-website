@@ -1,0 +1,2 @@
+import ClauseMainPageFocusTerminatedTreemap from "./ClauseMainPageFocusTerminatedTreemap";
+export default ClauseMainPageFocusTerminatedTreemap;

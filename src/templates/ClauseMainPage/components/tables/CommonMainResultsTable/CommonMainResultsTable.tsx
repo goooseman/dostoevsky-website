@@ -21,7 +21,7 @@ const CommonMainResultsTable: React.FC<CommonMainResultsTableProps> = ({
   year,
   ...p
 }: CommonMainResultsTableProps) => {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
 
   const tables = [
     {
@@ -93,6 +93,7 @@ const CommonMainResultsTable: React.FC<CommonMainResultsTableProps> = ({
       }
       downloadFilename={`${clauseNumber}-common-main-by-result`}
       iframePath={getClauseLink(
+        locale,
         clauseNumber,
         year,
         "main",

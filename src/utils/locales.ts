@@ -1,9 +1,4 @@
 import { LOCALE_CODES, Locale } from "src/config/locales";
-import { globalHistory as history } from "@reach/router";
-
-export const getLocale = (): Locale => {
-  return getLocaleFromPath(history.location.pathname) as Locale;
-};
 
 export const getLocaleFromPath = (
   path: string,
@@ -26,7 +21,7 @@ export const isSupportedLocaleInPath = (
 };
 
 export const getLinkForLocale = (
-  locale: Locale,
+  locale: string,
   pathname: string,
   query?: string,
   supportedLocales = LOCALE_CODES
@@ -36,12 +31,4 @@ export const getLinkForLocale = (
     pathWithoutLocale = pathWithoutLocale.replace(`/${locale}`, "");
   }
   return `/${locale}${pathWithoutLocale}${query ? query : ""}`;
-};
-
-export const getLinkForCurrentLocale = (
-  pathname: string,
-  query?: string,
-  supportedLocales = LOCALE_CODES
-): string => {
-  return getLinkForLocale(getLocale(), pathname, query, supportedLocales);
 };

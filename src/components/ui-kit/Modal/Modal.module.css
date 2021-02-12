@@ -1,6 +1,5 @@
 .modal-overlay {
   position: fixed;
-  z-index: var(--z-index-3);
   top: 0;
   right: 0;
   bottom: 0;
@@ -27,7 +26,7 @@
 
 .modal {
   position: relative;
-  z-index: var(--z-index-2);
+  z-index: var(--z-index-5);
   width: 100%;
   padding: 1rem;
   padding-bottom: 3rem;

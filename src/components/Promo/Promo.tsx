@@ -3,10 +3,11 @@ import classes from "./Promo.module.css";
 import Container from "src/components/ui-kit/Container";
 import Typography from "src/components/ui-kit/Typography";
 import Button from "../ui-kit/Button";
-import { T } from "react-targem";
-import { getLinkForCurrentLocale } from "src/utils/locales";
+import { T, useLocale } from "react-targem";
+import { getLinkForLocale } from "src/utils/locales";
 
 const Promo: React.FC = () => {
+  const { locale } = useLocale();
   return (
     <Container>
       <div className={classes.promo}>
@@ -21,7 +22,7 @@ const Promo: React.FC = () => {
           </b>
         </Typography>
         <Button
-          to={getLinkForCurrentLocale("/full")}
+          to={getLinkForLocale(locale, "/full")}
           className={classes.button}
         >
           <T message="Перейти" />

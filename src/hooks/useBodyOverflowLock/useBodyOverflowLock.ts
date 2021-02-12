@@ -3,13 +3,13 @@ import { useEffect } from "react";
 const useBodyOverflowLock = (isOpened: boolean): void => {
   useEffect(() => {
     const unregister = () => {
-      document.body.style.overflow = "unset";
+      document.body.style.overflowY = "unset";
     };
     if (!isOpened) {
       unregister();
       return;
     }
-    document.body.style.overflow = "hidden";
+    document.body.style.overflowY = "hidden";
     return unregister;
   }, [isOpened]);
 };

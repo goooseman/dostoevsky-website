@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import PercentageBar from "src/components/charts/PercentageBar";
 import { getClauseLink } from "src/config/routes";
+import { withLocale, WithLocale } from "react-targem";
 
 const byResultLabels = [
   "осуждeнных",
@@ -9,7 +10,7 @@ const byResultLabels = [
   "принудительное лечение",
 ];
 
-interface PartsByResultChartProps {
+interface PartsByResultChartProps extends WithLocale {
   isIframeMode?: boolean;
   clauseNumber: number;
   year: number;
@@ -24,7 +25,7 @@ interface PartsByResultChartProps {
 
 class PartsByResultChart extends PureComponent<PartsByResultChartProps> {
   render(): React.ReactNode {
-    const { clauseNumber, year, parts, isIframeMode } = this.props;
+    const { clauseNumber, year, parts, isIframeMode, locale } = this.props;
 
     return (
       <PercentageBar
@@ -50,6 +51,7 @@ class PartsByResultChart extends PureComponent<PartsByResultChartProps> {
           "Число человек": "%%",
         }}
         iframePath={getClauseLink(
+          locale,
           clauseNumber.toString(),
           year.toString(),
           "parts",
@@ -60,4 +62,4 @@ class PartsByResultChart extends PureComponent<PartsByResultChartProps> {
   }
 }
 
-export default PartsByResultChart;
+export default withLocale(PartsByResultChart);

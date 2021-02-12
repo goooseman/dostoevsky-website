@@ -80,6 +80,7 @@ class ClausePageCatalogue extends PureComponent<ClausePageCatalogueProps> {
       parts,
       sections,
       t,
+      locale,
       activePartId,
       activeSectionId,
       activeClauseId,
@@ -133,7 +134,12 @@ class ClausePageCatalogue extends PureComponent<ClausePageCatalogueProps> {
                   id={c.id}
                   activeId={activeClauseId}
                   text={c.text}
-                  href={getClauseLink(c.id.toString(), year.toString(), "main")}
+                  href={getClauseLink(
+                    locale,
+                    c.id.toString(),
+                    year.toString(),
+                    "main"
+                  )}
                   key={c.id}
                   t={t}
                   isClause

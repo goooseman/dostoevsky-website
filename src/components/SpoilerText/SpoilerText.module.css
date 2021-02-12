@@ -5,7 +5,7 @@
 }
 
 .button {
-  max-height: 14px;
+  align-self: baseline;
   border: none;
   margin-top: 5px;
   margin-right: 20px;

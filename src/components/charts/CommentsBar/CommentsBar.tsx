@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-import ChartWrapper from "src/components/ChartWrapper";
-import Chartist, {
-  IChartistStepAxis,
-  ChartDrawData,
-  IChartDrawGridData,
-} from "chartist";
+import ChartWrapper, { LabelOverrideValue } from "src/components/ChartWrapper";
+import Chartist, { IChartistStepAxis, ChartDrawData } from "chartist";
 import classes from "./CommentsBar.module.css";
 import cn from "clsx";
+import { removeTextInBrackets, capitalize } from "src/utils/strings";
+import { centerXLabel, styleVerticalGrid, isYGrid } from "src/utils/chartist";
 
 interface Chart {
   title: string;
@@ -20,15 +18,11 @@ interface CommentsBarProps {
   title: string;
   iframePath: string;
   charts: Chart[];
+  labelOverrides?: LabelOverrideValue[];
 }
 
 const ROW_HEIGHT = 55;
 const Y_LABEL_MARGIN = 15;
-
-const isGrid = (data: ChartDrawData): data is IChartDrawGridData =>
-  data.type === "grid";
-
-const isXGrid = (data: IChartDrawGridData) => data.axis?.units.pos === "x";
 
 const createChartRefs = (charts: Chart[]) => {
   const chartRefs = [];
@@ -38,35 +32,37 @@ const createChartRefs = (charts: Chart[]) => {
   return chartRefs;
 };
 
-/** "Угроза убийством или причинением тяжкого вреда здоровью (включая ст. 119 старой редакции УК РФ)" => "Угроза убийством или причинением тяжкого вреда здоровью " */
-const removeTextInBrackets = (str: string): string => str.replace(/\(.+\)/, "");
-
 const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
-  const { charts } = props;
+  const { charts, labelOverrides } = props;
 
   const [chartRefs] = useState(createChartRefs(charts));
 
   useEffect(() => {
     for (let i = 0; i < charts.length; i++) {
+      const labels: string[] = [];
       const chart = new Chartist.Bar(
         chartRefs[i].current,
         {
-          labels: [], //chartLabels,
           series: charts[i].series.map((s) =>
             s
-              .map((s) => ({
-                value: s.value,
-                meta: { title: "Foo" },
-              }))
+              .map((s) => {
+                labels.push(capitalize(removeTextInBrackets(s.title)));
+                return {
+                  value: s.value,
+                  meta: { title: s.title },
+                };
+              })
               .sort((a, b) => a.value - b.value)
-          ), //series,
+          ),
+          labels: labels,
         },
         {
           stackBars: true,
           horizontalBars: true,
           axisX: {
             onlyInteger: true,
-            showGrid: false,
+            showGrid: true,
+            scaleMinSpace: 50,
             labelOffset: {
               y: Y_LABEL_MARGIN,
             },
@@ -76,18 +72,31 @@ const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
             showGrid: true,
             offset: 0,
             fullWidth: false,
+            position: "end",
           } as IChartistStepAxis,
           chartPadding: {
-            right: 20,
+            right: 305,
             bottom: 0,
           },
-        }
+        },
+        [
+          [
+            "screen and (max-width: 680px)",
+            {
+              chartPadding: {
+                right: 180,
+                left: 0,
+              },
+            },
+          ],
+        ]
       );
 
       chart.on("draw", (data: ChartDrawData) => {
-        styleVerticalGrid(data);
+        styleVerticalGrid(data, Y_LABEL_MARGIN);
         transformHorizontalGrid(data);
         addNumbersToBars(data);
+        centerXLabel(data);
       });
     }
   }, []);
@@ -105,7 +114,7 @@ const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
       line.setAttribute("class", "ct-grid ct-vertical");
       data.element._node.parentElement.insertBefore(line, data.element._node);
     }
-    if (data.type === "grid" && data.index !== 0) {
+    if (data.type === "grid" && data.index !== 0 && isYGrid(data)) {
       data.element.remove();
     }
   };
@@ -118,24 +127,33 @@ const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
       );
       text.innerHTML = data.value.x;
       const textX = data.x2 - text.innerHTML.length * 11.5;
+      const isInside = textX >= data.x1;
       text.setAttribute("y", data.y1 + 6);
-      text.setAttribute("x", textX >= data.x1 ? textX : data.x2 + 10);
+      text.setAttribute("x", isInside ? textX : data.x2 + 10);
       text.setAttribute(
         "class",
-        `bar-number bar-number-${textX >= data.x1 ? "inside" : "outside"}`
+        `bar-number bar-number-${isInside ? "inside" : "outside"}`
       );
-      data.element._node.parentElement.appendChild(text);
-    }
-  };
 
-  const styleVerticalGrid = (data: ChartDrawData): void => {
-    if (!isGrid(data) || !isXGrid(data)) {
-      return;
+      let background;
+      if (!isInside) {
+        background = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "line"
+        );
+        background.setAttribute("x1", data.x2);
+        background.setAttribute("y1", data.y1);
+        background.setAttribute("y2", data.y2);
+        background.setAttribute("class", "bar-number-background");
+        data.element._node.parentElement.appendChild(background);
+      }
+      // Background should be added before text
+      data.element._node.parentElement.appendChild(text);
+
+      if (background) {
+        background.setAttribute("x2", data.x2 + text.getBBox().width + 20);
+      }
     }
-    data.element.attr({
-      y1: data.y2,
-      y2: data.y2 + Y_LABEL_MARGIN - 5,
-    });
   };
 
   const getLabels = () => {
@@ -151,29 +169,21 @@ const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
       labels={getLabels()}
       downloadFilename={props.title}
       iframePath={props.iframePath}
+      labelOverrides={labelOverrides}
     >
       {charts.map((c, i) => (
         <div key={i} className={classes.barOuterWrapper}>
           <div
             ref={chartRefs[i]}
             className={cn(classes.barWrapper, {
-              [`ct-chart-${String.fromCharCode(97 + i)}`]: true,
+              [`ct-chart-${
+                labelOverrides ? labelOverrides[i] : String.fromCharCode(97 + i)
+              }`]: true,
             })}
             style={{
               height: charts[i].series[0].length * ROW_HEIGHT,
             }}
           />
-          <div className={classes.barTitles}>
-            {charts[i].series[0]
-              .sort((a, b) => a.value - b.value)
-              .map((s) => (
-                <div key={s.title}>
-                  <span className={cn(classes.barTitle)} title={s.title}>
-                    {removeTextInBrackets(s.title)}
-                  </span>
-                </div>
-              ))}
-          </div>
         </div>
       ))}
     </ChartWrapper>

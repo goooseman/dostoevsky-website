@@ -8,7 +8,7 @@ import Input from "../ui-kit/Input";
 import TextareaAutosize from "react-textarea-autosize";
 import Container from "../ui-kit/Container";
 import { Menu, MenuLink } from "../Menu";
-import { getLinkForCurrentLocale } from "src/utils/locales";
+import { getLinkForLocale } from "src/utils/locales";
 import Modal, { useModal } from "src/components/ui-kit/Modal";
 import { useState } from "react";
 import { FORMSUBMIT_ID } from "src/config/vars";
@@ -75,7 +75,7 @@ const Footer: React.FC<FooterProps> = () => {
         <div className={cn(classes.middleContainer)}>
           <Menu variant="onBlackBackground" className={cn(classes.footerMenu)}>
             <MenuLink
-              to={getLinkForCurrentLocale("/clauses")}
+              to={getLinkForLocale(locale, "/clauses")}
               size="small"
               isNowrap={true}
             >
@@ -84,7 +84,7 @@ const Footer: React.FC<FooterProps> = () => {
             {locale === "ru" ? (
               <MenuLink
                 isNowrap={true}
-                to={getLinkForCurrentLocale("/articles")}
+                to={getLinkForLocale(locale, "/articles")}
                 size="small"
               >
                 <T message="Аналитика" />
@@ -92,21 +92,21 @@ const Footer: React.FC<FooterProps> = () => {
             ) : null}
             <MenuLink
               isNowrap={true}
-              to={getLinkForCurrentLocale("/faq")}
+              to={getLinkForLocale(locale, "/faq")}
               size="small"
             >
               <T message="о датасете" />
             </MenuLink>
             <MenuLink
               isNowrap={true}
-              to={getLinkForCurrentLocale("/about")}
+              to={getLinkForLocale(locale, "/about")}
               size="small"
             >
               <T message="о проекте" />
             </MenuLink>
             <MenuLink
               isNowrap={true}
-              to={getLinkForCurrentLocale("/full")}
+              to={getLinkForLocale(locale, "/full")}
               size="small"
             >
               <T message="полный датасет" />

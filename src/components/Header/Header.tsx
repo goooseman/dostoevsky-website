@@ -6,7 +6,7 @@ import { Menu, MenuLink } from "src/components/Menu";
 import { T, useLocale } from "react-targem";
 import Typography from "../ui-kit/Typography";
 import Button from "../ui-kit/Button";
-import { getLinkForCurrentLocale, getLinkForLocale } from "src/utils/locales";
+import { getLinkForLocale } from "src/utils/locales";
 import { Locale } from "src/config/locales";
 interface HeaderProps {
   location: Location;
@@ -72,7 +72,7 @@ const Header: React.FC<HeaderProps> = ({ location, isBig }: HeaderProps) => {
             </MenuLink>
           </Menu>
         </div>
-        <Link to={getLinkForCurrentLocale("/")} className={cn(classes.logo)}>
+        <Link to={getLinkForCurrentLocale(locale, "/")} className={cn(classes.logo)}>
           <img src={getLogo(locale as Locale, isBig)} alt={t("Достоевский")} />
         </Link>
         <div className={cn(classes.callMenuBar)}>
@@ -104,7 +104,7 @@ const Header: React.FC<HeaderProps> = ({ location, isBig }: HeaderProps) => {
         >
           <div className={cn(classes.mobileMenuHolder__header)}>
             <div>
-              <Link to={getLinkForCurrentLocale("/")}>
+              <Link to={getLinkForLocale(locale, "/")}>
                 <img
                   src={getMobileLogo(locale as Locale)}
                   alt={t("Достоевский")}
@@ -122,7 +122,7 @@ const Header: React.FC<HeaderProps> = ({ location, isBig }: HeaderProps) => {
             <Menu variant="onBlackBackground">
               <MenuLink
                 activeUrls={[/^\/\d\d\d/]}
-                to={getLinkForCurrentLocale("/clauses")}
+                to={getLinkForLocale(locale, "/clauses")}
                 size="normal"
               >
                 <T message="Каталог статей УК РФ" />
@@ -130,19 +130,19 @@ const Header: React.FC<HeaderProps> = ({ location, isBig }: HeaderProps) => {
               {locale === "ru" ? (
                 <MenuLink
                   partiallyActive
-                  to={getLinkForCurrentLocale("/articles")}
+                  to={getLinkForLocale(locale, "/articles")}
                   size="normal"
                 >
                   <T message="Аналитика" />
                 </MenuLink>
               ) : null}
-              <MenuLink to={getLinkForCurrentLocale("/faq")} size="normal">
+              <MenuLink to={getLinkForLocale(locale, "/faq")} size="normal">
                 <T message="о датасете" />
               </MenuLink>
-              <MenuLink to={getLinkForCurrentLocale("/about")} size="normal">
+              <MenuLink to={getLinkForLocale(locale, "/about")} size="normal">
                 <T message="о проекте" />
               </MenuLink>
-              <MenuLink to={getLinkForCurrentLocale("/full")} size="normal">
+              <MenuLink to={getLinkForLocale(locale, "/full")} size="normal">
                 <T message="полный датасет" />
               </MenuLink>
             </Menu>
@@ -157,7 +157,7 @@ const Header: React.FC<HeaderProps> = ({ location, isBig }: HeaderProps) => {
       >
         <div className={cn(classes.mobileMenuHolder__header)}>
           <div>
-            <Link to={getLinkForCurrentLocale("/")}>
+            <Link to={getLinkForLocale(locale, "/")}>
               <img
                 src={getMobileLogo(locale as Locale)}
                 alt={t("Достоевский")}

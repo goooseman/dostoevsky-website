@@ -16,6 +16,9 @@ import T from "src/components/T";
 import ClauseMainPageFocusTable from "./ClauseMainPageFocusTable";
 import { withLocale, WithLocale } from "react-targem";
 import { Helmet } from "react-helmet";
+import ClauseMainPageFocusTerminatedChart from "./components/charts/ClauseMainPageFocusTerminatedChart";
+import ClauseMainPageFocusPunishmentsTreemap from "./components/charts/ClauseMainPageFocusPunishmentsTreemap";
+import ClauseMainPageFocusTerminatedTreemap from "./components/charts/ClauseMainPageFocusTerminatedTreemap";
 
 export type ClausePartsPageViewMode =
   | "page"
@@ -25,7 +28,10 @@ export type ClausePartsPageViewMode =
   | "iframe-table-common-main-by-result"
   | "iframe-table-common-add-by-result"
   | "iframe-by-result"
-  | "iframe-table-focus";
+  | "iframe-table-focus"
+  | "iframe-focus-by-terminated"
+  | "iframe-focus-treemap-by-punisment"
+  | "iframe-focus-treemap-by-terminated";
 
 interface ClauseMainPageProps extends WithLocale {
   clauseNumber: number;
@@ -115,6 +121,7 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
       totalCases,
       view,
       t,
+      locale,
     } = this.props;
 
     if (view === "iframe-table-common-main-by-result") {
@@ -133,6 +140,24 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
       return <ClauseMainPageFocusTable {...this.props} />;
     }
 
+    if (view === "iframe-focus-by-terminated") {
+      return (
+        <ClauseMainPageFocusTerminatedChart {...this.props} isIframeMode />
+      );
+    }
+
+    if (view === "iframe-focus-treemap-by-punisment") {
+      return (
+        <ClauseMainPageFocusPunishmentsTreemap {...this.props} isIframeMode />
+      );
+    }
+
+    if (view === "iframe-focus-treemap-by-terminated") {
+      return (
+        <ClauseMainPageFocusTerminatedTreemap {...this.props} isIframeMode />
+      );
+    }
+
     return (
       <ClausePageLayout
         clauseNumber={clauseNumber}
@@ -143,12 +168,12 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
         headerChildren={this.renderHeaderChildren()}
         chartsLink={
           view === "focus" || view === "focus-table"
-            ? getClauseLink(clauseNumber, year, "main", "focus")
+            ? getClauseLink(locale, clauseNumber, year, "main", "focus")
             : undefined
         }
         tableLink={
           view === "focus" || view === "focus-table"
-            ? getClauseLink(clauseNumber, year, "main", "focus-table")
+            ? getClauseLink(locale, clauseNumber, year, "main", "focus-table")
             : undefined
         }
       >
@@ -200,6 +225,9 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
                 label={
                   <T message="количество человек, чьи дела прошли через суд" />
                 }
+                helpText={t(
+                  "Всего осуждено + Прекращено по амнистии + Прекращено за примирением с потерпевшим + Прекращено в связи с деятельным раскаянием + Прекращено судебный штраф + Прекращено по другим основаниям + Оправдано + Обстоятельства, исключающие преступность: необходимая оборона + Обстоятельства, исключающие преступность: крайняя необходимость + Обстоятельства, исключающие преступность, предусмотренные статьями 38, 40 - 42 УК РФ + Принудительные меры к невменяемым"
+                )}
               />
               <Counter
                 counter={totalConvicted}
@@ -220,6 +248,9 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
                 label={
                   <T message="человека, в отношении которых дело было прекращено по основному составу" />
                 }
+                helpText={t(
+                  "Прекращено за отсутствием события, состава, непричастностью к преступлению + Прекращено по амнистии + Прекращено за примирением с потерпевшим + Прекращено в связи с деятельным раскаянием + Прекращено судебный штраф + Прекращено по другим основаниям"
+                )}
               />
             </Counters>
             <Counters className={cn(classes.counter)}>
@@ -228,6 +259,9 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
                 label={
                   <T message="общее количество случаев использования этой статьи" />
                 }
+                helpText={t(
+                  "Всего осуждено + Доп. квалификация: осуждено по количеству составов преступлений + Прекращено за отсутствием события, состава, непричастностью к преступлению + Прекращено по амнистии + Прекращено за примирением с потерпевшим + Прекращено в связи с деятельным раскаянием + Прекращено судебный штраф + Прекращено по другим основаниям + Доп. квалификация: прекращено по количеству составов преступлений + Доп. квалификация: прекращено по иным основаниям по количеству составов преступлений + Оправдано + Принудительные меры к невменяемым + Обстоятельства, исключающие преступность: необходимая оборона + Обстоятельства, исключающие преступность: крайняя необходимость + Обстоятельства, исключающие преступность, предусмотренные статьями 38, 40 - 42 УК РФ "
+                )}
               />
             </Counters>
             <div className={cn(classes.charts)}>
@@ -243,22 +277,30 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
   }
 
   private renderHeaderChildren = () => {
-    const { clauseNumber, year } = this.props;
+    const { clauseNumber, year, locale } = this.props;
     return (
       <>
         <div className={classes.focusMenu}>
           <Menu variant="tabs" className={cn(classes.tabs)}>
             <MenuLink
-              activeUrls={[getClauseLink(clauseNumber, year, "main", "table")]}
-              to={getClauseLink(clauseNumber, year, "main")}
+              activeUrls={[
+                getClauseLink(locale, clauseNumber, year, "main", "table"),
+              ]}
+              to={getClauseLink(locale, clauseNumber, year, "main")}
             >
               <T message="Основной и дополнительный состав: общие сведения" />
             </MenuLink>
             <MenuLink
               activeUrls={[
-                getClauseLink(clauseNumber, year, "main", "focus-table"),
+                getClauseLink(
+                  locale,
+                  clauseNumber,
+                  year,
+                  "main",
+                  "focus-table"
+                ),
               ]}
-              to={getClauseLink(clauseNumber, year, "main", "focus")}
+              to={getClauseLink(locale, clauseNumber, year, "main", "focus")}
             >
               <T message="Основной состав: в фокусе" />
             </MenuLink>

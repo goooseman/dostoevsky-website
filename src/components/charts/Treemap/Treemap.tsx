@@ -7,7 +7,6 @@ import EmbedModal from "src/components/EmbedModal";
 import DownloadButton from "src/components/DownloadButton";
 import domtoimage from "dom-to-image";
 import { saveAs } from "file-saver";
-import { getClauseLink } from "src/config/routes";
 import { T } from "react-targem";
 
 const TREEMAP_COLORS = ["#7C89E4", "#FF6700", "#BA9BAF", "#F3607B"];
@@ -21,17 +20,17 @@ interface TreemapProps {
   height: number;
   isIframeMode?: boolean;
   downloadFilename: string;
+  iframePath: string;
 }
 
 const Treemap: React.FC<TreemapProps> = ({
-  clauseNumber,
-  year,
   title,
   data,
   width,
   height,
   isIframeMode,
   downloadFilename,
+  iframePath,
 }: TreemapProps) => {
   const downloadAreaRef = useRef(null);
 
@@ -142,15 +141,7 @@ const Treemap: React.FC<TreemapProps> = ({
         </div>
         {!isIframeMode ? (
           <div className={cn(classes.actions)}>
-            {/* TODO fix embed url */}
-            <EmbedModal
-              iframePath={getClauseLink(
-                clauseNumber.toString(),
-                year.toString(),
-                "main",
-                "focus"
-              )}
-            />
+            <EmbedModal iframePath={iframePath} />
             <DownloadButton onClick={handleDownloadButtonClick} />
           </div>
         ) : null}

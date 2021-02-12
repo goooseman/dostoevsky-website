@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import Bar from "src/components/charts/Bar";
 import { getClauseLink } from "src/config/routes";
+import { withLocale, WithLocale } from "react-targem";
 
 const byPunishmentLabels = [
   "пожизненное лишение свободы",
@@ -19,7 +20,7 @@ const byPunishmentLabels = [
   "лишение свободы",
 ];
 
-interface PartsByPunishmentProps {
+interface PartsByPunishmentProps extends WithLocale {
   isIframeMode?: boolean;
   clauseNumber: number;
   year: number;
@@ -44,7 +45,7 @@ interface PartsByPunishmentProps {
 
 class PartsByPunishment extends PureComponent<PartsByPunishmentProps> {
   render(): React.ReactNode {
-    const { clauseNumber, year, parts, isIframeMode } = this.props;
+    const { clauseNumber, year, parts, isIframeMode, locale } = this.props;
 
     return (
       <Bar
@@ -83,6 +84,7 @@ class PartsByPunishment extends PureComponent<PartsByPunishmentProps> {
           },
         ]}
         iframePath={getClauseLink(
+          locale,
           clauseNumber.toString(),
           year.toString(),
           "parts",
@@ -93,4 +95,4 @@ class PartsByPunishment extends PureComponent<PartsByPunishmentProps> {
   }
 }
 
-export default PartsByPunishment;
+export default withLocale(PartsByPunishment);

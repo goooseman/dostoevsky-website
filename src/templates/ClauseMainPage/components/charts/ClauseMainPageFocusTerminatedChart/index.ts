@@ -1,0 +1,2 @@
+import ClauseMainPageFocusTerminatedChart from "./ClauseMainPageFocusTerminatedChart";
+export default ClauseMainPageFocusTerminatedChart;
