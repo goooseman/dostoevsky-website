@@ -13,7 +13,7 @@ interface HeaderProps {
   isBig?: boolean;
 }
 
-const getLogo = (locale: "en-GB" | "ru", isBig: false) => {
+const getLogo = (locale: "en-GB" | "ru", isBig?: boolean) => {
   switch (locale) {
     case "en-GB":
       if (isBig) {
@@ -72,10 +72,7 @@ const Header: React.FC<HeaderProps> = ({ location, isBig }: HeaderProps) => {
             </MenuLink>
           </Menu>
         </div>
-        <Link
-          to={getLinkForCurrentLocale(locale, "/")}
-          className={cn(classes.logo)}
-        >
+        <Link to={getLinkForLocale(locale, "/")} className={cn(classes.logo)}>
           <img src={getLogo(locale as Locale, isBig)} alt={t("Достоевский")} />
         </Link>
         <div className={cn(classes.callMenuBar)}>
