@@ -48,3 +48,34 @@
     width: calc(100% + 2rem);
   }
 }
+.article-body h1,
+.article-body h2,
+.article-body h3 {
+  font-family: var(--font-family-serif);
+  font-style: normal;
+  font-weight: bold;
+  text-align: center;
+  text-transform: lowercase;
+  margin: 2em 0;
+}
+
+.article-body h1::first-letter,
+.article-body h2::first-letter,
+.article-body h3::first-letter {
+  text-transform: uppercase;
+}
+
+.article-body h1 {
+  font-size: 2rem;
+  line-height: 145%;
+}
+
+.article-body h2 {
+  font-size: 1.875rem;
+  line-height: 145%;
+}
+
+.article-body h3 {
+  font-size: 1.475rem;
+  line-height: 145%;
+}
