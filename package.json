@@ -7,7 +7,7 @@
   "dependencies": {
     "@csstools/normalize.css": "^10.1.0",
     "autoprefixer": "^9.8.5",
-    "axios": "^0.20.0",
+    "axios": "^0.21.0",
     "chartist": "^0.11.4",
     "chartist-plugin-tooltips": "0.0.17",
     "clsx": "^1.1.1",
