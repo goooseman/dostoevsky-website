@@ -22,20 +22,20 @@ describe("useBodyOverflowLock", () => {
   it("should restrict body scroll when opened", () => {
     const { getByText } = render(<TestComponent />);
     userEvent.click(getByText("Toggle"));
-    expect(document.body).toHaveStyle("overflow: hidden");
+    expect(document.body).toHaveStyle("overflowY: hidden");
   });
 
   it("should allow body scroll when closed", () => {
     const { getByText } = render(<TestComponent />);
     userEvent.click(getByText("Toggle"));
     userEvent.click(getByText("Toggle"));
-    expect(document.body).toHaveStyle("overflow: unset");
+    expect(document.body).toHaveStyle("overflowY: unset");
   });
 
   it("should allow body scroll when unmounted", () => {
     const { getByText, unmount } = render(<TestComponent />);
     userEvent.click(getByText("Toggle"));
     unmount();
-    expect(document.body).toHaveStyle("overflow: unset");
+    expect(document.body).toHaveStyle("overflowY: unset");
   });
 });
