@@ -72,7 +72,10 @@ const Header: React.FC<HeaderProps> = ({ location, isBig }: HeaderProps) => {
             </MenuLink>
           </Menu>
         </div>
-        <Link to={getLinkForCurrentLocale(locale, "/")} className={cn(classes.logo)}>
+        <Link
+          to={getLinkForCurrentLocale(locale, "/")}
+          className={cn(classes.logo)}
+        >
           <img src={getLogo(locale as Locale, isBig)} alt={t("Достоевский")} />
         </Link>
         <div className={cn(classes.callMenuBar)}>

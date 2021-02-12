@@ -39,7 +39,7 @@
   color: var(--color-border-inverted);
   text-decoration: none;
   background: var(--color-primary);
-  padding: .8rem .8rem .23rem;
+  padding: 0.8rem 0.8rem 0.23rem;
   box-shadow: 0 10px 10px #ff6700;
 }
 
