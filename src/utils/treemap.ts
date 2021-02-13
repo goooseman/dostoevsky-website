@@ -17,7 +17,10 @@ const worstRatio = (row: number[], width: number) => {
   );
 };
 
-const getFontSize = (percent: number) => {
+const getFontSize = (percent: number, width: number, value: number): number => {
+  if (width < 35) {
+    return 3 * value.toString().length;
+  }
   const size = percent * 120;
   return size > 16 ? size : 16;
 };
@@ -74,7 +77,7 @@ class TreemapData {
         data: {
           ...dataPoint.data,
           percent,
-          fontSize: getFontSize(percent),
+          fontSize: getFontSize(percent, dataPoint.width, dataPoint.data.value),
         },
         x: roundValue(dataPoint.x),
         y: roundValue(dataPoint.y),

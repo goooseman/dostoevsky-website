@@ -113,14 +113,16 @@ const Treemap: React.FC<TreemapProps> = ({
                   className={cn(classes.treemapReactangleContentWrapper)}
                 >
                   <div>
-                    <Typography
-                      className={cn(classes.treemapReactangleNumber)}
-                      style={{ fontSize: `${rectangle.data.fontSize}px` }}
-                      font="serif"
-                    >
-                      {rectangle.data.value}
-                    </Typography>
-                    {rectangle.height > 80 ? (
+                    {rectangle.height > 20 && rectangle.width > 20 ? (
+                      <Typography
+                        className={cn(classes.treemapReactangleNumber)}
+                        style={{ fontSize: `${rectangle.data.fontSize}px` }}
+                        font="serif"
+                      >
+                        {rectangle.data.value}
+                      </Typography>
+                    ) : null}
+                    {rectangle.height > 80 && rectangle.width > 120 ? (
                       <Typography
                         className={cn(classes.treemapReactangleLabel)}
                       >
