@@ -2,6 +2,10 @@ export type NoUndefinedField<T> = {
   [P in keyof T]-?: Exclude<T[P], null | undefined>;
 };
 
+function isObject(x: unknown): x is object {
+  return typeof x === "object" && x !== null;
+}
+
 export const distinctNodes = <N extends Object, O extends { node: N }>(
   objects: O[],
   keyToDistinct: keyof N
@@ -17,7 +21,7 @@ export const distinctNodes = <N extends Object, O extends { node: N }>(
       result.push(item.node);
     }
   }
-  return result as NoUndefinedField<N>[];
+  return (result as unknown) as NoUndefinedField<N>[];
 };
 
 export const accumulateNodes = <
@@ -35,28 +39,32 @@ export const accumulateNodes = <
       continue;
     }
     if (!map.has(item.node[keyToAccumulate])) {
-      const index = result.push(item.node as NoUndefinedField<N>) - 1;
+      const index =
+        result.push(({ ...item.node } as unknown) as NoUndefinedField<N>) - 1;
       map.set(item.node[keyToAccumulate], index);
       continue;
     }
     const index = map.get(item.node[keyToAccumulate]);
     const savedItem = result[index];
 
-    for (const key of Object.keys(item.node)) {
+    for (const key of Object.keys(savedItem) as (keyof N)[]) {
       if (key === keyToAccumulate || keysToIgnore.includes(key as keyof N)) {
         continue;
       }
-      if (typeof item.node[key] === "object" && item.node[key] !== null) {
-        for (const secondKey of Object.keys(item.node[key] as object)) {
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          savedItem[key][secondKey] =
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
-            item.node[key][secondKey] + savedItem[key][secondKey];
+      if (isObject(savedItem[key])) {
+        let innerObject = savedItem[key] as { [key: string]: number };
+        innerObject = { ...innerObject };
+        for (const secondKey of Object.keys(innerObject)) {
+          innerObject[secondKey] =
+            (item.node[key] as { [key: string]: number })[secondKey] +
+            innerObject[secondKey];
         }
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        savedItem[key] = innerObject;
         continue;
       }
+
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       savedItem[key] = item.node[key] + savedItem[key];
