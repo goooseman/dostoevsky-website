@@ -2,12 +2,50 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Fri Feb 05 2021 18:43:27 GMT+0300 (GMT+03:00)\n"
+"POT-Creation-Date: Sat Feb 13 2021 10:00:19 GMT+0300 (GMT+03:00)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/components/charts/Treemap/Treemap.tsx:
 msgid "Недостаточно данных для генерации графика."
+msgstr ""
+
+#: src/components/charts/Treemap/Treemap.tsx:
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyConvictedDynamics/ChronologyConvictedDynamics.tsx:
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
+#: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
+#: src/templates/ClausePartsPage/components/charts/PartsByPunishment/PartsByPunishment.tsx:
+#: src/templates/ClausePartsPage/components/charts/PartsByResultChart/PartsByResultChart.tsx:
+#: src/templates/ClausePartsPage/components/charts/PartsChart/PartsChart.tsx:
+msgid "Состав"
+msgstr ""
+
+#: src/components/charts/Treemap/Treemap.tsx:
+#: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
+#: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
+#: src/templates/ClauseMainPage/components/tables/CommonMainResultsTable/CommonMainResultsTable.tsx:
+#: src/templates/ClausePartsPage/components/charts/PartsByPunishment/PartsByPunishment.tsx:
+#: src/templates/ClausePartsPage/components/charts/PartsByResultChart/PartsByResultChart.tsx:
+#: src/templates/ClausePartsPage/components/charts/PartsChart/PartsChart.tsx:
+#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
+msgid "основной состав"
+msgstr ""
+
+#: src/components/charts/Treemap/Treemap.tsx:
+#: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
+msgid "Меры"
+msgstr ""
+
+#: src/components/charts/Treemap/Treemap.tsx:
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyConvictedDynamics/ChronologyConvictedDynamics.tsx:
+#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
+#: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
+#: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
+#: src/templates/ClausePartsPage/components/charts/PartsByPunishment/PartsByPunishment.tsx:
+#: src/templates/ClausePartsPage/components/charts/PartsByResultChart/PartsByResultChart.tsx:
+#: src/templates/ClausePartsPage/components/charts/PartsChart/PartsChart.tsx:
+msgid "Число человек"
 msgstr ""
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
@@ -554,14 +592,12 @@ msgid "{{ clauseNumber }} Основной состав"
 msgstr ""
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyConvictedDynamics/ChronologyConvictedDynamics.tsx:
-#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
-#: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
-msgid "Число человек"
-msgstr ""
-
-#: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
-#: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
-msgid "Состав"
+#: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByPunishmentTable/ClauseChronologyByPunishmentTable.tsx:
+#: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
+#: src/templates/ClausePartsPage/components/charts/PartsByPunishment/PartsByPunishment.tsx:
+#: src/templates/ClausePartsPage/components/charts/PartsByResultChart/PartsByResultChart.tsx:
+#: src/templates/ClausePartsPage/components/charts/PartsChart/PartsChart.tsx:
+msgid "Год"
 msgstr ""
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
@@ -646,11 +682,6 @@ msgstr ""
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByPunishmentTable/ClauseChronologyByPunishmentTable.tsx:
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
 msgid "Все года"
-msgstr ""
-
-#: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByPunishmentTable/ClauseChronologyByPunishmentTable.tsx:
-#: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
-msgid "Год"
 msgstr ""
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByPunishmentTable/ClauseChronologyByPunishmentTable.tsx:
@@ -1209,12 +1240,6 @@ msgstr ""
 msgid ""
 "Чем закончились дела по статье {{ clauseNumber }}, дошедшие до суда (основной "
 "состав)"
-msgstr ""
-
-#: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
-#: src/templates/ClauseMainPage/components/tables/CommonMainResultsTable/CommonMainResultsTable.tsx:
-#: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
-msgid "основной состав"
 msgstr ""
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:

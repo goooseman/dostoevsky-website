@@ -25,8 +25,10 @@ const ChronologyConvictedDynamics: React.SFC<ChronologyConvictedDynamicsProps> =
       labels={years.map((y) => y.year.toString())}
       downloadFilename={`${clauseNumber}-convicted-dynamics`}
       tooltipDescription={{
-        Состав: t("{{ clauseNumber }} Основной состав", { clauseNumber }),
-        Год: "%label%",
+        [t("Состав")]: t("{{ clauseNumber }} Основной состав", {
+          clauseNumber,
+        }),
+        [t("Год")]: "%label%",
         [t("Число человек")]: "%%",
       }}
       groups={[

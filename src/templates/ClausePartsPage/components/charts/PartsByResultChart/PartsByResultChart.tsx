@@ -25,7 +25,7 @@ interface PartsByResultChartProps extends WithLocale {
 
 class PartsByResultChart extends PureComponent<PartsByResultChartProps> {
   render(): React.ReactNode {
-    const { clauseNumber, year, parts, isIframeMode, locale } = this.props;
+    const { clauseNumber, year, parts, isIframeMode, locale, t } = this.props;
 
     return (
       <PercentageBar
@@ -46,9 +46,9 @@ class PartsByResultChart extends PureComponent<PartsByResultChartProps> {
             ],
           }))}
         tooltipDescription={{
-          Состав: `${clauseNumber} основной состав`,
-          Год: `${year}`,
-          "Число человек": "%%",
+          [t("Состав")]: `${clauseNumber} ${t("основной состав")}`,
+          [t("Год")]: `${year}`,
+          [t("Число человек")]: "%%",
         }}
         iframePath={getClauseLink(
           locale,

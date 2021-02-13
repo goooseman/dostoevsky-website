@@ -45,7 +45,7 @@ interface PartsByPunishmentProps extends WithLocale {
 
 class PartsByPunishment extends PureComponent<PartsByPunishmentProps> {
   render(): React.ReactNode {
-    const { clauseNumber, year, parts, isIframeMode, locale } = this.props;
+    const { clauseNumber, year, parts, isIframeMode, locale, t } = this.props;
 
     return (
       <Bar
@@ -77,9 +77,9 @@ class PartsByPunishment extends PureComponent<PartsByPunishmentProps> {
             })),
             labels: byPunishmentLabels,
             tooltipDescription: {
-              Состав: `${clauseNumber} основной состав`,
-              Год: `${year}`,
-              "Число человек": "%%",
+              [t("Состав")]: `${clauseNumber} ${t("основной состав")}`,
+              [t("Год")]: `${year}`,
+              [t("Число человек")]: "%%",
             },
           },
         ]}

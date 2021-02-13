@@ -36,4 +36,18 @@ describe("accumulateNodes", () => {
       { key: "2", parameters: { count: 1 } },
     ]);
   });
+
+  it("should not mutate the original array", () => {
+    const arr = [
+      { node: { key: "1", parameters: { count: 1 } } },
+      { node: { key: "1", parameters: { count: 10 } } },
+      { node: { key: "2", parameters: { count: 1 } } },
+    ];
+    accumulateNodes(arr, "key", []);
+    expect(arr).toEqual([
+      { node: { key: "1", parameters: { count: 1 } } },
+      { node: { key: "1", parameters: { count: 10 } } },
+      { node: { key: "2", parameters: { count: 1 } } },
+    ]);
+  });
 });

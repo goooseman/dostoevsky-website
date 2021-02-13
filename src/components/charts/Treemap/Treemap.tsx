@@ -7,7 +7,8 @@ import EmbedModal from "src/components/EmbedModal";
 import DownloadButton from "src/components/DownloadButton";
 import domtoimage from "dom-to-image";
 import { saveAs } from "file-saver";
-import { T } from "react-targem";
+import { T, useLocale } from "react-targem";
+import Tooltip from "src/components/ui-kit/Tooltip";
 
 const TREEMAP_COLORS = ["#7C89E4", "#FF6700", "#BA9BAF", "#F3607B"];
 
@@ -31,8 +32,10 @@ const Treemap: React.FC<TreemapProps> = ({
   isIframeMode,
   downloadFilename,
   iframePath,
+  clauseNumber,
 }: TreemapProps) => {
   const downloadAreaRef = useRef(null);
+  const { t } = useLocale();
 
   const handleDownloadButtonClick = async () => {
     if (!downloadAreaRef || !downloadAreaRef.current) {
@@ -82,7 +85,7 @@ const Treemap: React.FC<TreemapProps> = ({
         ) : null}
         <svg width={width} height={height}>
           {/* @ts-ignore */}
-          {treemaap.map((rectangle, i) => (
+          {treemaap.map((rectangle) => (
             <g
               key={`${rectangle.x}:${rectangle.y}`}
               fill={rectangle.data.color}
@@ -101,16 +104,25 @@ const Treemap: React.FC<TreemapProps> = ({
                 width={rectangle.width}
                 height={rectangle.height}
               >
-                <div className={cn(classes.treemapReactangleContentWrapper)}>
+                <Tooltip
+                  tip={`<p><b>${t("Состав")}:</b> ${clauseNumber} ${t(
+                    "основной состав"
+                  )}</p>
+                  <p><b>${t("Меры")}:</b> ${rectangle.data.label}</p>
+                  <p><b>${t("Число человек")}:</b> ${rectangle.data.value}</p>`}
+                  className={cn(classes.treemapReactangleContentWrapper)}
+                >
                   <div>
-                    <Typography
-                      className={cn(classes.treemapReactangleNumber)}
-                      style={{ fontSize: `${rectangle.data.fontSize}px` }}
-                      font="serif"
-                    >
-                      {rectangle.data.value}
-                    </Typography>
-                    {rectangle.height > 80 ? (
+                    {rectangle.height > 20 && rectangle.width > 20 ? (
+                      <Typography
+                        className={cn(classes.treemapReactangleNumber)}
+                        style={{ fontSize: `${rectangle.data.fontSize}px` }}
+                        font="serif"
+                      >
+                        {rectangle.data.value}
+                      </Typography>
+                    ) : null}
+                    {rectangle.height > 80 && rectangle.width > 120 ? (
                       <Typography
                         className={cn(classes.treemapReactangleLabel)}
                       >
@@ -118,7 +130,7 @@ const Treemap: React.FC<TreemapProps> = ({
                       </Typography>
                     ) : null}
                   </div>
-                </div>
+                </Tooltip>
               </foreignObject>
             </g>
           ))}

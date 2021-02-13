@@ -10,13 +10,7 @@
   font-weight: normal;
   line-height: 17px;
   opacity: 1;
-  overflow: hidden;
   word-wrap: break-word;
-}
-
-.tooltip-wrapper .tooltip-image {
-  margin: 0 5px -4px 5px;
-  display: inline;
 }
 
 .tooltip-wrapper .tooltip::before {
@@ -38,4 +32,13 @@
 
 .tooltip-wrapper {
   display: inline-block;
+}
+
+.img-wrapper {
+  display: inline-block;
+}
+
+.img-wrapper .tooltip-image {
+  margin: 0 5px -4px 5px;
+  display: inline;
 }
