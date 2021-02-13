@@ -52,9 +52,9 @@ const ClauseMainPageFocusTerminatedChart: React.FC<ClauseMainPageFocusTerminated
       ]}
       isIframeMode={isIframeMode}
       tooltipDescription={{
-        Состав: `${clauseNumber} основной состав`,
-        Меры: "^^",
-        "Число человек": "%%",
+        [t("Состав")]: `${clauseNumber} ${t("основной состав")}`,
+        [t("Меры")]: "^^",
+        [t("Число человек")]: "%%",
       }}
       iframePath={getClauseLink(
         locale,
