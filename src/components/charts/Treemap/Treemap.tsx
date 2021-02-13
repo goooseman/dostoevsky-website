@@ -105,11 +105,11 @@ const Treemap: React.FC<TreemapProps> = ({
                 height={rectangle.height}
               >
                 <Tooltip
-                  tip={`<p>${t("Состав")}: ${clauseNumber} ${t(
+                  tip={`<p><b>${t("Состав")}:</b> ${clauseNumber} ${t(
                     "основной состав"
                   )}</p>
-                  <p>${t("Меры")}: ${rectangle.data.label}</p>
-                  <p>${t("Число человек")}: ${rectangle.data.value}</p>`}
+                  <p><b>${t("Меры")}:</b> ${rectangle.data.label}</p>
+                  <p><b>${t("Число человек")}:</b> ${rectangle.data.value}</p>`}
                   className={cn(classes.treemapReactangleContentWrapper)}
                 >
                   <div>
