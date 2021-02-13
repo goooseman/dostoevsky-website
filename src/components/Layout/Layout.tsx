@@ -3,6 +3,7 @@ import Header from "src/components/Header";
 import Footer from "src/components/Footer";
 import "src/styles/global.css";
 import { LocaleProvider } from "src/contexts/LocaleProvider";
+import { TooltipMount } from "../ui-kit/Tooltip";
 
 interface Props {
   children?: React.ReactNode;
@@ -24,6 +25,7 @@ const Layout: React.FC<Props> = ({
       ) : null}
       {children}
       {hasPageLayout ? <Footer /> : null}
+      <TooltipMount />
     </LocaleProvider>
   );
 };
