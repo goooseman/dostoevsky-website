@@ -5,7 +5,7 @@ msgstr ""
 "POT-Creation-Date: Sun Jan 10 2021 00:39:02 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"PO-Revision-Date: 2021-02-05 15:57\n"
+"PO-Revision-Date: 2021-02-13 07:57\n"
 "Language-Team: English, United Kingdom\n"
 "MIME-Version: 1.0\n"
 "X-Generator: Poedit 2.4.2\n"
@@ -1272,9 +1272,7 @@ msgid "принудительное лечение"
 msgstr ""
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
-msgid ""
-"Чем закончились дела по статье {{ clauseNumber }}, дошедшие до суда (основной "
-"состав)"
+msgid "Чем закончились дела по статье {{ clauseNumber }}, дошедшие до суда (основной состав)"
 msgstr ""
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
