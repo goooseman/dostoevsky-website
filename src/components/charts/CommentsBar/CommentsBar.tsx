@@ -45,6 +45,7 @@ const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
         {
           series: charts[i].series.map((s) =>
             s
+              .sort((a, b) => a.value - b.value)
               .map((s) => {
                 labels.push(capitalize(removeTextInBrackets(s.title)));
                 return {
@@ -52,7 +53,6 @@ const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
                   meta: { title: s.title },
                 };
               })
-              .sort((a, b) => a.value - b.value)
           ),
           labels: labels,
         },
