@@ -8,12 +8,14 @@ import Container from "../ui-kit/Container";
 import { Menu, MenuLink } from "../Menu";
 import { getLinkForLocale } from "src/utils/locales";
 import Modal, { useModal } from "src/components/ui-kit/Modal";
+import useFeatureFlag from "src/hooks/useFeatureFlag";
 
 interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = () => {
   const { t, locale } = useLocale();
   const { isShowing, toggle } = useModal();
+  const hasAnalytics = useFeatureFlag("analytics");
 
   const handleModalClose = () => {
     toggle();
@@ -42,7 +44,7 @@ const Footer: React.FC<FooterProps> = () => {
             >
               <T message="каталог статей ук рф" />
             </MenuLink>
-            {locale === "ru" ? (
+            {locale === "ru" && hasAnalytics ? (
               <MenuLink
                 isNowrap={true}
                 to={getLinkForLocale(locale, "/articles")}
