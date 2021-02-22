@@ -122,8 +122,8 @@ exports.createPages = async ({ actions, graphql }) => {
       for (let section of part.children) {
         for (let chapter of section.children) {
           const context = {
-            partRegex: `/^${chapter.id}[^\.]/i`,
-            clauseRegex: `/^${chapter.id}[^\.]/i`,
+            partRegex: `/^${chapter.id}[^.]?/i`,
+            clauseRegex: `/^${chapter.id}[^.]?/i`,
             clauseId: chapter.id,
           };
           for (let locale of LOCALE_CODES) {
