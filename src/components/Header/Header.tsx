@@ -8,6 +8,7 @@ import Typography from "../ui-kit/Typography";
 import Button from "../ui-kit/Button";
 import { getLinkForLocale } from "src/utils/locales";
 import { Locale } from "src/config/locales";
+import useFeatureFlag from "src/hooks/useFeatureFlag";
 interface HeaderProps {
   location: Location;
   isBig?: boolean;
@@ -51,44 +52,57 @@ const Header: React.FC<HeaderProps> = ({ location, isBig }: HeaderProps) => {
     setLangSelector(!langSelectorActive);
   }
 
+  const hasLangSelector = useFeatureFlag("langs");
+  const hasAnalytics = useFeatureFlag("analytics");
+
   return (
     <nav className={cn(classes.container, { [classes.headerLarge]: isBig })}>
       <div className={cn(classes.headerWrapper)}>
-        <div className={cn(classes.mobileMenuHolder__languagesDesktop)}>
-          <Menu variant="buttons">
-            <MenuLink
-              activeUrls={[/^\/ru/]}
-              to={getLinkForLocale("ru", location.pathname, location.search)}
-              size="normal"
-            >
-              RU
-            </MenuLink>
-            <MenuLink
-              activeUrls={[/^\/en-GB/]}
-              to={getLinkForLocale("en-GB", location.pathname, location.search)}
-              size="normal"
-            >
-              EN
-            </MenuLink>
-          </Menu>
-        </div>
+        {hasLangSelector ? (
+          <div className={cn(classes.mobileMenuHolder__languagesDesktop)}>
+            <Menu variant="buttons">
+              <MenuLink
+                activeUrls={[/^\/ru/]}
+                to={getLinkForLocale("ru", location.pathname, location.search)}
+                size="normal"
+              >
+                RU
+              </MenuLink>
+              <MenuLink
+                activeUrls={[/^\/en-GB/]}
+                to={getLinkForLocale(
+                  "en-GB",
+                  location.pathname,
+                  location.search
+                )}
+                size="normal"
+              >
+                EN
+              </MenuLink>
+            </Menu>
+          </div>
+        ) : null}
+
         <Link to={getLinkForLocale(locale, "/")} className={cn(classes.logo)}>
           <img src={getLogo(locale as Locale, isBig)} alt={t("Достоевский")} />
         </Link>
         <div className={cn(classes.callMenuBar)}>
-          <Button onClick={toggleLangSelector}>
-            <img
-              src={require("./assets/lang.svg")}
-              alt={t('Иконка "Земной шар"')}
-            />{" "}
-            <Typography
-              color="inverted"
-              variant="span"
-              className={cn(classes.localeName)}
-            >
-              {localeName}
-            </Typography>
-          </Button>
+          {hasLangSelector ? (
+            <Button onClick={toggleLangSelector}>
+              <img
+                src={require("./assets/lang.svg")}
+                alt={t('Иконка "Земной шар"')}
+              />{" "}
+              <Typography
+                color="inverted"
+                variant="span"
+                className={cn(classes.localeName)}
+              >
+                {localeName}
+              </Typography>
+            </Button>
+          ) : null}
+
           <div className="test" onClick={toggleMenu}>
             <img
               src={require("./assets/hamburger.svg")}
@@ -127,7 +141,7 @@ const Header: React.FC<HeaderProps> = ({ location, isBig }: HeaderProps) => {
               >
                 <T message="Каталог статей УК РФ" />
               </MenuLink>
-              {locale === "ru" ? (
+              {locale === "ru" && hasAnalytics ? (
                 <MenuLink
                   partiallyActive
                   to={getLinkForLocale(locale, "/articles")}

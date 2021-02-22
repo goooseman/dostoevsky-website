@@ -8,6 +8,11 @@
   <img src="./docs/Dostoevsky.jpg" alt="Fyodor Michalych" />
 </p>
 
+### Feature Flags
+
+- `langs=1` (https://beta.dostoevsky.io/ru/?langs=1) - активирует выбор языка
+- `analytics=1` (https://beta.dostoevsky.io/ru/?analytics=1) - активирует ссылку Аналитика
+
 ### Полезные ссылки
 
 - [Интерактивный прототип сайта](https://www.figma.com/proto/ATV2uD5P5pHjNbnQHs2YB2/Sasha's-Team-Colors?node-id=686%3A4546)
