@@ -4,58 +4,19 @@ import classes from "./Footer.module.css";
 import { T, useLocale } from "react-targem";
 import Typography from "src/components/ui-kit/Typography";
 import Button from "../ui-kit/Button";
-import Input from "../ui-kit/Input";
-import TextareaAutosize from "react-textarea-autosize";
 import Container from "../ui-kit/Container";
 import { Menu, MenuLink } from "../Menu";
 import { getLinkForLocale } from "src/utils/locales";
 import Modal, { useModal } from "src/components/ui-kit/Modal";
-import { useState } from "react";
-import { FORMSUBMIT_ID } from "src/config/vars";
 
 interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = () => {
   const { t, locale } = useLocale();
   const { isShowing, toggle } = useModal();
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [isSent, setIsSent] = useState<boolean>(false);
 
   const handleModalClose = () => {
     toggle();
-    setIsSent(false);
-    setIsLoading(false);
-  };
-
-  const handleFormSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const params = new URLSearchParams();
-    params.append("email", email);
-    params.append("message", message);
-    params.append("subject", "Пользователь отпрвил сообщение в форму связи");
-    setIsLoading(true);
-    try {
-      await fetch(`https://formsubmit.io/send/${FORMSUBMIT_ID}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: params.toString(),
-        referrerPolicy: "unsafe-url",
-        redirect: "manual",
-      });
-    } catch (e) {
-      alert(
-        t(
-          "Ваше сообщение не было отправлено. Пожалуйста, отправьте email на info@dostoevsky.io."
-        )
-      );
-      setIsLoading(false);
-      return;
-    }
-    setIsLoading(false);
-    setIsSent(true);
   };
 
   return (
@@ -152,59 +113,16 @@ const Footer: React.FC<FooterProps> = () => {
         onHideButtonClick={handleModalClose}
         title={<T message="Напишите нам" />}
         size="md"
-        isCentered
       >
-        {isSent ? (
-          <div className={cn(classes.modalSuccess)}>
-            <Typography variant="h3" font="serif">
-              <i>
-                <T message="Спасибо!" />{" "}
-                <T message="Ваше сообщение было отправлено!" />
-              </i>
-            </Typography>
-          </div>
-        ) : (
-          <form className={cn(classes.modalForm)} onSubmit={handleFormSubmit}>
-            <div>
-              <Input
-                type="text"
-                value={username}
-                required
-                placeholder={t("Ваше имя")}
-                className={cn(classes.modalInput)}
-                onChange={(e) => setUsername(e.currentTarget.value)}
-              />
-            </div>
-            <div>
-              <Input
-                type="email"
-                value={email}
-                required
-                placeholder={t("Ваш e-mail")}
-                className={cn(classes.modalInput)}
-                onChange={(e) => setEmail(e.currentTarget.value)}
-              />
-            </div>
-            <div>
-              <TextareaAutosize
-                name="message"
-                minRows={4}
-                required
-                className={cn(classes.modalTextarea)}
-                onChange={(e) => setMessage(e.currentTarget.value)}
-              />
-            </div>
-            <div>
-              <Button color="secondary" type="submit">
-                {isLoading ? (
-                  <T message="Загрузка..." />
-                ) : (
-                  <T message="Отправить" />
-                )}
-              </Button>
-            </div>
-          </form>
-        )}
+        <script src="https://static.airtable.com/js/embed/embed_snippet_v1.js"></script>
+        <iframe
+          className="airtable-embed airtable-dynamic-height"
+          src="https://airtable.com/embed/shrmFW7gSavd4XqYI?backgroundColor=green"
+          frameBorder="0"
+          width="100%"
+          height="980"
+          style={{ background: "transparent", border: "1px solid #ccc" }}
+        ></iframe>
       </Modal>
     </div>
   );
