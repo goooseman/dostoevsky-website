@@ -311,6 +311,14 @@ msgid "Продюсер"
 msgstr "Продюсер"
 
 #: src/templates/AboutPage/AboutPage.tsx:
+msgid "Антон Ревин"
+msgstr "Антон Ревин"
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "АйТи эксперт"
+msgstr "АйТи эксперт"
+
+#: src/templates/AboutPage/AboutPage.tsx:
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "О проекте"
 msgstr "О проекте"

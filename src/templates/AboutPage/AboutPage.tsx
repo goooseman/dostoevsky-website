@@ -60,6 +60,12 @@ const teamMembers = [
     photoSrc: require("./assets/shuranova.png"),
     photoSrc2x: require("./assets/shuranova_2x.png"),
   },
+  {
+    name: <T message="Антон Ревин" />,
+    position: <T message="АйТи эксперт" />,
+    photoSrc: require("./assets/rewin.png"),
+    photoSrc2x: require("./assets/rewin_2x.png"),
+  },
 ];
 
 class AboutPage extends PureComponent<AboutPageProps> {
