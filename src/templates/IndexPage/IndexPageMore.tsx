@@ -6,6 +6,7 @@ import { T, useLocale } from "react-targem";
 import Container from "src/components/ui-kit/Container";
 import { Link } from "gatsby";
 import type { Article } from "../ArticleFullPage/ArticleFullPage";
+import useFeatureFlag from "src/hooks/useFeatureFlag";
 interface IndexPageMoreProps {
   articles: Partial<Article>[];
 }
@@ -22,7 +23,8 @@ const getArticleBackground = (type?: Article["tag"]) => {
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const IndexPageMore = (props: IndexPageMoreProps) => {
   const { t, locale } = useLocale();
-  if (locale !== "ru") {
+  const hasAnalytics = useFeatureFlag("analytics");
+  if (locale !== "ru" || !hasAnalytics) {
     return null;
   }
   const { articles } = props;
