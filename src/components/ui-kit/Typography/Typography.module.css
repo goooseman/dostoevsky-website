@@ -53,9 +53,15 @@
   color: var(--color-text-muted);
 }
 
-.common a {
+.common a,
+.common a:visited {
   color: inherit;
   text-decoration: none;
+}
+
+.common mark {
+  background-color: var(--color-palette-l);
+  color: var(--color-text);
 }
 
 .common a[target="_blank"] {
