@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Mon Feb 22 2021 19:47:02 GMT+0200 (Israel Standard Time)\n"
+"POT-Creation-Date: Tue Feb 23 2021 00:07:41 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -250,7 +250,7 @@ msgid "Катя Боровикова"
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
-msgid "backend-разработчик аналитик"
+msgid "backend-разработчик, аналитик"
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
@@ -320,7 +320,7 @@ msgid ""
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
-msgid "Разве я сам(-а) не могу найти эти данные?"
+msgid "Разве я не могу найти эти данные самостоятельно?"
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
@@ -459,7 +459,7 @@ msgstr ""
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid ""
 "Идея Достоевского зародилась внутри правозащитного медиа-проекта ОВД-Инфо в "
-"2015-ом году. Более трех лет аналитики проекта изучали судебную статистику и "
+"2014-ом году. Более трех лет аналитики проекта изучали судебную статистику и "
 "использовали еe в своих докладах и публикациях. В 2018 году к разработке "
 "присоединился коллектив Data for Society — независимая инициатива журналистов и "
 "программистов, которые ставят своей целью укреплять правозащитные, медиа- и "
@@ -470,8 +470,8 @@ msgstr ""
 msgid ""
 "Наш проект стал возможен благодаря труду десятков людей — юристов, "
 "дата-аналитиков, разработчиков, дизайнеров, журналистов и менеджеров, а также "
-"благодаря тщательной работе Судебного департамента при Верховном суде РФ, "
-"который неустанно ведeт учeт преступлений и наказаний в России. Спасибо!"
+"тщательной работе Судебного департамента при Верховном суде РФ, который "
+"неустанно ведeт учeт судебной статистики в России. Спасибо!"
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
