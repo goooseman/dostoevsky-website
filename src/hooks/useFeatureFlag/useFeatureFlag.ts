@@ -1,7 +1,7 @@
 export type Feature = "langs" | "analytics";
 
 const useFeatureFlag = (feature: Feature): boolean => {
-  if (window.location === undefined || window.location.search === undefined) {
+  if (typeof window === `undefined` || window.location?.search === undefined) {
     return false;
   }
   const lsKey = `ff-${feature}`;
