@@ -644,9 +644,8 @@ class ClauseFullPage extends PureComponent<
                 >
                   {a.children
                     ? a.children.map((ac) => (
-                        <>
+                        <React.Fragment key={ac.id}>
                           <div
-                            key={ac.id}
                             className={cn(
                               classes.clauseFullPageElementSecondaryWrapper
                             )}
@@ -688,7 +687,7 @@ class ClauseFullPage extends PureComponent<
                                 </div>
                               ))
                             : null}
-                        </>
+                        </React.Fragment>
                       ))
                     : null}
                 </AccordionNode>
