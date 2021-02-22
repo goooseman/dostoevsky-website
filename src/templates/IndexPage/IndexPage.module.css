@@ -212,7 +212,6 @@
 
   :global {
     .select__control {
-      padding-top: 1.5rem;
       border: none;
       background-color: transparent;
       box-shadow: none;
@@ -276,7 +275,6 @@
 }
 
 .filter-block-wrapper .filter-block .select-label {
-  position: absolute;
   z-index: 100;
 }
 
