@@ -111,6 +111,7 @@ body {
     .ct-inner-label-dark {
       fill: var(--color-text);
     }
+    .ct-label.ct-vertical.ct-start,
     .ct-chart-bar.ct-horizontal-bars .ct-label.ct-vertical.ct-start {
       justify-content: flex-start;
     }
