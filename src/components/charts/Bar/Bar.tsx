@@ -116,7 +116,7 @@ class Bar extends PureComponent<BarProps> {
       );
 
       chart.on("draw", (data: ChartDrawData) => {
-        centerXLabel(data);
+        centerXLabel(data, areLabelsRotated);
         styleVerticalGrid(data, Y_LABEL_MARGIN);
         removeHorizontalGridExceptLast(data);
         if (chartType === "partsByPunishment") {

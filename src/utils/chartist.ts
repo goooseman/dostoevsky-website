@@ -18,7 +18,10 @@ export const isXGrid = (data: IChartDrawGridData): boolean =>
 export const isYGrid = (data: IChartDrawGridData): boolean =>
   data.axis?.units.pos === "y";
 
-export const centerXLabel = (data: ChartDrawData): void => {
+export const centerXLabel = (
+  data: ChartDrawData,
+  areLabalesRotated?: boolean
+): void => {
   if (!isLabel(data) || !isXLabel(data)) {
     return;
   }
@@ -33,9 +36,13 @@ export const centerXLabel = (data: ChartDrawData): void => {
   const digitsCount = data.element._node.textContent?.length || 1;
 
   if (data.index === data.axis.ticks.length - 1) {
+    let lastLabelX = x - digitsCount * 6;
+    if (areLabalesRotated) {
+      lastLabelX = lastLabelX - 3;
+    }
     // last label should be right aligned
     data.element.attr({
-      x: x - digitsCount * 6,
+      x: lastLabelX,
     });
     return;
   }
@@ -48,7 +55,7 @@ export const centerXLabel = (data: ChartDrawData): void => {
 /** Function to show vertical grid under the canvas */
 export const styleVerticalGrid = (
   data: ChartDrawData,
-  yLabelMargin: number,
+  tickHeight: number,
   isFirstOneFull?: boolean
 ): void => {
   if (!isGrid(data) || !isXGrid(data)) {
@@ -57,13 +64,13 @@ export const styleVerticalGrid = (
   if (data.index === 0 && isFirstOneFull) {
     data.element.attr({
       y1: data.y1,
-      y2: data.y2 + yLabelMargin - 5,
+      y2: data.y2 + tickHeight - 5,
     });
     return;
   }
   data.element.attr({
     y1: data.y2,
-    y2: data.y2 + yLabelMargin - 5,
+    y2: data.y2 + tickHeight - 5,
   });
 };
 
