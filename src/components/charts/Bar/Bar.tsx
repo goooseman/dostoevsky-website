@@ -94,7 +94,7 @@ class Bar extends PureComponent<BarProps> {
             onlyInteger: true,
             showGrid: true,
             labelOffset: {
-              y: areLabelsRotated ? 10 : 20,
+              y: areLabelsRotated ? 10 : 15,
             },
           },
           axisY: {
@@ -102,7 +102,7 @@ class Bar extends PureComponent<BarProps> {
             showGrid: true,
             labelOffset: {
               x: 0,
-              y: -17,
+              y: -20,
             },
             offset: 0,
             fullWidth: true,
