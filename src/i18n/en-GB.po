@@ -2447,6 +2447,14 @@ msgid ""
 "10-а, где эти же статьи даны с детализацией по частям."
 msgstr ""
 
+#: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
+msgid "Расхождение данных в одинаковых по смыслу столбцах разных отчетных форм"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
+msgid "В таких случаях были использованы данные  формы 10.3."
+msgstr ""
+
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid ""
 "Для простой навигации по базе данных мы создали «дерево» параметров: оно "

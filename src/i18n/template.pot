@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Tue Feb 23 2021 00:20:07 GMT+0200 (Israel Standard Time)\n"
+"POT-Creation-Date: Tue Feb 23 2021 00:33:49 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -2407,6 +2407,14 @@ msgid ""
 "статистики по отдельным частям этих статей. Чтобы восстановить детализацию, "
 "отсутствующую в форме № 10.3, мы использовали информацию из форм № 10.3.1 и № "
 "10-а, где эти же статьи даны с детализацией по частям."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
+msgid "Расхождение данных в одинаковых по смыслу столбцах разных отчетных форм"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
+msgid "В таких случаях были использованы данные  формы 10.3."
 msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
