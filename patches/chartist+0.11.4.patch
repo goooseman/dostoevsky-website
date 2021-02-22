@@ -1,8 +1,18 @@
 diff --git a/node_modules/chartist/dist/chartist.js b/node_modules/chartist/dist/chartist.js
-index 68536a7..c0b4c16 100644
+index 68536a7..92fb1e2 100644
 --- a/node_modules/chartist/dist/chartist.js
 +++ b/node_modules/chartist/dist/chartist.js
-@@ -2171,9 +2171,6 @@ var Chartist = {
+@@ -992,7 +992,8 @@ var Chartist = {
+     positionalData[axis.units.pos] = position + labelOffset[axis.units.pos];
+     positionalData[axis.counterUnits.pos] = labelOffset[axis.counterUnits.pos];
+     positionalData[axis.units.len] = length;
+-    positionalData[axis.counterUnits.len] = Math.max(0, axisOffset - 10);
++    // positionalData[axis.counterUnits.len] = Math.max(0, axisOffset - 10);
++    positionalData[axis.counterUnits.len] = 300;
+ 
+     if(useForeignObject) {
+       // We need to set width and height explicitly to px as span will not expand with width and height being
+@@ -2171,9 +2172,6 @@ var Chartist = {
        content = container.firstChild;
      }
  

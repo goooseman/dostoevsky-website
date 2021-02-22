@@ -121,11 +121,6 @@ body {
     .ct-labels {
       border-top: 1px solid black;
     }
-    /* stylelint-disable */
-    .ct-labels > foreignObject {
-      width: 150px;
-    }
-    /* stylelint-enable */
     .ct-grid {
       stroke: var(--color-border-gray);
       stroke-dasharray: none;
