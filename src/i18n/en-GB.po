@@ -5,7 +5,7 @@ msgstr ""
 "POT-Creation-Date: Sun Jan 10 2021 00:39:02 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"PO-Revision-Date: 2021-02-22 18:39\n"
+"PO-Revision-Date: 2021-02-22 23:51\n"
 "Language-Team: English, United Kingdom\n"
 "MIME-Version: 1.0\n"
 "X-Generator: Poedit 2.4.2\n"
@@ -200,6 +200,10 @@ msgstr "Menu icon"
 msgid "Иконка \"Закрыть\""
 msgstr "Close icon"
 
+#: src/components/NoData/NoData.tsx:
+msgid "Данных нет"
+msgstr ""
+
 #: src/components/Promo/Promo.tsx:
 msgid "Нужны данные по всем статьям и годам?"
 msgstr "Need data for all articles and years?"
@@ -259,7 +263,7 @@ msgid "Катя Боровикова"
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
-msgid "backend-разработчик аналитик"
+msgid "backend-разработчик, аналитик"
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
@@ -311,6 +315,14 @@ msgid "Продюсер"
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
+msgid "Антон Ревин"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "АйТи эксперт"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "О проекте"
 msgstr "About"
@@ -325,7 +337,7 @@ msgid "Достоевский — это бесплатная платформа
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
-msgid "Разве я сам(-а) не могу найти эти данные?"
+msgid "Разве я не могу найти эти данные самостоятельно?"
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
@@ -417,11 +429,11 @@ msgid "Кто работает над Достоевским?"
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
-msgid "Идея Достоевского зародилась внутри правозащитного медиа-проекта ОВД-Инфо в 2015-ом году. Более трех лет аналитики проекта изучали судебную статистику и использовали еe в своих докладах и публикациях. В 2018 году к разработке присоединился коллектив Data for Society — независимая инициатива журналистов и программистов, которые ставят своей целью укреплять правозащитные, медиа- и научные коллективы с помощью IT-решений для обработки открытых данных."
+msgid "Идея Достоевского зародилась внутри правозащитного медиа-проекта ОВД-Инфо в 2014-ом году. Более трех лет аналитики проекта изучали судебную статистику и использовали еe в своих докладах и публикациях. В 2018 году к разработке присоединился коллектив Data for Society — независимая инициатива журналистов и программистов, которые ставят своей целью укреплять правозащитные, медиа- и научные коллективы с помощью IT-решений для обработки открытых данных."
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
-msgid "Наш проект стал возможен благодаря труду десятков людей — юристов, дата-аналитиков, разработчиков, дизайнеров, журналистов и менеджеров, а также благодаря тщательной работе Судебного департамента при Верховном суде РФ, который неустанно ведeт учeт преступлений и наказаний в России. Спасибо!"
+msgid "Наш проект стал возможен благодаря труду десятков людей — юристов, дата-аналитиков, разработчиков, дизайнеров, журналистов и менеджеров, а также тщательной работе Судебного департамента при Верховном суде РФ, который неустанно ведeт учeт судебной статистики в России. Спасибо!"
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
@@ -2053,6 +2065,14 @@ msgstr ""
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "Мы обнаружили и более существенные расхождения. Так, в форме № 10.3 за 2016 год приведены лишь агрегированные данные по статьям 204.1 и 204.2 без указания статистики по отдельным частям этих статей. Чтобы восстановить детализацию, отсутствующую в форме № 10.3, мы использовали информацию из форм № 10.3.1 и № 10-а, где эти же статьи даны с детализацией по частям."
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
+msgid "Расхождение данных в одинаковых по смыслу столбцах разных отчетных форм"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
+msgid "В таких случаях были использованы данные  формы 10.3."
 msgstr ""
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
