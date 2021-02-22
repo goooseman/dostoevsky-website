@@ -1,7 +1,9 @@
 import React from "react";
 import classes from "./FaqPage.module.css";
 import cn from "clsx";
-import Typography from "src/components/ui-kit/Typography";
+import Typography, {
+  TypographyContainer,
+} from "src/components/ui-kit/Typography";
 import { T, useLocale } from "react-targem";
 import Table from "src/components/Table";
 import metrics from "content/metriсs.json";
@@ -45,7 +47,7 @@ const FaqPageUploadFieldsNParameterTree: React.FC = () => {
           <T message="Основной состав" />
         </b>
       </Typography>
-      <Typography>
+      <TypographyContainer>
         <ol type="I" className={cn(classes.ulWithAdditionalMargin)}>
           <li>
             <b>
@@ -462,13 +464,13 @@ const FaqPageUploadFieldsNParameterTree: React.FC = () => {
             </ol>
           </li>
         </ol>
-      </Typography>
+      </TypographyContainer>
       <Typography isUpperCased>
         <b>
           <T message="Дополнительные характеристики по основному составу" />
         </b>
       </Typography>
-      <Typography>
+      <TypographyContainer>
         <ol type="I" className={cn(classes.ulWithAdditionalMargin)}>
           <li>
             <b>
@@ -698,13 +700,13 @@ const FaqPageUploadFieldsNParameterTree: React.FC = () => {
             </ol>
           </li>
         </ol>
-      </Typography>
+      </TypographyContainer>
       <Typography isUpperCased>
         <b>
           <T message="Дополнительные характеристики по основному составу" />
         </b>
       </Typography>
-      <Typography>
+      <TypographyContainer>
         <ol type="I" className={cn(classes.ulWithAdditionalMargin)}>
           <li>
             <b>
@@ -770,7 +772,7 @@ const FaqPageUploadFieldsNParameterTree: React.FC = () => {
             {" (addUnfitToPleadOffences)."}
           </li>
         </ol>
-      </Typography>
+      </TypographyContainer>
       <Typography isUpperCased>
         <b>Поля выгрузки</b>
       </Typography>

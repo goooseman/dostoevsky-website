@@ -105,4 +105,14 @@ class Typography extends PureComponent<TypographyProps> {
   };
 }
 
+interface TypographyContainerProps {
+  children: React.ReactNode;
+}
+
+export const TypographyContainer: React.FC<TypographyContainerProps> = ({
+  children,
+}: TypographyContainerProps) => {
+  return <div className={cn(classes.common)}>{children}</div>;
+};
+
 export default Typography;
