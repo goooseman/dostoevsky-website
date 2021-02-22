@@ -5,6 +5,7 @@
 .inner-container {
   background-color: var(--color-main-background);
   display: flex;
+  max-width: 100%;
 }
 
 @media all and (max-width: 940px) {

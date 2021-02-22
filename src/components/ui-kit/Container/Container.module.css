@@ -1,5 +1,5 @@
 .container {
-  max-width: 1210px;
+  width: 100%;
   margin: auto;
 }
 
@@ -8,21 +8,32 @@
   margin: auto;
 }
 
-/* Large devices (desktops, 992px and up) */
-@media screen and (max-width: 1200px) {
+@media (min-width: 576px) {
   .container {
-    width: 1080px;
+    max-width: 540px;
   }
 }
 
-@media screen and (max-width: 992px) {
+@media (min-width: 768px) {
   .container {
-    width: 740px;
+    max-width: 720px;
   }
 }
 
-@media screen and (max-width: 680px) {
+@media (min-width: 992px) {
   .container {
-    width: 100%;
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
   }
 }

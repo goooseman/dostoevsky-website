@@ -138,26 +138,17 @@ body {
 .charts-container {
   display: flex;
 }
-@media all and (max-width: 1170px) {
+@media all and (max-width: 768px) {
   .charts-container {
     width: 100%;
+    margin: 0;
     margin: auto;
     flex-direction: column;
-  }
-  .charts-container > div {
-    width: 900px !important;
-    margin: auto;
   }
 }
 
 .charts-container > div {
   width: 100%;
-}
-@media all and (max-width: 800px) {
-  .charts-container > div {
-    width: 500px !important;
-    margin: auto;
-  }
 }
 
 .legend {

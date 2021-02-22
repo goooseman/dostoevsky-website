@@ -101,7 +101,7 @@
   margin: 0 auto;
 }
 
-@media all and (max-width: 680px) {
+@media all and (max-width: 992px) {
   .analytics-wrapper {
     flex-direction: column;
     padding: 2rem 1rem;
@@ -184,7 +184,6 @@
   margin-left: 2rem;
   text-decoration: none;
   position: relative;
-  bottom: -10rem;
 }
 
 .analytics-link-wrapper .analytics-link {
@@ -324,7 +323,7 @@
 .hints-wrapper .hints-inner button {
   margin: 0.1rem;
 }
-@media all and (max-width: 680px) {
+@media all and (max-width: 768px) {
   .hints-wrapper {
     margin: 1rem;
   }
@@ -390,7 +389,7 @@
   justify-content: space-between;
 }
 
-@media all and (max-width: 680px) {
+@media all and (max-width: 992px) {
   .more-wrapper {
     display: flex;
     flex-direction: column;
