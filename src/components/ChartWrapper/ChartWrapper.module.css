@@ -131,6 +131,7 @@ body {
 @media all and (max-width: 680px) {
   .chart {
     padding: 0;
+    margin-top: 0;
   }
 }
 

@@ -25,17 +25,14 @@
 
 .header-large .logo {
   display: flex;
-  width: 415px;
-  margin: 1.5rem 1.5rem 97px;
+  max-width: 415px;
+  margin: 1.5rem auto;
 }
 
 .header-large .logo img {
   position: relative;
-
-  /* fix inccorrect logo width */
-  right: -10px;
   display: block;
-  width: 415px;
+  width: 100%;
   height: 81px;
 }
 
