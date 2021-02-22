@@ -5,6 +5,7 @@ import classes from "./DonutChart.module.css";
 import cn from "clsx";
 import Typography from "src/components/ui-kit/Typography";
 import he from "he";
+import NoData from "src/components/NoData";
 
 interface DonutChartProps extends React.ComponentProps<typeof ChartWrapper> {
   charts: {
@@ -31,6 +32,9 @@ class DonutChart extends PureComponent<DonutChartProps> {
   public componentDidMount(): void {
     const { charts } = this.props;
     for (let i = 0; i < charts.length; i++) {
+      if (!this.chartRefs[i].current) {
+        return;
+      }
       const { groups, tooltipDescription, labels } = charts[i];
 
       let totalSum = 0;
@@ -83,28 +87,40 @@ class DonutChart extends PureComponent<DonutChartProps> {
 
     return (
       <ChartWrapper {...wrapperProps} labels={charts[0].labels}>
-        {charts.map((c, i) => (
-          <div
-            key={i}
-            className={cn(classes.donutChart)}
-            style={{ width: `${100 / charts.length}%` }}
-          >
-            <Typography className={cn(classes.chartTitle)} isUpperCased>
-              <b>
-                <small>{c.title}</small>
-              </b>
-            </Typography>
+        {charts.map((c, i) =>
+          this.isChartEmpty(c.groups) ? (
             <div
-              ref={this.chartRefs[i]}
-              style={{
-                height: 400,
-              }}
-            ></div>
-          </div>
-        ))}
+              key={i}
+              className={cn(classes.donutChart)}
+              style={{ width: `${100 / charts.length}%` }}
+            >
+              <Typography className={cn(classes.chartTitle)} isUpperCased>
+                <b>
+                  <small>{c.title}</small>
+                </b>
+              </Typography>
+              <div
+                ref={this.chartRefs[i]}
+                style={{
+                  height: 400,
+                }}
+              ></div>
+            </div>
+          ) : (
+            <NoData
+              style={{ width: `${100 / charts.length}%` }}
+              key={i}
+              className={classes.donutChart}
+            />
+          )
+        )}
       </ChartWrapper>
     );
   }
+
+  private isChartEmpty = (groups: (number | null)[]) => {
+    return groups.filter((g) => g !== 0 && g !== null).length > 0;
+  };
 
   private getTooltipText = (meta: string, value: number) => {
     let metaDeserialized: {

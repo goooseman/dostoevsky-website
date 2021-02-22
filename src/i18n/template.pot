@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Tue Feb 23 2021 00:33:49 GMT+0200 (Israel Standard Time)\n"
+"POT-Creation-Date: Tue Feb 23 2021 01:35:46 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -189,6 +189,10 @@ msgstr ""
 #: src/components/Header/Header.tsx:
 #: src/components/Header/Header.tsx:
 msgid "Иконка \"Закрыть\""
+msgstr ""
+
+#: src/components/NoData/NoData.tsx:
+msgid "Данных нет"
 msgstr ""
 
 #: src/components/Promo/Promo.tsx:

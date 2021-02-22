@@ -202,6 +202,10 @@ msgstr "Menu icon"
 msgid "Иконка \"Закрыть\""
 msgstr "Close icon"
 
+#: src/components/NoData/NoData.tsx:
+msgid "Данных нет"
+msgstr ""
+
 #: src/components/Promo/Promo.tsx:
 msgid "Нужны данные по всем статьям и годам?"
 msgstr "Need data for all articles and years?"

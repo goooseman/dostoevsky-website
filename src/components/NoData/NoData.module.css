@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-secondary-opaque);
+  flex-grow: 0;
+  height: 200px;
+  align-self: center;
+}
