@@ -44,7 +44,6 @@ const ClauseMainPageFocusTerminatedTreemap: React.FC<ClauseMainPageFocusTerminat
           label: "принудительное лечение",
         },
       ]}
-      width={625}
       height={392}
       clauseNumber={clauseNumber}
       year={year}

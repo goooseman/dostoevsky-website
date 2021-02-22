@@ -33,7 +33,7 @@
 @media all and (max-width: 680px) {
   .promo h3::before,
   .promo h3::after {
-    width: 40px;
+    display: none;
   }
 
   .promo h3::before {

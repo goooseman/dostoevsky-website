@@ -27,6 +27,7 @@ class LineChart extends PureComponent<LineChartProps> {
 
   public componentDidMount(): void {
     const { groups, labels, tooltipDescription } = this.props;
+
     const series: { value: number }[][] = groups.map((g) =>
       g.values.slice().map((v, i) => ({
         value: v,
@@ -71,7 +72,22 @@ class LineChart extends PureComponent<LineChartProps> {
         } as IChartistStepAxis,
         fullWidth: true,
         plugins,
-      }
+      },
+      [
+        [
+          "screen and (max-width: 640px)",
+          {
+            axisX: {
+              labelInterpolationFnc: function (value: string, index: number) {
+                if (index === labels.length - 1) {
+                  return value;
+                }
+                return index % 2 === 0 ? value : null;
+              },
+            },
+          },
+        ],
+      ]
     );
 
     chart.on("draw", (data: ChartDrawData) => {

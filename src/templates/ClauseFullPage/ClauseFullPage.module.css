@@ -3,6 +3,12 @@
   margin-left: 2rem;
 }
 
+@media all and (max-width: 680px) {
+  .clause-full-page-wrapper {
+    margin-left: 0;
+  }
+}
+
 .clause-full-page-top-element-wrapper,
 .clause-full-page-element-primary-wrapper,
 .clause-full-page-element-secondary-wrapper {

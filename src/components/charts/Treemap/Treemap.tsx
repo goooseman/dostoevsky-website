@@ -17,7 +17,6 @@ interface TreemapProps {
   year: number;
   title?: string;
   data: { value: number; label?: string }[];
-  width: number;
   height: number;
   isIframeMode?: boolean;
   downloadFilename: string;
@@ -27,7 +26,6 @@ interface TreemapProps {
 const Treemap: React.FC<TreemapProps> = ({
   title,
   data,
-  width,
   height,
   isIframeMode,
   downloadFilename,
@@ -54,9 +52,14 @@ const Treemap: React.FC<TreemapProps> = ({
       color: TREEMAP_COLORS[i],
     }));
 
+  let width = 625;
+  if (typeof window !== "undefined" && window.innerWidth < 645) {
+    width = window.innerWidth - 20;
+  }
+
   if (chartData.length === 0) {
     return (
-      <div style={{ width }}>
+      <div>
         {title ? (
           <Typography variant="h3" isUpperCased className={classes.title}>
             <b>{title}</b>

@@ -44,7 +44,6 @@ const ClauseMainPageFocusPunishmentsTreemap: React.FC<ClauseMainPageFocusPunishm
           label: "исправительные работы",
         },
       ]}
-      width={625}
       height={392}
       clauseNumber={clauseNumber}
       year={year}

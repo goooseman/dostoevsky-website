@@ -1,6 +1,13 @@
 body .accordion-part-item {
   width: calc(25% - 4rem);
+  min-width: 100px;
   margin-right: 4rem;
+}
+
+@media all and (max-width: 680px) {
+  body .accordion-part-item {
+    margin-right: 2rem;
+  }
 }
 
 .charts {
