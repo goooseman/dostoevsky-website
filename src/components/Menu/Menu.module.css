@@ -12,7 +12,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 0.5rem;
 }
 
 .menu-item:not(:last-child) {
@@ -117,13 +116,15 @@
 @media all and (max-width: 680px) {
   .menu {
     flex-direction: column;
-    margin: 0 1rem;
   }
   .menu-item {
     padding: 1rem;
     border-right: 0 !important;
-    border-bottom: 1px solid var(--color-border-inverted) !important;
     border-left: 0 !important;
+  }
+  .menu.active-border-bottom .menu-item .menu-link-active::after,
+  .menu.active-border-bottom .menu-item.menu-item-active .menu-link::after {
+    bottom: 4px;
   }
 }
 

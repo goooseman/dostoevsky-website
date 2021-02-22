@@ -11,6 +11,9 @@
   .container {
     flex-direction: column;
   }
+  .inner-container {
+    flex-direction: column;
+  }
 }
 
 .sidebar {
@@ -36,6 +39,7 @@
 
   .sidebar .sticky {
     position: inherit;
+    width: 100%;
   }
 }
 
