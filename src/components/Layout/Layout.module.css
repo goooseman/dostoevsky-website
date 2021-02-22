@@ -1,0 +1,10 @@
+.min-main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.min-main main {
+  align-self: stretch;
+  flex-grow: 1;
+}
