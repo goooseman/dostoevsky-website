@@ -135,14 +135,6 @@ msgid "Скопировать"
 msgstr "Скопировать"
 
 #: src/components/Footer/Footer.tsx:
-msgid ""
-"Ваше сообщение не было отправлено. Пожалуйста, отправьте email на "
-"info@dostoevsky.io."
-msgstr ""
-"Ваше сообщение не было отправлено. Пожалуйста, отправьте email на "
-"info@dostoevsky.io."
-
-#: src/components/Footer/Footer.tsx:
 msgid "Логотип OI"
 msgstr "Логотип OI"
 
@@ -194,33 +186,6 @@ msgstr "напишите нам"
 #: src/components/Footer/Footer.tsx:
 msgid "Напишите нам"
 msgstr "Напишите нам"
-
-#: src/components/Footer/Footer.tsx:
-msgid "Спасибо!"
-msgstr "Спасибо!"
-
-#: src/components/Footer/Footer.tsx:
-msgid "Ваше сообщение было отправлено!"
-msgstr "Ваше сообщение было отправлено!"
-
-#: src/components/Footer/Footer.tsx:
-msgid "Ваше имя"
-msgstr "Ваше имя"
-
-#: src/components/Footer/Footer.tsx:
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
-msgid "Ваш e-mail"
-msgstr "Ваш e-mail"
-
-#: src/components/Footer/Footer.tsx:
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
-#: src/templates/IndexPage/IndexPageSubscription.tsx:
-msgid "Загрузка..."
-msgstr "Загрузка..."
-
-#: src/components/Footer/Footer.tsx:
-msgid "Отправить"
-msgstr "Отправить"
 
 #: src/components/Header/Header.tsx:
 msgid "Иконка \"Земной шар\""
@@ -3356,6 +3321,10 @@ msgstr ""
 "полезное!"
 
 #: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+msgid "Ваш e-mail"
+msgstr "Ваш e-mail"
+
+#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
 msgid "Ваше имя в Telegram, если хотите присоединиться к нашему сообществу"
 msgstr "Ваше имя в Telegram, если хотите присоединиться к нашему сообществу"
 
@@ -3370,6 +3339,11 @@ msgid ""
 msgstr ""
 "При использовании данных, пожалуйста, указывайте ссылку на Достоевский и "
 "делитесь с нами своими материалами."
+
+#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+#: src/templates/IndexPage/IndexPageSubscription.tsx:
+msgid "Загрузка..."
+msgstr "Загрузка..."
 
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
