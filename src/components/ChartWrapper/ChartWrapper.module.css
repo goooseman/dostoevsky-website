@@ -128,7 +128,7 @@ body {
     }
   }
 }
-@media all and (max-width: 680px) {
+@media all and (max-width: 768px) {
   .chart {
     padding: 0;
     margin-top: 0;
@@ -205,7 +205,7 @@ body {
 .two-columns {
   display: flex;
 }
-@media all and (max-width: 680px) {
+@media all and (max-width: 768px) {
   .two-columns {
     flex-direction: column;
   }
