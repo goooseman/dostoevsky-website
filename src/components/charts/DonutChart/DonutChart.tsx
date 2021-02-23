@@ -33,8 +33,9 @@ class DonutChart extends PureComponent<DonutChartProps> {
     const { charts } = this.props;
     for (let i = 0; i < charts.length; i++) {
       if (!this.chartRefs[i].current) {
-        return;
+        continue;
       }
+
       const { groups, tooltipDescription, labels } = charts[i];
 
       let totalSum = 0;
