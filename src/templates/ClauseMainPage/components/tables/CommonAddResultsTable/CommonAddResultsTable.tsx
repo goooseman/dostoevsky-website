@@ -151,7 +151,7 @@ const CommonAddResultsTable: React.FC<CommonAddResultsTableProps> = ({
 
   return (
     <Table
-      title={<T message="Дополнительный состав: детали" />}
+      title={t("Дополнительный состав: детали")}
       downloadFilename={`${clauseNumber}-common-add-by-result`}
       iframePath={getClauseLink(
         locale,

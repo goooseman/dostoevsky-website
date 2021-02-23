@@ -16,6 +16,7 @@ import {
   FORMSUBMIT_ID,
 } from "src/config/vars";
 import { subscribeToEmail } from "src/utils/emails-service";
+import { sendClickEvent } from "src/utils/analytics";
 
 interface FullDatasetDownloadModalProps {
   children?: React.ReactNode;
@@ -46,6 +47,10 @@ const FullDatasetDownloadModal: React.FC<FullDatasetDownloadModalProps> = ({
 
   const handleDownload = () => {
     if (loadingDataset || !tables) return false;
+    sendClickEvent({
+      category: "Полный датасет (скачать)",
+      label: "Полный датасет",
+    });
     const csvContent = getCsv(tables, 0);
     saveAs(csvContent, `dataset.csv`);
     toggle();

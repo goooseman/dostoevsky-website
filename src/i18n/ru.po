@@ -780,8 +780,8 @@ msgid "Условное к иным мерам"
 msgstr "Условное к иным мерам"
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByPunishmentTable/ClauseChronologyByPunishmentTable.tsx:
-msgid "НАКАЗАНИЯ ПО СТАТЬЕ"
-msgstr "НАКАЗАНИЯ ПО СТАТЬЕ"
+msgid "Наказания по статье"
+msgstr "Наказания по статье"
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
@@ -2738,6 +2738,10 @@ msgid "в 2017 году все части статьи встречаются д
 msgstr "в 2017 году все части статьи встречаются дважды."
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
+msgid "Список статей"
+msgstr "Список статей"
+
+#: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid ""
 "В случаях, когда статья, еe часть или редакция утрачивают силу, в "
 "статистических формах № 10.3 и № 10.3.1 номер статьи сопровождается "
@@ -3328,6 +3332,11 @@ msgstr "Прекращено по другим основаниям: по чис
 msgid "Признаны невменяемыми: по числу лиц"
 msgstr "Признаны невменяемыми: по числу лиц"
 
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "Поля выгрузки"
+msgstr "Поля выгрузки"
+
 #: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
 msgid "Скачать данные"
 msgstr "Скачать данные"
@@ -3365,6 +3374,7 @@ msgstr ""
 msgid "Загрузка..."
 msgstr "Загрузка..."
 
+#: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:

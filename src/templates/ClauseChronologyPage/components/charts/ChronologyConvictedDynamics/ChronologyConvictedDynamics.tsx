@@ -21,7 +21,7 @@ const ChronologyConvictedDynamics: React.SFC<ChronologyConvictedDynamicsProps> =
   return (
     <LineChart
       isIframeMode={isIframeMode}
-      title={<T message="Динамика числа осужденных по основному составу" />}
+      title={t("Динамика числа осужденных по основному составу")}
       labels={years.map((y) => y.year.toString())}
       downloadFilename={`${clauseNumber}-convicted-dynamics`}
       tooltipDescription={{

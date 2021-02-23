@@ -3013,9 +3013,6 @@ export type SitePageContext = {
   slug?: Maybe<Scalars['String']>;
   year?: Maybe<Scalars['Int']>;
   view?: Maybe<Scalars['String']>;
-  partRegex?: Maybe<Scalars['String']>;
-  clauseRegex?: Maybe<Scalars['String']>;
-  clauseId?: Maybe<Scalars['Float']>;
 };
 
 export type SitePageContextArticle = {
@@ -3046,9 +3043,6 @@ export type SitePageContextFilterInput = {
   slug?: Maybe<StringQueryOperatorInput>;
   year?: Maybe<IntQueryOperatorInput>;
   view?: Maybe<StringQueryOperatorInput>;
-  partRegex?: Maybe<StringQueryOperatorInput>;
-  clauseRegex?: Maybe<StringQueryOperatorInput>;
-  clauseId?: Maybe<FloatQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -3076,9 +3070,6 @@ export type SitePageFieldsEnum =
   | 'context___slug'
   | 'context___year'
   | 'context___view'
-  | 'context___partRegex'
-  | 'context___clauseRegex'
-  | 'context___clauseId'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'

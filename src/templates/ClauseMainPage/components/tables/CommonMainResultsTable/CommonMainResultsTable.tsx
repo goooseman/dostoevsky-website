@@ -88,9 +88,7 @@ const CommonMainResultsTable: React.FC<CommonMainResultsTableProps> = ({
 
   return (
     <Table
-      title={
-        <T message="Результаты рассмотрения дел по статье: основные параметры" />
-      }
+      title={t("Результаты рассмотрения дел по статье: основные параметры")}
       downloadFilename={`${clauseNumber}-common-main-by-result`}
       iframePath={getClauseLink(
         locale,

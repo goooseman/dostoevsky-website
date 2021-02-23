@@ -24,7 +24,7 @@ export type LabelOverrideValue =
 
 interface ChartWrapperProps {
   labels?: string[];
-  title: React.ReactNode;
+  title: string;
   downloadFilename: string;
   isIframeMode?: boolean;
   onDownloadButtonClick: () => void;
@@ -119,8 +119,12 @@ class ChartWrapper extends PureComponent<
           </div>
           {!isIframeMode ? (
             <div className={cn(classes.actions)}>
-              <EmbedModal iframePath={iframePath} />
-              <DownloadButton onClick={onDownloadButtonClick} />
+              <EmbedModal title={title} type="chart" iframePath={iframePath} />
+              <DownloadButton
+                title={title}
+                type="chart"
+                onClick={onDownloadButtonClick}
+              />
             </div>
           ) : null}
         </div>

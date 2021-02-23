@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Tue Feb 23 2021 01:35:46 GMT+0200 (Israel Standard Time)\n"
+"POT-Creation-Date: Tue Feb 23 2021 09:36:44 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -701,7 +701,7 @@ msgid "Условное к иным мерам"
 msgstr ""
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByPunishmentTable/ClauseChronologyByPunishmentTable.tsx:
-msgid "НАКАЗАНИЯ ПО СТАТЬЕ"
+msgid "Наказания по статье"
 msgstr ""
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
@@ -2383,6 +2383,10 @@ msgid "в 2017 году все части статьи встречаются д
 msgstr ""
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
+msgid "Список статей"
+msgstr ""
+
+#: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid ""
 "В случаях, когда статья, еe часть или редакция утрачивают силу, в "
 "статистических формах № 10.3 и № 10.3.1 номер статьи сопровождается "
@@ -2887,6 +2891,11 @@ msgstr ""
 msgid "Признаны невменяемыми: по числу лиц"
 msgstr ""
 
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+#: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
+msgid "Поля выгрузки"
+msgstr ""
+
 #: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
 msgid "Скачать данные"
 msgstr ""
@@ -2920,6 +2929,7 @@ msgstr ""
 msgid "Загрузка..."
 msgstr ""
 
+#: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:

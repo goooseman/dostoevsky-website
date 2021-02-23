@@ -134,7 +134,7 @@ const ChronologyConvictedDynamics: React.SFC<ChronologyConvictedDynamicsProps> =
   return (
     <Bar
       isIframeMode={isIframeMode}
-      title={<T message="Динамика наказаний по статье с 2009 по 2019 гг." />}
+      title={t("Динамика наказаний по статье с 2009 по 2019 гг.")}
       downloadFilename={`${clauseNumber}-punishment-dynamics`}
       charts={charts}
       areLabelsRotated

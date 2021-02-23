@@ -10,5 +10,5 @@ export default {
 const handleClick = action("onClick");
 
 export const byDefault = (): React.ReactNode => (
-  <DownloadButton onClick={handleClick} />
+  <DownloadButton onClick={handleClick} title="Foo" type="chart" />
 );

@@ -8,7 +8,7 @@ import TableRow from "./components/TableRow";
 import { Menu, MenuItem } from "src/components/Menu";
 
 interface TableProps {
-  title?: React.ReactNode;
+  title: string;
   tables: {
     columns: {
       title: string;
@@ -71,8 +71,10 @@ class Table extends PureComponent<TableProps> {
           </Typography>
           {!hideEmbed && iframePath ? (
             <div className={cn(classes.buttonsContainer)}>
-              <EmbedModal iframePath={iframePath} />
+              <EmbedModal title={title} type="table" iframePath={iframePath} />
               <DownloadButton
+                type="table"
+                title={title}
                 onClick={
                   onDownloadButtonClick ? onDownloadButtonClick : () => false
                 }

@@ -70,9 +70,9 @@ const ClauseChronologyByResultTable: React.FC<ClauseChronologyByResultProps> = (
     <Table
       isEqualWidth
       isColored
-      title={
-        <T message="Динамика числа осужденных по основному составу. Основные параметры." />
-      }
+      title={t(
+        "Динамика числа осужденных по основному составу. Основные параметры."
+      )}
       downloadFilename={`${clauseNumber}-chronology-by-result`}
       iframePath={getClauseLink(
         locale,

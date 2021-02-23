@@ -48,12 +48,10 @@ const MainByResult: React.SFC<MainByResultProps> = ({
   return (
     <DonutChart
       isIframeMode={isIframeMode}
-      title={
-        <T
-          message="Чем закончились дела по статье {{ clauseNumber }}, дошедшие до суда (основной состав)"
-          scope={{ clauseNumber }}
-        />
-      }
+      title={t(
+        "Чем закончились дела по статье {{ clauseNumber }}, дошедшие до суда (основной состав)",
+        { clauseNumber }
+      )}
       charts={[
         {
           title: t("основной состав"),

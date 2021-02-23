@@ -58,7 +58,7 @@ const ClauseChronologyByPunishmentTable: React.FC<ClauseChronologyByPunishmentTa
     <Table
       isEqualWidth
       isColored
-      title={<T message="НАКАЗАНИЯ ПО СТАТЬЕ" />}
+      title={t("Наказания по статье")}
       downloadFilename={`${clauseNumber}-chronology-by-punishment`}
       iframePath={getClauseLink(
         locale,

@@ -347,7 +347,13 @@ const FullDatasetPage: React.FC = () => {
             </Button>
           ) : null}
           {tables ? (
-            <Table tables={tables} hideEmbed isNotPaddedLeft isEqualWidth />
+            <Table
+              title={t("Полный датасет")}
+              tables={tables}
+              hideEmbed
+              isNotPaddedLeft
+              isEqualWidth
+            />
           ) : null}
         </SinglePageLayout>
       </Container>

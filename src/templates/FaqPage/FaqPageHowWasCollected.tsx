@@ -210,6 +210,7 @@ const FaqPageHowWasCollected = () => {
             <br />
             <br />
             <Table
+              title={t("Список статей")}
               isEqualWidth
               hideEmbed
               isNotPaddedLeft

@@ -16,7 +16,7 @@ const TREEMAP_COLORS = ["#7C89E4", "#FF6700", "#BA9BAF", "#F3607B"];
 interface TreemapProps {
   clauseNumber: number;
   year: number;
-  title?: string;
+  title: string;
   data: { value: number; label?: string }[];
   height: number;
   isIframeMode?: boolean;
@@ -157,8 +157,12 @@ const Treemap: React.FC<TreemapProps> = ({
         </div>
         {!isIframeMode ? (
           <div className={cn(classes.actions)}>
-            <EmbedModal iframePath={iframePath} />
-            <DownloadButton onClick={handleDownloadButtonClick} />
+            <EmbedModal title={title} type="chart" iframePath={iframePath} />
+            <DownloadButton
+              title={title}
+              type="chart"
+              onClick={handleDownloadButtonClick}
+            />
           </div>
         ) : null}
       </div>

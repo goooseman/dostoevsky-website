@@ -774,9 +774,12 @@ const FaqPageUploadFieldsNParameterTree: React.FC = () => {
         </ol>
       </TypographyContainer>
       <Typography isUpperCased>
-        <b>Поля выгрузки</b>
+        <b>
+          <T message="Поля выгрузки" />
+        </b>
       </Typography>
       <Table
+        title={t("Поля выгрузки")}
         isNotPaddedLeft
         hideEmbed
         isEqualWidth
