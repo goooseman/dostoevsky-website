@@ -8,6 +8,7 @@ import { Link } from "gatsby";
 import Container from "../../components/ui-kit/Container";
 import { Article } from "./ArticleFullPage";
 import { getLinkForLocale } from "src/utils/locales";
+import { OutboundLink } from "gatsby-plugin-google-gtag";
 
 export interface ArticleFullPageProps extends WithLocale {
   article: Article;
@@ -64,24 +65,36 @@ const ArticleFullHead = (props: ArticleFullPageProps): JSX.Element => {
               </em>
             </Typography>
             <div className={cn(classes.blogHeader__social)}>
-              <a href="https://telegram.com" target="_blank" rel="noreferrer">
+              <OutboundLink
+                href="https://telegram.com"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img
                   src={require("./assets/telegram.svg")}
                   alt="Our Telegram page"
                 />
-              </a>
-              <a href="https://facebook.com" target="_blank" rel="noreferrer">
+              </OutboundLink>
+              <OutboundLink
+                href="https://facebook.com"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img
                   src={require("./assets/facebook.svg")}
                   alt="Our Facebook page"
                 />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noreferrer">
+              </OutboundLink>
+              <OutboundLink
+                href="https://twitter.com"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img
                   src={require("./assets/twitter.svg")}
                   alt="Our Twitter page"
                 />
-              </a>
+              </OutboundLink>
             </div>
           </section>
         </div>

@@ -9,6 +9,7 @@ import Separator from "src/components/ui-kit/Separator";
 import Tooltip from "src/components/ui-kit/Tooltip";
 import { Helmet } from "react-helmet";
 import useFeatureFlag from "src/hooks/useFeatureFlag";
+import { OutboundLink } from "gatsby-plugin-google-gtag";
 
 const teamMembers = [
   {
@@ -90,13 +91,13 @@ const AboutPage: React.FC = () => {
             </Typography>
             <Typography>
               <T message="Можете. Все данные Достоевского генерируются на основе " />
-              <a
+              <OutboundLink
                 href="http://www.cdep.ru/index.php?id=79"
                 target="_blank"
                 rel="noreferrer"
               >
                 <T message="официальной статистики Судебного департамента при Верховном суде РФ" />
-              </a>
+              </OutboundLink>
               {". "}
               <T message="Однако эта информация публикуется в виде десятков нечитаемых таблиц: для подробного анализа квалифицированному специалисту требуются часы, а иногда и дни работы." />
             </Typography>

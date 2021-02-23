@@ -10,6 +10,7 @@ import { CountersByPunishment, SelectOption } from "src/types";
 import { IndexTopClause } from "src/utils/index-page";
 import { getIndexLink, IndexPageViews } from "src/config/routes";
 import T from "src/components/T";
+import useFeatureFlag from "src/hooks/useFeatureFlag";
 
 const getAnalyticsCharts = (
   selectedYear: string,
@@ -119,6 +120,7 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
   topClauses,
 }: IndexPageAnalyticsProps) => {
   const { t, locale } = useLocale();
+  const hasAnalytics = useFeatureFlag("analytics");
   const [selectedYear, setSelectedYear] = useState<SelectOption>(
     defaultYearSelectOption
   );
@@ -203,17 +205,19 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
           ))}
         </div>
       </div>
-      <Link
-        className={classes.analyticsLinkWrapper}
-        to={`${locale}/articles/stats-${selectedYear.value}`}
-      >
-        <Typography isUpperCased className={classes.analyticsLink}>
-          <b>
-            <T message="Перейти к материалу" />
-          </b>
-        </Typography>
-        <img src={require("./assets/analytics-arrow.svg")} />
-      </Link>
+      {hasAnalytics || locale === "ru" ? (
+        <Link
+          className={classes.analyticsLinkWrapper}
+          to={`${locale}/articles/stats-${selectedYear.value}`}
+        >
+          <Typography isUpperCased className={classes.analyticsLink}>
+            <b>
+              <T message="Перейти к материалу" />
+            </b>
+          </Typography>
+          <img src={require("./assets/analytics-arrow.svg")} />
+        </Link>
+      ) : null}
     </Container>
   );
 };

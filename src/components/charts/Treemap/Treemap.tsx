@@ -9,6 +9,7 @@ import domtoimage from "dom-to-image";
 import { saveAs } from "file-saver";
 import { T, useLocale } from "react-targem";
 import Tooltip from "src/components/ui-kit/Tooltip";
+import { OutboundLink } from "gatsby-plugin-google-gtag";
 
 const TREEMAP_COLORS = ["#7C89E4", "#FF6700", "#BA9BAF", "#F3607B"];
 
@@ -144,13 +145,13 @@ const Treemap: React.FC<TreemapProps> = ({
           <hr className={cn(classes.border)} />
           <Typography color="muted">
             <small>
-              <a
+              <OutboundLink
                 target="_blank"
                 rel="noreferrer"
                 href="http://cdep.ru/index.php?id=79"
               >
                 Источник: Судебный департамент
-              </a>
+              </OutboundLink>
             </small>
           </Typography>
         </div>

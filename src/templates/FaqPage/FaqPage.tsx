@@ -11,6 +11,7 @@ import FaqPageHowWasCollected from "./FaqPageHowWasCollected";
 import FaqPageUploadFieldsNParameterTree from "./FaqPageUploadFieldsNParameterTree";
 import Tooltip from "src/components/ui-kit/Tooltip";
 import { Helmet } from "react-helmet";
+import { OutboundLink } from "gatsby-plugin-google-gtag";
 
 const getFaqData = (t: WithLocale["t"]) => [
   {
@@ -53,13 +54,13 @@ const getFaqData = (t: WithLocale["t"]) => [
               <i>
                 <T message="Пример:" />{" "}
               </i>
-              <a
+              <OutboundLink
                 href="http://www.consultant.ru/document/cons_doc_LAW_34249/"
                 target="_blank"
                 rel="noreferrer"
               >
                 <T message="Постановление об амнистии 2001 года" />
-              </a>
+              </OutboundLink>
               <T message=" в отношении несовершеннолетних и женщин — под еe действие попали примерно 9% всех заключенных." />
             </Typography>
             <Typography>
@@ -90,13 +91,13 @@ const getFaqData = (t: WithLocale["t"]) => [
               <i>
                 <T message="Пример:" />{" "}
               </i>
-              <a
+              <OutboundLink
                 href="http://kremlin.ru/events/president/news/51998"
                 target="_blank"
                 rel="noreferrer"
               >
                 <T message="Указ о помиловании" />
-              </a>
+              </OutboundLink>
               <T message=" украинской военнослужащей Надежды Савченко, осужденной по делу об убийстве журналистов ВГТРК в Донбассе." />
             </Typography>
           </>
@@ -109,26 +110,26 @@ const getFaqData = (t: WithLocale["t"]) => [
             <Typography>
               <T message="Согласно уголовному кодексу, при обвинении применяется тот закон, который действовал во время совершения преступления" />
               {` `}(
-              <a
+              <OutboundLink
                 href="http://www.consultant.ru/document/cons_doc_LAW_10699/ac18caeb0eee735b4e56cd3a734a5d718dbc174f/"
                 target="_blank"
                 rel="noreferrer"
               >
                 ст. 9 УК
-              </a>
+              </OutboundLink>
               ).{` `}
               <T message="Предположим, гражданин Д. совершил грабеж и через три года его арестовали. За это время законодательство изменилось, но, согласно принципу действия закона во времени, судить Д. будут по старой статье, действительной на момент грабежа." />
             </Typography>
             <Typography>
               <T message="При этом в некоторых случаях закон всe же имеет обратную силу. Так, если впоследствии наказание стало мягче, к обвиняемому применят новые, более благоприятные правила, а если статью отменили — снимут обвинение или судимость. Если же закон был ужесточен, судить будут по старой статье" />
               {` `}(
-              <a
+              <OutboundLink
                 href="http://www.consultant.ru/document/cons_doc_LAW_10699/deb6a4399a2515bf42c937987286e526c1c4a4ec/"
                 target="_blank"
                 rel="noreferrer"
               >
                 <T message="ст. 10 УК" />
-              </a>
+              </OutboundLink>
               ).{` `}
               <T message="В результате в уголовную статистику иногда попадают дела по тем статьям, которые уже не действительны — это усложняет анализ данных и может исказить результаты." />
             </Typography>
@@ -178,13 +179,13 @@ const getFaqData = (t: WithLocale["t"]) => [
               ,{` `}
               <T message="запрет на определeнную деятельность, лишение специального, воинского или почетного звания и другие меры" />
               {` `}(
-              <a
+              <OutboundLink
                 href="http://www.consultant.ru/document/cons_doc_LAW_10699/7506104f82c79e377964e1b7698216c74807ada9/#:~:text=%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5%20%D0%B8%20%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%B2%D0%B8%D0%B4%D1%8B%20%D0%BD%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B8%D0%B9,-1.&text=%D0%A8%D1%82%D1%80%D0%B0%D1%84%2C%20%D0%BB%D0%B8%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D1%80%D0%B0%D0%B2%D0%B0%20%D0%B7%D0%B0%D0%BD%D0%B8%D0%BC%D0%B0%D1%82%D1%8C%20%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5,%D1%82%D0%B0%D0%BA%20%D0%B8%20%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D0%B2%D0%B8%D0%B4%D0%BE%D0%B2%20%D0%BD%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B8%D0%B9"
                 target="_blank"
                 rel="noreferrer"
               >
                 <T message="ст. 45 УК" />
-              </a>
+              </OutboundLink>
               ).
             </Typography>
           </>
@@ -228,13 +229,13 @@ const getFaqData = (t: WithLocale["t"]) => [
             <Typography>
               <T message="Формально противоправные действия — например, нанесение тяжкого вреда здоровью, — не преследуются по закону, если они были спровоцированы особыми внешними факторами. Причинение вреда в этих обстоятельствах не влечет уголовной ответственности. Уголовный кодекс выделяет шесть таких ситуаций" />
               {` `}(
-              <a
+              <OutboundLink
                 href="http://www.consultant.ru/document/cons_doc_LAW_10699/e006626bacd0a7618ebd53e66bf76f2bd2554a48/"
                 target="_blank"
                 rel="noreferrer"
               >
                 <T message="гл. 8 УК" />
-              </a>
+              </OutboundLink>
               ):
             </Typography>
 
@@ -336,22 +337,22 @@ const getFaqData = (t: WithLocale["t"]) => [
             <Typography>
               <T message="Главное отличие между освобождением от наказания и прекращением уголовного преследования заключается в том, что в первом случае человек остается виновным в преступлении, несмотря на послабления в мере наказания" />
               {` `}(
-              <a
+              <OutboundLink
                 href="http://www.consultant.ru/document/cons_doc_LAW_10699/7f4ae31b28b80f570149eb1ef0ae71c8e18219fb/"
                 target="_blank"
                 rel="noreferrer"
               >
                 <T message="гл. 12 УК" />
-              </a>
+              </OutboundLink>
               ), <T message="во втором случае все обвинения снимают" />
               {` `}(
-              <a
+              <OutboundLink
                 href="http://www.consultant.ru/document/cons_doc_LAW_34481/edffa91bf1d9429762988ebe463830a4759bbb3d/"
                 target="_blank"
                 rel="noreferrer"
               >
                 <T message="ст. 27 УПК" />
-              </a>
+              </OutboundLink>
               ).
             </Typography>
             <Typography>
@@ -366,13 +367,13 @@ const getFaqData = (t: WithLocale["t"]) => [
               </i>
               {` `}
               <T message="в 2017 году адвокат К." />{" "}
-              <a
+              <OutboundLink
                 href="https://www.advgazeta.ru/novosti/osvobozhdenie-ot-nakazaniya-po-ugolovnomu-delu-ne-povod-vosstanovit-status-advokata/"
                 target="_blank"
                 rel="noreferrer"
               >
                 <T message="была освобождена" />
-              </a>{" "}
+              </OutboundLink>{" "}
               <T message="от штрафа в 100 тыс. рублей за дачу взятки из-за истечения срока давности уголовного преследования." />
             </Typography>
             <Typography>
@@ -392,13 +393,13 @@ const getFaqData = (t: WithLocale["t"]) => [
               </i>
               :{` `}
               <T message="В 2019 году" />{" "}
-              <a
+              <OutboundLink
                 href="https://zona.media/chronicle/golunov-free#24356"
                 target="_blank"
                 rel="noreferrer"
               >
                 <T message="было прекращено" />
-              </a>{" "}
+              </OutboundLink>{" "}
               <T
                 message="
               уголовное преследование в отношении журналиста Ивана Голунова,
@@ -420,13 +421,13 @@ const getFaqData = (t: WithLocale["t"]) => [
             <Typography>
               <T message="Наказание назначается отдельно за каждое преступление и зависит в первую очередь от основного состава, а дополнительные складываются с ним по специальным формулам или поглощаются" />{" "}
               (
-              <a
+              <OutboundLink
                 href="http://www.consultant.ru/document/cons_doc_LAW_10699/1750f77d5ab2edf9b591ecb4451727086bda5ac0/#:~:text=%D0%9D%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%BF%D0%BE%20%D1%81%D0%BE%D0%B2%D0%BE%D0%BA%D1%83%D0%BF%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D0%BF%D1%80%D0%B5%D1%81%D1%82%D1%83%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D0%B9,-1.&text=%D0%95%D1%81%D0%BB%D0%B8%20%D1%85%D0%BE%D1%82%D1%8F%20%D0%B1%D1%8B%20%D0%BE%D0%B4%D0%BD%D0%BE%20%D0%B8%D0%B7,%D1%87%D0%B0%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B8%D0%BB%D0%B8%20%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B3%D0%BE%20%D1%81%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BD%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B8%D0%B9"
                 target="_blank"
                 rel="noreferrer"
               >
                 <T message="ст. 69 УК" />
-              </a>
+              </OutboundLink>
               ).{" "}
               <T message="Чтобы было проще разобраться в опубликованных данных, мы подготовили" />{" "}
               <mark>
@@ -445,13 +446,13 @@ const getFaqData = (t: WithLocale["t"]) => [
             <Typography>
               <T message="Если психическое состояние обвиняемого представляет опасность для него самого или окружающих, суд может назначить обязательное лечение" />{" "}
               (
-              <a
+              <OutboundLink
                 href="http://www.consultant.ru/document/cons_doc_LAW_10699/b963255e6a9dd06510f473d59a4e0ddc1e936d8b/"
                 target="_blank"
                 rel="noreferrer"
               >
                 <T message="гл. 15 УК" />
-              </a>
+              </OutboundLink>
               ). <T message="Это происходит в следующих случаях:" />
             </Typography>
             <ul>
@@ -500,13 +501,13 @@ const getFaqData = (t: WithLocale["t"]) => [
                 <T message="Обязательные работы — общественно полезный труд" />
               </b>{" "}
               (
-              <a
+              <OutboundLink
                 href="http://www.consultant.ru/document/cons_doc_LAW_10699/a65dac489bf58afbf78d6fbc5ad58048769b2a93/#dst100211"
                 target="_blank"
                 rel="noreferrer"
               >
                 <T message="ст. 49 УК" />
-              </a>
+              </OutboundLink>
               )
             </Typography>
             <ul>
@@ -539,13 +540,13 @@ const getFaqData = (t: WithLocale["t"]) => [
                 <T message="Исправительные работы — дополнительный налог на зарплату" />
               </b>{" "}
               (
-              <a
+              <OutboundLink
                 href="http://www.consultant.ru/document/cons_doc_LAW_10699/fd830e7cf3c0e1074ca35a580314701483ff611a/#dst102387"
                 target="_blank"
                 rel="noreferrer"
               >
                 <T message="ст. 50 УК" />
-              </a>
+              </OutboundLink>
               )
             </Typography>
             <ul>
@@ -583,13 +584,13 @@ const getFaqData = (t: WithLocale["t"]) => [
                 <T message="Принудительные работы — альтернатива лишению свободы" />
               </b>{" "}
               (
-              <a
+              <OutboundLink
                 href="http://www.consultant.ru/document/cons_doc_LAW_10699/fbf561e8e76ded47846e0b625229d7933bbcc93a/#:~:text=%D0%9F%D1%80%D0%B8%D0%BD%D1%83%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B,-(%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B0%20%D0%A4%D0%B5%D0%B4%D0%B5%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%20%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC&text=1.,%D0%B7%D0%B0%20%D1%81%D0%BE%D0%B2%D0%B5%D1%80%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%82%D1%8F%D0%B6%D0%BA%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%80%D0%B5%D1%81%D1%82%D1%83%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B2%D0%BF%D0%B5%D1%80%D0%B2%D1%8B%D0%B5"
                 target="_blank"
                 rel="noreferrer"
               >
                 <T message="ст. 53.1 УК" />
-              </a>
+              </OutboundLink>
               )
             </Typography>
             <ul>
@@ -641,13 +642,13 @@ const getFaqData = (t: WithLocale["t"]) => [
                     <T message="состава преступления" />
                   </mark>{" "}
                   (
-                  <a
+                  <OutboundLink
                     href="https://www.consultant.ru/document/cons_doc_LAW_34481/71f0df8ac07c113c0fc317c4e9f3d84c19bd671c/#dst101567"
                     target="_blank"
                     rel="noreferrer"
                   >
                     <T message="ст. 212 УПК" />
-                  </a>
+                  </OutboundLink>
                   ).
                 </Typography>{" "}
               </li>
@@ -656,13 +657,13 @@ const getFaqData = (t: WithLocale["t"]) => [
             <Typography>
               <T message="В этом случае суд признает за бывшим обвиняемым право на возмещение имущественного и морального вреда и восстановление в трудовых, пенсионных, жилищных и иных правах" />{" "}
               (
-              <a
+              <OutboundLink
                 href="http://www.consultant.ru/document/cons_doc_LAW_34481/3911b8a97895714db18d9b21fea27d1667ddfe4e/"
                 target="_blank"
                 rel="noreferrer"
               >
                 <T message="ст. 133 УПК" />
-              </a>
+              </OutboundLink>
               ).
             </Typography>
             <Typography>
@@ -680,13 +681,13 @@ const getFaqData = (t: WithLocale["t"]) => [
               </li>
               <li>
                 <Typography variant="span">
-                  <a
+                  <OutboundLink
                     href="http://www.consultant.ru/document/cons_doc_LAW_10699/2ba2a1c7f4543c624328bd19c1c703a7056a3b2f/"
                     target="_blank"
                     rel="noreferrer"
                   >
                     <T message="деятельное раскаяние " />
-                  </a>
+                  </OutboundLink>
                   <T message="подозреваемого;" />
                 </Typography>
               </li>
@@ -733,13 +734,13 @@ const getFaqData = (t: WithLocale["t"]) => [
                 <T message="Состав преступления" />
               </mark>
               ), <T message="мы имеем дело с совокупностью преступлений" /> (
-              <a
+              <OutboundLink
                 href="http://www.consultant.ru/document/cons_doc_LAW_10699/58af2e09a3405b1e071f7c60a42c495a3101d8ff/"
                 target="_blank"
                 rel="noreferrer"
               >
                 <T message="ст. 17 УК" />
-              </a>
+              </OutboundLink>
               ).
             </Typography>
             <ul>
@@ -752,21 +753,21 @@ const getFaqData = (t: WithLocale["t"]) => [
                 <Typography variant="span">
                   <T message="Идеальная совокупность означает, что человек одним действием совершил сразу несколько преступлений. Например, прошел обучение в террористической организации" />{" "}
                   (
-                  <a
+                  <OutboundLink
                     href="http://www.consultant.ru/document/cons_doc_LAW_10699/282fd59495bd6058210e5e1742ad117d48d015a7/#:~:text=%D0%9F%D1%80%D0%BE%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B2%20%D1%86%D0%B5%D0%BB%D1%8F%D1%85%20%D0%BE%D1%81%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%82%D0%B5%D1%80%D1%80%D0%BE%D1%80%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9%20%D0%B4%D0%B5%D1%8F%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8,-(%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B0%20%D0%A4%D0%B5%D0%B4%D0%B5%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%20%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC&text=%D0%BD%D0%B0%D0%BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D0%B5%D1%82%D1%81%D1%8F%20%D0%BB%D0%B8%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%D0%BC%20%D1%81%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D1%8B%20%D0%BD%D0%B0%20%D1%81%D1%80%D0%BE%D0%BA,%D0%BB%D0%B5%D1%82%20%D0%B8%D0%BB%D0%B8%20%D0%BF%D0%BE%D0%B6%D0%B8%D0%B7%D0%BD%D0%B5%D0%BD%D0%BD%D1%8B%D0%BC%20%D0%BB%D0%B8%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%D0%BC%20%D1%81%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D1%8B"
                     target="_blank"
                     rel="noreferrer"
                   >
                     <T message="ст. 205.3 УК" />
-                  </a>
+                  </OutboundLink>
                   ) <T message="и одновременно в ней участвовал" /> (
-                  <a
+                  <OutboundLink
                     href="http://www.consultant.ru/document/cons_doc_LAW_10699/67367c123b0bc5c1d141517befa1701a1f95ff6d/#:~:text=%D0%9F%D0%BE%D0%B4%20%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%BE%D0%B9%20%D1%82%D0%B5%D1%80%D1%80%D0%BE%D1%80%D0%B8%D0%B7%D0%BC%D0%B0%20%D0%B2%20%D0%BD%D0%B0%D1%81%D1%82%D0%BE%D1%8F%D1%89%D0%B5%D0%B9,%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D0%B8%2C%20%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D1%83%D1%8E%D1%89%D0%B8%D1%85%20%D0%BE%D1%81%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8E%20%D1%82%D0%B5%D1%80%D1%80%D0%BE%D1%80%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9%20%D0%B4%D0%B5%D1%8F%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8"
                     target="_blank"
                     rel="noreferrer"
                   >
                     <T message="ст. 205.4 УК" />
-                  </a>
+                  </OutboundLink>
                   ).
                 </Typography>
               </li>
@@ -774,22 +775,22 @@ const getFaqData = (t: WithLocale["t"]) => [
 
             <Typography>
               <T message="Такие дела — когда один или несколько человек совершают серию преступлений — могут быть объединены в одно дело и рассматриваться в суде вместе. Наказание будет вынесено за каждое совершенное преступление по соответствующей статье. В" />{" "}
-              <a
+              <OutboundLink
                 href="http://www.consultant.ru/document/cons_doc_LAW_10699/1750f77d5ab2edf9b591ecb4451727086bda5ac0/#:~:text=%D0%9D%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%BF%D0%BE%20%D1%81%D0%BE%D0%B2%D0%BE%D0%BA%D1%83%D0%BF%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D0%BF%D1%80%D0%B5%D1%81%D1%82%D1%83%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D0%B9,-1.&text=%D0%95%D1%81%D0%BB%D0%B8%20%D1%85%D0%BE%D1%82%D1%8F%20%D0%B1%D1%8B%20%D0%BE%D0%B4%D0%BD%D0%BE%20%D0%B8%D0%B7,%D1%87%D0%B0%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B8%D0%BB%D0%B8%20%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B3%D0%BE%20%D1%81%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BD%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B8%D0%B9"
                 target="_blank"
                 rel="noreferrer"
               >
                 <T message="статье 69 УК" />
-              </a>{" "}
+              </OutboundLink>{" "}
               <T message="приведена инструкция, как должны суммироваться меры наказания в зависимости от тяжести преступлений и от того, какие  наказания назначены по отдельности. Если же дела рассматривали отдельно, будет действовать правило назначения наказания по совокупности приговоров" />{" "}
               (
-              <a
+              <OutboundLink
                 href="http://www.consultant.ru/document/cons_doc_LAW_10699/58b774fa8d30c3cba7b126049cea9fefabc8ab5b/"
                 target="_blank"
                 rel="noreferrer"
               >
                 <T message="ст. 70 УК" />
-              </a>
+              </OutboundLink>
               ).
             </Typography>
           </>
@@ -824,13 +825,13 @@ const getFaqData = (t: WithLocale["t"]) => [
               </mark>
               .{" "}
               <T message="В некоторых уголовных делах он выступает как основная мера — это означает, что обвиняемый остался судим, заплатил штраф и избежал заключения. В" />{" "}
-              <a
+              <OutboundLink
                 href="http://www.consultant.ru/document/cons_doc_LAW_10699/c35309e0a5b0291571f5f963bce56146e227835e/#dst100531"
                 target="_blank"
                 rel="noreferrer"
               >
                 <T message="других" />
-              </a>{" "}
+              </OutboundLink>{" "}
               <T message="случаях штраф это дополнительная мера — тогда человек отбывает более строгое наказание и в дополнение к этому выплачивает определенную сумму государству. При подсчете статистики нельзя просто сложить количество первых и вторых дел — получится путаница, так как эти данные демонстрируют разные ситуации." />
             </Typography>
             <Typography>

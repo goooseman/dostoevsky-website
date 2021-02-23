@@ -4,6 +4,7 @@ import cn from "clsx";
 import Table from "src/components/Table";
 import Typography from "src/components/ui-kit/Typography";
 import { T, useLocale } from "react-targem";
+import { OutboundLink } from "gatsby-plugin-google-gtag";
 
 const FaqPageHowWasCollected = () => {
   const { t } = useLocale();
@@ -57,13 +58,13 @@ const FaqPageHowWasCollected = () => {
     <>
       <Typography>
         <T message="Мы берем уголовную статистику с" />{" "}
-        <a
+        <OutboundLink
           href="http://www.cdep.ru/index.php?id=5"
           target="_blank"
           rel="noreferrer"
         >
           <T message="сайта" />
-        </a>{" "}
+        </OutboundLink>{" "}
         <T message="Судебного департамента при Верховном суде РФ. Это информация о судимости и о решениях федеральных арбитражных судов, судов общей юрисдикции и мировых судей. Для обработки мы выбрали два типа данных: статистику осужденных по основному составу преступления (без учета сложения наказаний) и по дополнительному. Демографические формы, которые содержат информацию о социальном статусе обвиняемых, их поле и возрасте, мы не обрабатывали." />
       </Typography>
       <Typography isUpperCased>
@@ -81,13 +82,13 @@ const FaqPageHowWasCollected = () => {
           </li>
           <li>
             <T message="Привели данные в машиночитаемый вид и представили в виде таблицы в «длинной форме» (такая форма считается наиболее удобной для машинной обработки и соответствует принципам" />
-            <a
+            <OutboundLink
               href="https://www.jstatsoft.org/article/view/v059i10/v59i10.pdf"
               target="_blank"
               rel="noreferrer"
             >
               <T message="«чистых данных»" />
-            </a>
+            </OutboundLink>
             ), <T message="а затем обработали с помощью Python." />
           </li>
           <li>
@@ -124,39 +125,39 @@ const FaqPageHowWasCollected = () => {
             </b>
             <br />
             <T message="Порой в судебную статистику попадают новые дела по уже не действительным статьям. Так, в 2011 году часть 1" />{" "}
-            <a
+            <OutboundLink
               href="http://www.consultant.ru/cons/cgi/online.cgi?n=121948&from=121948-2323-diff&req=doc&base=LAW&rnd=9FF5E32582FBA35F001CB5DE0BE9D263#08686279044813056"
               target="_blank"
               rel="noreferrer"
             >
               <T message="статьи 188" />
-            </a>{" "}
+            </OutboundLink>{" "}
             —{" "}
             <T message="контрабанда — была декриминализована и перешла в разряд" />{" "}
-            <a
+            <OutboundLink
               href="http://www.consultant.ru/document/cons_doc_LAW_34661/894132ba3e2f42ab935398b530d55bc1f569337f/"
               target="_blank"
               rel="noreferrer"
             >
               <T message="административных правонарушений" />
-            </a>
+            </OutboundLink>
             ,{" "}
             <T message="а преступления из части 2 — контрабанда запрещенных веществ, огнестрельного оружия, боеприпасов и прочего — были перенесены в статьи" />{" "}
-            <a
+            <OutboundLink
               href="http://www.consultant.ru/document/cons_doc_LAW_10699/9164eeb910585b91c4cabcf22804cc33e804a316/"
               target="_blank"
               rel="noreferrer"
             >
               <T message="226.1" />
-            </a>{" "}
+            </OutboundLink>{" "}
             <T message="и" />{" "}
-            <a
+            <OutboundLink
               href="http://www.consultant.ru/document/cons_doc_LAW_10699/9164eeb910585b91c4cabcf22804cc33e804a316/"
               target="_blank"
               rel="noreferrer"
             >
               <T message="229.1" />
-            </a>
+            </OutboundLink>
             ,{" "}
             <T message="при этом наказание за них не изменилось. В настоящей редакции Уголовного кодекса статья 188 значится как утратившая силу. Тем не менее, в 2017 году по ней осудили двух человек." />
             <br />
@@ -166,13 +167,13 @@ const FaqPageHowWasCollected = () => {
               <T message="принципа действия закона во времени" />
             </mark>{" "}
             <T message="(ст. 9 УК): даже через несколько лет после преступления человека, совершившего его, осудят в соответствии с той редакцией, которая действовала на момент совершения преступления. В случае статьи 188 ч. 2, Верховный суд" />{" "}
-            <a
+            <OutboundLink
               href="http://docs.pravo.ru/document/view/27031636"
               target="_blank"
               rel="noreferrer"
             >
               <T message="предписывает" />
-            </a>{" "}
+            </OutboundLink>{" "}
             <T message="использовать прежнюю статью 188 для тех преступлений, которые были совершены в период действия 188 статьи и попадают под ее вторую часть." />
           </Typography>
         </li>
@@ -198,13 +199,13 @@ const FaqPageHowWasCollected = () => {
             </mark>
             ,{" "}
             <T message="по прежней редакции могут продолжать осуждать людей, в таблицах иногда соседствуют разные версии одной и той же статьи. Например, в данных по" />{" "}
-            <a
+            <OutboundLink
               href="https://demo.consultant.ru/cgi/online.cgi?req=doc&n=123339&base=RZR&from=123339-1483-diff&rnd=55358525FE4A98BD84F90CEA67036353#09408714866443109"
               target="_blank"
               rel="noreferrer"
             >
               <T message="статье 134 УК" />
-            </a>{" "}
+            </OutboundLink>{" "}
             <T message="в 2017 году все части статьи встречаются дважды." />
             <br />
             <br />

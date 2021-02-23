@@ -9,6 +9,7 @@ import { Menu, MenuLink } from "../Menu";
 import { getLinkForLocale } from "src/utils/locales";
 import Modal, { useModal } from "src/components/ui-kit/Modal";
 import useFeatureFlag from "src/hooks/useFeatureFlag";
+import { OutboundLink } from "gatsby-plugin-google-gtag";
 
 interface FooterProps {}
 
@@ -25,15 +26,19 @@ const Footer: React.FC<FooterProps> = () => {
     <div className={cn(classes.container)}>
       <Container>
         <div className={cn(classes.leftContainer)}>
-          <a href="https://ovdinfo.org/" target="_blank" rel="noreferrer">
+          <OutboundLink
+            href="https://ovdinfo.org/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src={require("./assets/oi-logo.png")} alt={t("Логотип OI")} />
-          </a>
-          <a href="https://d4s.io/" target="_blank" rel="noreferrer">
+          </OutboundLink>
+          <OutboundLink href="https://d4s.io/" target="_blank" rel="noreferrer">
             <img
               src={require("./assets/d4s-logo.png")}
               alt={t("Логотип D4S")}
             />
-          </a>
+          </OutboundLink>
         </div>
         <div className={cn(classes.middleContainer)}>
           <Menu variant="onBlackBackground" className={cn(classes.footerMenu)}>
@@ -87,25 +92,36 @@ const Footer: React.FC<FooterProps> = () => {
             </Typography>
           </Button>
           <div className={classes.socialMediaLinksContainer}>
-            <a href="https://telegram.com" target="_blank" rel="noreferrer">
+            <OutboundLink
+              href="https://telegram.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src={require("./assets/telegram.svg")} alt="Telegram" />
-            </a>
-            <a
+            </OutboundLink>
+            <OutboundLink
               href="https://github.com/goooseman/dostoevsky-website/"
               target="_blank"
               rel="noreferrer"
             >
               <img src={require("./assets/git.svg")} alt="Facebook" />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer">
+            </OutboundLink>
+            <OutboundLink
+              href="https://twitter.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src={require("./assets/twitter.svg")} alt="Twitter " />
-            </a>
+            </OutboundLink>
           </div>
           <div>
             <Typography variant="b" color="inverted">
-              <a href="mailto:info@dostoevsky.io" className={cn(classes.email)}>
+              <OutboundLink
+                href="mailto:info@dostoevsky.io"
+                className={cn(classes.email)}
+              >
                 info@dostoevsky.io
-              </a>
+              </OutboundLink>
             </Typography>
           </div>
         </div>

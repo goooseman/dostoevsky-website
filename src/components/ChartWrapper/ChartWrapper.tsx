@@ -4,6 +4,7 @@ import cn from "clsx";
 import Typography from "src/components/ui-kit/Typography";
 import EmbedModal from "src/components/EmbedModal";
 import DownloadButton from "src/components/DownloadButton";
+import { OutboundLink } from "gatsby-plugin-google-gtag";
 
 import "chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css";
 import "chartist/dist/chartist.min.css";
@@ -105,13 +106,13 @@ class ChartWrapper extends PureComponent<
               <hr className={cn(classes.border)} />
               <Typography color="muted">
                 <small>
-                  <a
+                  <OutboundLink
                     target="_blank"
                     rel="noreferrer"
                     href="http://cdep.ru/index.php?id=79"
                   >
                     Источник: Судебный департамент
-                  </a>
+                  </OutboundLink>
                 </small>
               </Typography>
             </div>

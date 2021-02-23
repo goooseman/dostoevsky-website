@@ -6,7 +6,7 @@ import { getClauseLink } from "src/config/routes";
 import Typography from "src/components/ui-kit/Typography";
 import type { I18nText } from "src/types";
 import { Helmet } from "react-helmet";
-
+import { OutboundLink } from "gatsby-plugin-google-gtag";
 interface CatalogueRowProps {
   id: number;
   activeId?: number;
@@ -30,7 +30,7 @@ const CatalogueRow: React.FC<CatalogueRowProps> = ({
 
   return (
     <Typography>
-      <a
+      <OutboundLink
         onClick={handleClick}
         href={href}
         className={cn({
@@ -46,7 +46,7 @@ const CatalogueRow: React.FC<CatalogueRowProps> = ({
             alt={t("Стрелка вправо")}
           />
         ) : null}
-      </a>
+      </OutboundLink>
     </Typography>
   );
 };

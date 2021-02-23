@@ -7,7 +7,7 @@ import Typography from "src/components/ui-kit/Typography";
 import { getClauseLink } from "src/config/routes";
 import type { I18nText } from "src/types";
 import { withLocale, WithLocale } from "react-targem";
-
+import { OutboundLink } from "gatsby-plugin-google-gtag";
 interface ClausesPageProps extends WithLocale {
   parts: {
     text: I18nText;
@@ -42,7 +42,7 @@ class ClausesPage extends PureComponent<ClausesPageProps> {
                     <AccordionNode title={section.text.ru} variant="secondary">
                       {section.children.map((chapter) => (
                         <Typography key={chapter.id}>
-                          <a
+                          <OutboundLink
                             href={getClauseLink(
                               locale,
                               chapter.id.toString(),
@@ -52,7 +52,7 @@ class ClausesPage extends PureComponent<ClausesPageProps> {
                           >
                             <b>Статья {chapter.id}. </b>
                             {chapter.text.ru}
-                          </a>
+                          </OutboundLink>
                         </Typography>
                       ))}
                     </AccordionNode>

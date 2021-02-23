@@ -16,7 +16,7 @@ import Select, {
 } from "react-select";
 import { getClauseLink } from "src/config/routes";
 import { MenuListComponentProps } from "react-select/src/components/Menu";
-
+import { OutboundLink } from "gatsby-plugin-google-gtag";
 interface ClausePageHeaderProps extends WithLocale {
   title: React.ReactNode;
   year?: number;
@@ -157,7 +157,7 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
     return (
       <components.Option {...props} className={cn(classes.yearSelectOption)}>
         <Typography component="span">
-          <a
+          <OutboundLink
             className={cn(classes.yearSelectOptionLink)}
             href={getClauseLink(
               locale,
@@ -167,7 +167,7 @@ class ClausePageHeader extends PureComponent<ClausePageHeaderProps> {
             )}
           >
             {value}
-          </a>
+          </OutboundLink>
         </Typography>
       </components.Option>
     );

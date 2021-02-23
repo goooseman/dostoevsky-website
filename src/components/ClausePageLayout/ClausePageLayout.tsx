@@ -3,7 +3,7 @@ import classes from "./ClausePageLayout.module.css";
 import cn from "clsx";
 import { Link } from "gatsby";
 import Typography from "src/components/ui-kit/Typography";
-import { OutboundLink } from "gatsby-plugin-google-analytics";
+import { OutboundLink } from "gatsby-plugin-google-gtag";
 import Container from "src/components/ui-kit/Container";
 import ClausePageCatalogue from "src/components/ClausePageCatalogue";
 import type { I18nText } from "src/types";
