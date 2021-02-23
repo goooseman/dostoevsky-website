@@ -33,4 +33,4 @@ const DownloadButton: React.FC<DownloadButtonProps> = ({
   );
 };
 
-export default DownloadButton;
+export default React.memo(DownloadButton);

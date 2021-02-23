@@ -79,4 +79,4 @@ const Modal: React.FC<ModalProps> = ({
     : null;
 };
 
-export default Modal;
+export default React.memo(Modal);

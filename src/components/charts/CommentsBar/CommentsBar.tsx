@@ -190,4 +190,4 @@ const CommentsBar: React.FC<CommentsBarProps> = (props: CommentsBarProps) => {
   );
 };
 
-export default CommentsBar;
+export default React.memo(CommentsBar);

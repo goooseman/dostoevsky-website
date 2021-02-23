@@ -170,4 +170,4 @@ const Treemap: React.FC<TreemapProps> = ({
   );
 };
 
-export default Treemap;
+export default React.memo(Treemap);

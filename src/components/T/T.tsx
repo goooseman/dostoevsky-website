@@ -31,4 +31,4 @@ const T: React.FC<TnHtmlProps> = ({
   );
 };
 
-export default T;
+export default React.memo(T);

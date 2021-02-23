@@ -26,4 +26,4 @@ const Checkbox: React.FC<CheckboxProps> = ({
   );
 };
 
-export default Checkbox;
+export default React.memo(Checkbox);

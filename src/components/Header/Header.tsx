@@ -216,4 +216,4 @@ const Header: React.FC<HeaderProps> = ({ location, isBig }: HeaderProps) => {
   );
 };
 
-export default Header;
+export default React.memo(Header);

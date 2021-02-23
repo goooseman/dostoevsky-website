@@ -72,4 +72,4 @@ const EmbedModal: React.FC<EmbedModalProps> = ({
   );
 };
 
-export default EmbedModal;
+export default React.memo(EmbedModal);

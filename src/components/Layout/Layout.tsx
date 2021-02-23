@@ -34,4 +34,4 @@ const Layout: React.FC<Props> = ({
   );
 };
 
-export default Layout;
+export default React.memo(Layout);

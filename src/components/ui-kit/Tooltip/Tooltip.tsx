@@ -55,4 +55,4 @@ export const TooltipMount: React.FC = () => {
   );
 };
 
-export default Tooltip;
+export default React.memo(Tooltip);

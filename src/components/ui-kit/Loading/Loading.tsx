@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import classes from "./Loading.module.css";
 import cn from "clsx";
 import { useLocale } from "react-targem";
@@ -26,4 +26,4 @@ const Loading: React.FC<LoadingProps> = ({
   );
 };
 
-export default Loading;
+export default React.memo(Loading);

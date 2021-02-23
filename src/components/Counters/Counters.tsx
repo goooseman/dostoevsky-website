@@ -9,7 +9,7 @@ interface CountersProps {
   className?: string;
 }
 
-export const Counters: React.FC<CountersProps> = (props: CountersProps) => {
+const Counters: React.FC<CountersProps> = (props: CountersProps) => {
   return (
     <div className={cn(classes.counters, props.className)}>
       {props.children}
@@ -24,7 +24,7 @@ interface CounterProps {
   withPercent?: boolean;
 }
 
-export const Counter: React.FC<CounterProps> = (props: CounterProps) => {
+const Counter: React.FC<CounterProps> = (props: CounterProps) => {
   return (
     <div className={cn(classes.counterBlock)}>
       <Typography
@@ -44,3 +44,8 @@ export const Counter: React.FC<CounterProps> = (props: CounterProps) => {
     </div>
   );
 };
+
+const CountersMemoized = React.memo(Counters);
+const CounterMemoized = React.memo(Counter);
+
+export { CountersMemoized as Counters, CounterMemoized as Counter };

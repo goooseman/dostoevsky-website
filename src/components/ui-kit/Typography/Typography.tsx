@@ -115,4 +115,4 @@ export const TypographyContainer: React.FC<TypographyContainerProps> = ({
   return <div className={cn(classes.common)}>{children}</div>;
 };
 
-export default Typography;
+export default React.memo(Typography);
