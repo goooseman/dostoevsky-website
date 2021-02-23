@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./Tooltip.module.css";
 import ReactTooltip from "react-tooltip";
 import cn from "clsx";
+import { TypographyContainer } from "../Typography";
 
 interface TooltipProps {
   tip: string;
@@ -41,13 +42,15 @@ const Tooltip: React.FC<TooltipProps> = ({
 export const TooltipMount: React.FC = () => {
   return (
     <div className={cn(classes.tooltipWrapper)}>
-      <ReactTooltip
-        html
-        wrapper="span"
-        className={cn(classes.tooltip)}
-        place="bottom"
-        effect="solid"
-      />
+      <TypographyContainer>
+        <ReactTooltip
+          html
+          wrapper="span"
+          className={cn(classes.tooltip)}
+          place="bottom"
+          effect="solid"
+        />
+      </TypographyContainer>
     </div>
   );
 };

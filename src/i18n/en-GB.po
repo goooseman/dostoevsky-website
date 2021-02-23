@@ -874,6 +874,15 @@ msgid ""
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+msgid "Читайте подробнее в разделе"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
+#: src/templates/FaqPage/FaqPage.tsx:
+msgid "О датасете"
+msgstr ""
+
+#: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid ""
 "В {{ year }} году по данной статье был осужден по основному составу <b>{{ count "
 "}}</b> человек"
@@ -2177,10 +2186,6 @@ msgid ""
 "Размер штрафа зависит от тяжести преступления и финансового положения "
 "осужденного. Иногда суд может назначить штраф с рассрочкой выплаты на срок до "
 "пяти лет."
-msgstr ""
-
-#: src/templates/FaqPage/FaqPage.tsx:
-msgid "О датасете"
 msgstr ""
 
 #: src/templates/FaqPage/FaqPage.tsx:

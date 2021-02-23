@@ -19,6 +19,8 @@ import { Helmet } from "react-helmet";
 import ClauseMainPageFocusTerminatedChart from "./components/charts/ClauseMainPageFocusTerminatedChart";
 import ClauseMainPageFocusPunishmentsTreemap from "./components/charts/ClauseMainPageFocusPunishmentsTreemap";
 import ClauseMainPageFocusTerminatedTreemap from "./components/charts/ClauseMainPageFocusTerminatedTreemap";
+import Tooltip from "src/components/ui-kit/Tooltip";
+import { getLinkForLocale } from "src/utils/locales";
 
 export type ClausePartsPageViewMode =
   | "page"
@@ -277,7 +279,7 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
   }
 
   private renderHeaderChildren = () => {
-    const { clauseNumber, year, locale } = this.props;
+    const { clauseNumber, year, locale, t } = this.props;
     return (
       <>
         <div className={classes.focusMenu}>
@@ -309,6 +311,13 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
         <div className={cn(classes.textContainer)}>
           <Typography className={cn(classes.text)}>
             <T message="Если человека судят только за одно преступление, состав такого уголовного дела называется простым, если же судят за несколько сразу — квалифицированным. Наиболее тяжкое из вменяемых преступлений является основным составом, а остальные — дополнительными (иногда дополнительный состав также называют дополнительной квалификацией)." />
+            <Tooltip
+              tip={`${t(
+                "Читайте подробнее в разделе"
+              )} <a href="${getLinkForLocale(locale, "/faq")}">${t(
+                "О датасете"
+              )}</a>`}
+            />
           </Typography>
         </div>
       </>
