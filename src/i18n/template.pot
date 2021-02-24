@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Tue Feb 23 2021 17:30:42 GMT+0200 (Israel Standard Time)\n"
+"POT-Creation-Date: Wed Feb 24 2021 19:25:47 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -167,7 +167,11 @@ msgid "Достоевский"
 msgstr ""
 
 #: src/components/Footer/Footer.tsx:
-msgid "Все материалы сайта доступны по лицензии Creative Commons СС-BY-SA 4.0"
+msgid "Все материалы сайта доступны по лицензии"
+msgstr ""
+
+#: src/components/Footer/Footer.tsx:
+msgid "Creative Commons СС-BY-SA 4.0"
 msgstr ""
 
 #: src/components/Footer/Footer.tsx:

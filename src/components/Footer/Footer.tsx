@@ -82,7 +82,14 @@ const Footer: React.FC<FooterProps> = () => {
           </Menu>
           <Typography size="small" color="inverted">
             <T message="Достоевский" />.{" "}
-            <T message="Все материалы сайта доступны по лицензии Creative Commons СС-BY-SA 4.0" />
+            <T message="Все материалы сайта доступны по лицензии" />{" "}
+            <OutboundLink
+              href="https://creativecommons.org/licenses/by-sa/4.0/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <T message="Creative Commons СС-BY-SA 4.0" />
+            </OutboundLink>
           </Typography>
         </div>
         <div className={cn(classes.rightContainer)}>

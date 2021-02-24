@@ -178,7 +178,11 @@ msgid "Достоевский"
 msgstr "Dostoevsky"
 
 #: src/components/Footer/Footer.tsx:
-msgid "Все материалы сайта доступны по лицензии Creative Commons СС-BY-SA 4.0"
+msgid "Все материалы сайта доступны по лицензии"
+msgstr ""
+
+#: src/components/Footer/Footer.tsx:
+msgid "Creative Commons СС-BY-SA 4.0"
 msgstr ""
 
 #: src/components/Footer/Footer.tsx:
