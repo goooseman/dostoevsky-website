@@ -122,6 +122,10 @@
     "key": "dismissalAbsenceOfEvent",
     "title": "Прекращено за отсутствием события, состава, непричастностью к преступлению"
   },
+  {
+    "key": "dismissalReconciliation",
+    "title": "Прекращено за примирением с потерпевшим"
+  },
   { "key": "dismissalAmnesty", "title": "Прекращено по амнистии" },
   {
     "key": "dismissalRepentance",
