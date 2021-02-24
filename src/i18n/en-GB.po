@@ -5,7 +5,7 @@ msgstr ""
 "POT-Creation-Date: Sun Jan 10 2021 00:39:02 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"PO-Revision-Date: 2021-02-24 07:12\n"
+"PO-Revision-Date: 2021-02-24 20:27\n"
 "Language-Team: English, United Kingdom\n"
 "MIME-Version: 1.0\n"
 "X-Generator: Poedit 2.4.2\n"
@@ -176,7 +176,11 @@ msgid "Достоевский"
 msgstr "Dostoevsky"
 
 #: src/components/Footer/Footer.tsx:
-msgid "Все материалы сайта доступны по лицензии Creative Commons СС-BY-SA 4.0"
+msgid "Все материалы сайта доступны по лицензии"
+msgstr ""
+
+#: src/components/Footer/Footer.tsx:
+msgid "Creative Commons СС-BY-SA 4.0"
 msgstr ""
 
 #: src/components/Footer/Footer.tsx:
@@ -453,11 +457,7 @@ msgid "За помошь в работе над проектом благода�
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
-msgid "Бориса Бейлинсона, Алексея Куприянова, Даду Линделл, Максима Никонова, Наталью Смирнову, Анну Чертову"
-msgstr ""
-
-#: src/templates/AboutPage/AboutPage.tsx:
-msgid "Составить обзоры изменений в уголовном-процессуальном праве и уголовно-исполнительном законодательстве за последнее десятилетие нам помогали"
+msgid "Бориса Бейлинсона, Алексея Куприянова, Даду Линделл, Максима Никонова, Наталью Смирнову, Анну Чертову, Илью Щурова"
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
@@ -465,7 +465,11 @@ msgid "Информационно-аналитический центр «СОВ
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
-msgid "Илья Щуров, Лидия Головина, Борис Карпычев, Елена Липатова, Филипп Лучкин, Ксения Просвиркина"
+msgid "Составить обзоры изменений в уголовном-процессуальном праве и уголовно-исполнительном законодательстве за последнее десятилетие нам помогали"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Лидия Головина, Борис Карпычев, Елена Липатова, Филипп Лучкин, Ксения Просвиркина"
 msgstr ""
 
 #: src/templates/ArticleFullPage/ArticleFullHead.tsx:
@@ -799,10 +803,11 @@ msgstr[0] "<b>{{ count }}</b>  ({{ primarySuspendedPercent }}%) was sentenced to
 msgstr[1] "<b>{{ count }}</b>  ({{ primarySuspendedPercent }}%) were sentenced to suspended imprisonment"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
-msgid "еще <b>{{ count }}</b> ({{ primaryRestrainPercent }}%) получил реальные сроки"
-msgid_plural "еще <b>{{ count }}</b> ({{ primaryRestrainPercent }}%) получили реальные сроки"
-msgstr[0] "<b>{{ count }}</b> ({{ primaryRestrainPercent }}%) got prison sentences"
-msgstr[1] "<b>{{ count }}</b> ({{ primaryRestrainPercent }}%) got prison sentences"
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid "еще <b>{{ count }}</b> ({{ primaryImprisonmentPercent }}%) получил реальные сроки"
+msgid_plural "еще <b>{{ count }}</b> ({{ primaryImprisonmentPercent }}%) получили реальные сроки"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "Оправдан <b>{{ count }}</b> человек"
@@ -1180,12 +1185,6 @@ msgstr[1] ""
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
 msgid "Из них {{ count }} ({{ primarySuspendedPercent }}%) был приговорен к лишению свободы условно"
 msgid_plural "Из них {{ count }} ({{ primarySuspendedPercent }}%) были приговорены к лишению свободы условно"
-msgstr[0] ""
-msgstr[1] ""
-
-#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
-msgid "еще {{ count }} ({{ primaryRestrainPercent }}%) получил реальные сроки"
-msgid_plural "еще {{ count }} ({{ primaryRestrainPercent }}%) получили реальные сроки"
 msgstr[0] ""
 msgstr[1] ""
 
