@@ -25,13 +25,17 @@ class ClauseChronology extends PureComponent<ClauseChronologyProps> {
     const years = accumulateNodes<
       ClauseChronologyQuery["years"]["edges"][number]["node"],
       ClauseChronologyQuery["years"]["edges"][number]
-    >(data.years.edges, "year", ["part"]).map((p) => {
-      const parameters = p.parameters as NoUndefinedField<typeof p.parameters>;
-      return {
-        ...p,
-        ...parameters,
-      };
-    });
+    >(data.years.edges, "year", ["part"])
+      .map((p) => {
+        const parameters = p.parameters as NoUndefinedField<
+          typeof p.parameters
+        >;
+        return {
+          ...p,
+          ...parameters,
+        };
+      })
+      .sort((p1, p2) => p1.year - p2.year);
 
     return (
       <Layout
