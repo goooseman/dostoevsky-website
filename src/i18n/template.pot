@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Tue Feb 23 2021 09:45:09 GMT+0200 (Israel Standard Time)\n"
+"POT-Creation-Date: Tue Feb 23 2021 17:30:42 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -310,7 +310,7 @@ msgid "Антон Ревин"
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
-msgid "АйТи эксперт"
+msgid "IT эксперт"
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
@@ -515,9 +515,13 @@ msgid ""
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
+msgid "Информационно-аналитический центр «СОВА»"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
 msgid ""
-"Лидия Головина, Борис Карпычев, Елена Липатова, Филипп Лучкин, Ксения "
-"Просвиркина"
+"Илья Щуров, Лидия Головина, Борис Карпычев, Елена Липатова, Филипп Лучкин, "
+"Ксения Просвиркина"
 msgstr ""
 
 #: src/templates/ArticleFullPage/ArticleFullHead.tsx:

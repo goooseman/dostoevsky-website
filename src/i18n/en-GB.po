@@ -321,7 +321,7 @@ msgid "Антон Ревин"
 msgstr "Tony Rewin"
 
 #: src/templates/AboutPage/AboutPage.tsx:
-msgid "АйТи эксперт"
+msgid "IT эксперт"
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
@@ -526,9 +526,13 @@ msgid ""
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
+msgid "Информационно-аналитический центр «СОВА»"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
 msgid ""
-"Лидия Головина, Борис Карпычев, Елена Липатова, Филипп Лучкин, Ксения "
-"Просвиркина"
+"Илья Щуров, Лидия Головина, Борис Карпычев, Елена Липатова, Филипп Лучкин, "
+"Ксения Просвиркина"
 msgstr ""
 
 #: src/templates/ArticleFullPage/ArticleFullHead.tsx:

@@ -62,7 +62,7 @@ const teamMembers = [
   },
   {
     name: <T message="Антон Ревин" />,
-    position: <T message="АйТи эксперт" />,
+    position: <T message="IT эксперт" />,
     photoSrc: require("./assets/rewin.png"),
     photoSrc2x: require("./assets/rewin_2x.png"),
   },
@@ -234,7 +234,22 @@ const AboutPage: React.FC = () => {
             <T message="Составить обзоры изменений в уголовном-процессуальном праве и уголовно-исполнительном законодательстве за последнее десятилетие нам помогали" />
             {": "}
             <i>
-              <T message="Лидия Головина, Борис Карпычев, Елена Липатова, Филипп Лучкин, Ксения Просвиркина" />
+              <OutboundLink
+                href="https://www.sova-center.ru/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <T message="Информационно-аналитический центр «СОВА»" />
+              </OutboundLink>
+              {", "}
+              <OutboundLink
+                href="https://pravo.ru/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Право.ru
+              </OutboundLink>
+              <T message="Илья Щуров, Лидия Головина, Борис Карпычев, Елена Липатова, Филипп Лучкин, Ксения Просвиркина" />
             </i>
             {"."}
           </Typography>
