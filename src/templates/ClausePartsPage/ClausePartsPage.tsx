@@ -215,7 +215,7 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
         <T
           message="По дополнительному составу осуждены <b>{{ count }}</b> человек"
           messagePlural="По дополнительному составу осуждены <b>{{ count }}</b> человека"
-          count={part.totalDismissal}
+          count={part.addTotalPersons}
         />
         {"."}
         {partsCount !== partIndex ? (
