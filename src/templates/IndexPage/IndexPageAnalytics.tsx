@@ -205,7 +205,7 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
           ))}
         </div>
       </div>
-      {hasAnalytics || locale === "ru" ? (
+      {hasAnalytics && locale === "ru" ? (
         <Link
           className={classes.analyticsLinkWrapper}
           to={`${locale}/articles/stats-${selectedYear.value}`}
