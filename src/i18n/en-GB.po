@@ -520,7 +520,11 @@ msgstr ""
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid ""
 "Бориса Бейлинсона, Алексея Куприянова, Даду Линделл, Максима Никонова, Наталью "
-"Смирнову, Анну Чертову"
+"Смирнову, Анну Чертову, Илью Щурова"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Информационно-аналитический центр «СОВА»"
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
@@ -530,13 +534,9 @@ msgid ""
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
-msgid "Информационно-аналитический центр «СОВА»"
-msgstr ""
-
-#: src/templates/AboutPage/AboutPage.tsx:
 msgid ""
-"Илья Щуров, Лидия Головина, Борис Карпычев, Елена Липатова, Филипп Лучкин, "
-"Ксения Просвиркина"
+"Лидия Головина, Борис Карпычев, Елена Липатова, Филипп Лучкин, Ксения "
+"Просвиркина"
 msgstr ""
 
 #: src/templates/ArticleFullPage/ArticleFullHead.tsx:

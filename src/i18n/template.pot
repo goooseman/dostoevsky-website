@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Wed Feb 24 2021 22:16:07 GMT+0200 (Israel Standard Time)\n"
+"POT-Creation-Date: Wed Feb 24 2021 22:22:43 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -509,7 +509,11 @@ msgstr ""
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid ""
 "Бориса Бейлинсона, Алексея Куприянова, Даду Линделл, Максима Никонова, Наталью "
-"Смирнову, Анну Чертову"
+"Смирнову, Анну Чертову, Илью Щурова"
+msgstr ""
+
+#: src/templates/AboutPage/AboutPage.tsx:
+msgid "Информационно-аналитический центр «СОВА»"
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
@@ -519,13 +523,9 @@ msgid ""
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
-msgid "Информационно-аналитический центр «СОВА»"
-msgstr ""
-
-#: src/templates/AboutPage/AboutPage.tsx:
 msgid ""
-"Илья Щуров, Лидия Головина, Борис Карпычев, Елена Липатова, Филипп Лучкин, "
-"Ксения Просвиркина"
+"Лидия Головина, Борис Карпычев, Елена Липатова, Филипп Лучкин, Ксения "
+"Просвиркина"
 msgstr ""
 
 #: src/templates/ArticleFullPage/ArticleFullHead.tsx:
