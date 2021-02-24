@@ -33,6 +33,7 @@ interface ChartWrapperProps {
   isSeparateLabels?: boolean;
   centerTitle?: boolean;
   labelOverrides?: LabelOverrideValue[];
+  isFullWidth?: boolean;
 }
 
 class ChartWrapper extends PureComponent<
@@ -54,10 +55,15 @@ class ChartWrapper extends PureComponent<
       isSeparateLabels = false,
       centerTitle = false,
       labelOverrides,
+      isFullWidth = false,
     } = this.props;
 
     return (
-      <div className={cn(classes.chart)}>
+      <div
+        className={cn(classes.chart, {
+          [classes.isFullWidth]: isFullWidth,
+        })}
+      >
         <div className={cn(classes.twoColumns)}>
           <div className={cn(classes.leftColumn)} ref={downloadAreaRef}>
             <Typography

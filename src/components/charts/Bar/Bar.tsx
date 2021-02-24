@@ -141,7 +141,7 @@ class Bar extends PureComponent<BarProps> {
         : maxLabelsCount * ROW_HEIGHT;
 
     return (
-      <ChartWrapper {...wrapperProps} labels={this.getLabels()}>
+      <ChartWrapper {...wrapperProps} labels={this.getLabels()} isFullWidth>
         {charts.map((c, i) => (
           <div key={i} style={{ width: `${100 / charts.length}%` }}>
             {chartType !== "partsByPunishment" ? (

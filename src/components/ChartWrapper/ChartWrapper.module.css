@@ -205,6 +205,27 @@ body {
 .two-columns {
   display: flex;
 }
+
+.is-full-width .two-columns {
+  flex-direction: column;
+}
+
+@media all and (min-width: 1201px) and (max-width: 1400px) {
+  .is-full-width {
+    margin-left: -30px;
+    width: calc(100% + 30px);
+  }
+}
+
+@media all and (max-width: 1200px) {
+  .charts-container > div {
+    min-width: 25%;
+  }
+  .charts-container {
+    flex-wrap: wrap;
+  }
+}
+
 @media all and (max-width: 768px) {
   .two-columns {
     flex-direction: column;
@@ -240,6 +261,10 @@ body {
   min-width: 100px;
   align-self: flex-end;
   margin-bottom: 30px;
+}
+.is-full-width .actions {
+  position: relative;
+  top: -40px;
 }
 @media all and (max-width: 680px) {
   .actions {

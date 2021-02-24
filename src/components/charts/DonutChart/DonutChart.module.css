@@ -6,7 +6,7 @@
 }
 
 .donut-chart {
-  margin: 0 1rem;
+  padding: 0 1rem;
   :global {
     .ct-label {
       fill: var(--color-text-inverted);

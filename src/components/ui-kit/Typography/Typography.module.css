@@ -59,6 +59,16 @@
   text-decoration: none;
 }
 
+.common small {
+  font-size: 12px;
+}
+
+@media screen and (max-width: 1400px) {
+  .common small {
+    font-size: 11px;
+  }
+}
+
 .common mark {
   background-color: var(--color-palette-l);
   color: var(--color-text);
@@ -88,6 +98,12 @@
   font-size: 1.3rem;
 }
 
+.h1 small,
+.h2 small,
+.h3 small {
+  font-size: 75%;
+}
+
 @media all and (max-width: 680px) {
   .h1,
   .h1.huge {
@@ -101,11 +117,6 @@
   }
 }
 
-@media all and (max-width: 680px) {
-  .h3 {
-    font-size: 1.2rem;
-  }
-}
 .is-line-height-disabled {
   line-height: 1;
 }
