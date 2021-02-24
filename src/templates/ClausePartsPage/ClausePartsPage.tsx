@@ -190,12 +190,12 @@ class ClausePartsPage extends PureComponent<ClausePartsPageProps> {
         />
         {", "}
         <T
-          message="еще {{ count }} ({{ primaryRestrainPercent }}%) получил реальные сроки"
-          messagePlural="еще {{ count }} ({{ primaryRestrainPercent }}%) получили реальные сроки"
-          count={part.primaryRestrain}
+          message="еще <b>{{ count }}</b> ({{ primaryImprisonmentPercent }}%) получил реальные сроки"
+          messagePlural="еще <b>{{ count }}</b> ({{ primaryImprisonmentPercent }}%) получили реальные сроки"
+          count={part.primaryImprisonment}
           scope={{
-            primaryRestrainPercent: formatNumber(
-              part.primaryRestrain / (part.totalConvicted / 100)
+            primaryImprisonmentPercent: formatNumber(
+              part.primaryImprisonment / (part.totalConvicted / 100)
             ),
           }}
         />

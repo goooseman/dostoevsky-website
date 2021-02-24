@@ -1011,10 +1011,19 @@ msgstr[1] ""
 "лишению свободы условно"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
-msgid "еще <b>{{ count }}</b> ({{ primaryRestrainPercent }}%) получил реальные сроки"
-msgid_plural "еще <b>{{ count }}</b> ({{ primaryRestrainPercent }}%) получили реальные сроки"
-msgstr[0] "еще <b>{{ count }}</b> ({{ primaryRestrainPercent }}%) получил реальные сроки"
-msgstr[1] "еще <b>{{ count }}</b> ({{ primaryRestrainPercent }}%) получили реальные сроки"
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid ""
+"еще <b>{{ count }}</b> ({{ primaryImprisonmentPercent }}%) получил реальные "
+"сроки"
+msgid_plural ""
+"еще <b>{{ count }}</b> ({{ primaryImprisonmentPercent }}%) получили реальные "
+"сроки"
+msgstr[0] ""
+"еще <b>{{ count }}</b> ({{ primaryImprisonmentPercent }}%) получил реальные "
+"сроки"
+msgstr[1] ""
+"еще <b>{{ count }}</b> ({{ primaryImprisonmentPercent }}%) получили реальные "
+"сроки"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "Оправдан <b>{{ count }}</b> человек"
@@ -1462,12 +1471,6 @@ msgstr[0] ""
 msgstr[1] ""
 "Из них {{ count }} ({{ primarySuspendedPercent }}%) были приговорены к лишению "
 "свободы условно"
-
-#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
-msgid "еще {{ count }} ({{ primaryRestrainPercent }}%) получил реальные сроки"
-msgid_plural "еще {{ count }} ({{ primaryRestrainPercent }}%) получили реальные сроки"
-msgstr[0] "еще {{ count }} ({{ primaryRestrainPercent }}%) получил реальные сроки"
-msgstr[1] "еще {{ count }} ({{ primaryRestrainPercent }}%) получили реальные сроки"
 
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
 msgid "Оправдан {{ count }} человек"

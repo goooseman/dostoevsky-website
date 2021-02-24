@@ -919,10 +919,15 @@ msgstr[1] ""
 "suspended imprisonment"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
-msgid "еще <b>{{ count }}</b> ({{ primaryRestrainPercent }}%) получил реальные сроки"
-msgid_plural "еще <b>{{ count }}</b> ({{ primaryRestrainPercent }}%) получили реальные сроки"
-msgstr[0] "<b>{{ count }}</b> ({{ primaryRestrainPercent }}%) got prison sentences"
-msgstr[1] "<b>{{ count }}</b> ({{ primaryRestrainPercent }}%) got prison sentences"
+#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
+msgid ""
+"еще <b>{{ count }}</b> ({{ primaryImprisonmentPercent }}%) получил реальные "
+"сроки"
+msgid_plural ""
+"еще <b>{{ count }}</b> ({{ primaryImprisonmentPercent }}%) получили реальные "
+"сроки"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "Оправдан <b>{{ count }}</b> человек"
@@ -1348,12 +1353,6 @@ msgid ""
 msgid_plural ""
 "Из них {{ count }} ({{ primarySuspendedPercent }}%) были приговорены к лишению "
 "свободы условно"
-msgstr[0] ""
-msgstr[1] ""
-
-#: src/templates/ClausePartsPage/ClausePartsPage.tsx:
-msgid "еще {{ count }} ({{ primaryRestrainPercent }}%) получил реальные сроки"
-msgid_plural "еще {{ count }} ({{ primaryRestrainPercent }}%) получили реальные сроки"
 msgstr[0] ""
 msgstr[1] ""
 

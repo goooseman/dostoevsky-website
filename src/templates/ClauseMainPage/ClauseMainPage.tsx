@@ -330,7 +330,7 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
       total,
       totalConvicted,
       primarySuspended,
-      primaryRestrain,
+      primaryImprisonment,
       totalAcquittal,
       totalDismissal,
       nonRehabilitating,
@@ -359,12 +359,12 @@ class ClauseMainPage extends PureComponent<ClauseMainPageProps> {
         />
         {", "}
         <T
-          message="еще <b>{{ count }}</b> ({{ primaryRestrainPercent }}%) получил реальные сроки"
-          messagePlural="еще <b>{{ count }}</b> ({{ primaryRestrainPercent }}%) получили реальные сроки"
-          count={primaryRestrain}
+          message="еще <b>{{ count }}</b> ({{ primaryImprisonmentPercent }}%) получил реальные сроки"
+          messagePlural="еще <b>{{ count }}</b> ({{ primaryImprisonmentPercent }}%) получили реальные сроки"
+          count={primaryImprisonment}
           scope={{
-            primaryRestrainPercent: formatNumber(
-              primaryRestrain / (totalConvicted / 100)
+            primaryImprisonmentPercent: formatNumber(
+              primaryImprisonment / (totalConvicted / 100)
             ),
           }}
         />
