@@ -1,23 +1,21 @@
 export const sendClickEvent = ({
-  category,
+  event,
   label,
 }: {
   /** e.g. "ЧЕМ ЗАКОНЧИЛИСЬ ДЕЛА ПО СТАТЬЕ 275, ДОШЕДШИЕ ДО СУДА (ОСНОВНОЙ СОСТАВ) (275/2019)" */
   label: string;
-  /** e.g. "Графики (скачать)" */
-  category:
-    | "Графики (скачать)"
-    | "Графики (эмбед)"
-    | "Графики (эмбед скопирован)"
-    | "Таблицы (скачать)"
-    | "Таблицы (эмбед)"
-    | "Таблицы (эмбед скопирован)"
-    | "Полный датасет (скачать)";
+  event:
+    | "chart_download"
+    | "chart_embed_clicked"
+    | "chart_embed_copied"
+    | "table_download"
+    | "table_embed_clicked"
+    | "table_embed_copied"
+    | "full_dataset_download";
 }): void => {
   typeof window !== "undefined" &&
     window.gtag &&
-    window.gtag("event", "click", {
+    window.gtag("event", event, {
       event_label: label,
-      event_category: category,
     });
 };

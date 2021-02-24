@@ -17,7 +17,7 @@ const DownloadButton: React.FC<DownloadButtonProps> = ({
   const { t } = useLocale();
   const handleClick = () => {
     sendClickEvent({
-      category: type === "chart" ? "Графики (скачать)" : "Таблицы (скачать)",
+      event: type === "chart" ? "chart_download" : "table_download",
       label: title,
     });
     onClick();

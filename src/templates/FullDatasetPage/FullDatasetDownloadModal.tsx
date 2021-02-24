@@ -48,7 +48,7 @@ const FullDatasetDownloadModal: React.FC<FullDatasetDownloadModalProps> = ({
   const handleDownload = () => {
     if (loadingDataset || !tables) return false;
     sendClickEvent({
-      category: "Полный датасет (скачать)",
+      event: "full_dataset_download",
       label: "Полный датасет",
     });
     const csvContent = getCsv(tables, 0);

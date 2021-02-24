@@ -26,7 +26,7 @@ const EmbedModal: React.FC<EmbedModalProps> = ({
 
   const handleOpenButtonClick = () => {
     sendClickEvent({
-      category: type === "chart" ? "Графики (эмбед)" : "Таблицы (эмбед)",
+      event: type === "chart" ? "chart_embed_clicked" : "table_embed_clicked",
       label: title,
     });
     toggle();
@@ -34,10 +34,7 @@ const EmbedModal: React.FC<EmbedModalProps> = ({
 
   const handleDownloadButtonClick = () => {
     sendClickEvent({
-      category:
-        type === "chart"
-          ? "Графики (эмбед скопирован)"
-          : "Таблицы (эмбед скопирован)",
+      event: type === "chart" ? "chart_embed_copied" : "table_embed_copied",
       label: title,
     });
     copy(iframeCode);
