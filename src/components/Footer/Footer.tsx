@@ -93,7 +93,7 @@ const Footer: React.FC<FooterProps> = () => {
           </Button>
           <div className={classes.socialMediaLinksContainer}>
             <OutboundLink
-              href="https://telegram.com"
+              href="https://t.me/sudstat"
               target="_blank"
               rel="noreferrer"
             >
@@ -107,7 +107,7 @@ const Footer: React.FC<FooterProps> = () => {
               <img src={require("./assets/git.svg")} alt="Facebook" />
             </OutboundLink>
             <OutboundLink
-              href="https://twitter.com"
+              href="https://twitter.com/DostoevskyIo"
               target="_blank"
               rel="noreferrer"
             >
