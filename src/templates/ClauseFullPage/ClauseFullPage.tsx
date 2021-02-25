@@ -497,7 +497,10 @@ class ClauseFullPage extends PureComponent<
         a.children.forEach((ac) => {
           if (!ac.children) {
             if (selected[ac.id]) {
-              table.columns.push({ title: ac.title, key: ac.id });
+              table.columns.push({
+                title: `${a.title} / ${ac.title}`,
+                key: ac.id,
+              });
               if (partsCount > 0 && splitByArticle) {
                 data.parts.edges.forEach((e: any, i: number) => {
                   if (table.rows.length - 1 < i) {
@@ -522,7 +525,7 @@ class ClauseFullPage extends PureComponent<
             ac.children.forEach((acc) => {
               if (selected[acc.id]) {
                 table.columns.push({
-                  title: `${ac.title} ${acc.title}`,
+                  title: `${a.title} / ${ac.title} / ${acc.title}`,
                   key: acc.id,
                 });
                 if (partsCount > 0 && splitByArticle) {
