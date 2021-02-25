@@ -173,7 +173,10 @@ const IndexPageAnalytics: React.FC<IndexPageAnalyticsProps> = ({
             <T message="году" />
           </b>
         </Typography>
-        <Typography className={classes.analyticsSubtitle}>
+        <Typography
+          style={{ maxWidth: 620, marginBottom: 40 }}
+          className={classes.analyticsSubtitle}
+        >
           <T
             messagePlural="По всем статьям УК РФ прошли через суд дела <b>{{ count }}</b> человек"
             message="По всем статьям УК РФ прошли через суд дела <b>{{ count }}</b> человека"
