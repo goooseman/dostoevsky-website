@@ -5,7 +5,7 @@ msgstr ""
 "POT-Creation-Date: Sun Jan 10 2021 00:39:02 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"PO-Revision-Date: 2021-02-25 06:46\n"
+"PO-Revision-Date: 2021-02-25 21:56\n"
 "Language-Team: English, United Kingdom\n"
 "MIME-Version: 1.0\n"
 "X-Generator: Poedit 2.4.2\n"
@@ -110,7 +110,7 @@ msgid "Скачать чарт"
 msgstr ""
 
 #: src/components/DownloadButton/DownloadButton.tsx:
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+#: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
 msgid "Скачать"
 msgstr "Download"
 
@@ -190,6 +190,35 @@ msgstr "contact us"
 #: src/components/Footer/Footer.tsx:
 msgid "Напишите нам"
 msgstr ""
+
+#: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
+msgid "Скачать данные"
+msgstr ""
+
+#: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
+msgid "Если вы оставите свой email, мы будем время от времени присылать вам что-нибудь полезное!"
+msgstr ""
+
+#: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
+msgid "Ваш e-mail"
+msgstr "Your e-mail"
+
+#: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
+msgid "Ваше имя в Telegram, если хотите присоединиться к нашему сообществу"
+msgstr ""
+
+#: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
+msgid "Ваше имя в Telegram"
+msgstr "Your Telegram nickname"
+
+#: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
+msgid "При использовании данных, пожалуйста, указывайте ссылку на Достоевский и делитесь с нами своими материалами."
+msgstr ""
+
+#: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
+#: src/templates/IndexPage/IndexPageSubscription.tsx:
+msgid "Загрузка..."
+msgstr "Loading..."
 
 #: src/components/Header/Header.tsx:
 msgid "Иконка \"Земной шар\""
@@ -716,6 +745,10 @@ msgstr "Select all options"
 #: src/templates/ClauseFullPage/ClauseFullPage.tsx:
 msgid "Разбить по частям"
 msgstr "Divide by category"
+
+#: src/templates/ClauseFullPage/ClauseFullPage.tsx:
+msgid "Полная статистика по статье №{{ clauseNumber }} за {{ year }}"
+msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "Основной и дополнительный составы"
@@ -2487,35 +2520,7 @@ msgstr ""
 msgid "Поля выгрузки"
 msgstr ""
 
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
-msgid "Скачать данные"
-msgstr ""
-
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
-msgid "Если вы оставите свой email, мы будем время от времени присылать вам что-нибудь полезное!"
-msgstr ""
-
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
-msgid "Ваш e-mail"
-msgstr "Your e-mail"
-
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
-msgid "Ваше имя в Telegram, если хотите присоединиться к нашему сообществу"
-msgstr ""
-
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
-msgid "Ваше имя в Telegram"
-msgstr "Your Telegram nickname"
-
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
-msgid "При использовании данных, пожалуйста, указывайте ссылку на Достоевский и делитесь с нами своими материалами."
-msgstr ""
-
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
-#: src/templates/IndexPage/IndexPageSubscription.tsx:
-msgid "Загрузка..."
-msgstr "Loading..."
-
+#: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
