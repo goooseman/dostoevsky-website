@@ -51,6 +51,8 @@
 .clause-full-page-download-button {
   width: 66px;
   height: 46px;
+  position: sticky;
+  top: 5rem;
   border: none;
   margin-top: 5rem;
   margin-left: 3rem;
