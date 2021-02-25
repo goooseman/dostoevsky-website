@@ -3405,6 +3405,10 @@ msgstr "Скачать полный датасет о статистике пр�
 msgid "Произошла ошибка. Пожалуйста, измените параметры поиска."
 msgstr "Произошла ошибка. Пожалуйста, измените параметры поиска."
 
+#: src/templates/FullDatasetPage/FullDatasetSelect.tsx:
+msgid "Выберите..."
+msgstr "Выберите..."
+
 #: src/templates/IndexPage/IndexPage.tsx:
 #: src/templates/IndexPage/IndexPage.tsx:
 #: src/templates/IndexPage/IndexPage.tsx:

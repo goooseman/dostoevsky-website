@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Wed Feb 24 2021 22:22:43 GMT+0200 (Israel Standard Time)\n"
+"POT-Creation-Date: Thu Feb 25 2021 08:10:38 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -2954,6 +2954,10 @@ msgstr ""
 
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 msgid "Произошла ошибка. Пожалуйста, измените параметры поиска."
+msgstr ""
+
+#: src/templates/FullDatasetPage/FullDatasetSelect.tsx:
+msgid "Выберите..."
 msgstr ""
 
 #: src/templates/IndexPage/IndexPage.tsx:

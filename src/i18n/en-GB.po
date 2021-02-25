@@ -3000,6 +3000,10 @@ msgstr ""
 msgid "Произошла ошибка. Пожалуйста, измените параметры поиска."
 msgstr ""
 
+#: src/templates/FullDatasetPage/FullDatasetSelect.tsx:
+msgid "Выберите..."
+msgstr ""
+
 #: src/templates/IndexPage/IndexPage.tsx:
 #: src/templates/IndexPage/IndexPage.tsx:
 #: src/templates/IndexPage/IndexPage.tsx:

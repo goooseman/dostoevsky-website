@@ -116,9 +116,9 @@ const FullDatasetSelect: React.FC<FullDatasetSelectProps> = ({
           Option: (data) => renderOption(data),
           IndicatorSeparator: null,
         }}
-        placeholder="Выберите..."
+        placeholder={t("Выберите...")}
         isMulti
-        isSearchable={false}
+        isSearchable
         options={options}
         value={value}
         onChange={onChange}
