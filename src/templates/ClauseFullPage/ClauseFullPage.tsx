@@ -425,7 +425,7 @@ class ClauseFullPage extends PureComponent<
     this.setState({ splitByArticle: checked });
   }
 
-  private handleToggleCheckbox(e: React.ChangeEvent<HTMLInputElement>) {
+  private handleToggleCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, checked } = e.target;
     const { selected } = this.state;
 
@@ -469,7 +469,7 @@ class ClauseFullPage extends PureComponent<
     });
 
     this.setState({ selected: newSelected });
-  }
+  };
 
   private handleGetCsv() {
     const { data, year, clauseNumber, partsCount } = this.props;
@@ -653,7 +653,7 @@ class ClauseFullPage extends PureComponent<
                             <Checkbox
                               id={ac.id}
                               checked={selected[ac.id]}
-                              onChange={(e) => this.handleToggleCheckbox(e)}
+                              onChange={this.handleToggleCheckbox}
                             />
                             <Typography
                               className={cn(classes.clauseFullPageElementTitle)}
@@ -673,9 +673,7 @@ class ClauseFullPage extends PureComponent<
                                   <Checkbox
                                     id={acc.id}
                                     checked={selected[acc.id]}
-                                    onChange={(e) =>
-                                      this.handleToggleCheckbox(e)
-                                    }
+                                    onChange={this.handleToggleCheckbox}
                                   />
                                   <Typography
                                     className={cn(
