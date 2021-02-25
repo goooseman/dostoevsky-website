@@ -147,6 +147,7 @@
   padding: 4px 4px 1px;
   font-size: 1rem;
   background: var(--color-palette-a);
+  font-weight: 500;
 }
 .header .clause-number {
   display: block;

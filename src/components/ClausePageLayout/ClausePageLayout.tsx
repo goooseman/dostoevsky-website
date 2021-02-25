@@ -77,7 +77,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
                   getProps={this.getMainLinkProps}
                 >
                   <Typography size="small" variant="span" isUpperCased>
-                    основной и дополнительный составы
+                    <b>основной и дополнительный составы</b>
                   </Typography>
                 </Link>
                 {hasParts ? (
