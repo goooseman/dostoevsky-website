@@ -5,7 +5,7 @@ msgstr ""
 "POT-Creation-Date: Sun Jan 10 2021 00:39:02 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"PO-Revision-Date: 2021-02-24 20:27\n"
+"PO-Revision-Date: 2021-02-25 06:46\n"
 "Language-Team: English, United Kingdom\n"
 "MIME-Version: 1.0\n"
 "X-Generator: Poedit 2.4.2\n"
@@ -2529,6 +2529,10 @@ msgstr ""
 
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 msgid "Произошла ошибка. Пожалуйста, измените параметры поиска."
+msgstr ""
+
+#: src/templates/FullDatasetPage/FullDatasetSelect.tsx:
+msgid "Выберите..."
 msgstr ""
 
 #: src/templates/IndexPage/IndexPage.tsx:
