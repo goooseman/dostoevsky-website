@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Thu Feb 25 2021 08:10:38 GMT+0200 (Israel Standard Time)\n"
+"POT-Creation-Date: Thu Feb 25 2021 15:27:39 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -101,7 +101,7 @@ msgid "Скачать чарт"
 msgstr ""
 
 #: src/components/DownloadButton/DownloadButton.tsx:
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+#: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
 msgid "Скачать"
 msgstr ""
 
@@ -180,6 +180,39 @@ msgstr ""
 
 #: src/components/Footer/Footer.tsx:
 msgid "Напишите нам"
+msgstr ""
+
+#: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
+msgid "Скачать данные"
+msgstr ""
+
+#: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
+msgid ""
+"Если вы оставите свой email, мы будем время от времени присылать вам что-нибудь "
+"полезное!"
+msgstr ""
+
+#: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
+msgid "Ваш e-mail"
+msgstr ""
+
+#: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
+msgid "Ваше имя в Telegram, если хотите присоединиться к нашему сообществу"
+msgstr ""
+
+#: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
+msgid "Ваше имя в Telegram"
+msgstr ""
+
+#: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
+msgid ""
+"При использовании данных, пожалуйста, указывайте ссылку на Достоевский и "
+"делитесь с нами своими материалами."
+msgstr ""
+
+#: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
+#: src/templates/IndexPage/IndexPageSubscription.tsx:
+msgid "Загрузка..."
 msgstr ""
 
 #: src/components/Header/Header.tsx:
@@ -2906,39 +2939,6 @@ msgstr ""
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Поля выгрузки"
-msgstr ""
-
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
-msgid "Скачать данные"
-msgstr ""
-
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
-msgid ""
-"Если вы оставите свой email, мы будем время от времени присылать вам что-нибудь "
-"полезное!"
-msgstr ""
-
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
-msgid "Ваш e-mail"
-msgstr ""
-
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
-msgid "Ваше имя в Telegram, если хотите присоединиться к нашему сообществу"
-msgstr ""
-
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
-msgid "Ваше имя в Telegram"
-msgstr ""
-
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
-msgid ""
-"При использовании данных, пожалуйста, указывайте ссылку на Достоевский и "
-"делитесь с нами своими материалами."
-msgstr ""
-
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
-#: src/templates/IndexPage/IndexPageSubscription.tsx:
-msgid "Загрузка..."
 msgstr ""
 
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:

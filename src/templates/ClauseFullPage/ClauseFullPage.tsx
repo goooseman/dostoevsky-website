@@ -697,6 +697,9 @@ class ClauseFullPage extends PureComponent<
           </div>
           <div className={cn(classes.clauseFullPageDownloadWrapper)}>
             <button
+              disabled={
+                Object.values(selected).filter((v) => v === true).length === 0
+              }
               className={cn(classes.clauseFullPageDownloadButton)}
               onClick={() => this.handleGetCsv()}
             />

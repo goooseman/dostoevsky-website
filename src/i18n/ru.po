@@ -110,7 +110,7 @@ msgid "Скачать чарт"
 msgstr "Скачать чарт"
 
 #: src/components/DownloadButton/DownloadButton.tsx:
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
+#: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
 msgid "Скачать"
 msgstr "Скачать"
 
@@ -190,6 +190,43 @@ msgstr "напишите нам"
 #: src/components/Footer/Footer.tsx:
 msgid "Напишите нам"
 msgstr "Напишите нам"
+
+#: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
+msgid "Скачать данные"
+msgstr "Скачать данные"
+
+#: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
+msgid ""
+"Если вы оставите свой email, мы будем время от времени присылать вам что-нибудь "
+"полезное!"
+msgstr ""
+"Если вы оставите свой email, мы будем время от времени присылать вам что-нибудь "
+"полезное!"
+
+#: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
+msgid "Ваш e-mail"
+msgstr "Ваш e-mail"
+
+#: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
+msgid "Ваше имя в Telegram, если хотите присоединиться к нашему сообществу"
+msgstr "Ваше имя в Telegram, если хотите присоединиться к нашему сообществу"
+
+#: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
+msgid "Ваше имя в Telegram"
+msgstr "Ваше имя в Telegram"
+
+#: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
+msgid ""
+"При использовании данных, пожалуйста, указывайте ссылку на Достоевский и "
+"делитесь с нами своими материалами."
+msgstr ""
+"При использовании данных, пожалуйста, указывайте ссылку на Достоевский и "
+"делитесь с нами своими материалами."
+
+#: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
+#: src/templates/IndexPage/IndexPageSubscription.tsx:
+msgid "Загрузка..."
+msgstr "Загрузка..."
 
 #: src/components/Header/Header.tsx:
 msgid "Иконка \"Земной шар\""
@@ -3352,43 +3389,6 @@ msgstr "Признаны невменяемыми: по числу лиц"
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Поля выгрузки"
 msgstr "Поля выгрузки"
-
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
-msgid "Скачать данные"
-msgstr "Скачать данные"
-
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
-msgid ""
-"Если вы оставите свой email, мы будем время от времени присылать вам что-нибудь "
-"полезное!"
-msgstr ""
-"Если вы оставите свой email, мы будем время от времени присылать вам что-нибудь "
-"полезное!"
-
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
-msgid "Ваш e-mail"
-msgstr "Ваш e-mail"
-
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
-msgid "Ваше имя в Telegram, если хотите присоединиться к нашему сообществу"
-msgstr "Ваше имя в Telegram, если хотите присоединиться к нашему сообществу"
-
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
-msgid "Ваше имя в Telegram"
-msgstr "Ваше имя в Telegram"
-
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
-msgid ""
-"При использовании данных, пожалуйста, указывайте ссылку на Достоевский и "
-"делитесь с нами своими материалами."
-msgstr ""
-"При использовании данных, пожалуйста, указывайте ссылку на Достоевский и "
-"делитесь с нами своими материалами."
-
-#: src/templates/FullDatasetPage/FullDatasetDownloadModal.tsx:
-#: src/templates/IndexPage/IndexPageSubscription.tsx:
-msgid "Загрузка..."
-msgstr "Загрузка..."
 
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:

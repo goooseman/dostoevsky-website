@@ -62,3 +62,8 @@
   background-repeat: no-repeat;
   cursor: pointer;
 }
+
+.clause-full-page-download-button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
