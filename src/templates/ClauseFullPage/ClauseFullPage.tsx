@@ -401,10 +401,14 @@ class ClauseFullPage extends PureComponent<
     };
   }
 
-  private handleToggleAllSelected(e: any) {
+  private handleToggleAllSelected = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const { checked } = e.target;
 
-    const newSelected: any = {};
+    const newSelected: {
+      [id: string]: boolean;
+    } = {};
 
     accordionData.forEach((a) => {
       newSelected[a.id] = checked;
@@ -421,13 +425,15 @@ class ClauseFullPage extends PureComponent<
     });
 
     this.setState({ selected: newSelected, allSelected: checked });
-  }
+  };
 
-  private handleToggleSplitByArticle(e: any) {
+  private handleToggleSplitByArticle = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const { checked } = e.target;
 
     this.setState({ splitByArticle: checked });
-  }
+  };
 
   private handleDownloadButtonClick = () => {
     this.setState({
@@ -603,7 +609,7 @@ class ClauseFullPage extends PureComponent<
               <Checkbox
                 id="allSelected"
                 checked={allSelected}
-                onChange={(e) => this.handleToggleAllSelected(e)}
+                onChange={this.handleToggleAllSelected}
                 label={<T message="Выбрать все параметры" />}
               />
             </div>
