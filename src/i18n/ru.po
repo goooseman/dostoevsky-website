@@ -894,6 +894,10 @@ msgstr "Выбрать все параметры"
 msgid "Разбить по частям"
 msgstr "Разбить по частям"
 
+#: src/templates/ClauseFullPage/ClauseFullPage.tsx:
+msgid "Полная статистика по статье №{{ clauseNumber }} за {{ year }}"
+msgstr "Полная статистика по статье №{{ clauseNumber }} за {{ year }}"
+
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "Основной и дополнительный составы"
 msgstr "Основной и дополнительный составы"
@@ -3390,6 +3394,7 @@ msgstr "Признаны невменяемыми: по числу лиц"
 msgid "Поля выгрузки"
 msgstr "Поля выгрузки"
 
+#: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:

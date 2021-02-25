@@ -11,7 +11,8 @@ export const sendClickEvent = ({
     | "table_download"
     | "table_embed_clicked"
     | "table_embed_copied"
-    | "full_dataset_download";
+    | "full_dataset_download"
+    | "clause_dataset_download";
 }): void => {
   typeof window !== "undefined" &&
     window.gtag &&

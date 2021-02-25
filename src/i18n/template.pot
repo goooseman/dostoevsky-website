@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Thu Feb 25 2021 15:27:39 GMT+0200 (Israel Standard Time)\n"
+"POT-Creation-Date: Thu Feb 25 2021 19:00:30 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -809,6 +809,10 @@ msgstr ""
 
 #: src/templates/ClauseFullPage/ClauseFullPage.tsx:
 msgid "Разбить по частям"
+msgstr ""
+
+#: src/templates/ClauseFullPage/ClauseFullPage.tsx:
+msgid "Полная статистика по статье №{{ clauseNumber }} за {{ year }}"
 msgstr ""
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
@@ -2941,6 +2945,7 @@ msgstr ""
 msgid "Поля выгрузки"
 msgstr ""
 
+#: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:

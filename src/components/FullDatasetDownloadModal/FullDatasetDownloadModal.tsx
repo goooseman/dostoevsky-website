@@ -3,35 +3,27 @@ import React, { FormEvent, useState } from "react";
 import classes from "./FullDatasetDownloadModal.module.css";
 import cn from "clsx";
 import Modal from "src/components/ui-kit/Modal";
-import { getCsv } from "src/utils/csv";
+import { getCsv, Table } from "src/utils/csv";
 import { saveAs } from "file-saver";
 import { T, useLocale } from "react-targem";
 import Typography from "src/components/ui-kit/Typography";
 import Input from "src/components/ui-kit/Input";
 import Button from "src/components/ui-kit/Button";
-import {
-  MAILCHIMP_ADDRESS,
-  MAILCHIMP_ID,
-  MAILCHIMP_U,
-  FORMSUBMIT_ID,
-} from "src/config/vars";
+import { FORMSUBMIT_ID } from "src/config/vars";
 import { subscribeToEmail } from "src/utils/emails-service";
 import { sendClickEvent } from "src/utils/analytics";
+
+export type { Table };
 
 interface FullDatasetDownloadModalProps {
   children?: React.ReactNode;
   isShowing: boolean;
   loadingDataset: boolean;
-  tables:
-    | {
-        rows: {
-          key: string;
-          values: any[];
-        }[];
-        columns: any[];
-      }[]
-    | null;
+  tables?: Table[];
   toggle(): void;
+  type: "full" | "clause";
+  /** without extention */
+  filename: string;
 }
 
 const FullDatasetDownloadModal: React.FC<FullDatasetDownloadModalProps> = ({
@@ -39,6 +31,8 @@ const FullDatasetDownloadModal: React.FC<FullDatasetDownloadModalProps> = ({
   toggle,
   loadingDataset,
   tables,
+  type,
+  filename,
 }: FullDatasetDownloadModalProps) => {
   const [email, setEmail] = useState("");
   const [telegramNick, setTelegramNick] = useState("");
@@ -48,11 +42,12 @@ const FullDatasetDownloadModal: React.FC<FullDatasetDownloadModalProps> = ({
   const handleDownload = () => {
     if (loadingDataset || !tables) return false;
     sendClickEvent({
-      event: "full_dataset_download",
-      label: "Полный датасет",
+      event:
+        type === "full" ? "full_dataset_download" : "clause_dataset_download",
+      label: filename,
     });
     const csvContent = getCsv(tables, 0);
-    saveAs(csvContent, `dataset.csv`);
+    saveAs(csvContent, `${filename}.csv`);
     toggle();
   };
 

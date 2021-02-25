@@ -13,7 +13,7 @@ import axios from "axios";
 import metricsData from "content/metriсs.json";
 import Table from "src/components/Table";
 import FullDatasetSelect from "./FullDatasetSelect";
-import FullDatasetDownloadModal from "./FullDatasetDownloadModal";
+import FullDatasetDownloadModal from "src/components/FullDatasetDownloadModal";
 import Loading from "src/components/ui-kit/Loading";
 import { Helmet } from "react-helmet";
 
@@ -36,7 +36,7 @@ const createTableData = (
   dataset: object[] | null,
   metricsValue: OptionTypeBase
 ) => {
-  if (!dataset || !dataset.length || !metricsValue) return null;
+  if (!dataset || !dataset.length || !metricsValue) return;
   const parseMetrics = metricsValue.find(
     (m: OptionTypeBase) => m.value === "all-metrics"
   )
@@ -359,6 +359,8 @@ const FullDatasetPage: React.FC = () => {
       </Container>
       <FullDatasetDownloadModal
         isShowing={isShowing}
+        type="full"
+        filename={t("Полный датасет")}
         toggle={toggle}
         loadingDataset={loadingDataset}
         tables={tables}

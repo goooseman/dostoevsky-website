@@ -6,9 +6,10 @@ import Accordion, { AccordionNode } from "src/components/ui-kit/Accordion";
 import Checkbox from "src/components/ui-kit/Checkbox";
 import classes from "./ClauseFullPage.module.css";
 import cn from "clsx";
-import { getCsv } from "src/utils/csv";
-import { saveAs } from "file-saver";
 import { Helmet } from "react-helmet";
+import FullDatasetDownloadModal, {
+  Table,
+} from "src/components/FullDatasetDownloadModal";
 
 const accordionData = [
   {
@@ -380,8 +381,10 @@ interface ClauseFullPageState {
   selected: {
     [id: string]: boolean;
   };
+  isModalOpened: boolean;
   allSelected: boolean;
   splitByArticle: boolean;
+  tables?: Table[];
 }
 
 class ClauseFullPage extends PureComponent<
@@ -393,6 +396,7 @@ class ClauseFullPage extends PureComponent<
     this.state = {
       selected: {},
       allSelected: false,
+      isModalOpened: false,
       splitByArticle: false,
     };
   }
@@ -424,6 +428,19 @@ class ClauseFullPage extends PureComponent<
 
     this.setState({ splitByArticle: checked });
   }
+
+  private handleDownloadButtonClick = () => {
+    this.setState({
+      tables: [this.getTable()],
+    });
+    this.handleDownloadModalToggle();
+  };
+
+  private handleDownloadModalToggle = () => {
+    this.setState((s) => ({
+      isModalOpened: !s.isModalOpened,
+    }));
+  };
 
   private handleToggleCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, checked } = e.target;
@@ -471,22 +488,14 @@ class ClauseFullPage extends PureComponent<
     this.setState({ selected: newSelected });
   };
 
-  private handleGetCsv() {
-    const { data, year, clauseNumber, partsCount } = this.props;
+  private getTable(): Table {
+    const { data, year, partsCount } = this.props;
     const { selected, splitByArticle } = this.state;
 
-    const table: {
-      columns: { key: string; title: string }[];
-      rows: {
-        key: string | number;
-        values: { key: string; value: string | number }[];
-      }[];
-    } = {
+    const table: Table = {
       columns: [],
       rows: [
         {
-          key:
-            partsCount > 0 ? `${data.parts.edges[0].node.part}-${year}` : year,
           values: [],
         },
       ],
@@ -499,24 +508,20 @@ class ClauseFullPage extends PureComponent<
             if (selected[ac.id]) {
               table.columns.push({
                 title: `${a.title} / ${ac.title}`,
-                key: ac.id,
               });
               if (partsCount > 0 && splitByArticle) {
                 data.parts.edges.forEach((e: any, i: number) => {
                   if (table.rows.length - 1 < i) {
                     table.rows.push({
-                      key: `${e.node.part}-${year}`,
                       values: [],
                     });
                   }
                   table.rows[i].values.push({
-                    key: ac.id,
                     value: e.node.parameters[ac.id],
                   });
                 });
               } else {
                 table.rows[0].values.push({
-                  key: ac.id,
                   value: getValueFromEdges(ac.id, data),
                 });
               }
@@ -526,24 +531,20 @@ class ClauseFullPage extends PureComponent<
               if (selected[acc.id]) {
                 table.columns.push({
                   title: `${a.title} / ${ac.title} / ${acc.title}`,
-                  key: acc.id,
                 });
                 if (partsCount > 0 && splitByArticle) {
                   data.parts.edges.forEach((e: any, i: number) => {
                     if (table.rows.length - 1 < i) {
                       table.rows.push({
-                        key: `${e.node.part}-${year}`,
                         values: [],
                       });
                     }
                     table.rows[i].values.push({
-                      key: acc.id,
                       value: e.node.parameters[acc.id],
                     });
                   });
                 } else {
                   table.rows[0].values.push({
-                    key: acc.id,
                     value: getValueFromEdges(acc.id, data),
                   });
                 }
@@ -555,22 +556,23 @@ class ClauseFullPage extends PureComponent<
     });
 
     if (partsCount > 0 && splitByArticle) {
-      table.columns.unshift({ title: "Статья", key: "clause" });
+      table.columns.unshift({ title: "Статья" });
       data.parts.edges.forEach((e: any, i: number) => {
-        table.rows[i].values.unshift({ value: e.node.part, key: "clause" });
+        table.rows[i].values.unshift({ value: e.node.part });
       });
     }
-
-    const csvContent = getCsv([table], 0);
-    saveAs(
-      csvContent,
-      `Полная статистика по статье №${clauseNumber} за ${year}.csv`
-    );
+    return table;
   }
 
   render(): React.ReactNode {
     const { clauseNumber, year, partsCount, t } = this.props;
-    const { selected, allSelected, splitByArticle } = this.state;
+    const {
+      selected,
+      allSelected,
+      splitByArticle,
+      isModalOpened,
+      tables,
+    } = this.state;
 
     return (
       <ClausePageLayout
@@ -701,10 +703,24 @@ class ClauseFullPage extends PureComponent<
                 Object.values(selected).filter((v) => v === true).length === 0
               }
               className={cn(classes.clauseFullPageDownloadButton)}
-              onClick={() => this.handleGetCsv()}
+              onClick={this.handleDownloadButtonClick}
             />
           </div>
         </div>
+        <FullDatasetDownloadModal
+          type="clause"
+          filename={t(
+            "Полная статистика по статье №{{ clauseNumber }} за {{ year }}",
+            {
+              clauseNumber,
+              year,
+            }
+          )}
+          isShowing={isModalOpened}
+          toggle={this.handleDownloadModalToggle}
+          loadingDataset={false}
+          tables={tables}
+        />
       </ClausePageLayout>
     );
   }

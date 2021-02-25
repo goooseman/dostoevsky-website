@@ -4,13 +4,12 @@ const getCsvRow = (row: string[]) => {
   return row.join("\t") + "\n";
 };
 
-export const getCsv = (
-  tables: {
-    columns: { isHidden?: boolean; title: string }[];
-    rows: { values: { value: string | number }[] }[];
-  }[],
-  activeTableIndex: number
-): Blob => {
+export interface Table {
+  columns: { isHidden?: boolean; title: string }[];
+  rows: { values: { value: string | number }[] }[];
+}
+
+export const getCsv = (tables: Table[], activeTableIndex: number): Blob => {
   const table = tables[activeTableIndex];
   let result = "";
   const titleRow = getCsvRow(

@@ -824,6 +824,10 @@ msgstr "Select all options"
 msgid "Разбить по частям"
 msgstr "Divide by category"
 
+#: src/templates/ClauseFullPage/ClauseFullPage.tsx:
+msgid "Полная статистика по статье №{{ clauseNumber }} за {{ year }}"
+msgstr ""
+
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "Основной и дополнительный составы"
 msgstr ""
@@ -2985,6 +2989,7 @@ msgstr ""
 msgid "Поля выгрузки"
 msgstr ""
 
+#: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
