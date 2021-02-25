@@ -489,7 +489,7 @@ class ClauseFullPage extends PureComponent<
   };
 
   private getTable(): Table {
-    const { data, year, partsCount } = this.props;
+    const { data, partsCount } = this.props;
     const { selected, splitByArticle } = this.state;
 
     const table: Table = {
@@ -604,21 +604,17 @@ class ClauseFullPage extends PureComponent<
                 id="allSelected"
                 checked={allSelected}
                 onChange={(e) => this.handleToggleAllSelected(e)}
+                label={<T message="Выбрать все параметры" />}
               />
-              <Typography className={cn(classes.clauseFullPageElementTitle)}>
-                <T message="Выбрать все параметры" />
-              </Typography>
             </div>
             {partsCount > 0 ? (
               <div className={cn(classes.clauseFullPageTopElementWrapper)}>
                 <Checkbox
                   id="splitByArticle"
                   checked={splitByArticle}
-                  onChange={(e) => this.handleToggleSplitByArticle(e)}
+                  label={<T message="Разбить по частям" />}
+                  onChange={this.handleToggleSplitByArticle}
                 />
-                <Typography className={cn(classes.clauseFullPageElementTitle)}>
-                  <T message="Разбить по частям" />
-                </Typography>
               </div>
             ) : null}
             <Accordion>
@@ -635,14 +631,12 @@ class ClauseFullPage extends PureComponent<
                         id={a.id}
                         checked={selected[a.id]}
                         onChange={this.handleToggleCheckbox}
+                        label={
+                          <b>
+                            <T message={a.title} />
+                          </b>
+                        }
                       />
-                      <Typography
-                        className={cn(classes.clauseFullPageElementTitle)}
-                      >
-                        <b>
-                          <T message={a.title} />
-                        </b>
-                      </Typography>
                     </div>
                   }
                   variant="primary"
@@ -658,13 +652,9 @@ class ClauseFullPage extends PureComponent<
                             <Checkbox
                               id={ac.id}
                               checked={selected[ac.id]}
+                              label={<T message={ac.title} />}
                               onChange={this.handleToggleCheckbox}
                             />
-                            <Typography
-                              className={cn(classes.clauseFullPageElementTitle)}
-                            >
-                              <T message={ac.title} />
-                            </Typography>
                           </div>
                           {ac.children
                             ? ac.children.map((acc) => (
@@ -679,14 +669,8 @@ class ClauseFullPage extends PureComponent<
                                     id={acc.id}
                                     checked={selected[acc.id]}
                                     onChange={this.handleToggleCheckbox}
+                                    label={<T message={acc.title} />}
                                   />
-                                  <Typography
-                                    className={cn(
-                                      classes.clauseFullPageElementTitle
-                                    )}
-                                  >
-                                    <T message={acc.title} />
-                                  </Typography>
                                 </div>
                               ))
                             : null}
