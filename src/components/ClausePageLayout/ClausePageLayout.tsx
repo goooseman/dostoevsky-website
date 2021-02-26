@@ -113,12 +113,14 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
             </div>
             <div className={cn(classes.pageContainer)}>
               {isCatalogueOpened ? (
-                <div className={cn(classes.floatingCatalogueContainer)}>
-                  <ClausePageCatalogue
-                    onClose={onCatalogueSwitch}
-                    year={year || 2019}
-                    clauseId={clauseNumber}
-                  />
+                <div className={cn(classes.floatingCatalogueContainerOuter)}>
+                  <div className={cn(classes.floatingCatalogueContainer)}>
+                    <ClausePageCatalogue
+                      onClose={onCatalogueSwitch}
+                      year={year || 2019}
+                      clauseId={clauseNumber}
+                    />
+                  </div>
                 </div>
               ) : null}
               <div className={cn(classes.headerContainer)}>

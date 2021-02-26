@@ -174,8 +174,16 @@
   }
 }
 
-.floating-catalogue-container {
+.floating-catalogue-container-outer {
   position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.floating-catalogue-container {
+  position: sticky;
   z-index: var(--z-index-2);
   top: 0;
   right: 0;
