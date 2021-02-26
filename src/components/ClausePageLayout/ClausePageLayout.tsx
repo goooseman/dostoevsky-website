@@ -59,7 +59,10 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
               <div className={cn(classes.sticky)}>
                 <button
                   onClick={onCatalogueSwitch}
-                  className={cn({ [classes.active]: isCatalogueOpened })}
+                  className={cn(
+                    { [classes.active]: isCatalogueOpened },
+                    classes.catalogueButton
+                  )}
                 >
                   <Typography
                     size="small"
