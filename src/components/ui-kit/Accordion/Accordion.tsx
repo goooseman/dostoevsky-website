@@ -24,11 +24,13 @@ class AccordionNodePure extends PureComponent<AccordionNodeProps> {
       variant,
       onClick,
       className,
+      slug,
     } = this.props;
     const id = uuidv4();
     return (
       <>
         <dt
+          id={slug}
           className={cn(
             classes.title,
             {

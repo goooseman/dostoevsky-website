@@ -27,20 +27,19 @@ class AccordionContainer extends PureComponent<
     super(props);
     let activeNode = props.isOpened ? 0 : -1;
     if (window.location.hash && props.isOpened) {
-      activeNode =
-        Children.toArray(props.children).findIndex((child) => {
-          if (!isValidElement(child)) {
-            return false;
-          }
-          if (child.props.slug === window.location.hash.replace("#", "")) {
-            return true;
-          }
-          return false;
-        }) || 0;
+      activeNode = this.getActiveNodeFromHash();
     }
     this.state = {
       activeNode,
     };
+  }
+
+  public componentDidMount(): void {
+    window.addEventListener("hashchange", this.handleHashChangeEvent);
+  }
+
+  public componentWillUnmount(): void {
+    window.removeEventListener("hashchange", this.handleHashChangeEvent);
   }
 
   render(): React.ReactNode {
@@ -62,6 +61,30 @@ class AccordionContainer extends PureComponent<
       </Accordion>
     );
   }
+
+  private getActiveNodeFromHash = () => {
+    const activeNodeIndex = Children.toArray(this.props.children).findIndex(
+      (child) => {
+        if (!isValidElement(child)) {
+          return false;
+        }
+        if (child.props.slug === window.location.hash.replace("#", "")) {
+          return true;
+        }
+        return false;
+      }
+    );
+    return activeNodeIndex || 0;
+  };
+
+  private handleHashChangeEvent = () => {
+    if (!window.location.hash) {
+      return;
+    }
+    this.setState({
+      activeNode: this.getActiveNodeFromHash(),
+    });
+  };
 
   private handleClick = (index: number, slug?: string) => () => {
     if (slug) {
