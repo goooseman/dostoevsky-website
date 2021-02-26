@@ -21,6 +21,7 @@ const getFaqData = (t: WithLocale["t"]) => [
     data: [
       {
         title: "Амнистия и помилование",
+        slug: "glossary-amnesty",
         content: (
           <>
             <Typography>
@@ -105,6 +106,7 @@ const getFaqData = (t: WithLocale["t"]) => [
       },
       {
         title: "Действие закона во времени",
+        slug: "glossary-in-time",
         content: (
           <>
             <Typography>
@@ -138,6 +140,7 @@ const getFaqData = (t: WithLocale["t"]) => [
       },
       {
         title: "Дополнительное наказание",
+        slug: "glossary-additional",
         content: (
           <>
             <Typography>
@@ -193,6 +196,7 @@ const getFaqData = (t: WithLocale["t"]) => [
       },
       {
         title: "Неоконченное преступление",
+        slug: "glossary-unfinished",
         content: (
           <>
             <Typography>
@@ -224,6 +228,7 @@ const getFaqData = (t: WithLocale["t"]) => [
       },
       {
         title: "Обстоятельства, исключающие преступность",
+        slug: "glossary-exclude-crime",
         content: (
           <>
             <Typography>
@@ -332,6 +337,7 @@ const getFaqData = (t: WithLocale["t"]) => [
       {
         title:
           "Освобождение от наказания и прекращение уголовного преследования",
+        slug: "glossary-exempt",
         content: (
           <>
             <Typography>
@@ -413,6 +419,7 @@ const getFaqData = (t: WithLocale["t"]) => [
       },
       {
         title: "Основной и дополнительный состав преступления",
+        slug: "glossary-main-and-additional",
         content: (
           <>
             <Typography>
@@ -441,6 +448,7 @@ const getFaqData = (t: WithLocale["t"]) => [
       {
         title:
           "Принудительное лечение (Принудительные меры медицинского характера)",
+        slug: "glossary-compulsory-treatment",
         content: (
           <>
             <Typography>
@@ -486,6 +494,7 @@ const getFaqData = (t: WithLocale["t"]) => [
       },
       {
         title: "Обязательные, принудительные и исправительные работы",
+        slug: "glossary-obligatory",
         content: (
           <>
             <Typography>
@@ -616,6 +625,7 @@ const getFaqData = (t: WithLocale["t"]) => [
       {
         title:
           "Реабилитирующие и нереабилитирующие основания для прекращения дела",
+        slug: "glossary-rehabilitation",
         content: (
           <>
             <Typography>
@@ -726,6 +736,7 @@ const getFaqData = (t: WithLocale["t"]) => [
       },
       {
         title: "Совокупность преступлений",
+        slug: "glossary-aggregate",
         content: (
           <>
             <Typography>
@@ -798,6 +809,7 @@ const getFaqData = (t: WithLocale["t"]) => [
       },
       {
         title: "Судебный штраф",
+        slug: "glossary-fine",
         content: (
           <>
             <Typography>
@@ -816,6 +828,7 @@ const getFaqData = (t: WithLocale["t"]) => [
       },
       {
         title: "Штраф",
+        slug: "glossary-fine",
         content: (
           <>
             <Typography>
@@ -910,7 +923,12 @@ const FaqPage: React.FC = () => {
               {currentFaqItem.accordion ? (
                 <Accordion>
                   {currentFaqItem.data.map((f, i) => (
-                    <AccordionNode key={i} variant="secondary" title={f.title}>
+                    <AccordionNode
+                      key={i}
+                      variant="secondary"
+                      slug={f.slug}
+                      title={f.title}
+                    >
                       {f.content}
                     </AccordionNode>
                   ))}

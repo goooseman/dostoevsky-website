@@ -9,6 +9,7 @@ interface AccordionNodeProps extends WithLocale {
   title: React.ReactNode;
   children: React.ReactNode;
   isOpened?: boolean;
+  slug?: string;
   variant: "primary" | "secondary" | "horizontal";
   onClick?: () => void;
   className?: string;
