@@ -26,7 +26,11 @@ class AccordionContainer extends PureComponent<
   public constructor(props: AccordionContainerProps) {
     super(props);
     let activeNode = props.isOpened ? 0 : -1;
-    if (window.location.hash && props.isOpened) {
+    if (
+      typeof window !== `undefined` &&
+      window.location.hash &&
+      props.isOpened
+    ) {
       activeNode = this.getActiveNodeFromHash();
     }
     this.state = {
@@ -35,10 +39,16 @@ class AccordionContainer extends PureComponent<
   }
 
   public componentDidMount(): void {
+    if (typeof window === `undefined`) {
+      return;
+    }
     window.addEventListener("hashchange", this.handleHashChangeEvent);
   }
 
   public componentWillUnmount(): void {
+    if (typeof window === `undefined`) {
+      return;
+    }
     window.removeEventListener("hashchange", this.handleHashChangeEvent);
   }
 
