@@ -98,12 +98,15 @@ class Table extends PureComponent<TableProps> {
           </Menu>
         ) : null}
 
-        <div className={cn(classes.tableContainer)}>
+        <div
+          className={cn(classes.tableContainer, {
+            [classes.isScrollable]: isScrollable,
+          })}
+        >
           <table
             className={cn(classes.table, {
               [classes.isEqualWidth]: isEqualWidth,
               [classes.isColored]: isColored,
-              [classes.isScrollable]: isScrollable,
             })}
           >
             <thead>

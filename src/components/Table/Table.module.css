@@ -1,20 +1,10 @@
 .table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
 }
 
-.table.is-scrollable thead,
-.table.is-scrollable tbody tr {
-  display: table;
-  min-width: 100%;
-  table-layout: fixed;
-}
-
-.table.is-scrollable tbody {
-  display: block;
-  min-width: 100%;
+.table-container.is-scrollable {
   max-height: calc(100vh - 200px);
-  overflow: scroll;
 }
 
 .container {
@@ -39,12 +29,18 @@
 .table tr th,
 .table tr td {
   width: 110px;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--color-border-gray);
   text-align: center;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.is-scrollable .table tr th {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-main-background);
 }
 
 .table.is-equal-width tr th,
