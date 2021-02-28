@@ -35,6 +35,7 @@ interface TableProps {
   activeTableIndex: number;
   downloadFilename?: string;
   iframePath?: string;
+  isScrollable?: boolean;
 }
 
 class Table extends PureComponent<TableProps> {
@@ -51,6 +52,7 @@ class Table extends PureComponent<TableProps> {
       isEqualWidth,
       isColored,
       hideEmbed,
+      isScrollable,
     } = this.props;
 
     const { rows, columns } = tables[activeTableIndex];
@@ -101,6 +103,7 @@ class Table extends PureComponent<TableProps> {
             className={cn(classes.table, {
               [classes.isEqualWidth]: isEqualWidth,
               [classes.isColored]: isColored,
+              [classes.isScrollable]: isScrollable,
             })}
           >
             <thead>

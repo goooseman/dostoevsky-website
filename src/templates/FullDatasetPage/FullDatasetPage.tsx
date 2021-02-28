@@ -353,6 +353,7 @@ const FullDatasetPage: React.FC = () => {
               hideEmbed
               isNotPaddedLeft
               isEqualWidth
+              isScrollable
             />
           ) : null}
         </SinglePageLayout>

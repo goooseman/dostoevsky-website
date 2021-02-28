@@ -3,6 +3,20 @@
   border-collapse: collapse;
 }
 
+.table.is-scrollable thead,
+.table.is-scrollable tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.table.is-scrollable tbody {
+  display: block;
+  width: 100%;
+  max-height: calc(100vh - 200px);
+  overflow: scroll;
+}
+
 .container {
   padding-left: 70px;
 }
