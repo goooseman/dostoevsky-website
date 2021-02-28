@@ -10,7 +10,7 @@ interface ClausePageCatalogueContainerProps {
 }
 
 interface ClausePageCatalogueContainerState {
-  activePartId?: number;
+  activeChapterId?: number;
   activeSectionId?: number;
   activeClauseId?: number;
 }
@@ -23,17 +23,17 @@ class ClausePageCatalogueContainer extends PureComponent<
     super(props);
 
     const clauseId = props.clauseId;
-    let activePartId, activeSectionId, activeClauseId: number | undefined;
+    let activeChapterId, activeSectionId, activeClauseId: number | undefined;
     if (clauseId !== undefined) {
       const { part, section } = getClauseById(clauseId);
-      activePartId = part?.id;
+      activeChapterId = part?.id;
       activeSectionId = section?.id;
       if (section) {
         activeClauseId = clauseId;
       }
     }
     this.state = {
-      activePartId,
+      activeChapterId,
       activeSectionId,
       activeClauseId,
     };
@@ -41,10 +41,10 @@ class ClausePageCatalogueContainer extends PureComponent<
 
   render(): React.ReactNode {
     const { year, onClose } = this.props;
-    const { activePartId, activeSectionId, activeClauseId } = this.state;
+    const { activeChapterId, activeSectionId, activeClauseId } = this.state;
 
-    const part = activePartId
-      ? ukRf.find((p) => p.id === activePartId)
+    const part = activeChapterId
+      ? ukRf.find((p) => p.id === activeChapterId)
       : undefined;
     const section =
       part && activeSectionId
@@ -56,7 +56,7 @@ class ClausePageCatalogueContainer extends PureComponent<
         parts={ukRf}
         sections={part?.children}
         clauses={section?.children}
-        activePartId={activePartId}
+        activeChapterId={activeChapterId}
         activeSectionId={activeSectionId}
         activeClauseId={activeClauseId}
         onPartClick={this.handlePartClick}
@@ -69,7 +69,7 @@ class ClausePageCatalogueContainer extends PureComponent<
 
   private handlePartClick = (id: number) => {
     this.setState({
-      activePartId: id,
+      activeChapterId: id,
     });
   };
 

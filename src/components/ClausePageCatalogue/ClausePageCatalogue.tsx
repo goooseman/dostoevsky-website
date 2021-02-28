@@ -56,7 +56,7 @@ interface ClausePageCatalogueProps extends WithLocale {
     text: I18nText;
     id: number;
   }[];
-  activePartId?: number;
+  activeChapterId?: number;
   onPartClick: (partId: number) => void;
   sections?: {
     text: I18nText;
@@ -81,7 +81,7 @@ class ClausePageCatalogue extends PureComponent<ClausePageCatalogueProps> {
       sections,
       t,
       locale,
-      activePartId,
+      activeChapterId,
       activeSectionId,
       activeClauseId,
       year,
@@ -105,7 +105,7 @@ class ClausePageCatalogue extends PureComponent<ClausePageCatalogueProps> {
           {parts.map((p) => (
             <CatalogueRow
               id={p.id}
-              activeId={activePartId}
+              activeId={activeChapterId}
               text={p.text}
               key={p.id}
               onClick={onPartClick}
