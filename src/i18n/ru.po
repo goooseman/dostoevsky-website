@@ -60,19 +60,6 @@ msgid "Стрелка вправо"
 msgstr "Стрелка вправо"
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
-#: src/components/Header/Header.tsx:
-msgid "Каталог статей УК РФ"
-msgstr "Каталог статей УК РФ"
-
-#: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
-msgid ""
-"Полный перечень всех статей УК РФ, выберите статью для получения полной "
-"информации."
-msgstr ""
-"Полный перечень всех статей УК РФ, выберите статью для получения полной "
-"информации."
-
-#: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
 #: src/components/ui-kit/Modal/Modal.tsx:
 #: src/components/ui-kit/Modal/Modal.tsx:
@@ -240,6 +227,11 @@ msgstr "Иконка \"Меню\""
 #: src/components/Header/Header.tsx:
 msgid "Иконка \"Закрыть\""
 msgstr "Иконка \"Закрыть\""
+
+#: src/components/Header/Header.tsx:
+#: src/templates/ClausesPage/ClausesPage.tsx:
+msgid "Каталог статей УК РФ"
+msgstr "Каталог статей УК РФ"
 
 #: src/components/NoData/NoData.tsx:
 msgid "Данных нет"
@@ -1400,8 +1392,8 @@ msgid "Чем закончились дела по статье "
 msgstr "Чем закончились дела по статье "
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
-msgid "прекращено дел в отношении человек"
-msgstr "прекращено дел в отношении человек"
+msgid "прекращено дел"
+msgstr "прекращено дел"
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
 msgid "оправданы"
@@ -1586,6 +1578,14 @@ msgstr "По иным основаниям (по числу лиц) "
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "По иным основаниям (по количеству составов преступлений)"
 msgstr "По иным основаниям (по количеству составов преступлений)"
+
+#: src/templates/ClausesPage/ClausesPage.tsx:
+msgid ""
+"Полный перечень всех статей УК РФ, выберите статью для получения полной "
+"информации."
+msgstr ""
+"Полный перечень всех статей УК РФ, выберите статью для получения полной "
+"информации."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid ""
