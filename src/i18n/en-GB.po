@@ -5,7 +5,7 @@ msgstr ""
 "POT-Creation-Date: Sun Jan 10 2021 00:39:02 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"PO-Revision-Date: 2021-02-25 21:56\n"
+"PO-Revision-Date: 2021-02-28 07:18\n"
 "Language-Team: English, United Kingdom\n"
 "MIME-Version: 1.0\n"
 "X-Generator: Poedit 2.4.2\n"
@@ -62,15 +62,6 @@ msgstr ""
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
 msgid "Стрелка вправо"
 msgstr "Right arrow"
-
-#: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
-#: src/components/Header/Header.tsx:
-msgid "Каталог статей УК РФ"
-msgstr "Articles of Criminal Code"
-
-#: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
-msgid "Полный перечень всех статей УК РФ, выберите статью для получения полной информации."
-msgstr ""
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
@@ -232,6 +223,11 @@ msgstr "Menu icon"
 #: src/components/Header/Header.tsx:
 msgid "Иконка \"Закрыть\""
 msgstr "Close icon"
+
+#: src/components/Header/Header.tsx:
+#: src/templates/ClausesPage/ClausesPage.tsx:
+msgid "Каталог статей УК РФ"
+msgstr "Articles of Criminal Code"
 
 #: src/components/NoData/NoData.tsx:
 msgid "Данных нет"
@@ -1136,7 +1132,7 @@ msgid "Чем закончились дела по статье "
 msgstr ""
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
-msgid "прекращено дел в отношении человек"
+msgid "прекращено дел"
 msgstr ""
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
@@ -1286,6 +1282,10 @@ msgstr "On other grounds (by the number of persons) "
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "По иным основаниям (по количеству составов преступлений)"
 msgstr "On other grounds (by the number of crimes)"
+
+#: src/templates/ClausesPage/ClausesPage.tsx:
+msgid "Полный перечень всех статей УК РФ, выберите статью для получения полной информации."
+msgstr ""
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "И амнистия, и помилование — это полное или частичное освобождение от уголовной ответственности, что подразумевает отмену или ослабление наказания и снятие судимости. Однако между ними есть несколько отличий."
