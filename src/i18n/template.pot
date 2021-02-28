@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Thu Feb 25 2021 19:00:30 GMT+0200 (Israel Standard Time)\n"
+"POT-Creation-Date: Sun Feb 28 2021 08:48:50 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -1259,7 +1259,7 @@ msgid "Чем закончились дела по статье "
 msgstr ""
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
-msgid "прекращено дел в отношении человек"
+msgid "прекращено дел"
 msgstr ""
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:

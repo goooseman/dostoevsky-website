@@ -33,7 +33,7 @@ const MainByResult: React.SFC<MainByResultProps> = ({
 }: MainByResultProps) => {
   const { t, locale } = useLocale();
   const labels = [
-    t("прекращено дел в отношении человек"),
+    t("прекращено дел"),
     t("оправданы"),
     t("осуждены"),
     t("принудительное лечение"),

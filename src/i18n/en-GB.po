@@ -1294,7 +1294,7 @@ msgid "Чем закончились дела по статье "
 msgstr ""
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
-msgid "прекращено дел в отношении человек"
+msgid "прекращено дел"
 msgstr ""
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
