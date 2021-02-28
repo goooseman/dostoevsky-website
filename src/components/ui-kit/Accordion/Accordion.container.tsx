@@ -73,18 +73,19 @@ class AccordionContainer extends PureComponent<
   }
 
   private getActiveNodeFromHash = () => {
+    const activeNode = this.state ? this.state.activeNode : 0;
     const activeNodeIndex = Children.toArray(this.props.children).findIndex(
       (child) => {
         if (!isValidElement(child)) {
           return false;
         }
-        if (child.props.slug === window.location.hash.replace("#", "")) {
+        if (window.location.hash.replace("#", "").includes(child.props.slug)) {
           return true;
         }
         return false;
       }
     );
-    return activeNodeIndex || 0;
+    return activeNodeIndex || activeNode;
   };
 
   private handleHashChangeEvent = () => {

@@ -46,11 +46,17 @@ class ClausesPage extends PureComponent<ClausesPageProps> {
               <AccordionNode
                 key={part.id}
                 title={part.text.ru}
+                slug={`chapter-${part.id}`}
                 variant="primary"
               >
-                {part.children.map((section) => (
-                  <Accordion key={section.id}>
-                    <AccordionNode title={section.text.ru} variant="secondary">
+                <Accordion>
+                  {part.children.map((section) => (
+                    <AccordionNode
+                      key={section.id}
+                      slug={`chapter-${part.id}-section-${section.id}`}
+                      title={section.text.ru}
+                      variant="secondary"
+                    >
                       {section.children.map((chapter) => (
                         <Typography key={chapter.id}>
                           <OutboundLink
@@ -67,8 +73,8 @@ class ClausesPage extends PureComponent<ClausesPageProps> {
                         </Typography>
                       ))}
                     </AccordionNode>
-                  </Accordion>
-                ))}
+                  ))}
+                </Accordion>
               </AccordionNode>
             ))}
           </Accordion>
