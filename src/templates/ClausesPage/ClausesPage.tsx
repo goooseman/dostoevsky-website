@@ -8,6 +8,8 @@ import { getClauseLink } from "src/config/routes";
 import type { I18nText } from "src/types";
 import { withLocale, WithLocale } from "react-targem";
 import { OutboundLink } from "gatsby-plugin-google-gtag";
+import { Helmet } from "react-helmet";
+
 interface ClausesPageProps extends WithLocale {
   parts: {
     text: I18nText;
@@ -26,9 +28,18 @@ interface ClausesPageProps extends WithLocale {
 
 class ClausesPage extends PureComponent<ClausesPageProps> {
   render(): React.ReactNode {
-    const { parts, actualYear, locale } = this.props;
+    const { parts, actualYear, locale, t } = this.props;
     return (
       <main className={cn(classes.container)}>
+        <Helmet defer={false}>
+          <title>{t("Каталог статей УК РФ")}</title>
+          <meta
+            name="description"
+            content={t(
+              "Полный перечень всех статей УК РФ, выберите статью для получения полной информации."
+            )}
+          />
+        </Helmet>
         <Container>
           <Accordion>
             {parts.map((part) => (

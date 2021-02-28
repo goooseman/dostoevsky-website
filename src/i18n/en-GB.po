@@ -64,17 +64,6 @@ msgid "Стрелка вправо"
 msgstr "Right arrow"
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
-#: src/components/Header/Header.tsx:
-msgid "Каталог статей УК РФ"
-msgstr "Articles of Criminal Code"
-
-#: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
-msgid ""
-"Полный перечень всех статей УК РФ, выберите статью для получения полной "
-"информации."
-msgstr ""
-
-#: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
 #: src/components/ui-kit/Modal/Modal.tsx:
 #: src/components/ui-kit/Modal/Modal.tsx:
@@ -238,6 +227,11 @@ msgstr "Menu icon"
 #: src/components/Header/Header.tsx:
 msgid "Иконка \"Закрыть\""
 msgstr "Close icon"
+
+#: src/components/Header/Header.tsx:
+#: src/templates/ClausesPage/ClausesPage.tsx:
+msgid "Каталог статей УК РФ"
+msgstr "Articles of Criminal Code"
 
 #: src/components/NoData/NoData.tsx:
 msgid "Данных нет"
@@ -1465,6 +1459,12 @@ msgstr "On other grounds (by the number of persons) "
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "По иным основаниям (по количеству составов преступлений)"
 msgstr "On other grounds (by the number of crimes)"
+
+#: src/templates/ClausesPage/ClausesPage.tsx:
+msgid ""
+"Полный перечень всех статей УК РФ, выберите статью для получения полной "
+"информации."
+msgstr ""
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid ""
