@@ -158,16 +158,15 @@ const FullDatasetPage: React.FC = () => {
         );
 
         const dataResult = await axios
-          .get(base + "/aggregated_data/", {
-            params: {
+          .post(
+            base + "/aggregated_data/",
+            {
               year: (allYearsSelected
                 ? yearsOptions.filter(
                     (y: OptionTypeBase) => y.value !== "all-years"
                   )
                 : yearsValue
-              )
-                .map((m: OptionTypeBase) => m.value)
-                .join(","),
+              ).map((m: OptionTypeBase) => parseInt(m.value)),
               param: (allMetricsSelected
                 ? METRICS_OPTIONS.filter(
                     (m: OptionTypeBase) => m.value !== "all-metrics"
@@ -175,22 +174,21 @@ const FullDatasetPage: React.FC = () => {
                 : metricsValue
               )
                 .map((m: OptionTypeBase) => m.value)
-                .concat("name")
-                .join(","),
+                .filter((m: string) => m !== "name"),
               part: (allPartsSelected
                 ? partsOptions.filter(
                     (p: OptionTypeBase) => p.value !== "all-parts"
                   )
                 : partsValue
-              )
-                .map((p: OptionTypeBase) => p.value)
-                .join(","),
+              ).map((p: OptionTypeBase) => p.value),
               breakdowns: breakdownValue
-                ? breakdownValue.map((b: OptionTypeBase) => b.value).join(",")
-                : undefined,
+                ? breakdownValue.map((b: OptionTypeBase) => b.value)
+                : [],
             },
-            ...AUTH_AXIOS_OPTIONS,
-          })
+            {
+              ...AUTH_AXIOS_OPTIONS,
+            }
+          )
           .catch(() => {
             setDataset(null);
             setShowError(true);
