@@ -13,24 +13,11 @@ interface Props {
 
 const Meta: React.FC<Props> = ({ site, title }: Props) => {
   const siteTitle = site?.title || "";
-  const siteUrl = site?.siteUrl || "";
-  const siteDescription = site?.description || "";
   const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   return (
     <Helmet
       title={pageTitle}
-      meta={[
-        { property: "og:title", content: pageTitle },
-        { property: "og:type", content: "website" },
-        {
-          property: "og:description",
-          content: siteDescription,
-        },
-        {
-          property: "og:url",
-          content: `${siteUrl}`,
-        },
-      ]}
+      meta={[{ property: "og:type", content: "website" }]}
     />
   );
 };
