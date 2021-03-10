@@ -12,9 +12,9 @@
   justify-content: flex-start;
   align-items: center;
   margin: 0 1.875rem 1.875rem;
-  background-size: 50% 100%;
+  background-size: 400px;
   background-repeat: no-repeat;
-  background-position: calc(100% + 65px) 100%;
+  background-position: right bottom;
   position: relative;
 }
 
@@ -25,7 +25,11 @@
   justify-content: space-between;
   width: 46%;
   min-height: 400px;
-  padding: 60px 0 25px 40px;
+  padding: 38px 0 25px 40px;
+}
+
+.more-item a h2 {
+  margin-top: 20px;
 }
 
 @media all and (max-width: 680px) {
@@ -69,7 +73,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: auto;
-  padding: 1rem 0;
+  padding: 1rem 0 0;
   border-top: 3px solid var(--color-secondary);
 }
 
