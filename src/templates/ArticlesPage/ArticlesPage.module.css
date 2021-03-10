@@ -59,6 +59,8 @@
   left: -1px;
   padding: 0.5rem;
   background: 3px solid var(--color-secondary);
+  text-align: center;
+  min-width: 66px;
 }
 
 .more-item-blog .more-item-type {
