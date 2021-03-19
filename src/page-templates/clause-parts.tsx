@@ -46,7 +46,7 @@ class ClauseParts extends PureComponent<ClausePartsProps> {
             parameters.coerciveMeasures,
         };
       })
-      .reverse();
+      .sort((a, b) => a.part.localeCompare(b.part));
 
     return (
       <Layout
