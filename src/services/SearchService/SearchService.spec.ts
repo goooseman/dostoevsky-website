@@ -105,7 +105,7 @@ describe("getAutocompleteItems", () => {
     expect(results).toEqual([
       {
         text: "Chapter Foo",
-        link: "/clauses?chapterId=7",
+        link: "/clauses#chapter-7",
       },
     ]);
   });
@@ -129,7 +129,7 @@ describe("getAutocompleteItems", () => {
     expect(results).toEqual([
       {
         text: "Section Bar",
-        link: "/clauses?chapterId=7&sectionId=2",
+        link: "/clauses#chapter-7-section-2",
       },
     ]);
   });
