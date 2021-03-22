@@ -1,6 +1,6 @@
 ---
 slug: "/articles/element-of-a-crime"
-date: "17 ноября"
+date: "17 ноября 2020"
 title: "Что такое основной и дополнительный составы"
 author: "Денис Шедов"
 tag: "Блог"
