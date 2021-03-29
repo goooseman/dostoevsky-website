@@ -1,17 +1,17 @@
-import React, { PureComponent } from "react";
+import React, { useRef } from "react";
 import classes from "./ClausePageCatalogue.module.css";
 import cn from "clsx";
-import { withLocale, WithLocale } from "react-targem";
+import { useLocale } from "react-targem";
 import { getClauseLink } from "src/config/routes";
 import Typography from "src/components/ui-kit/Typography";
 import type { I18nText } from "src/types";
+import useBodyOverflowLock from "src/hooks/useBodyOverflowLock";
 
 interface CatalogueRowProps {
   id: number;
   activeId?: number;
   onClick?: (id: number) => void;
   text: I18nText;
-  t: WithLocale["t"];
   href?: string;
   isClause?: boolean;
 }
@@ -22,9 +22,9 @@ const CatalogueRow: React.FC<CatalogueRowProps> = ({
   onClick,
   href,
   text,
-  t,
   isClause,
 }: CatalogueRowProps) => {
+  const { t } = useLocale();
   const handleClick = () => (onClick ? onClick(id) : undefined);
 
   return (
@@ -50,7 +50,7 @@ const CatalogueRow: React.FC<CatalogueRowProps> = ({
   );
 };
 
-interface ClausePageCatalogueProps extends WithLocale {
+interface ClausePageCatalogueProps {
   parts: {
     text: I18nText;
     id: number;
@@ -72,81 +72,78 @@ interface ClausePageCatalogueProps extends WithLocale {
   onClose: () => void;
 }
 
-class ClausePageCatalogue extends PureComponent<ClausePageCatalogueProps> {
-  render(): React.ReactNode {
-    const {
-      clauses,
-      parts,
-      sections,
-      t,
-      locale,
-      activeChapterId,
-      activeSectionId,
-      activeClauseId,
-      year,
-      onClose,
-      onPartClick,
-      onSectionClick,
-    } = this.props;
+const ClausePageCatalogue: React.FC<ClausePageCatalogueProps> = ({
+  clauses,
+  parts,
+  sections,
+  activeChapterId,
+  activeSectionId,
+  activeClauseId,
+  year,
+  onClose,
+  onPartClick,
+  onSectionClick,
+}: ClausePageCatalogueProps) => {
+  const { locale, t } = useLocale();
+  useBodyOverflowLock(true);
 
-    return (
-      <div className={cn(classes.container)}>
-        <div className={cn(classes.column)}>
-          {parts.map((p) => (
-            <CatalogueRow
-              id={p.id}
-              activeId={activeChapterId}
-              text={p.text}
-              key={p.id}
-              onClick={onPartClick}
-              t={t}
-            />
-          ))}
-        </div>
-        <div className={cn(classes.column)}>
-          {sections
-            ? sections.map((s) => (
-                <CatalogueRow
-                  id={s.id}
-                  activeId={activeSectionId}
-                  text={s.text}
-                  key={s.id}
-                  t={t}
-                  onClick={onSectionClick}
-                />
-              ))
-            : null}
-        </div>
-        <div className={cn(classes.column)}>
-          {clauses
-            ? clauses.map((c) => (
-                <CatalogueRow
-                  id={c.id}
-                  activeId={activeClauseId}
-                  text={c.text}
-                  href={getClauseLink(
-                    locale,
-                    c.id.toString(),
-                    year.toString(),
-                    "main"
-                  )}
-                  key={c.id}
-                  t={t}
-                  isClause
-                />
-              ))
-            : null}
-        </div>
-        <button
-          onClick={onClose}
-          className={cn(classes.closeButton)}
-          aria-label={t("Закрыть")}
-        >
-          <img src={require("./assets/close.svg")} alt={t("Закрыть")} />
-        </button>
+  return (
+    <div className={cn(classes.container)}>
+      <div className={cn(classes.column)}>
+        {parts.map((p) => (
+          <CatalogueRow
+            id={p.id}
+            activeId={activeChapterId}
+            text={p.text}
+            key={p.id}
+            onClick={onPartClick}
+          />
+        ))}
       </div>
-    );
-  }
-}
+      <div className={cn(classes.column)}>
+        {sections
+          ? sections.map((s) => (
+              <CatalogueRow
+                id={s.id}
+                activeId={activeSectionId}
+                text={s.text}
+                key={s.id}
+                onClick={onSectionClick}
+              />
+            ))
+          : null}
+      </div>
+      <div
+        className={cn(classes.column)}
+        key={`${activeChapterId}-${activeSectionId}`}
+      >
+        {clauses
+          ? clauses.map((c) => (
+              <CatalogueRow
+                id={c.id}
+                activeId={activeClauseId}
+                text={c.text}
+                href={getClauseLink(
+                  locale,
+                  c.id.toString(),
+                  year.toString(),
+                  "main"
+                )}
+                key={c.id}
+                isClause
+              />
+            ))
+          : null}
+      </div>
+      <button
+        onClick={onClose}
+        className={cn(classes.closeButton)}
+        aria-label={t("Закрыть")}
+      >
+        <img src={require("./assets/close.svg")} alt={t("Закрыть")} />
+      </button>
+    </div>
+  );
+};
 
-export default withLocale(ClausePageCatalogue);
+export default ClausePageCatalogue;
