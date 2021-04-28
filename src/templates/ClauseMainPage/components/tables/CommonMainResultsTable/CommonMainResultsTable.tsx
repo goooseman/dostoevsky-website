@@ -1,6 +1,6 @@
 import React from "react";
 import Table from "src/components/Table";
-import { useLocale, T } from "react-targem";
+import { useLocale } from "react-targem";
 import { getClauseLink } from "src/config/routes";
 
 interface CommonMainResultsTableProps {
@@ -11,7 +11,7 @@ interface CommonMainResultsTableProps {
   totalAcquittal: number; // Оправдано
   totalDismissal: number; // Прекращено
 
-  addTotalPersons: number; // Доп. квалификация: осуждено по числу лиц
+  addTotalPersons: string; // Доп. квалификация: осуждено по числу лиц
   addAcquittalPersons: number; // Доп. квалификация: оправдано по числу лиц
   addDismissalPersons: number; // Доп. квалификация: прекращено по числу лиц
 }

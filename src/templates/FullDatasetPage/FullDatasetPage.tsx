@@ -55,7 +55,7 @@ const createTableData = (
           { key: "name", value: r.name },
           ...parseMetrics.map((m: { key: any }) => ({
             key: m.key,
-            value: r[m.key] || 0,
+            value: r[m.key] || "Нет данных",
           })),
         ],
       };

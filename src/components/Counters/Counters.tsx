@@ -18,7 +18,7 @@ const Counters: React.FC<CountersProps> = (props: CountersProps) => {
 };
 
 interface CounterProps {
-  counter: number;
+  counter: number | string;
   label: React.ReactNode;
   helpText?: string;
   withPercent?: boolean;

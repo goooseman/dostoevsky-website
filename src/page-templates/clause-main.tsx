@@ -87,6 +87,12 @@ class ClauseMain extends PureComponent<ClauseMainProps> {
       };
     });
 
+    const addTotalPersons: number[] = [];
+
+    for (const node of data.clauses.edges) {
+      addTotalPersons.push(node.node.parameters?.addTotalPersons || 0);
+    }
+
     const props = accumulatedClauses[0];
 
     return (
@@ -102,6 +108,7 @@ class ClauseMain extends PureComponent<ClauseMainProps> {
         <Meta site={data.site?.meta} />
         <ClauseMainPage
           {...props}
+          addTotalPersons={addTotalPersons}
           view={pageContext.view}
           year={parseInt(pageContext.year)}
           clauseNumber={pageContext.clauseId}

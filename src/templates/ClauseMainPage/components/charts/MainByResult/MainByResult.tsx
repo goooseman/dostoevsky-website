@@ -13,7 +13,7 @@ interface MainByResultProps {
   totalDismissal: number; // Прекращено
   coerciveMeasures: number; // Принудительные меры к невменяемым
 
-  addTotalPersons: number; // Доп. квалификация: осуждено по числу лиц
+  addTotalPersons: string; // Доп. квалификация: осуждено по числу лиц
   addTotalOffences: number; // Доп. квалификация: осуждено по количеству составов преступлений
   addAcquittalPersons: number; // Доп. квалификация: оправдано по числу лиц
   addAcquittalOffences: number; // Доп. квалификация: оправдано по количеству составов преступлений

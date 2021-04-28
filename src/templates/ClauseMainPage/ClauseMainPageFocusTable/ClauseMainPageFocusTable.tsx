@@ -11,7 +11,7 @@ interface ClauseMainPageFocusTableProps {
   totalAcquittal: number; // Оправдано
   coerciveMeasures: number; // Принудительные меры к невменяемым
   unfinishedOffence: number; // Преступление не является оконченным (приготовление, покушение)
-  addTotalPersons: number; // Доп. квалификация: осуждено по числу лиц
+  addTotalPersons: string; // Доп. квалификация: осуждено по числу лиц
   addTotalOffences: number; // Доп. квалификация: осуждено по количеству составов преступлений
   addAcquittalPersons: number; // Доп. квалификация: оправдано по числу лиц
   addAcquittalOffences: number; // Доп. квалификация: оправдано по количеству составов преступлений

@@ -62,7 +62,7 @@ interface ClauseMainPageProps extends WithLocale {
   primaryFine: number; //Штраф
   primaryCorrectionalLabour: number; //Исправительные работы
 
-  addTotalPersons: number; // Доп. квалификация: осуждено по числу лиц
+  addTotalPersons: string; // Доп. квалификация: осуждено по числу лиц
   addTotalOffences: number; // Доп. квалификация: осуждено по количеству составов преступлений
   addAcquittalPersons: number; // Доп. квалификация: оправдано по числу лиц
   addAcquittalOffences: number; // Доп. квалификация: оправдано по количеству составов преступлений
