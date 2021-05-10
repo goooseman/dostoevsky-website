@@ -14,6 +14,21 @@ export interface ArticleFullPageProps extends WithLocale {
   article: Article;
 }
 
+const getShareURL = (type: null) => {
+  const currentURL = document.URL;
+  switch (type) {
+    case "fb":
+      return (
+        "https://www.facebook.com/sharer/sharer.php?u=" +
+        encodeURIComponent(currentURL)
+      );
+    case "tg":
+      return "https://t.me/share/url?url=" + currentURL;
+    case "tw":
+      return "https://twitter.com/intent/tweet?text=" + currentURL;
+  }
+};
+
 const getArticleBackground = (type: Article["tag"]) => {
   switch (type) {
     case "Аналитика":
@@ -66,7 +81,7 @@ const ArticleFullHead = (props: ArticleFullPageProps): JSX.Element => {
             </Typography>
             <div className={cn(classes.blogHeader__social)}>
               <OutboundLink
-                href="https://telegram.com"
+                href={getShareURL("tg")}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -76,7 +91,7 @@ const ArticleFullHead = (props: ArticleFullPageProps): JSX.Element => {
                 />
               </OutboundLink>
               <OutboundLink
-                href="https://facebook.com"
+                href={getShareURL("fb")}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -86,7 +101,7 @@ const ArticleFullHead = (props: ArticleFullPageProps): JSX.Element => {
                 />
               </OutboundLink>
               <OutboundLink
-                href="https://twitter.com"
+                href={getShareURL("tw")}
                 target="_blank"
                 rel="noreferrer"
               >
