@@ -6,6 +6,7 @@ import Meta from "src/components/Meta";
 import Layout from "src/components/Layout";
 import ArticleFullPage from "src/templates/ArticleFullPage";
 import NoPage from "src/templates/NoPage";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 interface ArticleFullPageProps {
   data: ArticleFullQuery;
@@ -17,11 +18,11 @@ const ArticleFull: React.FC<ArticleFullPageProps> = ({
   location,
 }: ArticleFullPageProps) => {
   const meta = data.site?.meta;
-  const node = data.markdownRemark;
+  const node = data.mdx;
   if (node) {
     const article: any = {
       ...node.frontmatter,
-      html: node.html || "",
+      body: node.body || "",
     };
     return (
       <Layout location={location}>
@@ -43,8 +44,8 @@ export const pageQuery = graphql`
         siteUrl
       }
     }
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-      html
+    mdx(frontmatter: { slug: { eq: $slug } }) {
+      body
       frontmatter {
         date
         slug

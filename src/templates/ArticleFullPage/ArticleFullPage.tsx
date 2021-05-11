@@ -6,8 +6,20 @@ import Typography from "src/components/ui-kit/Typography";
 import { T } from "react-targem";
 import ArticleFullHead from "./ArticleFullHead";
 import { ArticleTag } from "src/types";
+
+import Loading from "src/components/ui-kit/Loading";
+import LineChart from "src/components/charts/LineChart";
+import { Counters, Counter } from "src/components/Counters";
+
+// import Tooltip from "../ui-kit/Tooltip";
+
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import { MDXProvider } from "@mdx-js/react";
+
+const shortcodes = { Counters, Counter, LineChart, Loading, T, Typography };
+
 export interface Article {
-  html?: string;
+  body?: string;
   title: string;
   author: string;
   date: string;
@@ -49,8 +61,10 @@ const ArticleFullPage = (props: ArticleFullPageProps): JSX.Element => {
           </Typography>
         </div>
         <div className={cn(classes.articleBody)}>
-          <Typography>
-            <div dangerouslySetInnerHTML={{ __html: article.html || "" }} />
+          <Typography component={"span"}>
+            <MDXProvider components={shortcodes}>
+              <MDXRenderer>{article.body || ""}</MDXRenderer>
+            </MDXProvider>
           </Typography>
         </div>
       </article>

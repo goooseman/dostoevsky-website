@@ -6,6 +6,8 @@
   "private": true,
   "dependencies": {
     "@csstools/normalize.css": "^10.1.0",
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
     "autoprefixer": "^9.8.5",
     "axios": "^0.21.0",
     "chartist": "^0.11.4",
@@ -23,6 +25,7 @@
     "gatsby-plugin-google-gtag": "^2.8.0",
     "gatsby-plugin-graphql-codegen": "^2.7.1",
     "gatsby-plugin-manifest": "^2.10.0",
+    "gatsby-plugin-mdx": "^2.4.0",
     "gatsby-plugin-netlify": "^2.9.0",
     "gatsby-plugin-postcss": "^2.3.13",
     "gatsby-plugin-react-helmet": "^3.8.0",

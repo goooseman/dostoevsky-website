@@ -17,7 +17,7 @@ const ArticlesIndex: React.FC<ArticlesPageProps> = ({
   location,
 }: ArticlesPageProps) => {
   const meta = data.site?.meta;
-  const all = data.allMarkdownRemark || [];
+  const all = data.allMdx || [];
   const articles = all.edges.map(({ node }) => {
     const a = { ...node.frontmatter };
     return a;
@@ -41,13 +41,13 @@ export const pageQuery = graphql`
         siteUrl
       }
     }
-    allMarkdownRemark(
+    allMdx(
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: { frontmatter: { locale: { eq: $locale } } }
     ) {
       edges {
         node {
-          html
+          body
           frontmatter {
             slug
             title

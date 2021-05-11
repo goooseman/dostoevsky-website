@@ -120,6 +120,15 @@ module.exports = {
       options: {
         path: `${__dirname}/content/posts/`,
         name: `articles`,
+        extensions: [`.mdx`, `.md`],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        path: `${__dirname}/content/posts/`,
+        name: `articles`,
+        extensions: [`.mdx`, `.md`],
       },
     },
     {
