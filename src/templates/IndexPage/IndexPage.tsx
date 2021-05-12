@@ -100,7 +100,10 @@ export class IndexPage extends PureComponent<IndexPageProps> {
                 />
               </div>
               <Typography color="inverted" className={classes.rightText}>
-                <T message="Вы сможете найти информацию по любой статье УК с 2009 по 2019 год: статистика обвинительных и оправдательных приговоров, лишений свободы, амнистий и многое другое." />
+                <T
+                  message="Вы сможете найти информацию по любой статье УК с 2009 по {{ year }} год: статистика обвинительных и оправдательных приговоров, лишений свободы, амнистий и многое другое."
+                  scope={{ year: years[0] }}
+                />
               </Typography>
             </div>
           </Container>

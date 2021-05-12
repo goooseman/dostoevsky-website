@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dostoevsky-website 0.0.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"POT-Creation-Date: Sun Feb 28 2021 08:58:01 GMT+0200 (Israel Standard Time)\n"
+"POT-Creation-Date: Wed May 12 2021 07:14:11 GMT+0300 (Israel Daylight Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -422,7 +422,7 @@ msgid ""
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
-msgid "с 2009 до 2019 года."
+msgid "с 2009 до {{ year }} года."
 msgstr ""
 
 #: src/templates/AboutPage/AboutPage.tsx:
@@ -590,10 +590,10 @@ msgstr ""
 #: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:
 msgid ""
 "На этой странице мы сравнили ключевые показатели по статье за период с 2009 по "
-"2019 годы. Полноценных данных до 2009 года в открытом доступе не существует: "
-"Судебный департамент Верховного суда начал публиковать сводную статистику по "
-"рассмотрению судами уголовных дел после появления соответствующего закона и "
-"регламента в 2008 году."
+"{{ year }} годы. Полноценных данных до 2009 года в открытом доступе не "
+"существует: Судебный департамент Верховного суда начал публиковать сводную "
+"статистику по рассмотрению судами уголовных дел после появления "
+"соответствующего закона и регламента в 2008 году."
 msgstr ""
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyConvictedDynamics/ChronologyConvictedDynamics.tsx:
@@ -690,7 +690,7 @@ msgid "условное осуждение к иным мерам"
 msgstr ""
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
-msgid "Динамика наказаний по статье с 2009 по 2019 гг."
+msgid "Динамика наказаний по статье с 2009 по {{ year }} гг."
 msgstr ""
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByPunishmentTable/ClauseChronologyByPunishmentTable.tsx:
@@ -2246,7 +2246,7 @@ msgstr ""
 msgid ""
 "Свели в единую таблицу несколько массивов данных: статистику осужденных по "
 "основным составам за 2009-2010 и 2011-2018 годы и статистику осужденных по "
-"дополнительным составам за 2009-2019 годы."
+"дополнительным составам за 2009-{{ year }} годы."
 msgstr ""
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
@@ -2980,9 +2980,9 @@ msgstr ""
 
 #: src/templates/IndexPage/IndexPage.tsx:
 msgid ""
-"Вы сможете найти информацию по любой статье УК с 2009 по 2019 год: статистика "
-"обвинительных и оправдательных приговоров, лишений свободы, амнистий и многое "
-"другое."
+"Вы сможете найти информацию по любой статье УК с 2009 по {{ year }} год: "
+"статистика обвинительных и оправдательных приговоров, лишений свободы, амнистий "
+"и многое другое."
 msgstr ""
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:

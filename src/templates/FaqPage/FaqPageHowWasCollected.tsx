@@ -5,6 +5,7 @@ import Table from "src/components/Table";
 import Typography from "src/components/ui-kit/Typography";
 import { T, useLocale } from "react-targem";
 import { OutboundLink } from "gatsby-plugin-google-gtag";
+import years from "content/years.json";
 
 const FaqPageHowWasCollected = () => {
   const { t } = useLocale();
@@ -75,7 +76,10 @@ const FaqPageHowWasCollected = () => {
       <Typography>
         <ol>
           <li>
-            <T message="Свели в единую таблицу несколько массивов данных: статистику осужденных по основным составам за 2009-2010 и 2011-2018 годы и статистику осужденных по дополнительным составам за 2009-2019 годы." />
+            <T
+              message="Свели в единую таблицу несколько массивов данных: статистику осужденных по основным составам за 2009-2010 и 2011-2018 годы и статистику осужденных по дополнительным составам за 2009-{{ year }} годы."
+              scope={{ year: years[0] }}
+            />
           </li>
           <li>
             <T message="Из полученных таблиц мы удалили пустые и резервные строки, а также те, в которых была указана только степень тяжести преступления. Показатели этих строк либо равно нулю, либо уже учтены." />
