@@ -1,22 +1,29 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./ArticleFullPage.module.css";
 import cn from "clsx";
 import Typography from "src/components/ui-kit/Typography";
 import { T } from "react-targem";
 import ArticleFullHead from "./ArticleFullHead";
 import { ArticleTag } from "src/types";
-
-import Loading from "src/components/ui-kit/Loading";
-import LineChart from "src/components/charts/LineChart";
+import CommentsBar from "src/components/charts/CommentsBar";
 import { Counters, Counter } from "src/components/Counters";
-
-// import Tooltip from "../ui-kit/Tooltip";
-
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
 
-const shortcodes = { Counters, Counter, LineChart, Loading, T, Typography };
+const Drawing: React.FC = (props: { title; name; legend }) => {
+  const charts = [];
+  const lines = props.children.split("|");
+  for (const line in lines) {
+    const v = lines[line].split(" ,");
+    charts.push({ value: v[1], title: v[0] });
+  }
+  const data = {
+    title: props.title,
+    charts: [{ title: props.legend, series: [charts] }],
+  };
+  return <CommentsBar {...data} />;
+};
 
 export interface Article {
   body?: string;
@@ -62,7 +69,14 @@ const ArticleFullPage = (props: ArticleFullPageProps): JSX.Element => {
         </div>
         <div className={cn(classes.articleBody)}>
           <Typography component={"span"}>
-            <MDXProvider components={shortcodes}>
+            <MDXProvider
+              components={{
+                Drawing,
+                T,
+                Counter,
+                Counters,
+              }}
+            >
               <MDXRenderer>{article.body || ""}</MDXRenderer>
             </MDXProvider>
           </Typography>
