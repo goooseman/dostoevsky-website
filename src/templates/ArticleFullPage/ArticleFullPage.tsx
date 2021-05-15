@@ -11,7 +11,7 @@ import { Counters, Counter } from "src/components/Counters";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
 
-const Drawing: React.FC = (props: { title; name; legend }) => {
+const Drawing: React.FC = (props: { title; name; color; legend }) => {
   const charts = [];
   const lines = props.children.split("|");
   for (const line in lines) {
@@ -22,7 +22,9 @@ const Drawing: React.FC = (props: { title; name; legend }) => {
     title: props.title,
     charts: [{ title: props.legend, series: [charts] }],
   };
-  return <CommentsBar {...data} />;
+  return (
+    <CommentsBar {...data} color={props.color} labelOverrides={props.color} />
+  );
 };
 
 export interface Article {
