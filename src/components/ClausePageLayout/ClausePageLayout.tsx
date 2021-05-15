@@ -13,6 +13,7 @@ import { Menu, MenuLink } from "src/components/Menu";
 import Promo from "src/components/Promo";
 import { LinkGetProps } from "@reach/router";
 import { T, withLocale, WithLocale } from "react-targem";
+import years from "content/years.json";
 
 interface ClausePageLayoutProps extends WithLocale {
   clauseNumber: number;
@@ -120,7 +121,7 @@ class ClausePageLayout extends PureComponent<ClausePageLayoutProps> {
                   <div className={cn(classes.floatingCatalogueContainer)}>
                     <ClausePageCatalogue
                       onClose={onCatalogueSwitch}
-                      year={year || 2019}
+                      year={year || years[0]}
                       clauseId={clauseNumber}
                     />
                   </div>

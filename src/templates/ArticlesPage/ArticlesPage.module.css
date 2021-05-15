@@ -28,6 +28,11 @@
   padding: 38px 0 25px 40px;
 }
 
+.more-item h2 {
+  font-size: 1.875rem;
+  margin-bottom: 1rem;
+}
+
 .more-item a h2 {
   margin-top: 20px;
 }
@@ -46,11 +51,6 @@
     background: rgba(239, 245, 243, 0.5);
     backdrop-filter: blur(3px);
   }
-}
-
-.more-item h2 {
-  font-size: 1.875rem;
-  margin-bottom: 1rem;
 }
 
 .more-item-type {

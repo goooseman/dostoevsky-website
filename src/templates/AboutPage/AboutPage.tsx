@@ -10,6 +10,7 @@ import Tooltip from "src/components/ui-kit/Tooltip";
 import { Helmet } from "react-helmet";
 import useFeatureFlag from "src/hooks/useFeatureFlag";
 import { OutboundLink } from "gatsby-plugin-google-gtag";
+import years from "content/years.json";
 
 const teamMembers = [
   {
@@ -122,7 +123,10 @@ const AboutPage: React.FC = () => {
             <Typography>
               <T message="Главное в Достоевском — простая в использовании база уголовной статистики в России" />{" "}
               <Typography variant="span">
-                <T message="с 2009 до 2019 года." />
+                <T
+                  message="с 2009 до {{ year }} года."
+                  scope={{ year: years[0] }}
+                />
                 <Tooltip
                   isInversed
                   tip={t(
