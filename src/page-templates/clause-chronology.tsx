@@ -57,7 +57,11 @@ class ClauseChronology extends PureComponent<ClauseChronologyProps> {
 }
 
 export const query = graphql`
-  query ClauseChronology($partRegex: String!, $clauseRegex: String!) {
+  query ClauseChronology(
+    $partRegex: String!
+    $clauseRegex: String!
+    $lastYear: Int!
+  ) {
     site {
       meta: siteMetadata {
         title
@@ -66,7 +70,7 @@ export const query = graphql`
       }
     }
     parts: allApiServerData(
-      filter: { part: { regex: $partRegex }, year: { eq: 2019 } }
+      filter: { part: { regex: $partRegex }, year: { eq: $lastYear } }
     ) {
       edges {
         node {

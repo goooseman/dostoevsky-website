@@ -11,7 +11,7 @@
     "npm run lint:prettier:write",
     "npm run lint:stylelint:write"
   ],
-  "*.md": [
+  "*.(md|mdx)": [
     "npm run lint:prettier:write",
   ]
 }

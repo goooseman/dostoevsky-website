@@ -1,7 +1,10 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const years = require("./content/years.json");
+
 const getRouteForClausePage = (locale, clauseId, year, page, view, anchor) => {
   let route = `/${locale}/${clauseId}/`;
   if (page !== "chronology") {
-    route += `${year || 2019}/`;
+    route += `${year || years[0]}/`;
   }
   if (page !== "main") {
     route += `${page}/`;
@@ -21,7 +24,7 @@ const getRouteForLocale = (locale, path) => {
 
 const getRouteForIndexPage = (locale, year, view, anchor) => {
   let route = `/${locale}/`;
-  if (year.toString() !== "2019") {
+  if (year.toString() !== `${years[0]}`) {
     route += `${year}/`;
   }
   if (view !== "page") {

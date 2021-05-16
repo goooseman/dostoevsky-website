@@ -122,6 +122,7 @@ exports.createPages = async ({ actions, graphql }) => {
             partRegex: `/^${chapter.id}[^.]/i`,
             clauseRegex: `/^${chapter.id}[^.]?/i`,
             clauseId: chapter.id,
+            lastYear: years[0],
           };
           for (let locale of LOCALE_CODES) {
             for (let year of years) {

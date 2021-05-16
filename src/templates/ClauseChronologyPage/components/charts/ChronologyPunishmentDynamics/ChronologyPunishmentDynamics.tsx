@@ -2,7 +2,7 @@ import React from "react";
 import Bar from "src/components/charts/Bar";
 import { getClauseLink } from "src/config/routes";
 import { T, useLocale } from "react-targem";
-
+import years from "content/years.json";
 interface ChronologyConvictedDynamicsProps {
   isIframeMode?: boolean;
   clauseNumber: number;
@@ -134,7 +134,9 @@ const ChronologyConvictedDynamics: React.SFC<ChronologyConvictedDynamicsProps> =
   return (
     <Bar
       isIframeMode={isIframeMode}
-      title={t("Динамика наказаний по статье с 2009 по 2019 гг.")}
+      title={t("Динамика наказаний по статье с 2009 по {{ year }} гг.", {
+        year: `${years[0]}`,
+      })}
       downloadFilename={`${clauseNumber}-punishment-dynamics`}
       charts={charts}
       areLabelsRotated
