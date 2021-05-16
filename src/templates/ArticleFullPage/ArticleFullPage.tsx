@@ -10,6 +10,7 @@ import ArticleChartAdapter from "./components/charts/ArticleChartAdapter";
 import { Counters, Counter } from "src/components/Counters";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
+import Container from "src/components/ui-kit/Container";
 
 export interface Article {
   body?: string;
@@ -42,32 +43,35 @@ const ArticleFullPage = (props: ArticleFullPageProps): JSX.Element => {
   return (
     <section className={cn(classes.blogContainer)}>
       <ArticleFullHead article={article} />
-      <article className={cn(classes.blogArticle)}>
-        <div className={cn(classes.blogArticle__date)}>
-          <Typography isUpperCased isCentered>
-            <T message={article.date || ""} />
-          </Typography>
-        </div>
-        <div className={cn(classes.blogArticle__author)}>
-          <Typography isCentered>
-            <T message={article.author || "Аноним"} />
-          </Typography>
-        </div>
-        <div className={cn(classes.articleBody)}>
-          <Typography component={"span"}>
-            <MDXProvider
-              components={{
-                ArticleChartAdapter,
-                T,
-                Counter,
-                Counters,
-              }}
-            >
-              <MDXRenderer>{article.body || ""}</MDXRenderer>
-            </MDXProvider>
-          </Typography>
-        </div>
-      </article>
+
+      <Container>
+        <article className={cn(classes.blogArticle)}>
+          <div className={cn(classes.blogArticle__date)}>
+            <Typography isUpperCased isCentered>
+              <T message={article.date || ""} />
+            </Typography>
+          </div>
+          <div className={cn(classes.blogArticle__author)}>
+            <Typography isCentered>
+              <T message={article.author || "Аноним"} />
+            </Typography>
+          </div>
+          <div className={cn(classes.articleBody)}>
+            <Typography component={"span"}>
+              <MDXProvider
+                components={{
+                  ArticleChartAdapter,
+                  T,
+                  Counter,
+                  Counters,
+                }}
+              >
+                <MDXRenderer>{article.body || ""}</MDXRenderer>
+              </MDXProvider>
+            </Typography>
+          </div>
+        </article>
+      </Container>
     </section>
   );
 };

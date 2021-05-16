@@ -29,9 +29,9 @@ const BubblesChartWrapper: React.FC<BubblesProps> = (props: BubblesProps) => {
 
   const handleMouseMove = (event) => {
     if (event.target.__data__) {
-      setHover(true);
       setX(event.pageX - 100);
       setY(event.pageY + 40);
+      setHover(true);
     } else {
       setHover(false);
     }
@@ -71,7 +71,12 @@ const BubblesChartWrapper: React.FC<BubblesProps> = (props: BubblesProps) => {
       labelOverrides={labelOverrides}
     >
       {charts.map((c, i) => (
-        <div key={i} onMouseMove={handleMouseMove} onMouseOut={handleOut}>
+        <div
+          key={i}
+          className={cn(classes.svgContainer)}
+          onMouseMove={handleMouseMove}
+          onMouseOut={handleOut}
+        >
           <div style={tooltipStyle} className={cn(classes.bubblesTip)}>
             <Typography>{text}</Typography>
           </div>
