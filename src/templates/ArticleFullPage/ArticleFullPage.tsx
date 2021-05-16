@@ -1,31 +1,15 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import classes from "./ArticleFullPage.module.css";
 import cn from "clsx";
 import Typography from "src/components/ui-kit/Typography";
 import { T } from "react-targem";
 import ArticleFullHead from "./ArticleFullHead";
 import { ArticleTag } from "src/types";
-import CommentsBar from "src/components/charts/CommentsBar";
+import ArticleChartAdapter from "./components/charts/ArticleChartAdapter";
 import { Counters, Counter } from "src/components/Counters";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
-
-const Drawing: React.FC = (props: { title; name; color; legend }) => {
-  const charts = [];
-  const lines = props.children.split("|");
-  for (const line in lines) {
-    const v = lines[line].split(" ,");
-    charts.push({ value: v[1], title: v[0] });
-  }
-  const data = {
-    title: props.title,
-    charts: [{ title: props.legend, series: [charts] }],
-  };
-  return (
-    <CommentsBar {...data} color={props.color} labelOverrides={props.color} />
-  );
-};
 
 export interface Article {
   body?: string;
@@ -73,7 +57,7 @@ const ArticleFullPage = (props: ArticleFullPageProps): JSX.Element => {
           <Typography component={"span"}>
             <MDXProvider
               components={{
-                Drawing,
+                ArticleChartAdapter,
                 T,
                 Counter,
                 Counters,
