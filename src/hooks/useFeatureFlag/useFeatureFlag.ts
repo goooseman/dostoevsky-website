@@ -1,6 +1,10 @@
 export type Feature = "langs" | "analytics";
 
 const useFeatureFlag = (feature: Feature): boolean => {
+  const whitelist: Feature[] = ["analytics", "langs"];
+  if (whitelist.includes(feature)) {
+    return true;
+  }
   if (typeof window === `undefined` || window.location?.search === undefined) {
     return false;
   }
