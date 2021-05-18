@@ -1,7 +1,10 @@
 export type Feature = "langs" | "analytics";
 
-const useFeatureFlag = (feature: Feature): boolean => {
-  const whitelist: Feature[] = ["analytics", "langs"];
+const useFeatureFlag = (
+  feature: Feature,
+  whitelistOverride?: Feature[]
+): boolean => {
+  const whitelist: Feature[] = whitelistOverride || ["analytics", "langs"];
   if (whitelist.includes(feature)) {
     return true;
   }

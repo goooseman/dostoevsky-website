@@ -9,7 +9,7 @@ afterEach(() => {
 });
 
 const TestComponent: React.FC = () => {
-  const langsFF = useFeatureFlag("langs");
+  const langsFF = useFeatureFlag("langs", []);
 
   return <p>{langsFF ? "Langs are enabled" : "Langs are disabled"}</p>;
 };
