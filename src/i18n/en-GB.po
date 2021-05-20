@@ -5,7 +5,7 @@ msgstr ""
 "POT-Creation-Date: Sun Jan 10 2021 00:39:02 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"PO-Revision-Date: 2021-05-18 19:01\n"
+"PO-Revision-Date: 2021-05-20 15:23\n"
 "Language-Team: English, United Kingdom\n"
 "MIME-Version: 1.0\n"
 "X-Generator: Poedit 2.4.2\n"
@@ -30,7 +30,7 @@ msgstr "Not enough data to generate chart."
 #: src/templates/ClausePartsPage/components/charts/PartsByResultChart/PartsByResultChart.tsx:
 #: src/templates/ClausePartsPage/components/charts/PartsChart/PartsChart.tsx:
 msgid "Состав"
-msgstr ""
+msgstr "Offence"
 
 #: src/components/charts/Treemap/Treemap.tsx:
 #: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
@@ -41,12 +41,12 @@ msgstr ""
 #: src/templates/ClausePartsPage/components/charts/PartsChart/PartsChart.tsx:
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "основной состав"
-msgstr ""
+msgstr "primary offence"
 
 #: src/components/charts/Treemap/Treemap.tsx:
 #: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
 msgid "Меры"
-msgstr ""
+msgstr "Penalty"
 
 #: src/components/charts/Treemap/Treemap.tsx:
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyConvictedDynamics/ChronologyConvictedDynamics.tsx:
@@ -57,7 +57,7 @@ msgstr ""
 #: src/templates/ClausePartsPage/components/charts/PartsByResultChart/PartsByResultChart.tsx:
 #: src/templates/ClausePartsPage/components/charts/PartsChart/PartsChart.tsx:
 msgid "Число человек"
-msgstr ""
+msgstr "Number of people"
 
 #: src/components/ClausePageCatalogue/ClausePageCatalogue.tsx:
 msgid "Стрелка вправо"
@@ -98,7 +98,7 @@ msgstr "Table"
 
 #: src/components/DownloadButton/DownloadButton.tsx:
 msgid "Скачать чарт"
-msgstr ""
+msgstr "Download chart"
 
 #: src/components/DownloadButton/DownloadButton.tsx:
 #: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
@@ -107,7 +107,7 @@ msgstr "Download"
 
 #: src/components/EmbedModal/EmbedModal.tsx:
 msgid "Получить код для встраивания"
-msgstr ""
+msgstr "Get embed code"
 
 #: src/components/EmbedModal/EmbedModal.tsx:
 msgid "Иконка код"
@@ -115,7 +115,7 @@ msgstr "Code icon"
 
 #: src/components/EmbedModal/EmbedModal.tsx:
 msgid "Embed"
-msgstr ""
+msgstr "Embed"
 
 #: src/components/EmbedModal/EmbedModal.tsx:
 msgid "Скопировано"
@@ -135,7 +135,7 @@ msgstr "D4S logo"
 
 #: src/components/Footer/Footer.tsx:
 msgid "каталог статей ук рф"
-msgstr ""
+msgstr "Articles of the Criminal Code of the Russian Federation"
 
 #: src/components/Footer/Footer.tsx:
 #: src/components/Header/Header.tsx:
@@ -168,11 +168,11 @@ msgstr "Dostoevsky"
 
 #: src/components/Footer/Footer.tsx:
 msgid "Все материалы сайта доступны по лицензии"
-msgstr ""
+msgstr "All website materials are available under a Creative Commons 4.0 license"
 
 #: src/components/Footer/Footer.tsx:
 msgid "Creative Commons СС-BY-SA 4.0"
-msgstr ""
+msgstr "Creative Commons СС-BY-SA 4.0"
 
 #: src/components/Footer/Footer.tsx:
 msgid "напишите нам"
@@ -180,15 +180,15 @@ msgstr "contact us"
 
 #: src/components/Footer/Footer.tsx:
 msgid "Напишите нам"
-msgstr ""
+msgstr "Contact us"
 
 #: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
 msgid "Скачать данные"
-msgstr ""
+msgstr "Download data"
 
 #: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
 msgid "Если вы оставите свой email, мы будем время от времени присылать вам что-нибудь полезное!"
-msgstr ""
+msgstr "If you leave us your email, we'll occasionally send you relevant updates!"
 
 #: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
 msgid "Ваш e-mail"
@@ -196,7 +196,7 @@ msgstr "Your e-mail"
 
 #: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
 msgid "Ваше имя в Telegram, если хотите присоединиться к нашему сообществу"
-msgstr ""
+msgstr "Your Telegram username, if you wish to join our community"
 
 #: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
 msgid "Ваше имя в Telegram"
@@ -204,7 +204,7 @@ msgstr "Your Telegram nickname"
 
 #: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
 msgid "При использовании данных, пожалуйста, указывайте ссылку на Достоевский и делитесь с нами своими материалами."
-msgstr ""
+msgstr "If you use the data, please provide a link to Dostoevsky and share your materials with us."
 
 #: src/components/FullDatasetDownloadModal/FullDatasetDownloadModal.tsx:
 #: src/templates/IndexPage/IndexPageSubscription.tsx:
@@ -231,7 +231,7 @@ msgstr "Articles of Criminal Code"
 
 #: src/components/NoData/NoData.tsx:
 msgid "Данных нет"
-msgstr ""
+msgstr "No data"
 
 #: src/components/Promo/Promo.tsx:
 msgid "Нужны данные по всем статьям и годам?"
@@ -258,7 +258,7 @@ msgstr "Down arrow"
 #: src/components/Table/components/TableRow/TableRow.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
 msgid "Закрыть скрытый контент"
-msgstr ""
+msgstr "Close hidden content"
 
 #: src/components/Table/components/TableRow/TableRow.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
@@ -268,7 +268,7 @@ msgstr "Minus icon"
 #: src/components/Table/components/TableRow/TableRow.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
 msgid "Открыть скрытый контент"
-msgstr ""
+msgstr "Open hidden content"
 
 #: src/components/Table/components/TableRow/TableRow.tsx:
 #: src/components/ui-kit/Accordion/Accordion.tsx:
@@ -277,79 +277,79 @@ msgstr "Plus icon"
 
 #: src/components/ui-kit/Loading/Loading.tsx:
 msgid "Загрузка"
-msgstr ""
+msgstr "Loading"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Саша Беспалова"
-msgstr ""
+msgstr "Sasha Bespalova"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "арт-директор, дизайнер"
-msgstr ""
+msgstr "art director, designer"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Катя Боровикова"
-msgstr ""
+msgstr "Katia Borovikova"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "backend-разработчик, аналитик"
-msgstr ""
+msgstr "backend developer, analyst"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Катя Голенкова"
-msgstr ""
+msgstr "Katia Golenkova"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "менеджер спецпроектов"
-msgstr ""
+msgstr "special projects manager"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Александр Гусман"
-msgstr ""
+msgstr "Alexander Gusman"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Технический директор"
-msgstr ""
+msgstr "Technical director"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Григорий Охотин"
-msgstr ""
+msgstr "Grigory Okhotin"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Консультант"
-msgstr ""
+msgstr "Consultant"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Оксана Половинкина"
-msgstr ""
+msgstr "Oksana Polovinkina"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Редактор"
-msgstr ""
+msgstr "Editor"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Денис Шедов"
-msgstr ""
+msgstr "Denis Shedov"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Юрист и аналитик ОВД-Инфо"
-msgstr ""
+msgstr "Legal expert and analyst at OVD-Info"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Света Шуранова"
-msgstr ""
+msgstr "Sveta Shuranova"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Продюсер"
-msgstr ""
+msgstr "Producer"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Антон Ревин"
-msgstr ""
+msgstr "Anton Revin"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "IT эксперт"
-msgstr ""
+msgstr "IT expert"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 #: src/templates/AboutPage/AboutPage.tsx:
@@ -359,155 +359,155 @@ msgstr "About"
 #: src/templates/AboutPage/AboutPage.tsx:
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Что такое Достоевский?"
-msgstr ""
+msgstr "What is Dostoevsky?"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Достоевский — это бесплатная платформа для моментального доступа к статистике уголовных дел в России с 2009 года. Мы собираем, обрабатываем и визуализируем открытые массивы данных, чтобы вы могли легко отслеживать динамику российского правосудия."
-msgstr ""
+msgstr "Dostoevsky is a free platform that provides instant access to the statistics on criminal cases in Russia since 2009. We collect, process, and visualize publicly accessible data sets so that you could easily keep track of the developments in Russian justice."
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Разве я не могу найти эти данные самостоятельно?"
-msgstr ""
+msgstr "Can’t I find this data on my own?"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Можете. Все данные Достоевского генерируются на основе "
-msgstr ""
+msgstr "Yes, you can. All the data that Dostoevsky has are generated based on "
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "официальной статистики Судебного департамента при Верховном суде РФ"
-msgstr ""
+msgstr "the official statistics of the Judicial Department at the Supreme Court of the Russian Federation"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Однако эта информация публикуется в виде десятков нечитаемых таблиц: для подробного анализа квалифицированному специалисту требуются часы, а иногда и дни работы."
-msgstr ""
+msgstr "However, this information is originally published in the form of dozens of illegible sheets: in order to conduct a thorough analysis, a skilled professional would need hours, if not days of work."
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Мы взяли уголовную статистику, очистили от задвоений, привели к единому виду и сформировали полную базу данных, дополнив еe аналитическими статьями и инфографикой. Всe это можно скачать с сайта и использовать по лицензии Creative Commons 4.0. "
-msgstr ""
+msgstr "We took the criminal statistics, cleaned it from contradictions and double entries, unified the design and created a comprehensive data set, having added research articles and infographics. All of this can be downloaded from the website and used under a Creative Commons 4.0 license. "
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Это означает, что при указании авторства вы можете свободно копировать и распространять эти материалы, а также создавать производные материалы на их основе в любых целях, включая коммерческие."
-msgstr ""
+msgstr "This means that if you provide attribution, you are free to copy and share these materials, as well as create derivative works based on these materials for any purpose, even commercially."
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Зачем обрабатывать данные об уголовных делах?"
-msgstr ""
+msgstr "Why do we need to process the information about criminal cases?"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Чтобы лучше понимать, куда движется общество и насколько эффективно и прозрачно работает государство. Мы верим, что Достоевский поможет пользователям лучше разбираться в реалиях российской судебной системы, а объективные данные, удобный интерфейс и готовые аналитические выкладки будут способствовать гуманизации уголовного правосудия, повышению качества законодательного процесса, открытости судебной системы и созданию общественных предпосылок для реформ."
-msgstr ""
+msgstr "So that we could have a better understanding of where the society is headed and how effectively and transparently the state operates. We believe that Dostoevsky will help users to figure out the inner workings of Russian legal system and that hard data, user-friendly interface and ready-made analysis will contribute to humanization of criminal justice, to quality improvement of the legislative process, to the openness of the judiciary, and to setting the social stage for future reforms."
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Как здесь ориентироваться? / Как это работает?"
-msgstr ""
+msgstr "How to navigate here? / How does it work?"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Главное в Достоевском — простая в использовании база уголовной статистики в России"
-msgstr ""
+msgstr "The main thing about Dostoevsky is an easy-to-use database of Russian criminal statistics"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "с 2009 до {{ year }} года."
-msgstr ""
+msgstr "from 2009 to {{ year }}."
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "База будет пополняться ежегодно по мере публикации данных Судебным департаментом."
-msgstr ""
+msgstr "The database will be updated yearly following the publishing of the data by the Judicial Department."
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "В каталоге у каждой статьи Уголовного кодекса — отдельная страница с таблицами и инфографикой по хронологии применения, составам преступлений и видам приговоров. Если вам необходимы данные по другим параметрам — году, типу наказания, количеству рассмотренных дел — можно воспользоваться доступом ко всему датасету."
-msgstr ""
+msgstr "Every article of the Criminal Code in the catalogue has its own designated page with sheets and infographics on the law enforcement timeline, offences and types of sentences. If you need information on other parameters - year, penalty type, number of cases reviewed - you can access the whole data set."
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Кроме того, мы составили Глоссарий, в котором объяснили основные юридические термины простым языком, и предусмотрели всплывающие окна с подсказками при выдаче данных — достаточно навести курсор на термин, чтобы увидеть определение."
-msgstr ""
+msgstr "In addition, we have compiled a Glossary where the main legal terms are explained in layperson’s terms, as well as created pop-up tips: just by putting the cursor on the term you can see its definition."
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Чтобы вы не тратили время на подсчеты, наиболее значимые выводы из анализа всего датасета мы публикуем в разделе Аналитика, а еще у нас есть Блог, в котором мы мы публикуем колонки дата-аналитиков и рассказываем о тенденциях и особенностях российского уголовного правосудия."
-msgstr ""
+msgstr "For you not to waste your time on calculations, we publish the most significant conclusions from the whole data set analysis in the Analytics section. We also have a Blog where we publish data analysts’ columns and tell you about trends and particularities of Russian criminal justice."
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Для кого эта платформа?"
-msgstr ""
+msgstr "Who is this platform for?"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Журналисты"
-msgstr ""
+msgstr "Journalists"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Наша статистика подходит как для новостей об отдельных резонансных делах, так и для глубоких аналитических материалов об общественно значимых явлениях: насилии, коррупции, наркополитике. Достоевский позволяет получить все необходимые для публикации данные оперативно и в удобном виде."
-msgstr ""
+msgstr "Our statistics can be used for news about individual high-profile cases, as well as for in-depth analytical pieces on topics of public importance, such as violence, corruption, drug policy. Dostoevsky provides the possibility to obtain all the data necessary for a piece swiftly and with ease."
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Исследователи и студенты"
-msgstr ""
+msgstr "Researchers and students"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Данные судебной статистики — это неисчерпаемый источник для анализа работы судебной системы и правоприменительной практики. Объективная и официальная информация, задокументированная методология очистки и сведения данных вместе с публикацией соответствующих скриптов с открытым кодом делают Достоевский удобным инструментом для научных исследований."
-msgstr ""
+msgstr "Judicial statistics data is an inexhaustible source for analysing the workings of the legal system and the law enforcement practice. Objective and official information, a documented methodology of data cleaning and data consolidation, as well as publishing the respective open source scripts make Dostoevsky a handy tool for scientific research."
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Юридическое сообщество и правозащитники"
-msgstr ""
+msgstr "Legal community and human rights defenders"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "С помощью Достоевского адвокаты могут получить блиц-анализ возможных исходов уголовного дела, а правозащитники — анализировать правоприменительную практику и использовать полученные данные в своей работе."
-msgstr ""
+msgstr "With the help of Dostoevsky, lawyers can conduct a quick analysis of possible outcomes of a criminal case, and human rights defenders can analyse the law enforcement practice and use the obtained information in their work."
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Кто работает над Достоевским?"
-msgstr ""
+msgstr "Who works on Dostoevsky?"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Идея Достоевского зародилась внутри правозащитного медиа-проекта ОВД-Инфо в 2014-ом году. Более трех лет аналитики проекта изучали судебную статистику и использовали еe в своих докладах и публикациях. В 2018 году к разработке присоединился коллектив Data for Society — независимая инициатива журналистов и программистов, которые ставят своей целью укреплять правозащитные, медиа- и научные коллективы с помощью IT-решений для обработки открытых данных."
-msgstr ""
+msgstr "The idea of Dostoevsky was born within OVD-Info, a media project defending human rights, in 2015. For over three years the project’s analytics have been studying the judicial statistics using it in their reports and published pieces. In 2018, the group called Data for Society joined the project. Data for Society is an independent initiative of journalists and software specialists, the goal of which is to reinforce human rights defending, media and scientific groups using IT-solutions for processing publicly accessible data."
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Наш проект стал возможен благодаря труду десятков людей — юристов, дата-аналитиков, разработчиков, дизайнеров, журналистов и менеджеров, а также тщательной работе Судебного департамента при Верховном суде РФ, который неустанно ведeт учeт судебной статистики в России. Спасибо!"
-msgstr ""
+msgstr "Our project was made possible thanks to the work of dozens of people - lawyers, data analysts, developers, designers, journalists and managers, as well as to the diligent work of the Judicial Department at the Supreme Court of the Russian Federation which is tirelessly maintaining records of crimes and punishments in Russia. Thank you!"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Команда"
-msgstr ""
+msgstr "Team"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Перевод сайта на английский язык"
-msgstr ""
+msgstr "English version of the website"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Роман Бондаренко"
-msgstr ""
+msgstr "Roman Bondarenko"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "За помошь в работе над проектом благодарим"
-msgstr ""
+msgstr "For help on the project we thank"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Бориса Бейлинсона, Алексея Куприянова, Даду Линделл, Максима Никонова, Наталью Смирнову, Анну Чертову, Илью Щурова"
-msgstr ""
+msgstr "Boris Beilinson, Alexey Kupriyanov, Dada Lindell, Maxim Nikonov, Natalya Smirnova, Anna Chertova, Ilya Schurov"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Информационно-аналитический центр «СОВА»"
-msgstr ""
+msgstr "SOVA Center for Information and Analysis"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Составить обзоры изменений в уголовном-процессуальном праве и уголовно-исполнительном законодательстве за последнее десятилетие нам помогали"
-msgstr ""
+msgstr "Featured reviewers who have analysed changes in criminal procedure law and criminal executive legislation over the last decade"
 
 #: src/templates/AboutPage/AboutPage.tsx:
 msgid "Лидия Головина, Борис Карпычев, Елена Липатова, Филипп Лучкин, Ксения Просвиркина"
-msgstr ""
+msgstr "Lidia Golovina, Boris Karpychev, Elena Lipatova, Filipp Luchkin, Ksenia Prosvirkina"
 
 #: src/templates/ArticleFullPage/ArticleFullHead.tsx:
 msgid "Поделиться:"
-msgstr ""
+msgstr "Share:"
 
 #: src/templates/ArticlesPage/ArticlesPageFilter/ArticlesPageFilter.tsx:
 msgid "Блог аналитических статей от наших специалистов"
-msgstr ""
+msgstr "A blog with analytical publications from our specialists"
 
 #: src/templates/ArticlesPage/ArticlesPageFilter/ArticlesPageFilter.tsx:
 msgid "Все"
-msgstr ""
+msgstr "All"
 
 #: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:
 #: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:
@@ -525,22 +525,22 @@ msgstr "Chronology"
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
 msgid "Статья"
-msgstr ""
+msgstr "Article"
 
 #: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:
 #: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:
 #: src/templates/ClauseChronologyPage/ClauseChronologyPage.tsx:
 msgid "На этой странице мы сравнили ключевые показатели по статье за период с 2009 по {{ year }} годы. Полноценных данных до 2009 года в открытом доступе не существует: Судебный департамент Верховного суда начал публиковать сводную статистику по рассмотрению судами уголовных дел после появления соответствующего закона и регламента в 2008 году."
-msgstr ""
+msgstr "On this page, we compared the key indicators pertaining to the Article in 2009-{{ year }}. There is no publicly accessible comprehensive data for the period before 2009: the Judicial Department at the Supreme Court began publishing the summary statistics on court proceedings of criminal cases after the respective law and regulations had appeared in 2008."
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyConvictedDynamics/ChronologyConvictedDynamics.tsx:
 msgid "Динамика числа осужденных по основному составу"
-msgstr ""
+msgstr "Dynamics of the number of convicted for the primary offence"
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyConvictedDynamics/ChronologyConvictedDynamics.tsx:
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyConvictedDynamics/ChronologyConvictedDynamics.tsx:
 msgid "{{ clauseNumber }} Основной состав"
-msgstr ""
+msgstr "{{ clauseNumber }} Primary offence"
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyConvictedDynamics/ChronologyConvictedDynamics.tsx:
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByPunishmentTable/ClauseChronologyByPunishmentTable.tsx:
@@ -554,7 +554,7 @@ msgstr "Year"
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
 msgid "Наказание"
-msgstr ""
+msgstr "Penalty"
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
@@ -567,7 +567,7 @@ msgstr ""
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Основной состав"
-msgstr ""
+msgstr "Primary offence"
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
@@ -609,7 +609,7 @@ msgstr "community services"
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "штраф"
-msgstr ""
+msgstr "fine"
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
@@ -619,7 +619,7 @@ msgstr ""
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Принудительные меры к невменяемым"
-msgstr ""
+msgstr "Сoercive measures against an insane person"
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
@@ -628,16 +628,16 @@ msgstr "suspended sentence with other measures"
 
 #: src/templates/ClauseChronologyPage/components/charts/ChronologyPunishmentDynamics/ChronologyPunishmentDynamics.tsx:
 msgid "Динамика наказаний по статье с 2009 по {{ year }} гг."
-msgstr ""
+msgstr "Dynamics of the penalties under the Article, 2009-{{ year }}"
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByPunishmentTable/ClauseChronologyByPunishmentTable.tsx:
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
 msgid "Все года"
-msgstr ""
+msgstr "All years"
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByPunishmentTable/ClauseChronologyByPunishmentTable.tsx:
 msgid "Условно к лишению свободы"
-msgstr ""
+msgstr "To a suspended imprisonment"
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByPunishmentTable/ClauseChronologyByPunishmentTable.tsx:
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
@@ -666,22 +666,22 @@ msgstr "Community services"
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Штраф"
-msgstr ""
+msgstr "Fine"
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByPunishmentTable/ClauseChronologyByPunishmentTable.tsx:
 msgid "Условное к иным мерам"
-msgstr ""
+msgstr "Suspended sentence to other penalties"
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByPunishmentTable/ClauseChronologyByPunishmentTable.tsx:
 msgid "Наказания по статье"
-msgstr ""
+msgstr "Penalties under article"
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Всего осуждено"
-msgstr ""
+msgstr "Total number of persons convicted"
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
@@ -706,7 +706,7 @@ msgstr "Terminated in case of active repentance"
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
 msgid "Прекращено за примирением"
-msgstr ""
+msgstr "Terminated due to reconciliation"
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
 msgid "Судебный штраф"
@@ -719,20 +719,20 @@ msgstr "Terminated on other grounds"
 
 #: src/templates/ClauseChronologyPage/components/tables/ClauseChronologyByResultTable/ClauseChronologyByResultTable.tsx:
 msgid "Динамика числа осужденных по основному составу. Основные параметры."
-msgstr ""
+msgstr "Dynamics of the number of convicted for the primary offence. Basic parameters."
 
 #: src/templates/ClauseFullPage/ClauseFullPage.tsx:
 #: src/templates/ClauseFullPage/ClauseFullPage.tsx:
 msgid "Полная статистика"
-msgstr ""
+msgstr "Full statistics"
 
 #: src/templates/ClauseFullPage/ClauseFullPage.tsx:
 msgid "Вы можете выбрать интересующие вас параметры и скачать данные в формате .csv:"
-msgstr ""
+msgstr "You can choose the parameters of interest and download the data in .csv format:"
 
 #: src/templates/ClauseFullPage/ClauseFullPage.tsx:
 msgid "Вы можете выбрать интересующие вас параметры и скачать данные в формате .csv: "
-msgstr ""
+msgstr "You can choose the parameters of interest and download the data in .csv format: "
 
 #: src/templates/ClauseFullPage/ClauseFullPage.tsx:
 msgid "Выбрать все параметры"
@@ -744,11 +744,11 @@ msgstr "Divide by category"
 
 #: src/templates/ClauseFullPage/ClauseFullPage.tsx:
 msgid "Полная статистика по статье №{{ clauseNumber }} за {{ year }}"
-msgstr ""
+msgstr "Full statistics on article {{ clauseNumber }} over {{ year }}"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "Основной и дополнительный составы"
-msgstr ""
+msgstr "Primary and additional offence"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
@@ -758,66 +758,66 @@ msgstr "Main and additional qualification: general information"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "Общие сведения по основному и дополнительному составу статьи в виде таблицы"
-msgstr ""
+msgstr "General information on primary and additional offence of the article in table form"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "Общие сведения по основному и дополнительному составу статьи в виде чартов"
-msgstr ""
+msgstr "General information on primary and additional offence of the article visualised"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "количество человек, чьи дела прошли через суд"
-msgstr ""
+msgstr "number of persons whose cases have gone through the court"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "Всего осуждено + Прекращено по амнистии + Прекращено за примирением с потерпевшим + Прекращено в связи с деятельным раскаянием + Прекращено судебный штраф + Прекращено по другим основаниям + Оправдано + Обстоятельства, исключающие преступность: необходимая оборона + Обстоятельства, исключающие преступность: крайняя необходимость + Обстоятельства, исключающие преступность, предусмотренные статьями 38, 40 - 42 УК РФ + Принудительные меры к невменяемым"
-msgstr ""
+msgstr "Total number of persons convicted+Terminated due to an amnesty+Terminated due to reconciliation with the victim+Terminated due to active repentance+Terminated court fine+Terminated on other grounds+Acquitted+Circumstances excluding crime: necessary defense+Circumstances excluding crime: extreme necessity+Circumstances excluding criminality stated in articles 38, 40-42+Coercive medical measures against insane persons"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "человек осуждены по основному составу"
-msgstr ""
+msgstr "persons convicted for primary offence"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "человек осуждены по дополнительному составу"
-msgstr ""
+msgstr "persons convicted for additional offence"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "человек оправданы по основному составу"
-msgstr ""
+msgstr "persons acquitted for primary offence"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "человека, в отношении которых дело было прекращено по основному составу"
-msgstr ""
+msgstr "persons whose cases for primary offence were terminated"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "Прекращено за отсутствием события, состава, непричастностью к преступлению + Прекращено по амнистии + Прекращено за примирением с потерпевшим + Прекращено в связи с деятельным раскаянием + Прекращено судебный штраф + Прекращено по другим основаниям"
-msgstr ""
+msgstr "Terminated due to the absence of corpus delicti / absence of a crime event / to lack of participation in the main offence+Terminated due to an amnesty+Terminated due to reconciliation with the victim+Terminated due to active repentance+Terminated court fine+Terminated on other grounds"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "общее количество случаев использования этой статьи"
-msgstr ""
+msgstr "total number of cases where this article was used"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "Всего осуждено + Доп. квалификация: осуждено по количеству составов преступлений + Прекращено за отсутствием события, состава, непричастностью к преступлению + Прекращено по амнистии + Прекращено за примирением с потерпевшим + Прекращено в связи с деятельным раскаянием + Прекращено судебный штраф + Прекращено по другим основаниям + Доп. квалификация: прекращено по количеству составов преступлений + Доп. квалификация: прекращено по иным основаниям по количеству составов преступлений + Оправдано + Принудительные меры к невменяемым + Обстоятельства, исключающие преступность: необходимая оборона + Обстоятельства, исключающие преступность: крайняя необходимость + Обстоятельства, исключающие преступность, предусмотренные статьями 38, 40 - 42 УК РФ "
-msgstr ""
+msgstr "Total number of persons convicted+Additional qualification: convicted by number of offences+Terminated due to the absence of corpus delicti / absence of a crime event / to lack of participation in the main offence+Terminated due to an amnesty+Terminated due to reconciliation with the victim+Terminated due to active repentance+Terminated court fine+Terminated on other grounds+Additional qualification: terminated by number of offences+Acquitted+Coercive medical measures against insane persons+Circumstances excluding crime: necessary defense+Circumstances excluding crime: extreme necessity+Circumstances excluding crime stated in articles 38, 40-42 "
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 msgid "Основной состав: в фокусе"
-msgstr ""
+msgstr "Primary offence: in the spotlight"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "Если человека судят только за одно преступление, состав такого уголовного дела называется простым, если же судят за несколько сразу — квалифицированным. Наиболее тяжкое из вменяемых преступлений является основным составом, а остальные — дополнительными (иногда дополнительный состав также называют дополнительной квалификацией)."
-msgstr ""
+msgstr "If a person is tried only for one crime, the offence in such a criminal case is called “simple”, if a person is tried for several crimes at once, it is called “qualified”. The gravest of the offences charged is the primary offence, the rest are additional offences (sometimes an additional offence is also called an additional qualification)."
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "Читайте подробнее в разделе"
-msgstr ""
+msgstr "Read more in section"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "О датасете"
-msgstr ""
+msgstr "About data set"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "В {{ year }} году по данной статье был осужден по основному составу <b>{{ count }}</b> человек"
@@ -835,8 +835,8 @@ msgstr[1] "<b>{{ count }}</b>  ({{ primarySuspendedPercent }}%) were sentenced t
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
 msgid "еще <b>{{ count }}</b> ({{ primaryImprisonmentPercent }}%) получил реальные сроки"
 msgid_plural "еще <b>{{ count }}</b> ({{ primaryImprisonmentPercent }}%) получили реальные сроки"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "another person ({{ primaryImprisonmentPercent }}%) got a prison sentence"
+msgstr[1] "another <b>{{ count }}</b> ({{ primaryImprisonmentPercent }}%) got prison sentences"
 
 #: src/templates/ClauseMainPage/ClauseMainPage.tsx:
 msgid "Оправдан <b>{{ count }}</b> человек"
@@ -874,31 +874,31 @@ msgstr[1] "<b>{{ count }}</b> people were acquitted of additional offense"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
 msgid "Информация по основному и дополнительному составу статьи в виде чартов"
-msgstr ""
+msgstr "Information on primary and additional offence of the article visualised"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
 msgid "человек осуждены за год"
-msgstr ""
+msgstr "persons convicted over year"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
 msgid "человек оправданы"
-msgstr ""
+msgstr "persons acquitted"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
 msgid "человек, в отношении которых дело было прекращено"
-msgstr ""
+msgstr "persons, whose cases have been terminated"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
 msgid "преступлений признано неоконченными"
-msgstr ""
+msgstr "crimes recognized as incomplete"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
 msgid "Это может означать как то, что все были оконченными, так и то, что сам состав является формальным и не имеет стадий совершения правонарушения (например, можно готовить покушение убийство, но нельзя готовить покушение на неоднократное участие в несогласованных акциях)."
-msgstr ""
+msgstr "This can mean that all of them were complete, as well as that the offence itself is formal and contains no stages of committing an offence (for instance, it is possible to prepare an attempted murder while it is not possible to prepare an attempted repeat participation in unauthorized demonstrations)."
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
 msgid "Дополнительно"
-msgstr ""
+msgstr "Learn More"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
 msgid "дел прекращено по амнистии"
@@ -906,15 +906,15 @@ msgstr "cases terminated by amnesty"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
 msgid "дел прекращено как необходимая оборона"
-msgstr ""
+msgstr "case terminated as necessary defence"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocus.tsx:
 msgid "дополнительных наказаний назначено по статье"
-msgstr ""
+msgstr "additional penalties imposed under the article"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 msgid "Информация по основному и дополнительному составу статьи в виде таблицы"
-msgstr ""
+msgstr "Information on primary and additional offence of the article in table form"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
@@ -929,7 +929,7 @@ msgstr "The crime was uncomplete (preparation of an attempted murder and for the
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Виды основного наказания"
-msgstr ""
+msgstr "Primary penalty types"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
@@ -954,37 +954,37 @@ msgstr "one to three years"
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "свыше 1 до 2 лет включительно"
-msgstr ""
+msgstr "one to two years"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "свыше 2 до 3 лет включительно"
-msgstr ""
+msgstr "two to three years"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "свыше 3 до 5 лет включительно"
-msgstr ""
+msgstr "three to five years"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "свыше 5 до 8 лет включительно"
-msgstr ""
+msgstr "five to eight years"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "свыше 8 до 10 лет включительно"
-msgstr ""
+msgstr "eight to ten years"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "свыше 10 до 15 лет включительно"
-msgstr ""
+msgstr "ten to fifteen years"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "свыше 15 до 20 лет включительно"
-msgstr ""
+msgstr "fifteen to twenty years"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
@@ -1015,7 +1015,7 @@ msgstr "Restriction of liberty"
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Ограничения по воинской службе"
-msgstr ""
+msgstr "Restriction of military service"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
@@ -1040,27 +1040,27 @@ msgstr "Suspended sentence with other measures"
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Прекращено"
-msgstr ""
+msgstr "Terminated"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "За отсутствием события, состава, непричастностью к преступлению"
-msgstr ""
+msgstr "Due to the absence of corpus delicti, of a crime event, due to non-involvement in the crime"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "По амнистии"
-msgstr ""
+msgstr "Due to an amnesty"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "За примирением с потерпевшим (ст. 25 УПК РФ)"
-msgstr ""
+msgstr "Due to reconciliation with the victim (Article 25 of Criminal Procedure Code of the Russian Federation)"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "В связи с деятельным раскаянием (ст. 28 УПК РФ)"
-msgstr ""
+msgstr "Due to active repentance (Article 28 of Criminal Procedure Code of the Russian Federation)"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
@@ -1075,7 +1075,7 @@ msgstr "On other grounds"
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "На основании примечаний к статьям УК РФ (в том числе в связи с деятельным раскаянием ч. 2 ст. 28 УПК РФ)"
-msgstr ""
+msgstr "Based on explanatory notes to the Articles of the Criminal Code of the Russian Federation (also in case of an active repentance, see Article 28 Part 2 of the Criminal Procedure Code of the Russian Federation)"
 
 #: src/templates/ClauseMainPage/ClauseMainPageFocusTable/ClauseMainPageFocusTable.tsx:
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
@@ -1109,11 +1109,11 @@ msgstr "circumstances under 38, 40-42 of Criminal Code of Russian Federation"
 
 #: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusPunishmentsTreemap/ClauseMainPageFocusPunishmentsTreemap.tsx:
 msgid "Наказания для подсудимых по статье "
-msgstr ""
+msgstr "Penalties for the convicted under Article "
 
 #: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
 msgid "Дела прекращены за отсутствием состава, события преступления, непричастностью к преступлению (число лиц)"
-msgstr ""
+msgstr "Cases terminated due to the absence of corpus delicti, of a crime event, due to non-involvement in the crime (number of persons)"
 
 #: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
 msgid "Дела прекращены по иным основаниям (число лиц)"
@@ -1121,39 +1121,39 @@ msgstr "Terminated on other grounds (number of persons)"
 
 #: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
 msgid "Принудительное лечение"
-msgstr ""
+msgstr "Сompulsory treatment"
 
 #: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
 msgid "Статистика прекращения дел по статье в "
-msgstr ""
+msgstr "Case termination statistics under Article in "
 
 #: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedTreemap/ClauseMainPageFocusTerminatedTreemap.tsx:
 msgid "Чем закончились дела по статье "
-msgstr ""
+msgstr "Outcomes of the cases pertaining to Article "
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
 msgid "прекращено дел"
-msgstr ""
+msgstr "cases terminated"
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
 msgid "оправданы"
-msgstr ""
+msgstr "acquitted"
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
 msgid "осуждены"
-msgstr ""
+msgstr "convicted"
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
 msgid "принудительное лечение"
-msgstr ""
+msgstr "compulsory treatment"
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
 msgid "Чем закончились дела по статье {{ clauseNumber }}, дошедшие до суда (основной состав)"
-msgstr ""
+msgstr "Outcomes of the cases pertaining to Article {{ clauseNumber }} that made it to the court (primary offence)"
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
 msgid "доп. состав (по числу лиц)"
-msgstr ""
+msgstr "additional offence (by the number of persons)"
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
 msgid "доп. состав (по количеству составов)"
@@ -1174,7 +1174,7 @@ msgstr "by the number of crimes"
 
 #: src/templates/ClauseMainPage/components/tables/CommonAddResultsTable/CommonAddResultsTable.tsx:
 msgid "Дополнительный состав: детали"
-msgstr ""
+msgstr "Additional offence: details"
 
 #: src/templates/ClauseMainPage/components/tables/CommonMainResultsTable/CommonMainResultsTable.tsx:
 #: src/templates/FaqPage/FaqPage.tsx:
@@ -1189,51 +1189,51 @@ msgstr "Outcome of cases: basic parameters"
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
 msgid "Части"
-msgstr ""
+msgstr "Parts"
 
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
 msgid "Информация по частям статьи в виде таблицы"
-msgstr ""
+msgstr "Information on parts of the article in table view"
 
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
 msgid "Информация по частям статьи в виде чартов"
-msgstr ""
+msgstr "Information on parts of the article visualised"
 
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
 msgid "В {{ year }} году по части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному составу {{ count }} человек"
 msgid_plural "В {{ year }} году по части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному составу {{ count }} человека"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "In {{ year }}, {{ count }} person was convicted under Article {{ clauseNumber }} part {{ partIndex }} as the primary offence"
+msgstr[1] "In {{ year }}, {{ count }} persons were convicted under Article {{ clauseNumber }} part {{ partIndex }} as the primary offence"
 
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
 msgid "По части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному составу {{ count }} человек"
 msgid_plural "По части {{ partIndex }} статьи {{ clauseNumber }} были осуждены по основному составу {{ count }} человека"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Under Article {{ clauseNumber }} part {{ partIndex }} as the primary offence {{ count }} person was convicted"
+msgstr[1] "Under Article {{ clauseNumber }} part {{ partIndex }} as the primary offence {{ count }} persons were convicted"
 
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
 msgid "Из них {{ count }} ({{ primarySuspendedPercent }}%) был приговорен к лишению свободы условно"
 msgid_plural "Из них {{ count }} ({{ primarySuspendedPercent }}%) были приговорены к лишению свободы условно"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{{ count }} of them ({{ primarySuspendedPercent }}%) was sentenced to a suspended imprisonment"
+msgstr[1] "{{ count }} of them ({{ primarySuspendedPercent }}%) were sentenced to a suspended imprisonment"
 
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
 msgid "Оправдан {{ count }} человек"
 msgid_plural "Оправданы {{ count }} человека"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{{ count }} person acquitted"
+msgstr[1] "{{ count }} persons acquitted"
 
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
 msgid "Прекращены дела в отношении <b>{{ count }}</b> человека"
 msgid_plural "Прекращены дела в отношении <b>{{ count }}</b> человек"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Cases involving <b>{{ count }}</b> person were terminated"
+msgstr[1] "Cases involving <b>{{ count }}</b> persons were terminated"
 
 #: src/templates/ClausePartsPage/ClausePartsPage.tsx:
 msgid "По дополнительному составу осуждены <b>{{ count }}</b> человек"
 msgid_plural "По дополнительному составу осуждены <b>{{ count }}</b> человека"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "<b>{{ count }}</b> person was convicted for the additional offence"
+msgstr[1] "<b>{{ count }}</b> persons were convicted for the additional offence"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Дополнительный состав"
@@ -1249,7 +1249,7 @@ msgstr "The overall number of convicted (by the number of crimes) "
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Оправдано (по числу лиц)"
-msgstr ""
+msgstr "Acquitted (by the number of persons)"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Оправдано (по количеству составов преступлений)"
@@ -1261,7 +1261,7 @@ msgstr "Restrictions relating to military service"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Прекращено (основной состав)"
-msgstr ""
+msgstr "Terminated (primary offence)"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "Прекращено (дополнительный состав)"
@@ -1269,7 +1269,7 @@ msgstr "Terminated (additional qualification)"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "За отсутствием состава, события преступления, непричастностью к преступлению (по числу лиц)"
-msgstr ""
+msgstr "Due to the absence of corpus delicti / absence of a crime event / to lack of participation (by the number of persons)"
 
 #: src/templates/ClausePartsPage/components/ClausePartsTable/ClausePartsTable.tsx:
 msgid "За отсутствием состава, события преступления, непричастностью к преступлению (по количеству составов преступлений)"
@@ -1285,124 +1285,124 @@ msgstr "On other grounds (by the number of crimes)"
 
 #: src/templates/ClausesPage/ClausesPage.tsx:
 msgid "Полный перечень всех статей УК РФ, выберите статью для получения полной информации."
-msgstr ""
+msgstr "List of all articles of the Criminal Code of the Russian Federation, choose an article to get full information."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "И амнистия, и помилование — это полное или частичное освобождение от уголовной ответственности, что подразумевает отмену или ослабление наказания и снятие судимости. Однако между ними есть несколько отличий."
-msgstr ""
+msgstr "Both amnesty and pardon are a full or a partial exemption from criminal responsibility, which implies cancelling or lightening the penalty and expunging of the criminal record. Nevertheless, there are a few differences between them."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Амнистия:"
-msgstr ""
+msgstr "Amnesty:"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "выносится Государственной Думой в отношении индивидуально неопределенного круга лиц — амнистированные не перечисляются поименно;"
-msgstr ""
+msgstr "is issued by the State Duma with respect to an indefinite set of people: those amnestied are not listed by name;"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "возможна уже с момента возбуждения уголовного дела;"
-msgstr ""
+msgstr "is already possible starting from the moment the criminal proceedings are initiated;"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "не принимает во внимание желание осужденных — решение об амнистии, как правило, продиктовано политическими интересами."
-msgstr ""
+msgstr "does not take the convicted persons’ wishes into consideration: the decision to grant an amnesty is usually driven by political interests."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Пример:"
-msgstr ""
+msgstr "Example:"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Постановление об амнистии 2001 года"
-msgstr ""
+msgstr "Decree of Amnesty dated 2001"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid " в отношении несовершеннолетних и женщин — под еe действие попали примерно 9% всех заключенных."
-msgstr ""
+msgstr " with respect to minors and women: about 9% of all prisoners fell under it."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Помилование:"
-msgstr ""
+msgstr "Pardon:"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "выносится Президентом в отношении конкретного человека;"
-msgstr ""
+msgstr "is granted by the President with respect to a specific person;"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "возможно только после вступления в силу обвинительного приговора;"
-msgstr ""
+msgstr "is possible only after a sentence has become effective;"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "обычно инициируется самим осужденным — для этого нужно подать ходатайство."
-msgstr ""
+msgstr "is usually initiated by the convicted persons themselves: one needs to file a petition."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Указ о помиловании"
-msgstr ""
+msgstr "Decree of Pardon"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid " украинской военнослужащей Надежды Савченко, осужденной по делу об убийстве журналистов ВГТРК в Донбассе."
-msgstr ""
+msgstr " with respect to a Ukrainian servicewoman Nadiya Savchenko who was convicted of murder of VGTRK journalists in Donbass."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Согласно уголовному кодексу, при обвинении применяется тот закон, который действовал во время совершения преступления"
-msgstr ""
+msgstr "According to the Criminal Code, the law that was in effect at the time the crime was committed"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Предположим, гражданин Д. совершил грабеж и через три года его арестовали. За это время законодательство изменилось, но, согласно принципу действия закона во времени, судить Д. будут по старой статье, действительной на момент грабежа."
-msgstr ""
+msgstr "Suppose citizen D commited a robbery and was arrested three years later. In the meantime the law had changed, but according to the principle of operation of criminal law in time, D. will be tried under the older article that was in effect at the time of the robbery."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "При этом в некоторых случаях закон всe же имеет обратную силу. Так, если впоследствии наказание стало мягче, к обвиняемому применят новые, более благоприятные правила, а если статью отменили — снимут обвинение или судимость. Если же закон был ужесточен, судить будут по старой статье"
-msgstr ""
+msgstr "However, in some cases the law can have a retroactive effect. For instance, if the penalty has become milder, the new and more favorable rules will be applied, and if the article has been repealed, the charges will be dropped or the criminal record will be expunged. In case the law has become stricter, the proceedings will be held under the older article"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "ст. 10 УК"
-msgstr ""
+msgstr "article 10 of the Criminal Code"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "В результате в уголовную статистику иногда попадают дела по тем статьям, которые уже не действительны — это усложняет анализ данных и может исказить результаты."
-msgstr ""
+msgstr "As a result, cases pertaining to the articles that are no longer valid are sometimes included in the criminal statistics, which makes the data analysis more difficult and can distort the results."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Уголовный кодекс выделяет три типа наказаний:"
-msgstr ""
+msgstr "Уголовный кодекс выделяет три типа наказаний:"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "основные — они выступают самостоятельными наказаниями;"
-msgstr ""
+msgstr "primary —which can act as standalone punishments;"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "дополнительные — могут прибавляться к основным, чтобы сделать приговор строже;"
-msgstr ""
+msgstr "additional — which can be added to the primary ones in order to stiffen the sentence;"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "смешанные — используются в обоих качествах."
-msgstr ""
+msgstr "mixed — which can be used in both respects."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Решение о прибавлении дополнительного наказания к основному по большей части зависит от судьи, хотя в юридической практике заметна корреляция: если состав простой и без отягчающих обстоятельств — то есть судят за одно преступление, — суд скорее ограничится основным наказанием; если же в деле есть"
-msgstr ""
+msgstr "The decision to add an additional penalty to the primary one is generally made by the judge, although in legal practice the following correlation can be seen: if an offence is simple and there are no aggravating circumstances - which means that a person is tried for one offence - the court is likely to restrict itself to imposing a primary penalty; in case there is an"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "или отягчающие обстоятельства — в приговоре с большей вероятностью будет еще и дополнительное наказание."
-msgstr ""
+msgstr "or aggravating circumstances in the case, there is a higher probability that an additional penalty will be imposed as well."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "В качестве дополнительного наказания могут применять"
-msgstr ""
+msgstr "Can be used as additional penalty:"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "запрет на определeнную деятельность, лишение специального, воинского или почетного звания и другие меры"
-msgstr ""
+msgstr "deprivation of the right to engage in certain activities, deprivation of a special or a military rank, deprivation of an honorary title, and other punishments can be used as additional penalties"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "ст. 45 УК"
-msgstr ""
+msgstr "article 45 of the Criminal Code"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Преступление считается неоконченным, если имело место только приготовление или покушение"
-msgstr ""
+msgstr "A crime is considered incomplete if only preparations for it or an attempt to commit it have taken place"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Приготовление"
@@ -1412,35 +1412,35 @@ msgstr "Preparation"
 msgid "это любые намеренные действия, предшествовавшие преступлению или\n"
 "              покушению, например, подготовка орудий, поиск соучастников или\n"
 "              сговор."
-msgstr ""
+msgstr "any premeditated actions preceding a crime or an attempt to commit a crime. For example, preparing instruments of a crime, searching for accomplices, or a conspiracy."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Покушение"
-msgstr ""
+msgstr "Attempt"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "это неудачная попытка совершения преступления, предпринятая осознанно. Бездействие тоже может считаться покушением. Например, если кассир специально не закрыл кассу, чтобы позже украсть из неe деньги. "
-msgstr ""
+msgstr "is a failed deliberate attempt to commit a crime. Omission can also be considered an attempt. For example, if a cashier deliberately left the cash register open to steal money from it afterwards. "
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Небольшие и средние неоконченные преступления — причинение легкого вреда здоровью, клевета или убийство в состоянии аффекта — не преследуются по закону, а вот тяжкие и особо тяжкие случаи — умышленное убийство, грабеж, изнасилование — уголовно наказуемы, но оцениваются мягче. Так, приговор за приготовление не может превышать половины максимального срока за такое же оконченное преступление, а приговор за покушение — трех четвертей."
-msgstr ""
+msgstr "Minor and average incomplete crimes (infliction of a light injury, defamation or murder in a state of passion) are not prosecuted by law, but serious and particularly serious cases (premeditated murder, robbery, rape) are criminally punishable, but are assessed more mildly. Thus, the sentence for preparation may not exceed half of the maximum sentence for the same completed crime, the sentence for attempted murder — three-quarters."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Формально противоправные действия — например, нанесение тяжкого вреда здоровью, — не преследуются по закону, если они были спровоцированы особыми внешними факторами. Причинение вреда в этих обстоятельствах не влечет уголовной ответственности. Уголовный кодекс выделяет шесть таких ситуаций"
-msgstr ""
+msgstr "Formally criminal actions, infliction of a grave injury for example, are not prosecuted by law in case they'd been provoked by extraordinary external factors. In that case infliction of injury is not criminally liable. The Criminal Code specifies six such situations"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "гл. 8 УК"
-msgstr ""
+msgstr "chapter 8 of the Criminal Code"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Оборона"
-msgstr ""
+msgstr "Defence"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Защита личности и прав обороняющегося или других лиц. Важно, чтобы масштаб обороны соответствовал опасности, иначе это может быть уголовно наказуемо."
-msgstr ""
+msgstr "Protection of the defender or other persons' self and rights. It is important that the scale of the defense is adequate to the danger, otherwise it can be criminalized."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 #: src/templates/FaqPage/FaqPage.tsx:
@@ -1449,87 +1449,87 @@ msgstr ""
 #: src/templates/FaqPage/FaqPage.tsx:
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Пример: "
-msgstr ""
+msgstr "Example: "
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "оборона при нападении в парке."
-msgstr ""
+msgstr "defence against assault in a park."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Задержание лица, совершившего преступление"
-msgstr ""
+msgstr "Detention of a person who has committed a crime"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Вред может быть причинен, если преступник совершил оконченное преступление и пытается скрыться."
-msgstr ""
+msgstr "Damage can be inflicted if the criminal has committed a complete crime and is trying to escape."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "при попытке задержать вора вы сломали его руку. "
-msgstr ""
+msgstr "during an attempt to detain a thief you break their arm. "
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Крайняя необходимость"
-msgstr ""
+msgstr "Extreme necessity"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Ситуация, в которой одно неправомерное деяние необходимо, чтобы исключить другое более тяжкое деяние. Или это может быть конфликт двух взаимоисключающих прав, когда реализация одного значит нарушение другого."
-msgstr ""
+msgstr "A situation where one unlawful act is necessary to exclude another unlawful act which is more grave. Or a conflict of two mutually exclusive rights, in which realizing one means violating the other."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "в экстренной ситуации врач вынужден спасти того пациента, чей риск смерти выше."
-msgstr ""
+msgstr "in an emergency, a doctor has to save the patient whose death risk is greater."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Физическое или психическое принуждение"
-msgstr ""
+msgstr "Physical or mental coercion"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Если действия выполняются в результате принуждения, а не по воле самого человека, они не рассматриваются как преступление."
-msgstr ""
+msgstr "If actions are committed as a result of a coercion and not by a person’s own will, the actions are not considered as a crime."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "с помощью пыток человека заставляют оклеветать соседа по лестничной клетке."
-msgstr ""
+msgstr "under torture, a person is forced to slander their neighbour from the same floor."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Обоснованный риск"
-msgstr ""
+msgstr "Justified Risk"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Риск, связанный с научной, коммерческой, предпринимательской деятельностью, производством или управлением персоналом."
-msgstr ""
+msgstr "A risk related to scientific, commercial or business activities, production or human resource management."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "технические испытания ракеты, которые могут привести к жертвам."
-msgstr ""
+msgstr "tests of a missile that may lead to casualties."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Исполнение приказа"
-msgstr ""
+msgstr "Execution of an order"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "При соответствующих полномочиях и обязанности исполнить приказ, должностное лицо может причинить вред. Если приказ или распоряжение заведомо незаконны, преступность не исключается."
-msgstr ""
+msgstr "Given relevant authority and having the duty to execute an order, an official may inflict harm. If an order or an instruction is known to be illegal, criminality is not excluded."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "убийство на войне."
-msgstr ""
+msgstr "murder in a war."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Главное отличие между освобождением от наказания и прекращением уголовного преследования заключается в том, что в первом случае человек остается виновным в преступлении, несмотря на послабления в мере наказания"
-msgstr ""
+msgstr "The main difference between exemption from punishment and termination of criminal prosecution is that in the first case a person remains guilty of a crime, despite the penalty being lightened"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "гл. 12 УК"
-msgstr ""
+msgstr "Article 12 of the Criminal Code"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "во втором случае все обвинения снимают"
-msgstr ""
+msgstr "and in the second case all charges are dropped"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "ст. 27 УПК"
-msgstr ""
+msgstr "Article 27 of the Criminal Procedural Code"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
@@ -1541,54 +1541,54 @@ msgstr ""
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Освобождение от наказания"
-msgstr ""
+msgstr "Exemption from punishment"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "применяется только после вступления обвинительного приговора в силу. Оно может быть связано с болезнью или аддикцией осужденного, изменением обстановки, истечением сроков давности обвинительного приговора."
-msgstr ""
+msgstr "applies only after a sentence becomes effective. It can be related to the convicted person’s illness or addiction, changes in the situation, expiration of the statute of limitations."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 #: src/templates/FaqPage/FaqPage.tsx:
 #: src/templates/FaqPage/FaqPage.tsx:
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Пример"
-msgstr ""
+msgstr "Example"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "в 2017 году адвокат К."
-msgstr ""
+msgstr "in 2017, attorney К."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "была освобождена"
-msgstr ""
+msgstr "was exempted"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "от штрафа в 100 тыс. рублей за дачу взятки из-за истечения срока давности уголовного преследования."
-msgstr ""
+msgstr "from a fine of 100 000 rubles for bribery due to expiration of the statute of limitations for criminal prosecution."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Прекращение уголовного преследования"
-msgstr ""
+msgstr "Termination of criminal prosecution"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "возможно по"
-msgstr ""
+msgstr "may take place on"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "реабилитирующим и нереабилитирующим основаниям,"
-msgstr ""
+msgstr "exculpatory and non-exculpatory grounds,"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "а также при отсутствии процессуальных условий для продолжения дела."
-msgstr ""
+msgstr "as well as due to the absence of procedural conditions for continuation of the prosecution."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "В 2019 году"
-msgstr ""
+msgstr "In 2019"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "было прекращено"
-msgstr ""
+msgstr "has been terminated"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "\n"
@@ -1596,320 +1596,321 @@ msgid "\n"
 "              которого обвиняли в покушении на сбыт наркотиков. МВД объяснило\n"
 "              это решение тем, что причастность Голунова к преступлению не была\n"
 "              доказана."
-msgstr ""
+msgstr "\n"
+"criminal prosecution of a journalist Ivan Golunov, who was accused of a drug trafficking attempt. Ministry OF Internal Affairs has explained this decision by saying that Golunov's involvement in the crime has not been proved."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Состав — это конкретные действия, которые преследуются по закону и являются основанием для уголовной ответственности. Если в деле фигурируют сразу несколько преступлений, то выделяют основной дополнительные составы. Предположим, помимо убийства обвиняемый совершил кражу и употреблял наркотические вещества в общественном месте. Наиболее тяжкое из этих преступлений — умышленное убийство. При условии, что суд будет рассматривать эти дела вместе, именно оно будет являться основным составом, а менее весомые деяния — дополнительным."
-msgstr ""
+msgstr "An offence is considered to be a set of specific actions that are prosecuted by law and constitute grounds for criminal liability. If there are several crimes within one case, a primary and additional offences are established. For instance, suppose a defendant, in addition to murder, has committed a theft and used narcotic substances in a public place. The gravest of these crimes is premeditated murder. Provided that the court shall hear these cases together, it will be considered as the primary offence, and the acts of lesser gravity will be considered as additional."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Наказание назначается отдельно за каждое преступление и зависит в первую очередь от основного состава, а дополнительные складываются с ним по специальным формулам или поглощаются"
-msgstr ""
+msgstr "Penalties are imposed separately for each crime and are largely dependent on the primary offence, whereas the additional offences are summed with the primary one by special formulas or absorbed"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "ст. 69 УК"
-msgstr ""
+msgstr "Article 69 of the Criminal Code"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Чтобы было проще разобраться в опубликованных данных, мы подготовили"
-msgstr ""
+msgstr "In order to make it easier to make sense of the published data, we have prepared"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "подробный материал"
-msgstr ""
+msgstr "a detailed outline"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "о составах преступления, вынесении наказания и сборе информации по этим показателям."
-msgstr ""
+msgstr "of offences, sentencing and collecting data on these parameters."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Если психическое состояние обвиняемого представляет опасность для него самого или окружающих, суд может назначить обязательное лечение"
-msgstr ""
+msgstr "If a defendant’s mental condition presents a danger to themselves or to others, the court may impose compulsory treatment"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "гл. 15 УК"
-msgstr ""
+msgstr "Article 15 of the Criminal Code"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Это происходит в следующих случаях:"
-msgstr ""
+msgstr "This happens in the following cases:"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "преступление было совершено в состоянии невменяемости;"
-msgstr ""
+msgstr "the crime was committed in a state of insanity;"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "психическое расстройство наступило после преступления, так что назначить и исполнить наказание — невозможно;"
-msgstr ""
+msgstr "the psychiatric condition has manifested after the crime had been committed, and it is impossible to impose and execute a penalty;"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "обвиняемый вменяем, но страдает психическим расстройством и опасен;"
-msgstr ""
+msgstr "the defendant is sane but has a mental illness and is dangerous;"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "обвиняемый совершил преступление против половой неприкосновенности несовершеннолетнего."
-msgstr ""
+msgstr "the defendant has committed a crime against a minor’s sexual inviolability."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Время в психиатрическом стационаре засчитывается осужденному в срок наказания, а если его признают выздоровевшим, уголовное дело будет возобновлено."
-msgstr ""
+msgstr "The time spent in a psychiatric hospital is included in a convicted person’s sentence, and if the convicted person is found to have recovered, the criminal case will be reopened."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Все виды работ, предусмотренные Уголовным кодексом, применяются только в качестве"
-msgstr ""
+msgstr "All the types of labour provided by the Criminal Code can be assigned only as"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "основных видов наказаний"
-msgstr ""
+msgstr "primary penalties"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "это означает, что они могут выступать только как самостоятельные наказания, но не могут быть дополнением к другим мерам."
-msgstr ""
+msgstr "which means that they can only serve as standalone penalties, not as additions to other penalties."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Обязательные работы — общественно полезный труд"
-msgstr ""
+msgstr "Mandatory labour: community service"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "ст. 49 УК"
-msgstr ""
+msgstr "Article 49 of the Criminal Code"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "назначаются за преступления небольшой и средней тяжести;"
-msgstr ""
+msgstr "assigned for crimes of minor and medium gravity;"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "включают общественно полезный труд в свободное от работы или учебы время;"
-msgstr ""
+msgstr "include community service during the time not taken by the convicted person’s education and main occupation;"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "срок исполнения — от 60 до 480 часов, не больше 4 часов в день."
-msgstr ""
+msgstr "execution period: 60 to 480 hours, not more than 4 hours per day."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "причинение легкого вреда здоровью, угроза убийством, нарушение неприкосновенности жилища, повторное наказание за вождение в состоянии опьянения."
-msgstr ""
+msgstr "infliction of a grave injury to health, threat of murder, violation of the inviolability of the home, repeated punishment for DUI."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Исправительные работы — дополнительный налог на зарплату"
-msgstr ""
+msgstr "Labour — additional income tax"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "ст. 50 УК"
-msgstr ""
+msgstr "article 50 of the Criminal Code"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "подразумевают взимание от 5 до 20% заработной платы осужденного в доход государства;"
-msgstr ""
+msgstr "suppose charging from 5 to 20% of the convicted person's salary to the state income;"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Если у осужденного нет постоянного места работы, его назначает суд. Как правило, это самый низкооплачиваемый труд: грузчик, дворник, уборщик."
-msgstr ""
+msgstr "If the convicted person does not have a permanent occupation, the court appoints him. As a rule, this is the lowest paid work: loader, janitor, cleaner."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "срок исполнения — от 2 месяцев до 2 лет."
-msgstr ""
+msgstr "period of execution is from 2 months to 2 years."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "кражи, неуплата алиментов, нарушение неприкосновенности жилища или оскорбление представителя власти."
-msgstr ""
+msgstr "theft, failure to pay child support, violation of the inviolability of the home or insulting a representative of the authorities."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Принудительные работы — альтернатива лишению свободы"
-msgstr ""
+msgstr "Forced labor — an alternative to imprisonment"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "ст. 53.1 УК"
-msgstr ""
+msgstr "article 53.1 of the Criminal Code"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "назначаются за небольшие и средние преступления, а также за тяжкие, если они совершены впервые;"
-msgstr ""
+msgstr "assigned for small and average crimes, as well as for serious ones, if they are committed for the first time;"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "осужденные живут в исправительном центре ФСИН и получают заработную плату, из которой также от 5 до 20% уходит в доход государства;"
-msgstr ""
+msgstr "the convicts live in the correctional center of the Federal Penitentiary Service and receive a salary, 5 to 20% of which also goes to the state income;"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "срок исполнения — от 2 месяцев до 5 лет."
-msgstr ""
+msgstr "period of execution is from 2 months to 5 years."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "К реабилитирующим основаниям"
-msgstr ""
+msgstr "To exculpatory grounds"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "прекращения уголовного преследования относятся:"
-msgstr ""
+msgstr "of termination of criminal prosecution contribute:"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "непричастность подозреваемого к совершению преступления;"
-msgstr ""
+msgstr "lack of participation in the crime;"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "отсутствие события преступления;"
-msgstr ""
+msgstr "absence of a crime event;"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "отсутствие в деянии"
-msgstr ""
+msgstr "absence in the act"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "состава преступления"
-msgstr ""
+msgstr "actionable offense"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "ст. 212 УПК"
-msgstr ""
+msgstr "article 212 of the Criminal Procedure Code"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "В этом случае суд признает за бывшим обвиняемым право на возмещение имущественного и морального вреда и восстановление в трудовых, пенсионных, жилищных и иных правах"
-msgstr ""
+msgstr "In this case, the court recognizes the former defendant's right to compensation for property and moral damage and restoration of a right to labor, pension, housing and other rights"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "ст. 133 УПК"
-msgstr ""
+msgstr "article 133 of the Criminal Procedure Code"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "К"
-msgstr ""
+msgstr "To"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "нереабилитирующим основаниям"
-msgstr ""
+msgstr "to non-exculpatory grounds"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "относятся:"
-msgstr ""
+msgstr "belong to:"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "истечение сроков давности уголовного преследования;"
-msgstr ""
+msgstr "expiration of the statute of limitations for criminal prosecution;"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "деятельное раскаяние "
-msgstr ""
+msgstr "active repentance "
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "подозреваемого;"
-msgstr ""
+msgstr "of the suspect;"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "примирение сторон;"
-msgstr ""
+msgstr "reconciliation of the parties;"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "смерть подозреваемого или обвиняемого;"
-msgstr ""
+msgstr "death of the suspect or the accused;"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "акт амнистии;"
-msgstr ""
+msgstr "decree of amnesty;"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "принятия закона, устраняющего преступность или наказуемость деяния;"
-msgstr ""
+msgstr "adoption of a law abolishing the criminality or the punishability of a deed;"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "возмещение ущерба, если преступление касалось экономической деятельности;"
-msgstr ""
+msgstr "compensation of damages in case the crime was related to economic activity;"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Прекратить уголовное преследование по нереабилитирующим основаниям можно только с согласия фигуранта дела, так как это означает добровольное признание вины и принятие последствий."
-msgstr ""
+msgstr "Termination of criminal prosecution on non-exculpatory grounds is possible only with the consent of the defendant, because it implies voluntary admission of guilt and acceptance of consequences."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Если следствие обвиняет человека сразу в нескольких преступлениях (см."
-msgstr ""
+msgstr "If the investigators accuse a person of several crimes at once (see the"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Состав преступления"
-msgstr ""
+msgstr "Offences"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "мы имеем дело с совокупностью преступлений"
-msgstr ""
+msgstr "we are dealing with a cumulative crime"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "ст. 17 УК"
-msgstr ""
+msgstr "Article 17 of the Criminal Code"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Реальная совокупность означает, что человек последовательно совершил несколько преступлений. Например, сначала публично призывал к свержению конституционного строя, а через час сбил пешехода."
-msgstr ""
+msgstr "A real cumulative crime means that a person has committed several crimes consecutively. For instance, a person first publicly called for the overthrow of the constitutional order, and an hour later they ran over a pedestrian."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Идеальная совокупность означает, что человек одним действием совершил сразу несколько преступлений. Например, прошел обучение в террористической организации"
-msgstr ""
+msgstr "An ideal cumulative crime means that a person has committed several crimes at once in one act. For instance, underwent a training program in a terrorist organization"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "ст. 205.3 УК"
-msgstr ""
+msgstr "Article 205.3 of the Criminal Code"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "и одновременно в ней участвовал"
-msgstr ""
+msgstr "participating in it at the same time"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "ст. 205.4 УК"
-msgstr ""
+msgstr "Article 205.4 of the Criminal Code"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Такие дела — когда один или несколько человек совершают серию преступлений — могут быть объединены в одно дело и рассматриваться в суде вместе. Наказание будет вынесено за каждое совершенное преступление по соответствующей статье. В"
-msgstr ""
+msgstr "Such cases where one or several persons commit a series of crimes can be consolidated into one case and go to trial together. The penalties are imposed for each crime committed under a relevant article."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "статье 69 УК"
-msgstr ""
+msgstr "Article 69 of the Criminal Code"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "приведена инструкция, как должны суммироваться меры наказания в зависимости от тяжести преступлений и от того, какие  наказания назначены по отдельности. Если же дела рассматривали отдельно, будет действовать правило назначения наказания по совокупности приговоров"
-msgstr ""
+msgstr "contains the instruction on summing up the penalties depending on the gravity of the crimes and on the penalties imposed for each crime. If the cases were tried separately, the cumulative sentence rule is applied"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "ст. 70 УК"
-msgstr ""
+msgstr "Article 70 of the Criminal Code"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Судебный штраф — это способ освобождения от уголовной ответственности и основание для прекращения дела, но не одна из мер наказания (см."
-msgstr ""
+msgstr "A court fine is one of the ways to be exempted from criminal liability, and is considered to be grounds for termination of a case, but it is not one of the penalties (see"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Если человек впервые совершил преступление небольшой или средней тяжести (за это можно получить до 5 лет лишения свободы), а затем загладил ущерб и примирился с истцом, ему могут назначить судебный штраф — тогда ответчик официально не будет судим."
-msgstr ""
+msgstr "If a person had committed a crime of little or medium gravity (for which one can be sentenced to up to 5 years of imprisonment), and then made amends and reconciled with the plaintiff, a court fine can be assigned, in which case the defendant will have no official criminal record."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Такая практика — компромисс между сторонами в уголовном процессе. Ее преимущество заключается в первую очередь в гуманности и упрощенном судопроизводстве. Это недавнее явление в российском уголовном праве — оно появилось только в 2016 году, — но применяется всe более активно. В 2017 судебный штраф был назначен более 20 тысяч раз, а уже в 2019 — более 52 тысяч."
-msgstr ""
+msgstr "Such practice is a compromise between the parties in criminal proceedings. Its advantage lies primarily in humaneness and simplified legal proceedings. Having only appeared as early as in 2016, this practice is a recent occurrence in Russian criminal law, but it is being used more and more. In 2017, more than 20 000 court fines were issued, and the number of the court fines issued in 2019 is in excess of 52 000."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Штраф — это один из видов"
-msgstr ""
+msgstr "A fine is one of the"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "наказаний"
-msgstr ""
+msgstr "penalties"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "В некоторых уголовных делах он выступает как основная мера — это означает, что обвиняемый остался судим, заплатил штраф и избежал заключения. В"
-msgstr ""
+msgstr "In some criminal cases a fine is imposed as the primary penalty, which means that the accused person’s conviction will remain on their record, they pay the fine and avoid imprisonment. In"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "других"
-msgstr ""
+msgstr "other"
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "случаях штраф это дополнительная мера — тогда человек отбывает более строгое наказание и в дополнение к этому выплачивает определенную сумму государству. При подсчете статистики нельзя просто сложить количество первых и вторых дел — получится путаница, так как эти данные демонстрируют разные ситуации."
-msgstr ""
+msgstr "cases a fine is imposed as an additional penalty, which means that the person serves a harsher sentence and, in addition to that, pays a certain amount of money to the state. When calculating statistics, one cannot simply add up the number of the cases of the first and the second type: it will be a mess, because the data represent different types of situations."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Размер штрафа зависит от тяжести преступления и финансового положения осужденного. Иногда суд может назначить штраф с рассрочкой выплаты на срок до пяти лет."
-msgstr ""
+msgstr "The fine amount is dependent on the severity of the crime and on the convicted person’s financial situation. Sometimes a court can impose a fine to be paid in installments for a period of up to five years."
 
 #: src/templates/FaqPage/FaqPage.tsx:
 msgid "Как устроен проект Достоевский?"
-msgstr ""
+msgstr "How does project Dostevsky work?"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "статья"
@@ -1923,103 +1924,103 @@ msgstr "the overall number of convicted"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "134 ч. 1 (в старой редакции до ФЗ от 29.02.2012 № 14-ФЗ)"
-msgstr ""
+msgstr "134 part 1 (old version before the amendments made by the Federal Law dated 29.02.2012 № 14-FZ)"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "134 ч. 4 (в старой редакции до ФЗ от 29.02.2012 № 14-ФЗ)"
-msgstr ""
+msgstr "134 part 4 (old version before the amendments made by the Federal Law dated 29.02.2012 № 14-FZ)"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "134 ч. 1 (с редакцией ФЗ от 29.02.2012 № 14-ФЗ)"
-msgstr ""
+msgstr "134 part 1 (as amended by the Federal Law dated 29.02.2012 № 14-FZ)"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "Мы берем уголовную статистику с"
-msgstr ""
+msgstr "We use the criminal statistics from the"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "сайта"
-msgstr ""
+msgstr "website"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "Судебного департамента при Верховном суде РФ. Это информация о судимости и о решениях федеральных арбитражных судов, судов общей юрисдикции и мировых судей. Для обработки мы выбрали два типа данных: статистику осужденных по основному составу преступления (без учета сложения наказаний) и по дополнительному. Демографические формы, которые содержат информацию о социальном статусе обвиняемых, их поле и возрасте, мы не обрабатывали."
-msgstr ""
+msgstr "of the Judicial Department at the Supreme Court of the Russian Federation. This information pertains to the criminal records and the rulings of federal arbitration courts, courts of general jurisdiction, and justices of the peace. We chose two types of data for processing: the statistics on the persons convicted for a primary offence (not taking the cumulative punishments into account) and for an additional one. We did not process the demographic forms that contain the information about the social status, gender and age of the accused."
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "Вот как мы обработали эту информацию:"
-msgstr ""
+msgstr "This is how we processed this data:"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "Свели в единую таблицу несколько массивов данных: статистику осужденных по основным составам за 2009-2010 и 2011-2018 годы и статистику осужденных по дополнительным составам за 2009-{{ year }} годы."
-msgstr ""
+msgstr "We merged several arrays of data into a single spreadsheet: the statistics on the persons convicted for primary offences in 2009-2010 and 2011-2018, and the statistics on the persons convicted for additional offences in 2009-{{ year }}."
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "Из полученных таблиц мы удалили пустые и резервные строки, а также те, в которых была указана только степень тяжести преступления. Показатели этих строк либо равно нулю, либо уже учтены."
-msgstr ""
+msgstr "We deleted empty and backup lines as well as the lines containing only the severity of the crime from the spreadsheets we had created. The values of these lines are either equal to zero or already taken into account."
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "Привели данные в машиночитаемый вид и представили в виде таблицы в «длинной форме» (такая форма считается наиболее удобной для машинной обработки и соответствует принципам"
-msgstr ""
+msgstr "We converted the data into a machine-readable format and presented it as a “long” spreadsheet (which is considered the most convenient form for machine processing and conforms to the principles of"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "«чистых данных»"
-msgstr ""
+msgstr "“tidy data”"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "а затем обработали с помощью Python."
-msgstr ""
+msgstr "and then processed it using Python."
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "Провели базовую аналитику основных показателей и проиллюстрировали их наглядной инфографикой, которая доступна по данным каждой статьи."
-msgstr ""
+msgstr "We conducted a basic analysis of the main indicators and illustrated them with illustrative infographics available for each article."
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "С какими проблемами мы столкнулись?"
-msgstr ""
+msgstr "What problems have we encountered?"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "Из-за особенностей уголовного права РФ в статистике оказываются данные, которые затрудняют сбор и анализ: некоторые статьи встречаются несколько раз, вид и содержание таблиц не унифицированы, а новые законы требуют более внимательной обработки. "
-msgstr ""
+msgstr "Due to some specific features of the criminal law of the Russian Federation, the statistics contain some data that makes collection and analysis more difficult: some articles appear several times, the types and contents of the spreadsheets are not unified, and new laws require more careful processing. "
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "Изменения в статистических формах"
-msgstr ""
+msgstr "Changes in the statistical forms"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "Статистические формы Судебного департамента меняются со временем: в них увеличивается количество учитываемых показателей и их детализация, а также количество самих статей УК. Например, до 2018 года наказание в виде штрафа не было детализировано по суммам штрафа. Некоторые показатели, наоборот, исчезают. Так, колонка по количеству осужденных, у которых имеется коррупционный мотив, появилась в статистике в 2010 году и исчезла в 2012."
-msgstr ""
+msgstr "The statistical forms used by the Judicial Department are changing over time: the number of indicators taken into account and they become increasingly detailedf, as well as the number of the Criminal Code articles. For example, the penalty in the form of a fine was not categorized by amount of the fine until 2018. Some indicators, on the contrary, are disappearing. For instance, the column containing information of the number of persons convicted who had a corruption motive, appeared in the statistics in 2010 and disappeared in 2012."
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "Отчасти эта проблема объясняется изменениями в самом Уголовном кодексе: количество статей «Особенной части» постоянно растет, что ведет к увеличению показателей."
-msgstr ""
+msgstr "This problem can be partially explained by the changes made in the Criminal Code itself: the number of the articles in the “Special Part” keeps growing, which leads to an increase in the number of indicators."
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "Утратившие силу статьи"
-msgstr ""
+msgstr "Expired articles"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "Порой в судебную статистику попадают новые дела по уже не действительным статьям. Так, в 2011 году часть 1"
-msgstr ""
+msgstr "Sometimes new cases under the articles that already expired make it to the judicial statistics. For instance, in 2011"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "статьи 188"
-msgstr ""
+msgstr "Article 188"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "контрабанда — была декриминализована и перешла в разряд"
-msgstr ""
+msgstr "part 1 (Contraband) was decriminalized and reclassified as an"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "административных правонарушений"
-msgstr ""
+msgstr "administrative offence"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "а преступления из части 2 — контрабанда запрещенных веществ, огнестрельного оружия, боеприпасов и прочего — были перенесены в статьи"
-msgstr ""
+msgstr "whereas the crimes indicated in part 2 (contraband of prohibited substances, firearms, ammunition, etc.) were moved into Articles"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "226.1"
-msgstr ""
+msgstr "226.1"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
@@ -2030,111 +2031,111 @@ msgstr ""
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "и"
-msgstr ""
+msgstr "and"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "229.1"
-msgstr ""
+msgstr "229.1"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "при этом наказание за них не изменилось. В настоящей редакции Уголовного кодекса статья 188 значится как утратившая силу. Тем не менее, в 2017 году по ней осудили двух человек."
-msgstr ""
+msgstr "with no changes in the penalty. In the current version of the Criminal Code, Article 188 is listed as expired. Nonetheless, in 2017 two persons were convicted under it."
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "Это возможно из-за"
-msgstr ""
+msgstr "This is possible due to the"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "принципа действия закона во времени"
-msgstr ""
+msgstr "principle of operation of criminal law in time"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "(ст. 9 УК): даже через несколько лет после преступления человека, совершившего его, осудят в соответствии с той редакцией, которая действовала на момент совершения преступления. В случае статьи 188 ч. 2, Верховный суд"
-msgstr ""
+msgstr "(Article 9 of the Criminal Code): even several years after the crime, the person who committed it will be convicted in accordance with the version that was in effect at the time of the crime. In case of Article 188 part 2, the Supreme Court"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "предписывает"
-msgstr ""
+msgstr "directs"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "использовать прежнюю статью 188 для тех преступлений, которые были совершены в период действия 188 статьи и попадают под ее вторую часть."
-msgstr ""
+msgstr "that the former Article 188 be used for the crimes committed during the time Article 188 was valid if they fall under its second part."
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "Появление новых статей в УК РФ "
-msgstr ""
+msgstr "Emergence of new articles in the Criminal Code "
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "Новые статьи смещают практику правоприменения. Например, до 2016 года по обвинению в терроризме привлекали по статьям 205, 205.1-5, 206, 207. После принятия «закона Яровой» их стало больше: появились также статьи 205.6 и 361. Анализируя данные только по одной статье, мы можем прийти к выводу, что с годами с России стали реже судить за терроризм, однако в реальности дело в расширении законодательства и увеличении числа статей."
-msgstr ""
+msgstr "New articles shift law enforcement practice. For example, until 2016 people were brought to the court on charges of terrorism under Articles 205, 205.1-5, 206, 207. After the “Yarovaya law” was adopted, the number of the articles increased: articles 205.6 and 361 appeared as well. Analyzing the data for only one article, we may conclude that over the years terrorism cases in Russia have become less frequent, whereas in reality the matter is that the legislation is expanding and the number of the articles is growing."
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "Изменение содержания статей и задваивание в статистике"
-msgstr ""
+msgstr "Changes in the content of articles and duplications in the statistics"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "Некоторые статьи претерпевают существенные изменения. В таком случае утрачивает силу прежняя редакция статьи. Но так как, по тому же принципу"
-msgstr ""
+msgstr "Some articles undergo substantial changes. In such cases the previous version of an article is no longer valid. However, since according to the abovementioned principle of"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "действия закона во времени"
-msgstr ""
+msgstr "operation of law in time"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "по прежней редакции могут продолжать осуждать людей, в таблицах иногда соседствуют разные версии одной и той же статьи. Например, в данных по"
-msgstr ""
+msgstr "people may still be convicted under previous versions, sometimes there are different versions of the same article in the same spreadsheet. For example, in the data for"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "статье 134 УК"
-msgstr ""
+msgstr "Article 134 of the Criminal Code"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "в 2017 году все части статьи встречаются дважды."
-msgstr ""
+msgstr "in 2017, each part of the article appears twice."
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "Список статей"
-msgstr ""
+msgstr "List of articles"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "В случаях, когда статья, еe часть или редакция утрачивают силу, в статистических формах № 10.3 и № 10.3.1 номер статьи сопровождается комментарием. Такие примечания содержат ценную информацию об изменениях статей, однако затрудняют автоматическое сопоставление статей в разных года. К тому же, написание примечаний может различаться в статистических формах за разные года: «редакция» или «ред.»."
-msgstr ""
+msgstr "When an article, its part, or its version become invalid, the statistical forms No. 10.3 and No. 10.3.1 have the article number accompanied by a comment. Such comments contain valuable information about changes in the articles but make the automatic comparison of the articles for different years more difficult. Moreover, the way the comments are written may differ in statistical forms for different years: “version” or “ver.”."
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "Отсутствие детализированных данных по некоторым статьям"
-msgstr ""
+msgstr "Lack of detailed data for some articles"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "Мы исправили несколько несоответствий в списке статей и частей УК РФ в разных файлах. Например, в таблицах за 2012 год часть 1 статьи 133 записана в форме № 10.3 с примечанием, в котором зафиксировано появление у статьи частей, а в форме № 10.3.1 — без этого примечания."
-msgstr ""
+msgstr "We have corrected several discrepancies between the lists of articles and parts of articles of the Criminal Code of the Russian Federation that we had found in several files. For example, in the spreadsheets for 2012, form No. 10.3 has Article 133 part 1 with a comment indicating that parts of the article have emerged, and form No. 10.3.1 lists it without this comment."
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "Мы обнаружили и более существенные расхождения. Так, в форме № 10.3 за 2016 год приведены лишь агрегированные данные по статьям 204.1 и 204.2 без указания статистики по отдельным частям этих статей. Чтобы восстановить детализацию, отсутствующую в форме № 10.3, мы использовали информацию из форм № 10.3.1 и № 10-а, где эти же статьи даны с детализацией по частям."
-msgstr ""
+msgstr "We have discovered more substantial discrepancies as well. For instance, form No. 10.3 for 2016 only has the aggregated data for Articles 204.1 and 204.2, without the statistics on separate parts of said articles. In order to recreate the categorization that form No. 10.3 is lacking, we used the information from the forms No. 10.3.1 and No. 10-a which have the same articles categorized by part."
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "Расхождение данных в одинаковых по смыслу столбцах разных отчетных форм"
-msgstr ""
+msgstr "Data discrepancy in identical in meaning columns of different reporting forms"
 
 #: src/templates/FaqPage/FaqPageHowWasCollected.tsx:
 msgid "В таких случаях были использованы данные  формы 10.3."
-msgstr ""
+msgstr "In such cases, data from the form No.10.3 were used"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Для простой навигации по базе данных мы создали «дерево» параметров: оно демонстрирует, какие индикаторы мы анализировали, как они связаны между собой и как с ними можно работать. Все показатели поделены на три раздела: основной состав, дополнительные характеристики по основному составу и дополнительный состав."
-msgstr ""
+msgstr "In order to make navigating the database easier we have created a parameter “tree”: it demonstrates what indicators were analyzed, how they are interconnected and what they can be used for. All indicators are divided into three sections: primary offence, additional specifications of the primary offence, and additional offence."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "В некоторых случаях невозможно с уверенностью утверждать, как в статистике интерпретированы те или иные индикаторы, — Судебный департамент не предоставляет дополнительную информацию о сборе данных. Показатели, которые можно отнести к двум категориям, встречаются в «дереве» несколько раз и снабжены комментариями. Одинаковые показатели, обозначенные в таблицах по-разному, объединены в один пункт."
-msgstr ""
+msgstr "In some cases it is not possible to state with assurance how certain indicators are interpreted in the statistics: the Judicial Department does not provide additional information about data collection. The indicators that can be attributed to two categories are encountered several times within the “tree” and are provided with comments. Identical indicators shown in the spreadsheets differently are combined into one item."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Показатель описывает случаи, когда суд признал человека виновным и назначил наказание:"
-msgstr ""
+msgstr "This indicator describes the cases in which a court deemed a person guilty and imposed the penalty of:"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid " Категории нет в таблице, дана детализация по срокам наказания:"
-msgstr ""
+msgstr " This category is not in the spreadsheet, the data is categorized by length of the term of sentence:"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
@@ -2146,31 +2147,31 @@ msgstr ""
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Лишение свободы: количество осужденных по срокам"
-msgstr ""
+msgstr "Imprisonment: the number of persons sentenced to"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "— в некоторых таблицах Судебного департамента детализация по этим данным представлена единым блоком, в других дана раздельно по следующим категориям:"
-msgstr ""
+msgstr "some spreadsheets of the Judicial Department have these data presented as a single unit, other have it divided by the following categories:"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "ограничение свободы/ограничение по военной службе, содержание в дисциплинарной воинской части"
-msgstr ""
+msgstr "deprivation of liberty/restriction of military service, service in a disciplinary military"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Это одинаковые показатели, но в таблицах они обозначены по-разному. Показатель primaryRestrain2009 относится только к данным 2009 года."
-msgstr ""
+msgstr "These indicators are identical, but they are shown differently in the spreadsheets. The indicator primaryRestrain2009 applies to 2009 data only."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Этот показатель частично пересекается с пунктом I.4."
-msgstr ""
+msgstr "This indicator partially overlaps with item I.4."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "раздел «Основной состав», пункт I.4."
-msgstr ""
+msgstr "section “Primary offence”, item I.4."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Вероятно, в некоторых таблицах эта мера наказания была объединена с другими, затем статистические формы поменяли"
-msgstr ""
+msgstr "It is likely that in some spreadsheets this penalty had been merged with others,"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Штраф (основное наказание)"
@@ -2178,7 +2179,7 @@ msgstr "Fine (primary penalty)"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Дана детализация по сумме штрафа:"
-msgstr ""
+msgstr "Details on the amount of the fine are given:"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
@@ -2197,7 +2198,7 @@ msgstr ""
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Штраф: количество осужденных по размеру штрафа"
-msgstr ""
+msgstr "Fine: number of persons sentenced categorized by fine amount"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "до 5 тысяч рублей"
@@ -2243,19 +2244,19 @@ msgstr "more than 1 000 000 rub"
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Эта категория не квалифицируется как мера наказания (принято считать это наказанием, совмещенным с освобождением от него), однако в данных Судебного департамента она дана как еще один вид наказания."
-msgstr ""
+msgstr "This category is not qualified as a penalty (it is usually considered a punishment combined with an exemption from it). However, in the data of the Judicial Department it is presented as another penalty type."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Показатель описывает случаи, когда по решению суда человек признан невиновным."
-msgstr ""
+msgstr "This indicator describes the cases in which a person is deemed not guilty by the court."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Показатель описывает случаи, когда судебное производство было прекращено. Категории нет в таблице, дана детализация по основаниям прекращения:"
-msgstr ""
+msgstr "This indicator describes the cases in which judicial proceedings were terminated. This category is not in the spreadsheet, it is categorized by grounds of termination:"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Реабилитирующие основания."
-msgstr ""
+msgstr "Exculpatory grounds."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
@@ -2265,7 +2266,7 @@ msgstr ""
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Категории нет в таблице, дана детализация по видам:"
-msgstr ""
+msgstr "Category not in the table, details by type given:"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Прекращено за отсутствием события, состава, непричастностью к преступлению"
@@ -2274,22 +2275,22 @@ msgstr "Terminated due to the absence of elements of a misdemeanour offence / la
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Обстоятельства, исключающие преступность деяния."
-msgstr ""
+msgstr "Circumstances excluding criminality of a deed."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Мы не знаем, интерпретирует ли Судебный департамент эти данные как детализацию прекращения дела по реабилитирующим обстоятельствам или как дополнительную характеристику по основному составу, поэтому включили эту категорию в оба раздела."
-msgstr ""
+msgstr "Since we do not know if the Judicial Department interprets these data as a category of case termination on exculpatory grounds or as an additional specification of the primary offence, we have included this category into both sections."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "раздел «Основной состав», пункт III.1.b. и раздел «Дополнительные характеристики по основному составу», пункт 7."
-msgstr ""
+msgstr "section “Primary offence”, item III.1.b, and section “Additional specifications of the primary offence”, item 7."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Обстоятельства, исключающие преступность деяния:"
-msgstr ""
+msgstr "Circumstances excluding criminality of a deed:"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
@@ -2299,15 +2300,15 @@ msgstr "self-defence"
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "крайняя необходимость"
-msgstr ""
+msgstr "extreme necessity"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Обстоятельства, исключающие преступность, предусмотренные статьями 38, 40-42 УК РФ"
-msgstr ""
+msgstr "Circumstances excluding criminality stated in articles 38, 40-42"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Нереабилитирующие основания."
-msgstr ""
+msgstr "Non-exculpatory grounds."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Прекращено за примирением с потерпевшим"
@@ -2315,54 +2316,54 @@ msgstr "Terminated in the event of a reconciliation between the victim and the d
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "прекращено по другим основаниям: на основании примечаний к статьям УК РФ (в связи с деятельным раскаянием ч. 2 ст. 28 УПК РФ)"
-msgstr ""
+msgstr "terminated on other grounds: based on explanatory notes to the Articles of the Criminal Code of the Russian Federation (due to active repentance Article 28 of Criminal Procedure Code of the Russian Federation)"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Мы не знаем, интерпретирует ли Судебный департамент эти данные как один или разные показатели. Это может быть детализация или наслоение данных"
-msgstr ""
+msgstr "We do not know whether the Judicial Department interprets these data as one indicator or as separate ones. This could be a matter of categorization or a data duplication"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Прекращено с назначением судебного штрафа"
-msgstr ""
+msgstr "Terminated with issuing a court fine"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Судебный штраф: количество осужденных по размеру штрафа"
-msgstr ""
+msgstr "Court fine: number of persons sentenced by fine amount"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "до 5 тыс. рублей"
-msgstr ""
+msgstr "up to 5000 rubles"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "свыше 100 тыс. рублей"
-msgstr ""
+msgstr "over 100 000 rubles"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Мы не знаем, какие именно основания входят в эту категорию. Здесь могут быть некоторые из реабилитирующих и нереабилитирующих оснований."
-msgstr ""
+msgstr "We do not know which grounds fall into this category. It is possible that some of the exculpatory and non-exculpatory grounds are included here."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Показатель описывает случаи, когда к человеку были применены принудительные меры медицинского характера."
-msgstr ""
+msgstr "This indicator describes the cases in which coercive medical measures were taken against a person."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Мы не знаем, является ли эта категория в статистике Судебного департамента одним из исходов дела, наряду с обвинением и оправданием, или дополнительной характеристикой тех случаев, когда человека осудили"
-msgstr ""
+msgstr "Since we do not know if this category is considered within the statistics of the Judicial Department as one of the outcomes of proceedings along with conviction and acquittal or as an additional specification of the cases where a person was convicted"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "поэтому мы включили её в оба раздела"
-msgstr ""
+msgstr "we have included it into both sections"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Раздел «Основной состав», пункт V и раздел «Дополнительные характеристики по основному составу», пункт V."
-msgstr ""
+msgstr "Section “Primary offence” part V and section “additional specifications of the primary offence” part V."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
@@ -2382,31 +2383,31 @@ msgstr "on other grounds: from other measures or penalty been imposed"
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Дополнительные характеристики по основному составу"
-msgstr ""
+msgstr "Additional specifications of the primary offence"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Коррупционный мотив"
-msgstr ""
+msgstr "Corruption motive"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Дополнительная характеристика мотивов для тех, кого признали виновными"
-msgstr ""
+msgstr "An additional specification of motives for those deemed guilty"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "«Всего осуждено»"
-msgstr ""
+msgstr "«Total number of persons convicted»"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "данные есть за 2010-2012 годы включительно"
-msgstr ""
+msgstr "there is data for 2010-2012"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Дополнительная характеристика для тех, кому назначили лишение свободы"
-msgstr ""
+msgstr "An additional specification for those sentenced to imprisonment"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "— по всем детализациям"
-msgstr ""
+msgstr "— in all categories"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Преступление не является оконченным"
@@ -2414,11 +2415,11 @@ msgstr "The crime was uncomplete"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "(приготовление, покушение)"
-msgstr ""
+msgstr "(preparations, attempt)"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Дополнительная характеристика по категории «Всего осуждено»"
-msgstr ""
+msgstr "An additional specification of the category “Total number of persons convicted”"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Общая сумма штрафов"
@@ -2426,34 +2427,34 @@ msgstr "The total amount of fine"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Дополнительная характеристика совокупности наказаний в виде штрафа в качестве основного наказания."
-msgstr ""
+msgstr "An additional specification of a cumulative penalty with fines as the primary penalty."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Судебный штраф: общая сумма"
-msgstr ""
+msgstr "Court fine: total amount"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Дополнительная характеристика одного из видов прекращения судебного производства. Этот штраф не следует складывать со штрафом как видом наказания, основным или дополнительным."
-msgstr ""
+msgstr "An additional specification of one of the types of termination of judicial proceedings. This fine should not be combined with a fine as a penalty type, regardless of it being the primary or an additional one."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Дополнительные наказания."
-msgstr ""
+msgstr "Additional penalties."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Дополнительная характеристика категории «Всего осуждено»"
-msgstr ""
+msgstr "An additional specification of the category “Total number of persons convicted”"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "показывает случаи, когда к основному наказанию суд назначает дополнительное за тот же состав преступления"
-msgstr ""
+msgstr "hows the cases in which the court imposes an additional penalty in addition to the primary penalty for the same offence"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Дополнительное наказание:"
-msgstr ""
+msgstr "Additional penalty:"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "лишение права занимать определенные должности или заниматься определенной деятельностью"
@@ -2461,11 +2462,11 @@ msgstr "deprivation of the right to occupy a given position or to engage in a gi
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Штраф (дополнительное наказание): общая сумма"
-msgstr ""
+msgstr "Fine (additional penalty): total amount"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Дополнительная характеристика показателя по штрафам в качестве дополнительного наказания. Может складываться с общей суммой штрафа как основного наказания."
-msgstr ""
+msgstr "An additional specification of the indicator showing fines an additional penalty. Can be summed up with the total amount of the fine as the primary penalty."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "лишение специального, воинского или почетного звания, классного чина и государственных наград"
@@ -2477,15 +2478,15 @@ msgstr "restriction of liberty"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Мы не знаем, интерпретирует ли Судебный департамент эти данные как детализацию прекращения дел по реабилитирующим обстоятельствам или как дополнительную характеристику по основному составу, поэтому включили эту категорию в оба раздела."
-msgstr ""
+msgstr "Since we do not know if the Judicial Department interprets these data as a category of case termination on exculpatory grounds or as an additional specification of the primary offence, we have included this category into both sections."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "раздел «Основной состав», пункт III.1.a. и раздел «Дополнительные характеристики по основному составу», пункт VII."
-msgstr ""
+msgstr "section “Primary offence”, item III.1.ba, and section “Additional specifications of the primary offence”, item VII."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Обстоятельства, исключающие преступность, предусмотренные статьями 38, 40 - 42 УК РФ"
-msgstr ""
+msgstr "Circumstances excluding the criminality of a deed provided by Articles 38, 40-42 of the Criminal Code of the Russian Federation"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Осуждено: по числу лиц"
@@ -2493,19 +2494,19 @@ msgstr "Convicted: by the number of persons"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Оправдано: по числу лиц"
-msgstr ""
+msgstr "Acquitted: by the number of persons"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Прекращено."
-msgstr ""
+msgstr "Terminated."
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Мы не знаем, какие именно основания включены в эту категорию. Это могут быть некоторые из реабилитирующих и нереабилитирующих оснований. Категории нет в таблице, дана детализация по основаниям прекращения:"
-msgstr ""
+msgstr "We do not know which grounds fall into this category. It is possible that some of the exculpatory and non-exculpatory grounds are included here. This category is not in the spreadsheet, the data is categorized by grounds for termination:"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Прекращено: по числу лиц"
-msgstr ""
+msgstr "Terminated: by the number of persons"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Прекращено по другим основаниям: по числу лиц"
@@ -2513,12 +2514,12 @@ msgstr "Terminated on other groudns: by the number of persons"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Признаны невменяемыми: по числу лиц"
-msgstr ""
+msgstr "Found insane: by the number of persons"
 
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 #: src/templates/FaqPage/FaqPageUploadFieldsNParameterTree.tsx:
 msgid "Поля выгрузки"
-msgstr ""
+msgstr "Upload fields"
 
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
@@ -2530,15 +2531,15 @@ msgstr "Full dataset"
 
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 msgid "Скачать полный датасет о статистике преступлений и наказаний в России"
-msgstr ""
+msgstr "Download full data set with statistics of crimes and punishments in Russia"
 
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 msgid "Произошла ошибка. Пожалуйста, измените параметры поиска."
-msgstr ""
+msgstr "An error occurred. Please change search parameters."
 
 #: src/templates/FullDatasetPage/FullDatasetSelect.tsx:
 msgid "Выберите..."
-msgstr ""
+msgstr "Select..."
 
 #: src/templates/IndexPage/IndexPage.tsx:
 #: src/templates/IndexPage/IndexPage.tsx:
@@ -2553,20 +2554,21 @@ msgstr "based on publications by Judicial Department of the Supreme Court of Rus
 
 #: src/templates/IndexPage/IndexPage.tsx:
 msgid "Вы сможете найти информацию по любой статье УК с 2009 по {{ year }} год: статистика обвинительных и оправдательных приговоров, лишений свободы, амнистий и многое другое."
-msgstr ""
+msgstr "You can find information about court decisions on required article from 2009 to {{ year }}, for example:\n"
+"number of convictions, acquittals, imprisonments, amnesties and others."
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "Статьи УК РФ, по которым осуждали чаще всего в "
-msgstr ""
+msgstr "Articles of the Criminal Code with most convicts in "
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "осудили человек"
-msgstr ""
+msgstr "people convicted"
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "Какие наказания суды чаще всего назначали в "
-msgstr ""
+msgstr "What penalties were imposed the most often in "
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "лишение свободы"
@@ -2574,55 +2576,55 @@ msgstr "deprivation of liberty"
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "принудительные меры к невменяемым"
-msgstr ""
+msgstr "сoercive measures against an insane person"
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "Статистика решений суда по всем статьям УК РФ в"
-msgstr ""
+msgstr "Court decisions statistics pertaining to all the articles of the Criminal Code of the Russian Federation in"
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "году"
-msgstr ""
+msgstr "year"
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "По всем статьям УК РФ прошли через суд дела <b>{{ count }}</b> человека"
 msgid_plural "По всем статьям УК РФ прошли через суд дела <b>{{ count }}</b> человек"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Case of <b>{{ count }}</b> person has gone through court under all the articles of the Criminal Code of the Russian Federation"
+msgstr[1] "Cases of <b>{{ count }}</b> persons have gone through court under all the articles of the Criminal Code of the Russian Federation"
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "Из них были осуждены  <b>{{ count }}</b> человек"
 msgid_plural "Из них были осуждены  <b>{{ count }}</b> человека"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Out of which <b>{{ count }}</b> was convicted"
+msgstr[1] "Out of which <b>{{ count }}</b> were convicted"
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid " <b>{{ count }}</b> обвиняемый оправдан"
 msgid_plural " <b>{{ count }}</b> обвиняемых оправданы"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] " <b>{{ count }}</b> convict acquitted"
+msgstr[1] " <b>{{ count }}</b> convicts acquitted"
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "По различным основаниям прекращено <b>{{ count }}</b> дел"
 msgid_plural "По различным основаниям прекращено <b>{{ count }}</b> дело"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "On various grounds <b>{{ count }}</b> case terminated"
+msgstr[1] "On various grounds <b>{{ count }}</b> cases terminated"
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "Перейти к материалу"
-msgstr ""
+msgstr "Skip to content"
 
 #: src/templates/IndexPage/IndexPageCounters.tsx:
 msgid "оправдательных приговоров по отношению к общему числу дел"
-msgstr ""
+msgstr "acquittals out of total number of cases"
 
 #: src/templates/IndexPage/IndexPageCounters.tsx:
 msgid "прекращeнных дел по отношению к общему числу дел"
-msgstr ""
+msgstr "terminations out of total number of cases"
 
 #: src/templates/IndexPage/IndexPageCounters.tsx:
 msgid "обстоятельства, исключающие преступность, от общего числа дел"
-msgstr ""
+msgstr "circumstances excluding criminality, out of total cases"
 
 #: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "№ статьи ук рф или вид преступления"
@@ -2630,16 +2632,16 @@ msgstr "# article Criminal Code of Russian Federation or type of crime"
 
 #: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "Введите статью..."
-msgstr ""
+msgstr "Enter article..."
 
 #: src/templates/IndexPage/IndexPageFilter.tsx:
 #: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "Ничего не найдено"
-msgstr ""
+msgstr "No results"
 
 #: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "Введите год..."
-msgstr ""
+msgstr "Enter year..."
 
 #: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "Перейти к данным"
@@ -2647,7 +2649,7 @@ msgstr "Go"
 
 #: src/templates/IndexPage/IndexPageFilter.tsx:
 msgid "Подсказка:"
-msgstr ""
+msgstr "Hint:"
 
 #: src/templates/IndexPage/IndexPageMore.tsx:
 msgid "Больше материалов в разделе аналитика"
@@ -2655,9 +2657,9 @@ msgstr "More materials in Analytics section"
 
 #: src/templates/IndexPage/IndexPageSubscription.tsx:
 msgid "Хотите первыми получать новости и обновления от команды Достоевского?"
-msgstr ""
+msgstr "Want to be the first to get news and updates from Dostoevsky team?"
 
 #: src/templates/IndexPage/IndexPageSubscription.tsx:
 msgid "Спасибо, что подписались на нашу рассылку!"
-msgstr ""
+msgstr "Thank you for subscribing to our mail!"
 
