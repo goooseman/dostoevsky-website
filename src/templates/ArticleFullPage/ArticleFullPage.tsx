@@ -25,10 +25,11 @@ export interface Article {
 
 export interface ArticleFullPageProps {
   article: Article;
+  url: string;
 }
 
 const ArticleFullPage = (props: ArticleFullPageProps): JSX.Element => {
-  const { article } = props;
+  const { article, url } = props;
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -42,8 +43,7 @@ const ArticleFullPage = (props: ArticleFullPageProps): JSX.Element => {
 
   return (
     <section className={cn(classes.blogContainer)}>
-      <ArticleFullHead article={article} />
-
+      <ArticleFullHead article={article} url={url} />
       <Container>
         <article className={cn(classes.blogArticle)}>
           <div className={cn(classes.blogArticle__date)}>

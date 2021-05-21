@@ -14,21 +14,6 @@ export interface ArticleFullPageProps extends WithLocale {
   article: Article;
 }
 
-const getShareURL = (type: null) => {
-  const currentURL = document.URL;
-  switch (type) {
-    case "fb":
-      return (
-        "https://www.facebook.com/sharer/sharer.php?u=" +
-        encodeURIComponent(currentURL)
-      );
-    case "tg":
-      return "https://t.me/share/url?url=" + currentURL;
-    case "tw":
-      return "https://twitter.com/intent/tweet?text=" + currentURL;
-  }
-};
-
 const getArticleBackground = (type: Article["tag"]) => {
   switch (type) {
     case "Аналитика":
@@ -39,7 +24,23 @@ const getArticleBackground = (type: Article["tag"]) => {
 };
 
 const ArticleFullHead = (props: ArticleFullPageProps): JSX.Element => {
-  const { article, locale } = props;
+  const { article, locale, url } = props;
+
+  const getShareURL = (type: null) => {
+    const currentURL = url;
+    switch (type) {
+      case "fb":
+        return (
+          "https://www.facebook.com/sharer/sharer.php?u=" +
+          encodeURIComponent(currentURL)
+        );
+      case "tg":
+        return "https://t.me/share/url?url=" + currentURL;
+      case "tw":
+        return "https://twitter.com/intent/tweet?text=" + currentURL;
+    }
+  };
+
   return (
     <header
       className={cn(classes.blogHeader)}

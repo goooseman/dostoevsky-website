@@ -11,6 +11,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 interface ArticleFullPageProps {
   data: ArticleFullQuery;
   location: Location;
+  url: string;
 }
 
 const ArticleFull: React.FC<ArticleFullPageProps> = ({
@@ -24,10 +25,11 @@ const ArticleFull: React.FC<ArticleFullPageProps> = ({
       ...node.frontmatter,
       body: node.body || "",
     };
+    const url = `${meta.siteUrl}${location.pathname ? location.pathname : ""}`;
     return (
       <Layout location={location}>
         <Meta site={meta} />
-        <ArticleFullPage article={article} />
+        <ArticleFullPage article={article} url={url} />
       </Layout>
     );
   } else return <NoPage />;
