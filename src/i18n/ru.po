@@ -1364,8 +1364,8 @@ msgid "обстоятельства, предусмотренные статья
 msgstr "обстоятельства, предусмотренные статьями 38, 40 - 42 УК РФ"
 
 #: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusPunishmentsTreemap/ClauseMainPageFocusPunishmentsTreemap.tsx:
-msgid "Наказания для подсудимых по статье "
-msgstr "Наказания для подсудимых по статье "
+msgid "Наказания для подсудимых по статье {{ clauseNumber }} в {{ year }} году"
+msgstr "Наказания для подсудимых по статье {{ clauseNumber }} в {{ year }} году"
 
 #: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
 msgid ""
@@ -1388,8 +1388,12 @@ msgid "Статистика прекращения дел по статье в "
 msgstr "Статистика прекращения дел по статье в "
 
 #: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedTreemap/ClauseMainPageFocusTerminatedTreemap.tsx:
-msgid "Чем закончились дела по статье "
-msgstr "Чем закончились дела по статье "
+msgid ""
+"Чем закончились дела по статье {{ clauseNumber }}, дошедшие до суда по "
+"основному составу в {{ year }} году"
+msgstr ""
+"Чем закончились дела по статье {{ clauseNumber }}, дошедшие до суда по "
+"основному составу в {{ year }} году"
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
 msgid "прекращено дел"
@@ -3440,8 +3444,8 @@ msgstr ""
 "и многое другое."
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Статьи УК РФ, по которым осуждали чаще всего в "
-msgstr "Статьи УК РФ, по которым осуждали чаще всего в "
+msgid "Статьи УК РФ, по которым осуждали чаще всего в {{ selectedYear }} году"
+msgstr "Статьи УК РФ, по которым осуждали чаще всего в {{ selectedYear }} году"
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
@@ -3449,8 +3453,8 @@ msgid "осудили человек"
 msgstr "осудили человек"
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Какие наказания суды чаще всего назначали в "
-msgstr "Какие наказания суды чаще всего назначали в "
+msgid "Какие наказания суды чаще всего назначали в {{ selectedYear }} году"
+msgstr "Какие наказания суды чаще всего назначали в {{ selectedYear }} году"
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "лишение свободы"

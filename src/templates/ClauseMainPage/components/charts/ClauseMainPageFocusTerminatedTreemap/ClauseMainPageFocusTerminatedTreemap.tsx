@@ -27,7 +27,11 @@ const ClauseMainPageFocusTerminatedTreemap: React.FC<ClauseMainPageFocusTerminat
     <Treemap
       isIframeMode={isIframeMode}
       title={t(
-        `Чем закончились дела по статье ${clauseNumber}, дошедшие до суда по основному составу в ${year} году`
+        "Чем закончились дела по статье {{ clauseNumber }}, дошедшие до суда по основному составу в {{ year }} году",
+        {
+          clauseNumber,
+          year,
+        }
       )}
       data={[
         {

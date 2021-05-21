@@ -27,7 +27,11 @@ const ClauseMainPageFocusPunishmentsTreemap: React.FC<ClauseMainPageFocusPunishm
     <Treemap
       isIframeMode={isIframeMode}
       title={t(
-        `Наказания для подсудимых по статье ${clauseNumber} в ${year} году`
+        "Наказания для подсудимых по статье {{ clauseNumber }} в {{ year }} году",
+        {
+          clauseNumber,
+          year,
+        }
       )}
       data={[
         {

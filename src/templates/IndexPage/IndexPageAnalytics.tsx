@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import classes from "./IndexPage.module.css";
 import Typography from "src/components/ui-kit/Typography";
-import { useLocale } from "react-targem";
+import { useLocale, WithLocale } from "react-targem";
 import Container from "src/components/ui-kit/Container";
 import Select, { components } from "react-select";
 import CommentsBar from "src/components/charts/CommentsBar";
@@ -16,12 +16,15 @@ const getAnalyticsCharts = (
   selectedYear: string,
   counters: CountersByPunishment,
   topCounters: IndexTopClause[],
-  t: (s: string) => string,
+  t: WithLocale["t"],
   locale: string
 ) => [
   {
     title: t(
-      `Статьи УК РФ, по которым осуждали чаще всего в ${selectedYear} году`
+      "Статьи УК РФ, по которым осуждали чаще всего в {{ selectedYear }} году",
+      {
+        selectedYear,
+      }
     ),
     iframePath: getIndexLink(locale, selectedYear, "iframe-top-clauses"),
     charts: [
@@ -39,7 +42,8 @@ const getAnalyticsCharts = (
   },
   {
     title: t(
-      `Какие наказания суды чаще всего назначали в ${selectedYear} году`
+      "Какие наказания суды чаще всего назначали в {{ selectedYear }} году",
+      { selectedYear }
     ),
     iframePath: getIndexLink(locale, selectedYear, "iframe-by-punishment"),
     charts: [
