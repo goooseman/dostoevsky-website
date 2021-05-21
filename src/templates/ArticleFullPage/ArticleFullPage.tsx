@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 /* eslint-disable react/prop-types */
 import React, { useEffect } from "react";
 import classes from "./ArticleFullPage.module.css";
@@ -5,7 +7,6 @@ import cn from "clsx";
 import Typography from "src/components/ui-kit/Typography";
 import { T } from "react-targem";
 import ArticleFullHead from "./ArticleFullHead";
-import { ArticleTag } from "src/types";
 import ArticleChartAdapter from "./components/charts/ArticleChartAdapter";
 import { Counters, Counter } from "src/components/Counters";
 import { MDXRenderer } from "gatsby-plugin-mdx";
@@ -14,13 +15,13 @@ import Container from "src/components/ui-kit/Container";
 
 export interface Article {
   body?: string;
-  title: string;
-  author: string;
-  date: string;
-  slug: string;
-  tag: ArticleTag;
-  teaser: string;
-  locale: string;
+  title?: string;
+  author?: string | null;
+  date?: string | null;
+  slug?: string | null;
+  tag?: string | null;
+  teaser?: string | null;
+  locale?: string | null;
 }
 
 export interface ArticleFullPageProps {

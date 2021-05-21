@@ -1,6 +1,6 @@
-/* eslint-disable react/prop-types */
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+import React from "react";
 import * as d3 from "d3";
 
 interface BubblesD3Chart {
@@ -27,9 +27,48 @@ interface BubblesD3Props {
   valueFont: BubblesD3Font;
   title: string;
   charts: BubblesD3Chart[];
+  graph: {
+    zoom: number;
+    offsetX: number;
+    offsetY: number;
+  };
+  width: number;
+  height: number;
+  padding: number;
+  data: {
+    value: number;
+    title: string;
+  }[];
+  type: string;
 }
 
-export default class BubblesD3Chart extends Component {
+class BubblesD3Chart extends React.Component<BubblesD3Props> {
+  public static defaultProps: Partial<BubblesD3Props> = {
+    graph: {
+      zoom: 1.0,
+      offsetX: 0.0,
+      offsetY: 0.0,
+    },
+    width: 600,
+    height: 600,
+    padding: 0,
+    valueFont: {
+      family: "var(--font-family-serif)",
+      size: 32,
+      color: "#fff",
+      weight: "bold",
+    },
+    labelFont: {
+      family: "Arial",
+      size: 11,
+      color: "#fff",
+      weight: "normal",
+    },
+  };
+
+  private svg: SVGSVGElement | null | undefined;
+  private svgRef: React.RefObject<SVGSVGElement>;
+
   constructor(props: BubblesD3Props) {
     super(props);
     this.svgRef = React.createRef();
@@ -38,8 +77,7 @@ export default class BubblesD3Chart extends Component {
   }
 
   componentDidMount() {
-    // this.svg = ReactDOM.findDOMNode(this);
-    this.svg = this.svgRef.current;
+    this.svg = this.svgRef?.current;
     this.renderChart();
   }
 
@@ -59,7 +97,9 @@ export default class BubblesD3Chart extends Component {
     const { graph, data, width, padding } = this.props;
 
     this.svg = this.svgRef.current;
-    this.svg.innerHTML = "";
+    if (this.svg) {
+      this.svg.innerHTML = "";
+    }
 
     const bubblesWidth = width;
     const pack = d3
@@ -245,48 +285,4 @@ export default class BubblesD3Chart extends Component {
   }
 }
 
-BubblesD3Chart.propTypes = {
-  graph: PropTypes.shape({
-    zoom: PropTypes.number,
-    offsetX: PropTypes.number,
-    offsetY: PropTypes.number,
-  }),
-  width: PropTypes.number,
-  height: PropTypes.number,
-  padding: PropTypes.number,
-  valueFont: PropTypes.shape({
-    family: PropTypes.string,
-    size: PropTypes.number,
-    color: PropTypes.string,
-    weight: PropTypes.string,
-  }),
-  labelFont: PropTypes.shape({
-    family: PropTypes.string,
-    size: PropTypes.number,
-    color: PropTypes.string,
-    weight: PropTypes.string,
-  }),
-};
-
-BubblesD3Chart.defaultProps = {
-  graph: {
-    zoom: 1.0,
-    offsetX: 0.0,
-    offsetY: 0.0,
-  },
-  width: 600,
-  height: 600,
-  padding: 0,
-  valueFont: {
-    family: "var(--font-family-serif)",
-    size: 32,
-    color: "#fff",
-    weight: "bold",
-  },
-  labelFont: {
-    family: "Arial",
-    size: 11,
-    color: "#fff",
-    weight: "normal",
-  },
-};
+export default BubblesD3Chart;

@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import React from "react";
 import CommentsBar from "src/components/charts/CommentsBar";
 import BubblesChartWrapper from "../BubblesChartWrapper";

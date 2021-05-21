@@ -29,7 +29,8 @@ const ArticlesFeedPageMore = (props: FeedPageMoreProps) => {
     <Container>
       <div className={classes.articlesPageMore}>
         {articles.map((d: Article, i) => {
-          const type = t(d.tag);
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          const type = t(d.tag!);
           return (
             <div
               key={i}
