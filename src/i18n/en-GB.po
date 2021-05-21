@@ -5,7 +5,7 @@ msgstr ""
 "POT-Creation-Date: Sun Jan 10 2021 00:39:02 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"PO-Revision-Date: 2021-05-20 15:23\n"
+"PO-Revision-Date: 2021-05-21 16:09\n"
 "Language-Team: English, United Kingdom\n"
 "MIME-Version: 1.0\n"
 "X-Generator: Poedit 2.4.2\n"
@@ -1108,8 +1108,8 @@ msgid "обстоятельства, предусмотренные статья
 msgstr "circumstances under 38, 40-42 of Criminal Code of Russian Federation"
 
 #: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusPunishmentsTreemap/ClauseMainPageFocusPunishmentsTreemap.tsx:
-msgid "Наказания для подсудимых по статье "
-msgstr "Penalties for the convicted under Article "
+msgid "Наказания для подсудимых по статье {{ clauseNumber }} в {{ year }} году"
+msgstr ""
 
 #: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedChart/ClauseMainPageFocusTerminatedChart.tsx:
 msgid "Дела прекращены за отсутствием состава, события преступления, непричастностью к преступлению (число лиц)"
@@ -1128,8 +1128,8 @@ msgid "Статистика прекращения дел по статье в "
 msgstr "Case termination statistics under Article in "
 
 #: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedTreemap/ClauseMainPageFocusTerminatedTreemap.tsx:
-msgid "Чем закончились дела по статье "
-msgstr "Outcomes of the cases pertaining to Article "
+msgid "Чем закончились дела по статье {{ clauseNumber }}, дошедшие до суда по основному составу в {{ year }} году"
+msgstr ""
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
 msgid "прекращено дел"
@@ -2558,8 +2558,8 @@ msgstr "You can find information about court decisions on required article from 
 "number of convictions, acquittals, imprisonments, amnesties and others."
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Статьи УК РФ, по которым осуждали чаще всего в "
-msgstr "Articles of the Criminal Code with most convicts in "
+msgid "Статьи УК РФ, по которым осуждали чаще всего в {{ selectedYear }} году"
+msgstr ""
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
@@ -2567,8 +2567,8 @@ msgid "осудили человек"
 msgstr "people convicted"
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
-msgid "Какие наказания суды чаще всего назначали в "
-msgstr "What penalties were imposed the most often in "
+msgid "Какие наказания суды чаще всего назначали в {{ selectedYear }} году"
+msgstr ""
 
 #: src/templates/IndexPage/IndexPageAnalytics.tsx:
 msgid "лишение свободы"
