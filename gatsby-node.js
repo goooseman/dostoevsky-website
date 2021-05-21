@@ -58,13 +58,10 @@ exports.createPages = async ({ actions, graphql }) => {
 
   const result = await graphql(`
     {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
+      allMdx(sort: { order: DESC, fields: [frontmatter___date] }, limit: 1000) {
         edges {
           node {
-            html
+            body
             frontmatter {
               slug
               tag
@@ -84,13 +81,13 @@ exports.createPages = async ({ actions, graphql }) => {
   } else {
     // console.log("got articles");
     // console.debug(result.data);
-    result.data.allMarkdownRemark.edges.forEach(
+    result.data.allMdx.edges.forEach(
       async ({ node }) =>
         await createPage({
           path: `/${node.frontmatter.locale}${node.frontmatter.slug}/`,
           component: require.resolve("./src/page-templates/article-full.tsx"),
           context: {
-            article: { ...node.frontmatter, html: node.html },
+            article: { ...node.frontmatter, body: node.body },
             slug: node.frontmatter.slug,
           },
         })

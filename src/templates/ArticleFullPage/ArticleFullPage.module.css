@@ -3,10 +3,48 @@
   overflow: hidden;
 }
 
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
 .blog-article {
-  max-width: 624px;
+  /* padding: 0 15% 0 15%; */
+
+  /* max-width: 624px; */
   margin: 1rem auto 3rem;
   word-wrap: break-word;
+}
+
+@media all and (max-width: 680px) {
+  .blog-article {
+    padding: 3rem 1rem;
+  }
 }
 
 .blog-article img {
@@ -15,7 +53,7 @@
 }
 
 .blog-article a {
-  color: var(--color-secondary);
+  color: var(--color-main);
   text-decoration: underline;
 }
 
@@ -32,8 +70,10 @@
   text-transform: uppercase;
 }
 
-.blog-article__author {
+.blog-article__author p {
+  font-family: var(--font-family-serif);
   font-style: italic;
+  font-size: 1.1rem;
 }
 
 @media all and (max-width: 680px) {
@@ -49,8 +89,7 @@
   }
 }
 .article-body h1,
-.article-body h2,
-.article-body h3 {
+.article-body h2 {
   font-family: var(--font-family-serif);
   font-style: normal;
   font-weight: bold;
@@ -60,7 +99,8 @@
 
 .article-body h1::first-letter,
 .article-body h2::first-letter,
-.article-body h3::first-letter {
+.article-body h3::first-letter,
+.article-body h4::first-letter {
   text-transform: uppercase;
 }
 
@@ -75,6 +115,53 @@
 }
 
 .article-body h3 {
-  font-size: 1.475rem;
-  line-height: 145%;
+  font-size: 1.1rem;
+  line-height: 165%;
+  text-transform: uppercase;
+}
+
+.article-body h4 {
+  font-style: normal;
+  font-weight: bold;
+  text-transform: lowercase;
+  line-height: 120%;
+  margin-block-end: 0.2rem;
+}
+
+.article-body p {
+  margin-block-start: 0;
+}
+
+.article-body ul:first-child {
+  background-color: var(--color-secondary-opaque);
+  border-radius: 20px;
+}
+
+ul li:last-child {
+  position: relative;
+  margin-left: 0%;
+  float: none;
+}
+
+.article-body ul:first-child > li {
+  list-style: none;
+  float: left;
+  height: 250px;
+  padding: 30px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  max-width: 25%;
+  min-width: 200px !important;
+}
+.article-body ul:first-child > li::first-line {
+  color: var(--color-secondary);
+  font-size: 2.5em;
+}
+
+ul::after {
+  content: "";
+  display: block;
+  clear: both;
 }

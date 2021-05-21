@@ -1,0 +1,17 @@
+.bubbles-tip {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #777;
+  width: 250px;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.svg-container {
+  width: 100%;
+  text-align: center;
+}
+
+svg {
+  /* width: 100%; */
+}

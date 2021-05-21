@@ -1,3 +1,9 @@
+.container {
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+  background-color: var(--color-main-background);
+}
+
 .blog-header {
   display: flex;
   align-items: center;

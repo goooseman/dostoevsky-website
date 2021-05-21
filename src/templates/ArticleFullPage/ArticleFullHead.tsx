@@ -24,7 +24,23 @@ const getArticleBackground = (type: Article["tag"]) => {
 };
 
 const ArticleFullHead = (props: ArticleFullPageProps): JSX.Element => {
-  const { article, locale } = props;
+  const { article, locale, url } = props;
+
+  const getShareURL = (type: null) => {
+    const currentURL = url;
+    switch (type) {
+      case "fb":
+        return (
+          "https://www.facebook.com/sharer/sharer.php?u=" +
+          encodeURIComponent(currentURL)
+        );
+      case "tg":
+        return "https://t.me/share/url?url=" + currentURL;
+      case "tw":
+        return "https://twitter.com/intent/tweet?text=" + currentURL;
+    }
+  };
+
   return (
     <header
       className={cn(classes.blogHeader)}
@@ -66,7 +82,7 @@ const ArticleFullHead = (props: ArticleFullPageProps): JSX.Element => {
             </Typography>
             <div className={cn(classes.blogHeader__social)}>
               <OutboundLink
-                href="https://telegram.com"
+                href={getShareURL("tg")}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -76,7 +92,7 @@ const ArticleFullHead = (props: ArticleFullPageProps): JSX.Element => {
                 />
               </OutboundLink>
               <OutboundLink
-                href="https://facebook.com"
+                href={getShareURL("fb")}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -86,7 +102,7 @@ const ArticleFullHead = (props: ArticleFullPageProps): JSX.Element => {
                 />
               </OutboundLink>
               <OutboundLink
-                href="https://twitter.com"
+                href={getShareURL("tw")}
                 target="_blank"
                 rel="noreferrer"
               >
