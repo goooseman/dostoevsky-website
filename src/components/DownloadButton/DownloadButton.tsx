@@ -28,7 +28,11 @@ const DownloadButton: React.FC<DownloadButtonProps> = ({
       title={t("Скачать чарт")}
       onClick={handleClick}
     >
-      <img src={require("./assets/download.svg")} alt={t("Скачать")} />
+      <img
+        className={cn(classes.icon)}
+        src={require("./assets/download.svg")}
+        alt={t("Скачать")}
+      />
     </button>
   );
 };

@@ -49,7 +49,11 @@ const EmbedModal: React.FC<EmbedModalProps> = ({
         title={t("Получить код для встраивания")}
         onClick={handleOpenButtonClick}
       >
-        <img src={require("./assets/embed.svg")} alt={t("Иконка код")} />
+        <img
+          className={cn(classes.icon)}
+          src={require("./assets/embed.svg")}
+          alt={t("Иконка код")}
+        />
       </button>
       <Modal
         isShowing={isShowing}

@@ -19,3 +19,8 @@
   background-color: transparent;
   cursor: pointer;
 }
+
+.button .icon {
+  width: unset;
+  margin: unset;
+}
