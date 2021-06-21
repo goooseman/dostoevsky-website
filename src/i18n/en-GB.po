@@ -5,7 +5,7 @@ msgstr ""
 "POT-Creation-Date: Sun Jan 10 2021 00:39:02 GMT+0200 (Israel Standard Time)\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"PO-Revision-Date: 2021-05-20 15:23\n"
+"PO-Revision-Date: 2021-06-21 05:25\n"
 "Language-Team: English, United Kingdom\n"
 "MIME-Version: 1.0\n"
 "X-Generator: Poedit 2.4.2\n"
@@ -1403,9 +1403,7 @@ msgid "Статистика прекращения дел по статье в "
 msgstr "Case termination statistics under Article in "
 
 #: src/templates/ClauseMainPage/components/charts/ClauseMainPageFocusTerminatedTreemap/ClauseMainPageFocusTerminatedTreemap.tsx:
-msgid ""
-"Чем закончились дела по статье {{ clauseNumber }}, дошедшие до суда по "
-"основному составу в {{ year }} году"
+msgid "Чем закончились дела по статье {{ clauseNumber }}, дошедшие до суда по основному составу в {{ year }} году"
 msgstr ""
 
 #: src/templates/ClauseMainPage/components/charts/MainByResult/MainByResult.tsx:
