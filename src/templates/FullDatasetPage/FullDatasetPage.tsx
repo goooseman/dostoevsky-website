@@ -53,10 +53,16 @@ const createTableData = (
           { key: "year", value: r.year },
           { key: "part", value: r.part },
           { key: "name", value: r.name },
-          ...parseMetrics.map((m: { key: any }) => ({
-            key: m.key,
-            value: r[m.key] || 0,
-          })),
+          ...parseMetrics.map((m: { key: any }) => {
+            return {
+              key: m.key,
+              value: r[m.key] !== null ? r[m.key] : <T message="Нет данных" />,
+              helpText:
+                r[m.key] === null
+                  ? "1) таких данных на сайте Суд. депа нет за этот год. <br /> 2) мы считаем некорректным складывать данные по доп. составу, поскольку у одного человека может быть несколько доп. статей и при сложении может получиться завышенное число человек."
+                  : undefined,
+            };
+          }),
         ],
       };
     }),

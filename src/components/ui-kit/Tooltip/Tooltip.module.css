@@ -37,4 +37,5 @@
 .img-wrapper .tooltip-image {
   margin: 0 5px -4px 5px;
   display: inline;
+  cursor: pointer;
 }

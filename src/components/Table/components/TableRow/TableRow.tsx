@@ -3,11 +3,13 @@ import classes from "./TableRow.module.css";
 import cn from "clsx";
 import Typography from "src/components/ui-kit/Typography";
 import { WithLocale, withLocale } from "react-targem";
+import Tooltip from "src/components/ui-kit/Tooltip";
 
 interface TableRowProps extends WithLocale {
   values: {
     value: React.ReactNode;
     key: string;
+    helpText?: string;
   }[];
   isAccordion: boolean;
   columnsCount: number;
@@ -37,6 +39,7 @@ class TableRow extends PureComponent<TableRowProps> {
               component="span"
             >
               {isAccordion ? <b>{v.value}</b> : v.value}
+              {v.helpText ? <Tooltip tip={v.helpText} /> : null}
             </Typography>
           </td>
         ))}

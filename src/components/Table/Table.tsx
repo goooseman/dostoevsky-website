@@ -19,6 +19,7 @@ interface TableProps {
       values: {
         value: string | number;
         key: string;
+        helpText?: string;
       }[];
       key: string;
       isAccordion?: boolean;

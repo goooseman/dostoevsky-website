@@ -3,6 +3,7 @@ import classes from "./Tooltip.module.css";
 import ReactTooltip from "react-tooltip";
 import cn from "clsx";
 import { TypographyContainer } from "../Typography";
+import { useEffect } from "react";
 
 interface TooltipProps {
   tip: string;
@@ -17,6 +18,11 @@ const Tooltip: React.FC<TooltipProps> = ({
   children,
   className,
 }: TooltipProps) => {
+  useEffect(() => {
+    setTimeout(() => {
+      ReactTooltip.rebuild();
+    }, 500);
+  }, []);
   if (children) {
     return (
       <div className={cn(className)} data-tip={tip}>

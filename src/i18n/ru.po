@@ -3399,6 +3399,10 @@ msgid "Поля выгрузки"
 msgstr "Поля выгрузки"
 
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
+msgid "Нет данных"
+msgstr "Нет данных"
+
+#: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
 #: src/templates/FullDatasetPage/FullDatasetPage.tsx:
