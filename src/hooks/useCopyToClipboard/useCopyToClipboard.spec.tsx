@@ -3,10 +3,10 @@ import useCopyToClipboard from "./useCopyToClipboard";
 import { render, fireEvent, act } from "__utils__/render";
 import copy from "copy-to-clipboard";
 
-jest.mock("copy-to-clipboard");
+vi.mock("copy-to-clipboard");
 
 beforeEach(() => {
-  (copy as jest.Mock).mockClear();
+  (copy as vi.mock).mockClear();
 });
 
 const TestHelper = () => {
@@ -34,12 +34,12 @@ it("should show Copied", () => {
 });
 
 it("should hide Copied after timeout", () => {
-  jest.useFakeTimers();
+  vi.useFakeTimers();
   const { getByText, queryByText } = render(<TestHelper />);
   fireEvent.click(getByText("Copy"));
   // https://kentcdodds.com/blog/fix-the-not-wrapped-in-act-warning#1-when-using-jestusefaketimers
   act(() => {
-    jest.advanceTimersByTime(3000);
+    vi.advanceTimersByTime(3000);
   });
   expect(queryByText("Copied!")).toBeNull();
 });

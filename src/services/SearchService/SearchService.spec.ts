@@ -4,7 +4,7 @@ import { SearchResult, SearchServiceAdapter } from "./SearchServiceAdapter";
 let searchService: SearchService;
 
 const searchServiceMock: SearchServiceAdapter = {
-  getArticlesByText: jest.fn(),
+  getArticlesByText: vi.fn(),
 };
 
 beforeEach(() => {
@@ -42,7 +42,7 @@ const fakeSearchResultPart7: SearchResult[] = [
 ];
 
 const mockGetArticlesByTextResponse = (response: SearchResult[]) => {
-  (searchServiceMock.getArticlesByText as jest.Mock).mockImplementationOnce(
+  (searchServiceMock.getArticlesByText as vi.mock).mockImplementationOnce(
     () => {
       return response;
     }

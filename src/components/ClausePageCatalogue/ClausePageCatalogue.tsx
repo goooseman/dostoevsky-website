@@ -6,6 +6,8 @@ import { getClauseLink } from "src/config/routes";
 import Typography from "src/components/ui-kit/Typography";
 import type { I18nText } from "src/types";
 import useBodyOverflowLock from "src/hooks/useBodyOverflowLock";
+import closeIcon from "./assets/close.svg";
+import rightIcon from "./assets/right.svg";
 
 interface CatalogueRowProps {
   id: number;
@@ -41,7 +43,7 @@ const CatalogueRow: React.FC<CatalogueRowProps> = ({
         {!isClause ? (
           <img
             className={cn(classes.arrowRight)}
-            src={require("./assets/right.svg")}
+            src={rightIcon}
             alt={t("Стрелка вправо")}
           />
         ) : null}
@@ -140,7 +142,7 @@ const ClausePageCatalogue: React.FC<ClausePageCatalogueProps> = ({
         className={cn(classes.closeButton)}
         aria-label={t("Закрыть")}
       >
-        <img src={require("./assets/close.svg")} alt={t("Закрыть")} />
+        <img src={closeIcon} alt={t("Закрыть")} />
       </button>
     </div>
   );

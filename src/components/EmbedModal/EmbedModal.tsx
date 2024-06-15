@@ -7,6 +7,7 @@ import Button from "src/components/ui-kit/Button";
 import useCopyToClipboard from "src/hooks/useCopyToClipboard";
 import useSiteMetadata from "src/hooks/useSiteMetadata";
 import { sendClickEvent } from "src/utils/analytics";
+import embedIcon from "./assets/embed.svg";
 
 interface EmbedModalProps {
   iframePath: string;
@@ -51,7 +52,7 @@ const EmbedModal: React.FC<EmbedModalProps> = ({
       >
         <img
           className={cn(classes.icon)}
-          src={require("./assets/embed.svg")}
+          src={embedIcon}
           alt={t("Иконка код")}
         />
       </button>

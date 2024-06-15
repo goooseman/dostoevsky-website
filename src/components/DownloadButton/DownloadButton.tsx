@@ -3,6 +3,7 @@ import classes from "./DownloadButton.module.css";
 import cn from "clsx";
 import { useLocale } from "react-targem";
 import { sendClickEvent } from "src/utils/analytics";
+import downloadIcon from "./assets/download.svg";
 interface DownloadButtonProps {
   onClick: () => void;
   title: string;
@@ -28,11 +29,7 @@ const DownloadButton: React.FC<DownloadButtonProps> = ({
       title={t("Скачать чарт")}
       onClick={handleClick}
     >
-      <img
-        className={cn(classes.icon)}
-        src={require("./assets/download.svg")}
-        alt={t("Скачать")}
-      />
+      <img className={cn(classes.icon)} src={downloadIcon} alt={t("Скачать")} />
     </button>
   );
 };

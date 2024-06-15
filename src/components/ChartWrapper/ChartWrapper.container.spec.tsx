@@ -2,8 +2,8 @@ import React from "react";
 import ChatWrapperContainer from "./ChartWrapper.container";
 import { render, fireEvent, waitFor } from "__utils__/render";
 
-const writeMock = jest.fn();
-const mockedOpen = jest.fn().mockImplementation(() => ({
+const writeMock = vi.fn();
+const mockedOpen = vi.fn().mockImplementation(() => ({
   document: {
     write: writeMock,
   },
