@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 import useEscButtonHandler from "./useEscButtonHandler";
 
 describe("useBodyOverflowLock", () => {
-  const onEscButtonClickSpy = jest.fn();
+  const onEscButtonClickSpy = vi.fn();
   afterEach(onEscButtonClickSpy.mockClear);
 
   const TestComponent: React.FC<{}> = () => {

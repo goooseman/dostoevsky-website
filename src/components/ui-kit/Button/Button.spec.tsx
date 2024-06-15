@@ -8,7 +8,7 @@ it("should contain passed text", () => {
 });
 
 it("should fire onClick handler", () => {
-  const onClickSpy = jest.fn();
+  const onClickSpy = vi.fn();
   const { getByText } = render(<Button onClick={onClickSpy}>Foo</Button>);
   fireEvent.click(getByText("Foo"));
   expect(onClickSpy).toBeCalledTimes(1);

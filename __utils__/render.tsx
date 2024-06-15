@@ -1,7 +1,7 @@
 import { render, RenderOptions, RenderResult } from "@testing-library/react";
 import React from "react";
 import { TargemStatefulProvider } from "react-targem";
-import "@testing-library/jest-dom";
+import "@testing-library/jest-dom/vitest";
 
 const AllTheProviders = ({ children }: { children?: React.ReactNode }) => {
   return (

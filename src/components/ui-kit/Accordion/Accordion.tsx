@@ -4,6 +4,10 @@ import cn from "clsx";
 import { v4 as uuidv4 } from "uuid";
 import Typography from "../Typography";
 import { WithLocale, withLocale } from "react-targem";
+import downIcon from "./assets/down.svg";
+import upIcon from "./assets/up.svg";
+import plusIcon from "./assets/plus.svg";
+import minusIcon from "./assets/minus.svg";
 
 interface AccordionNodeProps extends WithLocale {
   title: React.ReactNode;
@@ -79,7 +83,7 @@ class AccordionNodePure extends PureComponent<AccordionNodeProps> {
         onClick={onClick}
         className={cn(classes.variantPrimaryIcon)}
       >
-        <img src={require("./assets/minus.svg")} alt={t("Иконка минус")} />
+        <img src={minusIcon} alt={t("Иконка минус")} />
       </button>
     ) : (
       <button
@@ -88,7 +92,7 @@ class AccordionNodePure extends PureComponent<AccordionNodeProps> {
         onClick={onClick}
         className={cn(classes.variantPrimaryIcon)}
       >
-        <img src={require("./assets/plus.svg")} alt={t("Иконка плюс")} />
+        <img src={plusIcon} alt={t("Иконка плюс")} />
       </button>
     );
   };
@@ -97,13 +101,13 @@ class AccordionNodePure extends PureComponent<AccordionNodeProps> {
     const { isOpened, t } = this.props;
     return isOpened ? (
       <img
-        src={require("./assets/up.svg")}
+        src={upIcon}
         alt={t("Иконка вверх")}
         className={cn(classes.arrowIcon)}
       />
     ) : (
       <img
-        src={require("./assets/down.svg")}
+        src={downIcon}
         alt={t("Иконка вниз")}
         className={cn(classes.arrowIcon)}
       />

@@ -6,6 +6,7 @@ import Typography from "src/components/ui-kit/Typography";
 import { useLocale } from "react-targem";
 import useBodyOverflowLock from "src/hooks/useBodyOverflowLock";
 import useEscButtonHandler from "src/hooks/useEscButtonHandler";
+import closeIcon from "./assets/close.svg";
 
 interface ModalProps {
   isShowing: boolean;
@@ -59,7 +60,7 @@ const Modal: React.FC<ModalProps> = ({
                   aria-label={t("Закрыть")}
                   onClick={onHideButtonClick}
                 >
-                  <img src={require("./assets/close.svg")} alt={t("Закрыть")} />
+                  <img src={closeIcon} alt={t("Закрыть")} />
                 </button>
               </div>
               <Typography

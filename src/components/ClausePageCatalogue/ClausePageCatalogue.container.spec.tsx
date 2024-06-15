@@ -4,7 +4,7 @@ import ClausePageCatalogueContainer from "./ClausePageCatalogue.container";
 
 it("should open subcategories", () => {
   const { getByText } = render(
-    <ClausePageCatalogueContainer year={2019} onClose={jest.fn()} />
+    <ClausePageCatalogueContainer year={2019} onClose={vi.fn()} />
   );
   const part = getByText("Преступления против личности");
   expect(part).toBeInTheDocument();
@@ -22,7 +22,7 @@ it("should have subcategories opened by default", () => {
   const { getByText } = render(
     <ClausePageCatalogueContainer
       year={2019}
-      onClose={jest.fn()}
+      onClose={vi.fn()}
       clauseId={282}
     />
   );
