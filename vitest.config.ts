@@ -8,6 +8,12 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
     setupFiles: ["__mocks__/matchMediaMock.js"],
+    browser: {
+      enabled: true,
+      headless: false,
+      name: "firefox", // browser name is required
+      provider: "webdriverio",
+    },
   },
   plugins: [viteTsconfigPaths(), react({ jsxRuntime: "classic" })],
 });
